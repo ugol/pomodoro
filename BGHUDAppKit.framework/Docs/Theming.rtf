@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf270
+{\fonttbl\f0\fnil\fcharset0 Verdana;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red73\green73\blue73;\red170\green13\blue145;\red92\green38\blue153;
+\red46\green13\blue110;\red63\green110\blue116;\red196\green26\blue22;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww17480\viewh13340\viewkind0
+\deftab720
+\pard\pardeftab720\sl400\sa280\ql\qnatural
+
+\f0\b\fs24 \cf2 \ul \ulc2 Theming
+\b0 \ulnone \
+BGHUDAppKit is more powerful than it first appears to be.  I have designed the classes with the mentality of reinvention.  Why should everyone have to reinvent the NSScroller if they want to apply iTunes style colors to it?  You shouldn't have to.  I've done the hard work and research for you.  My purpose in life as a developer is to make life easier, programmers are lazy :)  Every control in BGHUDAppKit uses a theme, you can have one theme for every control or you could have 10 different themes for 10 different controls.\
+\
+
+\b \ul Creating a Theme
+\b0 \ulnone \
+Creating a theme does take a little bit of work.  If you look inside the Headers directory of BGHUDAppKit.framework you will see a file name "
+\b BGTheme.h
+\b0 ".  This is the master theme file.  Inside of it will see every theme method available and a short description of each explaining where it is used at.\
+Just create a subclass of BGTheme and start overriding whatever methods you need to change.\
+\
+
+\b \ul Adding to ThemeManager
+\b0 \ulnone \
+BGHUDAppKit uses a singleton BGThemeManager obect.  This makes it so that there is only ever one instance of the theme allocated, thus saving memory.  In this example my subclassed theme is myTheme.m.  This code is in my main AppController object.\
+
+\b\fs20 Code
+\fs24 \
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\b0\fs20 \cf0 \CocoaLigature0 - (\cf3 void\cf0 )awakeFromNib \{\
+	\
+	[[\cf4 BGThemeManager\cf0  \cf5 keyedManager\cf0 ] \cf5 setTheme\cf0 : [[\cf6 myTheme\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ] \cf5 forKey\cf0 : \cf7 @"myTheme"\cf0 ];\
+\}
+\f0\fs24 \cf2 \CocoaLigature1 \
+\pard\tx0\tx0\tx0\pardeftab720\sl400\sa280\ql\qnatural
+\ls1\ilvl0\cf2 \
+Whats happening?  We are telling BGThemeManagers keyedManager object that we want to add a new theme instance to its memory with a key of "myTheme".  You can add as many as you like.\
+Two default themes are provided for you.  The one you'll see when you Drag'n'Drop from the IB palette is "gradientTheme", this is also the theme you will 
+\b always
+\b0  see when you simulate the interface in IB.  This is because your custom theme object doesn't exist yet.  The second default theme is "flatTheme", this theme is just a slight dark gradient, giving the controls a less 'candy' look.\
+\
+\ls1\ilvl0
+\b \ul Using the new theme
+\b0 \ulnone \
+Making the controls use this theme is even easier.  In IB a new inspector panel will present itself when you are in the proper focus for that control.  Some controls, like buttons, have this panel in the Cell focus.  Click on a button once, and then again and it will get a halo around it.  You will see a new section called "Theme" with a text box labeled "Theme Key".  Just type your theme key in there and when you build the app that control (and only that control) will use your custom theme.\
+\ls1\ilvl0
+\i\b Hint: 
+\b0 Controls that are a combination of two controls, such as NSOutlineView, NSTableView, will have to have the theme set for the ScrollView and the underlying object, in the example above they would be OutlineView, and TableView respectively.
+\i0 \
+}

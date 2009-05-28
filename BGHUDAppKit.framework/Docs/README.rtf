@@ -1,0 +1,105 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf270
+{\fonttbl\f0\fnil\fcharset0 Verdana;\f1\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red73\green73\blue73;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc3\levelnfcn3\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{upper-alpha\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\deftab720
+\pard\pardeftab720\sl400\sa280\ql\qnatural
+
+\f0\i\b\fs24 \cf2 This document contains information on Embedding, Using and a section on how to reduce the final size of your distributed app when using BGHUDAppKit.  See \ul Shrinking\ulnone  for details.
+\i0 \ul \
+BGHUDAppKit
+\b0 \ulnone \
+BGHUDAppKit is a small framework I designed to fill the gap left by Apple when they released the nifty HUD window but forgot to release their controls that match it.  There are few really good frameworks out there that will provide you with the HUD style interface.  This is where the big change in BGHUDAppKit becomes clear.  I use absolutely 
+\b \ul NO
+\b0 \ulnone  resources or images to give these controls the HUD appearance.  BGHUDAppKit uses 100% native Cocoa drawing functions like NSColor, NSGradient and NSBezierPath.  Because of this the framework is much smaller, provides a cleaner interface and the biggie...it is already Resolution Independence  ready.  And of course it is free and open-source.\
+Homepage: http://www.binarymethod.com\
+Source can be acquired by pointing your Subversion client to:\
+
+\i http://binarymethod.svnrepository.com/bghudappkit/svn/trunk
+\i0 \
+See License.rtf for details on licensing.  Short synopsis, use BGHUDAppKit as you see fit, give me credit and keep license intact.\
+\
+
+\b \ul Goals
+\b0 \ulnone \
+When I was designing BGHUDAppKit I had four goals in mind to keep me on track in the project:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280\ql\qnatural
+\ls1\ilvl0\cf2 {\listtext	A.	}HUD Style Controls that function exactly like their Apple counterparts do, using as much of the original functionality of the parent as possible.  Why reinvent the wheel?\
+{\listtext	B.	}Ease of use, try to make the framework Drag'n'Drop.  My biggest pet peeve is having an -(void)awakeFromNib\{\} FILLED with a bunch of control initialization setup code.  I hate having to do that, Apple made all their controls IB compatible, why can't I?\
+{\listtext	C.	}No Images or other external resources, use ONLY native Cocoa API.\
+{\listtext	D.	}Controls that can be themed to any style of UI.  I've done the hard drawing work, why should you do it all over again?  See Theming.rtf for details on this subject.\
+	\
+\pard\pardeftab720\sl400\sa280\ql\qnatural
+
+\b \cf2 \ul \ulc2 Embedding
+\b0 \ulnone \
+BGHUDAppKit is very easy to use.  The framework can be embedded in your distributed app.  There are three steps to achieve this.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280\ql\qnatural
+\ls2\ilvl0\cf2 {\listtext	1.	}Add BGHUDAppKit to your project\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl400\sa280\ql\qnatural
+\ls2\ilvl1\cf2 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Right-Click (Ctrl-Click) on your "Frameworks" group in XCode\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Select "Add 
+\b \'9b
+\b0  Existing Frameworks..."\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Navigate to BGHUDAppKit.framework and hit "Add"\
+\pard\tx220\tx720\tx1120\pardeftab720\li720\fi-720\sl400\sa280\ql\qnatural
+\ls2\ilvl0\cf2 {\listtext	2.	}In your active target add a new "Copy Files Build Phase"\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl400\sa280\ql\qnatural
+\ls2\ilvl1\cf2 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Right-Click (Ctrl-Click) on project Target under "Targets" group in XCode.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Select "Add 
+\b \'9b
+\b0  New Build Phase 
+\b \'9b
+\b0  New Copy Files Build Phase"\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Double-Click new "Copy Files" build phase\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Select "Frameworks" from Destination drop down.  (Close the window)\
+\pard\tx220\tx720\tx1120\pardeftab720\li720\fi-720\sl400\sa280\ql\qnatural
+\ls2\ilvl0\cf2 {\listtext	3.	}Add BGHUDAppKit.framework to newly created build phase\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl400\sa280\ql\qnatural
+\ls2\ilvl1\cf2 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Drag BGHUDAppKit.framework from "Frameworks" group in XCode to "Copy Files" build phase under "Targets" group in XCode.\
+\pard\tx0\tx720\tx1120\pardeftab720\sl400\sa280\ql\qnatural
+\ls2\ilvl0\cf2 Build and go.  If you inspect your .APP you should now see BGHUDAppKit.framework sitting peacefully in your \{APP\}Contents/Frameworks directory.\
+\
+\pard\tx0\tx720\tx1120\pardeftab720\sl400\sa280\ql\qnatural
+\ls2\ilvl0
+\b \cf2 \ul Usage
+\b0 \ulnone \
+Using BGHUDAppKit is a breeze.  After you have embedded the framework just open your MainMenu.nib like normal and start designing your app.  BGHUDAppKit comes with a IB Plugin already in the framework.  Just look for the Library item called "BGHUDAppKit", now you can use it like any other control in Apple.  Drag and Drop, setup your properties and run.\
+\
+\ls2\ilvl0
+\b \ul Shrinking
+\b0 \ulnone \
+BGHUDAppKit is appox 1.0 Mb in size.  This is quite large for a framework this simple.  The extra disk space is taken up by the BGHUDAppKitPlugin which is the IB Plugin.  This really doesn't need to be in your distributed app, the framework will function normally without it.  
+\b Do NOT delete BGHUDAppKitPlugin from your 
+\i source
+\i0  BGHUDAppKit.framework.
+\b0 \
+The reason the framework is build this way is because IB will automatically look in a linked framework for a plugin.  This seemed, to me at least, the most logical and easiest way to distribute the plugin to you the developer.\
+A way to shrink your final APP size is really simple.  Create a new "Run Script" build phase and copy the following line to it.\
+\pard\tx0\tx720\tx1120\pardeftab720\sl400\sa280\ql\qnatural
+\ls2\ilvl0
+\i \cf2 rm -fR "$\{CONFIGURATION_BUILD_DIR\}/$\{WRAPPER_NAME\}/Contents/Frameworks/BGHUDAppKit.framework/Versions/Current/Resources"\
+\pard\tx0\tx720\tx1120\pardeftab720\sl400\sa280\ql\qnatural
+\ls2\ilvl0
+\i0 \cf2 What happens is this:  When you build XCode will look in your final .APP folder and remove the unneeded Resources directory that BGHUDAppKitPlugin resides in.  This shrinks BGHUDAppKit.framework down to approx 400k.  Quite a big difference.\
+\pard\tx0\tx0\tx0\pardeftab720\sl400\sa280\ql\qnatural
+\ls2\ilvl0\cf2 \
+}
