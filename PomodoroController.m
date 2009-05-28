@@ -337,19 +337,19 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtInterruptEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptOverEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtInterruptOverEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptOverEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResetEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtResetEnabled"];	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResetEnabled"];	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResumeEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtResumeEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResumeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtBreakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEveryEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEveryEnabled"];	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"growlAtEveryEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtEveryEnabled"];	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtBreakFinishedEnabled"];
 	
