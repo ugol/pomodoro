@@ -53,4 +53,4 @@
 #import "BGHUDBox.h"
 #import "BGHUDView.h"
 #import "BGHUDComboBoxCell.h"
-#import "BGHUDStepper.h"
+#import "BGHUDStepperCell.h"
