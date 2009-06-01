@@ -36,20 +36,99 @@
 	return self;
 }
 
+#pragma mark ---- Core Data support methods ----
+
+
+- (NSString *)applicationSupportFolder {
+	
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    return [basePath stringByAppendingPathComponent:@"Pomodoro"];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+	
+    if (managedObjectModel != nil) {
+        return managedObjectModel;
+    }
+	
+    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    return managedObjectModel;
+}
+
+
+/**
+ Returns the persistent store coordinator for the application.  This 
+ implementation will create and return a coordinator, having added the 
+ store for the application to it.  (The folder for the store is created, 
+ if necessary.)
+ */
+
+- (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
+	
+    if (persistentStoreCoordinator != nil) {
+        return persistentStoreCoordinator;
+    }
+	
+	NSFileManager *fileManager;
+    NSString *applicationSupportFolder = nil;
+    NSURL *url;
+    NSError *error;
+    
+    fileManager = [NSFileManager defaultManager];
+    applicationSupportFolder = [self applicationSupportFolder];
+    if ( ![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL] ) {
+        [fileManager createDirectoryAtPath:applicationSupportFolder attributes:nil];
+    }
+    
+    url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.xml"]];
+   
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]){
+        [[NSApplication sharedApplication] presentError:error];
+    }    
+	
+    return persistentStoreCoordinator;
+}
+
+
+/**
+ Returns the managed object context for the application (which is already
+ bound to the persistent store coordinator for the application.) 
+ */
+
+- (NSManagedObjectContext *) managedObjectContext {
+	
+    if (managedObjectContext != nil) {
+        return managedObjectContext;
+    }
+	
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    
+    return managedObjectContext;
+}
+
 #pragma mark ---- Voice combo box delegate/datasource methods ----
 
+/*
 - (int)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [pomodoros count];
+    //return [pomodoros count];
+	return 0;
 }
 
 - (id)tableView:(NSTableView *)tableView
 objectValueForTableColumn:(NSTableColumn *)tableColumn
 			row:(int)row
 {
-    return [pomodoros objectAtIndex:row];
+    //return [pomodoros objectAtIndex:row];
+	return nil;
 }
-
+*/
 - (IBAction) resetStatistics:(id)sender {
 	
 	[pomoStats clear];
@@ -57,8 +136,8 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 }
 
 -(void) awakeFromNib {
-	pomodoros = [[[NSMutableArray alloc] init] retain];
-	[pomodoros addObject:@"Test"];
+	//pomodoros = [[[NSMutableArray alloc] init] retain];
+	//[pomodoros addObject:@"Test"];
 }
 
 @end

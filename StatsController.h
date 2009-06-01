@@ -30,7 +30,12 @@
 @interface StatsController : NSWindowController {
 
 	IBOutlet PomodoroStats* pomoStats;
-	NSMutableArray* pomodoros;
+	//NSMutableArray* pomodoros;
+	NSArrayController* pomos;
+	
+	NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
 
 }
 
