@@ -33,6 +33,14 @@ or just
 rm ~/Library/Preferences/com.ugolandini.pomodoro.plist
 (the ~ character means your home dir: if it's not on your keyboard you can usually get it pressing alt-5)
 
+To Manage the backlog, the DB is here:
+
+Library/Application Support/Pomodoro/Pomodoro.sql
+
+you can delete it if you have problems, or try to edit directly with the command (not recommended):
+
+sqlite3 Pomodoro.sql
+
 -------
 License
 -------

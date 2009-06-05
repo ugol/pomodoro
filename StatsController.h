@@ -30,14 +30,16 @@
 @interface StatsController : NSWindowController {
 
 	IBOutlet PomodoroStats* pomoStats;
-	//NSMutableArray* pomodoros;
-	NSArrayController* pomos;
+	IBOutlet NSArrayController* pomos;
 	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
 
 }
+
+@property (readonly, nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (readonly, nonatomic, retain) NSArrayController* pomos;
 
 - (IBAction) resetStatistics:(id)sender;
 

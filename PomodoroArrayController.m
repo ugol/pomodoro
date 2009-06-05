@@ -23,15 +23,18 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Cocoa/Cocoa.h>
+#import "PomodoroArrayController.h"
 
 
-@interface Pomodoros : NSObject {
+@implementation PomodoroArrayController
 
-	NSArray* values;
-	
-}
-
-@property (nonatomic, retain) NSArray* values;
+- (id)newObject 
+{ 
+    id newObj = [super newObject]; 
+    NSDate *now = [NSDate date];
+	[newObj setValue:now forKey:@"when"]; 
+    [newObj setValue:@"Pomodoro default description" forKey:@"name"]; 
+    return newObj; 
+} 	
 
 @end

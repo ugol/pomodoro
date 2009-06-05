@@ -28,13 +28,7 @@
 
 @implementation StatsController
 
-#pragma mark ---- Lifecycle methods ----
-
-- (id) init {
-	
-	if (![super initWithWindowNibName:@"Stats"]) return nil;
-	return self;
-}
+@synthesize pomos;
 
 #pragma mark ---- Core Data support methods ----
 
@@ -81,10 +75,10 @@
         [fileManager createDirectoryAtPath:applicationSupportFolder attributes:nil];
     }
     
-    url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.xml"]];
+    url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.sql"]];
    
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]){
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error]){
         [[NSApplication sharedApplication] presentError:error];
     }    
 	
@@ -112,9 +106,9 @@
     return managedObjectContext;
 }
 
+/*
 #pragma mark ---- Voice combo box delegate/datasource methods ----
 
-/*
 - (int)numberOfRowsInTableView:(NSTableView *)tableView
 {
     //return [pomodoros count];
@@ -129,15 +123,33 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	return nil;
 }
 */
+
+#pragma mark ---- Business methods ----
+
 - (IBAction) resetStatistics:(id)sender {
 	
 	[pomoStats clear];
 	
 }
 
--(void) awakeFromNib {
-	//pomodoros = [[[NSMutableArray alloc] init] retain];
-	//[pomodoros addObject:@"Test"];
+#pragma mark ---- Lifecycle methods ----
+
+- (id) init {
+	
+	if (![super initWithWindowNibName:@"Stats"]) return nil;
+	return self;
 }
+
+- (void)awakeFromNib {
+	
+	NSLog(@"Stats awakw from nib");
+	NSSortDescriptor* sort = [[NSSortDescriptor alloc] 
+							  initWithKey:@"when" ascending:NO];
+	[pomos setSortDescriptors:
+	 [NSArray arrayWithObject: sort]];
+	[sort release];	
+}
+
+
 
 @end

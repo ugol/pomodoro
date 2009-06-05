@@ -23,29 +23,11 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "Pomodoros.h"
+#import <Cocoa/Cocoa.h>
 
 
-@implementation Pomodoros
+@interface PomodoroArrayController : NSArrayController {
 
-@synthesize values;
-
-static Pomodoros *sharedStats = nil;
-
-#pragma mark ---- singleton object methods ----
-
-
-- (id)init {
-	
-	if(nil == sharedStats)
-	{
-		sharedStats = [super init];
-	}
-	else
-	{
-		[self release];
-	}
-	return [sharedStats retain]; 
 }
 
 @end

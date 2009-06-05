@@ -83,9 +83,6 @@
 }
 
 -(IBAction)stats:(id)sender {
-	if (!stats) {
-		stats = [[StatsController alloc] init];
-	}
 	[stats showWindow:self];
 }
 
@@ -246,6 +243,7 @@
 -(void) pomodoroFinished {
 	[self menuReadyToStart];
 	pomoStats.pomodoroDone++;
+	[stats.pomos add:self];
 
 	if ([self checkDefault:@"ringAtEndEnabled"]) {
 		[ringing play];
@@ -357,6 +355,23 @@
 	
 } 
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+	
+    NSError *error;
+    int reply = NSTerminateNow;
+	if (stats != nil) {
+		if (stats.managedObjectContext != nil) {
+			if ([stats.managedObjectContext commitEditing]) {
+				if ([stats.managedObjectContext hasChanges] && ![stats.managedObjectContext save:&error]) {
+					NSLog(@"Save failed.");
+				}
+			}
+		}
+	}
+    
+    return reply;
+}
+
 - (void)awakeFromNib {
 	
 	statusItem = [[[NSStatusBar systemStatusBar] 
@@ -388,6 +403,8 @@
 	
 	pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
 	pomoStats = [[PomodoroStats alloc] init];
+	stats = [[StatsController alloc] init];
+	[stats window];
 	[pomodoro setDelegate: self];
 	
 }
