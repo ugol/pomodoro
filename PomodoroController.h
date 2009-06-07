@@ -59,6 +59,7 @@
 	
 	NSImage* pomodoroImage;
 	NSSound* ringing;
+	NSSound* tick;
 	NSSpeechSynthesizer* speech;
 	
 	GrowlNotifier* growl;
@@ -66,6 +67,12 @@
 	PomodoroStats* pomoStats;
 		
 }
+
+@property (nonatomic, readonly) NSMenuItem* startPomodoro;
+@property (nonatomic, readonly) NSMenuItem* interruptPomodoro;
+@property (nonatomic, readonly) NSMenuItem* invalidatePomodoro;
+@property (nonatomic, readonly) NSMenuItem* resumePomodoro;
+
 
 -(void) pomodoroStarted;
 

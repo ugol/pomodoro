@@ -29,10 +29,39 @@
 #import "PomodoroStats.h"
 #import "AboutController.h"
 #import "StatsController.h"
+#import "Carbon/Carbon.h"
 
+#pragma mark ---- HotKey Function (Carbon) ----
+
+OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
+						 void *userData)
+{
+		
+	PomodoroController* controller = (PomodoroController*)userData;
+	
+	EventHotKeyID hkRef;	
+    GetEventParameter(anEvent,kEventParamDirectObject,typeEventHotKeyID,NULL,sizeof(hkRef),NULL,&hkRef);
+
+    switch (hkRef.id) {
+		case 1: 			
+			if ([controller.startPomodoro isEnabled]) [controller start:nil];
+            break;
+        case 2:
+			if ([controller.invalidatePomodoro isEnabled]) [controller reset:nil];
+            break;
+        case 3:
+			if ([controller.interruptPomodoro isEnabled]) [controller interrupt:nil];
+            break;
+		case 4:
+			if ([controller.resumePomodoro isEnabled]) [controller resume:nil];
+            break;
+    }
+	return noErr;
+}
 
 @implementation PomodoroController
 
+@synthesize startPomodoro, invalidatePomodoro, interruptPomodoro,  resumePomodoro;
 
 #pragma mark ---- Helper methods ----
 
@@ -42,6 +71,39 @@
 
 - (BOOL) checkDefault:(NSString*) property {
 	return [[[NSUserDefaults standardUserDefaults] objectForKey:property] boolValue];
+}
+
+
+- (void) installGlobalHotKeyHandler {
+	
+	EventHotKeyRef gMyHotKeyRef;
+	
+	EventHotKeyID startKey;
+	EventHotKeyID resetKey;
+	EventHotKeyID interruptKey;
+	EventHotKeyID resumeKey;
+	
+	EventTypeSpec eventType;
+	eventType.eventClass=kEventClassKeyboard;
+	eventType.eventKind=kEventHotKeyPressed;
+	InstallApplicationEventHandler(&hotKey,1,&eventType,self, NULL);
+	
+	startKey.signature='strt';
+	startKey.id=1;
+	RegisterEventHotKey(0x7E, cmdKey+optionKey, startKey,
+						GetApplicationEventTarget(), 0, &gMyHotKeyRef);
+	resetKey.signature='rest';
+	resetKey.id=2;
+	RegisterEventHotKey(0x7D, cmdKey+optionKey, resetKey,
+						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
+	interruptKey.signature='intr';
+	interruptKey.id=3;
+	RegisterEventHotKey(0x7B, cmdKey+optionKey, interruptKey,
+						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
+	resumeKey.signature='resu';
+	resumeKey.id=4;
+	RegisterEventHotKey(0x7C, cmdKey+optionKey, resumeKey,
+						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
 }
 
 #pragma mark ---- Voice combo box delegate/datasource methods ----
@@ -271,10 +333,16 @@
 
 - (void) oncePerSecondBreak:(NSInteger) time {
 	[self showTimeOnStatusBar: time];
+	if ([self checkDefault:@"tickEnabled"]) {
+		[tick play];
+	}
 }
 
 - (void) oncePerSecond:(NSInteger) time {
 	[self showTimeOnStatusBar: time];
+	if ([self checkDefault:@"tickEnabled"]) {
+		[tick play];
+	}
 	NSInteger timePassed = (_initialTime*60) - time;
 	NSString* timePassedString = [NSString stringWithFormat:@"%d", timePassed/60];
 	NSString* timeString = [NSString stringWithFormat:@"%d", time/60];
@@ -344,6 +412,7 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResumeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtBreakEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"growlAtEveryEnabled"];
@@ -381,6 +450,7 @@
 	NSBundle *bundle = [NSBundle mainBundle];
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
 	ringing = [NSSound soundNamed:@"ring.wav"];
+	tick = [NSSound soundNamed:@"tick.wav"];
 	[statusItem setImage:pomodoroImage];
 	//[statusItem setAlternateImage:pomodoroImage]; alternate image
 	speech = [[NSSpeechSynthesizer alloc] init]; 
@@ -405,8 +475,11 @@
 	pomoStats = [[PomodoroStats alloc] init];
 	stats = [[StatsController alloc] init];
 	[stats window];
-	[pomodoro setDelegate: self];
 	
+	[self installGlobalHotKeyHandler];
+
+	[pomodoro setDelegate: self];
+		
 }
 
 -(void)dealloc {
@@ -429,6 +502,7 @@
 	
 	[pomodoroImage release];
 	[ringing release];
+	[tick release];
 	[speech release];
 	
 	[growl release];

@@ -142,7 +142,6 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 - (void)awakeFromNib {
 	
-	NSLog(@"Stats awakw from nib");
 	NSSortDescriptor* sort = [[NSSortDescriptor alloc] 
 							  initWithKey:@"when" ascending:NO];
 	[pomos setSortDescriptors:

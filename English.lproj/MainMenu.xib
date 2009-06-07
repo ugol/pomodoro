@@ -103,6 +103,29 @@
 															<string key="themeKey">gradientTheme</string>
 														</object>
 													</object>
+													<object class="NSButton" id="297421714">
+														<reference key="NSNextResponder" ref="157430883"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{15, 193}, {231, 18}}</string>
+														<reference key="NSSuperview" ref="157430883"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="286959858">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Ticking sound</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="297421714"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+														</object>
+													</object>
 													<object class="NSComboBox" id="764427420">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
@@ -1738,7 +1761,8 @@
 					<object class="NSMenuItem" id="601187434">
 						<reference key="NSMenu" ref="740126098"/>
 						<string key="NSTitle">Start pomodoro</string>
-						<string key="NSKeyEquiv"/>
+						<string type="base64-UTF8" key="NSKeyEquiv">75yAA</string>
+						<int key="NSKeyEquivModMask">1572864</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="849301394"/>
 						<reference key="NSMixedImage" ref="973900610"/>
@@ -1747,7 +1771,8 @@
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Reset pomodoro</string>
-						<string key="NSKeyEquiv"/>
+						<string type="base64-UTF8" key="NSKeyEquiv">75yBA</string>
+						<int key="NSKeyEquivModMask">1572864</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="849301394"/>
 						<reference key="NSMixedImage" ref="973900610"/>
@@ -1766,7 +1791,8 @@
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Interrupt pomodoro</string>
-						<string key="NSKeyEquiv"/>
+						<string type="base64-UTF8" key="NSKeyEquiv">75yCA</string>
+						<int key="NSKeyEquivModMask">1572864</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="849301394"/>
 						<reference key="NSMixedImage" ref="973900610"/>
@@ -1775,7 +1801,8 @@
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Resume pomodoro</string>
-						<string key="NSKeyEquiv"/>
+						<string type="base64-UTF8" key="NSKeyEquiv">75yDA</string>
+						<int key="NSKeyEquivModMask">1572864</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="849301394"/>
 						<reference key="NSMixedImage" ref="973900610"/>
@@ -2979,6 +3006,22 @@
 					</object>
 					<int key="connectionID">709</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.tickEnabled</string>
+						<reference key="source" ref="297421714"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="297421714"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.tickEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.tickEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">713</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3100,6 +3143,7 @@
 							<reference ref="215635118"/>
 							<reference ref="626920907"/>
 							<reference ref="886871155"/>
+							<reference ref="297421714"/>
 						</object>
 						<reference key="parent" ref="286061383"/>
 					</object>
@@ -3981,6 +4025,20 @@
 						<reference key="object" ref="1002813655"/>
 						<reference key="parent" ref="826885453"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">710</int>
+						<reference key="object" ref="297421714"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="286959858"/>
+						</object>
+						<reference key="parent" ref="157430883"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">711</int>
+						<reference key="object" ref="286959858"/>
+						<reference key="parent" ref="297421714"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -4123,6 +4181,8 @@
 					<string>658.IBPluginDependency</string>
 					<string>659.IBPluginDependency</string>
 					<string>660.IBPluginDependency</string>
+					<string>710.IBPluginDependency</string>
+					<string>711.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4235,7 +4295,7 @@
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>{{390, 520}, {191, 203}}</string>
+					<string>{{390, 520}, {233, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4250,6 +4310,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -4294,7 +4356,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">709</int>
+			<int key="maxID">713</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
