@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="450"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -38,14 +39,14 @@
 			<object class="NSWindowTemplate" id="227449490">
 				<int key="NSWindowStyleMask">8211</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 116}, {496, 394}}</string>
+				<string key="NSWindowRect">{{196, 113}, {496, 397}}</string>
 				<int key="NSWTFlags">603979776</int>
 				<string key="NSWindowTitle">About Pomodoro</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="248242209">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -64,7 +65,7 @@
 									<string>NeXT TIFF v4.0 pasteboard type</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{15, 256}, {97, 152}}</string>
+							<string key="NSFrame">{{15, 259}, {97, 152}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="114470227">
@@ -84,7 +85,7 @@
 						<object class="BGHUDLabel" id="472895183">
 							<reference key="NSNextResponder" ref="248242209"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{117, 34}, {362, 340}}</string>
+							<string key="NSFrame">{{117, 20}, {362, 357}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="205747786">
@@ -96,8 +97,9 @@ aHQgKGMpIDIwMDksIFVnbyBMYW5kaW5pCgpncmFwaGljIGRlc2lnbiBieSBTdGVmYW5vIExpbmd1ZXJy
 aQpodHRwOi8vd3d3LmVsamVrby5uZXQvCgpyZWxlYXNlZCB1bmRlciBCU0QgTGljZW5zZQpUaGlzIHNv
 ZnR3YXJlIGNvbnRhaW5zIHBvcnRpb25zIG9mIEJTRCBsaWNlbnNlZCBjb2RlOgpHcm93bCBmcmFtZXdv
 cms6IGh0dHA6Ly9ncm93bC5pbmZvLwpCR0h1ZCBBcHBraXQ6IGh0dHA6Ly9jb2RlLmdvb2dsZS5jb20v
-cC9iZ2h1ZGFwcGtpdC8KClRoaXMgc29mdHdhcmUgY29udGFpbnMgc291bmRzIGZyb206Cmh0dHA6Ly93
-d3cuZnJlZXNvdW5kLm9yZw</string>
+cC9iZ2h1ZGFwcGtpdC8KU3BhcmtsZSBmcmFtZXdvcms6IGh0dHA6Ly9zcGFya2xlLmFuZHltYXR1c2No
+YWsub3JnLwoKVGhpcyBzb2Z0d2FyZSBjb250YWlucyBzb3VuZHMgZnJvbToKaHR0cDovL3d3dy5mcmVl
+c291bmQub3JnA</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">1.300000e+01</double>
@@ -121,7 +123,8 @@ d3cuZnJlZXNvdW5kLm9yZw</string>
 							<string key="themeKey">gradientTheme</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{496, 394}</string>
+					<string key="NSFrameSize">{496, 397}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -239,9 +242,9 @@ d3cuZnJlZXNvdW5kLm9yZw</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{100, 170}, {496, 394}}</string>
+					<string>{{291, 252}, {496, 397}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{100, 170}, {496, 394}}</string>
+					<string>{{291, 252}, {496, 397}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
