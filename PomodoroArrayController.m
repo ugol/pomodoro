@@ -33,7 +33,7 @@
     id newObj = [super newObject]; 
     NSDate *now = [NSDate date];
 	[newObj setValue:now forKey:@"when"]; 
-    [newObj setValue:@"Pomodoro default description" forKey:@"name"]; 
+    [newObj setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"] forKey:@"name"]; 
     return newObj; 
 } 	
 

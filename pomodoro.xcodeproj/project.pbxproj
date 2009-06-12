@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		6906DCAF0FE233F600A0A0F4 /* pomodoroFreeze.png in Resources */ = {isa = PBXBuildFile; fileRef = 6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */; };
+		6906DCB00FE233F600A0A0F4 /* pomodoroBreak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */; };
 		692148B60FCF47740016B59D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692148B50FCF47740016B59D /* Growl.framework */; };
 		692148BE0FCF47800016B59D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 692148B50FCF47740016B59D /* Growl.framework */; };
 		69509E380FCFF56A00BD19B5 /* Pomodoros.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 69509E370FCFF56A00BD19B5 /* Pomodoros.xcdatamodel */; };
@@ -59,6 +61,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pomodoro_Prefix.pch; sourceTree = "<group>"; };
+		6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze.png; sourceTree = "<group>"; };
+		6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroBreak.png; sourceTree = "<group>"; };
 		692148B50FCF47740016B59D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		69509E370FCFF56A00BD19B5 /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		69563A6E0FC9CC83004AC179 /* PomodoroStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroStats.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */,
+				6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */,
 				69576B320FDC5BE9007C33E9 /* dsa_pub.pem */,
 				6986976D0FDB3B03006281E8 /* tick.wav */,
 				69B1A37C0FC96D6E009B0ACF /* icon.icns */,
@@ -282,6 +288,8 @@
 				69B1A3830FC96D96009B0ACF /* Stats.xib in Resources */,
 				6986976E0FDB3B03006281E8 /* tick.wav in Resources */,
 				69576B330FDC5BE9007C33E9 /* dsa_pub.pem in Resources */,
+				6906DCAF0FE233F600A0A0F4 /* pomodoroFreeze.png in Resources */,
+				6906DCB00FE233F600A0A0F4 /* pomodoroBreak.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

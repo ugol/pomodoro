@@ -154,6 +154,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 
 - (void) menuReadyToStart {
+	[statusItem setImage:pomodoroImage];
 	[startPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
@@ -162,6 +163,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 - (void) menuPomodoroInBreak {
+	[statusItem setImage:pomodoroBreakImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
@@ -170,6 +172,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 - (void) menuAfterStart {
+	[statusItem setImage:pomodoroImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:YES];
@@ -179,6 +182,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 - (void) menuAfterInterrupt {
+	[statusItem setImage:pomodoroFreezeImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:NO];
@@ -187,13 +191,28 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 }
 
-- (IBAction) start: (id) sender {
+- (void) realStart {
 	
 	[self menuAfterStart];
+	[namePanel makeKeyAndOrderFront:self];
+	[pomodoro start];
+	
+}
+
+-(IBAction) nameCanceled:(id)sender {
+	[namePanel close];
+}
+
+-(IBAction) nameGiven:(id)sender {
+	[self realStart];
+	[namePanel close];
+}
+
+- (IBAction) start: (id) sender {
+	
 	[about close];
 	[prefs close];
-	
-	[pomodoro start];
+	[namePanel makeKeyAndOrderFront:self];
 	
 }
 
@@ -233,7 +252,6 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(void) pomodoroInterrupted {
-	// change icon to interrupt icon
 	pomoStats.pomodoroInterruptions++;
 	NSString* interruptTimeString = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"];
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
@@ -271,7 +289,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(void) pomodoroResumed {
-	
+	[statusItem setImage:pomodoroImage];
 	pomoStats.pomodoroResumes++;
 	if ([self checkDefault:@"growlAtResumeEnabled"])
 		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlResume"] title:@"Pomodoro resumed"];
@@ -282,12 +300,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(void) breakStarted {
-	// change icon to break icon
 	[self menuPomodoroInBreak];
 }
 
 -(void) breakFinished {
-
+	
 	[self menuReadyToStart];
 	
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"])
@@ -420,6 +437,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtBreakFinishedEnabled"];
 	
+	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
+
+	
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	
 } 
@@ -443,12 +463,15 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 - (void)awakeFromNib {
 	
+
 	statusItem = [[[NSStatusBar systemStatusBar] 
 				   statusItemWithLength:NSVariableStatusItemLength]
 				  retain];
 	
 	NSBundle *bundle = [NSBundle mainBundle];
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
+	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak" ofType:@"png"]];
+	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze" ofType:@"png"]];
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];
 	[statusItem setImage:pomodoroImage];
@@ -501,6 +524,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[setupPomodoro release];
 	
 	[pomodoroImage release];
+	[pomodoroBreakImage release];
+	[pomodoroFreezeImage release];
+	
 	[ringing release];
 	[tick release];
 	[speech release];

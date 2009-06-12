@@ -46,6 +46,7 @@
 	
 	NSStatusItem* statusItem;	
 	IBOutlet NSPanel* prefs;
+	IBOutlet NSPanel* namePanel;
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* voicesCombo;
 	IBOutlet NSComboBox* initialTimeCombo;
@@ -58,6 +59,8 @@
 	NSMenuItem* setupPomodoro;
 	
 	NSImage* pomodoroImage;
+	NSImage* pomodoroBreakImage;
+	NSImage* pomodoroFreezeImage;
 	NSSound* ringing;
 	NSSound* tick;
 	NSSpeechSynthesizer* speech;
@@ -73,7 +76,6 @@
 @property (nonatomic, readonly) NSMenuItem* invalidatePomodoro;
 @property (nonatomic, readonly) NSMenuItem* resumePomodoro;
 
-
 -(void) pomodoroStarted;
 
 -(IBAction) about:(id)sender;
@@ -83,6 +85,8 @@
 -(IBAction) stats:(id)sender;
 
 -(IBAction) start: (id) sender;
+-(IBAction) nameGiven:(id)sender;
+-(IBAction) nameCanceled:(id)sender;
 -(IBAction) reset: (id) sender;
 
 -(IBAction) interrupt: (id) sender;
