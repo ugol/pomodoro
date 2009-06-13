@@ -46,7 +46,6 @@
 	StatsController* stats;
 	
 	NSStatusItem* statusItem;	
-	//	IBOutlet NSTextField* pomodoroName;
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel;
 	IBOutlet NSMenu* pomodoroMenu;

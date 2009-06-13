@@ -216,9 +216,8 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[about close];
 	[prefs close];
 	if ([self checkDefault:@"askBeforeStart"]) {
-		[namePanel makeKeyAndOrderFront:self];
 		[self setFocusOnPomodoro];
-
+		[namePanel makeKeyAndOrderFront:self];
 	} else {
 		[self realStart];
 	}
@@ -326,6 +325,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[ringing play];
 	}
 	[self showTimeOnStatusBar: _initialTime * 60];
+	if ([self checkDefault:@"autoPomodoroRestart"]) {
+		[self start:nil];
+	}
 }
 
 -(void) pomodoroFinished {
@@ -353,6 +355,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[pomodoro breakFor:time];
 	} else {
 		[self showTimeOnStatusBar: _initialTime * 60];
+		if ([self checkDefault:@"autoPomodoroRestart"]) {
+			[self start:nil];
+		}
 	}
 
 }
@@ -446,10 +451,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtEveryEnabled"];	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtBreakFinishedEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"autoPomodoroRestart"];
 	
 	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
 
-	
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	
 } 
