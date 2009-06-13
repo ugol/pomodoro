@@ -194,7 +194,6 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 - (void) realStart {
 	
 	[self menuAfterStart];
-	[namePanel makeKeyAndOrderFront:self];
 	[pomodoro start];
 	
 }
@@ -208,11 +207,21 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[namePanel close];
 }
 
+- (void) setFocusOnPomodoro {
+	SetFrontProcess(&psn);
+}
+
 - (IBAction) start: (id) sender {
 	
 	[about close];
 	[prefs close];
-	[namePanel makeKeyAndOrderFront:self];
+	if ([self checkDefault:@"askBeforeStart"]) {
+		[namePanel makeKeyAndOrderFront:self];
+		[self setFocusOnPomodoro];
+
+	} else {
+		[self realStart];
+	}
 	
 }
 
@@ -416,6 +425,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtStartEnabled"];
@@ -502,6 +512,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[self installGlobalHotKeyHandler];
 
 	[pomodoro setDelegate: self];
+	GetCurrentProcess(&psn);
 		
 }
 

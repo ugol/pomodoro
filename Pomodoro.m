@@ -126,16 +126,16 @@
 
 - (void)oncePersecond:(NSTimer *)aTimer
 {
-	//time--;
-	time=time-60;
+	time--;
+	//time=time-60;
 	[delegate oncePerSecond:time];		
 	[self checkIfFinished];		
 }
 
 - (void)oncePersecondBreak:(NSTimer *)aTimer
 {
-	//time--;
-	time=time-10;
+	time--;
+	//time=time-10;
 	[delegate oncePerSecondBreak:time];		
 	[self checkIfBreakFinished];		
 }
