@@ -155,8 +155,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				69B1A3800FC96D96009B0ACF /* About.xib */,
-				69B1A3810FC96D96009B0ACF /* Stats.xib */,
 			);
 			name = pomodoro;
 			sourceTree = "<group>";
@@ -173,6 +171,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				69B1A3800FC96D96009B0ACF /* About.xib */,
+				69B1A3810FC96D96009B0ACF /* Stats.xib */,
 				6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */,
 				6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */,
 				69576B320FDC5BE9007C33E9 /* dsa_pub.pem */,
@@ -182,7 +183,6 @@
 				69B1A37A0FC96D63009B0ACF /* ring.wav */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

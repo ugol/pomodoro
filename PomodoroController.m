@@ -203,8 +203,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(IBAction) nameGiven:(id)sender {
-	[self realStart];
+	[namePanel endEditingFor:nil];
 	[namePanel close];
+	[self realStart];
 }
 
 - (void) setFocusOnPomodoro {
@@ -214,6 +215,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 - (IBAction) start: (id) sender {
 	
 	[about close];
+	[prefs endEditingFor:nil];
 	[prefs close];
 	if ([self checkDefault:@"askBeforeStart"]) {
 		[self setFocusOnPomodoro];
@@ -257,6 +259,12 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"speechAtStartEnabled"])
 		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechStart"]];
+	
+	if ([self checkDefault:@"scriptAtStartEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptStart"]];
+		[playScript executeAndReturnError:nil];
+	}
 }
 
 -(void) pomodoroInterrupted {
@@ -272,6 +280,12 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
 	}
 	
+	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptInterrupt"]];
+		[playScript executeAndReturnError:nil];
+	}
+	
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver {
@@ -282,6 +296,13 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"speechAtInterruptOverEnabled"])
 		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechInterruptOver"]];
+	
+	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptInterruptOver"]];
+		[playScript executeAndReturnError:nil];
+	}
+	
 	[self menuReadyToStart];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
@@ -294,6 +315,12 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"speechAtResetEnabled"])
 		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechReset"]];
+	
+	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptReset"]];
+		[playScript executeAndReturnError:nil];
+	}
 }
 
 -(void) pomodoroResumed {
@@ -305,6 +332,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"speechAtResumeEnabled"])
 		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechResume"]];
 	
+	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptResume"]];
+		[playScript executeAndReturnError:nil];
+	}
 }
 
 -(void) breakStarted {
@@ -324,6 +356,13 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"ringAtBreakEnabled"]) {
 		[ringing play];
 	}
+	
+	if ([self checkDefault:@"scriptAtBreakFinishedEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptBreakFinished"]];
+		[playScript executeAndReturnError:nil];
+	}
+	
 	[self showTimeOnStatusBar: _initialTime * 60];
 	if ([self checkDefault:@"autoPomodoroRestart"]) {
 		[self start:nil];
@@ -344,6 +383,12 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"speechAtEndEnabled"])
 		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEnd"]];
+	
+	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
+		NSAppleScript *playScript;		
+		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEnd"]];
+		[playScript executeAndReturnError:nil];
+	}
 	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
@@ -395,6 +440,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 			[speech startSpeakingString:msg];
 		}
 	}
+	
+	if (timePassed%(60 * _scriptEveryTimeMinutes) == 0 && time!=0) {		
+		if ([self checkDefault:@"scriptAtEveryEnabled"]) {		
+			NSAppleScript *playScript;		
+			playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEvery"]];
+			[playScript executeAndReturnError:nil];
+		}
+	}
 }
 
 #pragma mark ---- Lifecycle methods ----
@@ -407,50 +460,85 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[defaultValues setObject: @"15" forKey:@"interruptTime"];
 	[defaultValues setObject: @"2" forKey:@"growlEveryTimeMinutes"];
 	[defaultValues setObject: @"5" forKey:@"speechEveryTimeMinutes"];
+	[defaultValues setObject: @"5" forKey:@"scriptEveryTimeMinutes"];
 	[defaultValues setObject: @"5" forKey:@"breakTime"];
 	[defaultValues setObject: @"10" forKey:@"longbreakTime"];
 
 	[defaultValues setObject:@"Have a great pomodoro!" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptStart"];
+	
 	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"growlInterrupt"];
 	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"speechInterrupt"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptInterrupt"];
+
 	[defaultValues setObject:@"... interruption max time is over, sorry!" forKey:@"growlInterruptOver"];
 	[defaultValues setObject:@"interruption over, sorry" forKey:@"speechInterruptOver"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptInterruptOver"];
+
 	[defaultValues setObject:@"Not a good one? Just try again!" forKey:@"growlReset"];
 	[defaultValues setObject:@"Try again" forKey:@"speechReset"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptReset"];
+
 	[defaultValues setObject:@"... and we're back!" forKey:@"growlResume"];
 	[defaultValues setObject:@"... and we're back!" forKey:@"speechResume"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptResume"];
+
 	[defaultValues setObject:@"Great! A full pomodoro!" forKey:@"growlEnd"];
 	[defaultValues setObject:@"Well done!" forKey:@"speechEnd"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptEnd"];
+
 	[defaultValues setObject:@"Other $mins minutes passed by. $passed total minutes spent." forKey:@"growlEvery"];
 	[defaultValues setObject:@"$time minutes to go" forKey:@"speechEvery"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptEvery"];
+
 	[defaultValues setObject:@"Ready for another one?" forKey:@"growlBreakFinished"];
 	[defaultValues setObject:@"Ready for next one?" forKey:@"speechBreakFinished"];
+	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptBreakFinished"];
 
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
+	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtStartEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtStartEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtInterruptEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptOverEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptOverEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtInterruptOverEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResetEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResetEnabled"];	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResetEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtResetEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResumeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResumeEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtResumeEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"ringAtBreakEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtBreakEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtEndEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"growlAtEveryEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtEveryEnabled"];	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtEveryEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtBreakFinishedEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtBreakFinishedEnabled"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"autoPomodoroRestart"];
 	
 	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];

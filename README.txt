@@ -12,7 +12,8 @@ Manual
 
 Basic Usage:
 
-Just start the pomodoro! Pomodoro will notify you various states of the pomodoro, using both growl and spoken alerts.
+Just start the pomodoro! Give it a meaningful name and let it go: pomodoro will notify you various states of the pomodoro, using both growl and spoken alerts.
+
 You'll need to install Growl Framework separately if you want growl notifications. Just go on http://growl.info/, it's a simple install and a lot of other mac software is Growl enabled. Highly recommended.
 
 You can start/stop and interrupt/resume a pomodoro using only the keyboard.
