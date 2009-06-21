@@ -52,6 +52,14 @@
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* voicesCombo;
 	IBOutlet NSComboBox* initialTimeCombo;
+	IBOutlet NSComboBox* interruptCombo;
+	IBOutlet NSComboBox* breakCombo;
+	IBOutlet NSComboBox* longBreakCombo;
+	IBOutlet NSComboBox* growlEveryCombo;
+	IBOutlet NSComboBox* speechEveryCombo;
+	IBOutlet NSComboBox* scriptEveryCombo;
+	
+	NSColor* textColor;
 	NSArray* voices;
 	
 	NSMenuItem* startPomodoro;
@@ -93,5 +101,6 @@
 
 -(IBAction) interrupt: (id) sender;
 -(IBAction) resume: (id) sender;
+-(IBAction) resetDefaultValues: (id) sender;
 
 @end

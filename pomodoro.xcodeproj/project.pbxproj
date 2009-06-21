@@ -31,6 +31,7 @@
 		69B1A3820FC96D96009B0ACF /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B1A3800FC96D96009B0ACF /* About.xib */; };
 		69B1A3830FC96D96009B0ACF /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B1A3810FC96D96009B0ACF /* Stats.xib */; };
 		69B1A4420FC96FFD009B0ACF /* PomodoroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B1A4410FC96FFD009B0ACF /* PomodoroController.m */; };
+		69D955650FED0EB1003CBDA8 /* DurationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D955640FED0EB1003CBDA8 /* DurationFormatter.m */; };
 		69DC1F920FD5C60B005F3F6B /* PomodoroArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -87,6 +88,8 @@
 		69B1A3810FC96D96009B0ACF /* Stats.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Stats.xib; sourceTree = "<group>"; };
 		69B1A4400FC96FFD009B0ACF /* PomodoroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroController.h; sourceTree = "<group>"; };
 		69B1A4410FC96FFD009B0ACF /* PomodoroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroController.m; sourceTree = "<group>"; };
+		69D955630FED0EB1003CBDA8 /* DurationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationFormatter.h; sourceTree = "<group>"; };
+		69D955640FED0EB1003CBDA8 /* DurationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationFormatter.m; sourceTree = "<group>"; };
 		69DC1F900FD5C60B005F3F6B /* PomodoroArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroArrayController.h; sourceTree = "<group>"; };
 		69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroArrayController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				69B1A3730FC96D22009B0ACF /* StatsController.m */,
 				69DC1F900FD5C60B005F3F6B /* PomodoroArrayController.h */,
 				69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */,
+				69D955630FED0EB1003CBDA8 /* DurationFormatter.h */,
+				69D955640FED0EB1003CBDA8 /* DurationFormatter.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				69563A700FC9CC83004AC179 /* PomodoroStats.m in Sources */,
 				69509E380FCFF56A00BD19B5 /* Pomodoros.xcdatamodel in Sources */,
 				69DC1F920FD5C60B005F3F6B /* PomodoroArrayController.m in Sources */,
+				69D955650FED0EB1003CBDA8 /* DurationFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

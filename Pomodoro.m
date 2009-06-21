@@ -56,9 +56,11 @@
 }
 
 -(void) start {
-	[self startFor: duration*60];
-	if ([delegate respondsToSelector: @selector(pomodoroStarted)]) {
-		[delegate pomodoroStarted];
+	if (duration > 0) {
+		[self startFor: duration*60];
+		if ([delegate respondsToSelector: @selector(pomodoroStarted)]) {
+			[delegate pomodoroStarted];
+		}
 	}
 }
 
@@ -127,7 +129,7 @@
 - (void)oncePersecond:(NSTimer *)aTimer
 {
 	time--;
-	//time=time-60;
+	//time=time-10;
 	[delegate oncePerSecond:time];		
 	[self checkIfFinished];		
 }
@@ -135,7 +137,7 @@
 - (void)oncePersecondBreak:(NSTimer *)aTimer
 {
 	time--;
-	//time=time-60;
+	//time=time-10;
 	[delegate oncePerSecondBreak:time];		
 	[self checkIfBreakFinished];		
 }

@@ -117,7 +117,16 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
     NSDictionary *dict = [NSSpeechSynthesizer attributesForVoice:v]; 
     return [dict objectForKey:NSVoiceName]; 
 }
+	
+- (void)controlTextDidEndEditing:(NSNotification *)aNotification {
+	[pomodoro setDuration:_initialTime];
+	[self showTimeOnStatusBar: _initialTime * 60];
+}
 
+//- (BOOL)control:(NSControl*)control didFailToFormatString:(NSString*)string errorDescription:(NSString*) error {
+//	NSLog(@"Formatting of %@ failed: %@", string, error);
+//	return NO;
+//}
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
 
@@ -192,10 +201,8 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 - (void) realStart {
-	
 	[self menuAfterStart];
-	[pomodoro start];
-	
+	[pomodoro start];	
 }
 
 -(IBAction) nameCanceled:(id)sender {
@@ -214,14 +221,16 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 - (IBAction) start: (id) sender {
 	
-	[about close];
-	[prefs endEditingFor:nil];
-	[prefs close];
-	if ([self checkDefault:@"askBeforeStart"]) {
-		[self setFocusOnPomodoro];
-		[namePanel makeKeyAndOrderFront:self];
-	} else {
-		[self realStart];
+	if (_initialTime > 0) {
+		[about close];
+		[prefs endEditingFor:nil];
+		[prefs close];
+		if ([self checkDefault:@"askBeforeStart"]) {
+			[self setFocusOnPomodoro];
+			[namePanel makeKeyAndOrderFront:self];
+		} else {
+			[self realStart];
+		}
 	}
 	
 }
@@ -269,7 +278,8 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 -(void) pomodoroInterrupted {
 	pomoStats.pomodoroInterruptions++;
-	NSString* interruptTimeString = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"];
+	
+	NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
 		NSString* growlString = [[NSUserDefaults standardUserDefaults] objectForKey:@"growlInterrupt"];
 		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:@"Pomodoro interrupted"];
@@ -279,6 +289,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		NSString* speechString = [[NSUserDefaults standardUserDefaults] objectForKey:@"speechInterrupt"];
 		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
 	}
+	
 	
 	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
 		NSAppleScript *playScript;		
@@ -425,7 +436,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if (timePassed%(60 * _growlEveryTimeMinutes) == 0 && time!=0) {	
 		if ([self checkDefault:@"growlAtEveryEnabled"]) {
-			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"]];
+			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			[growl growlAlert:msg title:@"Pomodoro ticking"];
@@ -434,7 +445,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if (timePassed%(60 * _speechEveryTimeMinutes) == 0 && time!=0) {		
 		if ([self checkDefault:@"speechAtEveryEnabled"]) {
-			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"]];
+			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			[speech startSpeakingString:msg];
@@ -456,13 +467,13 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 { 
     NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary]; 
 	
-	[defaultValues setObject: @"25" forKey:@"initialTime"];
-	[defaultValues setObject: @"15" forKey:@"interruptTime"];
-	[defaultValues setObject: @"2" forKey:@"growlEveryTimeMinutes"];
-	[defaultValues setObject: @"5" forKey:@"speechEveryTimeMinutes"];
-	[defaultValues setObject: @"5" forKey:@"scriptEveryTimeMinutes"];
-	[defaultValues setObject: @"5" forKey:@"breakTime"];
-	[defaultValues setObject: @"10" forKey:@"longbreakTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:25] forKey:@"initialTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:15] forKey:@"interruptTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:2] forKey:@"growlEveryTimeMinutes"];
+	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"speechEveryTimeMinutes"];
+	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"scriptEveryTimeMinutes"];
+	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"breakTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"];
 
 	[defaultValues setObject:@"Have a great pomodoro!" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
@@ -547,6 +558,96 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 } 
 
+
+-(IBAction) resetDefaultValues: (id) sender {
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"initialTime"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptTime"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEveryTimeMinutes"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechEveryTimeMinutes"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEveryTimeMinutes"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlStart"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechStart"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptStart"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlInterrupt"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechInterrupt"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptInterrupt"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlInterruptOver"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechInterruptOver"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptInterruptOver"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlReset"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechReset"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptReset"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlResume"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechResume"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptResume"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEnd"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechEnd"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEnd"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEvery"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechEvery"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEvery"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlBreakFinished"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechBreakFinished"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptBreakFinished"];
+	
+	[[NSUserDefaults standardUserDefaults] setObject:@"Alex" forKey:@"defaultVoice"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"askBeforeStart"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtStartEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtStartEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtStartEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtInterruptEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptOverEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptOverEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtInterruptOverEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtResetEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtResetEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtResetEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtResumeEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtResumeEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtResumeEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ringAtEndEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ringAtBreakEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtBreakEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEndEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEndEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtEndEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEveryEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEveryEnabled"];	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtEveryEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtBreakFinishedEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtBreakFinishedEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtBreakFinishedEnabled"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"autoPomodoroRestart"];
+		
+}
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
 	
     NSError *error;
@@ -564,9 +665,16 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
     return reply;
 }
 
+
 - (void)awakeFromNib {
 	
-
+	/*
+	[[NSNotificationCenter defaultCenter] addObserver: self
+											 selector: @selector(textDidChange:)
+												 name: NSControlTextDidChangeNotification
+											   object: initialTimeCombo];
+	 */
+	textColor = [NSColor whiteColor];
 	statusItem = [[[NSStatusBar systemStatusBar] 
 				   statusItemWithLength:NSVariableStatusItemLength]
 				  retain];
@@ -581,6 +689,36 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	//[statusItem setAlternateImage:pomodoroImage]; alternate image
 	speech = [[NSSpeechSynthesizer alloc] init]; 
 	voices = [[NSSpeechSynthesizer availableVoices] retain];
+	
+	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
+	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];
+	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:35]];
+	
+	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
+	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
+	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
+	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];
+	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:45]];
+	
+	[breakCombo addItemWithObjectValue: [NSNumber numberWithInt:3]];
+	[breakCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+	[breakCombo addItemWithObjectValue: [NSNumber numberWithInt:7]];
+	
+	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
+	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
+
+	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+
+	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+	
+	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
 	startPomodoro = [pomodoroMenu itemWithTitle:@"Start pomodoro"];
 	interruptPomodoro = [pomodoroMenu itemWithTitle:@"Interrupt pomodoro"];
