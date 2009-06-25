@@ -12,6 +12,7 @@
 		6906DCB00FE233F600A0A0F4 /* pomodoroBreak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */; };
 		692148B60FCF47740016B59D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692148B50FCF47740016B59D /* Growl.framework */; };
 		692148BE0FCF47800016B59D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 692148B50FCF47740016B59D /* Growl.framework */; };
+		69406D6D0FEFB811007E3D80 /* PomodoroDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 69406D6C0FEFB811007E3D80 /* PomodoroDefaults.m */; };
 		69509E380FCFF56A00BD19B5 /* Pomodoros.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 69509E370FCFF56A00BD19B5 /* Pomodoros.xcdatamodel */; };
 		69563A700FC9CC83004AC179 /* PomodoroStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 69563A6F0FC9CC83004AC179 /* PomodoroStats.m */; };
 		69576B070FDC534E007C33E9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69576B060FDC534E007C33E9 /* Sparkle.framework */; };
@@ -65,6 +66,8 @@
 		6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze.png; sourceTree = "<group>"; };
 		6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroBreak.png; sourceTree = "<group>"; };
 		692148B50FCF47740016B59D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		69406D6B0FEFB811007E3D80 /* PomodoroDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroDefaults.h; sourceTree = "<group>"; };
+		69406D6C0FEFB811007E3D80 /* PomodoroDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroDefaults.m; sourceTree = "<group>"; };
 		69509E370FCFF56A00BD19B5 /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		69563A6E0FC9CC83004AC179 /* PomodoroStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroStats.h; sourceTree = "<group>"; };
 		69563A6F0FC9CC83004AC179 /* PomodoroStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroStats.m; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */,
 				69D955630FED0EB1003CBDA8 /* DurationFormatter.h */,
 				69D955640FED0EB1003CBDA8 /* DurationFormatter.m */,
+				69406D6B0FEFB811007E3D80 /* PomodoroDefaults.h */,
+				69406D6C0FEFB811007E3D80 /* PomodoroDefaults.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				69509E380FCFF56A00BD19B5 /* Pomodoros.xcdatamodel in Sources */,
 				69DC1F920FD5C60B005F3F6B /* PomodoroArrayController.m in Sources */,
 				69D955650FED0EB1003CBDA8 /* DurationFormatter.m in Sources */,
+				69406D6D0FEFB811007E3D80 /* PomodoroDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

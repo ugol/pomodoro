@@ -32,6 +32,12 @@
 #define _growlEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] intValue]
 #define _speechEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] intValue]
 #define _scriptEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEveryTimeMinutes"] intValue]
+
+#define _ringVolume [[[NSUserDefaults standardUserDefaults] objectForKey:@"ringVolume"] intValue]
+#define _ringBreakVolume [[[NSUserDefaults standardUserDefaults] objectForKey:@"ringBreakVolume"] intValue]
+#define _voiceVolume [[[NSUserDefaults standardUserDefaults] objectForKey:@"voiceVolume"] intValue]
+#define _tickVolume [[[NSUserDefaults standardUserDefaults] objectForKey:@"tickVolume"] intValue]
+
 #define _speechVoice [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultVoice"]
 
 @class AboutController;
@@ -59,7 +65,6 @@
 	IBOutlet NSComboBox* speechEveryCombo;
 	IBOutlet NSComboBox* scriptEveryCombo;
 	
-	NSColor* textColor;
 	NSArray* voices;
 	
 	NSMenuItem* startPomodoro;
@@ -72,6 +77,7 @@
 	NSImage* pomodoroBreakImage;
 	NSImage* pomodoroFreezeImage;
 	NSSound* ringing;
+	NSSound* ringingBreak;
 	NSSound* tick;
 	NSSpeechSynthesizer* speech;
 	
