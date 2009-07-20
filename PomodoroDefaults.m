@@ -57,6 +57,7 @@
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"canRestartAtBreak"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
 	
@@ -85,6 +86,7 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtBreakEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickAtBreakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtEndEnabled"];
@@ -154,6 +156,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:@"Alex" forKey:@"defaultVoice"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"canRestartAtBreak"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"askBeforeStart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakEnabled"];
 	
@@ -182,6 +185,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtBreakEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickAtBreakEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtEndEnabled"];

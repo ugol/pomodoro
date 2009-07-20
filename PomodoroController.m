@@ -120,6 +120,43 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
 }
 
+#pragma mark ---- Open panel delegate methods ----
+
+- (void)openPanelDidEnd:(NSOpenPanel *)openPanel 
+             returnCode:(int)returnCode 
+            contextInfo:(void *)x 
+{ 
+    if (returnCode == NSOKButton) { 
+		NSButton* sender = (NSButton*)x;
+		NSString *path = [openPanel filename]; 
+		NSString *script = [[NSString alloc] initWithContentsOfFile:path];
+		NSLog(script);
+		NSLog(@"%d", [sender tag]);
+		// update textfields[tag]
+    } 
+} 
+
+- (BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename {
+	NSLog(filename);
+	// should return YES only for applescript files
+	return YES;
+}
+
+- (IBAction)showOpenPanel:(id)sender 
+{ 
+    NSOpenPanel *panel = [NSOpenPanel openPanel]; 
+	[panel setDelegate:self];
+    [panel beginSheetForDirectory:nil 
+                             file:nil 
+							//types: [NSArray arrayWithObject:@"scpt"]
+							types:nil
+                   modalForWindow:prefs 
+                    modalDelegate:self 
+                   didEndSelector: 
+	 @selector(openPanelDidEnd:returnCode:contextInfo:) 
+                      contextInfo:sender]; 
+} 
+
 #pragma mark ---- Voice combo box delegate/datasource methods ----
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox {
@@ -223,6 +260,16 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[resumePomodoro setEnabled:NO];
 	[setupPomodoro setEnabled:YES];
 }
+
+- (void) menuReadyToStartDuringBreak {
+	[statusItem setImage:pomodoroImage];
+	[startPomodoro setEnabled:YES];
+	[invalidatePomodoro setEnabled:NO];
+	[interruptPomodoro setEnabled:NO];
+	[resumePomodoro setEnabled:NO];
+	[setupPomodoro setEnabled:NO];
+}
+
 
 - (void) menuPomodoroInBreak {
 	[statusItem setImage:pomodoroBreakImage];
@@ -406,7 +453,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(void) breakStarted {
-	[self menuPomodoroInBreak];
+	if ([self checkDefault:@"canRestartAtBreak"]) {	
+		[self menuReadyToStartDuringBreak];
+	} else {
+		[self menuPomodoroInBreak];
+	}
 }
 
 -(void) breakFinished {
@@ -475,7 +526,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 - (void) oncePerSecondBreak:(NSInteger) time {
 	[self showTimeOnStatusBar: time];
-	if ([self checkDefault:@"tickEnabled"]) {
+	if ([self checkDefault:@"tickAtBreakEnabled"]) {
 		[tick play];
 	}
 }
@@ -600,11 +651,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
-	startPomodoro = [pomodoroMenu itemWithTitle:@"Start pomodoro"];
-	interruptPomodoro = [pomodoroMenu itemWithTitle:@"Interrupt pomodoro"];
-	invalidatePomodoro = [pomodoroMenu itemWithTitle:@"Reset pomodoro"];
-	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume pomodoro"];
-	setupPomodoro = [pomodoroMenu itemWithTitle:@"Pomodoro setup"];
+	startPomodoro = [pomodoroMenu itemWithTitle:@"Start Pomodoro"];
+	interruptPomodoro = [pomodoroMenu itemWithTitle:@"Interrupt Pomodoro"];
+	invalidatePomodoro = [pomodoroMenu itemWithTitle:@"Reset Pomodoro"];
+	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume Pomodoro"];
+	setupPomodoro = [pomodoroMenu itemWithTitle:@"Preferences..."];
 		
 	[statusItem setToolTip:@"Pomodoro Time Management"];
 	[statusItem setHighlightMode:YES];

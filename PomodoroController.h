@@ -94,6 +94,8 @@
 
 -(void) pomodoroStarted;
 
+-(IBAction)showOpenPanel:(id)sender;
+
 -(IBAction) about:(id)sender;
 -(IBAction) quit:(id)sender;
 

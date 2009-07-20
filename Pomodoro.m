@@ -56,6 +56,9 @@
 }
 
 -(void) start {
+	if ([breakTimer isValid]) {
+		[breakTimer invalidate];
+	}
 	if (duration > 0) {
 		[self startFor: duration*60];
 		if ([delegate respondsToSelector: @selector(pomodoroStarted)]) {
