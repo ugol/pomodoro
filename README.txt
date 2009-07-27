@@ -18,5 +18,11 @@ Sound samples come from http://www.freesound.org and are licensed under Creative
 -------
 Thanks
 -------
-Luca Ceppelli, Roberto Turchetti, Sergio Bossa 
+Sina Samangooei <sinjax@gmail.com> for debugging (and fixing!)
+Alexander Klimetschek
+Konrad Mitchell Lawson
 Stefano Linguerri for the great graphics 
+Giulio Cesare Solaroli for the new icons
+Luca Ceppelli
+Roberto Turchetti
+Sergio Bossa 
