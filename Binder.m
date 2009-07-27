@@ -23,14 +23,40 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
+#import "Binder.h"
 
-@interface AboutController : NSWindowController {
+
+@implementation Binder
+
++ (NSString*) substituteDefault: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values {
 	
-	NSURL* url;
-	IBOutlet NSTextView* aboutText;
+	NSString* original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+	return [self substitute:original withVariables:variables andValues:values];
+}
+
++ (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value {
+	
+	NSString* original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+	return [original stringByReplacingOccurrencesOfString:variable withString:value];
 
 }
+
+
++ (NSString*) substitute: (NSString*)original withVariables:(NSArray*)variables andValues:(NSArray*)values {
+	
+	for (int i=0; i<[variables count]; i++) {
+		NSString* target = [variables objectAtIndex:i];
+		NSString* value = [values objectAtIndex:i];
+		original = [original stringByReplacingOccurrencesOfString:target withString:value];
+	}
+	return original;
+}
+
++ (NSString*) substitute: (NSString*)original withVariable:(NSString*)variable andValue:(NSString*)value {
+	
+	return [original stringByReplacingOccurrencesOfString:variable withString:value];
+	
+}
+
 
 @end

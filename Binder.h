@@ -24,13 +24,15 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
 
-@interface AboutController : NSWindowController {
+
+@interface Binder : NSObject {
 	
-	NSURL* url;
-	IBOutlet NSTextView* aboutText;
-
 }
+
++ (NSString*) substituteDefault: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values;
++ (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value;
++ (NSString*) substitute: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values;
++ (NSString*) substitute: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value;
 
 @end

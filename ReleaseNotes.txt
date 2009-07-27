@@ -2,6 +2,16 @@
 Release Notes
 -------------
 
+0.25
+
+- every notify (including applescript) has now access to common variables: $pomodoroName and $duration
+- you can now load applescripts (*.pomo) from filesystem
+- changed default global shortcuts to CTRL+ALT+Apple plus arrows because of textmate default keybindings
+- added two new options: ticking sound during break (enabled by default) and can restart during breaks (disabled by default)
+- about box is now in html and includes various links
+- testing new new small icons
+- changed some interface stuff to better match apple standards
+
 0.24
 
 - added Volume Control: now you can separately control speech, ring and ticking volumes

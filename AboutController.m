@@ -34,4 +34,15 @@
 	return self;
 }
 
+- (void)awakeFromNib {
+
+	NSBundle *bundle = [NSBundle mainBundle];
+	NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"]];
+	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+	[aboutText insertText:aboutHtml];
+	[aboutText setEditable:NO];
+	
+}
+
+
 @end

@@ -65,7 +65,17 @@
 	IBOutlet NSComboBox* speechEveryCombo;
 	IBOutlet NSComboBox* scriptEveryCombo;
 	
+	IBOutlet NSTextView* startScriptText;
+	IBOutlet NSTextView* interruptScriptText;
+	IBOutlet NSTextView* interruptOverScriptText;
+	IBOutlet NSTextView* resetScriptText;
+	IBOutlet NSTextView* resumeScriptText;
+	IBOutlet NSTextView* endScriptText;
+	IBOutlet NSTextView* breakScriptText;
+	IBOutlet NSTextView* everyScriptText;
+	
 	NSArray* voices;
+	NSArray* textViews;
 	
 	NSMenuItem* startPomodoro;
 	NSMenuItem* interruptPomodoro;

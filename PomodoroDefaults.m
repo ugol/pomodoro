@@ -22,7 +22,7 @@
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"breakTime"];
 	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"];
 	
-	[defaultValues setObject:@"Have a great pomodoro!" forKey:@"growlStart"];
+	[defaultValues setObject:@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptStart"];
 	

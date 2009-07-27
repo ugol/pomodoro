@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		69037EEF1015E8B7006C58D5 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 69037EEE1015E8B7006C58D5 /* about.html */; };
 		6906DCAF0FE233F600A0A0F4 /* pomodoroFreeze.png in Resources */ = {isa = PBXBuildFile; fileRef = 6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */; };
 		6906DCB00FE233F600A0A0F4 /* pomodoroBreak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */; };
 		692148B60FCF47740016B59D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692148B50FCF47740016B59D /* Growl.framework */; };
@@ -34,6 +35,7 @@
 		69B1A4420FC96FFD009B0ACF /* PomodoroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B1A4410FC96FFD009B0ACF /* PomodoroController.m */; };
 		69D955650FED0EB1003CBDA8 /* DurationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D955640FED0EB1003CBDA8 /* DurationFormatter.m */; };
 		69DC1F920FD5C60B005F3F6B /* PomodoroArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */; };
+		69E4CCC9101B214C00FCC33C /* Binder.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E4CCC8101B214C00FCC33C /* Binder.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -63,6 +65,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pomodoro_Prefix.pch; sourceTree = "<group>"; };
+		69037EEE1015E8B7006C58D5 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		6906DCAD0FE233F600A0A0F4 /* pomodoroFreeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze.png; sourceTree = "<group>"; };
 		6906DCAE0FE233F600A0A0F4 /* pomodoroBreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroBreak.png; sourceTree = "<group>"; };
 		692148B50FCF47740016B59D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 		69D955640FED0EB1003CBDA8 /* DurationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationFormatter.m; sourceTree = "<group>"; };
 		69DC1F900FD5C60B005F3F6B /* PomodoroArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomodoroArrayController.h; sourceTree = "<group>"; };
 		69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomodoroArrayController.m; sourceTree = "<group>"; };
+		69E4CCC7101B214C00FCC33C /* Binder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binder.h; sourceTree = "<group>"; };
+		69E4CCC8101B214C00FCC33C /* Binder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Binder.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +194,7 @@
 				69B1A37A0FC96D63009B0ACF /* ring.wav */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				69037EEE1015E8B7006C58D5 /* about.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -219,8 +225,14 @@
 		69563A740FC9CCCF004AC179 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				69D955630FED0EB1003CBDA8 /* DurationFormatter.h */,
+				69D955640FED0EB1003CBDA8 /* DurationFormatter.m */,
+				69406D6B0FEFB811007E3D80 /* PomodoroDefaults.h */,
+				69406D6C0FEFB811007E3D80 /* PomodoroDefaults.m */,
 				69B1A36C0FC96D22009B0ACF /* GrowlNotifier.h */,
 				69B1A36D0FC96D22009B0ACF /* GrowlNotifier.m */,
+				69E4CCC7101B214C00FCC33C /* Binder.h */,
+				69E4CCC8101B214C00FCC33C /* Binder.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -236,10 +248,6 @@
 				69B1A3730FC96D22009B0ACF /* StatsController.m */,
 				69DC1F900FD5C60B005F3F6B /* PomodoroArrayController.h */,
 				69DC1F910FD5C60B005F3F6B /* PomodoroArrayController.m */,
-				69D955630FED0EB1003CBDA8 /* DurationFormatter.h */,
-				69D955640FED0EB1003CBDA8 /* DurationFormatter.m */,
-				69406D6B0FEFB811007E3D80 /* PomodoroDefaults.h */,
-				69406D6C0FEFB811007E3D80 /* PomodoroDefaults.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				69576B330FDC5BE9007C33E9 /* dsa_pub.pem in Resources */,
 				6906DCAF0FE233F600A0A0F4 /* pomodoroFreeze.png in Resources */,
 				6906DCB00FE233F600A0A0F4 /* pomodoroBreak.png in Resources */,
+				69037EEF1015E8B7006C58D5 /* about.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +346,7 @@
 				69DC1F920FD5C60B005F3F6B /* PomodoroArrayController.m in Sources */,
 				69D955650FED0EB1003CBDA8 /* DurationFormatter.m in Sources */,
 				69406D6D0FEFB811007E3D80 /* PomodoroDefaults.m in Sources */,
+				69E4CCC9101B214C00FCC33C /* Binder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

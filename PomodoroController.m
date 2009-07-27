@@ -26,6 +26,7 @@
 #import "PomodoroController.h"
 #import "GrowlNotifier.h"
 #import "Pomodoro.h"
+#import "Binder.h"
 #import "PomodoroStats.h"
 #import "PomodoroDefaults.h"
 #import "AboutController.h"
@@ -104,21 +105,29 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	startKey.signature='strt';
 	startKey.id=1;
-	RegisterEventHotKey(0x7E, cmdKey+optionKey, startKey,
+	RegisterEventHotKey(0x7E, cmdKey+optionKey+controlKey, startKey,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);
 	resetKey.signature='rest';
 	resetKey.id=2;
-	RegisterEventHotKey(0x7D, cmdKey+optionKey, resetKey,
+	RegisterEventHotKey(0x7D, cmdKey+optionKey+controlKey, resetKey,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
 	interruptKey.signature='intr';
 	interruptKey.id=3;
-	RegisterEventHotKey(0x7B, cmdKey+optionKey, interruptKey,
+	RegisterEventHotKey(0x7B, cmdKey+optionKey+controlKey, interruptKey,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
 	resumeKey.signature='resu';
 	resumeKey.id=4;
-	RegisterEventHotKey(0x7C, cmdKey+optionKey, resumeKey,
+	RegisterEventHotKey(0x7C, cmdKey+optionKey+controlKey, resumeKey,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
 }
+
+- (NSString*) bindCommonVariables:(NSString*)name {
+	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", nil];
+	NSString* durationString = [NSString stringWithFormat:@"%d", pomodoro.duration];
+
+	NSArray* values = [NSArray arrayWithObjects:[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"], durationString, nil];
+	return [Binder substituteDefault:name withVariables:variables andValues:values];
+}	
 
 #pragma mark ---- Open panel delegate methods ----
 
@@ -130,17 +139,19 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		NSButton* sender = (NSButton*)x;
 		NSString *path = [openPanel filename]; 
 		NSString *script = [[NSString alloc] initWithContentsOfFile:path];
-		NSLog(script);
-		NSLog(@"%d", [sender tag]);
-		// update textfields[tag]
+		NSTextView* textView = [textViews objectAtIndex:[sender tag]];
+		[textView setString:script];
+				
     } 
 } 
 
+/*
 - (BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename {
-	NSLog(filename);
+	//NSLog(filename);
 	// should return YES only for applescript files
 	return YES;
 }
+ */
 
 - (IBAction)showOpenPanel:(id)sender 
 { 
@@ -148,8 +159,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[panel setDelegate:self];
     [panel beginSheetForDirectory:nil 
                              file:nil 
-							//types: [NSArray arrayWithObject:@"scpt"]
-							types:nil
+							types: [NSArray arrayWithObject:@"pomo"]
                    modalForWindow:prefs 
                     modalDelegate:self 
                    didEndSelector: 
@@ -248,6 +258,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(IBAction)quit:(id)sender {	
+	[self saveState];
 	[NSApp terminate:self];
 }
 
@@ -364,16 +375,18 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	pomoStats.pomodoroStarted++;
 
-	if ([self checkDefault:@"growlAtStartEnabled"])
-		[growl growlAlert: [[NSUserDefaults standardUserDefaults] objectForKey:@"growlStart"]  title:@"Pomodoro started"];
+	if ([self checkDefault:@"growlAtStartEnabled"]) {
+		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:@"Pomodoro started"];
+	}
 	
-	if ([self checkDefault:@"speechAtStartEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechStart"]];
 	
-	//NSLog(@"Speech volume %f", speech.volume);	
-	if ([self checkDefault:@"scriptAtStartEnabled"]) {		
+	if ([self checkDefault:@"speechAtStartEnabled"]) {
+		[speech startSpeakingString:[self bindCommonVariables:@"speechStart"]];
+	}
+	
+	if ([self checkDefault:@"scriptAtStartEnabled"]) {	
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptStart"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]];
 		[playScript executeAndReturnError:nil];
 	}
 }
@@ -383,19 +396,21 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
-		NSString* growlString = [[NSUserDefaults standardUserDefaults] objectForKey:@"growlInterrupt"];
+
+		NSString* growlString = [self bindCommonVariables:@"growlInterrupt"];		
 		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:@"Pomodoro interrupted"];
 	}
 	
 	if ([self checkDefault:@"speechAtInterruptEnabled"]) {
-		NSString* speechString = [[NSUserDefaults standardUserDefaults] objectForKey:@"speechInterrupt"];
+		NSString* speechString = [self bindCommonVariables:@"speechInterrupt"];
 		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
 	}
 	
 	
 	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
+		NSString* scriptString = [[self bindCommonVariables:@"scriptInterrupt"] stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString];
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptInterrupt"]];
+		playScript = [[NSAppleScript alloc] initWithSource:scriptString];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -405,14 +420,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	pomoStats.pomodoroReset++;
 	if ([self checkDefault:@"growlAtInterruptOverEnabled"])
-		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlInterruptOver"] title:@"Pomodoro reset"];
+		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:@"Pomodoro reset"];
 	
 	if ([self checkDefault:@"speechAtInterruptOverEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechInterruptOver"]];
+		[speech startSpeakingString:[self bindCommonVariables:@"speechInterruptOver"]];
 	
 	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptInterruptOver"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptInterruptOver"]];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -424,14 +439,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	pomoStats.pomodoroReset++;
 	if ([self checkDefault:@"growlAtResetEnabled"])
-		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlReset"] title:@"Pomodoro reset"];
+		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:@"Pomodoro reset"];
 	
 	if ([self checkDefault:@"speechAtResetEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechReset"]];
+		[speech startSpeakingString:[self bindCommonVariables:@"speechReset"]];
 	
 	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptReset"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]];
 		[playScript executeAndReturnError:nil];
 	}
 }
@@ -440,14 +455,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[statusItem setImage:pomodoroImage];
 	pomoStats.pomodoroResumes++;
 	if ([self checkDefault:@"growlAtResumeEnabled"])
-		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlResume"] title:@"Pomodoro resumed"];
+		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:@"Pomodoro resumed"];
 	
 	if ([self checkDefault:@"speechAtResumeEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechResume"]];
+		[speech startSpeakingString:[self bindCommonVariables:@"speechResume"]];
 	
 	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptResume"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptResume"]];
 		[playScript executeAndReturnError:nil];
 	}
 }
@@ -465,10 +480,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[self menuReadyToStart];
 	
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"])
-		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlBreakFinished"] title:@"Pomodoro break finished"];
+		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:@"Pomodoro break finished"];
 	
 	if ([self checkDefault:@"speechAtBreakFinishedEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechBreakFinished"]];
+		[speech startSpeakingString:[self bindCommonVariables:@"speechBreakFinished"]];
 	
 	if ([self checkDefault:@"ringAtBreakEnabled"]) {
 		[ringingBreak play];
@@ -476,7 +491,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"scriptAtBreakFinishedEnabled"]) {		
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptBreakFinished"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptBreakFinished"]];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -496,14 +511,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	if ([self checkDefault:@"growlAtEndEnabled"])
-		[growl growlAlert:[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEnd"] title:@"Pomodoro finished"];
+		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:@"Pomodoro finished"];
 	
 	if ([self checkDefault:@"speechAtEndEnabled"])
-		[speech startSpeakingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEnd"]];
+		[speech startSpeakingString:[self bindCommonVariables:@"speechEnd"]];
 	
 	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
 		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEnd"]];
+		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -543,7 +558,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if (timePassed%(60 * _growlEveryTimeMinutes) == 0 && time!=0) {	
 		if ([self checkDefault:@"growlAtEveryEnabled"]) {
-			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] stringValue]];
+			NSString* msg = [[self bindCommonVariables:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			[growl growlAlert:msg title:@"Pomodoro ticking"];
@@ -552,7 +567,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if (timePassed%(60 * _speechEveryTimeMinutes) == 0 && time!=0) {		
 		if ([self checkDefault:@"speechAtEveryEnabled"]) {
-			NSString* msg = [[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
+			NSString* msg = [[self bindCommonVariables:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			[speech startSpeakingString:msg];
@@ -561,8 +576,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if (timePassed%(60 * _scriptEveryTimeMinutes) == 0 && time!=0) {		
 		if ([self checkDefault:@"scriptAtEveryEnabled"]) {		
+			NSString* msg = [[self bindCommonVariables:@"scriptEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
+			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
+			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			NSAppleScript *playScript;		
-			playScript = [[NSAppleScript alloc] initWithSource:[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEvery"]];
+			playScript = [[NSAppleScript alloc] initWithSource:msg];
 			[playScript executeAndReturnError:nil];
 		}
 	}
@@ -615,6 +633,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	//[statusItem setAlternateImage:pomodoroImage]; alternate image
 	speech = [[NSSpeechSynthesizer alloc] init]; 
 	voices = [[NSSpeechSynthesizer availableVoices] retain];
+	textViews = [[NSArray arrayWithObjects:startScriptText, interruptScriptText, interruptOverScriptText, resetScriptText, resumeScriptText, endScriptText, breakScriptText, everyScriptText, nil ] retain];
 	
 	[ringing setVolume:_ringVolume/10.0];
 	[ringingBreak setVolume:_ringBreakVolume/10.0];
