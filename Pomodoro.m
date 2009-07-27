@@ -56,8 +56,9 @@
 }
 
 -(void) start {
-	if ([breakTimer isValid]) {
+	if (breakTimer != nil) {
 		[breakTimer invalidate];
+		breakTimer = nil;
 	}
 	if (duration > 0) {
 		[self startFor: duration*60];
@@ -68,7 +69,7 @@
 }
 
 -(void) breakFor:(NSInteger)breakMinutes {
-	if (![oneSecTimer isValid]) {
+	if (oneSecTimer == nil) {
 		time = breakMinutes * 60;
 		breakTimer = [NSTimer timerWithTimeInterval:1
 											  target:self
@@ -84,7 +85,8 @@
 }
 
 -(void) reset {
-    [oneSecTimer invalidate];			
+	[oneSecTimer invalidate];
+	oneSecTimer = nil;
 	if ([delegate respondsToSelector: @selector(pomodoroReset)]) {
         [delegate pomodoroReset];
 	}
@@ -92,6 +94,7 @@
 
 -(void) interruptFor:(NSInteger) seconds {
 	[oneSecTimer invalidate];
+	oneSecTimer = nil;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
 										  target:self
 											  selector:@selector(interruptFinished:)													 
@@ -105,6 +108,7 @@
 
 -(void) resume {
 	[interruptionTimer invalidate];
+	interruptionTimer = nil;
 	[self startFor: time];
 	if ([delegate respondsToSelector: @selector(pomodoroResumed)]) {
         [delegate pomodoroResumed];		
@@ -113,7 +117,8 @@
 
 - (void) checkIfFinished {
 	if (time == 0) {
-		[oneSecTimer invalidate];			
+		[oneSecTimer invalidate];
+		oneSecTimer = nil;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished)]) {
 			[delegate pomodoroFinished];		
 		}		
@@ -122,7 +127,8 @@
 
 - (void) checkIfBreakFinished {
 	if (time == 0) {
-		[breakTimer invalidate];			
+		[breakTimer invalidate];
+		breakTimer = nil;
 		if ([delegate respondsToSelector: @selector(breakFinished)]) {
 			[delegate breakFinished];		
 		}		
@@ -147,15 +153,25 @@
 
 -(void) interruptFinished:(NSTimer *)aTimer {
 	[oneSecTimer invalidate];
+	oneSecTimer = nil;
 	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver)]) {
         [delegate pomodoroInterruptionMaxTimeIsOver];		
 	}
 }
 
 -(void)dealloc {
-	[oneSecTimer release];
-	[breakTimer release];
-	[interruptionTimer release];
+	if (oneSecTimer != nil) {
+		[oneSecTimer invalidate];
+		oneSecTimer = nil;
+	}
+	if (breakTimer != nil) {
+		[breakTimer invalidate];
+		breakTimer = nil;
+	}
+	if (interruptionTimer != nil) {
+		[interruptionTimer invalidate];
+		interruptionTimer = nil;
+	}
 	[super dealloc];
 }
 
