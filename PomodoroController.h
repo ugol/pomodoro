@@ -24,6 +24,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#import "MGTwitterEngine.h"
 
 #define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
 #define _interruptTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] intValue]
@@ -46,7 +47,7 @@
 @class GrowlNotifier;
 @class PomodoroStats;
 
-@interface PomodoroController : NSObject {
+@interface PomodoroController : NSObject <MGTwitterEngineDelegate> {
 
 	ProcessSerialNumber psn;
 	AboutController* about;
@@ -74,6 +75,10 @@
 	IBOutlet NSTextView* breakScriptText;
 	IBOutlet NSTextView* everyScriptText;
 	
+	IBOutlet NSButton* twitterTest;
+	IBOutlet NSProgressIndicator* twitterProgress;
+	IBOutlet NSImageView* twitterStatus;
+	
 	NSArray* voices;
 	NSArray* textViews;
 	
@@ -86,6 +91,9 @@
 	NSImage* pomodoroImage;
 	NSImage* pomodoroBreakImage;
 	NSImage* pomodoroFreezeImage;
+	NSImage* redButtonImage;
+	NSImage* greenButtonImage;
+	
 	NSSound* ringing;
 	NSSound* ringingBreak;
 	NSSound* tick;
@@ -94,6 +102,8 @@
 	GrowlNotifier* growl;
 	Pomodoro* pomodoro;
 	PomodoroStats* pomoStats;
+	
+	MGTwitterEngine* twitterEngine;
 		
 }
 
@@ -120,5 +130,7 @@
 -(IBAction) interrupt: (id) sender;
 -(IBAction) resume: (id) sender;
 -(IBAction) resetDefaultValues: (id) sender;
+
+-(IBAction) testTwitterConnection: (id) sender;
 
 @end

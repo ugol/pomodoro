@@ -87,6 +87,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 			}
 		}
 	}
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void) installGlobalHotKeyHandler {
@@ -258,7 +259,6 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 -(IBAction)quit:(id)sender {	
-	[self saveState];
 	[NSApp terminate:self];
 }
 
@@ -335,8 +335,17 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[self saveState];
 	if (_initialTime > 0) {
 		[about close];
-		[prefs endEditingFor:nil];
+		if (![prefs makeFirstResponder:prefs]) {
+			[prefs endEditingFor:nil];
+		}
 		[prefs close];
+		
+		if ([self checkDefault:@"enableTwitter"]) {			
+			NSString* user = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"];
+			NSString* pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"];
+			[twitterEngine setUsername:user password:pwd];			
+		}
+		
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
 			[namePanel makeKeyAndOrderFront:self];
@@ -389,6 +398,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]];
 		[playScript executeAndReturnError:nil];
 	}
+	
+	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtStartEnabled"]) {
+		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterStart"]];
+	}
+	
 }
 
 -(void) pomodoroInterrupted {
@@ -449,6 +463,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]];
 		[playScript executeAndReturnError:nil];
 	}
+	
+	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtResetEnabled"]) {
+		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterReset"]];
+	}
 }
 
 -(void) pomodoroResumed {
@@ -495,6 +513,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[playScript executeAndReturnError:nil];
 	}
 	
+	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtBreakFinishedEnabled"]) {
+		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterBreakFinished"]];
+	}
+	
 	[self showTimeOnStatusBar: _initialTime * 60];
 	if ([self checkDefault:@"autoPomodoroRestart"]) {
 		[self start:nil];
@@ -520,6 +542,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		NSAppleScript *playScript;		
 		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]];
 		[playScript executeAndReturnError:nil];
+	}
+	
+	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtEndEnabled"]) {
+		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterEnd"]];
 	}
 	
 	if ([self checkDefault:@"breakEnabled"]) {
@@ -586,10 +612,54 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 }
 
+#pragma mark ---- MGTwitterEngineDelegate methods ----
+
+- (void)requestSucceeded:(NSString *)requestIdentifier {
+    NSLog(@"Request succeeded (%@)", requestIdentifier);
+	if ([self checkDefault:@"enableTwitter"]) {
+		[twitterTest setEnabled:YES];
+	}
+	[twitterStatus setImage:greenButtonImage];
+	[twitterProgress stopAnimation:self];
+}
+
+
+- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
+    NSLog(@"Twitter request failed! (%@) Error: %@ (%@)", 
+          requestIdentifier, 
+          [error localizedDescription], 
+          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+	if ([self checkDefault:@"enableTwitter"]) {
+		[twitterTest setEnabled:YES];
+	}
+	[twitterStatus setImage:redButtonImage];
+	[twitterProgress stopAnimation:self];
+}
+
+- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)identifier {}
+
+- (void)directMessagesReceived:(NSArray *)messages forRequest:(NSString *)identifier {}
+
+- (void)userInfoReceived:(NSArray *)userInfo forRequest:(NSString *)identifier {}
+
+- (void)miscInfoReceived:(NSArray *)miscInfo forRequest:(NSString *)identifier {}
+
+- (void)imageReceived:(NSImage *)image forRequest:(NSString *)identifier {}
+
+-(IBAction) testTwitterConnection: (id) sender {
+	NSLog(@"Testing twitter connection");
+	NSString* user = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"];
+	NSString* pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"];
+	[twitterEngine setUsername:user password:pwd];
+	[twitterEngine testService];
+	[twitterTest setEnabled:NO];
+	[twitterStatus setImage:nil];
+	[twitterProgress startAnimation:self];
+}
+
 #pragma mark ---- Lifecycle methods ----
 
-+ (void)initialize
-{ 
++ (void)initialize { 
     
 //	PercentageTransformer *volumeTransformer = [[[PercentageTransformer alloc] init] autorelease];	
 //	[NSValueTransformer setValueTransformer:volumeTransformer
@@ -610,7 +680,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
 	
     int reply = NSTerminateNow;
-	[self saveState];    
+	[self saveState];
+	if (![prefs makeFirstResponder:prefs]) {
+		[prefs endEditingFor:nil];
+	}
+	[prefs close];
     return reply;
 	
 }
@@ -626,6 +700,8 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak" ofType:@"png"]];
 	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze" ofType:@"png"]];
+	redButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"red" ofType:@"png"]];
+	greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"green" ofType:@"png"]];
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	ringingBreak = [NSSound soundNamed:@"ring.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];
@@ -699,6 +775,8 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[self observeUserDefault:@"ringBreakVolume"];
 	[self observeUserDefault:@"tickVolume"];
 	[self observeUserDefault:@"voiceVolume"];
+	
+	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 		
 }
 
@@ -731,6 +809,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	[growl release];
 	[pomodoro release];
+	[twitterEngine release];
+	[twitterTest release];
+	[twitterProgress release];
 	
 	[super dealloc];
 }

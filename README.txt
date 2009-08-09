@@ -13,6 +13,9 @@ This code is released under BSD license (see License.txt for details) and contai
 Growl framework: http://growl.info/
 BGHud Appkit: http://code.google.com/p/bghudappkit/
 
+Matt Gemmell licensed code:
+MGTwitterEngine: http://svn.cocoasourcecode.com/MGTwitterEngine/
+
 Sound samples come from http://www.freesound.org and are licensed under Creative Commons http://creativecommons.org/licenses/sampling+/1.0/
 
 -------

@@ -25,6 +25,7 @@
 	[defaultValues setObject:@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptStart"];
+	[defaultValues setObject:@"Just started pomodoro '$pomodoroName'" forKey:@"twitterStart"];
 	
 	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"growlInterrupt"];
 	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"speechInterrupt"];
@@ -37,7 +38,8 @@
 	[defaultValues setObject:@"Not a good one? Just try again!" forKey:@"growlReset"];
 	[defaultValues setObject:@"Try again" forKey:@"speechReset"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptReset"];
-	
+	[defaultValues setObject:@"I have just reset pomodoro '$pomodoroName'" forKey:@"twitterReset"];
+
 	[defaultValues setObject:@"... and we're back!" forKey:@"growlResume"];
 	[defaultValues setObject:@"... and we're back!" forKey:@"speechResume"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptResume"];
@@ -45,6 +47,7 @@
 	[defaultValues setObject:@"Great! A full pomodoro!" forKey:@"growlEnd"];
 	[defaultValues setObject:@"Well done!" forKey:@"speechEnd"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptEnd"];
+	[defaultValues setObject:@"Just finished pomodoro '$pomodoroName'" forKey:@"twitterEnd"];
 	
 	[defaultValues setObject:@"Other $mins minutes passed by. $passed total minutes spent." forKey:@"growlEvery"];
 	[defaultValues setObject:@"$time minutes to go" forKey:@"speechEvery"];
@@ -53,6 +56,7 @@
 	[defaultValues setObject:@"Ready for another one?" forKey:@"growlBreakFinished"];
 	[defaultValues setObject:@"Ready for next one?" forKey:@"speechBreakFinished"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptBreakFinished"];
+	[defaultValues setObject:@"Just finished break after pomodoro '$pomodoroName'" forKey:@"twitterBreakFinished"];
 	
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
@@ -61,9 +65,14 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
 	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"enableTwitter"];
+	[defaultValues setObject:@"twitterUser" forKey:@"twitterUser"];
+	[defaultValues setObject:@"twitterPwd" forKey:@"twitterPwd"];
+
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtStartEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtStartEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptEnabled"];
@@ -76,6 +85,7 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResetEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResetEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtResetEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtResetEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtResumeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtResumeEnabled"];
@@ -87,9 +97,12 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickAtBreakEnabled"];
+	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtEndEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtEndEnabled"];
+
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"growlAtEveryEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtEveryEnabled"];	
@@ -98,6 +111,8 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtBreakFinishedEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtBreakFinishedEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtBreakFinishedEnabled"];
+
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"autoPomodoroRestart"];
 	
@@ -120,10 +135,15 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEveryTimeMinutes"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
-	
+
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
+	//[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterUser"];
+	//[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterPwd"];
+
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlStart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechStart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptStart"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterStart"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlInterrupt"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechInterrupt"];
@@ -136,6 +156,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlReset"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechReset"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptReset"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterReset"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlResume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechResume"];
@@ -144,6 +165,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEnd"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechEnd"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEnd"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterEnd"];
+
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEvery"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechEvery"];
@@ -152,6 +175,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlBreakFinished"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechBreakFinished"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptBreakFinished"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterBreakFinished"];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:@"Alex" forKey:@"defaultVoice"];
 	
@@ -163,6 +187,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtStartEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtStartEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtStartEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtStartEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptEnabled"];
@@ -175,6 +200,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtResetEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtResetEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtResetEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtResetEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtResumeEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtResumeEnabled"];
@@ -186,9 +212,11 @@
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickAtBreakEnabled"];
+	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtEndEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtEndEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEveryEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEveryEnabled"];	
@@ -197,6 +225,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtBreakFinishedEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtBreakFinishedEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtBreakFinishedEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtBreakFinishedEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ringVolume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ringBreakVolume"];
