@@ -142,6 +142,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		NSString *script = [[NSString alloc] initWithContentsOfFile:path];
 		NSTextView* textView = [textViews objectAtIndex:[sender tag]];
 		[textView setString:script];
+		[script release];
 				
     } 
 } 
@@ -394,8 +395,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	if ([self checkDefault:@"scriptAtStartEnabled"]) {	
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -423,8 +423,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
 		NSString* scriptString = [[self bindCommonVariables:@"scriptInterrupt"] stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString];
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:scriptString];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:scriptString] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -440,8 +439,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[speech startSpeakingString:[self bindCommonVariables:@"speechInterruptOver"]];
 	
 	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptInterruptOver"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptInterruptOver"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -459,8 +457,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[speech startSpeakingString:[self bindCommonVariables:@"speechReset"]];
 	
 	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -479,8 +476,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[speech startSpeakingString:[self bindCommonVariables:@"speechResume"]];
 	
 	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptResume"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptResume"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 }
@@ -508,8 +504,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	if ([self checkDefault:@"scriptAtBreakFinishedEnabled"]) {		
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptBreakFinished"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptBreakFinished"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
@@ -539,8 +534,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[speech startSpeakingString:[self bindCommonVariables:@"speechEnd"]];
 	
 	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
-		NSAppleScript *playScript;		
-		playScript = [[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]];
+		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
