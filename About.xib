@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9J61</string>
+		<string key="IBDocument.SystemVersion">9L30</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.46</string>
+		<string key="IBDocument.AppKitVersion">949.54</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="449"/>
+			<integer value="450"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -65,7 +65,7 @@
 									<string>NeXT TIFF v4.0 pasteboard type</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{20, 273}, {100, 124}}</string>
+							<string key="NSFrame">{{5, 251}, {140, 158}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="761485480">
@@ -76,7 +76,7 @@
 									<string key="NSResourceName">icon</string>
 								</object>
 								<int key="NSAlign">0</int>
-								<int key="NSScale">0</int>
+								<int key="NSScale">3</int>
 								<int key="NSStyle">0</int>
 								<bool key="NSAnimates">YES</bool>
 							</object>
@@ -118,7 +118,7 @@
 													<string>WebURLsWithTitlesPboardType</string>
 												</object>
 											</object>
-											<string key="NSFrameSize">{348, 14}</string>
+											<string key="NSFrameSize">{328, 14}</string>
 											<reference key="NSSuperview" ref="1029078527"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="578407850">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -136,7 +136,7 @@
 													<nil key="NSDelegate"/>
 												</object>
 												<reference key="NSTextView" ref="300503843"/>
-												<double key="NSWidth">3.480000e+02</double>
+												<double key="NSWidth">3.280000e+02</double>
 												<int key="NSTCFlags">1</int>
 											</object>
 											<object class="NSTextViewSharedData" key="NSSharedData">
@@ -206,7 +206,7 @@
 											<nil key="NSDelegate"/>
 										</object>
 									</object>
-									<string key="NSFrameSize">{348, 357}</string>
+									<string key="NSFrameSize">{328, 357}</string>
 									<reference key="NSSuperview" ref="638081237"/>
 									<reference key="NSNextKeyView" ref="300503843"/>
 									<reference key="NSDocView" ref="300503843"/>
@@ -219,7 +219,7 @@
 								</object>
 								<object class="BGHUDScroller" id="763921651">
 									<reference key="NSNextResponder" ref="638081237"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {15, 105}}</string>
 									<reference key="NSSuperview" ref="638081237"/>
 									<reference key="NSTarget" ref="638081237"/>
@@ -238,10 +238,10 @@
 									<string key="themeKey">gradientTheme</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{128, 20}, {348, 357}}</string>
+							<string key="NSFrame">{{148, 20}, {328, 357}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
 							<reference key="NSNextKeyView" ref="1029078527"/>
-							<int key="NSsFlags">512</int>
+							<int key="NSsFlags">528</int>
 							<reference key="NSVScroller" ref="763921651"/>
 							<reference key="NSHScroller" ref="810113679"/>
 							<reference key="NSContentView" ref="1029078527"/>
@@ -318,8 +318,8 @@
 						<reference key="object" ref="248242209"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="352751847"/>
 							<reference ref="638081237"/>
+							<reference ref="352751847"/>
 						</object>
 						<reference key="parent" ref="227449490"/>
 					</object>
@@ -388,10 +388,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{361, 82}, {496, 397}}</string>
+					<string>{{516, 277}, {496, 397}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO" id="6"/>
-					<string>{{361, 82}, {496, 397}}</string>
+					<string>{{516, 277}, {496, 397}}</string>
 					<reference ref="6"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>

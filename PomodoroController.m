@@ -273,12 +273,12 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 }
 
 - (void) menuReadyToStartDuringBreak {
-	[statusItem setImage:pomodoroImage];
+	[statusItem setImage:pomodoroBreakImage];
 	[startPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:NO];
+	[setupPomodoro setEnabled:YES];
 }
 
 
