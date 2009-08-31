@@ -37,8 +37,8 @@
 - (void)awakeFromNib {
 
 	NSBundle *bundle = [NSBundle mainBundle];
-	NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"]];
-	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"]] autorelease];
+	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	

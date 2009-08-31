@@ -113,6 +113,7 @@
 @property (nonatomic, readonly) NSMenuItem* resumePomodoro;
 
 -(void) pomodoroStarted;
+-(void) mute;
 
 -(IBAction)showOpenPanel:(id)sender;
 

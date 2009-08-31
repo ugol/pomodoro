@@ -57,6 +57,9 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		case 4:
 			if ([controller.resumePomodoro isEnabled]) [controller resume:nil];
             break;
+		case 5:
+			[controller mute];
+            break;
     }
 	return noErr;
 }
@@ -98,6 +101,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	EventHotKeyID resetKey;
 	EventHotKeyID interruptKey;
 	EventHotKeyID resumeKey;
+	EventHotKeyID muteKey;
 	
 	EventTypeSpec eventType;
 	eventType.eventClass=kEventClassKeyboard;
@@ -120,6 +124,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	resumeKey.id=4;
 	RegisterEventHotKey(0x7C, cmdKey+optionKey+controlKey, resumeKey,
 						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
+	muteKey.signature='mute';
+	muteKey.id=5;
+	RegisterEventHotKey(0x1d, cmdKey+optionKey+controlKey, muteKey,
+						GetApplicationEventTarget(), 0, &gMyHotKeyRef);
 }
 
 - (NSString*) bindCommonVariables:(NSString*)name {
@@ -242,6 +250,13 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 #pragma mark ---- Menu management methods ----
 
+-(void) mute {
+	BOOL muteState = ![self checkDefault:@"mute"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:muteState] forKey:@"mute"];
+	//NSMenuItem* muteMenu = [pomodoroMenu itemWithTitle:@"Mute all Sounds"];
+	//[muteMenu setState:muteState];
+}
+
 -(IBAction)about:(id)sender {
 	if (!about) {
 		about = [[AboutController alloc] init];
@@ -258,6 +273,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 -(IBAction)stats:(id)sender {
 	[stats showWindow:self];
 }
+
 
 -(IBAction)quit:(id)sender {	
 	[NSApp terminate:self];
@@ -390,7 +406,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	
-	if ([self checkDefault:@"speechAtStartEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtStartEnabled"]) {
 		[speech startSpeakingString:[self bindCommonVariables:@"speechStart"]];
 	}
 	
@@ -415,7 +431,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:@"Pomodoro interrupted"];
 	}
 	
-	if ([self checkDefault:@"speechAtInterruptEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptEnabled"]) {
 		NSString* speechString = [self bindCommonVariables:@"speechInterrupt"];
 		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
 	}
@@ -435,7 +451,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"growlAtInterruptOverEnabled"])
 		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:@"Pomodoro reset"];
 	
-	if ([self checkDefault:@"speechAtInterruptOverEnabled"])
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptOverEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechInterruptOver"]];
 	
 	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
@@ -453,7 +469,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"growlAtResetEnabled"])
 		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:@"Pomodoro reset"];
 	
-	if ([self checkDefault:@"speechAtResetEnabled"])
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResetEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechReset"]];
 	
 	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
@@ -472,7 +488,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"growlAtResumeEnabled"])
 		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:@"Pomodoro resumed"];
 	
-	if ([self checkDefault:@"speechAtResumeEnabled"])
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResumeEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechResume"]];
 	
 	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
@@ -496,10 +512,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"])
 		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:@"Pomodoro break finished"];
 	
-	if ([self checkDefault:@"speechAtBreakFinishedEnabled"])
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtBreakFinishedEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechBreakFinished"]];
 	
-	if ([self checkDefault:@"ringAtBreakEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtBreakEnabled"]) {
 		[ringingBreak play];
 	}
 	
@@ -513,7 +529,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	[self showTimeOnStatusBar: _initialTime * 60];
-	if ([self checkDefault:@"autoPomodoroRestart"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"autoPomodoroRestart"]) {
 		[self start:nil];
 	}
 }
@@ -523,7 +539,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	pomoStats.pomodoroDone++;
 	[stats.pomos add:self];
 
-	if ([self checkDefault:@"ringAtEndEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtEndEnabled"]) {
 		[ringing play];
 	}
 	
@@ -561,14 +577,14 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 - (void) oncePerSecondBreak:(NSInteger) time {
 	[self showTimeOnStatusBar: time];
-	if ([self checkDefault:@"tickAtBreakEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickAtBreakEnabled"]) {
 		[tick play];
 	}
 }
 
 - (void) oncePerSecond:(NSInteger) time {
 	[self showTimeOnStatusBar: time];
-	if ([self checkDefault:@"tickEnabled"]) {
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
 		//NSLog(@"Tick volume: %f", tick.volume); 
 		[tick play];
 	}
@@ -586,7 +602,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	}
 	
 	if (timePassed%(60 * _speechEveryTimeMinutes) == 0 && time!=0) {		
-		if ([self checkDefault:@"speechAtEveryEnabled"]) {
+		if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEveryEnabled"]) {
 			NSString* msg = [[self bindCommonVariables:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];

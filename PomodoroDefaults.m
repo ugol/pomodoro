@@ -60,6 +60,7 @@
 	
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"mute"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"canRestartAtBreak"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
@@ -128,6 +129,7 @@
 
 +(void)removeDefaults {
 	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"mute"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"initialTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlEveryTimeMinutes"];

@@ -37,14 +37,14 @@
 		69866C99102DC545005666F6 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 69866C8A102DC545005666F6 /* NSString+UUID.m */; };
 		69866C9A102DC545005666F6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 69866C8C102DC545005666F6 /* NSData+Base64.m */; };
 		6986976E0FDB3B03006281E8 /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6986976D0FDB3B03006281E8 /* tick.wav */; };
-		69885A480FD3FD770020D132 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69885A470FD3FD770020D132 /* BGHUDAppKit.framework */; };
-		69885A6B0FD3FD8B0020D132 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69885A470FD3FD770020D132 /* BGHUDAppKit.framework */; };
 		69A66FBD1036F76800920893 /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FB21036F76800920893 /* SR_LeopardView.m */; };
 		69A66FBE1036F76800920893 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FB41036F76800920893 /* SRRecorderControl.m */; };
 		69A66FBF1036F76800920893 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FB61036F76800920893 /* SRRecorderCell.m */; };
 		69A66FC01036F76800920893 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FB81036F76800920893 /* SRKeyCodeTransformer.m */; };
 		69A66FC11036F76800920893 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FBA1036F76800920893 /* SRValidator.m */; };
 		69A66FC21036F76800920893 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A66FBC1036F76800920893 /* SRCommon.m */; };
+		69ABCDF8104ACDB8005468AD /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ABCDF7104ACDB8005468AD /* BGHUDAppKit.framework */; };
+		69ABCDFF104ACDF6005468AD /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69ABCDF7104ACDB8005468AD /* BGHUDAppKit.framework */; };
 		69B1A3740FC96D22009B0ACF /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B1A36D0FC96D22009B0ACF /* GrowlNotifier.m */; };
 		69B1A3750FC96D22009B0ACF /* Pomodoro.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B1A36F0FC96D22009B0ACF /* Pomodoro.m */; };
 		69B1A3760FC96D22009B0ACF /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B1A3710FC96D22009B0ACF /* AboutController.m */; };
@@ -72,8 +72,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				69ABCDFF104ACDF6005468AD /* BGHUDAppKit.framework in CopyFiles */,
 				69576B100FDC5368007C33E9 /* Sparkle.framework in CopyFiles */,
-				69885A6B0FD3FD8B0020D132 /* BGHUDAppKit.framework in CopyFiles */,
 				692148BE0FCF47800016B59D /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +136,6 @@
 		69866C8B102DC545005666F6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		69866C8C102DC545005666F6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		6986976D0FDB3B03006281E8 /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tick.wav; sourceTree = "<group>"; };
-		69885A470FD3FD770020D132 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		69A66FB01036F76800920893 /* ShortcutRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutRecorder.h; sourceTree = "<group>"; };
 		69A66FB11036F76800920893 /* SR_LeopardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SR_LeopardView.h; sourceTree = "<group>"; };
 		69A66FB21036F76800920893 /* SR_LeopardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SR_LeopardView.m; sourceTree = "<group>"; };
@@ -150,6 +149,7 @@
 		69A66FBA1036F76800920893 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		69A66FBB1036F76800920893 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
 		69A66FBC1036F76800920893 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		69ABCDF7104ACDB8005468AD /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = /Users/ugol/Documents/Source/objective/bghud/BGHUDAppKit/build/Release/BGHUDAppKit.framework; sourceTree = "<absolute>"; };
 		69B1A36C0FC96D22009B0ACF /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
 		69B1A36D0FC96D22009B0ACF /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
 		69B1A36E0FC96D22009B0ACF /* Pomodoro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro.h; sourceTree = "<group>"; };
@@ -184,10 +184,10 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				692148B60FCF47740016B59D /* Growl.framework in Frameworks */,
-				69885A480FD3FD770020D132 /* BGHUDAppKit.framework in Frameworks */,
 				6968AF120FD950AE00028CE6 /* Carbon.framework in Frameworks */,
 				69576B070FDC534E007C33E9 /* Sparkle.framework in Frameworks */,
 				69DE0718102AEE6600670B79 /* libxml2.dylib in Frameworks */,
+				69ABCDF8104ACDB8005468AD /* BGHUDAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +282,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69885A470FD3FD770020D132 /* BGHUDAppKit.framework */,
 				692148B50FCF47740016B59D /* Growl.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				69ABCDF7104ACDB8005468AD /* BGHUDAppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -492,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -fR \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}/Contents/Frameworks/BGHUDAppKit.framework/Versions/Current/Resources\"";
+			shellScript = "rm -fR \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}/Contents/Frameworks/BGHUDAppKit.framework/Versions/Current/Resources\"\nrm -fR ";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -571,6 +571,7 @@
 					"\"$(SRCROOT)/../../../../Desktop/tmp/growl SDK\"",
 					"\"$(SRCROOT)/../../../Files/technology/software/bghud/bghudappkit-read-only/build/Debug\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/../bghud/BGHUDAppKit/build/Release\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -602,6 +603,7 @@
 					"\"$(SRCROOT)/../../../../Desktop/tmp/growl SDK\"",
 					"\"$(SRCROOT)/../../../Files/technology/software/bghud/bghudappkit-read-only/build/Debug\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/../bghud/BGHUDAppKit/build/Release\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
