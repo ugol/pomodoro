@@ -21,7 +21,18 @@
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"scriptEveryTimeMinutes"];
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"breakTime"];
 	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"];
-	
+
+	[defaultValues setObject: [NSNumber numberWithShort:29] forKey:@"muteCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"muteFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:126] forKey:@"startCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"startFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:125] forKey:@"resetCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resetFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:123] forKey:@"interruptCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"interruptFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:124] forKey:@"resumeCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resumeFlags"];
+
 	[defaultValues setObject:@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
 	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptStart"];
@@ -141,6 +152,17 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
 	//[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterUser"];
 	//[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterPwd"];
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"muteCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"muteFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeFlags"];
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlStart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechStart"];

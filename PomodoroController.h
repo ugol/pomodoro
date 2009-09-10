@@ -25,6 +25,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MGTwitterEngine.h"
+#import "ShortcutRecorder.framework/Headers/SRRecorderControl.h"
 
 #define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
 #define _interruptTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] intValue]
@@ -46,6 +47,8 @@
 @class Pomodoro;
 @class GrowlNotifier;
 @class PomodoroStats;
+@class PomodoroMenuExtra;
+@class PTHotKey;
 
 @interface PomodoroController : NSObject <MGTwitterEngineDelegate> {
 
@@ -53,7 +56,7 @@
 	AboutController* about;
 	StatsController* stats;
 	
-	NSStatusItem* statusItem;	
+	PomodoroMenuExtra* statusItem;	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel;
 	IBOutlet NSMenu* pomodoroMenu;
@@ -79,6 +82,18 @@
 	IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
 	
+	IBOutlet SRRecorderControl* muteRecorder;
+	IBOutlet SRRecorderControl* startRecorder;
+	IBOutlet SRRecorderControl* resetRecorder;
+	IBOutlet SRRecorderControl* interruptRecorder;
+	IBOutlet SRRecorderControl* resumeRecorder;
+	
+	PTHotKey *muteKey;
+	PTHotKey *startKey;
+	PTHotKey *resetKey;
+	PTHotKey *interruptKey;
+	PTHotKey *resumeKey;
+
 	NSArray* voices;
 	NSArray* textViews;
 	
@@ -113,7 +128,12 @@
 @property (nonatomic, readonly) NSMenuItem* resumePomodoro;
 
 -(void) pomodoroStarted;
--(void) mute;
+
+-(void) keyMute;
+-(void) keyStart;
+-(void) keyReset;
+-(void) keyInterrupt;
+-(void) keyResume;
 
 -(IBAction)showOpenPanel:(id)sender;
 

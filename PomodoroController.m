@@ -32,41 +32,53 @@
 #import "AboutController.h"
 #import "StatsController.h"
 #import "Carbon/Carbon.h"
-
-#pragma mark ---- HotKey Function (Carbon) ----
-
-OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
-						 void *userData)
-{
-		
-	PomodoroController* controller = (PomodoroController*)userData;
-	
-	EventHotKeyID hkRef;	
-    GetEventParameter(anEvent,kEventParamDirectObject,typeEventHotKeyID,NULL,sizeof(hkRef),NULL,&hkRef);
-
-    switch (hkRef.id) {
-		case 1: 			
-			if ([controller.startPomodoro isEnabled]) [controller start:nil];
-            break;
-        case 2:
-			if ([controller.invalidatePomodoro isEnabled]) [controller reset:nil];
-            break;
-        case 3:
-			if ([controller.interruptPomodoro isEnabled]) [controller interrupt:nil];
-            break;
-		case 4:
-			if ([controller.resumePomodoro isEnabled]) [controller resume:nil];
-            break;
-		case 5:
-			[controller mute];
-            break;
-    }
-	return noErr;
-}
+#import "SystemUIPlugin.h"
+#import "PTHotKeyCenter.h"
+#import "PTHotKey.h"
 
 @implementation PomodoroController
 
 @synthesize startPomodoro, invalidatePomodoro, interruptPomodoro,  resumePomodoro;
+
+#pragma mark - Shortcut recorder callbacks & support
+
+
+- (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
+	
+	//NSLog(@"Switch Key %@", *key);
+	
+	if (*key != nil) {
+		[[PTHotKeyCenter sharedCenter] unregisterHotKey: *key];
+		[*key release];
+		*key = nil;
+	}
+	
+	//NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
+		
+	*key = [[[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]] retain];
+	[*key setTarget: self];
+	[*key setAction: method];
+	[[PTHotKeyCenter sharedCenter] registerHotKey: *key];
+	
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithShort:[recorder keyCombo].code] forKey:[NSString stringWithFormat:@"%@%@", name, @"Code"]];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithUnsignedInteger:[recorder keyCombo].flags] forKey:[NSString stringWithFormat:@"%@%@", name, @"Flags"]];
+	
+}
+
+- (void)shortcutRecorder:(id)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
+
+	if (aRecorder == muteRecorder) {
+		[self switchKey:@"mute" forKey:&muteKey withMethod:@selector(keyMute) withRecorder:aRecorder];
+	} else if (aRecorder == startRecorder) {
+		[self switchKey:@"start" forKey:&startKey withMethod:@selector(keyStart) withRecorder:aRecorder];
+	} else if (aRecorder == resetRecorder) {
+		[self switchKey:@"reset" forKey:&resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
+	} else if (aRecorder == interruptRecorder) {
+		[self switchKey:@"interrupt" forKey:&interruptKey withMethod:@selector(keyInterrupt) withRecorder:aRecorder];
+	} else if (aRecorder == resumeRecorder) {
+		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
+	} 
+}
 
 #pragma mark ---- Helper methods ----
 
@@ -91,44 +103,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 		}
 	}
 	[[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void) installGlobalHotKeyHandler {
-	
-	EventHotKeyRef gMyHotKeyRef;
-	
-	EventHotKeyID startKey;
-	EventHotKeyID resetKey;
-	EventHotKeyID interruptKey;
-	EventHotKeyID resumeKey;
-	EventHotKeyID muteKey;
-	
-	EventTypeSpec eventType;
-	eventType.eventClass=kEventClassKeyboard;
-	eventType.eventKind=kEventHotKeyPressed;
-	InstallApplicationEventHandler(&hotKey,1,&eventType,self, NULL);
-	
-	startKey.signature='strt';
-	startKey.id=1;
-	RegisterEventHotKey(0x7E, cmdKey+optionKey+controlKey, startKey,
-						GetApplicationEventTarget(), 0, &gMyHotKeyRef);
-	resetKey.signature='rest';
-	resetKey.id=2;
-	RegisterEventHotKey(0x7D, cmdKey+optionKey+controlKey, resetKey,
-						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
-	interruptKey.signature='intr';
-	interruptKey.id=3;
-	RegisterEventHotKey(0x7B, cmdKey+optionKey+controlKey, interruptKey,
-						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
-	resumeKey.signature='resu';
-	resumeKey.id=4;
-	RegisterEventHotKey(0x7C, cmdKey+optionKey+controlKey, resumeKey,
-						GetApplicationEventTarget(), 0, &gMyHotKeyRef);	
-	muteKey.signature='mute';
-	muteKey.id=5;
-	RegisterEventHotKey(0x1d, cmdKey+optionKey+controlKey, muteKey,
-						GetApplicationEventTarget(), 0, &gMyHotKeyRef);
-}
+}		
 
 - (NSString*) bindCommonVariables:(NSString*)name {
 	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", nil];
@@ -250,11 +225,27 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 
 #pragma mark ---- Menu management methods ----
 
--(void) mute {
+-(void) keyMute {
 	BOOL muteState = ![self checkDefault:@"mute"];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:muteState] forKey:@"mute"];
 	//NSMenuItem* muteMenu = [pomodoroMenu itemWithTitle:@"Mute all Sounds"];
 	//[muteMenu setState:muteState];
+}
+
+-(void) keyStart {
+	if ([self.startPomodoro isEnabled]) [self start:nil];
+}
+
+-(void) keyReset {
+	if ([self.invalidatePomodoro isEnabled]) [self reset:nil];
+}
+
+-(void) keyInterrupt {
+	if ([self.interruptPomodoro isEnabled]) [self interrupt:nil];
+}
+
+-(void) keyResume {
+	if ([self.resumePomodoro isEnabled]) [self resume:nil];
 }
 
 -(IBAction)about:(id)sender {
@@ -615,8 +606,7 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 			NSString* msg = [[self bindCommonVariables:@"scriptEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
-			NSAppleScript *playScript;		
-			playScript = [[NSAppleScript alloc] initWithSource:msg];
+			NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:msg] autorelease];
 			[playScript executeAndReturnError:nil];
 		}
 	}
@@ -680,9 +670,31 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 } 
 
 
+- (void) updateShortcuts {
+	
+	NSString* muteCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"];
+	NSString* muteFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"];
+	NSString* startCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"];
+	NSString* startFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"];
+	NSString* resetCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"];
+	NSString* resetFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"];
+	NSString* interruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"];
+	NSString* interruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"];
+	NSString* resumeCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"];
+	NSString* resumeFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"];
+	
+	[muteRecorder setKeyCombo:SRMakeKeyCombo([muteCode intValue], [muteFlags intValue])];
+	[startRecorder setKeyCombo:SRMakeKeyCombo([startCode intValue], [startFlags intValue])];
+	[resetRecorder setKeyCombo:SRMakeKeyCombo([resetCode intValue], [resetFlags intValue])];
+	[interruptRecorder setKeyCombo:SRMakeKeyCombo([interruptCode intValue], [interruptFlags intValue])];
+	[resumeRecorder setKeyCombo:SRMakeKeyCombo([resumeCode intValue], [resumeFlags intValue])];
+	
+}
+
 -(IBAction) resetDefaultValues: (id) sender {
 	
 	[PomodoroDefaults removeDefaults];
+	[self updateShortcuts];
 	[self showTimeOnStatusBar: _initialTime * 60];
 		
 }
@@ -699,14 +711,16 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	
 }
 
-
 - (void)awakeFromNib {
+	
+	NSBundle *bundle = [NSBundle mainBundle];
 	
 	statusItem = [[[NSStatusBar systemStatusBar] 
 				   statusItemWithLength:NSVariableStatusItemLength]
 				  retain];
-	
-	NSBundle *bundle = [NSBundle mainBundle];
+	//statusItem = [[PomodoroMenuExtra alloc] initWithBundle:bundle];
+	//statusItem = [[[NSMenuExtra alloc] initWithBundle:bundle] retain];
+
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak" ofType:@"png"]];
 	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze" ofType:@"png"]];
@@ -775,8 +789,10 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	pomoStats = [[PomodoroStats alloc] init];
 	stats = [[StatsController alloc] init];
 	[stats window];
+
+	[self updateShortcuts];
+
 	
-	[self installGlobalHotKeyHandler];
 
 	[pomodoro setDelegate: self];
 	GetCurrentProcess(&psn);
@@ -795,6 +811,11 @@ OSStatus hotKey(EventHandlerCallRef nextHandler,EventRef anEvent,
 	[about release];
 	[stats release];
 	
+	[muteKey release];
+	[startKey release];
+	[resetKey release];
+	[interruptKey release];
+	[resumeKey release];
     [statusItem release];
 	[prefs release];
 	[pomodoroMenu release];

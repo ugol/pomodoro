@@ -24,7 +24,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import "Growl.framework/Headers/GrowlApplicationBridge.h"
+#import "Growl.framework/headers/GrowlApplicationBridge.h"
 
 @interface GrowlNotifier:NSObject <GrowlApplicationBridgeDelegate> {
 
