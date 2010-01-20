@@ -54,12 +54,16 @@
 
 
 -(void) growlAlert:(NSString *)message title:(NSString *)title{
+    [self growlAlert:message title:title sticky:NO]; 
+}
+
+-(void) growlAlert:(NSString *)message title:(NSString *)title sticky:(BOOL)st{
     [GrowlApplicationBridge notifyWithTitle:title 
 								description:message 
 						   notificationName:@"pomodoro"
 								   iconData:nil
 								   priority:0 
-								   isSticky:NO 
+								   isSticky:st 
 							   clickContext:nil]; 
 }
 

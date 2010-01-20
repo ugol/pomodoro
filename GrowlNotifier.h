@@ -24,12 +24,13 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import "Growl.framework/headers/GrowlApplicationBridge.h"
+#import "Growl/GrowlApplicationBridge.h"
 
 @interface GrowlNotifier:NSObject <GrowlApplicationBridgeDelegate> {
 
 } 
 
 -(void) growlAlert:(NSString *)message title:(NSString *)title;
+-(void) growlAlert:(NSString *)message title:(NSString *)title sticky:(BOOL)st;
 
 @end

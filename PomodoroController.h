@@ -106,6 +106,9 @@
 	NSImage* pomodoroImage;
 	NSImage* pomodoroBreakImage;
 	NSImage* pomodoroFreezeImage;
+	NSImage* pomodoroNegativeImage;
+	NSImage* pomodoroNegativeBreakImage;
+	NSImage* pomodoroNegativeFreezeImage;
 	NSImage* redButtonImage;
 	NSImage* greenButtonImage;
 	

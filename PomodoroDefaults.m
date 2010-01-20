@@ -82,6 +82,7 @@
 	[defaultValues setObject:@"twitterPwd" forKey:@"twitterPwd"];
 
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtStartEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"stickyStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtStartEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtStartEnabled"];
@@ -209,6 +210,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtStartEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"stickyStartEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtStartEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtStartEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtStartEnabled"];

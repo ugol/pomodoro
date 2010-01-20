@@ -25,12 +25,16 @@ Sound samples come from http://www.freesound.org and are licensed under Creative
 ------------------------------
 Thanks, in no particular order
 ------------------------------
+Everaldo for the gorgeous new icons
+Pedro Murillo
+Michael Bedward
+Dieter Vermandere
 Paul Schmidt
 Sina Samangooei <sinjax@gmail.com> for debugging (and fixing!)
 Alexander Klimetschek
 Konrad Mitchell Lawson
-Stefano Linguerri for the great graphics 
-Giulio Cesare Solaroli for the new icons
+Stefano Linguerri for the initial graphic design 
+Giulio Cesare Solaroli for the old icons
 Luca Ceppelli
 Roberto Turchetti
 Sergio Bossa 

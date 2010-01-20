@@ -273,6 +273,7 @@
 
 - (void) menuReadyToStart {
 	[statusItem setImage:pomodoroImage];
+	[statusItem setAlternateImage:pomodoroNegativeImage];
 	[startPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
@@ -282,6 +283,7 @@
 
 - (void) menuReadyToStartDuringBreak {
 	[statusItem setImage:pomodoroBreakImage];
+	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
 	[startPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
@@ -292,6 +294,7 @@
 
 - (void) menuPomodoroInBreak {
 	[statusItem setImage:pomodoroBreakImage];
+	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
@@ -301,21 +304,23 @@
 
 - (void) menuAfterStart {
 	[statusItem setImage:pomodoroImage];
+	[statusItem setAlternateImage:pomodoroNegativeImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:YES];
 	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:NO];
+	[setupPomodoro setEnabled:YES];
 	
 }
 
 - (void) menuAfterInterrupt {
 	[statusItem setImage:pomodoroFreezeImage];
+	[statusItem setAlternateImage:pomodoroNegativeFreezeImage];
 	[startPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:YES];
-	[setupPomodoro setEnabled:NO];
+	[setupPomodoro setEnabled:YES];
 	
 }
 
@@ -393,7 +398,8 @@
 	pomoStats.pomodoroStarted++;
 
 	if ([self checkDefault:@"growlAtStartEnabled"]) {
-		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:@"Pomodoro started"];
+		BOOL sticky = [self checkDefault:@"stickyStartEnabled"];
+		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:@"Pomodoro started" sticky:sticky];
 	}
 	
 	
@@ -537,7 +543,7 @@
 	if ([self checkDefault:@"growlAtEndEnabled"])
 		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:@"Pomodoro finished"];
 	
-	if ([self checkDefault:@"speechAtEndEnabled"])
+	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEndEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechEnd"]];
 	
 	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
@@ -724,13 +730,17 @@
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak" ofType:@"png"]];
 	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze" ofType:@"png"]];
+	pomodoroNegativeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro_n" ofType:@"png"]];
+	pomodoroNegativeBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak_n" ofType:@"png"]];
+	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
 	redButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"red" ofType:@"png"]];
 	greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"green" ofType:@"png"]];
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	ringingBreak = [NSSound soundNamed:@"ring.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];
 	[statusItem setImage:pomodoroImage];
-	//[statusItem setAlternateImage:pomodoroImage]; alternate image
+	[statusItem setAlternateImage:pomodoroNegativeImage];
+	
 	speech = [[NSSpeechSynthesizer alloc] init]; 
 	voices = [[NSSpeechSynthesizer availableVoices] retain];
 	textViews = [[NSArray arrayWithObjects:startScriptText, interruptScriptText, interruptOverScriptText, resetScriptText, resumeScriptText, endScriptText, breakScriptText, everyScriptText, nil ] retain];
