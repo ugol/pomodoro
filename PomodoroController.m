@@ -540,8 +540,10 @@
 		[ringing play];
 	}
 	
-	if ([self checkDefault:@"growlAtEndEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:@"Pomodoro finished"];
+	if ([self checkDefault:@"growlAtEndEnabled"]) {
+		BOOL sticky = [self checkDefault:@"stickyEndEnabled"];
+		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:@"Pomodoro finished" sticky:sticky];
+	}
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEndEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechEnd"]];

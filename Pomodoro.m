@@ -87,6 +87,10 @@
 -(void) reset {
 	[oneSecTimer invalidate];
 	oneSecTimer = nil;
+	if (interruptionTimer != nil) {
+		[interruptionTimer invalidate];
+		interruptionTimer = nil;
+	}
 	if ([delegate respondsToSelector: @selector(pomodoroReset)]) {
         [delegate pomodoroReset];
 	}

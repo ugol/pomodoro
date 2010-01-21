@@ -112,6 +112,7 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"tickAtBreakEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtEndEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"stickyEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"speechAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtEndEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"twitterAtEndEnabled"];
@@ -240,6 +241,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickAtBreakEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtEndEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"stickyEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtEndEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterAtEndEnabled"];
