@@ -1386,6 +1386,29 @@
 															<string key="themeKey">gradientTheme</string>
 														</object>
 													</object>
+													<object class="NSButton" id="928728285">
+														<reference key="NSNextResponder" ref="38019131"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{28, 56}, {63, 18}}</string>
+														<reference key="NSSuperview" ref="38019131"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="773499314">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Sticky</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="928728285"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+														</object>
+													</object>
 													<object class="NSButton" id="401487638">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
@@ -4759,8 +4782,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 			<object class="NSUserDefaultsController" id="227004176">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>growlAtEndEnabled</string>
-					<string>stickyEndEnabled</string>
+					<string>stickyBreakEnabled</string>
+					<string>growlAtBreakFinishedEnabled</string>
+					<string>stickyBreakFinishedEnabled</string>
 				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -7632,6 +7656,38 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1309</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: values.growlAtBreakFinishedEnabled</string>
+						<reference key="source" ref="928728285"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="928728285"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">enabled: values.growlAtBreakFinishedEnabled</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">values.growlAtBreakFinishedEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1315</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.stickyBreakFinishedEnabled</string>
+						<reference key="source" ref="928728285"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="928728285"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.stickyBreakFinishedEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.stickyBreakFinishedEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1316</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -7930,6 +7986,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="39369057"/>
 							<reference ref="985388742"/>
 							<reference ref="969854485"/>
+							<reference ref="928728285"/>
 						</object>
 						<reference key="parent" ref="596806943"/>
 					</object>
@@ -10039,6 +10096,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="object" ref="539200655"/>
 						<reference key="parent" ref="969854485"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1310</int>
+						<reference key="object" ref="928728285"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="773499314"/>
+						</object>
+						<reference key="parent" ref="38019131"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1311</int>
+						<reference key="object" ref="773499314"/>
+						<reference key="parent" ref="928728285"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -10121,6 +10192,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>1299.IBPluginDependency</string>
 					<string>1304.IBPluginDependency</string>
 					<string>1305.IBPluginDependency</string>
+					<string>1310.IBPluginDependency</string>
+					<string>1311.IBPluginDependency</string>
 					<string>451.IBEditorWindowLastContentRect</string>
 					<string>451.IBPluginDependency</string>
 					<string>451.IBViewEditorWindowController.showingBoundsRectangles</string>
@@ -10460,11 +10533,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>{{578, 553}, {524, 474}}</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>{{622, 535}, {524, 474}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO"/>
 					<boolean value="NO"/>
-					<string>{{578, 553}, {524, 474}}</string>
+					<string>{{622, 535}, {524, 474}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSColor" id="197246598">
@@ -10761,7 +10836,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1309</int>
+			<int key="maxID">1316</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
