@@ -21,7 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="511"/>
+			<integer value="508"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -67,7 +67,7 @@
 								<object class="NSTabViewItem" id="217099353">
 									<string key="NSIdentifier">Item 2</string>
 									<object class="NSView" key="NSView" id="893253583">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="844687343"/>
 										<int key="NSvFlags">256</int>
 										<object class="NSMutableArray" key="NSSubviews">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -105,6 +105,7 @@
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 33}, {456, 380}}</string>
+										<reference key="NSSuperview" ref="844687343"/>
 									</object>
 									<string key="NSLabel">Global</string>
 									<object class="NSColor" key="NSColor" id="93724137">
@@ -121,7 +122,7 @@
 								<object class="BGHUDTabViewItem" id="552939368">
 									<string key="NSIdentifier">2</string>
 									<object class="NSView" key="NSView" id="510116400">
-										<reference key="NSNextResponder" ref="844687343"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">256</int>
 										<object class="NSMutableArray" key="NSSubviews">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -394,7 +395,6 @@
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 33}, {456, 380}}</string>
-										<reference key="NSSuperview" ref="844687343"/>
 									</object>
 									<string key="NSLabel">Session</string>
 									<reference key="NSColor" ref="93724137"/>
@@ -707,7 +707,7 @@
 									<reference key="NSTabView" ref="844687343"/>
 								</object>
 							</object>
-							<reference key="NSSelectedTabViewItem" ref="552939368"/>
+							<reference key="NSSelectedTabViewItem" ref="217099353"/>
 							<reference key="NSFont" ref="1071469902"/>
 							<int key="NSTvFlags">0</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
@@ -715,7 +715,7 @@
 							<nil key="themeKey"/>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
-								<reference ref="510116400"/>
+								<reference ref="893253583"/>
 							</object>
 						</object>
 					</object>
@@ -1517,6 +1517,7 @@
 					<string>649.IBPluginDependency</string>
 					<string>649.IBViewBoundsToFrameTransform</string>
 					<string>650.IBPluginDependency</string>
+					<string>652.CustomClassName</string>
 					<string>654.IBPluginDependency</string>
 					<string>654.IBViewBoundsToFrameTransform</string>
 					<string>655.IBPluginDependency</string>
@@ -1610,6 +1611,7 @@
 						<bytes key="NSTransformStruct">P4AAAL+AAABDZgAAwhwAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>BGHUDTabViewItem</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">AcBAAABDhwAAA</bytes>
