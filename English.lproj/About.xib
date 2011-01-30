@@ -21,12 +21,11 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="464"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>com.binarymethod.BGHUDAppKitPlugin</string>
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string>com.binarymethod.BGHUDAppKitPlugin</string>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -56,7 +55,7 @@
 				<string key="NSWindowTitle">About Pomodoro</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="248242209">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -79,6 +78,7 @@
 							</object>
 							<string key="NSFrame">{{12, 256}, {108, 148}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="761485480">
 								<int key="NSCellFlags">130560</int>
@@ -133,6 +133,7 @@
 											</object>
 											<string key="NSFrameSize">{328, 14}</string>
 											<reference key="NSSuperview" ref="1029078527"/>
+											<reference key="NSWindow"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="578407850">
 												<object class="NSLayoutManager" key="NSLayoutManager">
 													<object class="NSTextStorage" key="NSTextStorage">
@@ -175,7 +176,7 @@
 															<string key="NSColorName">selectedTextBackgroundColor</string>
 															<object class="NSColor" key="NSColor">
 																<int key="NSColorSpace">3</int>
-																<bytes key="NSWhite">MC42NjY2NjY2ODY1AA</bytes>
+																<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 															</object>
 														</object>
 														<object class="NSColor">
@@ -222,6 +223,7 @@
 									</object>
 									<string key="NSFrameSize">{328, 357}</string>
 									<reference key="NSSuperview" ref="638081237"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="300503843"/>
 									<reference key="NSDocView" ref="300503843"/>
 									<reference key="NSBGColor" ref="601538640"/>
@@ -236,6 +238,7 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {15, 105}}</string>
 									<reference key="NSSuperview" ref="638081237"/>
+									<reference key="NSWindow"/>
 									<reference key="NSTarget" ref="638081237"/>
 									<string key="NSAction">_doScroller:</string>
 									<double key="NSPercent">0.51470589637756348</double>
@@ -246,6 +249,7 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {212, 15}}</string>
 									<reference key="NSSuperview" ref="638081237"/>
+									<reference key="NSWindow"/>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="638081237"/>
 									<string key="NSAction">_doScroller:</string>
@@ -254,6 +258,7 @@
 							</object>
 							<string key="NSFrame">{{148, 20}, {328, 357}}</string>
 							<reference key="NSSuperview" ref="248242209"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1029078527"/>
 							<int key="NSsFlags">528</int>
 							<reference key="NSVScroller" ref="763921651"/>
@@ -264,9 +269,11 @@
 					</object>
 					<string key="NSFrameSize">{496, 397}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSFrameAutosaveName">AboutWindow</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -398,10 +405,10 @@
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{376, 360}, {496, 397}}</string>
+					<string>{{376, 330}, {496, 397}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO"/>
-					<string>{{376, 360}, {496, 397}}</string>
+					<string>{{376, 330}, {496, 397}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
