@@ -28,8 +28,8 @@
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<string>net.wafflesoftware.ShortcutRecorder.IB.Leopard</string>
-			<string>com.binarymethod.BGHUDAppKitPlugin</string>
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string>com.binarymethod.BGHUDAppKitPlugin</string>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -62,7 +62,7 @@
 				<string key="NSWindowTitle">Pomodoro Preferences</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="890379863">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -316,7 +316,7 @@
 																				<string key="NSColorName">controlBackgroundColor</string>
 																				<object class="NSColor" key="NSColor" id="276126382">
 																					<int key="NSColorSpace">3</int>
-																					<bytes key="NSWhite">MC42NjY2NjY2ODY1AA</bytes>
+																					<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 																				</object>
 																			</object>
 																			<object class="NSColor" key="NSTextColor" id="709643758">
@@ -4643,77 +4643,25 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 			<object class="NSMenu" id="740126098">
 				<string key="NSTitle"/>
 				<object class="NSMutableArray" key="NSMenuItems">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSMenuItem" id="657696298">
-						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">About Pomodoro</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<object class="NSCustomResource" key="NSOnImage" id="80847747">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuCheckmark</string>
-						</object>
-						<object class="NSCustomResource" key="NSMixedImage" id="601830173">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuMixedState</string>
-						</object>
-					</object>
-					<object class="NSMenuItem" id="563608096">
-						<reference key="NSMenu" ref="740126098"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<bool key="NSIsSeparator">YES</bool>
-						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
-					</object>
-					<object class="NSMenuItem" id="743168075">
-						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Preferences...</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
-					</object>
-					<object class="NSMenuItem" id="552175012">
-						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Pomodoro Stats</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
-					</object>
-					<object class="NSMenuItem" id="197165802">
-						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Mute all Sounds</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
-					</object>
-					<object class="NSMenuItem" id="67629806">
-						<reference key="NSMenu" ref="740126098"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<bool key="NSIsSeparator">YES</bool>
-						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
-					</object>
 					<object class="NSMenuItem" id="601187434">
 						<reference key="NSMenu" ref="740126098"/>
 						<string key="NSTitle">Start Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<object class="NSCustomResource" key="NSOnImage" id="836672556">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">NSMenuCheckmark</string>
+						</object>
+						<object class="NSCustomResource" key="NSMixedImage" id="628352777">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">NSMenuMixedState</string>
+						</object>
 					</object>
 					<object class="NSMenuItem" id="831487343">
 						<reference key="NSMenu" ref="740126098"/>
@@ -4721,8 +4669,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSTitle">Reset Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 					<object class="NSMenuItem" id="582708085">
 						<reference key="NSMenu" ref="740126098"/>
@@ -4731,8 +4679,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 					<object class="NSMenuItem" id="847432173">
 						<reference key="NSMenu" ref="740126098"/>
@@ -4740,8 +4688,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSTitle">Interrupt Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 					<object class="NSMenuItem" id="782536133">
 						<reference key="NSMenu" ref="740126098"/>
@@ -4749,8 +4697,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSTitle">Resume Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 					<object class="NSMenuItem" id="212886671">
 						<reference key="NSMenu" ref="740126098"/>
@@ -4759,16 +4707,58 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
+					</object>
+					<object class="NSMenuItem" id="552175012">
+						<reference key="NSMenu" ref="740126098"/>
+						<string key="NSTitle">Pomodoro Stats</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
+					</object>
+					<object class="NSMenuItem" id="743168075">
+						<reference key="NSMenu" ref="740126098"/>
+						<string key="NSTitle">Preferences...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
+					</object>
+					<object class="NSMenuItem" id="197165802">
+						<reference key="NSMenu" ref="740126098"/>
+						<string key="NSTitle">Mute all Sounds</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
+					</object>
+					<object class="NSMenuItem" id="563608096">
+						<reference key="NSMenu" ref="740126098"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
+					</object>
+					<object class="NSMenuItem" id="657696298">
+						<reference key="NSMenu" ref="740126098"/>
+						<string key="NSTitle">About Pomodoro</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 					<object class="NSMenuItem" id="566239289">
 						<reference key="NSMenu" ref="740126098"/>
 						<string key="NSTitle">Quit Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80847747"/>
-						<reference key="NSMixedImage" ref="601830173"/>
+						<reference key="NSOnImage" ref="836672556"/>
+						<reference key="NSMixedImage" ref="628352777"/>
 					</object>
 				</object>
 				<bool key="NSNoAutoenable">YES</bool>
@@ -4784,7 +4774,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<string key="NSWindowTitle">Pomodoro Name</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="364910145">
 					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -4877,7 +4867,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string key="NSFrameSize">{415, 113}</string>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -8467,30 +8457,24 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="object" ref="740126098"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="743168075"/>
-							<reference ref="67629806"/>
-							<reference ref="552175012"/>
 							<reference ref="582708085"/>
 							<reference ref="831487343"/>
 							<reference ref="782536133"/>
 							<reference ref="847432173"/>
 							<reference ref="601187434"/>
-							<reference ref="566239289"/>
-							<reference ref="563608096"/>
-							<reference ref="657696298"/>
 							<reference ref="212886671"/>
+							<reference ref="657696298"/>
+							<reference ref="563608096"/>
+							<reference ref="743168075"/>
+							<reference ref="552175012"/>
 							<reference ref="197165802"/>
+							<reference ref="566239289"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">547</int>
 						<reference key="object" ref="743168075"/>
-						<reference key="parent" ref="740126098"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">548</int>
-						<reference key="object" ref="67629806"/>
 						<reference key="parent" ref="740126098"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -8521,11 +8505,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">554</int>
 						<reference key="object" ref="601187434"/>
-						<reference key="parent" ref="740126098"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">555</int>
-						<reference key="object" ref="566239289"/>
 						<reference key="parent" ref="740126098"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -10026,6 +10005,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="object" ref="389927812"/>
 						<reference key="parent" ref="383643138"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">555</int>
+						<reference key="object" ref="566239289"/>
+						<reference key="parent" ref="740126098"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -10252,7 +10236,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>546.IBEditorWindowLastContentRect</string>
 					<string>546.IBPluginDependency</string>
 					<string>547.IBPluginDependency</string>
-					<string>548.IBPluginDependency</string>
 					<string>549.IBPluginDependency</string>
 					<string>550.IBPluginDependency</string>
 					<string>551.IBPluginDependency</string>
@@ -10528,11 +10511,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<bytes key="NSTransformStruct">P4AAAL+AAABB+AAAwzcAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>{{474, 354}, {524, 474}}</string>
+					<string>{{474, 253}, {524, 474}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO"/>
 					<boolean value="NO"/>
-					<string>{{474, 354}, {524, 474}}</string>
+					<string>{{474, 253}, {524, 474}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSColor" id="197246598">
@@ -10699,8 +10682,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>{{888, 547}, {187, 223}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{317, 267}, {187, 213}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
