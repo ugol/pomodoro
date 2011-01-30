@@ -90,12 +90,14 @@
 	IBOutlet SRRecorderControl* startRecorder;
 	IBOutlet SRRecorderControl* resetRecorder;
 	IBOutlet SRRecorderControl* interruptRecorder;
+	IBOutlet SRRecorderControl* internalInterruptRecorder;
 	IBOutlet SRRecorderControl* resumeRecorder;
 	
 	PTHotKey *muteKey;
 	PTHotKey *startKey;
 	PTHotKey *resetKey;
 	PTHotKey *interruptKey;
+	PTHotKey *internalInterruptKey;
 	PTHotKey *resumeKey;
 
 	NSArray* voices;
@@ -104,6 +106,7 @@
 	NSMenuItem* startPomodoro;
 	NSMenuItem* finishPomodoro;
 	NSMenuItem* interruptPomodoro;
+	NSMenuItem* internalInterruptPomodoro;
 	NSMenuItem* invalidatePomodoro;
 	NSMenuItem* resumePomodoro;
 	NSMenuItem* setupPomodoro;
@@ -132,6 +135,7 @@
 
 @property (nonatomic, readonly) NSMenuItem* startPomodoro;
 @property (nonatomic, readonly) NSMenuItem* interruptPomodoro;
+@property (nonatomic, readonly) NSMenuItem* internalInterruptPomodoro;
 @property (nonatomic, readonly) NSMenuItem* invalidatePomodoro;
 @property (nonatomic, readonly) NSMenuItem* resumePomodoro;
 
@@ -141,6 +145,7 @@
 -(void) keyStart;
 -(void) keyReset;
 -(void) keyInterrupt;
+-(void) keyInternalInterrupt;
 -(void) keyResume;
 
 -(IBAction)showOpenPanel:(id)sender;
@@ -158,6 +163,7 @@
 -(IBAction) reset: (id) sender;
 
 -(IBAction) interrupt: (id) sender;
+-(IBAction) internalInterrupt: (id) sender;
 -(IBAction) resume: (id) sender;
 -(IBAction) resetDefaultValues: (id) sender;
 

@@ -32,6 +32,7 @@
 	NSInteger pomodoroDone;
 	NSInteger pomodoroReset;
 	NSInteger pomodoroInterruptions;
+	NSInteger pomodoroInternalInterruptions;
 	NSInteger pomodoroResumes;
 
 }
@@ -40,6 +41,7 @@
 @property (nonatomic, assign) NSInteger pomodoroDone;
 @property (nonatomic, assign) NSInteger pomodoroReset;
 @property (nonatomic, assign) NSInteger pomodoroInterruptions;
+@property (nonatomic, assign) NSInteger pomodoroInternalInterruptions;
 @property (nonatomic, assign) NSInteger pomodoroResumes;
 
 - (void)clear;

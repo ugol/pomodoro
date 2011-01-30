@@ -48,6 +48,8 @@
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resetFlags"];
 	[defaultValues setObject: [NSNumber numberWithShort:123] forKey:@"interruptCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"interruptFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:30] forKey:@"internalInterruptCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"internalInterruptFlags"];
 	[defaultValues setObject: [NSNumber numberWithShort:124] forKey:@"resumeCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resumeFlags"];
 
@@ -108,6 +110,9 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtInterruptEnabled"];
+	
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInternalInterruptEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"stickyInternalInterruptEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptOverEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptOverEnabled"];
@@ -189,7 +194,9 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetCode"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetFlags"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptCode"];
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"interruptFlags"];	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"internalInterruptCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"internalInterruptFlags"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeCode"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeFlags"];
 
@@ -245,7 +252,9 @@
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptEnabled"];
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtInterruptEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtInterruptEnabled"];	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInternalInterruptEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"stickyInternalInterruptEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptOverEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptOverEnabled"];

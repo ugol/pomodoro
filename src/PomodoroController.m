@@ -40,15 +40,13 @@
 
 @implementation PomodoroController
 
-@synthesize startPomodoro, invalidatePomodoro, interruptPomodoro,  resumePomodoro;
+@synthesize startPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
 
 #pragma mark - Shortcut recorder callbacks & support
 
 
 - (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
-	
-	//NSLog(@"Switch Key %@", *key);
-	
+		
 	if (*key != nil) {
 		[[PTHotKeyCenter sharedCenter] unregisterHotKey: *key];
 		[*key release];
@@ -77,6 +75,8 @@
 		[self switchKey:@"reset" forKey:&resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
 	} else if (aRecorder == interruptRecorder) {
 		[self switchKey:@"interrupt" forKey:&interruptKey withMethod:@selector(keyInterrupt) withRecorder:aRecorder];
+	} else if (aRecorder == internalInterruptRecorder) {
+		[self switchKey:@"internalInterrupt" forKey:&internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
 	} else if (aRecorder == resumeRecorder) {
 		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
 	} 
@@ -255,6 +255,10 @@
 	if ([self.interruptPomodoro isEnabled]) [self interrupt:nil];
 }
 
+-(void) keyInternalInterrupt {
+	if ([self.internalInterruptPomodoro isEnabled]) [self internalInterrupt:nil];
+}
+
 -(void) keyResume {
 	if ([self.resumePomodoro isEnabled]) [self resume:nil];
 }
@@ -289,6 +293,7 @@
 	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
+	[internalInterruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
 	[setupPomodoro setEnabled:YES];
 }
@@ -300,6 +305,7 @@
 	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
+	[internalInterruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
 	[setupPomodoro setEnabled:YES];
 }
@@ -312,6 +318,7 @@
 	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
+	[internalInterruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
 	[setupPomodoro setEnabled:YES];
 }
@@ -323,6 +330,7 @@
 	[finishPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:YES];
+	[internalInterruptPomodoro setEnabled:YES];
 	[resumePomodoro setEnabled:NO];
 	[setupPomodoro setEnabled:YES];
 	
@@ -335,6 +343,7 @@
 	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:NO];
+	[internalInterruptPomodoro setEnabled:YES];
 	[resumePomodoro setEnabled:YES];
 	[setupPomodoro setEnabled:YES];
 	
@@ -396,6 +405,15 @@
 	[self menuAfterInterrupt];
 	[pomodoro interruptFor: _interruptTime];
 	
+}
+
+-(IBAction) internalInterrupt: (id) sender {
+	
+	pomoStats.pomodoroInternalInterruptions++;
+	if ([self checkDefault:@"growlAtInternalInterruptEnabled"]) {
+		BOOL sticky = [self checkDefault:@"stickyInternalInterruptEnabled"];
+		[growl growlAlert: @"Internal Interruption" title:@"Pomodoro" sticky:sticky];
+	}
 }
 
 -(IBAction) resume: (id) sender {
@@ -729,6 +747,8 @@
 	NSString* resetFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"];
 	NSString* interruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"];
 	NSString* interruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"];
+	NSString* internalInterruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"];
+	NSString* internalInterruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"];
 	NSString* resumeCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"];
 	NSString* resumeFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"];
 	
@@ -736,6 +756,7 @@
 	[startRecorder setKeyCombo:SRMakeKeyCombo([startCode intValue], [startFlags intValue])];
 	[resetRecorder setKeyCombo:SRMakeKeyCombo([resetCode intValue], [resetFlags intValue])];
 	[interruptRecorder setKeyCombo:SRMakeKeyCombo([interruptCode intValue], [interruptFlags intValue])];
+	[internalInterruptRecorder setKeyCombo:SRMakeKeyCombo([internalInterruptCode intValue], [internalInterruptFlags intValue])];
 	[resumeRecorder setKeyCombo:SRMakeKeyCombo([resumeCode intValue], [resumeFlags intValue])];
 	
 }
@@ -826,10 +847,11 @@
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
 	startPomodoro = [pomodoroMenu itemWithTitle:@"Start Pomodoro"];
-	finishPomodoro = [pomodoroMenu itemWithTitle:@"Finish Pomodoro"];
-	interruptPomodoro = [pomodoroMenu itemWithTitle:@"Interrupt Pomodoro"];
+	finishPomodoro = [pomodoroMenu itemWithTitle:@"Finish"];
+	interruptPomodoro = [pomodoroMenu itemWithTitle:@"External Interrupt"];
+	internalInterruptPomodoro = [pomodoroMenu itemWithTitle:@"Internal Interrupt"];
 	invalidatePomodoro = [pomodoroMenu itemWithTitle:@"Reset Pomodoro"];
-	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume Pomodoro"];
+	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume"];
 	setupPomodoro = [pomodoroMenu itemWithTitle:@"Preferences..."];
 		
 	[statusItem setToolTip:@"Pomodoro Time Management"];

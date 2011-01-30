@@ -28,7 +28,7 @@
 
 @implementation PomodoroStats
 
-@synthesize pomodoroStarted, pomodoroDone, pomodoroInterruptions, pomodoroReset, pomodoroResumes;
+@synthesize pomodoroStarted, pomodoroDone, pomodoroInterruptions, pomodoroInternalInterruptions, pomodoroReset, pomodoroResumes;
 
 static PomodoroStats *sharedStats = nil;
 
