@@ -43,3 +43,5 @@ Simone Gentilini
 Francesco Mondora
 Michele Mondora
 Andy Palmer
+Brandon Murray
+Valiev Omar
