@@ -2,6 +2,28 @@
 Release Notes
 -------------
 
+
+1.0
+
+- Updated to Xcode version 3.2.5
+- Refactored project structure
+- Frameworks added in externalfw directory (building the project is much easier now)
+- Export data button in Stats
+- Add button to manually add pomodoros in Stats
+- Not only Description, but Date is now editable too (in Stats) 
+- Changed "Backlog" in "Log" in Stats
+- Updated to latest BGHUDAppkit
+- Option to disable time left in Status bar
+- Updated to latest MGTwitterEngine/Oauth
+- calendar integration
+
+@TODO
+- appstore integration
+- calendar message customization
+- scelta file per export button
+- tags?
+- deprecation vari per savepanel
+
 0.32
 
 - Hovering on pomodoro icon on the status bar now gives useful information (http://github.com/ugol/pomodoro/issues/#issue/48)
