@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'BGHUDAppKit' target in the 'BGHUDAppKit' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <InterfaceBuilderKit/InterfaceBuilderKit.h>
+#endif
