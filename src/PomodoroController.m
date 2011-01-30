@@ -286,6 +286,7 @@
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
 	[startPomodoro setEnabled:YES];
+	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
@@ -296,6 +297,7 @@
 	[statusItem setImage:pomodoroBreakImage];
 	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
 	[startPomodoro setEnabled:YES];
+	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
@@ -307,6 +309,7 @@
 	[statusItem setImage:pomodoroBreakImage];
 	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
 	[startPomodoro setEnabled:NO];
+	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:NO];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:NO];
@@ -317,6 +320,7 @@
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
 	[startPomodoro setEnabled:NO];
+	[finishPomodoro setEnabled:YES];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:YES];
 	[resumePomodoro setEnabled:NO];
@@ -328,6 +332,7 @@
 	[statusItem setImage:pomodoroFreezeImage];
 	[statusItem setAlternateImage:pomodoroNegativeFreezeImage];
 	[startPomodoro setEnabled:NO];
+	[finishPomodoro setEnabled:NO];
 	[invalidatePomodoro setEnabled:YES];
 	[interruptPomodoro setEnabled:NO];
 	[resumePomodoro setEnabled:YES];
@@ -372,6 +377,10 @@
 		}
 	}
 	
+}
+
+- (IBAction) finish: (id) sender {
+	[pomodoro finish];
 }
 
 - (IBAction) reset: (id) sender {
@@ -584,7 +593,7 @@
 	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
-		if (([self checkDefault:@"longbreakEnabled"]) && ((pomoStats.pomodoroDone % 4) == 0)) {
+		if (([self checkDefault:@"longbreakEnabled"]) && ((pomoStats.pomodoroDone % _pomodorosForLong) == 0)) {
 			time = _longbreakTime;
 		}
 
@@ -799,6 +808,10 @@
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
+	
+	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:4]];
+	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:6]];
+	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:8]];
 
 	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
 	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
@@ -813,6 +826,7 @@
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
 	startPomodoro = [pomodoroMenu itemWithTitle:@"Start Pomodoro"];
+	finishPomodoro = [pomodoroMenu itemWithTitle:@"Finish Pomodoro"];
 	interruptPomodoro = [pomodoroMenu itemWithTitle:@"Interrupt Pomodoro"];
 	invalidatePomodoro = [pomodoroMenu itemWithTitle:@"Reset Pomodoro"];
 	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume Pomodoro"];

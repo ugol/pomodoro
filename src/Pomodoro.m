@@ -68,6 +68,10 @@
 	}
 }
 
+-(void) finish {
+	time = 1;	
+}
+
 -(void) breakFor:(NSInteger)breakMinutes {
 	if (oneSecTimer == nil) {
 		time = breakMinutes * 60;

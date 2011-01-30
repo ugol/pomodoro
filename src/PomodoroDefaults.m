@@ -37,7 +37,8 @@
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"speechEveryTimeMinutes"];
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"scriptEveryTimeMinutes"];
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"breakTime"];
-	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"]; 
+	[defaultValues setObject: [NSNumber numberWithInt:4] forKey:@"pomodorosForLong"];
 
 	[defaultValues setObject: [NSNumber numberWithShort:29] forKey:@"muteCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"muteFlags"];
@@ -175,6 +176,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptEveryTimeMinutes"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pomodorosForLong"]; 
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
 	//[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"twitterUser"];

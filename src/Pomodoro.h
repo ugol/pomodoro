@@ -68,6 +68,7 @@
 -(void) start;
 -(void) breakFor:(NSInteger)breakMinutes;
 -(void) reset;
+-(void) finish;
 -(void) interruptFor:(NSInteger) seconds;
 -(void) resume;
 

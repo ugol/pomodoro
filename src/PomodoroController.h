@@ -33,6 +33,7 @@
 #define _interruptTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] intValue]
 #define _breakTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"breakTime"] intValue]
 #define _longbreakTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"longbreakTime"] intValue]
+#define _pomodorosForLong [[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodorosForLong"] intValue]
 #define _growlEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] intValue]
 #define _speechEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] intValue]
 #define _scriptEveryTimeMinutes [[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEveryTimeMinutes"] intValue]
@@ -66,6 +67,7 @@
 	IBOutlet NSComboBox* interruptCombo;
 	IBOutlet NSComboBox* breakCombo;
 	IBOutlet NSComboBox* longBreakCombo;
+	IBOutlet NSComboBox* pomodorosForLong;
 	IBOutlet NSComboBox* growlEveryCombo;
 	IBOutlet NSComboBox* speechEveryCombo;
 	IBOutlet NSComboBox* scriptEveryCombo;
@@ -100,6 +102,7 @@
 	NSArray* textViews;
 	
 	NSMenuItem* startPomodoro;
+	NSMenuItem* finishPomodoro;
 	NSMenuItem* interruptPomodoro;
 	NSMenuItem* invalidatePomodoro;
 	NSMenuItem* resumePomodoro;
@@ -149,6 +152,7 @@
 -(IBAction) stats:(id)sender;
 
 -(IBAction) start: (id) sender;
+-(IBAction) finish: (id) sender;
 -(IBAction) nameGiven:(id)sender;
 -(IBAction) nameCanceled:(id)sender;
 -(IBAction) reset: (id) sender;
