@@ -21,6 +21,19 @@ MGTwitterEngine: http://svn.cocoasourcecode.com/MGTwitterEngine/
 
 Sound samples come from http://www.freesound.org and are licensed under Creative Commons http://creativecommons.org/licenses/sampling+/1.0/
 
+--------------
+Building notes
+--------------
+
+You will need to install IB plugins for ShortcutRecorder (included in the src) and for BGHudAppkit (src included in externalFw/, must be compiled separately).
+
+If you want to use twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then write src/TwitterSecrets.h with two simple #defines
+
+#define _consumerkey @"" 
+#define _secretkey @""
+
+If you want to compile the code and are not intersted to Twitter, just define two fake variables somewhere and don't activate the twitter integration.
+
 ------------------------------
 Thanks, in no particular order
 ------------------------------
