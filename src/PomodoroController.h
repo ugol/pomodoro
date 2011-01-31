@@ -61,6 +61,8 @@
 	NSStatusItem* statusItem;	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel;
+	IBOutlet NSComboBox* namesCombo;
+
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* voicesCombo;
 	IBOutlet NSComboBox* initialTimeCombo;

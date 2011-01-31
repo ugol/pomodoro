@@ -356,10 +356,31 @@
 
 -(IBAction) nameCanceled:(id)sender {
 	[namePanel close];
+	NSInteger howMany = [namesCombo numberOfItems];
+	if (howMany > 0) {
+		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"pomodoroName"];
+	}
 }
 
 -(IBAction) nameGiven:(id)sender {
+	
 	[namePanel endEditingFor:nil];
+	NSInteger howMany = [namesCombo numberOfItems];
+	NSString* name = _pomodoroName;
+	BOOL isNewName = YES;
+	NSInteger i = 0;
+	while ((isNewName) && (i<howMany)) {
+		isNewName = ![name isEqualToString:[namesCombo itemObjectValueAtIndex:i]];
+		i++;
+	}
+	if (isNewName) {
+				
+		if (howMany>9) {
+			[namesCombo removeItemAtIndex:0];
+		}
+		[namesCombo addItemWithObjectValue:name];
+	}
+
 	[namePanel close];
 	[self realStart];
 }
