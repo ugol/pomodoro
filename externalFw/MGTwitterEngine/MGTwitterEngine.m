@@ -8,13 +8,13 @@
 
 #import "MGTwitterEngine.h"
 #import "MGTwitterHTTPURLConnection.h"
-#import <OAuthConsumer/OAuthConsumer.h>
+#import "OAuthConsumer.h"
 
 #import "NSData+Base64.h"
 
 #ifndef USE_LIBXML
 //  if you wish to use LibXML, add USE_LIBXML=1 to "Precompiler Macros" in Project Info for all targets
-#   define USE_LIBXML 1
+#   define USE_LIBXML 0
 #endif
 
 #if YAJL_AVAILABLE
@@ -2135,9 +2135,9 @@
 	[request setHTTPMethod:@"POST"];
 	
 	[request setParameters:[NSArray arrayWithObjects:
-							[OARequestParameter requestParameterWithName:@"x_auth_mode" value:@"client_auth"],
-							[OARequestParameter requestParameterWithName:@"x_auth_username" value:username],
-							[OARequestParameter requestParameterWithName:@"x_auth_password" value:password],
+							[OARequestParameter requestParameter:@"x_auth_mode" value:@"client_auth"],
+							[OARequestParameter requestParameter:@"x_auth_username" value:username],
+							[OARequestParameter requestParameter:@"x_auth_password" value:password],
 							nil]];		
 	
     // Create a connection using this request, with the default timeout and caching policy, 
