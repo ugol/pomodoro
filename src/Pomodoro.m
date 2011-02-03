@@ -28,7 +28,7 @@
 
 @implementation Pomodoro
 
-@synthesize duration, oneSecTimer, breakTimer, interruptionTimer, delegate;
+@synthesize duration, externallyInterrupted, internallyInterrupted, resumed, oneSecTimer, breakTimer, interruptionTimer, delegate;
 
 - (id) init { 
     if ( self = [super init] ) {
@@ -100,7 +100,12 @@
 	}
 }
 
+-(void) internalInterrupt {
+	internallyInterrupted++;
+}
+
 -(void) interruptFor:(NSInteger) seconds {
+	externallyInterrupted++;
 	[oneSecTimer invalidate];
 	oneSecTimer = nil;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
@@ -115,6 +120,7 @@
 }
 
 -(void) resume {
+	resumed++;
 	[interruptionTimer invalidate];
 	interruptionTimer = nil;
 	[self startFor: time];

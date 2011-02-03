@@ -50,6 +50,10 @@
 
 	id delegate;
 	NSInteger duration;
+	
+	NSInteger externallyInterrupted;
+	NSInteger internallyInterrupted;
+	NSInteger resumed;
 
 	NSInteger time;
 	NSTimer *oneSecTimer;
@@ -59,6 +63,10 @@
 }
 
 @property (nonatomic, assign) NSInteger duration;
+@property (nonatomic, assign) NSInteger externallyInterrupted;
+@property (nonatomic, assign) NSInteger internallyInterrupted;
+@property (nonatomic, assign) NSInteger resumed;
+
 @property (nonatomic, retain) NSTimer *oneSecTimer;
 @property (nonatomic, retain) NSTimer *breakTimer;
 @property (nonatomic, retain) NSTimer *interruptionTimer;
@@ -69,6 +77,7 @@
 -(void) breakFor:(NSInteger)breakMinutes;
 -(void) reset;
 -(void) finish;
+-(void) internalInterrupt;
 -(void) interruptFor:(NSInteger) seconds;
 -(void) resume;
 

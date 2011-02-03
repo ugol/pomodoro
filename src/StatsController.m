@@ -72,6 +72,7 @@
     applicationSupportFolder = [self applicationSupportFolder];
 
     if ( ![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL] ) {
+		
 		if ([fileManager createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
 		}
@@ -79,8 +80,11 @@
     
     url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.sql"]];
    
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+							 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+							 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error]){
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:options error:&error]){
         [[NSApplication sharedApplication] presentError:error];
     }   
 	

@@ -431,6 +431,7 @@
 	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localInternalInterruptions)+1] forKey:@"localInternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalInternalInterruptions)+1] forKey:@"globalInternalInterruptions"];
+	[pomodoro internalInterrupt];
 	
 	if ([self checkDefault:@"growlAtInternalInterruptEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyInternalInterruptEnabled"];
@@ -845,13 +846,6 @@
 	[ringingBreak setVolume:_ringBreakVolume/10.0];
 	[tick setVolume:_tickVolume/10.0];
 	[speech setVolume:_voiceVolume/10.0];
-
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroStarted"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localInternalInterruptions"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localExternalInterruptions"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroResumed"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroReset"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroDone"];
 
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];

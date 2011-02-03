@@ -24,7 +24,6 @@
 		6907B87A12DD096B00CEB09C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */; };
 		6907B88512DD097E00CEB09C /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */; };
 		6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B88612DD099100CEB09C /* Carbon.framework */; };
-		6907B88E12DD09B800CEB09C /* Pomodoros.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 6907B88B12DD09B800CEB09C /* Pomodoros.xcdatamodel */; };
 		6907B88F12DD09B800CEB09C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6907B88C12DD09B800CEB09C /* README.txt */; };
 		6907B89012DD09B800CEB09C /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6907B88D12DD09B800CEB09C /* ReleaseNotes.txt */; };
 		6907B89A12DD0A2800CEB09C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B89312DD0A2800CEB09C /* PTHotKey.m */; };
@@ -70,6 +69,7 @@
 		694EC34312F6269B00EC011D /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 694EC34212F6269B00EC011D /* TODO.txt */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
+		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -110,7 +110,7 @@
 		6907B86D12DD063E00CEB09C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
 		6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		6907B88612DD099100CEB09C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		6907B88B12DD09B800CEB09C /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
+		6907B88B12DD09B800CEB09C /* Pomodoros_1.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros_1.xcdatamodel; sourceTree = "<group>"; };
 		6907B88C12DD09B800CEB09C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6907B88D12DD09B800CEB09C /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		6907B89212DD0A2800CEB09C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/PTHotKey.h; sourceTree = "<group>"; };
@@ -192,6 +192,7 @@
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -360,7 +361,7 @@
 		6907B8AC12DD10DC00CEB09C /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				6907B88B12DD09B800CEB09C /* Pomodoros.xcdatamodel */,
+				69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */,
 				6907B8BB12DD120000CEB09C /* Pomodoro.h */,
 				6907B8BC12DD120000CEB09C /* Pomodoro.m */,
 			);
@@ -543,7 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6907B88E12DD09B800CEB09C /* Pomodoros.xcdatamodel in Sources */,
+				69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */,
 				6907B89A12DD0A2800CEB09C /* PTHotKey.m in Sources */,
 				6907B89B12DD0A2800CEB09C /* PTHotKeyCenter.m in Sources */,
 				6907B89C12DD0A2800CEB09C /* PTKeyCodeTranslator.m in Sources */,
@@ -718,6 +719,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */,
+				6907B88B12DD09B800CEB09C /* Pomodoros_1.xcdatamodel */,
+			);
+			currentVersion = 69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */;
+			path = Pomodoros.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
