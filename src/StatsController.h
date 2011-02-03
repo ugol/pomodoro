@@ -25,11 +25,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class PomodoroStats;
-
 @interface StatsController : NSWindowController {
 
-	IBOutlet PomodoroStats* pomoStats;
 	IBOutlet NSArrayController* pomos;
 	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -42,6 +39,7 @@
 @property (readonly, nonatomic, retain) NSArrayController* pomos;
 
 - (IBAction) exportToText:(id)sender;
-- (IBAction) resetStatistics:(id)sender;
+- (IBAction) resetLocalStatistics:(id)sender;
+- (IBAction) resetGlobalStatistics:(id)sender;
 
 @end

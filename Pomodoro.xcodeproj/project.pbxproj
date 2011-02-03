@@ -41,7 +41,6 @@
 		6907B8CD12DD120000CEB09C /* PomodoroArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */; };
 		6907B8CE12DD120000CEB09C /* PomodoroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8C012DD120000CEB09C /* PomodoroController.m */; };
 		6907B8CF12DD120000CEB09C /* PomodoroDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8C212DD120000CEB09C /* PomodoroDefaults.m */; };
-		6907B8D012DD120000CEB09C /* PomodoroStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8C412DD120000CEB09C /* PomodoroStats.m */; };
 		6907B8D112DD120000CEB09C /* StatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8C612DD120000CEB09C /* StatsController.m */; };
 		6907B90F12DD15A200CEB09C /* MGTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8DC12DD15A200CEB09C /* MGTwitterEngine.m */; };
 		6907B91012DD15A200CEB09C /* MGTwitterHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8E012DD15A200CEB09C /* MGTwitterHTTPURLConnection.m */; };
@@ -140,8 +139,6 @@
 		6907B8C012DD120000CEB09C /* PomodoroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PomodoroController.m; path = src/PomodoroController.m; sourceTree = "<group>"; };
 		6907B8C112DD120000CEB09C /* PomodoroDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomodoroDefaults.h; path = src/PomodoroDefaults.h; sourceTree = "<group>"; };
 		6907B8C212DD120000CEB09C /* PomodoroDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PomodoroDefaults.m; path = src/PomodoroDefaults.m; sourceTree = "<group>"; };
-		6907B8C312DD120000CEB09C /* PomodoroStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomodoroStats.h; path = src/PomodoroStats.h; sourceTree = "<group>"; };
-		6907B8C412DD120000CEB09C /* PomodoroStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PomodoroStats.m; path = src/PomodoroStats.m; sourceTree = "<group>"; };
 		6907B8C512DD120000CEB09C /* StatsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatsController.h; path = src/StatsController.h; sourceTree = "<group>"; };
 		6907B8C612DD120000CEB09C /* StatsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatsController.m; path = src/StatsController.m; sourceTree = "<group>"; };
 		6907B8DB12DD15A200CEB09C /* MGTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngine.h; path = externalFw/MGTwitterEngine/MGTwitterEngine.h; sourceTree = "<group>"; };
@@ -364,8 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				6907B88B12DD09B800CEB09C /* Pomodoros.xcdatamodel */,
-				6907B8C312DD120000CEB09C /* PomodoroStats.h */,
-				6907B8C412DD120000CEB09C /* PomodoroStats.m */,
 				6907B8BB12DD120000CEB09C /* Pomodoro.h */,
 				6907B8BC12DD120000CEB09C /* Pomodoro.m */,
 			);
@@ -561,7 +556,6 @@
 				6907B8CD12DD120000CEB09C /* PomodoroArrayController.m in Sources */,
 				6907B8CE12DD120000CEB09C /* PomodoroController.m in Sources */,
 				6907B8CF12DD120000CEB09C /* PomodoroDefaults.m in Sources */,
-				6907B8D012DD120000CEB09C /* PomodoroStats.m in Sources */,
 				6907B8D112DD120000CEB09C /* StatsController.m in Sources */,
 				6907B90F12DD15A200CEB09C /* MGTwitterEngine.m in Sources */,
 				6907B91012DD15A200CEB09C /* MGTwitterHTTPURLConnection.m in Sources */,

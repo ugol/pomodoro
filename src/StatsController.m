@@ -24,7 +24,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "StatsController.h"
-#import "PomodoroStats.h"
 
 @implementation StatsController
 
@@ -129,9 +128,25 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 #pragma mark ---- Business methods ----
 
-- (IBAction) resetStatistics:(id)sender {
+- (IBAction) resetLocalStatistics:(id)sender {
 	
-	[pomoStats clear];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroStarted"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localInternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localExternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroResumed"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroReset"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroDone"];
+	
+}
+
+- (IBAction) resetGlobalStatistics:(id)sender {
+	
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroStarted"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalInternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalExternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroResumed"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroReset"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroDone"];
 	
 }
 

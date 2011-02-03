@@ -46,10 +46,23 @@
 #define _speechVoice [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultVoice"]
 #define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
 
+#define _localInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"localInternalInterruptions"] intValue]
+#define _localExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"localExternalInterruptions"] intValue]
+#define _localPomodoroStarted [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroStarted"] intValue]
+#define _localPomodoroResumed [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroResumed"] intValue]
+#define _localPomodoroDone [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroDone"] intValue]
+#define _localPomodoroReset [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroReset"] intValue]
+
+#define _globalInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalInternalInterruptions"] intValue]
+#define _globalExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalExternalInterruptions"] intValue]
+#define _globalPomodoroStarted [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroStarted"] intValue]
+#define _globalPomodoroResumed [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroResumed"] intValue]
+#define _globalPomodoroDone [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroDone"] intValue]
+#define _globalPomodoroReset [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroReset"] intValue]
+
 @class AboutController;
 @class StatsController;
 @class GrowlNotifier;
-@class PomodoroStats;
 @class PTHotKey;
 
 @interface PomodoroController : NSObject <PomodoroDelegate, MGTwitterEngineDelegate> {
@@ -129,7 +142,6 @@
 	
 	GrowlNotifier* growl;
 	Pomodoro* pomodoro;
-	PomodoroStats* pomoStats;
 	
 	MGTwitterEngine* twitterEngine;
 		
