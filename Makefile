@@ -7,3 +7,6 @@ compile:
 	open externalFw/shortcutrecorder/ShortcutRecorder.ibplugin
 	open externalFw/BGHUDAppKit//build/Release/BGHUDAppKit.framework/Versions/A/Resources/BGHUDAppKitPlugin.ibplugin
 	xcodebuild -project Pomodoro.xcodeproj -target Pomodoro -configuration Debug build
+
+install: compile
+	rm -fr /Applications/Pomodoro.app; mv build/Debug/Pomodoro.app /Applications/
