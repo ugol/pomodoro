@@ -11,7 +11,8 @@
 #import "MGTwitterEngineDelegate.h"
 #import "MGTwitterParserDelegate.h"
 
-#import "OAToken.h"
+#import <OAuthConsumer/OAToken.h>
+//#import "OAToken.h"
 
 
 @interface MGTwitterEngine : NSObject <MGTwitterParserDelegate>
