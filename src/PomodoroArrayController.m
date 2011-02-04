@@ -37,8 +37,6 @@
 
 	[newObj setValue:0 forKey:@"externalInterruptions"]; 
     [newObj setValue:0 forKey:@"internalInterruptions"]; 
-    [newObj setValue:0 forKey:@"resumes"]; 
-
 	
     return newObj; 
 } 	

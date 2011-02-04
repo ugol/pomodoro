@@ -132,7 +132,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 #pragma mark ---- Business methods ----
 
-- (IBAction) resetLocalStatistics:(id)sender {
+- (IBAction) resetDailyStatistics:(id)sender {
 	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localInternalInterruptions"];
@@ -183,6 +183,12 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	
 }
 
+#pragma mark ---- Daily check methods ----
+
+-(void) checkDate:(NSTimer *)aTimer  {
+	NSLog(@"CHECK");
+}
+
 #pragma mark ---- Lifecycle methods ----
 
 - (id) init {
@@ -193,11 +199,22 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 - (void)awakeFromNib {
 	
+	NSTimer* dailyChecker = [NSTimer timerWithTimeInterval:10
+												target:self
+											  selector:@selector(checkDate:)													 
+											  userInfo:nil
+											   repeats:YES];
+	[[NSRunLoop currentRunLoop] addTimer:dailyChecker forMode:NSRunLoopCommonModes];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSDate date] forKey:@"globalStartDate"];
+
+
+	
 	NSSortDescriptor* sort = [[NSSortDescriptor alloc] 
 							  initWithKey:@"when" ascending:NO];
 	[pomos setSortDescriptors:
 	 [NSArray arrayWithObject: sort]];
 	[sort release];	
+		
 }
 
 

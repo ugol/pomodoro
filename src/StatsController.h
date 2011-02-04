@@ -39,7 +39,7 @@
 @property (readonly, nonatomic, retain) NSArrayController* pomos;
 
 - (IBAction) exportToText:(id)sender;
-- (IBAction) resetLocalStatistics:(id)sender;
+- (IBAction) resetDailyStatistics:(id)sender;
 - (IBAction) resetGlobalStatistics:(id)sender;
 
 @end
