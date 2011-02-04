@@ -21,15 +21,9 @@
 		6907B83212DD03E600CEB09C /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */; };
 		6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B86D12DD063E00CEB09C /* Growl.framework */; };
 		6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B86D12DD063E00CEB09C /* Growl.framework */; };
-		6907B87A12DD096B00CEB09C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */; };
-		6907B88512DD097E00CEB09C /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */; };
 		6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B88612DD099100CEB09C /* Carbon.framework */; };
 		6907B88F12DD09B800CEB09C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6907B88C12DD09B800CEB09C /* README.txt */; };
 		6907B89012DD09B800CEB09C /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6907B88D12DD09B800CEB09C /* ReleaseNotes.txt */; };
-		6907B89A12DD0A2800CEB09C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B89312DD0A2800CEB09C /* PTHotKey.m */; };
-		6907B89B12DD0A2800CEB09C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B89512DD0A2800CEB09C /* PTHotKeyCenter.m */; };
-		6907B89C12DD0A2800CEB09C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B89712DD0A2800CEB09C /* PTKeyCodeTranslator.m */; };
-		6907B89D12DD0A2800CEB09C /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B89912DD0A2800CEB09C /* PTKeyCombo.m */; };
 		6907B8AA12DD10B500CEB09C /* ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6907B8A812DD10B500CEB09C /* ring.wav */; };
 		6907B8AB12DD10B500CEB09C /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6907B8A912DD10B500CEB09C /* tick.wav */; };
 		6907B8C812DD120000CEB09C /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B8B412DD120000CEB09C /* AboutController.m */; };
@@ -70,6 +64,12 @@
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
+		69DEFB0312FCC0C00083941C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFC12FCC0C00083941C /* PTHotKey.m */; };
+		69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */; };
+		69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */; };
+		69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0212FCC0C00083941C /* PTKeyCombo.m */; };
+		69DEFBBF12FCC4010083941C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */; };
+		69DEFBDC12FCC48C0083941C /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -81,8 +81,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				69DEFBDC12FCC48C0083941C /* ShortcutRecorder.framework in CopyFiles */,
 				6907BA0A12DD1B4A00CEB09C /* OAuthConsumer.framework in CopyFiles */,
-				6907B88512DD097E00CEB09C /* ShortcutRecorder.framework in CopyFiles */,
 				6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */,
 				6907B83212DD03E600CEB09C /* BGHUDAppKit.framework in CopyFiles */,
 			);
@@ -108,19 +108,10 @@
 		6907B7BF12DD016300CEB09C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit/build/Release/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		6907B86D12DD063E00CEB09C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
-		6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		6907B88612DD099100CEB09C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		6907B88B12DD09B800CEB09C /* Pomodoros_1.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros_1.xcdatamodel; sourceTree = "<group>"; };
 		6907B88C12DD09B800CEB09C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6907B88D12DD09B800CEB09C /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
-		6907B89212DD0A2800CEB09C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/PTHotKey.h; sourceTree = "<group>"; };
-		6907B89312DD0A2800CEB09C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/PTHotKey.m; sourceTree = "<group>"; };
-		6907B89412DD0A2800CEB09C /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKeyCenter.h; path = externalFw/shortcutrecorder/PTHotKeyCenter.h; sourceTree = "<group>"; };
-		6907B89512DD0A2800CEB09C /* PTHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKeyCenter.m; path = externalFw/shortcutrecorder/PTHotKeyCenter.m; sourceTree = "<group>"; };
-		6907B89612DD0A2800CEB09C /* PTKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCodeTranslator.h; path = externalFw/shortcutrecorder/PTKeyCodeTranslator.h; sourceTree = "<group>"; };
-		6907B89712DD0A2800CEB09C /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCodeTranslator.m; path = externalFw/shortcutrecorder/PTKeyCodeTranslator.m; sourceTree = "<group>"; };
-		6907B89812DD0A2800CEB09C /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCombo.h; path = externalFw/shortcutrecorder/PTKeyCombo.h; sourceTree = "<group>"; };
-		6907B89912DD0A2800CEB09C /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCombo.m; path = externalFw/shortcutrecorder/PTKeyCombo.m; sourceTree = "<group>"; };
 		6907B8A812DD10B500CEB09C /* ring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ring.wav; sourceTree = "<group>"; };
 		6907B8A912DD10B500CEB09C /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tick.wav; sourceTree = "<group>"; };
 		6907B8B312DD120000CEB09C /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutController.h; path = src/AboutController.h; sourceTree = "<group>"; };
@@ -193,6 +184,15 @@
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
+		69DEFAFB12FCC0C00083941C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = "<group>"; };
+		69DEFAFC12FCC0C00083941C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = "<group>"; };
+		69DEFAFD12FCC0C00083941C /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKeyCenter.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKeyCenter.h; sourceTree = "<group>"; };
+		69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKeyCenter.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKeyCenter.m; sourceTree = "<group>"; };
+		69DEFAFF12FCC0C00083941C /* PTKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCodeTranslator.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCodeTranslator.h; sourceTree = "<group>"; };
+		69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCodeTranslator.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCodeTranslator.m; sourceTree = "<group>"; };
+		69DEFB0112FCC0C00083941C /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCombo.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.h; sourceTree = "<group>"; };
+		69DEFB0212FCC0C00083941C /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCombo.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.m; sourceTree = "<group>"; };
+		69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/build/Release/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -205,11 +205,11 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				6907B81012DD037E00CEB09C /* BGHUDAppKit.framework in Frameworks */,
 				6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */,
-				6907B87A12DD096B00CEB09C /* ShortcutRecorder.framework in Frameworks */,
 				6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */,
 				6907BA0912DD1B3E00CEB09C /* OAuthConsumer.framework in Frameworks */,
 				6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */,
 				6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */,
+				69DEFBBF12FCC4010083941C /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +240,8 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */,
 				6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */,
-				6907B87912DD096B00CEB09C /* ShortcutRecorder.framework */,
 				6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -337,14 +337,14 @@
 		6907B89E12DD0A2C00CEB09C /* PTHotKey */ = {
 			isa = PBXGroup;
 			children = (
-				6907B89212DD0A2800CEB09C /* PTHotKey.h */,
-				6907B89312DD0A2800CEB09C /* PTHotKey.m */,
-				6907B89412DD0A2800CEB09C /* PTHotKeyCenter.h */,
-				6907B89512DD0A2800CEB09C /* PTHotKeyCenter.m */,
-				6907B89612DD0A2800CEB09C /* PTKeyCodeTranslator.h */,
-				6907B89712DD0A2800CEB09C /* PTKeyCodeTranslator.m */,
-				6907B89812DD0A2800CEB09C /* PTKeyCombo.h */,
-				6907B89912DD0A2800CEB09C /* PTKeyCombo.m */,
+				69DEFAFB12FCC0C00083941C /* PTHotKey.h */,
+				69DEFAFC12FCC0C00083941C /* PTHotKey.m */,
+				69DEFAFD12FCC0C00083941C /* PTHotKeyCenter.h */,
+				69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */,
+				69DEFAFF12FCC0C00083941C /* PTKeyCodeTranslator.h */,
+				69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */,
+				69DEFB0112FCC0C00083941C /* PTKeyCombo.h */,
+				69DEFB0212FCC0C00083941C /* PTKeyCombo.m */,
 			);
 			name = PTHotKey;
 			sourceTree = "<group>";
@@ -545,10 +545,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */,
-				6907B89A12DD0A2800CEB09C /* PTHotKey.m in Sources */,
-				6907B89B12DD0A2800CEB09C /* PTHotKeyCenter.m in Sources */,
-				6907B89C12DD0A2800CEB09C /* PTKeyCodeTranslator.m in Sources */,
-				6907B89D12DD0A2800CEB09C /* PTKeyCombo.m in Sources */,
 				6907B8C812DD120000CEB09C /* AboutController.m in Sources */,
 				6907B8C912DD120000CEB09C /* Binder.m in Sources */,
 				6907B8CA12DD120000CEB09C /* DurationFormatter.m in Sources */,
@@ -577,6 +573,10 @@
 				6907B92612DD15A200CEB09C /* NSString+UUID.m in Sources */,
 				69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */,
 				69793F9412F4F02300B6CF17 /* main.m in Sources */,
+				69DEFB0312FCC0C00083941C /* PTHotKey.m in Sources */,
+				69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */,
+				69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */,
+				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +629,7 @@
 					"\"$(SRCROOT)/externalFw\"",
 					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
 					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -653,6 +654,7 @@
 					"\"$(SRCROOT)/externalFw\"",
 					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
 					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -1,0 +1,486 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf330
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\froman\fcharset77 Times-Roman;\f2\fnil\fcharset77 Monaco;
+\f3\froman\fcharset77 Times-Bold;\f4\froman\fcharset77 Times-Italic;\f5\froman\fcharset77 Times-BoldItalic;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;}
+\vieww16940\viewh18100\viewkind0
+\pard\li2100\ql\qnatural
+
+\f0\b\fs56 \cf0 ShortcutRecorder\
+\pard\tx4880\li4880\fi-2780\ql\qnatural
+
+\f1\b0\fs16 \cf0 \
+\
+\
+\pard\tx4880\li4880\fi-2780\ql\qnatural
+
+\fs28 \cf0 \
+
+\f0\b Inherits From:\
+
+\f1\b0 NSControl : NSView : NSResponder : NSObject\
+
+\fs20 \
+
+\f0\b\fs28 Conforms To:
+\f1\b0 \
+NSCoding (NSResponder)\
+NSObject (NSObject)\
+
+\fs20 \
+
+\f0\b\fs28 Declared In:
+\f1\b0 \
+ShortcutRecorder.h\
+\pard\li1360\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\
+
+\fs36 Class Description\
+
+\fs16 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\f1\b0\fs28 \cf0 ShortcutRecorder is a subclass of NSControl that intercepts keyboard events.\
+ShortcutRecorder uses ShortcutRecorderCell to implement its user interface and main functions.
+\f0\b\fs16 \
+\pard\tx2700\tx3240\tx3780\tx4320\tx4860\tx5400\tx5940\tx6480\li2100\ql\qnatural
+\cf0 \
+\pard\li1360\ql\qnatural
+\cf0 \
+
+\fs36 Method Types\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\f1\b0\fs16 \cf0 \
+\pard\tx6120\li5940\fi-3840\ql\qnatural
+
+\fs28 \cf0 Creating instances\
+
+\f2\fs22 \cf2 - initWithFrame:
+\f1\fs28 \cf0 \
+\pard\tx6120\tx9000\li5940\fi-3840\ql\qnatural
+\cf0 \
+\pard\tx6120\li5940\fi-3840\ql\qnatural
+\cf0 Saving and restoring state\
+
+\f2\fs22 \cf2 - autosaveName
+\f1\fs28 \cf0 \
+
+\f2\fs22 \cf2 - setAutosaveName:\
+
+\f1\fs28 \cf0 \
+Key combination conrol\
+
+\f2\fs22 \cf2 - keyCombo\
+- setKeyCombo:\
+
+\f1\fs28 \cf0 \
+Modifier flag control\
+
+\f2\fs22 \cf2 - allowedFlags\
+- setAllowedFlags:\
+- requiredFlags\
+- setRequiredFlags:\
+
+\f1\fs28 \cf0 \
+Displaying\
+
+\f2\fs22 \cf2 - keyComboString\
+
+\f1\fs28 \cf0 \
+Conversion of flags\
+
+\f2\fs22 \cf2 - cocoaToCarbonFlags:\
+- carbonToCocoaFlags:\
+\
+
+\f1\fs28 \cf0 Delegates and delegate methods\
+
+\f2\fs22 \cf2 - delegate\
+- setDelegate:\
+- shortcutRecorder:isKeyCode:andFlagsTaken:reason:\
+- shortcutRecorder:keyComboDidChange:
+\f1\fs28 \cf0 \
+\pard\li1360\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+
+\fs36 Instance Methods\
+
+\fs16 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\fs28 \cf0 allowedFlags\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (unsigned int)
+\f3\b allowedFlags
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the allowed flags of the receiver. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - setAllowedFlags:\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 autosaveName\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (NSString *)
+\f3\b autosaveName
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the autosave name of the receiver under which it is automatically saved. If no name has been set, this method returns nil. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - setAutosaveName:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+\cf0 \
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 carbonToCocoaFlags:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (unsigned int)
+\f3\b carbonToCocoaFlags:
+\f1\b0 (unsigned int)
+\f4\i carbonFlags
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the autosave name of the receiver under which it is automatically saved. If no name has been set, this method returns nil. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - cocoaToCarbonFlags:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 cocoaToCarbonFlags:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (unsigned int)
+\f3\b cocoaToCarbonFlags:
+\f1\b0 (unsigned int)
+\f4\i cocoaFlags
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns 
+\f4\i cocoaFlags
+\f5\b  
+\f1\i0\b0 as carbon flags. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - carbonToCocoaFlags:\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 delegate\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (id)
+\f3\b delegate
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the receiver's delegate.\
+See also: 
+\f2\fs22 \cf2 - setDelegate:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 initWithFrame:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (id)
+\f3\b initWithFrame:
+\f1\b0 (NSRect)
+\f4\i frameRect
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Initializes and returns a new ShortcutRecorder object in 
+\f4\i frameRect
+\f1\i0  and creates a new cell for it.
+\f0\b\fs16 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 keyCombo\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (KeyCombo)
+\f3\b keyCombo
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the current key combo of the receiver. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - setKeyCombo:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 keyComboString\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (NSString *)
+\f3\b keyComboString
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the string of the receivers current key combo. If no valid key combo has been set, this method returns nil. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - setKeyCombo:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 requiredFlags\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (unsigned int)
+\f3\b requiredFlags
+\f1\b0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Returns the required flags of the receiver. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - setRequiredFlags:
+\f0\b\fs16 \cf0 \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\fs28 \cf0 setAllowedFlags:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b setAllowedFlags:
+\f1\b0 (unsigned int)
+\f4\i flags
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Sets the receiver's allowed flags to 
+\f4\i flags
+\f1\i0 . ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - allowedFlags
+\f1\fs28 \cf0  \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 setAutosaveName:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b setAutosaveName:
+\f1\b0 (NSString *)
+\f4\i aName
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Sets the receiver's autosave name to 
+\f4\i aName
+\f1\i0 , or clears it if 
+\f4\i aName
+\f1\i0  is 
+\f2\fs22 nil
+\f1\fs28  or 
+\f2\fs22 @""
+\f1\fs28 . ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - autosaveName
+\f1\fs28 \cf0 \
+
+\f0\b\fs16 \
+\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\fs28 \cf0 setDelegate:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b setKeyCombo:
+\f1\b0 (KeyCombo)
+\f4\i aKeyCombo
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Sets the receiver's delegate.\
+See also: 
+\f2\fs22 \cf2 - delegate
+\f1\fs28 \cf0 , \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\fs28 \cf0 setKeyCombo:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b setKeyCombo:
+\f1\b0 (KeyCombo)
+\f4\i aKeyCombo
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Sets the receiver's key combo to 
+\f4\i aKeyCombo
+\f1\i0  in consideration of the allowed and required flags. ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - keyCombo
+\f1\fs28 \cf0 , 
+\f2\fs22 \cf2 - allowedFlags
+\f1\fs28 \cf0 , 
+\f2\fs22 \cf2 - requiredFlags
+\f1\fs28 \cf0   \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\f0\b\fs16 \cf0 \
+\
+\pard\tx7140\li2480\fi-380\ql\qnatural
+
+\fs28 \cf0 setRequiredFlags:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b setRequiredFlags:
+\f1\b0 (unsigned int)
+\f4\i flags
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Sets the receiver's required flags to 
+\f4\i flags
+\f1\i0 . ShortcutRecorder implements this method by invoking the same method in its ShortcutRecorderCell object.\
+See also: 
+\f2\fs22 \cf2 - requiredFlags
+\f1\fs28 \cf0  \
+\pard\tx7140\li2480\fi-380\ql\qnatural
+\cf0 \
+\pard\li1360\ql\qnatural
+
+\f0\b\fs36 \cf0 Delegate Methods\
+
+\fs16 \
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\fs28 \cf0 shortcutRecorder:keyComboDidChange:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (void)
+\f3\b shortcutRecorder:
+\f1\b0 (ShortcutRecorder *)
+\f4\i aRecorder 
+\f3\i0\b keyComboDidChange:
+\f1\b0 (KeyCombo)
+\f4\i newKeyCombo
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Informs the delegate that the key combo has changed.\
+\pard\tx6140\tx9660\tx10180\li6140\fi-4040\ql\qnatural
+
+\f0\b \cf0 \
+shortcutRecorder:isKeyCode:andFlagsTaken:reason:\
+\pard\li3240\fi-760\ql\qnatural
+
+\f1\b0 \cf0 - (BOOL)
+\f3\b shortcutRecorder:
+\f1\b0 (ShortcutRecorder *)
+\f4\i aRecorder 
+\f3\i0\b isKeyCode:
+\f1\b0 (unsigned short)
+\f4\i keyCode
+\f1\i0  
+\f3\b andFlagsTaken:
+\f1\b0 (unsigned int)
+\f4\i flags
+\f3\i0\b  reason:
+\f1\b0 (NSString **)
+\f4\i aReason 
+\f1\i0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs16 \cf0 \
+\pard\tx2480\tx2860\tx3240\li2100\ql\qnatural
+
+\fs28 \cf0 Called before the receiver verifies its key combo system wide and in all menus. Return YES to display an alert, NO to continue the verification.\
+}
