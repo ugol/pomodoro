@@ -26,11 +26,12 @@ Building notes
 --------------
 
 You will need to install IB plugins for ShortcutRecorder (included in the src) and for BGHudAppkit (src included in externalFw/, must be compiled separately).
+Beware that the Shortcutrecorder ibplugin doesn't work if clicked (it shows a missing resource panel). You just need to build with the right target and then include the framework: the ibplugin will automagically appear in IB.
 
-If you want to use twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then write src/TwitterSecrets.h with two simple #defines
+If you want to use twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then add them in src/TwitterSecrets.h 
 
-#define _consumerkey @"" 
-#define _secretkey @""
+#define _consumerkey @"your key" 
+#define _secretkey @"your other key"
 
 If you want to compile the code and are not intersted to Twitter, just define two fake variables somewhere and don't activate the twitter integration.
 
