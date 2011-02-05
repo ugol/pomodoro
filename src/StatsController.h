@@ -24,6 +24,8 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#define _globalStartDate [[NSUserDefaults standardUserDefaults] objectForKey:@"globalStartDate"]
+#define _dailyStartDate [[NSUserDefaults standardUserDefaults] objectForKey:@"dailyStartDate"]
 
 @interface StatsController : NSWindowController {
 

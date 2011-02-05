@@ -25,6 +25,8 @@
 
 #import "StatsController.h"
 
+
+
 @implementation StatsController
 
 @synthesize pomos;
@@ -132,25 +134,27 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 #pragma mark ---- Business methods ----
 
-- (IBAction) resetDailyStatistics:(id)sender {
-	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroStarted"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localInternalInterruptions"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localExternalInterruptions"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroResumed"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroReset"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroDone"];
-	
-}
-
 - (IBAction) resetGlobalStatistics:(id)sender {
 	
+	[[NSUserDefaults standardUserDefaults] setObject: [NSDate date] forKey:@"globalStartDate"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalInternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"globalPomodoroDone"];
+	
+}
+
+- (IBAction) resetDailyStatistics:(id)sender {
+	
+	[[NSUserDefaults standardUserDefaults] setObject: [NSDate date] forKey:@"dailyStartDate"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroStarted"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localInternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localExternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroResumed"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroReset"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:0] forKey:@"localPomodoroDone"];
 	
 }
 
@@ -187,6 +191,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 -(void) checkDate:(NSTimer *)aTimer  {
 	NSLog(@"CHECK");
+	// implement logic to clear session stats if day is changed
 }
 
 #pragma mark ---- Lifecycle methods ----
@@ -205,10 +210,18 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 											  userInfo:nil
 											   repeats:YES];
 	[[NSRunLoop currentRunLoop] addTimer:dailyChecker forMode:NSRunLoopCommonModes];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSDate date] forKey:@"globalStartDate"];
-
-
+	NSDate* today = [NSDate date];
+	NSDate* savedGlobalDate = _globalStartDate;
+	NSDate* savedDailyDate = _dailyStartDate;
+	if (savedGlobalDate == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"globalStartDate"];
+	}
 	
+	// implement logic to show new date if day is changed since last session
+	if (savedDailyDate == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"dailyStartDate"];
+	}
+		
 	NSSortDescriptor* sort = [[NSSortDescriptor alloc] 
 							  initWithKey:@"when" ascending:NO];
 	[pomos setSortDescriptors:
