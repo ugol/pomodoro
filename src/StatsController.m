@@ -176,7 +176,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		NSLog(@"Error %@", error);
 	} else {
 		for (NSManagedObject* pomo in results) {
-			NSLog(@"%@, %@", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"]);
+			NSLog(@"%@, %@ %@ %@", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"internalInterruptions"], [pomo valueForKey:@"externalInterruptions"]);
 		}
 	}
 	

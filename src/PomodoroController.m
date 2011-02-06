@@ -111,7 +111,7 @@
 
 - (NSString*) bindCommonVariables:(NSString*)name {
 	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", nil];
-	NSString* durationString = [NSString stringWithFormat:@"%d", pomodoro.duration];
+	NSString* durationString = [NSString stringWithFormat:@"%d", pomodoro.durationMinutes];
 
 	NSArray* values = [NSArray arrayWithObjects:_pomodoroName, durationString, nil];
 	return [Binder substituteDefault:name withVariables:variables andValues:values];
@@ -168,7 +168,7 @@
 }
 	
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
-	[pomodoro setDuration:_initialTime];
+	[pomodoro setDurationMinutes:_initialTime];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
 
@@ -179,7 +179,7 @@
 		[speech setVoice:[voices objectAtIndex:selected]];
 	} else if  ([notification object] == initialTimeCombo) {
 		NSInteger selected = [[[initialTimeCombo objectValues] objectAtIndex:[initialTimeCombo indexOfSelectedItem]] intValue];
-		[pomodoro setDuration:selected];
+		[pomodoro setDurationMinutes:selected];
 		[self showTimeOnStatusBar: selected * 60];
 	} else if ([notification object] == calendarsCombo){
 		[[NSUserDefaults standardUserDefaults] setObject:[calendarsCombo objectValueOfSelectedItem] forKey:@"selectedCalendar"];
@@ -617,7 +617,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroDone)+1] forKey:@"localPomodoroDone"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
 	
-	[stats.pomos newPomodoro:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
+	[stats.pomos newPomodoro:[pomo durationMinutes] withExternalInterruptions:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
 	
 	if ([self checkDefault:@"calendarEnabled"]) {
 		[CalendarHelper publishEvent:_selectedCalendar withTitle:[self bindCommonVariables:@"calendarEnd"] duration:_initialTime];

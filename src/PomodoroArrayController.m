@@ -28,13 +28,14 @@
 
 @implementation PomodoroArrayController
 
-- (id) newPomodoro:(NSInteger)externalInterruptions withInternalInterruptions:(NSInteger)internalInterruptions {
+- (id) newPomodoro:(NSInteger)duration withExternalInterruptions:(NSInteger)externalInterruptions withInternalInterruptions:(NSInteger)internalInterruptions {
 	
 	id newPomodoro = [super newObject]; 
     NSDate *now = [NSDate date];
 	[newPomodoro setValue:now forKey:@"when"]; 
     [newPomodoro setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"] forKey:@"name"]; 
 
+	[newPomodoro setValue:[NSNumber numberWithInt:duration] forKey:@"durationMinutes"]; 
 	[newPomodoro setValue:[NSNumber numberWithInt:externalInterruptions] forKey:@"externalInterruptions"]; 
     [newPomodoro setValue:[NSNumber numberWithInt:internalInterruptions] forKey:@"internalInterruptions"]; 
 	
@@ -43,7 +44,8 @@
 }
 
 - (id)newObject { 
-    return [self newPomodoro:0 withInternalInterruptions:0]; 
+	NSLog(@"%d", [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]);
+    return [self newPomodoro:[[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue] withExternalInterruptions:0 withInternalInterruptions:0]; 
 }
 
 

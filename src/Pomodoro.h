@@ -49,11 +49,10 @@
 @interface Pomodoro : NSObject {
 
 	id delegate;
-	NSInteger duration;
 	
+	NSInteger durationMinutes;
 	NSInteger externallyInterrupted;
 	NSInteger internallyInterrupted;
-	NSInteger resumed;
 
 	NSInteger time;
 	NSTimer *oneSecTimer;
@@ -62,10 +61,9 @@
 
 }
 
-@property (nonatomic, assign) NSInteger duration;
+@property (nonatomic, assign) NSInteger durationMinutes;
 @property (nonatomic, assign) NSInteger externallyInterrupted;
 @property (nonatomic, assign) NSInteger internallyInterrupted;
-@property (nonatomic, assign) NSInteger resumed;
 
 @property (nonatomic, retain) NSTimer *oneSecTimer;
 @property (nonatomic, retain) NSTimer *breakTimer;

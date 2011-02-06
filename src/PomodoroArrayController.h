@@ -30,6 +30,6 @@
 
 }
 
-- (id) newPomodoro:(NSInteger)externalInterruptions withInternalInterruptions:(NSInteger)internalInterruptions;
+- (id) newPomodoro:(NSInteger)duration withExternalInterruptions:(NSInteger)externalInterruptions withInternalInterruptions:(NSInteger)internalInterruptions;
 
 @end
