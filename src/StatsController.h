@@ -24,12 +24,14 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#import "PomodoroArrayController.h"
+
 #define _globalStartDate [[NSUserDefaults standardUserDefaults] objectForKey:@"globalStartDate"]
 #define _dailyStartDate [[NSUserDefaults standardUserDefaults] objectForKey:@"dailyStartDate"]
 
 @interface StatsController : NSWindowController {
 
-	IBOutlet NSArrayController* pomos;
+	IBOutlet PomodoroArrayController* pomos;
 	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
@@ -38,7 +40,7 @@
 }
 
 @property (readonly, nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (readonly, nonatomic, retain) NSArrayController* pomos;
+@property (readonly, nonatomic, retain) PomodoroArrayController* pomos;
 
 - (IBAction) exportToText:(id)sender;
 - (IBAction) resetDailyStatistics:(id)sender;

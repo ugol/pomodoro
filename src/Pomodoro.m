@@ -62,8 +62,8 @@
 	}
 	if (duration > 0) {
 		[self startFor: duration*60];
-		if ([delegate respondsToSelector: @selector(pomodoroStarted)]) {
-			[delegate pomodoroStarted];
+		if ([delegate respondsToSelector: @selector(pomodoroStarted:)]) {
+			[delegate pomodoroStarted:self];
 		}
 	}
 }
@@ -82,8 +82,8 @@
 											 repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:breakTimer forMode:NSRunLoopCommonModes];
 		
-		if ([delegate respondsToSelector: @selector(breakStarted)]) {
-			[delegate breakStarted];
+		if ([delegate respondsToSelector: @selector(breakStarted:)]) {
+			[delegate breakStarted:self];
 		}
 	}
 }
@@ -95,8 +95,8 @@
 		[interruptionTimer invalidate];
 		interruptionTimer = nil;
 	}
-	if ([delegate respondsToSelector: @selector(pomodoroReset)]) {
-        [delegate pomodoroReset];
+	if ([delegate respondsToSelector: @selector(pomodoroReset:)]) {
+        [delegate pomodoroReset:self];
 	}
 }
 
@@ -114,8 +114,8 @@
 										userInfo:nil
 										 repeats:NO];	
 	[[NSRunLoop currentRunLoop] addTimer:interruptionTimer forMode:NSRunLoopCommonModes];
-	if ([delegate respondsToSelector: @selector(pomodoroInterrupted)]) {
-        [delegate pomodoroInterrupted];
+	if ([delegate respondsToSelector: @selector(pomodoroInterrupted:)]) {
+        [delegate pomodoroInterrupted:self];
 	}
 }
 
@@ -124,8 +124,8 @@
 	[interruptionTimer invalidate];
 	interruptionTimer = nil;
 	[self startFor: time];
-	if ([delegate respondsToSelector: @selector(pomodoroResumed)]) {
-        [delegate pomodoroResumed];		
+	if ([delegate respondsToSelector: @selector(pomodoroResumed:)]) {
+        [delegate pomodoroResumed:self];		
 	}
 }
 
@@ -133,8 +133,8 @@
 	if (time == 0) {
 		[oneSecTimer invalidate];
 		oneSecTimer = nil;
-		if ([delegate respondsToSelector: @selector(pomodoroFinished)]) {
-			[delegate pomodoroFinished];		
+		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
+			[delegate pomodoroFinished:self];		
 		}		
 	}
 }
@@ -143,8 +143,8 @@
 	if (time == 0) {
 		[breakTimer invalidate];
 		breakTimer = nil;
-		if ([delegate respondsToSelector: @selector(breakFinished)]) {
-			[delegate breakFinished];		
+		if ([delegate respondsToSelector: @selector(breakFinished:)]) {
+			[delegate breakFinished:self];		
 		}		
 	}
 }
@@ -168,8 +168,8 @@
 -(void) interruptFinished:(NSTimer *)aTimer {
 	[oneSecTimer invalidate];
 	oneSecTimer = nil;
-	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver)]) {
-        [delegate pomodoroInterruptionMaxTimeIsOver];		
+	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver:)]) {
+        [delegate pomodoroInterruptionMaxTimeIsOver:self];		
 	}
 }
 

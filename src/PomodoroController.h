@@ -153,8 +153,6 @@
 @property (nonatomic, readonly) NSMenuItem* invalidatePomodoro;
 @property (nonatomic, readonly) NSMenuItem* resumePomodoro;
 
--(void) pomodoroStarted;
-
 -(void) keyMute;
 -(void) keyStart;
 -(void) keyReset;

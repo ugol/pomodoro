@@ -3,9 +3,9 @@ Release Notes
 -------------
 
 1.1beta
-- Break on Y Pomodoros instead of 4
+- Break on X Pomodoros instead of 4
 - Reordered menu for faster access
-- complete Pomodoro (finish time!)
+- complete Pomodoro (finished earlier!)
 - Window positions now are saved and remembered on exit
 - Added internal interruptions management
 - List of pomodoro names recently used in 'Insert' panel
@@ -13,8 +13,10 @@ Release Notes
 - Added back CMD C, CMD X, CMD V and CMD A. Thanks to Alexander Willner
 - Added Makefile. Thanks to Alexander Willner
 - Pomodoro record in Stats extended with interruption statistics
-- Added Global stats
+- Added persistent Global stats
 - Session stats now persistent -> Daily stats
+- Reset daily stats at 00.00
+- Starting time of global and daily stats
 
 1.0
 

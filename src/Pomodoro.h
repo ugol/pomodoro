@@ -29,14 +29,14 @@
 
 @optional
 
-- (void) pomodoroStarted;
-- (void) pomodoroFinished;
-- (void) pomodoroInterrupted;
-- (void) pomodoroInterruptionMaxTimeIsOver;
-- (void) pomodoroReset;
-- (void) pomodoroResumed;
-- (void) breakStarted;
-- (void) breakFinished;
+- (void) pomodoroStarted:(id) pomo;
+- (void) pomodoroFinished:(id)pomo;
+- (void) pomodoroInterrupted:(id)pomo;
+- (void) pomodoroInterruptionMaxTimeIsOver:(id)pomo;
+- (void) pomodoroReset:(id)pomo;
+- (void) pomodoroResumed:(id)pomo;
+- (void) breakStarted:(id)pomo;
+- (void) breakFinished:(id)pomo;
 
 @required
 

@@ -25,8 +25,6 @@
 
 #import "StatsController.h"
 
-
-
 @implementation StatsController
 
 @synthesize pomos;
