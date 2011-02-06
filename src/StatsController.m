@@ -189,9 +189,39 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 #pragma mark ---- Daily check methods ----
 
+- (void) updateGlobalDateIfNil {
+	
+	NSDate* savedGlobalDate = _globalStartDate;
+	if (savedGlobalDate == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject: [NSDate date] forKey:@"globalStartDate"];
+	}
+	
+}
+
+- (void) updateDateIfChanged {
+	
+	
+	NSCalendar* cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSDate* today = [NSDate date];
+	if (_dailyStartDate == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"dailyStartDate"];
+	} else {
+		
+		NSDateComponents* nowDay = [cal components:NSDayCalendarUnit fromDate:today];
+		NSDateComponents* savedDay = [cal components:NSDayCalendarUnit fromDate:_dailyStartDate];
+		
+		if ( ([nowDay day] != [savedDay day]) || ([nowDay month] != [savedDay month]) || ([nowDay year] != [savedDay year]) ) {
+			[self resetDailyStatistics:nil];
+		}
+		
+	}
+	[cal release];
+	
+}
+
+
 -(void) checkDate:(NSTimer *)aTimer  {
-	NSLog(@"CHECK");
-	// implement logic to clear session stats if day is changed
+	[self updateDateIfChanged];
 }
 
 #pragma mark ---- Lifecycle methods ----
@@ -210,23 +240,16 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 											  userInfo:nil
 											   repeats:YES];
 	[[NSRunLoop currentRunLoop] addTimer:dailyChecker forMode:NSRunLoopCommonModes];
-	NSDate* today = [NSDate date];
-	NSDate* savedGlobalDate = _globalStartDate;
-	NSDate* savedDailyDate = _dailyStartDate;
-	if (savedGlobalDate == nil) {
-		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"globalStartDate"];
-	}
 	
-	// implement logic to show new date if day is changed since last session
-	if (savedDailyDate == nil) {
-		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"dailyStartDate"];
-	}
-		
+	[self updateGlobalDateIfNil];
+	[self updateDateIfChanged];
+
 	NSSortDescriptor* sort = [[NSSortDescriptor alloc] 
 							  initWithKey:@"when" ascending:NO];
 	[pomos setSortDescriptors:
 	 [NSArray arrayWithObject: sort]];
 	[sort release];	
+
 		
 }
 
