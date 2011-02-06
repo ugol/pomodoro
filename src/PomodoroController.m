@@ -740,21 +740,23 @@
 
 - (void)imageReceived:(NSImage *)image forRequest:(NSString *)identifier {}
 
+- (void) tryConnectionToTwitter {
+	if ([self checkDefault:@"enableTwitter"]) {
+		NSLog(@"Setting twitter account");
+		[twitterEngine getXAuthAccessTokenForUsername:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"] 
+											 password:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"]];
+	}
+}
+
 -(IBAction) connectToTwitter: (id) sender {
 	
-	NSLog(@"Testing twitter connection");
 	if (![prefs makeFirstResponder:prefs]) {
 		[prefs endEditingFor:nil];
 	}
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSString* user = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"];
-	NSString* pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"];
-	[twitterEngine getXAuthAccessTokenForUsername:user password:pwd];
-	//[twitterEngine setUsername:user password:pwd];
 	
+	[self tryConnectionToTwitter];	
 	[twitterEngine testService];
-	
-	//[twitterLogin setEnabled:NO];
 	[twitterStatus setImage:nil];
 	[twitterProgress startAnimation:self];
 }
@@ -815,7 +817,7 @@
     return reply;
 	
 }
-
+	  
 - (void)awakeFromNib {
 	
 	NSBundle *bundle = [NSBundle mainBundle];
@@ -881,8 +883,6 @@
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
-	
-	
 	startPomodoro = [pomodoroMenu itemWithTitle:@"Start Pomodoro"];
 	finishPomodoro = [pomodoroMenu itemWithTitle:@"Force Completion"];
 	interruptPomodoro = [pomodoroMenu itemWithTitle:@"External Interrupt"];
@@ -906,8 +906,7 @@
 			[calendarsCombo selectItemWithObjectValue:[cal title]];
 		}
 	}
-	
-	
+
 	pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
 	stats = [[StatsController alloc] init];
 	[stats window];
@@ -923,12 +922,10 @@
 	[self observeUserDefault:@"voiceVolume"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
-	
-	NSLog(@"Setting twitter account");
+
 	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 	[twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
-	[twitterEngine getXAuthAccessTokenForUsername:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"] 
-										 password:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"]];
+	[self tryConnectionToTwitter];	
 		
 }
 
