@@ -44,7 +44,6 @@
 }
 
 - (id)newObject { 
-	NSLog(@"%d", [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]);
     return [self newPomodoro:[[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue] withExternalInterruptions:0 withInternalInterruptions:0]; 
 }
 

@@ -76,8 +76,10 @@
 		if ([fileManager createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
 		}
+		
     }
-    
+	
+	[fileManager createFileAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"] contents:nil attributes:nil];
     url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.sql"]];
    
 	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -168,6 +170,11 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		//NSLog(@"--- %@", ar);
 	}*/
 	
+	NSString* applicationSupportFolder = [self applicationSupportFolder];
+
+	NSFileHandle *output = [NSFileHandle fileHandleForWritingAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"]];
+	[output seekToEndOfFile];
+	
 	NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
 	NSError** error = nil;
@@ -175,12 +182,15 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	if (error) {
 		NSLog(@"Error %@", error);
 	} else {
+		[output writeData:[@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n" dataUsingEncoding:NSUTF8StringEncoding]];
 		for (NSManagedObject* pomo in results) {
-			NSLog(@"%@, %@ %@ %@", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"internalInterruptions"], [pomo valueForKey:@"externalInterruptions"]);
+			NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
+			[output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
 		}
 	}
 	
-	
+	[output synchronizeFile];
+	[output closeFile];
 	
 	
 }
