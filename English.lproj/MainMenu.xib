@@ -23,9 +23,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="458"/>
 			<integer value="1405"/>
 			<integer value="546"/>
-			<integer value="1054"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -80,7 +80,7 @@
 										<object class="BGHUDTabViewItem" id="286061383">
 											<string key="NSIdentifier">1</string>
 											<object class="NSView" key="NSView" id="157430883">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="785960754"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1217,7 +1217,7 @@
 													<object class="NSButton" id="13886266">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{259, 46}, {217, 32}}</string>
+														<string key="NSFrame">{{253, 9}, {217, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="65747436">
@@ -1313,8 +1313,33 @@
 															<int key="BGButtonType">3</int>
 														</object>
 													</object>
+													<object class="NSButton" id="577459962">
+														<reference key="NSNextResponder" ref="157430883"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{15, 56}, {266, 32}}</string>
+														<reference key="NSSuperview" ref="157430883"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="479276965">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Automatically start Pomodoro on login</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="577459962"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+															<int key="BGButtonType">3</int>
+														</object>
+													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {481, 456}}</string>
+												<reference key="NSSuperview" ref="785960754"/>
 											</object>
 											<string key="NSLabel">General</string>
 											<reference key="NSColor" ref="174337795"/>
@@ -2589,7 +2614,7 @@
 										<object class="BGHUDTabViewItem" id="540834500">
 											<string key="NSIdentifier">Item 4</string>
 											<object class="NSView" key="NSView" id="521742585">
-												<reference key="NSNextResponder" ref="785960754"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2966,7 +2991,6 @@
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {481, 456}}</string>
-												<reference key="NSSuperview" ref="785960754"/>
 											</object>
 											<string key="NSLabel">Twitter</string>
 											<reference key="NSColor" ref="174337795"/>
@@ -4851,14 +4875,14 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="540834500"/>
+									<reference key="NSSelectedTabViewItem" ref="286061383"/>
 									<reference key="NSFont" ref="284816210"/>
 									<int key="NSTvFlags">0</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<nil key="themeKey"/>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="521742585"/>
+										<reference ref="157430883"/>
 									</object>
 								</object>
 							</object>
@@ -5012,7 +5036,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 			<object class="NSUserDefaultsController" id="227004176">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>enableTwitter</string>
+					<string>startOnLoginEnabled</string>
 				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -8230,6 +8254,22 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1558</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.startOnLoginEnabled</string>
+						<reference key="source" ref="577459962"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="577459962"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.startOnLoginEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.startOnLoginEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1565</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -8346,7 +8386,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="1052530814"/>
 							<reference ref="297421714"/>
 							<reference ref="990535725"/>
-							<reference ref="13886266"/>
 							<reference ref="88362424"/>
 							<reference ref="888425430"/>
 							<reference ref="59228528"/>
@@ -8366,6 +8405,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="766194013"/>
 							<reference ref="773581511"/>
 							<reference ref="837087281"/>
+							<reference ref="13886266"/>
+							<reference ref="577459962"/>
 						</object>
 						<reference key="parent" ref="286061383"/>
 					</object>
@@ -10742,6 +10783,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="object" ref="689882323"/>
 						<reference key="parent" ref="879451994"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1562</int>
+						<reference key="object" ref="577459962"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="479276965"/>
+						</object>
+						<reference key="parent" ref="157430883"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1563</int>
+						<reference key="object" ref="479276965"/>
+						<reference key="parent" ref="577459962"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -10891,6 +10946,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>1516.IBPluginDependency</string>
 					<string>1517.IBPluginDependency</string>
 					<string>1518.IBPluginDependency</string>
+					<string>1562.IBPluginDependency</string>
+					<string>1562.IBViewBoundsToFrameTransform</string>
+					<string>1563.IBPluginDependency</string>
 					<string>451.IBEditorWindowLastContentRect</string>
 					<string>451.IBPluginDependency</string>
 					<string>451.IBViewEditorWindowController.showingBoundsRectangles</string>
@@ -11134,6 +11192,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>861.IBPluginDependency</string>
 					<string>862.IBPluginDependency</string>
 					<string>915.IBPluginDependency</string>
+					<string>915.IBViewBoundsToFrameTransform</string>
 					<string>916.IBPluginDependency</string>
 					<string>919.CustomClassName</string>
 					<string>919.IBNumberFormatterLocalizesFormatMetadataKey</string>
@@ -11293,7 +11352,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDGQAAw1wAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBcAAAwxEAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -11358,11 +11417,16 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{329, 152}, {528, 518}}</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABBMAAAwngAAA</bytes>
+					</object>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>{{613, 451}, {528, 518}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO"/>
 					<boolean value="NO"/>
-					<string>{{329, 152}, {528, 518}}</string>
+					<string>{{613, 451}, {528, 518}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSColor" id="197246598">
@@ -11690,6 +11754,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDfQAAwhwAAA</bytes>
+					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>DurationFormatter</string>
 					<boolean value="YES"/>
@@ -11750,7 +11817,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1558</int>
+			<int key="maxID">1565</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -11773,11 +11840,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>about:</string>
 							<string>connectToTwitter:</string>
 							<string>finish:</string>
+							<string>insertIntoLoginItems:</string>
 							<string>internalInterrupt:</string>
 							<string>interrupt:</string>
 							<string>nameCanceled:</string>
 							<string>nameGiven:</string>
 							<string>quit:</string>
+							<string>removeFromLoginItems:</string>
 							<string>reset:</string>
 							<string>resetDefaultValues:</string>
 							<string>resume:</string>
@@ -11788,6 +11857,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -11812,11 +11883,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>about:</string>
 							<string>connectToTwitter:</string>
 							<string>finish:</string>
+							<string>insertIntoLoginItems:</string>
 							<string>internalInterrupt:</string>
 							<string>interrupt:</string>
 							<string>nameCanceled:</string>
 							<string>nameGiven:</string>
 							<string>quit:</string>
+							<string>removeFromLoginItems:</string>
 							<string>reset:</string>
 							<string>resetDefaultValues:</string>
 							<string>resume:</string>
@@ -11840,6 +11913,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">insertIntoLoginItems:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">internalInterrupt:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -11857,6 +11934,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">quit:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeFromLoginItems:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

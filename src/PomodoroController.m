@@ -81,6 +81,25 @@
 	} 
 }
 
+#pragma mark ---- Login helper methods ----
+
+-(void) insertIntoLoginItems {
+	
+	NSString* script = [[NSBundle mainBundle] pathForResource: @"insertIntoLoginItems" ofType: @"applescript"];
+	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
+	[test executeAndReturnError:nil];
+	
+}
+
+
+-(void) removeFromLoginItems {
+
+	NSString* script = [[NSBundle mainBundle] pathForResource: @"removeFromLoginItems" ofType: @"applescript"];
+	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
+	[test executeAndReturnError:nil];
+	
+}
+
 #pragma mark ---- Helper methods ----
 
 - (BOOL) checkDefault:(NSString*) property {
@@ -202,10 +221,17 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     
-	//NSLog(@"Volume changed at %d for %@", volume, keyPath);
+	//NSLog(@"Volume changed at %d for %@", volume, keyPath); 
 	
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
 		[self showTimeOnStatusBar: _initialTime * 60];		
+	} else if ([keyPath isEqualToString:@"startOnLoginEnabled"]) { 
+		BOOL loginEnabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
+		if (loginEnabled) {
+			[self insertIntoLoginItems];
+		} else {
+			[self removeFromLoginItems];
+		}
 	} else if ([keyPath hasSuffix:@"Volume"]) {
 		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
 		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
@@ -922,6 +948,7 @@
 	[self observeUserDefault:@"voiceVolume"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
+	[self observeUserDefault:@"startOnLoginEnabled"];
 
 	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 	[twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	

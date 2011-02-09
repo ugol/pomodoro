@@ -160,6 +160,10 @@
 -(void) keyInternalInterrupt;
 -(void) keyResume;
 
+
+-(void) insertIntoLoginItems;
+-(void) removeFromLoginItems;
+
 -(IBAction)showOpenPanel:(id)sender;
 
 -(IBAction) about:(id)sender;
@@ -180,5 +184,6 @@
 -(IBAction) resetDefaultValues: (id) sender;
 
 -(IBAction) connectToTwitter: (id) sender;
+
 
 @end

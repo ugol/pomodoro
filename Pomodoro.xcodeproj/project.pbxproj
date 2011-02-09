@@ -63,6 +63,10 @@
 		694EC34312F6269B00EC011D /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 694EC34212F6269B00EC011D /* TODO.txt */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
+		69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
+		69AA321A1302D98E000BBBCF /* removeFromLoginItems.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
+		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
+		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
 		69DEFB0312FCC0C00083941C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFC12FCC0C00083941C /* PTHotKey.m */; };
 		69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */; };
@@ -183,6 +187,8 @@
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = insertIntoLoginItems.applescript; sourceTree = "<group>"; };
+		69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = removeFromLoginItems.applescript; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		69DEFAFB12FCC0C00083941C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = "<group>"; };
 		69DEFAFC12FCC0C00083941C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69AA32161302D98E000BBBCF /* scripts */,
 				6907BC0912DDEBD900CEB09C /* About.xib */,
 				6907BC0B12DDEBD900CEB09C /* MainMenu.xib */,
 				6907BC0D12DDEBD900CEB09C /* Stats.xib */,
@@ -446,6 +453,15 @@
 			name = MGTwitterEngine;
 			sourceTree = "<group>";
 		};
+		69AA32161302D98E000BBBCF /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */,
+				69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +514,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */,
+				69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				6907B7C012DD016300CEB09C /* green.png in Resources */,
 				6907B7C112DD016300CEB09C /* icon.icns in Resources */,
@@ -577,6 +595,8 @@
 				69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */,
 				69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */,
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
+				69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */,
+				69AA321A1302D98E000BBBCF /* removeFromLoginItems.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

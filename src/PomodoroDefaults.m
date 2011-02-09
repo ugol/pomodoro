@@ -167,7 +167,12 @@
 
 		
 	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
+
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+	
+
+	
 
 }
 
@@ -303,6 +308,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"calendarEnd"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"autoPomodoroRestart"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startOnLoginEnabled"];
+
 }
 
 @end
