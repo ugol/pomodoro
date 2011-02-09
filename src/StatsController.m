@@ -171,42 +171,41 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	}*/
 	
 	/*
-	NSString* applicationSupportFolder = [self applicationSupportFolder];
-
-	NSFileHandle *output = [NSFileHandle fileHandleForWritingAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"]];
-	[output seekToEndOfFile];
-	*/
+	 NSString* applicationSupportFolder = [self applicationSupportFolder];
+	 
+	 NSFileHandle *output = [NSFileHandle fileHandleForWritingAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"]];
+	 [output seekToEndOfFile];
+	 */
 	
 	NSSavePanel *sp = [NSSavePanel savePanel];	
 	[sp setRequiredFileType:@"txt"];
-	NSFileHandle *output;
+	
 	int runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
 	
 	if (runResult == NSOKButton) {
 		NSLog(@"Created %@", [sp filename]);
 		[[NSFileManager defaultManager] createFileAtPath:[sp filename] contents: nil attributes:nil];
-		output = [NSFileHandle fileHandleForWritingAtPath:[sp filename]];
+		NSFileHandle* output = [NSFileHandle fileHandleForWritingAtPath:[sp filename]];
 		[output seekToEndOfFile];
-	}
-	
-	NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
-	NSError** error = nil;
-	NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:error];
-	if (error) {
-		NSLog(@"Error %@", error);
-	} else {
-		NSString* header = [NSString stringWithFormat:@"Export data created by Pomodoro on %@\n", [NSDate date]];
-		[output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
-		[output writeData:[@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n" dataUsingEncoding:NSUTF8StringEncoding]];
-		for (NSManagedObject* pomo in results) {
-			NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
-			[output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
+		NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+		[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
+		NSError** error = nil;
+		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+		if (error) {
+			NSLog(@"Error %@", error);
+		} else {
+			NSString* header = [NSString stringWithFormat:@"Export data created by Pomodoro on %@\n", [NSDate date]];
+			[output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
+			[output writeData:[@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n" dataUsingEncoding:NSUTF8StringEncoding]];
+			for (NSManagedObject* pomo in results) {
+				NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
+				[output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
+			}
 		}
+		
+		[output synchronizeFile];
+		[output closeFile];
 	}
-	
-	[output synchronizeFile];
-	[output closeFile];
 	
 	
 }
