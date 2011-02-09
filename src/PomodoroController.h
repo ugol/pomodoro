@@ -160,7 +160,6 @@
 -(void) keyInternalInterrupt;
 -(void) keyResume;
 
-
 -(void) insertIntoLoginItems;
 -(void) removeFromLoginItems;
 
