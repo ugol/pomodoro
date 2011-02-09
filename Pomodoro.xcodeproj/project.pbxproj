@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */; };
+		2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */; };
+		2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */; };
 		6907B7C012DD016300CEB09C /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B612DD016300CEB09C /* green.png */; };
 		6907B7C112DD016300CEB09C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B712DD016300CEB09C /* icon.icns */; };
 		6907B7C212DD016300CEB09C /* pomodoro.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B812DD016300CEB09C /* pomodoro.png */; };
@@ -17,8 +20,6 @@
 		6907B7C712DD016300CEB09C /* pomodoroFreeze_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7BD12DD016300CEB09C /* pomodoroFreeze_n.png */; };
 		6907B7C812DD016300CEB09C /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7BE12DD016300CEB09C /* red.png */; };
 		6907B7C912DD016300CEB09C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7BF12DD016300CEB09C /* twitter.png */; };
-		6907B81012DD037E00CEB09C /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */; };
-		6907B83212DD03E600CEB09C /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */; };
 		6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B86D12DD063E00CEB09C /* Growl.framework */; };
 		6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907B86D12DD063E00CEB09C /* Growl.framework */; };
 		6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907B88612DD099100CEB09C /* Carbon.framework */; };
@@ -52,8 +53,6 @@
 		6907B92312DD15A200CEB09C /* MGTwitterXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B90812DD15A200CEB09C /* MGTwitterXMLParser.m */; };
 		6907B92512DD15A200CEB09C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B90C12DD15A200CEB09C /* NSData+Base64.m */; };
 		6907B92612DD15A200CEB09C /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B90E12DD15A200CEB09C /* NSString+UUID.m */; };
-		6907BA0912DD1B3E00CEB09C /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BA0812DD1B3E00CEB09C /* OAuthConsumer.framework */; };
-		6907BA0A12DD1B4A00CEB09C /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907BA0812DD1B3E00CEB09C /* OAuthConsumer.framework */; };
 		6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BA2712DD1E0900CEB09C /* libxml2.dylib */; };
 		6907BB0612DD2B1F00CEB09C /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 6907BB0512DD2B1F00CEB09C /* about.html */; };
 		6907BC0F12DDEBD900CEB09C /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0912DDEBD900CEB09C /* About.xib */; };
@@ -72,11 +71,96 @@
 		69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */; };
 		69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */; };
 		69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0212FCC0C00083941C /* PTKeyCombo.m */; };
-		69DEFBBF12FCC4010083941C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */; };
-		69DEFBDC12FCC48C0083941C /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2250A53B13034CAA001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 342E0208109CCE71009AD8CA /* Build ShortcutRecorder.framework */;
+			remoteInfo = "Build ShortcutRecorder.framework";
+		};
+		2250A54E13034D19001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OAuthConsumer.framework */;
+			remoteInfo = OAuthConsumer;
+		};
+		2250A55013034D19001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FCAAF0750CC95C5E00C52F82 /* OAuthConsumerTestSuite.octest */;
+			remoteInfo = OAuthConsumerTestSuite;
+		};
+		2250A55213034D23001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* OAuthConsumer */;
+			remoteInfo = OAuthConsumer;
+		};
+		2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1AC9740486D14A00FE50C9 /* BGHUDAppKitPlugin.ibplugin */;
+			remoteInfo = BGHUDAppKitPlugin;
+		};
+		2250A56113034D3A001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */;
+			remoteInfo = BGHUDAppKit;
+		};
+		2250A56313034D46001EFC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53DF6901067E5B8E0090B5B0 /* All */;
+			remoteInfo = All;
+		};
+		2295A36F1303492600AD0E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939837800DA42965007F53F3;
+			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
+		};
+		2295A3711303492600AD0E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939838A50DA4300F007F53F3;
+			remoteInfo = "ShortcutRecorder.ibplugin - for embedding in framework";
+		};
+		2295A3731303492600AD0E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
+			remoteInfo = ShortcutRecorderFramework_Tester;
+		};
+		2295A3751303492600AD0E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA;
+			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
+		};
+		2295A3771303492600AD0E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342E0104109CCC36009AD8CA;
+			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6907B84312DD03FF00CEB09C /* CopyFiles */ = {
@@ -85,10 +169,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				69DEFBDC12FCC48C0083941C /* ShortcutRecorder.framework in CopyFiles */,
-				6907BA0A12DD1B4A00CEB09C /* OAuthConsumer.framework in CopyFiles */,
 				6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */,
-				6907B83212DD03E600CEB09C /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +179,12 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/build/Debug/ShortcutRecorder.framework; sourceTree = "<group>"; };
+		2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
+		2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
+		2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit/build/Debug/BGHUDAppKit.framework; sourceTree = "<group>"; };
+		2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthConsumer.framework; path = externalFw/OAuthConsumer/build/Debug/OAuthConsumer.framework; sourceTree = "<group>"; };
+		2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		6907B7B612DD016300CEB09C /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
@@ -110,7 +197,6 @@
 		6907B7BD12DD016300CEB09C /* pomodoroFreeze_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze_n.png; sourceTree = "<group>"; };
 		6907B7BE12DD016300CEB09C /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		6907B7BF12DD016300CEB09C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit/build/Release/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		6907B86D12DD063E00CEB09C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
 		6907B88612DD099100CEB09C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		6907B88B12DD09B800CEB09C /* Pomodoros_1.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros_1.xcdatamodel; sourceTree = "<group>"; };
@@ -174,7 +260,6 @@
 		6907B90C12DD15A200CEB09C /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "externalFw/MGTwitterEngine/NSData+Base64.m"; sourceTree = "<group>"; };
 		6907B90D12DD15A200CEB09C /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+UUID.h"; path = "externalFw/MGTwitterEngine/NSString+UUID.h"; sourceTree = "<group>"; };
 		6907B90E12DD15A200CEB09C /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UUID.m"; path = "externalFw/MGTwitterEngine/NSString+UUID.m"; sourceTree = "<group>"; };
-		6907BA0812DD1B3E00CEB09C /* OAuthConsumer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthConsumer.framework; path = externalFw/OAuthConsumer/build/Release/OAuthConsumer.framework; sourceTree = "<group>"; };
 		6907BA2712DD1E0900CEB09C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6907BB0512DD2B1F00CEB09C /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		6907BC0A12DDEBD900CEB09C /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ../Pomodoro/English.lproj/About.xib; sourceTree = SOURCE_ROOT; };
@@ -198,7 +283,6 @@
 		69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCodeTranslator.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCodeTranslator.m; sourceTree = "<group>"; };
 		69DEFB0112FCC0C00083941C /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCombo.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.h; sourceTree = "<group>"; };
 		69DEFB0212FCC0C00083941C /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCombo.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.m; sourceTree = "<group>"; };
-		69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/build/Release/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,13 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				6907B81012DD037E00CEB09C /* BGHUDAppKit.framework in Frameworks */,
 				6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */,
 				6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */,
-				6907BA0912DD1B3E00CEB09C /* OAuthConsumer.framework in Frameworks */,
 				6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */,
 				6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */,
-				69DEFBBF12FCC4010083941C /* ShortcutRecorder.framework in Frameworks */,
+				2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */,
+				2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */,
+				2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,14 +330,14 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69DEFBBE12FCC4010083941C /* ShortcutRecorder.framework */,
+				2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */,
+				2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */,
+				2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */,
 				6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */,
-				6907B80F12DD037E00CEB09C /* BGHUDAppKit.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				6907B86D12DD063E00CEB09C /* Growl.framework */,
-				6907BA0812DD1B3E00CEB09C /* OAuthConsumer.framework */,
 				6907BA2712DD1E0900CEB09C /* libxml2.dylib */,
 			);
 			name = "Other Frameworks";
@@ -267,9 +351,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2250A54613034D19001EFC92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2250A54F13034D19001EFC92 /* OAuthConsumer.framework */,
+				2250A55113034D19001EFC92 /* OAuthConsumerTestSuite.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2250A55713034D3A001EFC92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */,
+				2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2295A3631303490F00AD0E85 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */,
+				2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */,
+				2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		2295A3671303492600AD0E85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2295A3701303492600AD0E85 /* ShortcutRecorder.framework */,
+				2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */,
+				2295A3741303492600AD0E85 /* ShortcutRecorder.app */,
+				2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */,
+				2295A3781303492600AD0E85 /* ShortcutRecorder.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				2295A3631303490F00AD0E85 /* Dependencies */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -478,6 +603,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				2250A55313034D23001EFC92 /* PBXTargetDependency */,
+				2250A56413034D46001EFC92 /* PBXTargetDependency */,
+				2250A53C13034CAA001EFC92 /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
 			productInstallPath = "$(HOME)/Applications";
@@ -502,12 +630,92 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Pomodoro */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2250A55713034D3A001EFC92 /* Products */;
+					ProjectRef = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 2250A54613034D19001EFC92 /* Products */;
+					ProjectRef = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
+				},
+				{
+					ProductGroup = 2295A3671303492600AD0E85 /* Products */;
+					ProjectRef = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Pomodoro */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2250A54F13034D19001EFC92 /* OAuthConsumer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuthConsumer.framework;
+			remoteRef = 2250A54E13034D19001EFC92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2250A55113034D19001EFC92 /* OAuthConsumerTestSuite.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OAuthConsumerTestSuite.octest;
+			remoteRef = 2250A55013034D19001EFC92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BGHUDAppKitPlugin.ibplugin;
+			remoteRef = 2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BGHUDAppKit.framework;
+			remoteRef = 2250A56113034D3A001EFC92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2295A3701303492600AD0E85 /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = 2295A36F1303492600AD0E85 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ShortcutRecorder.ibplugin;
+			remoteRef = 2295A3711303492600AD0E85 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2295A3741303492600AD0E85 /* ShortcutRecorder.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ShortcutRecorder.app;
+			remoteRef = 2295A3731303492600AD0E85 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ShortcutRecorder.ibplugin;
+			remoteRef = 2295A3751303492600AD0E85 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2295A3781303492600AD0E85 /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = 2295A3771303492600AD0E85 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -602,6 +810,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2250A53C13034CAA001EFC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Build ShortcutRecorder.framework";
+			targetProxy = 2250A53B13034CAA001EFC92 /* PBXContainerItemProxy */;
+		};
+		2250A55313034D23001EFC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuthConsumer;
+			targetProxy = 2250A55213034D23001EFC92 /* PBXContainerItemProxy */;
+		};
+		2250A56413034D46001EFC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = All;
+			targetProxy = 2250A56313034D46001EFC92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -650,6 +876,9 @@
 					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
 					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
 					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -675,6 +904,9 @@
 					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
 					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
 					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
