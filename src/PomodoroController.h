@@ -46,12 +46,12 @@
 #define _speechVoice [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultVoice"]
 #define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
 
-#define _localInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"localInternalInterruptions"] intValue]
-#define _localExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"localExternalInterruptions"] intValue]
-#define _localPomodoroStarted [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroStarted"] intValue]
-#define _localPomodoroResumed [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroResumed"] intValue]
-#define _localPomodoroDone [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroDone"] intValue]
-#define _localPomodoroReset [[[NSUserDefaults standardUserDefaults] objectForKey:@"localPomodoroReset"] intValue]
+#define _dailyInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyInternalInterruptions"] intValue]
+#define _dailyExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyExternalInterruptions"] intValue]
+#define _dailyPomodoroStarted [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroStarted"] intValue]
+#define _dailyPomodoroResumed [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroResumed"] intValue]
+#define _dailyPomodoroDone [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroDone"] intValue]
+#define _dailyPomodoroReset [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroReset"] intValue]
 
 #define _globalInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalInternalInterruptions"] intValue]
 #define _globalExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalExternalInterruptions"] intValue]

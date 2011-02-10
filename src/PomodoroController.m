@@ -129,10 +129,20 @@
 }		
 
 - (NSString*) bindCommonVariables:(NSString*)name {
-	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", nil];
+	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", @"$dailyPomodoroDone", @"$globalPomodoroDone",nil];
 	NSString* durationString = [NSString stringWithFormat:@"%d", pomodoro.durationMinutes];
+	NSString* dailyPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroDone"] stringValue];
+	NSString* globalPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroDone"] stringValue];
+	
+	if (nil == dailyPomodoroDone) {
+		dailyPomodoroDone = @"0";
+	}
+	
+	if (nil == globalPomodoroDone) {
+		globalPomodoroDone = @"0";
+	}
 
-	NSArray* values = [NSArray arrayWithObjects:_pomodoroName, durationString, nil];
+	NSArray* values = [NSArray arrayWithObjects:_pomodoroName, durationString, dailyPomodoroDone, globalPomodoroDone, nil];
 	return [Binder substituteDefault:name withVariables:variables andValues:values];
 }	
 
@@ -455,7 +465,7 @@
 
 -(IBAction) internalInterrupt: (id) sender {
 	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localInternalInterruptions)+1] forKey:@"localInternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyInternalInterruptions)+1] forKey:@"dailyInternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalInternalInterruptions)+1] forKey:@"globalInternalInterruptions"];
 	[pomodoro internalInterrupt];
 	
@@ -476,7 +486,7 @@
 
 -(void) pomodoroStarted:(id)pomo {
 	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroStarted)+1] forKey:@"localPomodoroStarted"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
 
 	NSString* name = [NSString stringWithFormat:@"%@%@%", @"Working on: ", _pomodoroName];
@@ -504,7 +514,7 @@
 }
 
 -(void) pomodoroInterrupted:(id)pomo {
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localExternalInterruptions)+1] forKey:@"localExternalInterruptions"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalExternalInterruptions)+1] forKey:@"globalExternalInterruptions"];
 
 	NSString* name = [NSString stringWithFormat:@"%@%@", @"Interrupted: ", _pomodoroName];
@@ -534,7 +544,7 @@
 -(void) pomodoroInterruptionMaxTimeIsOver:(id)pomo {
 	NSString* name = [NSString stringWithFormat:@"%@%@%@", @"Last: ", _pomodoroName, @" (interrupted)"];
 	[statusItem setToolTip:name];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroReset)+1] forKey:@"localPomodoroReset"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
 
 	if ([self checkDefault:@"growlAtInterruptOverEnabled"])
@@ -556,7 +566,7 @@
 
 	NSString* name = [NSString stringWithFormat:@"%@%@%@", @"Last: ", _pomodoroName, @" (reset)"];
 	[statusItem setToolTip:name];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroReset)+1] forKey:@"localPomodoroReset"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
 
 	if ([self checkDefault:@"growlAtResetEnabled"])
@@ -579,7 +589,7 @@
 	NSString* name = [NSString stringWithFormat:@"%@%@", @"Working on: ", _pomodoroName];
 	[statusItem setToolTip:name];
 	[statusItem setImage:pomodoroImage];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroResumed)+1] forKey:@"localPomodoroResumed"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroResumed)+1] forKey:@"dailyPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroResumed)+1] forKey:@"globalPomodoroResumed"];
 
 	if ([self checkDefault:@"growlAtResumeEnabled"])
@@ -640,7 +650,7 @@
 
 -(void) pomodoroFinished:(id)pomo {
 	[self menuReadyToStart];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_localPomodoroDone)+1] forKey:@"localPomodoroDone"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
 	
 	[stats.pomos newPomodoro:[pomo durationMinutes] withExternalInterruptions:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
@@ -672,7 +682,7 @@
 	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
-		if (([self checkDefault:@"longbreakEnabled"]) && ((_localPomodoroDone % _pomodorosForLong) == 0)) {
+		if (([self checkDefault:@"longbreakEnabled"]) && ((_dailyPomodoroDone % _pomodorosForLong) == 0)) {
 			time = _longbreakTime;
 		}
 
