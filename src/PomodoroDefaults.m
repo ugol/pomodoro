@@ -168,6 +168,7 @@
 		
 	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"showSplashScreenAtStartup"];
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	
@@ -309,6 +310,7 @@
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"autoPomodoroRestart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startOnLoginEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showSplashScreenAtStartup"];
 
 }
 

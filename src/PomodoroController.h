@@ -62,6 +62,7 @@
 
 @class AboutController;
 @class StatsController;
+@class SplashController;
 @class GrowlNotifier;
 @class PTHotKey;
 
@@ -69,6 +70,7 @@
 
 	ProcessSerialNumber psn;
 	AboutController* about;
+	SplashController* splash;
 	StatsController* stats;
 	
 	NSStatusItem* statusItem;	
@@ -166,6 +168,7 @@
 -(IBAction)showOpenPanel:(id)sender;
 
 -(IBAction) about:(id)sender;
+-(IBAction) help:(id)sender;
 -(IBAction) quit:(id)sender;
 
 -(IBAction) setup:(id)sender;

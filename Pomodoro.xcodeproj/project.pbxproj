@@ -63,6 +63,13 @@
 		6907BC1112DDEBD900CEB09C /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0D12DDEBD900CEB09C /* Stats.xib */; };
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
 		694EC34312F6269B00EC011D /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 694EC34212F6269B00EC011D /* TODO.txt */; };
+		697280B4130D7810008F1975 /* getToDoListFromThings.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 697280B3130D7810008F1975 /* getToDoListFromThings.applescript */; };
+		697280B5130D7828008F1975 /* getToDoListFromThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 697280B3130D7810008F1975 /* getToDoListFromThings.applescript */; };
+		69728139130DCF65008F1975 /* getToDoListFromOmniFocus.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */; };
+		6972813A130DCF6D008F1975 /* getToDoListFromOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */; };
+		697281CC130F50BB008F1975 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 697281CB130F50BB008F1975 /* splash.html */; };
+		697281ED130F5533008F1975 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697281EB130F5533008F1975 /* Splash.xib */; };
+		697295C5130F5586008F1975 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69728D23130F5584008F1975 /* SplashController.m */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
 		69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
@@ -79,13 +86,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2250A53B13034CAA001EFC92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 342E0208109CCE71009AD8CA;
-			remoteInfo = "Build ShortcutRecorder.framework";
-		};
 		2250A54E13034D19001EFC92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
@@ -100,13 +100,6 @@
 			remoteGlobalIDString = FCAAF0750CC95C5E00C52F82;
 			remoteInfo = OAuthConsumerTestSuite;
 		};
-		2250A55213034D23001EFC92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = OAuthConsumer;
-		};
 		2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
@@ -120,13 +113,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0;
 			remoteInfo = BGHUDAppKit;
-		};
-		2250A56313034D46001EFC92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF6901067E5B8E0090B5B0;
-			remoteInfo = All;
 		};
 		2295A36F1303492600AD0E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -274,6 +260,12 @@
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		694EC34212F6269B00EC011D /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
+		697280B3130D7810008F1975 /* getToDoListFromThings.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromThings.applescript; sourceTree = "<group>"; };
+		69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromOmniFocus.applescript; sourceTree = "<group>"; };
+		697281CB130F50BB008F1975 /* splash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = splash.html; sourceTree = "<group>"; };
+		697281EC130F5533008F1975 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Splash.xib; sourceTree = "<group>"; };
+		69728D22130F5584008F1975 /* SplashController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashController.h; path = src/SplashController.h; sourceTree = "<group>"; };
+		69728D23130F5584008F1975 /* SplashController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashController.m; path = src/SplashController.m; sourceTree = "<group>"; };
 		69793F3112F4EED200B6CF17 /* CalendarHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarHelper.h; path = src/CalendarHelper.h; sourceTree = "<group>"; };
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
@@ -422,11 +414,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				69AA32161302D98E000BBBCF /* scripts */,
+				697281EB130F5533008F1975 /* Splash.xib */,
 				6907BC0912DDEBD900CEB09C /* About.xib */,
 				6907BC0B12DDEBD900CEB09C /* MainMenu.xib */,
 				6907BC0D12DDEBD900CEB09C /* Stats.xib */,
 				6907BB0512DD2B1F00CEB09C /* about.html */,
+				697281CB130F50BB008F1975 /* splash.html */,
+				69AA32161302D98E000BBBCF /* scripts */,
 				6907B8A712DD10B500CEB09C /* sounds */,
 				6907B89112DD09D400CEB09C /* README */,
 				6907B7B512DD016300CEB09C /* images */,
@@ -526,6 +520,8 @@
 		6907B8AE12DD10F100CEB09C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				69728D22130F5584008F1975 /* SplashController.h */,
+				69728D23130F5584008F1975 /* SplashController.m */,
 				69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */,
 				6907B8B312DD120000CEB09C /* AboutController.h */,
 				6907B8B412DD120000CEB09C /* AboutController.m */,
@@ -587,6 +583,8 @@
 		69AA32161302D98E000BBBCF /* scripts */ = {
 			isa = PBXGroup;
 			children = (
+				69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */,
+				697280B3130D7810008F1975 /* getToDoListFromThings.applescript */,
 				69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */,
 				69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */,
 			);
@@ -609,9 +607,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2250A55313034D23001EFC92 /* PBXTargetDependency */,
-				2250A56413034D46001EFC92 /* PBXTargetDependency */,
-				2250A53C13034CAA001EFC92 /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
 			productInstallPath = "$(HOME)/Applications";
@@ -633,6 +628,8 @@
 				Japanese,
 				French,
 				German,
+				Dutch,
+				sv,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Pomodoro */;
 			projectDirPath = "";
@@ -728,6 +725,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6972813A130DCF6D008F1975 /* getToDoListFromOmniFocus.applescript in Resources */,
+				697280B5130D7828008F1975 /* getToDoListFromThings.applescript in Resources */,
 				69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */,
 				69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
@@ -746,10 +745,12 @@
 				6907B8AA12DD10B500CEB09C /* ring.wav in Resources */,
 				6907B8AB12DD10B500CEB09C /* tick.wav in Resources */,
 				6907BB0612DD2B1F00CEB09C /* about.html in Resources */,
+				697281CC130F50BB008F1975 /* splash.html in Resources */,
 				6907BC0F12DDEBD900CEB09C /* About.xib in Resources */,
 				6907BC1012DDEBD900CEB09C /* MainMenu.xib in Resources */,
 				6907BC1112DDEBD900CEB09C /* Stats.xib in Resources */,
 				694EC34312F6269B00EC011D /* TODO.txt in Resources */,
+				697281ED130F5533008F1975 /* Splash.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,28 +812,13 @@
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
 				69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */,
 				69AA321A1302D98E000BBBCF /* removeFromLoginItems.applescript in Sources */,
+				697280B4130D7810008F1975 /* getToDoListFromThings.applescript in Sources */,
+				69728139130DCF65008F1975 /* getToDoListFromOmniFocus.applescript in Sources */,
+				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2250A53C13034CAA001EFC92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Build ShortcutRecorder.framework";
-			targetProxy = 2250A53B13034CAA001EFC92 /* PBXContainerItemProxy */;
-		};
-		2250A55313034D23001EFC92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuthConsumer;
-			targetProxy = 2250A55213034D23001EFC92 /* PBXContainerItemProxy */;
-		};
-		2250A56413034D46001EFC92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = All;
-			targetProxy = 2250A56313034D46001EFC92 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -867,6 +853,14 @@
 			name = Stats.xib;
 			sourceTree = "<group>";
 		};
+		697281EB130F5533008F1975 /* Splash.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				697281EC130F5533008F1975 /* English */,
+			);
+			name = Splash.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -894,6 +888,21 @@
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
+				);
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Debug;
@@ -919,6 +928,21 @@
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
+				);
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Release;

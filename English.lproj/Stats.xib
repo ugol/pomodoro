@@ -21,7 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="585"/>
+			<integer value="511"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -397,7 +397,7 @@
 								<object class="BGHUDTabViewItem" id="552939368">
 									<string key="NSIdentifier">2</string>
 									<object class="NSView" key="NSView" id="510116400">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="844687343"/>
 										<int key="NSvFlags">256</int>
 										<object class="NSMutableArray" key="NSSubviews">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -697,6 +697,7 @@
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 33}, {766, 403}}</string>
+										<reference key="NSSuperview" ref="844687343"/>
 									</object>
 									<string key="NSLabel">Daily</string>
 									<reference key="NSColor" ref="93724137"/>
@@ -705,7 +706,7 @@
 								<object class="BGHUDTabViewItem" id="538631231">
 									<string key="NSIdentifier">Item 2</string>
 									<object class="NSView" key="NSView" id="571672957">
-										<reference key="NSNextResponder" ref="844687343"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">256</int>
 										<object class="NSMutableArray" key="NSSubviews">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1243,14 +1244,13 @@
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 33}, {766, 403}}</string>
-										<reference key="NSSuperview" ref="844687343"/>
 									</object>
 									<string key="NSLabel">Log</string>
 									<reference key="NSColor" ref="93724137"/>
 									<reference key="NSTabView" ref="844687343"/>
 								</object>
 							</object>
-							<reference key="NSSelectedTabViewItem" ref="538631231"/>
+							<reference key="NSSelectedTabViewItem" ref="552939368"/>
 							<reference key="NSFont" ref="1071469902"/>
 							<int key="NSTvFlags">0</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
@@ -1258,7 +1258,7 @@
 							<nil key="themeKey"/>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
-								<reference ref="571672957"/>
+								<reference ref="510116400"/>
 							</object>
 						</object>
 					</object>
@@ -1297,6 +1297,15 @@
 				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
 			</object>
 			<object class="NSUserDefaultsController" id="362545081">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>dailyPomodoroStarted</string>
+					<string>dailyPomodoroDone</string>
+					<string>dailyPomodoroReset</string>
+					<string>dailyExternalInterruptions</string>
+					<string>dailyInternalInterruptions</string>
+					<string>dailyPomodoroResumed</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -1419,102 +1428,6 @@
 						<reference key="destination" ref="1056846604"/>
 					</object>
 					<int key="connectionID">651</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localPomodoroStarted</string>
-						<reference key="source" ref="273600468"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="273600468"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localPomodoroStarted</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localPomodoroStarted</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">664</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localPomodoroDone</string>
-						<reference key="source" ref="354888409"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="354888409"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localPomodoroDone</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localPomodoroDone</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">667</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localInternalInterruptions</string>
-						<reference key="source" ref="129859417"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="129859417"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localInternalInterruptions</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localInternalInterruptions</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">676</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localPomodoroResumed</string>
-						<reference key="source" ref="755543296"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="755543296"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localPomodoroResumed</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localPomodoroResumed</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">677</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localExternalInterruptions</string>
-						<reference key="source" ref="635979841"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="635979841"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localExternalInterruptions</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localExternalInterruptions</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">678</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.localPomodoroReset</string>
-						<reference key="source" ref="125194451"/>
-						<reference key="destination" ref="362545081"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="125194451"/>
-							<reference key="NSDestination" ref="362545081"/>
-							<string key="NSLabel">value: values.localPomodoroReset</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.localPomodoroReset</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">679</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1707,6 +1620,102 @@
 						</object>
 					</object>
 					<int key="connectionID">758</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyPomodoroStarted</string>
+						<reference key="source" ref="273600468"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="273600468"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyPomodoroStarted</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyPomodoroStarted</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">759</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyPomodoroDone</string>
+						<reference key="source" ref="354888409"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="354888409"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyPomodoroDone</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyPomodoroDone</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">760</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyPomodoroReset</string>
+						<reference key="source" ref="125194451"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="125194451"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyPomodoroReset</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyPomodoroReset</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">761</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyExternalInterruptions</string>
+						<reference key="source" ref="635979841"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="635979841"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyExternalInterruptions</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyExternalInterruptions</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">762</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyInternalInterruptions</string>
+						<reference key="source" ref="129859417"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="129859417"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyInternalInterruptions</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyInternalInterruptions</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">763</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.dailyPomodoroResumed</string>
+						<reference key="source" ref="755543296"/>
+						<reference key="destination" ref="362545081"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="755543296"/>
+							<reference key="NSDestination" ref="362545081"/>
+							<string key="NSLabel">value: values.dailyPomodoroResumed</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.dailyPomodoroResumed</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">764</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2633,9 +2642,9 @@
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{329, 107}, {812, 465}}</string>
+					<string>{{399, 107}, {812, 465}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{329, 107}, {812, 465}}</string>
+					<string>{{399, 107}, {812, 465}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSMutableDictionary">
@@ -2859,7 +2868,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">758</int>
+			<int key="maxID">764</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

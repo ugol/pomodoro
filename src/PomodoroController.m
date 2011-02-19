@@ -30,6 +30,7 @@
 #import "PomodoroDefaults.h"
 #import "AboutController.h"
 #import "StatsController.h"
+#import "SplashController.h"
 #import "Carbon/Carbon.h"
 #import "PTHotKeyCenter.h"
 #import "PTHotKey.h"
@@ -97,6 +98,22 @@
 	NSString* script = [[NSBundle mainBundle] pathForResource: @"removeFromLoginItems" ofType: @"applescript"];
 	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
 	[test executeAndReturnError:nil];
+	
+}
+
+- (void) getToDoListFromThings {
+	
+	NSString* script = [[NSBundle mainBundle] pathForResource: @"getToDoListFromThings" ofType: @"applescript"];	
+	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
+	NSAppleEventDescriptor* result = [test executeAndReturnError:nil];	
+	
+	int howMany = [result numberOfItems];
+	
+	//NSLog(@"%d descriptors", howMany);
+	
+	for (int i=1; i<= howMany; i++) {
+		[namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];		
+	}
 	
 }
 
@@ -305,6 +322,15 @@
 	[about showWindow:self];
 }
 
+-(IBAction)help:(id)sender {
+	
+	if (!splash) {
+		splash = [[SplashController alloc] init];
+	}
+	[splash showWindow:self];
+	
+}
+
 -(IBAction)setup:(id)sender {
 	
 	[self saveState];
@@ -400,6 +426,7 @@
 -(IBAction) nameGiven:(id)sender {
 	
 	[namePanel endEditingFor:nil];
+	
 	NSInteger howMany = [namesCombo numberOfItems];
 	NSString* name = _pomodoroName;
 	BOOL isNewName = YES;
@@ -436,6 +463,9 @@
 		
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
+			
+			// if check Things Integration
+			[self getToDoListFromThings];
 			[namePanel makeKeyAndOrderFront:self];
 		} else {
 			[self realStart];
@@ -959,6 +989,10 @@
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
 	[self observeUserDefault:@"startOnLoginEnabled"];
+	
+	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
+		[self help:nil];
+	}
 
 	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 	[twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
