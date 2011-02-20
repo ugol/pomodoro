@@ -44,7 +44,7 @@
 	NSAppleScript* applescript = [scripts objectForKey:scriptId];
 	if (nil == applescript) {
 		NSString* scriptFileName = [[NSBundle mainBundle] pathForResource: scriptId ofType: @"applescript"];
-		applescript = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptFileName] error: nil];
+		applescript = [[[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptFileName] error: nil] autorelease];
 		[applescript compileAndReturnError:nil];
 		[scripts setObject:applescript forKey:scriptId];
 	} 
@@ -59,12 +59,12 @@
 		scriptText = [[NSString alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptFileName]];
 		[scripts setObject:scriptText forKey:scriptId];
 	} 
-	NSAppleScript* applescript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:scriptText, parameter]];
+	NSAppleScript* applescript = [[[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:scriptText, parameter]] autorelease];
 	return [applescript executeAndReturnError:nil];
 }
 
 - (void) dealloc { 
-	[scripts dealloc];
+	[scripts release];
     [super dealloc]; 
 }
 

@@ -119,6 +119,14 @@
 	PTHotKey *internalInterruptKey;
 	PTHotKey *resumeKey;
 	PTHotKey *quickStatsKey;
+	
+	KeyCombo muteKeyCombo;
+	KeyCombo startKeyCombo;
+	KeyCombo resetKeyCombo;
+	KeyCombo interruptKeyCombo;
+	KeyCombo internalInterruptKeyCombo;
+	KeyCombo resumeKeyCombo;
+	KeyCombo quickStatsKeyCombo;
 
 	NSArray* voices;
 	NSArray* textViews;

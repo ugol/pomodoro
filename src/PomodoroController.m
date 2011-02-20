@@ -54,13 +54,13 @@
 		*key = nil;
 	}
 	
-	NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
+	//NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
 		
 	*key = [[[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]] retain];
 	[*key setTarget: self];
 	[*key setAction: method];
 	[[PTHotKeyCenter sharedCenter] registerHotKey: *key];
-	
+	[*key release];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithShort:[recorder keyCombo].code] forKey:[NSString stringWithFormat:@"%@%@", name, @"Code"]];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithUnsignedInteger:[recorder keyCombo].flags] forKey:[NSString stringWithFormat:@"%@%@", name, @"Flags"]];
 	
@@ -86,29 +86,29 @@
 }
 
 - (void) updateShortcuts {
-	
-	NSString* muteCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"];
-	NSString* muteFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"];
-	NSString* startCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"];
-	NSString* startFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"];
-	NSString* resetCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"];
-	NSString* resetFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"];
-	NSString* interruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"];
-	NSString* interruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"];
-	NSString* internalInterruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"];
-	NSString* internalInterruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"];
-	NSString* resumeCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"];
-	NSString* resumeFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"];
-	NSString* quickStatsCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsCode"];
-	NSString* quickStatsFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsFlags"];
-	
-	[muteRecorder setKeyCombo:SRMakeKeyCombo([muteCode intValue], [muteFlags intValue])];
-	[startRecorder setKeyCombo:SRMakeKeyCombo([startCode intValue], [startFlags intValue])];
-	[resetRecorder setKeyCombo:SRMakeKeyCombo([resetCode intValue], [resetFlags intValue])];
-	[interruptRecorder setKeyCombo:SRMakeKeyCombo([interruptCode intValue], [interruptFlags intValue])];
-	[internalInterruptRecorder setKeyCombo:SRMakeKeyCombo([internalInterruptCode intValue], [internalInterruptFlags intValue])];
-	[resumeRecorder setKeyCombo:SRMakeKeyCombo([resumeCode intValue], [resumeFlags intValue])];
-	[quickStatsRecorder setKeyCombo:SRMakeKeyCombo([quickStatsCode intValue], [quickStatsFlags intValue])];
+		
+	muteKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"] intValue];
+	muteKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"] intValue];
+	startKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"] intValue];
+	startKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"] intValue];
+	resetKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"] intValue];
+	resetKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"] intValue];
+	interruptKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"] intValue];
+	interruptKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"] intValue];
+	internalInterruptKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"] intValue];
+	internalInterruptKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"] intValue];
+	resumeKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"] intValue];
+	resumeKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"] intValue];
+	quickStatsKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsCode"] intValue];
+	quickStatsKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsFlags"] intValue];
+		
+	[muteRecorder setKeyCombo:muteKeyCombo];
+	[startRecorder setKeyCombo:startKeyCombo];
+	[resetRecorder setKeyCombo:resetKeyCombo];
+	[interruptRecorder setKeyCombo:interruptKeyCombo];
+	[internalInterruptRecorder setKeyCombo:internalInterruptKeyCombo];
+	[resumeRecorder setKeyCombo:resumeKeyCombo];
+	[quickStatsRecorder setKeyCombo:quickStatsKeyCombo];
 	
 }
 
