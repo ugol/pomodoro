@@ -62,7 +62,6 @@
 		6907BC1012DDEBD900CEB09C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0B12DDEBD900CEB09C /* MainMenu.xib */; };
 		6907BC1112DDEBD900CEB09C /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0D12DDEBD900CEB09C /* Stats.xib */; };
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
-		694EC34312F6269B00EC011D /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 694EC34212F6269B00EC011D /* TODO.txt */; };
 		696FE87C13107108005E17FA /* setStatusToAvailableInAdium.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
 		696FE87D13107108005E17FA /* setStatusToPomodoroInAdium.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
 		696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
@@ -271,7 +270,6 @@
 		6907BC0C12DDEBD900CEB09C /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ../Pomodoro/English.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		6907BC0E12DDEBD900CEB09C /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ../Pomodoro/English.lproj/Stats.xib; sourceTree = SOURCE_ROOT; };
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
-		694EC34212F6269B00EC011D /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
 		696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInAdium.applescript; sourceTree = "<group>"; };
 		696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInAdium.applescript; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 		6907B89112DD09D400CEB09C /* README */ = {
 			isa = PBXGroup;
 			children = (
-				694EC34212F6269B00EC011D /* TODO.txt */,
 				6907B88D12DD09B800CEB09C /* ReleaseNotes.txt */,
 				6907B88C12DD09B800CEB09C /* README.txt */,
 			);
@@ -784,7 +781,6 @@
 				6907BC0F12DDEBD900CEB09C /* About.xib in Resources */,
 				6907BC1012DDEBD900CEB09C /* MainMenu.xib in Resources */,
 				6907BC1112DDEBD900CEB09C /* Stats.xib in Resources */,
-				694EC34312F6269B00EC011D /* TODO.txt in Resources */,
 				697281ED130F5533008F1975 /* Splash.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
