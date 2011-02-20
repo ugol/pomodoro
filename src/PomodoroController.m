@@ -431,10 +431,10 @@
 			[namesCombo addItemWithObjectValue:name];
 		}
 		
-		if ([self checkDefault:@"thingsEnabled"]) {
+		if ([self checkDefault:@"thingsEnabled"] && [self checkDefault:@"thingsAddingEnabled"]) {
 			[scripter executeScript:@"addTodoToThings" withParameter:name];
 		}
-		if ([self checkDefault:@"omniFocusEnabled"]) {
+		if ([self checkDefault:@"omniFocusAddingEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
 			[scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
 		}
 	}

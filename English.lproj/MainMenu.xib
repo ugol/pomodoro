@@ -24,8 +24,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="546"/>
-			<integer value="454"/>
-			<integer value="1405"/>
+			<integer value="1574"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3050,10 +3049,34 @@
 															<int key="BGButtonType">3</int>
 														</object>
 													</object>
+													<object class="NSButton" id="647550149">
+														<reference key="NSNextResponder" ref="653578314"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{45, 372}, {253, 32}}</string>
+														<reference key="NSSuperview" ref="653578314"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="318160307">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Automatically add new tasks</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="647550149"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+															<int key="BGButtonType">3</int>
+														</object>
+													</object>
 													<object class="NSButton" id="23388164">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{22, 363}, {276, 32}}</string>
+														<string key="NSFrame">{{22, 338}, {276, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="18251963">
@@ -3062,6 +3085,30 @@
 															<string key="NSContents">Show "Omnifocus" open tasks in "Inbox"</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="23388164"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+															<int key="BGButtonType">3</int>
+														</object>
+													</object>
+													<object class="NSButton" id="351541989">
+														<reference key="NSNextResponder" ref="653578314"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{45, 315}, {276, 32}}</string>
+														<reference key="NSSuperview" ref="653578314"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="751667887">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Automatically add new tasks</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="351541989"/>
 															<int key="NSButtonFlags">1211912703</int>
 															<int key="NSButtonFlags2">2</int>
 															<reference key="NSNormalImage" ref="227150842"/>
@@ -5202,9 +5249,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 			<object class="NSUserDefaultsController" id="227004176">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>ichatEnabled</string>
-					<string>skypeEnabled</string>
-					<string>adiumEnabled</string>
+					<string>thingsAddingEnabled</string>
+					<string>omniFocusAddingEnabled</string>
+					<string>thingsEnabled</string>
+					<string>omniFocusEnabled</string>
 				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -8542,6 +8590,70 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1650</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.thingsAddingEnabled</string>
+						<reference key="source" ref="647550149"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="647550149"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.thingsAddingEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.thingsAddingEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1657</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.omniFocusAddingEnabled</string>
+						<reference key="source" ref="351541989"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="351541989"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.omniFocusAddingEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.omniFocusAddingEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1658</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: values.thingsEnabled</string>
+						<reference key="source" ref="647550149"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="647550149"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">enabled: values.thingsEnabled</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">values.thingsEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1660</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: values.omniFocusEnabled</string>
+						<reference key="source" ref="351541989"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="351541989"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">enabled: values.omniFocusEnabled</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">values.omniFocusEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1663</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -11087,10 +11199,12 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="492359160"/>
-							<reference ref="23388164"/>
 							<reference ref="135467414"/>
 							<reference ref="568812898"/>
 							<reference ref="934993291"/>
+							<reference ref="647550149"/>
+							<reference ref="23388164"/>
+							<reference ref="351541989"/>
 						</object>
 						<reference key="parent" ref="644025895"/>
 					</object>
@@ -11182,6 +11296,34 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<int key="objectID">1648</int>
 						<reference key="object" ref="333536925"/>
 						<reference key="parent" ref="934993291"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1651</int>
+						<reference key="object" ref="647550149"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="318160307"/>
+						</object>
+						<reference key="parent" ref="653578314"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1652</int>
+						<reference key="object" ref="318160307"/>
+						<reference key="parent" ref="647550149"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1654</int>
+						<reference key="object" ref="351541989"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="751667887"/>
+						</object>
+						<reference key="parent" ref="653578314"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1655</int>
+						<reference key="object" ref="751667887"/>
+						<reference key="parent" ref="351541989"/>
 					</object>
 				</object>
 			</object>
@@ -11380,6 +11522,12 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>1647.IBPluginDependency</string>
 					<string>1647.IBViewBoundsToFrameTransform</string>
 					<string>1648.IBPluginDependency</string>
+					<string>1651.IBPluginDependency</string>
+					<string>1651.IBViewBoundsToFrameTransform</string>
+					<string>1652.IBPluginDependency</string>
+					<string>1654.IBPluginDependency</string>
+					<string>1654.IBViewBoundsToFrameTransform</string>
+					<string>1655.IBPluginDependency</string>
 					<string>451.IBEditorWindowLastContentRect</string>
 					<string>451.IBPluginDependency</string>
 					<string>451.IBViewEditorWindowController.showingBoundsRectangles</string>
@@ -11935,12 +12083,12 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABCBAAAw6uAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBsAAAw9WAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABBsAAAw8SAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBsAAAw70AAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -11962,6 +12110,16 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABB2AAAw4GAAA</bytes>
+					</object>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABB2AAAw9MAAA</bytes>
+					</object>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABCNAAAw7GAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>{{417, 284}, {627, 531}}</string>
@@ -12389,7 +12547,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1650</int>
+			<int key="maxID">1663</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

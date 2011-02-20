@@ -171,7 +171,9 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"thingsAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"omniFocusAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
@@ -321,7 +323,9 @@
 	
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsAddingEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"omniFocusEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"omniFocusAddingEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ichatEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"skypeEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"adiumEnabled"];	
