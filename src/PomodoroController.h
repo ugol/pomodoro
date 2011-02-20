@@ -110,6 +110,7 @@
 	IBOutlet SRRecorderControl* interruptRecorder;
 	IBOutlet SRRecorderControl* internalInterruptRecorder;
 	IBOutlet SRRecorderControl* resumeRecorder;
+	IBOutlet SRRecorderControl* quickStatsRecorder;
 	
 	PTHotKey *muteKey;
 	PTHotKey *startKey;
@@ -117,6 +118,7 @@
 	PTHotKey *interruptKey;
 	PTHotKey *internalInterruptKey;
 	PTHotKey *resumeKey;
+	PTHotKey *quickStatsKey;
 
 	NSArray* voices;
 	NSArray* textViews;

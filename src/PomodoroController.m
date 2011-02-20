@@ -54,7 +54,7 @@
 		*key = nil;
 	}
 	
-	//NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
+	NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
 		
 	*key = [[[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]] retain];
 	[*key setTarget: self];
@@ -80,7 +80,36 @@
 		[self switchKey:@"internalInterrupt" forKey:&internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
 	} else if (aRecorder == resumeRecorder) {
 		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
+	} else if (aRecorder ==quickStatsRecorder) {
+		[self switchKey:@"quickStats" forKey:&quickStatsKey withMethod:@selector(keyQuickStats) withRecorder:aRecorder];
 	} 
+}
+
+- (void) updateShortcuts {
+	
+	NSString* muteCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"];
+	NSString* muteFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"];
+	NSString* startCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"];
+	NSString* startFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"];
+	NSString* resetCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"];
+	NSString* resetFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"];
+	NSString* interruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"];
+	NSString* interruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"];
+	NSString* internalInterruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"];
+	NSString* internalInterruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"];
+	NSString* resumeCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"];
+	NSString* resumeFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"];
+	NSString* quickStatsCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsCode"];
+	NSString* quickStatsFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsFlags"];
+	
+	[muteRecorder setKeyCombo:SRMakeKeyCombo([muteCode intValue], [muteFlags intValue])];
+	[startRecorder setKeyCombo:SRMakeKeyCombo([startCode intValue], [startFlags intValue])];
+	[resetRecorder setKeyCombo:SRMakeKeyCombo([resetCode intValue], [resetFlags intValue])];
+	[interruptRecorder setKeyCombo:SRMakeKeyCombo([interruptCode intValue], [interruptFlags intValue])];
+	[internalInterruptRecorder setKeyCombo:SRMakeKeyCombo([internalInterruptCode intValue], [internalInterruptFlags intValue])];
+	[resumeRecorder setKeyCombo:SRMakeKeyCombo([resumeCode intValue], [resumeFlags intValue])];
+	[quickStatsRecorder setKeyCombo:SRMakeKeyCombo([quickStatsCode intValue], [quickStatsFlags intValue])];
+	
 }
 
 #pragma mark ---- Login helper methods ----
@@ -300,6 +329,21 @@
 
 -(void) keyResume {
 	if ([self.resumePomodoro isEnabled]) [self resume:nil];
+}
+
+-(void) keyQuickStats {
+	
+	NSInteger time = pomodoro.time;	
+	NSString* quickStats = [NSString stringWithFormat:@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d", 
+							_pomodoroName, time/60, time%60, 
+							pomodoro.externallyInterrupted, pomodoro.internallyInterrupted, pomodoro.resumed,
+							_globalPomodoroStarted, _globalPomodoroDone, _globalPomodoroReset,
+							_dailyPomodoroStarted, _dailyPomodoroDone, _dailyPomodoroReset,
+							_globalExternalInterruptions, _globalInternalInterruptions, _globalPomodoroResumed,
+							_dailyExternalInterruptions, _dailyInternalInterruptions, _dailyPomodoroResumed
+							];
+	
+	[growl growlAlert:quickStats title:@"Quick Statistics"];
 }
 
 -(IBAction)about:(id)sender {
@@ -860,30 +904,6 @@
 } 
 
 
-- (void) updateShortcuts {
-	
-	NSString* muteCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"];
-	NSString* muteFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"];
-	NSString* startCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"];
-	NSString* startFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"];
-	NSString* resetCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"];
-	NSString* resetFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"];
-	NSString* interruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"];
-	NSString* interruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"];
-	NSString* internalInterruptCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"];
-	NSString* internalInterruptFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"];
-	NSString* resumeCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"];
-	NSString* resumeFlags = [[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"];
-	
-	[muteRecorder setKeyCombo:SRMakeKeyCombo([muteCode intValue], [muteFlags intValue])];
-	[startRecorder setKeyCombo:SRMakeKeyCombo([startCode intValue], [startFlags intValue])];
-	[resetRecorder setKeyCombo:SRMakeKeyCombo([resetCode intValue], [resetFlags intValue])];
-	[interruptRecorder setKeyCombo:SRMakeKeyCombo([interruptCode intValue], [interruptFlags intValue])];
-	[internalInterruptRecorder setKeyCombo:SRMakeKeyCombo([internalInterruptCode intValue], [internalInterruptFlags intValue])];
-	[resumeRecorder setKeyCombo:SRMakeKeyCombo([resumeCode intValue], [resumeFlags intValue])];
-	
-}
-
 -(IBAction) resetDefaultValues: (id) sender {
 	
 	[PomodoroDefaults removeDefaults];
@@ -1032,6 +1052,8 @@
 	[resetKey release];
 	[interruptKey release];
 	[resumeKey release];
+	[quickStatsKey release];
+	
     [statusItem release];
 	[prefs release];
 	[pomodoroMenu release];

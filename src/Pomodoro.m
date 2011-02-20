@@ -28,7 +28,7 @@
 
 @implementation Pomodoro
 
-@synthesize durationMinutes, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate;
+@synthesize time, resumed, durationMinutes, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate;
 
 - (id) init { 
     if ( self = [super init] ) {
@@ -121,6 +121,7 @@
 
 -(void) resume {
 
+	resumed++;
 	[interruptionTimer invalidate];
 	interruptionTimer = nil;
 	[self startFor: time];

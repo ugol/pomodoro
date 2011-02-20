@@ -52,6 +52,8 @@
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"internalInterruptFlags"];
 	[defaultValues setObject: [NSNumber numberWithShort:124] forKey:@"resumeCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resumeFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:44] forKey:@"quickStatsCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"quickStatsFlags"];
 
 	[defaultValues setObject:@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'" forKey:@"growlStart"];
 	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
@@ -214,6 +216,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"internalInterruptFlags"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeCode"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resumeFlags"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"quickStatsCode"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"quickStatsFlags"];
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlStart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechStart"];
