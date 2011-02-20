@@ -168,7 +168,14 @@
 		
 	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"showSplashScreenAtStartup"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
+	
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
+
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	
@@ -311,6 +318,13 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"autoPomodoroRestart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startOnLoginEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showSplashScreenAtStartup"];
+	
+	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"omniFocusEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ichatEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"skypeEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"adiumEnabled"];	
 
 }
 

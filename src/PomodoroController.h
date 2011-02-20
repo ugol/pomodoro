@@ -65,6 +65,7 @@
 @class SplashController;
 @class GrowlNotifier;
 @class PTHotKey;
+@class Scripter;
 
 @interface PomodoroController : NSObject <PomodoroDelegate, MGTwitterEngineDelegate> {
 
@@ -144,6 +145,7 @@
 	
 	GrowlNotifier* growl;
 	Pomodoro* pomodoro;
+	Scripter* scripter;
 	
 	MGTwitterEngine* twitterEngine;
 		

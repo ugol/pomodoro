@@ -25,6 +25,7 @@
 
 #import "PomodoroController.h"
 #import "GrowlNotifier.h"
+#import "Scripter.h"
 #import "Pomodoro.h"
 #import "Binder.h"
 #import "PomodoroDefaults.h"
@@ -85,32 +86,18 @@
 #pragma mark ---- Login helper methods ----
 
 -(void) insertIntoLoginItems {
-	
-	NSString* script = [[NSBundle mainBundle] pathForResource: @"insertIntoLoginItems" ofType: @"applescript"];
-	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
-	[test executeAndReturnError:nil];
-	
+	[scripter executeScript:@"insertIntoLoginItems"];		
 }
 
 
 -(void) removeFromLoginItems {
-
-	NSString* script = [[NSBundle mainBundle] pathForResource: @"removeFromLoginItems" ofType: @"applescript"];
-	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
-	[test executeAndReturnError:nil];
-	
+	[scripter executeScript:@"removeFromLoginItems"];	
 }
 
-- (void) getToDoListFromThings {
+- (void) addListToCombo:(NSString*)action {
 	
-	NSString* script = [[NSBundle mainBundle] pathForResource: @"getToDoListFromThings" ofType: @"applescript"];	
-	NSAppleScript* test = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: script] error: nil];
-	NSAppleEventDescriptor* result = [test executeAndReturnError:nil];	
-	
+	NSAppleEventDescriptor* result = [scripter executeScript:action];			
 	int howMany = [result numberOfItems];
-	
-	//NSLog(@"%d descriptors", howMany);
-	
 	for (int i=1; i<= howMany; i++) {
 		[namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];		
 	}
@@ -436,13 +423,22 @@
 		i++;
 	}
 	if (isNewName) {
-				
-		if (howMany>9) {
-			[namesCombo removeItemAtIndex:0];
+		
+		if (!([self checkDefault:@"thingsEnabled"]) && (![self checkDefault:@"omniFocusEnabled"])) {
+			if (howMany>15) {
+				[namesCombo removeItemAtIndex:0];
+			}
+			[namesCombo addItemWithObjectValue:name];
 		}
-		[namesCombo addItemWithObjectValue:name];
+		
+		if ([self checkDefault:@"thingsEnabled"]) {
+			[scripter executeScript:@"addTodoToThings" withParameter:name];
+		}
+		if ([self checkDefault:@"omniFocusEnabled"]) {
+			[scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
+		}
 	}
-
+	
 	[namePanel close];
 	[self realStart];
 }
@@ -456,6 +452,7 @@
 	[self saveState];
 	if (_initialTime > 0) {
 		[about close];
+		[splash close];
 		if (![prefs makeFirstResponder:prefs]) {
 			[prefs endEditingFor:nil];
 		}
@@ -463,9 +460,16 @@
 		
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
-			
-			// if check Things Integration
-			[self getToDoListFromThings];
+			if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"])) {
+				[namesCombo removeAllItems];
+			}
+
+			if ([self checkDefault:@"thingsEnabled"]) {
+				[self addListToCombo:@"getToDoListFromThings"];
+			}			
+			if ([self checkDefault:@"omniFocusEnabled"]) {
+				[self addListToCombo:@"getToDoListFromOmniFocus"];
+			}
 			[namePanel makeKeyAndOrderFront:self];
 		} else {
 			[self realStart];
@@ -541,6 +545,10 @@
 		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterStart"]];
 	}
 	
+	if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInAdium"];
+	}
+	
 }
 
 -(void) pomodoroInterrupted:(id)pomo {
@@ -588,6 +596,10 @@
 		[playScript executeAndReturnError:nil];
 	}
 	
+	if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInAdium"];
+	}
+	
 	[self menuReadyToStart];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
@@ -612,6 +624,10 @@
 	
 	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtResetEnabled"]) {
 		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterReset"]];
+	}
+	
+	if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
 }
 
@@ -708,6 +724,10 @@
 	
 	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtEndEnabled"]) {
 		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterEnd"]];
+	}
+	
+	if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
 	
 	if ([self checkDefault:@"breakEnabled"]) {
@@ -963,6 +983,8 @@
 	[self showTimeOnStatusBar: _initialTime * 60];
 	
 	growl = [[[GrowlNotifier alloc] init] retain];
+	scripter = [[[Scripter alloc] init] retain];
+	
 	NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
 	[speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];
 	
@@ -1033,6 +1055,7 @@
 	[speech release];
 	
 	[growl release];
+	[scripter release];
 	[pomodoro release];
 	[twitterEngine release];
 	[twitterLogin release];
