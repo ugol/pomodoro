@@ -593,6 +593,10 @@
 		[scripter executeScript:@"setStatusToPomodoroInAdium"];
 	}
 	
+	if ([self checkDefault:@"ichatEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInIChat"];
+	}
+	
 }
 
 -(void) pomodoroInterrupted:(id)pomo {
@@ -644,6 +648,10 @@
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
 	
+	if ([self checkDefault:@"ichatEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInIChat"];
+	}
+	
 	[self menuReadyToStart];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
@@ -673,6 +681,11 @@
 	if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
+		
+	if ([self checkDefault:@"ichatEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInIChat"];
+	}
+	
 }
 
 -(void) pomodoroResumed:(id)pomo {
@@ -773,6 +786,12 @@
 	if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
+	
+	
+	if ([self checkDefault:@"ichatEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInIChat"];
+	}
+	
 	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;

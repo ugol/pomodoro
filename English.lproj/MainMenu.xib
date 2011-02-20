@@ -23,8 +23,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1209"/>
 			<integer value="546"/>
+			<integer value="1574"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3021,7 +3021,7 @@
 										<object class="NSTabViewItem" id="644025895">
 											<string key="NSIdentifier">Item 6</string>
 											<object class="NSView" key="NSView" id="653578314">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="785960754"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3124,7 +3124,7 @@
 													<object class="NSButton" id="135467414">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{22, 268}, {327, 32}}</string>
+														<string key="NSFrame">{{22, 234}, {327, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="816286277">
@@ -3133,30 +3133,6 @@
 															<string key="NSContents">modify iChat status when working on Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="135467414"/>
-															<int key="NSButtonFlags">1211912703</int>
-															<int key="NSButtonFlags2">2</int>
-															<reference key="NSNormalImage" ref="227150842"/>
-															<reference key="NSAlternateImage" ref="383743416"/>
-															<string key="NSAlternateContents"/>
-															<string key="NSKeyEquivalent"/>
-															<int key="NSPeriodicDelay">200</int>
-															<int key="NSPeriodicInterval">25</int>
-															<string key="themeKey">gradientTheme</string>
-															<int key="BGButtonType">3</int>
-														</object>
-													</object>
-													<object class="NSButton" id="568812898">
-														<reference key="NSNextResponder" ref="653578314"/>
-														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{22, 234}, {331, 32}}</string>
-														<reference key="NSSuperview" ref="653578314"/>
-														<bool key="NSEnabled">YES</bool>
-														<object class="BGHUDButtonCell" key="NSCell" id="19746146">
-															<int key="NSCellFlags">-2080244224</int>
-															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">modify Skype status when working on Pomodoro</string>
-															<reference key="NSSupport" ref="284816210"/>
-															<reference key="NSControlView" ref="568812898"/>
 															<int key="NSButtonFlags">1211912703</int>
 															<int key="NSButtonFlags2">2</int>
 															<reference key="NSNormalImage" ref="227150842"/>
@@ -3195,6 +3171,7 @@
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
+												<reference key="NSSuperview" ref="785960754"/>
 											</object>
 											<string key="NSLabel">GTD</string>
 											<reference key="NSColor" ref="174337795"/>
@@ -4839,7 +4816,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 										<object class="BGHUDTabViewItem" id="832683382">
 											<string key="NSIdentifier">Item 5</string>
 											<object class="NSView" key="NSView" id="473415495">
-												<reference key="NSNextResponder" ref="785960754"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -5111,21 +5088,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
-												<reference key="NSSuperview" ref="785960754"/>
 											</object>
 											<string key="NSLabel">Shortcut</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="832683382"/>
+									<reference key="NSSelectedTabViewItem" ref="644025895"/>
 									<reference key="NSFont" ref="284816210"/>
 									<int key="NSTvFlags">0</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<nil key="themeKey"/>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="473415495"/>
+										<reference ref="653578314"/>
 									</object>
 								</object>
 							</object>
@@ -8591,22 +8567,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.skypeEnabled</string>
-						<reference key="source" ref="568812898"/>
-						<reference key="destination" ref="227004176"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="568812898"/>
-							<reference key="NSDestination" ref="227004176"/>
-							<string key="NSLabel">value: values.skypeEnabled</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.skypeEnabled</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1646</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.adiumEnabled</string>
 						<reference key="source" ref="934993291"/>
 						<reference key="destination" ref="227004176"/>
@@ -11248,12 +11208,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="492359160"/>
-							<reference ref="135467414"/>
-							<reference ref="568812898"/>
 							<reference ref="934993291"/>
 							<reference ref="647550149"/>
 							<reference ref="23388164"/>
 							<reference ref="351541989"/>
+							<reference ref="135467414"/>
 						</object>
 						<reference key="parent" ref="644025895"/>
 					</object>
@@ -11317,20 +11276,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<int key="objectID">1640</int>
 						<reference key="object" ref="816286277"/>
 						<reference key="parent" ref="135467414"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1643</int>
-						<reference key="object" ref="568812898"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="19746146"/>
-						</object>
-						<reference key="parent" ref="653578314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1644</int>
-						<reference key="object" ref="19746146"/>
-						<reference key="parent" ref="568812898"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1647</int>
@@ -11593,9 +11538,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>1639.IBPluginDependency</string>
 					<string>1639.IBViewBoundsToFrameTransform</string>
 					<string>1640.IBPluginDependency</string>
-					<string>1643.IBPluginDependency</string>
-					<string>1643.IBViewBoundsToFrameTransform</string>
-					<string>1644.IBPluginDependency</string>
 					<string>1647.IBPluginDependency</string>
 					<string>1647.IBViewBoundsToFrameTransform</string>
 					<string>1648.IBPluginDependency</string>
@@ -12181,11 +12123,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABBsAAAw5UAAA</bytes>
-					</object>
-					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABB2AAAw5KAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
