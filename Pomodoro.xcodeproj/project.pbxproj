@@ -191,6 +191,10 @@
 		2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		5060652F1315531000FDEA27 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = ../Pomodoro/German.lproj/Stats.xib; sourceTree = SOURCE_ROOT; };
+		50606533131554A800FDEA27 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Splash.xib; sourceTree = "<group>"; };
+		50606536131554DB00FDEA27 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = ../Pomodoro/German.lproj/About.xib; sourceTree = SOURCE_ROOT; };
+		506065391315550E00FDEA27 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = ../Pomodoro/German.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		6907B7B612DD016300CEB09C /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		6907B7B712DD016300CEB09C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		6907B7B812DD016300CEB09C /* pomodoro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoro.png; sourceTree = "<group>"; };
@@ -299,7 +303,7 @@
 		69F52CB1130FD8BB0035E0D4 /* Scripter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scripter.h; path = src/Scripter.h; sourceTree = "<group>"; };
 		69F52CB2130FD8BB0035E0D4 /* Scripter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scripter.m; path = src/Scripter.m; sourceTree = "<group>"; };
 		69F52D1213103CEC0035E0D4 /* addTodoToThings.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToThings.applescript; sourceTree = "<group>"; };
-		69F52D53131066FF0035E0D4 /* addTodoToOmniFocus.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToOmniFocus.applescript; sourceTree = "<group>"; };
+		69F52D53131066FF0035E0D4 /* addTodoToOmniFocus.applescript */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = 4; path = addTodoToOmniFocus.applescript; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -871,6 +875,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6907BC0A12DDEBD900CEB09C /* English */,
+				50606536131554DB00FDEA27 /* German */,
 			);
 			name = About.xib;
 			sourceTree = "<group>";
@@ -879,6 +884,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6907BC0C12DDEBD900CEB09C /* English */,
+				506065391315550E00FDEA27 /* German */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6907BC0E12DDEBD900CEB09C /* English */,
+				5060652F1315531000FDEA27 /* German */,
 			);
 			name = Stats.xib;
 			sourceTree = "<group>";
@@ -895,6 +902,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				697281EC130F5533008F1975 /* English */,
+				50606533131554A800FDEA27 /* German */,
 			);
 			name = Splash.xib;
 			sourceTree = "<group>";

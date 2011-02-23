@@ -895,6 +895,7 @@
 	[PomodoroDefaults removeDefaults];
 	[self updateShortcuts];
 	[self showTimeOnStatusBar: _initialTime * 60];
+	[self updateMenu];
 		
 }
 
