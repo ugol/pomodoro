@@ -55,41 +55,41 @@
 	[defaultValues setObject: [NSNumber numberWithShort:44] forKey:@"quickStatsCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"quickStatsFlags"];
 
-	[defaultValues setObject:@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'" forKey:@"growlStart"];
-	[defaultValues setObject:@"Ready, set, go" forKey:@"speechStart"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptStart"];
-	[defaultValues setObject:@"Just started pomodoro '$pomodoroName'" forKey:@"twitterStart"];
+	[defaultValues setObject:NSLocalizedString(@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'.",@"Growl pomodoro start") forKey:@"growlStart"];
+	[defaultValues setObject:NSLocalizedString(@"Ready, set, go",@"Speech pomodoro start") forKey:@"speechStart"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptStart"];
+	[defaultValues setObject:NSLocalizedString(@"Just started pomodoro '$pomodoroName'",@"Twitter pomodoro start") forKey:@"twitterStart"];
 	
-	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"growlInterrupt"];
-	[defaultValues setObject:@"You have $secs seconds to resume" forKey:@"speechInterrupt"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptInterrupt"];
+	[defaultValues setObject:NSLocalizedString(@"You have $secs seconds to resume.",@"Growl pomodoro interrupt") forKey:@"growlInterrupt"];
+	[defaultValues setObject:NSLocalizedString(@"You have $secs seconds to resume",@"Speech pomodoro interrupt") forKey:@"speechInterrupt"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptInterrupt"];
 	
-	[defaultValues setObject:@"... interruption max time is over, sorry!" forKey:@"growlInterruptOver"];
-	[defaultValues setObject:@"interruption over, sorry" forKey:@"speechInterruptOver"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptInterruptOver"];
+	[defaultValues setObject:NSLocalizedString(@"... interruption max time is over, sorry!",@"Growl interrupt over") forKey:@"growlInterruptOver"];
+	[defaultValues setObject:NSLocalizedString(@"interruption over, sorry",@"Speech interrupt over") forKey:@"speechInterruptOver"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptInterruptOver"];
 	
-	[defaultValues setObject:@"Not a good one? Just try again!" forKey:@"growlReset"];
-	[defaultValues setObject:@"Try again" forKey:@"speechReset"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptReset"];
-	[defaultValues setObject:@"I have just reset pomodoro '$pomodoroName'" forKey:@"twitterReset"];
+	[defaultValues setObject:NSLocalizedString(@"Not a good one? Just try again!",@"Growl pomodoro reset") forKey:@"growlReset"];
+	[defaultValues setObject:NSLocalizedString(@"Try again",@"Speech pomodoro reset") forKey:@"speechReset"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptReset"];
+	[defaultValues setObject:NSLocalizedString(@"I have just reset pomodoro '$pomodoroName'",@"Twitter pomodoro reset") forKey:@"twitterReset"];
 
-	[defaultValues setObject:@"... and we're back!" forKey:@"growlResume"];
-	[defaultValues setObject:@"... and we're back!" forKey:@"speechResume"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptResume"];
+	[defaultValues setObject:NSLocalizedString(@"... and we're back!",@"Growl pomodoro resume") forKey:@"growlResume"];
+	[defaultValues setObject:NSLocalizedString(@"And we are back!",@"Speech pomodoro resume") forKey:@"speechResume"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptResume"];
 	
-	[defaultValues setObject:@"Great! A full pomodoro!" forKey:@"growlEnd"];
-	[defaultValues setObject:@"Well done!" forKey:@"speechEnd"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptEnd"];
-	[defaultValues setObject:@"Just finished pomodoro '$pomodoroName'" forKey:@"twitterEnd"];
+	[defaultValues setObject:NSLocalizedString(@"Great! A full pomodoro!",@"Growl pomodoro end") forKey:@"growlEnd"];
+	[defaultValues setObject:NSLocalizedString(@"Well done!",@"Speech pomodoro end") forKey:@"speechEnd"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptEnd"];
+	[defaultValues setObject:NSLocalizedString(@"Just finished pomodoro '$pomodoroName'",@"Twitter pomodoro end") forKey:@"twitterEnd"];
 	
-	[defaultValues setObject:@"Other $mins minutes passed by. $passed total minutes spent." forKey:@"growlEvery"];
-	[defaultValues setObject:@"$time minutes to go" forKey:@"speechEvery"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptEvery"];
+	[defaultValues setObject:NSLocalizedString(@"Other $mins minutes passed by. $passed total minutes spent.",@"Growl every minutes") forKey:@"growlEvery"];
+	[defaultValues setObject:NSLocalizedString(@"$time minutes to go",@"Speech every minutes") forKey:@"speechEvery"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptEvery"];
 	
-	[defaultValues setObject:@"Ready for another one?" forKey:@"growlBreakFinished"];
-	[defaultValues setObject:@"Ready for next one?" forKey:@"speechBreakFinished"];
-	[defaultValues setObject:@"-- insert here your Applescript" forKey:@"scriptBreakFinished"];
-	[defaultValues setObject:@"Just finished break after pomodoro '$pomodoroName'" forKey:@"twitterBreakFinished"];
+	[defaultValues setObject:NSLocalizedString(@"Ready for another one?",@"Growl break finsihed") forKey:@"growlBreakFinished"];
+	[defaultValues setObject:NSLocalizedString(@"Ready for next one?",@"Speech break finished") forKey:@"speechBreakFinished"];
+	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptBreakFinished"];
+	[defaultValues setObject:NSLocalizedString(@"Just finished break after pomodoro '$pomodoroName'",@"Twitter break finished") forKey:@"twitterBreakFinished"];
 	
 	[defaultValues setObject:@"Alex" forKey:@"defaultVoice"];
 	
@@ -165,10 +165,10 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"calendarEnabled"];
 	[defaultValues setObject:@"Pomodoros" forKey:@"selectedCalendar"];
-	[defaultValues setObject:@"$duration minutes Pomodoro '$pomodoroName'" forKey:@"calendarEnd"];
+	[defaultValues setObject:NSLocalizedString(@"$duration minutes Pomodoro '$pomodoroName'",@"Calendar end text") forKey:@"calendarEnd"];
 
 		
-	[defaultValues setObject:@"Insert here the pomodoro name" forKey:@"pomodoroName"];
+	[defaultValues setObject:NSLocalizedString(@"Insert here the pomodoro name",@"Pomodoro name prompt") forKey:@"pomodoroName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
 	

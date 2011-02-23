@@ -21,6 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="585"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -61,7 +62,6 @@
 							<int key="NSvFlags">12</int>
 							<string key="NSFrame">{{13, 10}, {786, 449}}</string>
 							<reference key="NSSuperview" ref="889255048"/>
-							<reference key="NSWindow"/>
 							<object class="NSMutableArray" key="NSTabViewItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSTabViewItem" id="217099353">
@@ -726,14 +726,12 @@
 																<int key="NSvFlags">4352</int>
 																<string key="NSFrameSize">{730, 325}</string>
 																<reference key="NSSuperview" ref="298526058"/>
-																<reference key="NSWindow"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTableHeaderView" key="NSHeaderView" id="456075864">
 																	<reference key="NSNextResponder" ref="50868502"/>
 																	<int key="NSvFlags">256</int>
 																	<string key="NSFrameSize">{730, 17}</string>
 																	<reference key="NSSuperview" ref="50868502"/>
-																	<reference key="NSWindow"/>
 																	<reference key="NSTableView" ref="1063001895"/>
 																</object>
 																<object class="BGHUDTableCornerView" key="NSCornerView" id="228803731">
@@ -741,7 +739,6 @@
 																	<int key="NSvFlags">-2147483392</int>
 																	<string key="NSFrame">{{-26, 0}, {16, 17}}</string>
 																	<reference key="NSSuperview" ref="659900128"/>
-																	<reference key="NSWindow"/>
 																</object>
 																<object class="NSMutableArray" key="NSTableColumns">
 																	<bool key="EncodedWithXMLCoder">YES</bool>
@@ -752,7 +749,7 @@
 																		<object class="BGHUDTableViewHeaderCell" key="NSHeaderCell">
 																			<int key="NSCellFlags">75628096</int>
 																			<int key="NSCellFlags2">2048</int>
-																			<string key="NSContents">Beschreibung</string>
+																			<string key="NSContents">Bezeichnung</string>
 																			<object class="NSFont" key="NSSupport" id="26">
 																				<string key="NSName">LucidaGrande</string>
 																				<double key="NSSize">11</double>
@@ -1049,7 +1046,7 @@
 																		<object class="BGHUDTableViewHeaderCell" key="NSHeaderCell">
 																			<int key="NSCellFlags">75628096</int>
 																			<int key="NSCellFlags2">2048</int>
-																			<string key="NSContents">Abgeschlossen</string>
+																			<string key="NSContents">Zeitpunkt</string>
 																			<reference key="NSSupport" ref="26"/>
 																			<reference key="NSBackgroundColor" ref="764244552"/>
 																			<reference key="NSTextColor" ref="202486433"/>
@@ -1114,6 +1111,14 @@
 																<int key="NSTvFlags">-635437056</int>
 																<reference key="NSDelegate"/>
 																<reference key="NSDataSource"/>
+																<object class="NSArray" key="NSSortDescriptors">
+																	<bool key="EncodedWithXMLCoder">YES</bool>
+																	<object class="NSSortDescriptor">
+																		<string key="NSKey">when</string>
+																		<bool key="NSAscending">NO</bool>
+																		<string key="NSSelector">compare:</string>
+																	</object>
+																</object>
 																<int key="NSColumnAutoresizingStyle">4</int>
 																<int key="NSDraggingSourceMaskForLocal">15</int>
 																<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -1124,7 +1129,6 @@
 														</object>
 														<string key="NSFrame">{{1, 17}, {730, 325}}</string>
 														<reference key="NSSuperview" ref="659900128"/>
-														<reference key="NSWindow"/>
 														<reference key="NSNextKeyView" ref="1063001895"/>
 														<reference key="NSDocView" ref="1063001895"/>
 														<reference key="NSBGColor" ref="844893636"/>
@@ -1139,7 +1143,6 @@
 														</object>
 														<string key="NSFrame">{{1, 0}, {730, 17}}</string>
 														<reference key="NSSuperview" ref="659900128"/>
-														<reference key="NSWindow"/>
 														<reference key="NSNextKeyView" ref="456075864"/>
 														<reference key="NSDocView" ref="456075864"/>
 														<reference key="NSBGColor" ref="844893636"/>
@@ -1150,7 +1153,6 @@
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{-100, -100}, {15, 281}}</string>
 														<reference key="NSSuperview" ref="659900128"/>
-														<reference key="NSWindow"/>
 														<reference key="NSTarget" ref="659900128"/>
 														<string key="NSAction">_doScroller:</string>
 														<string key="themeKey">gradientTheme</string>
@@ -1160,7 +1162,6 @@
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{-100, -100}, {306, 15}}</string>
 														<reference key="NSSuperview" ref="659900128"/>
-														<reference key="NSWindow"/>
 														<int key="NSsFlags">1</int>
 														<reference key="NSTarget" ref="659900128"/>
 														<string key="NSAction">_doScroller:</string>
@@ -1171,7 +1172,6 @@
 												</object>
 												<string key="NSFrame">{{17, 57}, {732, 343}}</string>
 												<reference key="NSSuperview" ref="571672957"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="298526058"/>
 												<int key="NSsFlags">530</int>
 												<reference key="NSVScroller" ref="936398159"/>
@@ -1187,7 +1187,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 9}, {114, 32}}</string>
 												<reference key="NSSuperview" ref="571672957"/>
-												<reference key="NSWindow"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="BGHUDButtonCell" key="NSCell" id="133371745">
 													<int key="NSCellFlags">67239424</int>
@@ -1211,7 +1210,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{125, 9}, {98, 32}}</string>
 												<reference key="NSSuperview" ref="571672957"/>
-												<reference key="NSWindow"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="BGHUDButtonCell" key="NSCell" id="95805474">
 													<int key="NSCellFlags">67239424</int>
@@ -1235,7 +1233,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{642, 9}, {113, 32}}</string>
 												<reference key="NSSuperview" ref="571672957"/>
-												<reference key="NSWindow"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="BGHUDButtonCell" key="NSCell" id="934021193">
 													<int key="NSCellFlags">67239424</int>
@@ -1257,7 +1254,6 @@
 										</object>
 										<string key="NSFrame">{{10, 33}, {766, 403}}</string>
 										<reference key="NSSuperview" ref="844687343"/>
-										<reference key="NSWindow"/>
 									</object>
 									<string key="NSLabel">Protokoll</string>
 									<reference key="NSColor" ref="93724137"/>
@@ -1278,7 +1274,6 @@
 					</object>
 					<string key="NSFrameSize">{812, 465}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>

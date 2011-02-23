@@ -8669,6 +8669,62 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1675</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">finishPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="642670225"/>
+					</object>
+					<int key="connectionID">1676</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">internalInterruptPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="174982236"/>
+					</object>
+					<int key="connectionID">1677</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">interruptPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="847432173"/>
+					</object>
+					<int key="connectionID">1678</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">invalidatePomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="831487343"/>
+					</object>
+					<int key="connectionID">1679</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">resumePomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="782536133"/>
+					</object>
+					<int key="connectionID">1680</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">setupPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="743168075"/>
+					</object>
+					<int key="connectionID">1681</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">startPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="601187434"/>
+					</object>
+					<int key="connectionID">1682</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -12579,7 +12635,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1675</int>
+			<int key="maxID">1682</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -13124,13 +13180,17 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>calendarsCombo</string>
 							<string>endScriptText</string>
 							<string>everyScriptText</string>
+							<string>finishPomodoro</string>
 							<string>growlEveryCombo</string>
 							<string>initialTimeCombo</string>
+							<string>internalInterruptPomodoro</string>
 							<string>internalInterruptRecorder</string>
 							<string>interruptCombo</string>
 							<string>interruptOverScriptText</string>
+							<string>interruptPomodoro</string>
 							<string>interruptRecorder</string>
 							<string>interruptScriptText</string>
+							<string>invalidatePomodoro</string>
 							<string>longBreakCombo</string>
 							<string>muteRecorder</string>
 							<string>namePanel</string>
@@ -13141,10 +13201,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>quickStatsRecorder</string>
 							<string>resetRecorder</string>
 							<string>resetScriptText</string>
+							<string>resumePomodoro</string>
 							<string>resumeRecorder</string>
 							<string>resumeScriptText</string>
 							<string>scriptEveryCombo</string>
+							<string>setupPomodoro</string>
 							<string>speechEveryCombo</string>
+							<string>startPomodoro</string>
 							<string>startRecorder</string>
 							<string>startScriptText</string>
 							<string>twitterLogin</string>
@@ -13159,13 +13222,17 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>NSComboBox</string>
 							<string>NSTextView</string>
 							<string>NSTextView</string>
+							<string>NSMenuItem</string>
 							<string>NSComboBox</string>
 							<string>NSComboBox</string>
+							<string>NSMenuItem</string>
 							<string>SRRecorderControl</string>
 							<string>NSComboBox</string>
 							<string>NSTextView</string>
+							<string>NSMenuItem</string>
 							<string>SRRecorderControl</string>
 							<string>NSTextView</string>
+							<string>NSMenuItem</string>
 							<string>NSComboBox</string>
 							<string>SRRecorderControl</string>
 							<string>NSPanel</string>
@@ -13176,10 +13243,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>SRRecorderControl</string>
 							<string>SRRecorderControl</string>
 							<string>NSTextView</string>
+							<string>NSMenuItem</string>
 							<string>SRRecorderControl</string>
 							<string>NSTextView</string>
 							<string>NSComboBox</string>
+							<string>NSMenuItem</string>
 							<string>NSComboBox</string>
+							<string>NSMenuItem</string>
 							<string>SRRecorderControl</string>
 							<string>NSTextView</string>
 							<string>NSButton</string>
@@ -13197,13 +13267,17 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>calendarsCombo</string>
 							<string>endScriptText</string>
 							<string>everyScriptText</string>
+							<string>finishPomodoro</string>
 							<string>growlEveryCombo</string>
 							<string>initialTimeCombo</string>
+							<string>internalInterruptPomodoro</string>
 							<string>internalInterruptRecorder</string>
 							<string>interruptCombo</string>
 							<string>interruptOverScriptText</string>
+							<string>interruptPomodoro</string>
 							<string>interruptRecorder</string>
 							<string>interruptScriptText</string>
+							<string>invalidatePomodoro</string>
 							<string>longBreakCombo</string>
 							<string>muteRecorder</string>
 							<string>namePanel</string>
@@ -13214,10 +13288,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>quickStatsRecorder</string>
 							<string>resetRecorder</string>
 							<string>resetScriptText</string>
+							<string>resumePomodoro</string>
 							<string>resumeRecorder</string>
 							<string>resumeScriptText</string>
 							<string>scriptEveryCombo</string>
+							<string>setupPomodoro</string>
 							<string>speechEveryCombo</string>
+							<string>startPomodoro</string>
 							<string>startRecorder</string>
 							<string>startScriptText</string>
 							<string>twitterLogin</string>
@@ -13248,12 +13325,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="candidateClassName">NSTextView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">finishPomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">growlEveryCombo</string>
 								<string key="candidateClassName">NSComboBox</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">initialTimeCombo</string>
 								<string key="candidateClassName">NSComboBox</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">internalInterruptPomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">internalInterruptRecorder</string>
@@ -13268,12 +13353,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="candidateClassName">NSTextView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">interruptPomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">interruptRecorder</string>
 								<string key="candidateClassName">SRRecorderControl</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">interruptScriptText</string>
 								<string key="candidateClassName">NSTextView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">invalidatePomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">longBreakCombo</string>
@@ -13316,6 +13409,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="candidateClassName">NSTextView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">resumePomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">resumeRecorder</string>
 								<string key="candidateClassName">SRRecorderControl</string>
 							</object>
@@ -13328,8 +13425,16 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="candidateClassName">NSComboBox</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">setupPomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">speechEveryCombo</string>
 								<string key="candidateClassName">NSComboBox</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">startPomodoro</string>
+								<string key="candidateClassName">NSMenuItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">startRecorder</string>

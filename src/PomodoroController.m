@@ -109,7 +109,7 @@
 	[internalInterruptRecorder setKeyCombo:internalInterruptKeyCombo];
 	[resumeRecorder setKeyCombo:resumeKeyCombo];
 	[quickStatsRecorder setKeyCombo:quickStatsKeyCombo];
-	
+	[self updateMenu];
 }
 
 #pragma mark ---- Login helper methods ----
@@ -334,7 +334,7 @@
 -(void) keyQuickStats {
 	
 	NSInteger time = pomodoro.time;	
-	NSString* quickStats = [NSString stringWithFormat:@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d", 
+	NSString* quickStats = [NSString stringWithFormat:NSLocalizedString(@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d",@"Quick statistic format string"), 
 							_pomodoroName, time/60, time%60, 
 							pomodoro.externallyInterrupted, pomodoro.internallyInterrupted, pomodoro.resumed,
 							_globalPomodoroStarted, _globalPomodoroDone, _globalPomodoroReset,
@@ -343,7 +343,7 @@
 							_dailyExternalInterruptions, _dailyInternalInterruptions, _dailyPomodoroResumed
 							];
 	
-	[growl growlAlert:quickStats title:@"Quick Statistics"];
+	[growl growlAlert:quickStats title:NSLocalizedString(@"Quick Statistics",@"Growl header for quick statistics")];
 }
 
 -(IBAction)about:(id)sender {
@@ -450,7 +450,7 @@
 		if ([self checkDefault:@"thingsEnabled"] && [self checkDefault:@"thingsAddingEnabled"]) {
 			[scripter executeScript:@"addTodoToThings" withParameter:name];
 		}
-		if ([self checkDefault:@"omniFocusAddingEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
+		if ([self checkDefault:@"omniFocusEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
 			[scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
 		}
 	}
@@ -520,7 +520,7 @@
 	
 	if ([self checkDefault:@"growlAtInternalInterruptEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyInternalInterruptEnabled"];
-		[growl growlAlert: @"Internal Interruption" title:@"Pomodoro" sticky:sticky];
+		[growl growlAlert: NSLocalizedString(@"Internal Interruption",@"Growl header for internal interruptions") title:@"Pomodoro" sticky:sticky];
 	}
 }
 
@@ -538,12 +538,12 @@
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
 
-	NSString* name = [NSString stringWithFormat:@"%@%@%", @"Working on: ", _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];
 
 	if ([self checkDefault:@"growlAtStartEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyStartEnabled"];
-		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:@"Pomodoro started" sticky:sticky];
+		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:NSLocalizedString(@"Pomodoro started",@"Growl header for pomodoro start") sticky:sticky];
 	}
 	
 	
@@ -574,14 +574,14 @@
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalExternalInterruptions)+1] forKey:@"globalExternalInterruptions"];
 
-	NSString* name = [NSString stringWithFormat:@"%@%@", @"Interrupted: ", _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
 	[statusItem setToolTip:name];
 	
 	NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
 
 		NSString* growlString = [self bindCommonVariables:@"growlInterrupt"];		
-		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:@"Pomodoro interrupted"];
+		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:NSLocalizedString(@"Pomodoro interrupted",@"Growl title for interruptions")];
 	}
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptEnabled"]) {
@@ -599,13 +599,13 @@
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(id)pomo {
-	NSString* name = [NSString stringWithFormat:@"%@%@%@", @"Last: ", _pomodoroName, @" (interrupted)"];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (interrupted)",@"Tooltip for interrupt-reseted pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
 
 	if ([self checkDefault:@"growlAtInterruptOverEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:@"Pomodoro reset"];
+		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptOverEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechInterruptOver"]];
@@ -629,13 +629,13 @@
 
 -(void) pomodoroReset:(id)pomo {
 
-	NSString* name = [NSString stringWithFormat:@"%@%@%@", @"Last: ", _pomodoroName, @" (reset)"];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (reset)",@"Tooltip for reseted pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
 
 	if ([self checkDefault:@"growlAtResetEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:@"Pomodoro reset"];
+		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResetEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechReset"]];
@@ -660,14 +660,14 @@
 }
 
 -(void) pomodoroResumed:(id)pomo {
-	NSString* name = [NSString stringWithFormat:@"%@%@", @"Working on: ", _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[statusItem setImage:pomodoroImage];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroResumed)+1] forKey:@"dailyPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroResumed)+1] forKey:@"globalPomodoroResumed"];
 
 	if ([self checkDefault:@"growlAtResumeEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:@"Pomodoro resumed"];
+		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:NSLocalizedString(@"Pomodoro resumed",@"Growl header for resumed pomodoro")];
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResumeEnabled"])
 		[speech startSpeakingString:[self bindCommonVariables:@"speechResume"]];
@@ -679,21 +679,21 @@
 }
 
 -(void) breakStarted:(id)pomo {
-	NSString* name = [NSString stringWithFormat:@"%@%@", @"Break after: ", _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Break after: %@",@"Tooltip for break"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[self updateMenu];
 }
 
 -(void) breakFinished:(id)pomo {
 	
-	NSString* name = [NSString stringWithFormat:@"%@%@", @"Just finished: ", _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	
 	[self updateMenu];
 	
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyBreakFinishedEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:@"Pomodoro break finished" sticky:sticky];
+		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:NSLocalizedString(@"Pomodoro break finished",@"Growl header for finished break") sticky:sticky];
 	}
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtBreakFinishedEnabled"])
@@ -719,6 +719,9 @@
 }
 
 -(void) pomodoroFinished:(id)pomo {
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
+	[statusItem setToolTip:name];
+	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
 	
@@ -734,7 +737,7 @@
 	
 	if ([self checkDefault:@"growlAtEndEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyEndEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:@"Pomodoro finished" sticky:sticky];
+		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:NSLocalizedString(@"Pomodoro finished",@"Growl header for finished pomodoro") sticky:sticky];
 	}
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEndEnabled"])
@@ -979,16 +982,8 @@
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-	
-	startPomodoro = [pomodoroMenu itemWithTitle:@"Start Pomodoro"];
-	finishPomodoro = [pomodoroMenu itemWithTitle:@"Force Completion"];
-	interruptPomodoro = [pomodoroMenu itemWithTitle:@"External Interrupt"];
-	internalInterruptPomodoro = [pomodoroMenu itemWithTitle:@"Internal Interrupt"];
-	invalidatePomodoro = [pomodoroMenu itemWithTitle:@"Reset Pomodoro"];
-	resumePomodoro = [pomodoroMenu itemWithTitle:@"Resume"];
-	setupPomodoro = [pomodoroMenu itemWithTitle:@"Preferences..."];
 		
-	[statusItem setToolTip:@"Pomodoro Time Management"];
+	[statusItem setToolTip:NSLocalizedString(@"Pomodoro Time Management",@"Status Tooltip")];
 	[statusItem setHighlightMode:YES];
 	[statusItem setMenu:pomodoroMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];

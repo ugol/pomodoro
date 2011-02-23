@@ -194,9 +194,9 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		if (error) {
 			NSLog(@"Error %@", error);
 		} else {
-			NSString* header = [NSString stringWithFormat:@"Export data created by Pomodoro on %@\n", [NSDate date]];
+			NSString* header = [NSString stringWithFormat:NSLocalizedString(@"Export data created by Pomodoro on %@\n",@"Export Header"), [NSDate date]];
 			[output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
-			[output writeData:[@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n" dataUsingEncoding:NSUTF8StringEncoding]];
+			[output writeData:[NSLocalizedString(@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n",@"Export Table Header") dataUsingEncoding:NSUTF8StringEncoding]];
 			for (NSManagedObject* pomo in results) {
 				NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
 				[output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
