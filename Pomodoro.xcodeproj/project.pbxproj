@@ -62,25 +62,17 @@
 		6907BC1012DDEBD900CEB09C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0B12DDEBD900CEB09C /* MainMenu.xib */; };
 		6907BC1112DDEBD900CEB09C /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6907BC0D12DDEBD900CEB09C /* Stats.xib */; };
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
-		696FE87C13107108005E17FA /* setStatusToAvailableInAdium.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
-		696FE87D13107108005E17FA /* setStatusToPomodoroInAdium.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
 		696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
 		696FE8C613109EA9005E17FA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
-		696FE9E31311A4CC005E17FA /* setStatusToAvailableInIChat.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */; };
-		696FE9E41311A4CC005E17FA /* setStatusToPomodoroInIChat.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 696FE9E21311A4CC005E17FA /* setStatusToPomodoroInIChat.applescript */; };
 		696FE9E51311A4D4005E17FA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */; };
 		696FE9E61311A4D4005E17FA /* setStatusToPomodoroInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE9E21311A4CC005E17FA /* setStatusToPomodoroInIChat.applescript */; };
-		697280B4130D7810008F1975 /* getToDoListFromThings.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 697280B3130D7810008F1975 /* getToDoListFromThings.applescript */; };
 		697280B5130D7828008F1975 /* getToDoListFromThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 697280B3130D7810008F1975 /* getToDoListFromThings.applescript */; };
-		69728139130DCF65008F1975 /* getToDoListFromOmniFocus.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */; };
 		6972813A130DCF6D008F1975 /* getToDoListFromOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69728138130DCF65008F1975 /* getToDoListFromOmniFocus.applescript */; };
 		697281CC130F50BB008F1975 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 697281CB130F50BB008F1975 /* splash.html */; };
 		697281ED130F5533008F1975 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697281EB130F5533008F1975 /* Splash.xib */; };
 		697295C5130F5586008F1975 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69728D23130F5584008F1975 /* SplashController.m */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
-		69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
-		69AA321A1302D98E000BBBCF /* removeFromLoginItems.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
 		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
@@ -89,9 +81,7 @@
 		69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */; };
 		69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0212FCC0C00083941C /* PTKeyCombo.m */; };
 		69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F52CB2130FD8BB0035E0D4 /* Scripter.m */; };
-		69F52D1313103CEC0035E0D4 /* addTodoToThings.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69F52D1213103CEC0035E0D4 /* addTodoToThings.applescript */; };
 		69F52D35131061B40035E0D4 /* addTodoToThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69F52D1213103CEC0035E0D4 /* addTodoToThings.applescript */; };
-		69F52D54131066FF0035E0D4 /* addTodoToOmniFocus.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 69F52D53131066FF0035E0D4 /* addTodoToOmniFocus.applescript */; };
 		69F52D55131067050035E0D4 /* addTodoToOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69F52D53131066FF0035E0D4 /* addTodoToOmniFocus.applescript */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -841,18 +831,8 @@
 				69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */,
 				69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */,
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
-				69AA32191302D98E000BBBCF /* insertIntoLoginItems.applescript in Sources */,
-				69AA321A1302D98E000BBBCF /* removeFromLoginItems.applescript in Sources */,
-				697280B4130D7810008F1975 /* getToDoListFromThings.applescript in Sources */,
-				69728139130DCF65008F1975 /* getToDoListFromOmniFocus.applescript in Sources */,
 				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 				69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */,
-				69F52D1313103CEC0035E0D4 /* addTodoToThings.applescript in Sources */,
-				69F52D54131066FF0035E0D4 /* addTodoToOmniFocus.applescript in Sources */,
-				696FE87C13107108005E17FA /* setStatusToAvailableInAdium.applescript in Sources */,
-				696FE87D13107108005E17FA /* setStatusToPomodoroInAdium.applescript in Sources */,
-				696FE9E31311A4CC005E17FA /* setStatusToAvailableInIChat.applescript in Sources */,
-				696FE9E41311A4CC005E17FA /* setStatusToPomodoroInIChat.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
