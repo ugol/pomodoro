@@ -109,7 +109,6 @@
 	[internalInterruptRecorder setKeyCombo:internalInterruptKeyCombo];
 	[resumeRecorder setKeyCombo:resumeKeyCombo];
 	[quickStatsRecorder setKeyCombo:quickStatsKeyCombo];
-	[self updateMenu];
 }
 
 #pragma mark ---- Login helper methods ----
