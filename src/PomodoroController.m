@@ -377,73 +377,45 @@
 	[NSApp terminate:self];
 }
 
-
-- (void) menuReadyToStart {
-	[statusItem setImage:pomodoroImage];
-	[statusItem setAlternateImage:pomodoroNegativeImage];
-	[startPomodoro setEnabled:YES];
-	[finishPomodoro setEnabled:NO];
-	[invalidatePomodoro setEnabled:NO];
-	[interruptPomodoro setEnabled:NO];
-	[internalInterruptPomodoro setEnabled:NO];
-	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:YES];
-}
-
-- (void) menuReadyToStartDuringBreak {
-	[statusItem setImage:pomodoroBreakImage];
-	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
-	[startPomodoro setEnabled:YES];
-	[finishPomodoro setEnabled:NO];
-	[invalidatePomodoro setEnabled:NO];
-	[interruptPomodoro setEnabled:NO];
-	[internalInterruptPomodoro setEnabled:NO];
-	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:YES];
-}
-
-
-- (void) menuPomodoroInBreak {
-	[statusItem setImage:pomodoroBreakImage];
-	[statusItem setAlternateImage:pomodoroNegativeBreakImage];
-	[startPomodoro setEnabled:NO];
-	[finishPomodoro setEnabled:NO];
-	[invalidatePomodoro setEnabled:NO];
-	[interruptPomodoro setEnabled:NO];
-	[internalInterruptPomodoro setEnabled:NO];
-	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:YES];
-}
-
-- (void) menuAfterStart {
-	[statusItem setImage:pomodoroImage];
-	[statusItem setAlternateImage:pomodoroNegativeImage];
-	[startPomodoro setEnabled:NO];
-	[finishPomodoro setEnabled:YES];
-	[invalidatePomodoro setEnabled:YES];
-	[interruptPomodoro setEnabled:YES];
-	[internalInterruptPomodoro setEnabled:YES];
-	[resumePomodoro setEnabled:NO];
-	[setupPomodoro setEnabled:YES];
+- (void) updateMenu {
+	enum PomoState state = pomodoro.state;
 	
-}
-
-- (void) menuAfterInterrupt {
-	[statusItem setImage:pomodoroFreezeImage];
-	[statusItem setAlternateImage:pomodoroNegativeFreezeImage];
-	[startPomodoro setEnabled:NO];
-	[finishPomodoro setEnabled:NO];
-	[invalidatePomodoro setEnabled:YES];
-	[interruptPomodoro setEnabled:NO];
-	[internalInterruptPomodoro setEnabled:YES];
-	[resumePomodoro setEnabled:YES];
-	[setupPomodoro setEnabled:YES];
+	NSImage * image;
+	NSImage * alternateImage;
+	switch (state) {
+		case PomoTicking:
+			image = pomodoroImage;
+			alternateImage = pomodoroNegativeImage;
+			break;
+		case PomoInterrupted:
+			image = pomodoroFreezeImage;
+			alternateImage = pomodoroNegativeFreezeImage;
+			break;
+		case PomoInBreak:
+			image = pomodoroBreakImage;
+			alternateImage = pomodoroNegativeBreakImage;
+			break;
+		default: // PomoReadyToStart
+			image = pomodoroImage;
+			alternateImage = pomodoroNegativeImage;
+			break;
+	}
+		
+	[statusItem setImage:image];
+	[statusItem setAlternateImage:alternateImage];
 	
+	[startPomodoro             setEnabled:(state == PomoReadyToStart) || ((state == PomoInBreak) && [self checkDefault:@"canRestartAtBreak"])];
+	[finishPomodoro            setEnabled:(state == PomoTicking)];
+	[invalidatePomodoro        setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
+	[interruptPomodoro         setEnabled:(state == PomoTicking)];
+	[internalInterruptPomodoro setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
+	[resumePomodoro            setEnabled:(state == PomoInterrupted)];
+	[setupPomodoro             setEnabled:YES];
 }
 
 - (void) realStart {
-	[self menuAfterStart];
 	[pomodoro start];	
+	[self updateMenu];
 }
 
 -(IBAction) nameCanceled:(id)sender {
@@ -527,17 +499,16 @@
 }
 
 - (IBAction) reset: (id) sender {
-	
-	[self menuReadyToStart];
-	[self showTimeOnStatusBar: _initialTime * 60];
 	[pomodoro reset];
+	[self updateMenu];
+	[self showTimeOnStatusBar: _initialTime * 60];
 	
 }
 
 - (IBAction) interrupt: (id) sender {
-	
-	[self menuAfterInterrupt];
+
 	[pomodoro interruptFor: _interruptTime];
+	[self updateMenu];
 	
 }
 
@@ -555,8 +526,8 @@
 
 -(IBAction) resume: (id) sender {
 	
-	[self menuAfterStart];
 	[pomodoro resume];
+	[self updateMenu];
 	
 }
 
@@ -652,7 +623,7 @@
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
 	
-	[self menuReadyToStart];
+	[self updateMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
 
@@ -710,19 +681,15 @@
 -(void) breakStarted:(id)pomo {
 	NSString* name = [NSString stringWithFormat:@"%@%@", @"Break after: ", _pomodoroName];
 	[statusItem setToolTip:name];
-	if ([self checkDefault:@"canRestartAtBreak"]) {	
-		[self menuReadyToStartDuringBreak];
-	} else {
-		[self menuPomodoroInBreak];
-	}
+	[self updateMenu];
 }
 
 -(void) breakFinished:(id)pomo {
 	
 	NSString* name = [NSString stringWithFormat:@"%@%@", @"Just finished: ", _pomodoroName];
 	[statusItem setToolTip:name];
-
-	[self menuReadyToStart];
+	
+	[self updateMenu];
 	
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyBreakFinishedEnabled"];
@@ -752,7 +719,6 @@
 }
 
 -(void) pomodoroFinished:(id)pomo {
-	[self menuReadyToStart];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
 	
@@ -807,6 +773,7 @@
 			[self start:nil];
 		}
 	}
+	[self updateMenu];
 
 }
 
@@ -929,6 +896,10 @@
 	[self updateShortcuts];
 	[self showTimeOnStatusBar: _initialTime * 60];
 		
+}
+
+-(IBAction) changedCanRestartInBreaks: (id) sender {
+	[self updateMenu];	
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {

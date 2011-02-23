@@ -67,7 +67,7 @@
 @class PTHotKey;
 @class Scripter;
 
-@interface PomodoroController : NSObject <PomodoroDelegate, MGTwitterEngineDelegate> {
+@interface PomodoroController : NSObject <PomodoroDelegate, MGTwitterEngineDelegate, NSOpenSavePanelDelegate> {
 
 	ProcessSerialNumber psn;
 	AboutController* about;
@@ -196,6 +196,7 @@
 -(IBAction) internalInterrupt: (id) sender;
 -(IBAction) resume: (id) sender;
 -(IBAction) resetDefaultValues: (id) sender;
+-(IBAction) changedCanRestartInBreaks: (id) sender;
 
 -(IBAction) connectToTwitter: (id) sender;
 

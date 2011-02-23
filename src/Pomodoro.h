@@ -45,6 +45,12 @@
 
 @end
 
+enum PomoState {
+	PomoReadyToStart,
+	PomoTicking,
+	PomoInterrupted,
+	PomoInBreak
+};
 
 @interface Pomodoro : NSObject {
 
@@ -60,6 +66,8 @@
 	NSTimer *oneSecTimer;
 	NSTimer *breakTimer;
 	NSTimer *interruptionTimer;
+	
+	enum PomoState state;
 
 }
 
@@ -73,6 +81,7 @@
 @property (nonatomic, retain) NSTimer *oneSecTimer;
 @property (nonatomic, retain) NSTimer *breakTimer;
 @property (nonatomic, retain) NSTimer *interruptionTimer;
+@property (nonatomic, readonly) enum PomoState state;
 @property (nonatomic, retain) id delegate;
 
 - (id) initWithDuration:(NSInteger) durationTime;
