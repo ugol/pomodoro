@@ -40,6 +40,8 @@
 	
 	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"]] autorelease];
 	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
+	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
