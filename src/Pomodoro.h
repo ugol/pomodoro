@@ -51,6 +51,7 @@
 	id delegate;
 	
 	NSInteger durationMinutes;
+	NSInteger lastPomodoroDurationSeconds;
 	NSInteger externallyInterrupted;
 	NSInteger internallyInterrupted;
 	NSInteger resumed;
@@ -65,6 +66,7 @@
 @property (nonatomic, assign, readonly) NSInteger time;
 @property (nonatomic, assign, readonly) NSInteger resumed;
 @property (nonatomic, assign) NSInteger durationMinutes;
+@property (nonatomic, readonly) NSInteger lastPomodoroDurationSeconds;
 @property (nonatomic, assign) NSInteger externallyInterrupted;
 @property (nonatomic, assign) NSInteger internallyInterrupted;
 
