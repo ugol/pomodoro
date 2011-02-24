@@ -23,8 +23,10 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="546"/>
+			<integer value="719"/>
+			<integer value="1506"/>
 			<integer value="458"/>
+			<integer value="546"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -55,7 +57,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{329, 142}, {627, 531}}</string>
 				<int key="NSWTFlags">1677721600</int>
-				<string key="NSWindowTitle">Pomodoro Preferences</string>
+				<string key="NSWindowTitle">Pomodoro Einstellungen</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -86,13 +88,13 @@
 													<object class="NSButton" id="1052530814">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{15, 300}, {231, 32}}</string>
+														<string key="NSFrame">{{15, 300}, {299, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="362345288">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Ring alarm when Pomodoro ends</string>
+															<string key="NSContents">Pomodoro mit Wecker-Klingeln abschließen</string>
 															<object class="NSFont" key="NSSupport" id="284816210">
 																<string key="NSName">LucidaGrande</string>
 																<double key="NSSize">13</double>
@@ -119,13 +121,13 @@
 													<object class="NSButton" id="3135352">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{15, 348}, {252, 18}}</string>
+														<string key="NSFrame">{{15, 348}, {413, 18}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="774067606">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Ask Pomodoro name before starting</string>
+															<string key="NSContents">Vor dem Start einer Pomodoro nach einer Bezeichnung fragen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="3135352"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -149,7 +151,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="844999225">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Automatic Pomodoro restart</string>
+															<string key="NSContents">Pomodoro automatisch neu starten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="123673971"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -173,7 +175,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="286959858">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Ticking sound</string>
+															<string key="NSContents">Tick-Geräusch abspielen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="297421714"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -368,7 +370,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="605986364">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">You can interrupt a Pomodoro for</string>
+															<string key="NSContents">Maximale Unterbrechungs-Dauer:</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="1069861783"/>
 															<object class="NSColor" key="NSBackgroundColor" id="174337795">
@@ -390,7 +392,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="716424486">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Synthesized Voice</string>
+															<string key="NSContents">Künstliche Stimme</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="1072642144"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -401,13 +403,13 @@
 													<object class="BGHUDLabel" id="200176724">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{296, 400}, {64, 17}}</string>
+														<string key="NSFrame">{{296, 400}, {66, 17}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="749671308">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">seconds</string>
+															<string key="NSContents">Sekunden</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="200176724"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -549,7 +551,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="1026187422">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Pomodoro is initially setup to</string>
+															<string key="NSContents">Länge einer Pomodoro:</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="270101592"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -566,7 +568,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="58400642">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">minutes</string>
+															<string key="NSContents">Minuten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="54469194"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -654,13 +656,13 @@
 													<object class="NSButton" id="1066425994">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{27, 219}, {231, 32}}</string>
+														<string key="NSFrame">{{27, 219}, {270, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="854840265">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Ring alarm when break ends</string>
+															<string key="NSContents">Pause mit Wecker-Klingeln abschließen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="1066425994"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -678,13 +680,13 @@
 													<object class="NSButton" id="862116410">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{27, 199}, {231, 32}}</string>
+														<string key="NSFrame">{{27, 199}, {304, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="808290441">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Ticking sound in breaks</string>
+															<string key="NSContents">Während der Pause Tick-Geräusch abspielen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="862116410"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -702,13 +704,13 @@
 													<object class="NSButton" id="165477958">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{27, 188}, {231, 18}}</string>
+														<string key="NSFrame">{{27, 188}, {417, 18}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="202199275">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Can restart in breaks</string>
+															<string key="NSContents">Während der Pause darf eine neue Pomodoro gestartet werden</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="165477958"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -732,7 +734,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="992216949">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Start automatically a break of</string>
+															<string key="NSContents">Automatisch eine Pause mit</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="88362424"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -750,7 +752,7 @@
 													<object class="NSComboBox" id="888425430">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{233, 246}, {52, 26}}</string>
+														<string key="NSFrame">{{216, 246}, {52, 26}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDComboBoxCell" key="NSCell" id="83950549">
@@ -875,13 +877,13 @@
 													<object class="BGHUDLabel" id="59228528">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{287, 252}, {163, 17}}</string>
+														<string key="NSFrame">{{272, 252}, {253, 17}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="193046552">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">minutes at end</string>
+															<string key="NSContents">Minuten an eine Pomodoro anschließen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="59228528"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -908,13 +910,13 @@
 													<object class="NSButton" id="215635118">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{27, 162}, {162, 32}}</string>
+														<string key="NSFrame">{{27, 162}, {60, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="861214228">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Start longer break of</string>
+															<string key="NSContents">Nach</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="215635118"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -932,7 +934,7 @@
 													<object class="NSComboBox" id="626920907">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{182, 166}, {52, 26}}</string>
+														<string key="NSFrame">{{303, 165}, {52, 26}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDComboBoxCell" key="NSCell" id="494143514">
@@ -1057,7 +1059,7 @@
 													<object class="NSComboBox" id="508886330">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{334, 166}, {52, 26}}</string>
+														<string key="NSFrame">{{81, 165}, {52, 26}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDComboBoxCell" key="NSCell" id="282371776">
@@ -1182,13 +1184,13 @@
 													<object class="BGHUDLabel" id="886871155">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{236, 171}, {99, 17}}</string>
+														<string key="NSFrame">{{135, 171}, {223, 17}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="611934720">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">minutes every</string>
+															<string key="NSContents">Pomodoros die Pause auf</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="886871155"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -1199,13 +1201,13 @@
 													<object class="BGHUDLabel" id="58075096">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{394, 170}, {114, 17}}</string>
+														<string key="NSFrame">{{360, 170}, {174, 17}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="202601743">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Pomodoros</string>
+															<string key="NSContents">Minuten verlängern</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="58075096"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -1216,13 +1218,13 @@
 													<object class="NSButton" id="13886266">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{353, 9}, {217, 32}}</string>
+														<string key="NSFrame">{{274, 9}, {296, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="65747436">
 															<int key="NSCellFlags">67239424</int>
 															<int key="NSCellFlags2">134217728</int>
-															<string key="NSContents">Reset back to default values</string>
+															<string key="NSContents">Auf Standardeinstellungen zurücksetzen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="13886266"/>
 															<int key="NSButtonFlags">-2038284033</int>
@@ -1291,13 +1293,13 @@
 													<object class="NSButton" id="28021921">
 														<reference key="NSNextResponder" ref="157430883"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{15, 128}, {243, 32}}</string>
+														<string key="NSFrame">{{15, 128}, {318, 32}}</string>
 														<reference key="NSSuperview" ref="157430883"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="655458979">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Show remaining time on status bar</string>
+															<string key="NSContents">Verbleibende Zeit in der Menü-Leiste anzeigen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="28021921"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1321,7 +1323,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="479276965">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Automatically start Pomodoro on login</string>
+															<string key="NSContents">Pomodoro bei der Anmeldung starten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="577459962"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1345,7 +1347,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="959606510">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Show Splash screen at startup</string>
+															<string key="NSContents">Beim Start Hilfe anzeigen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="201342702"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1364,7 +1366,7 @@
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 												<reference key="NSSuperview" ref="785960754"/>
 											</object>
-											<string key="NSLabel">General</string>
+											<string key="NSLabel">Allgemein</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -1453,13 +1455,13 @@
 													<object class="NSButton" id="220878650">
 														<reference key="NSNextResponder" ref="1007862969"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{29, 397}, {197, 32}}</string>
+														<string key="NSFrame">{{29, 397}, {220, 32}}</string>
 														<reference key="NSSuperview" ref="1007862969"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="34053142">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Enable Calendar Integration</string>
+															<string key="NSContents">Kalender-Integration aktivieren</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="220878650"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1494,7 +1496,7 @@
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 											</object>
-											<string key="NSLabel">Calendar</string>
+											<string key="NSLabel">Kalender</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -1639,7 +1641,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="310863142">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">mins</string>
+															<string key="NSContents">Min.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="107618034"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -1656,7 +1658,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="879863011">
 															<int key="NSCellFlags">67239424</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Every</string>
+															<string key="NSContents">Alle</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="407889179"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1674,13 +1676,13 @@
 													<object class="NSButton" id="406787500">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 417}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 417}, {145, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="45072960">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Start</string>
+															<string key="NSContents">Start der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="406787500"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1698,13 +1700,13 @@
 													<object class="NSButton" id="985388742">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{25, 399}, {63, 32}}</string>
+														<string key="NSFrame">{{25, 399}, {90, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="221267744">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Sticky</string>
+															<string key="NSContents">Permanent</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="985388742"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1722,13 +1724,13 @@
 													<object class="NSButton" id="969854485">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{25, 159}, {63, 32}}</string>
+														<string key="NSFrame">{{25, 159}, {90, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="539200655">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Sticky</string>
+															<string key="NSContents">Permanent</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="969854485"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1746,13 +1748,13 @@
 													<object class="NSButton" id="928728285">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{25, 111}, {63, 32}}</string>
+														<string key="NSFrame">{{25, 111}, {90, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="773499314">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Sticky</string>
+															<string key="NSContents">Permanent</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="928728285"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1770,13 +1772,13 @@
 													<object class="NSButton" id="401487638">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 369}, {78, 32}}</string>
+														<string key="NSFrame">{{13, 369}, {117, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="576401024">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt</string>
+															<string key="NSContents">Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="401487638"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1794,13 +1796,13 @@
 													<object class="NSButton" id="583917142">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 321}, {109, 32}}</string>
+														<string key="NSFrame">{{13, 321}, {161, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="453782732">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt over</string>
+															<string key="NSContents">Ende der Unterbr.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="583917142"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1818,13 +1820,13 @@
 													<object class="NSButton" id="532010211">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 273}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 273}, {76, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="707380327">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Reset</string>
+															<string key="NSContents">Abbruch</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="532010211"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1842,13 +1844,13 @@
 													<object class="NSButton" id="406614837">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 232}, {72, 18}}</string>
+														<string key="NSFrame">{{13, 232}, {89, 18}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="242887765">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Resume</string>
+															<string key="NSContents">Fortsetzen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="406614837"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -1866,13 +1868,13 @@
 													<object class="NSButton" id="437867936">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 177}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 177}, {147, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="145259863">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">End</string>
+															<string key="NSContents">Ende der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="437867936"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2030,13 +2032,13 @@
 													<object class="NSButton" id="826885453">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 129}, {85, 32}}</string>
+														<string key="NSFrame">{{13, 129}, {118, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="1002813655">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Break end</string>
+															<string key="NSContents">Ende der Pause</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="826885453"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2074,13 +2076,13 @@
 													<object class="NSButton" id="267590668">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 40}, {130, 32}}</string>
+														<string key="NSFrame">{{13, 40}, {165, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="363242286">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Internal Interrupt</string>
+															<string key="NSContents">Interne Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="267590668"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2098,13 +2100,13 @@
 													<object class="NSButton" id="994650363">
 														<reference key="NSNextResponder" ref="38019131"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{25, 22}, {63, 32}}</string>
+														<string key="NSFrame">{{25, 22}, {90, 32}}</string>
 														<reference key="NSSuperview" ref="38019131"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="143701819">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Sticky</string>
+															<string key="NSContents">Permanent</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="994650363"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2267,7 +2269,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="460831682">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">mins</string>
+															<string key="NSContents">Min.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="164250474"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -2284,7 +2286,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="310709466">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Every</string>
+															<string key="NSContents">Alle</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="535335524"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2302,13 +2304,13 @@
 													<object class="NSButton" id="740127039">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 417}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 417}, {145, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="681205757">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Start</string>
+															<string key="NSContents">Start der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="740127039"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2326,13 +2328,13 @@
 													<object class="NSButton" id="33249820">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 369}, {78, 32}}</string>
+														<string key="NSFrame">{{13, 369}, {117, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="505499163">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt</string>
+															<string key="NSContents">Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="33249820"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2350,13 +2352,13 @@
 													<object class="NSButton" id="547588719">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 321}, {109, 32}}</string>
+														<string key="NSFrame">{{13, 321}, {134, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="156640638">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt over</string>
+															<string key="NSContents">Ende der Unterbr.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="547588719"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2374,13 +2376,13 @@
 													<object class="NSButton" id="409901689">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 273}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 273}, {76, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="84399814">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Reset</string>
+															<string key="NSContents">Abbruch</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="409901689"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2398,13 +2400,13 @@
 													<object class="NSButton" id="567594010">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 225}, {72, 32}}</string>
+														<string key="NSFrame">{{13, 225}, {94, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="1027067973">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Resume</string>
+															<string key="NSContents">Fortsetzten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="567594010"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2422,13 +2424,13 @@
 													<object class="NSButton" id="778618603">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 177}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 177}, {147, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="572686165">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">End</string>
+															<string key="NSContents">Ende der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="778618603"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2586,13 +2588,13 @@
 													<object class="NSButton" id="399452107">
 														<reference key="NSNextResponder" ref="1038793680"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 129}, {85, 32}}</string>
+														<string key="NSFrame">{{13, 129}, {118, 32}}</string>
 														<reference key="NSSuperview" ref="1038793680"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="159577705">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Break end</string>
+															<string key="NSContents">Ende der Pause</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="399452107"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2630,7 +2632,7 @@
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 											</object>
-											<string key="NSLabel">Speech</string>
+											<string key="NSLabel">Sprache</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -2694,7 +2696,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="717135762">
 															<int key="NSCellFlags">67239424</int>
 															<int key="NSCellFlags2">134283264</int>
-															<string key="NSContents">Login</string>
+															<string key="NSContents">Anmelden</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="412769447"/>
 															<int key="NSButtonFlags">-2038284033</int>
@@ -2711,13 +2713,13 @@
 													<object class="NSButton" id="372753438">
 														<reference key="NSNextResponder" ref="521742585"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 167}, {63, 32}}</string>
+														<string key="NSFrame">{{13, 167}, {76, 32}}</string>
 														<reference key="NSSuperview" ref="521742585"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="800790559">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Reset</string>
+															<string key="NSContents">Abbruch</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="372753438"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2741,7 +2743,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="103180150">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">End</string>
+															<string key="NSContents">Ende</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="330939027"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2843,13 +2845,13 @@
 													<object class="NSButton" id="237092602">
 														<reference key="NSNextResponder" ref="521742585"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{13, 71}, {85, 32}}</string>
+														<string key="NSFrame">{{13, 71}, {118, 32}}</string>
 														<reference key="NSSuperview" ref="521742585"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="1011804623">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Break end</string>
+															<string key="NSContents">Ende der Pause</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="237092602"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -2887,13 +2889,13 @@
 													<object class="BGHUDLabel" id="349538716">
 														<reference key="NSNextResponder" ref="521742585"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{79, 391}, {127, 17}}</string>
+														<string key="NSFrame">{{79, 391}, {143, 17}}</string>
 														<reference key="NSSuperview" ref="521742585"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="764352283">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Twitter user name</string>
+															<string key="NSContents">Twitter Benutzername</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="349538716"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -2910,7 +2912,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="327437158">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Twitter password</string>
+															<string key="NSContents">Twitter Passwort</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="748191561"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -2969,7 +2971,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="763138602">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Enable twitter integration</string>
+															<string key="NSContents">Twitter-Integration aktivieren</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="47801660"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3029,13 +3031,13 @@
 													<object class="NSButton" id="492359160">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{22, 397}, {253, 32}}</string>
+														<string key="NSFrame">{{22, 397}, {351, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="835239688">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Show "Things" open tasks in "Today"</string>
+															<string key="NSContents">Offene Aufgaben unter "Heute" in "Things" anzeigen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="492359160"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3053,13 +3055,13 @@
 													<object class="NSButton" id="647550149">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{45, 372}, {253, 32}}</string>
+														<string key="NSFrame">{{45, 372}, {277, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="318160307">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Automatically add new tasks</string>
+															<string key="NSContents">Automatisch neue Aufgaben hinzufügen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="647550149"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3077,13 +3079,13 @@
 													<object class="NSButton" id="23388164">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{22, 338}, {276, 32}}</string>
+														<string key="NSFrame">{{22, 338}, {392, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="18251963">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Show "Omnifocus" open tasks in "Inbox"</string>
+															<string key="NSContents">Offene Aufgaben unter "Eingang" in "OmniFocus" anzeigen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="23388164"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3101,13 +3103,13 @@
 													<object class="NSButton" id="351541989">
 														<reference key="NSNextResponder" ref="653578314"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{45, 315}, {276, 32}}</string>
+														<string key="NSFrame">{{45, 315}, {277, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="751667887">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Automatically add new tasks</string>
+															<string key="NSContents">Automatisch neue Aufgaben hinzufügen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="351541989"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3131,7 +3133,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="816286277">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">modify iChat status when working on Pomodoro</string>
+															<string key="NSContents">iChat Status anpassen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="135467414"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3155,7 +3157,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="333536925">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">modify Adium status when working on Pomodoro</string>
+															<string key="NSContents">Adium Status anpassen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="934993291"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3173,7 +3175,7 @@
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 											</object>
-											<string key="NSLabel">GTD</string>
+											<string key="NSLabel">Aufgaben</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -3318,7 +3320,7 @@
 														<object class="BGHUDButtonCell" key="NSCell" id="1009055348">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Every</string>
+															<string key="NSContents">Alle</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="972351546"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3336,13 +3338,13 @@
 													<object class="NSButton" id="681132320">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 395}, {63, 32}}</string>
+														<string key="NSFrame">{{21, 395}, {145, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="1062451576">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Start</string>
+															<string key="NSContents">Start der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="681132320"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3360,13 +3362,13 @@
 													<object class="NSButton" id="401502223">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 347}, {78, 32}}</string>
+														<string key="NSFrame">{{21, 347}, {117, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="406706112">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt</string>
+															<string key="NSContents">Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="401502223"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3384,13 +3386,13 @@
 													<object class="NSButton" id="671790743">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 299}, {109, 32}}</string>
+														<string key="NSFrame">{{21, 299}, {134, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="69915292">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Interrupt over</string>
+															<string key="NSContents">Ende der Unterbr.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="671790743"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3408,13 +3410,13 @@
 													<object class="NSButton" id="575838680">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 251}, {63, 32}}</string>
+														<string key="NSFrame">{{21, 251}, {76, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="886915302">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Reset</string>
+															<string key="NSContents">Abbruch</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="575838680"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3432,13 +3434,13 @@
 													<object class="NSButton" id="281321989">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 203}, {72, 32}}</string>
+														<string key="NSFrame">{{21, 203}, {89, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="749230817">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Resume</string>
+															<string key="NSContents">Fortsetzen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="281321989"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3456,13 +3458,13 @@
 													<object class="NSButton" id="703406874">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 155}, {63, 32}}</string>
+														<string key="NSFrame">{{21, 155}, {147, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="97222581">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">End</string>
+															<string key="NSContents">Ende der Pomodoro</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="703406874"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3480,13 +3482,13 @@
 													<object class="NSButton" id="915270433">
 														<reference key="NSNextResponder" ref="898207549"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{21, 107}, {85, 32}}</string>
+														<string key="NSFrame">{{21, 107}, {118, 32}}</string>
 														<reference key="NSSuperview" ref="898207549"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="867339793">
 															<int key="NSCellFlags">-2080244224</int>
 															<int key="NSCellFlags2">0</int>
-															<string key="NSContents">Break end</string>
+															<string key="NSContents">Ende der Pause</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="915270433"/>
 															<int key="NSButtonFlags">1211912703</int>
@@ -3510,7 +3512,7 @@
 														<object class="NSTextFieldCell" key="NSCell" id="1000898707">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">mins</string>
+															<string key="NSContents">Min.</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="891673477"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -4809,7 +4811,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 											</object>
-											<string key="NSLabel">Script</string>
+											<string key="NSLabel">Skript</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -4871,7 +4873,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 														<object class="NSTextFieldCell" key="NSCell" id="1048358582">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Reset Pomodoro</string>
+															<string key="NSContents">Pomodoro abrechen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="685498524"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -4909,7 +4911,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 														<object class="NSTextFieldCell" key="NSCell" id="591248084">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Start Pomodoro</string>
+															<string key="NSContents">Pomodoro starten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="752944202"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -4920,13 +4922,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 													<object class="BGHUDLabel" id="379323358">
 														<reference key="NSNextResponder" ref="473415495"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{114, 232}, {137, 17}}</string>
+														<string key="NSFrame">{{114, 232}, {151, 17}}</string>
 														<reference key="NSSuperview" ref="473415495"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="1055539756">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">External Interrupt</string>
+															<string key="NSContents">Externe Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="379323358"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -4943,7 +4945,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 														<object class="NSTextFieldCell" key="NSCell" id="259177506">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Internal Interrupt</string>
+															<string key="NSContents">Interne Unterbrechung</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="455944331"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -4960,7 +4962,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 														<object class="NSTextFieldCell" key="NSCell" id="55056914">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Mute all Sounds</string>
+															<string key="NSContents">Alle Töne abschalten</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="313322909"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -5034,13 +5036,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 													<object class="BGHUDLabel" id="3706">
 														<reference key="NSNextResponder" ref="473415495"/>
 														<int key="NSvFlags">268</int>
-														<string key="NSFrame">{{114, 133}, {137, 17}}</string>
+														<string key="NSFrame">{{114, 133}, {138, 17}}</string>
 														<reference key="NSSuperview" ref="473415495"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="327205712">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Resume Pomodoro</string>
+															<string key="NSContents">Pomodoro fortsetzen</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="3706"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -5057,7 +5059,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 														<object class="NSTextFieldCell" key="NSCell" id="89183829">
 															<int key="NSCellFlags">68288064</int>
 															<int key="NSCellFlags2">272630784</int>
-															<string key="NSContents">Quick Statistics</string>
+															<string key="NSContents">Schnelle Statistik</string>
 															<reference key="NSSupport" ref="284816210"/>
 															<reference key="NSControlView" ref="855874515"/>
 															<reference key="NSBackgroundColor" ref="174337795"/>
@@ -5089,7 +5091,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
 											</object>
-											<string key="NSLabel">Shortcut</string>
+											<string key="NSLabel">Tastatur</string>
 											<reference key="NSColor" ref="174337795"/>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
@@ -5122,7 +5124,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="601187434">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Start Pomodoro</string>
+						<string key="NSTitle">Pomodoro starten</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<object class="NSCustomResource" key="NSOnImage" id="836672556">
@@ -5137,7 +5139,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="NSMenuItem" id="831487343">
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Reset Pomodoro</string>
+						<string key="NSTitle">Pomodoro abbrechen</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5146,7 +5148,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="NSMenuItem" id="642670225">
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Force Completion</string>
+						<string key="NSTitle">Pomodoro abschließen</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5165,7 +5167,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="NSMenuItem" id="847432173">
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">External Interrupt</string>
+						<string key="NSTitle">Externe Unterbrechung</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5174,7 +5176,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="NSMenuItem" id="174982236">
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Internal Interrupt</string>
+						<string key="NSTitle">Interne Unterbrechung</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5183,7 +5185,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="NSMenuItem" id="782536133">
 						<reference key="NSMenu" ref="740126098"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Resume</string>
+						<string key="NSTitle">Fortsetzen</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5201,7 +5203,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="743168075">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Preferences...</string>
+						<string key="NSTitle">Einstellungen...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5209,7 +5211,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="552175012">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Pomodoro Stats</string>
+						<string key="NSTitle">Pomodoro Statistik</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5217,7 +5219,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="197165802">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Mute all Sounds</string>
+						<string key="NSTitle">Alle Töne abschalten</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5235,7 +5237,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="657696298">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">About Pomodoro</string>
+						<string key="NSTitle">Über Pomodoro</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5243,7 +5245,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="200061687">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Help on Pomodoro</string>
+						<string key="NSTitle">Pomodoro Hilfe</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5251,7 +5253,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<object class="NSMenuItem" id="566239289">
 						<reference key="NSMenu" ref="740126098"/>
-						<string key="NSTitle">Quit Pomodoro</string>
+						<string key="NSTitle">Pomodoro beenden</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="836672556"/>
@@ -5268,12 +5270,12 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{434, 521}, {415, 125}}</string>
 				<int key="NSWTFlags">1677722624</int>
-				<string key="NSWindowTitle">Pomodoro Name</string>
+				<string key="NSWindowTitle">Bezeichnung der Pomodoro</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="364910145">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -5286,7 +5288,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<object class="NSTextFieldCell" key="NSCell" id="151183705">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Insert Pomodoro description:</string>
+								<string key="NSContents">Beschreibung der Aufgabe:</string>
 								<reference key="NSSupport" ref="284816210"/>
 								<reference key="NSControlView" ref="147342765"/>
 								<reference key="NSBackgroundColor" ref="174337795"/>
@@ -5320,13 +5322,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<object class="NSButton" id="957963241">
 							<reference key="NSNextResponder" ref="364910145"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{62, 12}, {98, 32}}</string>
+							<string key="NSFrame">{{57, 12}, {108, 32}}</string>
 							<reference key="NSSuperview" ref="364910145"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="BGHUDButtonCell" key="NSCell" id="64290512">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Cancel</string>
+								<string key="NSContents">Abbrechen</string>
 								<reference key="NSSupport" ref="284816210"/>
 								<reference key="NSControlView" ref="957963241"/>
 								<int key="NSButtonFlags">-2038284033</int>
@@ -5417,6 +5419,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{415, 125}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -8671,27 +8674,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">finishPomodoro</string>
+						<string key="label">startPomodoro</string>
 						<reference key="source" ref="690603773"/>
-						<reference key="destination" ref="642670225"/>
+						<reference key="destination" ref="601187434"/>
 					</object>
 					<int key="connectionID">1676</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">internalInterruptPomodoro</string>
-						<reference key="source" ref="690603773"/>
-						<reference key="destination" ref="174982236"/>
-					</object>
-					<int key="connectionID">1677</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">interruptPomodoro</string>
-						<reference key="source" ref="690603773"/>
-						<reference key="destination" ref="847432173"/>
-					</object>
-					<int key="connectionID">1678</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -8699,7 +8686,31 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="source" ref="690603773"/>
 						<reference key="destination" ref="831487343"/>
 					</object>
+					<int key="connectionID">1677</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">finishPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="642670225"/>
+					</object>
+					<int key="connectionID">1678</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">interruptPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="847432173"/>
+					</object>
 					<int key="connectionID">1679</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">internalInterruptPomodoro</string>
+						<reference key="source" ref="690603773"/>
+						<reference key="destination" ref="174982236"/>
+					</object>
+					<int key="connectionID">1680</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -8707,21 +8718,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="source" ref="690603773"/>
 						<reference key="destination" ref="782536133"/>
 					</object>
-					<int key="connectionID">1680</int>
+					<int key="connectionID">1681</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">setupPomodoro</string>
 						<reference key="source" ref="690603773"/>
 						<reference key="destination" ref="743168075"/>
-					</object>
-					<int key="connectionID">1681</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">startPomodoro</string>
-						<reference key="source" ref="690603773"/>
-						<reference key="destination" ref="601187434"/>
 					</object>
 					<int key="connectionID">1682</int>
 				</object>
@@ -8843,8 +8846,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="297421714"/>
 							<reference ref="990535725"/>
 							<reference ref="88362424"/>
-							<reference ref="888425430"/>
-							<reference ref="59228528"/>
 							<reference ref="123673971"/>
 							<reference ref="3135352"/>
 							<reference ref="1066425994"/>
@@ -8853,17 +8854,19 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="215635118"/>
 							<reference ref="28021921"/>
 							<reference ref="1072642144"/>
-							<reference ref="626920907"/>
-							<reference ref="886871155"/>
-							<reference ref="508886330"/>
-							<reference ref="58075096"/>
 							<reference ref="850682192"/>
 							<reference ref="766194013"/>
 							<reference ref="773581511"/>
 							<reference ref="837087281"/>
 							<reference ref="577459962"/>
-							<reference ref="13886266"/>
 							<reference ref="201342702"/>
+							<reference ref="508886330"/>
+							<reference ref="886871155"/>
+							<reference ref="888425430"/>
+							<reference ref="59228528"/>
+							<reference ref="58075096"/>
+							<reference ref="626920907"/>
+							<reference ref="13886266"/>
 						</object>
 						<reference key="parent" ref="286061383"/>
 					</object>
@@ -10792,7 +10795,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="799177940"/>
 							<reference ref="528482523"/>
 							<reference ref="685498524"/>
-							<reference ref="62603865"/>
 							<reference ref="752944202"/>
 							<reference ref="379323358"/>
 							<reference ref="455944331"/>
@@ -10803,6 +10805,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="3706"/>
 							<reference ref="855874515"/>
 							<reference ref="775601917"/>
+							<reference ref="62603865"/>
 						</object>
 						<reference key="parent" ref="832683382"/>
 					</object>
@@ -11636,6 +11639,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>460.IBPluginDependency</string>
 					<string>461.IBPluginDependency</string>
 					<string>462.IBPluginDependency</string>
+					<string>462.IBViewBoundsToFrameTransform</string>
 					<string>463.IBAttributePlaceholdersKey</string>
 					<string>463.IBPluginDependency</string>
 					<string>464.IBPluginDependency</string>
@@ -11751,7 +11755,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>619.IBViewBoundsToFrameTransform</string>
 					<string>620.IBPluginDependency</string>
 					<string>621.IBPluginDependency</string>
+					<string>621.IBViewBoundsToFrameTransform</string>
 					<string>623.IBPluginDependency</string>
+					<string>623.IBViewBoundsToFrameTransform</string>
 					<string>624.IBPluginDependency</string>
 					<string>626.IBPluginDependency</string>
 					<string>627.IBPluginDependency</string>
@@ -12033,7 +12039,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<string>net.wafflesoftware.ShortcutRecorder.IB.Leopard</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">AUOmAABDswAAA</bytes>
+						<bytes key="NSTransformStruct">AUOkgABDuYAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
@@ -12109,7 +12115,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDpwAAwz4AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABCpgAAwzwAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>DurationFormatter</string>
@@ -12117,7 +12123,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDxQAAwzkAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABDwgAAwzoAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -12152,7 +12158,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>{74, 862}</string>
 					<string>{{11, 977}, {478, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{654, 421}, {273, 283}}</string>
+					<string>{{448, 601}, {273, 103}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -12245,6 +12251,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABBYAAAw92AAA</bytes>
+					</object>
 					<object class="NSMutableDictionary">
 						<string key="NS.key.0">AccessibilityDescription</string>
 						<object class="IBAccessibilityAttribute" key="NS.object.0">
@@ -12381,7 +12390,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
-					<string>{{226, 227}, {179, 273}}</string>
+					<string>{{226, 227}, {210, 273}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -12401,7 +12410,13 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDaQAAw4cAAA</bytes>
+					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDj4AAw4WAAA</bytes>
+					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -12412,11 +12427,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDQwAAwwUAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABDs4AAwzwAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDfgAAwwEAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABDbAAAwzoAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -12573,7 +12588,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDfQAAwlAAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABDnQAAwhwAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>DurationFormatter</string>

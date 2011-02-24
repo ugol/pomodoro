@@ -131,13 +131,13 @@
 	NSArray* voices;
 	NSArray* textViews;
 	
-	NSMenuItem* startPomodoro;
-	NSMenuItem* finishPomodoro;
-	NSMenuItem* interruptPomodoro;
-	NSMenuItem* internalInterruptPomodoro;
-	NSMenuItem* invalidatePomodoro;
-	NSMenuItem* resumePomodoro;
-	NSMenuItem* setupPomodoro;
+	IBOutlet NSMenuItem* startPomodoro;
+	IBOutlet NSMenuItem* finishPomodoro;
+	IBOutlet NSMenuItem* interruptPomodoro;
+	IBOutlet NSMenuItem* internalInterruptPomodoro;
+	IBOutlet NSMenuItem* invalidatePomodoro;
+	IBOutlet NSMenuItem* resumePomodoro;
+	IBOutlet NSMenuItem* setupPomodoro;
 	
 	NSImage* pomodoroImage;
 	NSImage* pomodoroBreakImage;
