@@ -1,8 +1,11 @@
-----------------
-Pomodoro Desktop
-----------------
+--------
+Pomodoro
+--------
 
-Pomodoro desktop is a simple utility to manage a kitchen-like timer for your coding activities on the Mac. Pomodoro desktop can be used to track other activities too.
+Pomodoro is an antiprocrastination application that helps in Getting Things Done. 
+It is a simple but effective way to manage your time and to boost your productivity to higher levels. 
+Can be used for programming, studying, writing, cooking or simply concentrating on something important.
+ 
 You can find more informations on the Pomodoro Technique on http://www.pomodorotechnique.com/
 Updates, source code, new releases, manual and fixes on http://pomodoro.ugolandini.com
  
