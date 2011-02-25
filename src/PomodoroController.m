@@ -567,6 +567,10 @@
 		[scripter executeScript:@"setStatusToPomodoroInIChat"];
 	}
 	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInSkype"];
+	}
+	
 }
 
 -(void) pomodoroInterrupted:(id)pomo {
@@ -622,6 +626,11 @@
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
 	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInSkype"];
+	}
+	
+	
 	[self updateMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
@@ -655,6 +664,11 @@
 	if ([self checkDefault:@"ichatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
+	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInSkype"];
+	}
+	
 	
 }
 
@@ -759,6 +773,11 @@
 	if ([self checkDefault:@"ichatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
+	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInSkype"];
+	}
+	
 	
 	
 	if ([self checkDefault:@"breakEnabled"]) {

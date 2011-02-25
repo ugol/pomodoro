@@ -23,10 +23,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="719"/>
-			<integer value="1506"/>
-			<integer value="458"/>
 			<integer value="546"/>
+			<integer value="1506"/>
+			<integer value="719"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -76,12 +75,13 @@
 									<int key="NSvFlags">12</int>
 									<string key="NSFrame">{{13, 10}, {601, 515}}</string>
 									<reference key="NSSuperview" ref="991154636"/>
+									<reference key="NSWindow"/>
 									<object class="NSMutableArray" key="NSTabViewItems">
 										<bool key="EncodedWithXMLCoder">YES</bool>
 										<object class="BGHUDTabViewItem" id="286061383">
 											<string key="NSIdentifier">1</string>
 											<object class="NSView" key="NSView" id="157430883">
-												<reference key="NSNextResponder" ref="785960754"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1364,7 +1364,6 @@
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
-												<reference key="NSSuperview" ref="785960754"/>
 											</object>
 											<string key="NSLabel">Allgemein</string>
 											<reference key="NSColor" ref="174337795"/>
@@ -3024,7 +3023,7 @@
 										<object class="NSTabViewItem" id="644025895">
 											<string key="NSIdentifier">Item 6</string>
 											<object class="NSView" key="NSView" id="653578314">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="785960754"/>
 												<int key="NSvFlags">256</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3033,6 +3032,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{22, 397}, {351, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="835239688">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3057,6 +3057,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{45, 372}, {277, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="318160307">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3081,6 +3082,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{22, 338}, {392, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="18251963">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3105,6 +3107,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{45, 315}, {277, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="751667887">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3129,6 +3132,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{22, 234}, {327, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="816286277">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3153,6 +3157,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{22, 200}, {335, 32}}</string>
 														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="BGHUDButtonCell" key="NSCell" id="333536925">
 															<int key="NSCellFlags">-2080244224</int>
@@ -3172,8 +3177,35 @@
 															<int key="BGButtonType">3</int>
 														</object>
 													</object>
+													<object class="NSButton" id="180379579">
+														<reference key="NSNextResponder" ref="653578314"/>
+														<int key="NSvFlags">268</int>
+														<string key="NSFrame">{{22, 166}, {335, 32}}</string>
+														<reference key="NSSuperview" ref="653578314"/>
+														<reference key="NSWindow"/>
+														<bool key="NSEnabled">YES</bool>
+														<object class="BGHUDButtonCell" key="NSCell" id="300686257">
+															<int key="NSCellFlags">-2080244224</int>
+															<int key="NSCellFlags2">0</int>
+															<string key="NSContents">Skype Status anpassen</string>
+															<reference key="NSSupport" ref="284816210"/>
+															<reference key="NSControlView" ref="180379579"/>
+															<int key="NSButtonFlags">1211912703</int>
+															<int key="NSButtonFlags2">2</int>
+															<reference key="NSNormalImage" ref="227150842"/>
+															<reference key="NSAlternateImage" ref="383743416"/>
+															<string key="NSAlternateContents"/>
+															<string key="NSKeyEquivalent"/>
+															<int key="NSPeriodicDelay">200</int>
+															<int key="NSPeriodicInterval">25</int>
+															<string key="themeKey">gradientTheme</string>
+															<int key="BGButtonType">3</int>
+														</object>
+													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {581, 469}}</string>
+												<reference key="NSSuperview" ref="785960754"/>
+												<reference key="NSWindow"/>
 											</object>
 											<string key="NSLabel">Aufgaben</string>
 											<reference key="NSColor" ref="174337795"/>
@@ -5096,23 +5128,25 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 											<reference key="NSTabView" ref="785960754"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="286061383"/>
+									<reference key="NSSelectedTabViewItem" ref="644025895"/>
 									<reference key="NSFont" ref="284816210"/>
 									<int key="NSTvFlags">0</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<nil key="themeKey"/>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="157430883"/>
+										<reference ref="653578314"/>
 									</object>
 								</object>
 							</object>
 							<string key="NSFrameSize">{627, 531}</string>
 							<reference key="NSSuperview" ref="890379863"/>
+							<reference key="NSWindow"/>
 						</object>
 					</object>
 					<string key="NSFrameSize">{627, 531}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -5263,6 +5297,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<bool key="NSNoAutoenable">YES</bool>
 			</object>
 			<object class="NSUserDefaultsController" id="227004176">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>skypeEnabled</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="788485458">
@@ -8728,6 +8766,22 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1682</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.skypeEnabled</string>
+						<reference key="source" ref="180379579"/>
+						<reference key="destination" ref="227004176"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="180379579"/>
+							<reference key="NSDestination" ref="227004176"/>
+							<string key="NSLabel">value: values.skypeEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.skypeEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1686</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -11280,6 +11334,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="23388164"/>
 							<reference ref="351541989"/>
 							<reference ref="135467414"/>
+							<reference ref="180379579"/>
 						</object>
 						<reference key="parent" ref="644025895"/>
 					</object>
@@ -11413,6 +11468,20 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<int key="objectID">1672</int>
 						<reference key="object" ref="1302"/>
 						<reference key="parent" ref="775601917"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1683</int>
+						<reference key="object" ref="180379579"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="300686257"/>
+						</object>
+						<reference key="parent" ref="653578314"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1684</int>
+						<reference key="object" ref="300686257"/>
+						<reference key="parent" ref="180379579"/>
 					</object>
 				</object>
 			</object>
@@ -11618,6 +11687,9 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>1667.IBViewBoundsToFrameTransform</string>
 					<string>1668.IBPluginDependency</string>
 					<string>1670.IBPluginDependency</string>
+					<string>1683.IBPluginDependency</string>
+					<string>1683.IBViewBoundsToFrameTransform</string>
+					<string>1684.IBPluginDependency</string>
 					<string>451.IBEditorWindowLastContentRect</string>
 					<string>451.IBPluginDependency</string>
 					<string>451.IBViewEditorWindowController.showingBoundsRectangles</string>
@@ -12197,7 +12269,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABB2AAAw4GAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBsAAAw2YAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
@@ -12216,6 +12288,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</object>
 					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>net.wafflesoftware.ShortcutRecorder.IB.Leopard</string>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABB2AAAw2EAAA</bytes>
+					</object>
+					<string>com.binarymethod.BGHUDAppKitPlugin</string>
 					<string>{{417, 284}, {627, 531}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="NO"/>
@@ -12650,7 +12727,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1682</int>
+			<int key="maxID">1686</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -12663,389 +12740,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="minorKey">src/DurationFormatter.h</string>
 					</object>
 				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">PomodoroController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>about:</string>
-							<string>connectToTwitter:</string>
-							<string>finish:</string>
-							<string>help:</string>
-							<string>internalInterrupt:</string>
-							<string>interrupt:</string>
-							<string>nameCanceled:</string>
-							<string>nameGiven:</string>
-							<string>quit:</string>
-							<string>reset:</string>
-							<string>resetDefaultValues:</string>
-							<string>resume:</string>
-							<string>setup:</string>
-							<string>showOpenPanel:</string>
-							<string>start:</string>
-							<string>stats:</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>about:</string>
-							<string>connectToTwitter:</string>
-							<string>finish:</string>
-							<string>help:</string>
-							<string>internalInterrupt:</string>
-							<string>interrupt:</string>
-							<string>nameCanceled:</string>
-							<string>nameGiven:</string>
-							<string>quit:</string>
-							<string>reset:</string>
-							<string>resetDefaultValues:</string>
-							<string>resume:</string>
-							<string>setup:</string>
-							<string>showOpenPanel:</string>
-							<string>start:</string>
-							<string>stats:</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBActionInfo">
-								<string key="name">about:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">connectToTwitter:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">finish:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">help:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">internalInterrupt:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">interrupt:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">nameCanceled:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">nameGiven:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">quit:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">reset:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">resetDefaultValues:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">resume:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">setup:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">showOpenPanel:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">start:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">stats:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>breakCombo</string>
-							<string>breakScriptText</string>
-							<string>calendarsCombo</string>
-							<string>endScriptText</string>
-							<string>everyScriptText</string>
-							<string>growlEveryCombo</string>
-							<string>initialTimeCombo</string>
-							<string>internalInterruptRecorder</string>
-							<string>interruptCombo</string>
-							<string>interruptOverScriptText</string>
-							<string>interruptRecorder</string>
-							<string>interruptScriptText</string>
-							<string>longBreakCombo</string>
-							<string>muteRecorder</string>
-							<string>namePanel</string>
-							<string>namesCombo</string>
-							<string>pomodoroMenu</string>
-							<string>pomodorosForLong</string>
-							<string>prefs</string>
-							<string>quickStatsRecorder</string>
-							<string>resetRecorder</string>
-							<string>resetScriptText</string>
-							<string>resumeRecorder</string>
-							<string>resumeScriptText</string>
-							<string>scriptEveryCombo</string>
-							<string>speechEveryCombo</string>
-							<string>startRecorder</string>
-							<string>startScriptText</string>
-							<string>twitterLogin</string>
-							<string>twitterProgress</string>
-							<string>twitterStatus</string>
-							<string>voicesCombo</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSComboBox</string>
-							<string>NSTextView</string>
-							<string>NSComboBox</string>
-							<string>NSTextView</string>
-							<string>NSTextView</string>
-							<string>NSComboBox</string>
-							<string>NSComboBox</string>
-							<string>SRRecorderControl</string>
-							<string>NSComboBox</string>
-							<string>NSTextView</string>
-							<string>SRRecorderControl</string>
-							<string>NSTextView</string>
-							<string>NSComboBox</string>
-							<string>SRRecorderControl</string>
-							<string>NSPanel</string>
-							<string>NSComboBox</string>
-							<string>NSMenu</string>
-							<string>NSComboBox</string>
-							<string>NSPanel</string>
-							<string>SRRecorderControl</string>
-							<string>SRRecorderControl</string>
-							<string>NSTextView</string>
-							<string>SRRecorderControl</string>
-							<string>NSTextView</string>
-							<string>NSComboBox</string>
-							<string>NSComboBox</string>
-							<string>SRRecorderControl</string>
-							<string>NSTextView</string>
-							<string>NSButton</string>
-							<string>NSProgressIndicator</string>
-							<string>NSImageView</string>
-							<string>NSComboBox</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>breakCombo</string>
-							<string>breakScriptText</string>
-							<string>calendarsCombo</string>
-							<string>endScriptText</string>
-							<string>everyScriptText</string>
-							<string>growlEveryCombo</string>
-							<string>initialTimeCombo</string>
-							<string>internalInterruptRecorder</string>
-							<string>interruptCombo</string>
-							<string>interruptOverScriptText</string>
-							<string>interruptRecorder</string>
-							<string>interruptScriptText</string>
-							<string>longBreakCombo</string>
-							<string>muteRecorder</string>
-							<string>namePanel</string>
-							<string>namesCombo</string>
-							<string>pomodoroMenu</string>
-							<string>pomodorosForLong</string>
-							<string>prefs</string>
-							<string>quickStatsRecorder</string>
-							<string>resetRecorder</string>
-							<string>resetScriptText</string>
-							<string>resumeRecorder</string>
-							<string>resumeScriptText</string>
-							<string>scriptEveryCombo</string>
-							<string>speechEveryCombo</string>
-							<string>startRecorder</string>
-							<string>startScriptText</string>
-							<string>twitterLogin</string>
-							<string>twitterProgress</string>
-							<string>twitterStatus</string>
-							<string>voicesCombo</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">breakCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">breakScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">calendarsCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">endScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">everyScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">growlEveryCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">initialTimeCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">internalInterruptRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">interruptCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">interruptOverScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">interruptRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">interruptScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">longBreakCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">muteRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">namePanel</string>
-								<string key="candidateClassName">NSPanel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">namesCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">pomodoroMenu</string>
-								<string key="candidateClassName">NSMenu</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">pomodorosForLong</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">prefs</string>
-								<string key="candidateClassName">NSPanel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">quickStatsRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resetRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resetScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resumeRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resumeScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">scriptEveryCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">speechEveryCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">startRecorder</string>
-								<string key="candidateClassName">SRRecorderControl</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">startScriptText</string>
-								<string key="candidateClassName">NSTextView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twitterLogin</string>
-								<string key="candidateClassName">NSButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twitterProgress</string>
-								<string key="candidateClassName">NSProgressIndicator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twitterStatus</string>
-								<string key="candidateClassName">NSImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">voicesCombo</string>
-								<string key="candidateClassName">NSComboBox</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">src/PomodoroController.h</string>
-					</object>
-				</object>
-			</object>
-			<object class="NSMutableArray" key="referencedPartialClassDescriptionsV3.1+">
-				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
 					<string key="className">PomodoroController</string>
 					<string key="superclassName">NSObject</string>
@@ -13478,8 +13172,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBDocumentRelativeSource</string>
-						<string key="minorKey">../src/PomodoroController.h</string>
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">src/PomodoroController.h</string>
 					</object>
 				</object>
 			</object>

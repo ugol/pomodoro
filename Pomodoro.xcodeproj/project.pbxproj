@@ -66,6 +66,8 @@
 		6907B92612DD15A200CEB09C /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907B90E12DD15A200CEB09C /* NSString+UUID.m */; };
 		6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BA2712DD1E0900CEB09C /* libxml2.dylib */; };
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
+		693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */; };
+		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
 		696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
 		696FE8C613109EA9005E17FA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
 		696FE9E51311A4D4005E17FA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */; };
@@ -287,6 +289,8 @@
 		69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = insertIntoLoginItems.applescript; sourceTree = "<group>"; };
 		69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = removeFromLoginItems.applescript; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
+		69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInSkype.applescript; sourceTree = "<group>"; };
+		69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInSkype.applescript; sourceTree = "<group>"; };
 		69DEFAFB12FCC0C00083941C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = "<group>"; };
 		69DEFAFC12FCC0C00083941C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = "<group>"; };
 		69DEFAFD12FCC0C00083941C /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKeyCenter.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKeyCenter.h; sourceTree = "<group>"; };
@@ -627,6 +631,8 @@
 		69AA32161302D98E000BBBCF /* scripts */ = {
 			isa = PBXGroup;
 			children = (
+				69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */,
+				69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */,
 				696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */,
 				696FE9E21311A4CC005E17FA /* setStatusToPomodoroInIChat.applescript */,
 				696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */,
@@ -775,6 +781,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */,
+				6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */,
 				696FE9E51311A4D4005E17FA /* setStatusToAvailableInIChat.applescript in Resources */,
 				696FE9E61311A4D4005E17FA /* setStatusToPomodoroInIChat.applescript in Resources */,
 				696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */,
