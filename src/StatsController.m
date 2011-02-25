@@ -66,14 +66,14 @@
 	NSFileManager *fileManager;
     NSString *applicationSupportFolder = nil;
     NSURL *url;
-    NSError *error;
+    NSError *error = nil;
     
     fileManager = [NSFileManager defaultManager];
     applicationSupportFolder = [self applicationSupportFolder];
 
     if ( ![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL] ) {
 		
-		if ([fileManager createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
+		if (! [fileManager createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
 		}
 		
