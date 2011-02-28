@@ -79,7 +79,7 @@
 		
     }
 	
-	[fileManager createFileAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"] contents:nil attributes:nil];
+	//[fileManager createFileAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"] contents:nil attributes:nil];
     url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Pomodoro.sql"]];
    
 	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:

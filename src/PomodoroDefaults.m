@@ -180,7 +180,6 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
 
-
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	
 
