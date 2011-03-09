@@ -93,8 +93,10 @@
 }
 
 -(void) reset {
-	[oneSecTimer invalidate];
-	oneSecTimer = nil;
+	if (oneSecTimer != nil) {
+		[oneSecTimer invalidate];
+		oneSecTimer = nil;
+	}
 	if (interruptionTimer != nil) {
 		[interruptionTimer invalidate];
 		interruptionTimer = nil;
@@ -111,8 +113,10 @@
 
 -(void) interruptFor:(NSInteger) seconds {
 	externallyInterrupted++;
-	[oneSecTimer invalidate];
-	oneSecTimer = nil;
+	if (oneSecTimer != nil) {
+		[oneSecTimer invalidate];
+		oneSecTimer = nil;
+	}
 	state = PomoInterrupted;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
 										  target:self
@@ -138,8 +142,10 @@
 
 - (void) checkIfFinished {
 	if (time == 0) {
-		[oneSecTimer invalidate];
-		oneSecTimer = nil;
+		if (oneSecTimer != nil) {
+			[oneSecTimer invalidate];
+			oneSecTimer = nil;
+		}
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
 			[delegate pomodoroFinished:self];		
@@ -176,8 +182,10 @@
 }
 
 -(void) interruptFinished:(NSTimer *)aTimer {
-	[oneSecTimer invalidate];
-	oneSecTimer = nil;
+	if (oneSecTimer != nil) {
+		[oneSecTimer invalidate];
+		oneSecTimer = nil;
+	}
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver:)]) {
         [delegate pomodoroInterruptionMaxTimeIsOver:self];		
