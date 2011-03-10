@@ -25,10 +25,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface SplashController : NSWindowController {
+    
 	NSURL* url;
 	IBOutlet NSTextView* aboutText;
+    
 }
 
 @end

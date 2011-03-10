@@ -1049,6 +1049,7 @@
 -(void)dealloc {
 
 	[about release];
+    [splash release];
 	[stats release];
 	
 	[muteKey release];

@@ -24,7 +24,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
 
 @interface AboutController : NSWindowController {
 	

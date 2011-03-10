@@ -35,7 +35,6 @@
 }
 
 - (void)awakeFromNib {
-
     
 	NSBundle *bundle = [NSBundle mainBundle];
 	
