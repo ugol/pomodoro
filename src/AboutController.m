@@ -36,6 +36,7 @@
 
 - (void)awakeFromNib {
 
+    
 	NSBundle *bundle = [NSBundle mainBundle];
 	
 	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"]] autorelease];

@@ -31,14 +31,14 @@
 @synthesize time, resumed, durationMinutes, lastPomodoroDurationSeconds, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
 
 - (id) init { 
-    if ( self = [super init] ) {
+    if ( (self = [super init]) ) {
         [self initWithDuration:25];
     }
     return self;
 }
 
 - (id) initWithDuration:(NSInteger) durationTime { 
-    if ( self = [super init] ) {
+    if ( (self = [super init]) ) {
         durationMinutes = durationTime;
 		state = PomoReadyToStart;
     }
