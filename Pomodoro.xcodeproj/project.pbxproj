@@ -77,6 +77,7 @@
 		697295C5130F5586008F1975 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69728D23130F5584008F1975 /* SplashController.m */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
+		69A6DE05132A38560073B238 /* MainMenu2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A6DE03132A38560073B238 /* MainMenu2.xib */; };
 		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
 		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
@@ -286,6 +287,7 @@
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69A6DE04132A38560073B238 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu2.xib; sourceTree = "<group>"; };
 		69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = insertIntoLoginItems.applescript; sourceTree = "<group>"; };
 		69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = removeFromLoginItems.applescript; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				5001AF741317B18800128231 /* Splash.xib */,
 				5001AF761317B18800128231 /* Stats.xib */,
 				5001AF721317B18800128231 /* MainMenu.xib */,
+				69A6DE03132A38560073B238 /* MainMenu2.xib */,
 			);
 			name = interfaces;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				5001AF861317B1CC00128231 /* splash.html in Resources */,
 				5001AF8E1317B20400128231 /* InfoPlist.strings in Resources */,
 				5001AF8F1317B20400128231 /* Localizable.strings in Resources */,
+				69A6DE05132A38560073B238 /* MainMenu2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,6 +955,14 @@
 				69FEE3BF1318153700DA1332 /* English */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		69A6DE03132A38560073B238 /* MainMenu2.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A6DE04132A38560073B238 /* English */,
+			);
+			name = MainMenu2.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
