@@ -105,13 +105,13 @@
 	IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
 	
-	IBOutlet SRRecorderControl* muteRecorder;
-	IBOutlet SRRecorderControl* startRecorder;
-	IBOutlet SRRecorderControl* resetRecorder;
-	IBOutlet SRRecorderControl* interruptRecorder;
-	IBOutlet SRRecorderControl* internalInterruptRecorder;
-	IBOutlet SRRecorderControl* resumeRecorder;
-	IBOutlet SRRecorderControl* quickStatsRecorder;
+    IBOutlet SRRecorderControl* muteRecorder;
+    IBOutlet SRRecorderControl* startRecorder;
+    IBOutlet SRRecorderControl* resetRecorder;
+    IBOutlet SRRecorderControl* interruptRecorder;
+    IBOutlet SRRecorderControl* internalInterruptRecorder;
+    IBOutlet SRRecorderControl* resumeRecorder;
+    IBOutlet SRRecorderControl* quickStatsRecorder;
 	
 	PTHotKey *muteKey;
 	PTHotKey *startKey;
