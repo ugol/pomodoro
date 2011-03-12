@@ -301,6 +301,14 @@
 	
 }
 
+#pragma mark ---- Toolbar methods ----
+
+-(IBAction) toolBarIconClicked: (id) sender {
+    //NSLog(@"Clicked from %d", [sender tag]);
+    [tabView selectTabViewItem:[tabView tabViewItemAtIndex:[sender tag]]];
+    
+}
+
 #pragma mark ---- Menu management methods ----
 
 -(void) keyMute {

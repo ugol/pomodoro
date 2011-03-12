@@ -79,6 +79,7 @@
 	IBOutlet NSPanel* namePanel;
 	IBOutlet NSComboBox* namesCombo;
 
+    IBOutlet NSTabView* tabView;
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* voicesCombo;
 	IBOutlet NSComboBox* initialTimeCombo;
@@ -199,6 +200,6 @@
 -(IBAction) changedCanRestartInBreaks: (id) sender;
 
 -(IBAction) connectToTwitter: (id) sender;
-
+-(IBAction) toolBarIconClicked: (id) sender;
 
 @end
