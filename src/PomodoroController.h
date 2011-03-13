@@ -106,6 +106,7 @@
 	IBOutlet NSButton* twitterLogin;
 	IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
+	IBOutlet NSImageView* growlStatus;
 	
     IBOutlet SRRecorderControl* muteRecorder;
     IBOutlet SRRecorderControl* startRecorder;
@@ -150,6 +151,7 @@
 	NSImage* pomodoroNegativeFreezeImage;
 	NSImage* redButtonImage;
 	NSImage* greenButtonImage;
+	NSImage* yellowButtonImage;
 	
 	NSSound* ringing;
 	NSSound* ringingBreak;
@@ -202,6 +204,7 @@
 -(IBAction) changedCanRestartInBreaks: (id) sender;
 
 -(IBAction) connectToTwitter: (id) sender;
+-(IBAction) checkGrowl: (id) sender;
 -(IBAction) toolBarIconClicked: (id) sender;
 
 @end

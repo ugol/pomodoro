@@ -32,5 +32,7 @@
 
 -(void) growlAlert:(NSString *)message title:(NSString *)title;
 -(void) growlAlert:(NSString *)message title:(NSString *)title sticky:(BOOL)st;
+-(BOOL) isGrowlInstalled;
+-(BOOL) isGrowlRunning;
 
 @end

@@ -33,7 +33,7 @@
 }
 
 - (id) initWithCapacity:(int)capacity { 
-    if ( self = [super init] ) {
+    if ( (self = [super init]) ) {
         scripts = [[NSMutableDictionary dictionaryWithCapacity:capacity] retain];
     }
     return self;

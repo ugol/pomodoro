@@ -906,6 +906,26 @@
 	[twitterProgress startAnimation:self];
 }
 
+#pragma mark ---- Growl methods ----
+
+-(IBAction) checkGrowl:(id)sender {
+        
+    if ([growl isGrowlInstalled] && [growl isGrowlRunning]) {
+        [growlStatus setImage:greenButtonImage];
+        [sender setToolTip:@"Growl installed and running!"];
+        [growlStatus setToolTip:@"Growl installed and running!"];
+    } else if ([growl isGrowlInstalled]) {
+        [growlStatus setImage:yellowButtonImage];
+        [sender setToolTip:@"Growl installed but not running!"];
+        [growlStatus setToolTip:@"Growl installed but not running!"];
+    } else {
+       	[growlStatus setImage:redButtonImage];
+        [sender setToolTip:@"Growl not installed and not running!"];
+        [growlStatus setToolTip:@"Growl not installed and not running!"];
+    }
+    
+}
+
 #pragma mark ---- Lifecycle methods ----
 
 + (void)initialize { 
@@ -960,6 +980,7 @@
 	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
 	redButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"red" ofType:@"png"]];
 	greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"green" ofType:@"png"]];
+	yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"yellow" ofType:@"png"]];
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	ringingBreak = [NSSound soundNamed:@"ring.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];

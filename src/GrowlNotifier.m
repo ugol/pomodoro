@@ -28,7 +28,7 @@
 @implementation GrowlNotifier
 
 - (id) init { 
-    if ( self = [super init] ) {
+    if ( (self = [super init]) ) {
         [GrowlApplicationBridge setGrowlDelegate:self];
     }
     return self;
@@ -67,5 +67,12 @@
 							   clickContext:nil]; 
 }
 
+-(BOOL) isGrowlInstalled {
+    return [GrowlApplicationBridge isGrowlInstalled];
+}
+
+-(BOOL) isGrowlRunning {
+    return [GrowlApplicationBridge isGrowlRunning];
+}
 
 @end

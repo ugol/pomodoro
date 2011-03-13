@@ -57,7 +57,9 @@
 
 	[defaultValues setObject:NSLocalizedString(@"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'.",@"Growl pomodoro start") forKey:@"growlStart"];
 	[defaultValues setObject:NSLocalizedString(@"Ready, set, go",@"Speech pomodoro start") forKey:@"speechStart"];
-	[defaultValues setObject:NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder") forKey:@"scriptStart"];
+    NSString* script = NSLocalizedString(@"-- insert here your Applescript",@"Applescript placeholder");
+    NSData* data = [NSData dataWithData:[script dataUsingEncoding:NSUTF8StringEncoding]];
+	[defaultValues setObject:data forKey:@"scriptStart"];
 	[defaultValues setObject:NSLocalizedString(@"Just started pomodoro '$pomodoroName'",@"Twitter pomodoro start") forKey:@"twitterStart"];
 	
 	[defaultValues setObject:NSLocalizedString(@"You have $secs seconds to resume.",@"Growl pomodoro interrupt") forKey:@"growlInterrupt"];
