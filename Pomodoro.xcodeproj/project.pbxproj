@@ -70,6 +70,9 @@
 		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
 		695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B900F132D1604003FAEC6 /* Automator.framework */; };
 		695B9012132D4192003FAEC6 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9011132D4192003FAEC6 /* yellow.png */; };
+		695B9016132D7334003FAEC6 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9013132D7332003FAEC6 /* compile.png */; };
+		695B9017132D7334003FAEC6 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9014132D7332003FAEC6 /* run.png */; };
+		695B9018132D7334003FAEC6 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9015132D7333003FAEC6 /* stop.png */; };
 		696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
 		696FE8C613109EA9005E17FA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
 		696FE9E51311A4D4005E17FA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */; };
@@ -284,6 +287,9 @@
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
 		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		695B9011132D4192003FAEC6 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		695B9013132D7332003FAEC6 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
+		695B9014132D7332003FAEC6 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
+		695B9015132D7333003FAEC6 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInAdium.applescript; sourceTree = "<group>"; };
 		696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInAdium.applescript; sourceTree = "<group>"; };
 		696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInIChat.applescript; sourceTree = "<group>"; };
@@ -508,6 +514,9 @@
 		6907B7B512DD016300CEB09C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				695B9013132D7332003FAEC6 /* compile.png */,
+				695B9014132D7332003FAEC6 /* run.png */,
+				695B9015132D7333003FAEC6 /* stop.png */,
 				695B9011132D4192003FAEC6 /* yellow.png */,
 				69A4069A132C46F400066ABF /* audio.png */,
 				69A4069B132C46F400066ABF /* speech.png */,
@@ -847,6 +856,9 @@
 				69A4069C132C46F500066ABF /* audio.png in Resources */,
 				69A4069D132C46F500066ABF /* speech.png in Resources */,
 				695B9012132D4192003FAEC6 /* yellow.png in Resources */,
+				695B9016132D7334003FAEC6 /* compile.png in Resources */,
+				695B9017132D7334003FAEC6 /* run.png in Resources */,
+				695B9018132D7334003FAEC6 /* stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
