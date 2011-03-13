@@ -283,7 +283,7 @@
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="630844736">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -467,7 +467,6 @@
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {426, 125}}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="987599317"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -518,13 +517,13 @@
 								<object class="NSMutableString" key="NSToolbarItemIdentifier">
 									<characters key="NS.bytes">03EF9839-C89C-4492-9BCA-DB558AC035EB</characters>
 								</object>
-								<string key="NSToolbarItemLabel">Shortcut</string>
-								<string key="NSToolbarItemPaletteLabel">Shortcut</string>
+								<string key="NSToolbarItemLabel">Shortcuts</string>
+								<string key="NSToolbarItemPaletteLabel">Shortcuts</string>
 								<string key="NSToolbarItemToolTip"/>
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSMultipleDocuments</string>
+									<string key="NSResourceName">shortcuts</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -568,7 +567,7 @@
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSBonjour</string>
+									<string key="NSResourceName">growl</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -612,7 +611,7 @@
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSNetwork</string>
+									<string key="NSResourceName">NSFolderSmart</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -678,7 +677,7 @@
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSDotMac</string>
+									<string key="NSResourceName">speech</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -700,7 +699,7 @@
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSFolderBurnable</string>
+									<string key="NSResourceName">calendar</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -926,7 +925,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{421, 233}, {217, 32}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="925939887">
 													<int key="NSCellFlags">67239424</int>
@@ -1296,7 +1295,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{394, 370}, {99, 17}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
-												<reference key="NSNextKeyView" ref="103379763"/>
+												<reference key="NSNextKeyView" ref="630701666"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="74594867">
 													<int key="NSCellFlags">68288064</int>
@@ -1485,7 +1484,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{66, 432}, {251, 18}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
-												<reference key="NSNextKeyView" ref="458549533"/>
+												<reference key="NSNextKeyView" ref="1053412672"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="353935900">
 													<int key="NSCellFlags">-2080244224</int>
@@ -1508,7 +1507,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{66, 401}, {251, 18}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
-												<reference key="NSNextKeyView" ref="573879956"/>
+												<reference key="NSNextKeyView" ref="513180637"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="669676479">
 													<int key="NSCellFlags">-2080244224</int>
@@ -1646,7 +1645,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{502, 286}, {99, 17}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="50628079">
 													<int key="NSCellFlags">68288064</int>
@@ -1663,6 +1662,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{505, 434}, {28, 30}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
+												<reference key="NSNextKeyView" ref="458549533"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSSliderCell" key="NSCell" id="119311953">
 													<int key="NSCellFlags">67239424</int>
@@ -1685,6 +1685,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{505, 396}, {28, 30}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
+												<reference key="NSNextKeyView" ref="573879956"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSSliderCell" key="NSCell" id="732486734">
 													<int key="NSCellFlags">67239424</int>
@@ -1707,6 +1708,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{505, 343}, {28, 30}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
+												<reference key="NSNextKeyView" ref="103379763"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSSliderCell" key="NSCell" id="687217312">
 													<int key="NSCellFlags">67239424</int>
@@ -1937,7 +1939,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{184, 286}, {440, 22}}</string>
 												<reference key="NSSuperview" ref="896931275"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="179411800">
 													<int key="NSCellFlags">-1804468671</int>
@@ -2072,7 +2074,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{261, 327}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="277778551"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="159269420">
 													<int key="NSCellFlags">67239424</int>
@@ -2108,7 +2110,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{261, 327}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="151076645">
 													<int key="NSCellFlags">67239424</int>
@@ -2282,7 +2284,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{56, 366}, {331, 18}}</string>
 												<reference key="NSSuperview" ref="677795415"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="380690496">
 													<int key="NSCellFlags">-2080244224</int>
@@ -2392,7 +2394,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{261, 327}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="994718853">
 													<int key="NSCellFlags">67239424</int>
@@ -2526,7 +2528,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{100, 450}, {409, 22}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="91952654">
 													<int key="NSCellFlags">-1804468671</int>
@@ -5688,32 +5690,32 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>NSBonjour</string>
 				<string>NSComputer</string>
-				<string>NSDotMac</string>
-				<string>NSFolderBurnable</string>
+				<string>NSFolderSmart</string>
 				<string>NSMenuCheckmark</string>
 				<string>NSMenuMixedState</string>
-				<string>NSMultipleDocuments</string>
-				<string>NSNetwork</string>
 				<string>NSPreferencesGeneral</string>
 				<string>NSSwitch</string>
+				<string>calendar</string>
+				<string>growl</string>
 				<string>icon</string>
+				<string>shortcuts</string>
+				<string>speech</string>
 				<string>twitter</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>
-				<string>{32, 32}</string>
-				<string>{32, 32}</string>
 				<string>{9, 8}</string>
 				<string>{7, 2}</string>
 				<string>{32, 32}</string>
-				<string>{32, 32}</string>
-				<string>{32, 32}</string>
 				<string>{15, 15}</string>
+				<string>{32, 32}</string>
+				<string>{32, 32}</string>
 				<string>{512, 512}</string>
+				<string>{32, 32}</string>
+				<string>{32, 32}</string>
 				<string>{48, 48}</string>
 			</object>
 		</object>
