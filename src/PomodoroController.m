@@ -1026,7 +1026,8 @@
 			[calendarsCombo selectItemWithObjectValue:[cal title]];
 		}
 	}
-
+    
+    [toolBar setSelectedItemIdentifier:@"Pomodoro"];
 	pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
 	stats = [[StatsController alloc] init];
 	[stats window];

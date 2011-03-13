@@ -25,6 +25,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <ShortcutRecorder/SRRecorderControl.h>
+
 #import "MGTwitterEngine.h"
 #import "Pomodoro.h"
 
@@ -80,6 +81,7 @@
 	IBOutlet NSComboBox* namesCombo;
 
     IBOutlet NSTabView* tabView;
+    IBOutlet NSToolbar* toolBar;
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* voicesCombo;
 	IBOutlet NSComboBox* initialTimeCombo;
