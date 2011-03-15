@@ -242,6 +242,7 @@
 - (void)windowDidResignKey:(NSNotification *)notification {
     
     // Commit Editing still in place when closing a panel or losing focus
+    NSLog(@"%@", [scriptStart source]);
     [notification.object makeFirstResponder:nil];
 
 }
@@ -1070,7 +1071,7 @@
 	scripter = [[[Scripter alloc] init] retain];
     
     [scriptStart bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptStart" options:nil];
-    //[scriptInterrupt bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
+    [scriptInterrupt bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
     [scriptInterruptOver bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterruptOver" options:nil];
     [scriptResume bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptResume" options:nil];
     [scriptReset bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptReset" options:nil];
