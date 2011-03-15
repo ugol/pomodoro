@@ -38,6 +38,7 @@
 #import "CalendarStore/CalendarStore.h"
 #import "CalendarHelper.h"
 #import "TwitterSecrets.h"
+#import "DataToStringTransformer.h"
 
 @implementation PomodoroController
 
@@ -215,6 +216,35 @@
 	 @selector(openPanelDidEnd:returnCode:contextInfo:) 
                       contextInfo:sender]; 
 } 
+
+- (IBAction)showScriptingPanel:(id)sender {
+
+    /*
+    id transformer = [[[DataToStringTransformer alloc] init] autorelease];
+    
+    NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
+    [bindingOptions setObject: transformer
+                       forKey:NSValueTransformerBindingOption];
+     */
+    NSArray* scriptsArray = [NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil];
+    [scriptView unbind:@"source"];
+    NSString* scriptToShow = [NSString stringWithFormat:@"script%@", [scriptsArray objectAtIndex:[sender tag]]];
+    [scriptView bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:scriptToShow options:nil];
+
+    [scriptPanel makeKeyAndOrderFront:self];
+    
+}
+
+
+#pragma mark ---- Window delegate methods ----
+
+
+- (void)windowDidResignKey:(NSNotification *)notification {
+    
+    // Commit Editing still in place when closing a panel or losing focus
+    [notification.object makeFirstResponder:nil];
+
+}
 
 #pragma mark ---- Voice Combo box delegate/datasource methods ----
 
@@ -435,7 +465,9 @@
 
 -(IBAction) nameGiven:(id)sender {
 	
-	[namePanel endEditingFor:nil];
+    if (![namePanel makeFirstResponder:namePanel]) {
+        [namePanel endEditingFor:nil];
+    }
 	
 	NSInteger howMany = [namesCombo numberOfItems];
 	NSString* name = _pomodoroName;
@@ -989,7 +1021,6 @@
 	
 	speech = [[NSSpeechSynthesizer alloc] init]; 
 	voices = [[NSSpeechSynthesizer availableVoices] retain];
-	textViews = [[NSArray arrayWithObjects:startScriptText, interruptScriptText, interruptOverScriptText, resetScriptText, resumeScriptText, endScriptText, breakScriptText, everyScriptText, nil ] retain];
 	
 	[ringing setVolume:_ringVolume/10.0];
 	[ringingBreak setVolume:_ringBreakVolume/10.0];
@@ -1037,6 +1068,16 @@
 	
 	growl = [[[GrowlNotifier alloc] init] retain];
 	scripter = [[[Scripter alloc] init] retain];
+    
+    [scriptStart bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptStart" options:nil];
+    //[scriptInterrupt bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
+    [scriptInterruptOver bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterruptOver" options:nil];
+    [scriptResume bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptResume" options:nil];
+    [scriptReset bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptReset" options:nil];
+    [scriptEnd bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEnd" options:nil];
+    [scriptBreakFinished bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptBreakFinished" options:nil];
+    [scriptEvery bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEvery" options:nil];
+
 	
 	NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
 	[speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];

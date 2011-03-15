@@ -25,7 +25,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <ShortcutRecorder/SRRecorderControl.h>
-
+#import <OSAKit/OSAScriptView.h>
 #import "MGTwitterEngine.h"
 #import "Pomodoro.h"
 
@@ -78,7 +78,19 @@
 	NSStatusItem* statusItem;	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel;
+    IBOutlet NSPanel* scriptPanel;
+    IBOutlet OSAScriptView* scriptView;
 	IBOutlet NSComboBox* namesCombo;
+    
+    IBOutlet OSAScriptView* scriptStart;
+    IBOutlet OSAScriptView* scriptInterrupt;
+    IBOutlet OSAScriptView* scriptInterruptOver;
+    IBOutlet OSAScriptView* scriptResume;
+    IBOutlet OSAScriptView* scriptReset;
+    IBOutlet OSAScriptView* scriptEnd;
+    IBOutlet OSAScriptView* scriptBreakFinished;
+    IBOutlet OSAScriptView* scriptEvery;
+
 
     IBOutlet NSTabView* tabView;
     IBOutlet NSToolbar* toolBar;
@@ -93,15 +105,6 @@
 	IBOutlet NSComboBox* speechEveryCombo;
 	IBOutlet NSComboBox* scriptEveryCombo;
 	IBOutlet NSComboBox* calendarsCombo;
-	
-	IBOutlet NSTextView* startScriptText;
-	IBOutlet NSTextView* interruptScriptText;
-	IBOutlet NSTextView* interruptOverScriptText;
-	IBOutlet NSTextView* resetScriptText;
-	IBOutlet NSTextView* resumeScriptText;
-	IBOutlet NSTextView* endScriptText;
-	IBOutlet NSTextView* breakScriptText;
-	IBOutlet NSTextView* everyScriptText;
 	
 	IBOutlet NSButton* twitterLogin;
 	IBOutlet NSProgressIndicator* twitterProgress;
@@ -183,6 +186,7 @@
 -(void) removeFromLoginItems;
 
 -(IBAction)showOpenPanel:(id)sender;
+-(IBAction)showScriptingPanel:(id)sender;
 
 -(IBAction) about:(id)sender;
 -(IBAction) help:(id)sender;

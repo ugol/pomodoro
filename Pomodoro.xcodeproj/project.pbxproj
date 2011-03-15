@@ -68,6 +68,7 @@
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
 		693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */; };
 		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
+		695943BD132F80E600080A52 /* DataToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 695943BC132F80E600080A52 /* DataToStringTransformer.m */; };
 		695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B900F132D1604003FAEC6 /* Automator.framework */; };
 		695B9012132D4192003FAEC6 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9011132D4192003FAEC6 /* yellow.png */; };
 		695B9016132D7334003FAEC6 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9013132D7332003FAEC6 /* compile.png */; };
@@ -285,6 +286,8 @@
 		6907BA2712DD1E0900CEB09C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
+		695943BB132F80E600080A52 /* DataToStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataToStringTransformer.h; path = src/DataToStringTransformer.h; sourceTree = "<group>"; };
+		695943BC132F80E600080A52 /* DataToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataToStringTransformer.m; path = src/DataToStringTransformer.m; sourceTree = "<group>"; };
 		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		695B9011132D4192003FAEC6 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		695B9013132D7332003FAEC6 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
@@ -595,6 +598,8 @@
 				6907B8BA12DD120000CEB09C /* GrowlNotifier.m */,
 				6907B8C112DD120000CEB09C /* PomodoroDefaults.h */,
 				6907B8C212DD120000CEB09C /* PomodoroDefaults.m */,
+				695943BB132F80E600080A52 /* DataToStringTransformer.h */,
+				695943BC132F80E600080A52 /* DataToStringTransformer.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
 				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 				69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */,
+				695943BD132F80E600080A52 /* DataToStringTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
