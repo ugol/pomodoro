@@ -83,6 +83,7 @@
 		697295C5130F5586008F1975 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69728D23130F5584008F1975 /* SplashController.m */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
+		699B9C6E1330A62B004BC9E9 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B9C6D1330A62B004BC9E9 /* load.png */; };
 		69A4068D132C39FC00066ABF /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068C132C39FC00066ABF /* calendar.png */; };
 		69A4068F132C438F00066ABF /* shortcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068E132C438F00066ABF /* shortcuts.png */; };
 		69A40699132C452A00066ABF /* growl.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A40698132C452A00066ABF /* growl.png */; };
@@ -305,6 +306,7 @@
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		699B9C6D1330A62B004BC9E9 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
 		69A4068C132C39FC00066ABF /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		69A4068E132C438F00066ABF /* shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shortcuts.png; sourceTree = "<group>"; };
 		69A40698132C452A00066ABF /* growl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growl.png; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 		6907B7B512DD016300CEB09C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				699B9C6D1330A62B004BC9E9 /* load.png */,
 				695B9013132D7332003FAEC6 /* compile.png */,
 				695B9014132D7332003FAEC6 /* run.png */,
 				695B9015132D7333003FAEC6 /* stop.png */,
@@ -864,6 +867,7 @@
 				695B9016132D7334003FAEC6 /* compile.png in Resources */,
 				695B9017132D7334003FAEC6 /* run.png in Resources */,
 				695B9018132D7334003FAEC6 /* stop.png in Resources */,
+				699B9C6E1330A62B004BC9E9 /* load.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
