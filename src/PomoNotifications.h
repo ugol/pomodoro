@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -23,12 +23,13 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
-
-
-@interface DataToStringTransformer : NSValueTransformer {
-@private
-    
-}
-
-@end
+#define _PMPomoStarted @"PMPomoStarted"
+#define _PMPomoFinished @"PMPomoFinished"
+#define _PMPomoInterrupted @"PMPomoInterrupted"
+#define _PMPomoInterruptionMaxTimeIsOver @"PMPomoInterruptionMaxTimeIsOver"
+#define _PMPomoReset @"PMPomoReset"
+#define _PMPomoResumed @"PMPomoResumed"
+#define _PMPomoBreakStarted @"PMPomoBreakStarted"
+#define _PMPomoBreakFinished @"PMPomoBreakFinished"
+#define _PMPomoOncePerSecond @"PMPomoOncePerSecond"
+#define _PMPomoOncePerSecondBreak @"PMPomoOncePerSecondBreak"

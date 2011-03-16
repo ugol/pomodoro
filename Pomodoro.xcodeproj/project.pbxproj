@@ -68,7 +68,6 @@
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
 		693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */; };
 		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
-		695943BD132F80E600080A52 /* DataToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 695943BC132F80E600080A52 /* DataToStringTransformer.m */; };
 		695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B900F132D1604003FAEC6 /* Automator.framework */; };
 		695B9012132D4192003FAEC6 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9011132D4192003FAEC6 /* yellow.png */; };
 		695B9016132D7334003FAEC6 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9013132D7332003FAEC6 /* compile.png */; };
@@ -84,6 +83,7 @@
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
 		699B9C6E1330A62B004BC9E9 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B9C6D1330A62B004BC9E9 /* load.png */; };
+		699B9D1F1330FC1A004BC9E9 /* PomodoroNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */; };
 		69A4068D132C39FC00066ABF /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068C132C39FC00066ABF /* calendar.png */; };
 		69A4068F132C438F00066ABF /* shortcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068E132C438F00066ABF /* shortcuts.png */; };
 		69A40699132C452A00066ABF /* growl.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A40698132C452A00066ABF /* growl.png */; };
@@ -265,9 +265,8 @@
 		6907B90E12DD15A200CEB09C /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UUID.m"; path = "externalFw/MGTwitterEngine/NSString+UUID.m"; sourceTree = "<group>"; };
 		6907BA2712DD1E0900CEB09C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
+		6928F40F1331191D00183D4A /* PomoNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomoNotifications.h; path = src/PomoNotifications.h; sourceTree = "<group>"; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
-		695943BB132F80E600080A52 /* DataToStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataToStringTransformer.h; path = src/DataToStringTransformer.h; sourceTree = "<group>"; };
-		695943BC132F80E600080A52 /* DataToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataToStringTransformer.m; path = src/DataToStringTransformer.m; sourceTree = "<group>"; };
 		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		695B9011132D4192003FAEC6 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		695B9013132D7332003FAEC6 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
@@ -286,6 +285,8 @@
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		699B9C6D1330A62B004BC9E9 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
+		699B9D1D1330FC19004BC9E9 /* PomodoroNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomodoroNotifier.h; path = src/PomodoroNotifier.h; sourceTree = "<group>"; };
+		699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PomodoroNotifier.m; path = src/PomodoroNotifier.m; sourceTree = "<group>"; };
 		69A4068C132C39FC00066ABF /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		69A4068E132C438F00066ABF /* shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shortcuts.png; sourceTree = "<group>"; };
 		69A40698132C452A00066ABF /* growl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growl.png; sourceTree = "<group>"; };
@@ -556,8 +557,11 @@
 			isa = PBXGroup;
 			children = (
 				69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */,
+				6928F40F1331191D00183D4A /* PomoNotifications.h */,
 				6907B8BB12DD120000CEB09C /* Pomodoro.h */,
 				6907B8BC12DD120000CEB09C /* Pomodoro.m */,
+				699B9D1D1330FC19004BC9E9 /* PomodoroNotifier.h */,
+				699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */,
 			);
 			name = Pomodoro;
 			sourceTree = "<group>";
@@ -577,8 +581,6 @@
 				6907B8BA12DD120000CEB09C /* GrowlNotifier.m */,
 				6907B8C112DD120000CEB09C /* PomodoroDefaults.h */,
 				6907B8C212DD120000CEB09C /* PomodoroDefaults.m */,
-				695943BB132F80E600080A52 /* DataToStringTransformer.h */,
-				695943BC132F80E600080A52 /* DataToStringTransformer.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -884,7 +886,7 @@
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
 				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 				69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */,
-				695943BD132F80E600080A52 /* DataToStringTransformer.m in Sources */,
+				699B9D1F1330FC1A004BC9E9 /* PomodoroNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

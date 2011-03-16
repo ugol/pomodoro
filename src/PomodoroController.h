@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -28,7 +28,7 @@
 #import <OSAKit/OSAScriptView.h>
 #import <OSAKit/OSAScriptController.h>
 #import "MGTwitterEngine.h"
-#import "Pomodoro.h"
+#import "PomodoroNotifier.h"
 
 #define _pomodoroName [[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"]
 #define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
@@ -69,7 +69,7 @@
 @class PTHotKey;
 @class Scripter;
 
-@interface PomodoroController : NSObject <PomodoroDelegate, MGTwitterEngineDelegate, NSOpenSavePanelDelegate> {
+@interface PomodoroController : NSObject <MGTwitterEngineDelegate, NSOpenSavePanelDelegate> {
 
 	ProcessSerialNumber psn;
 	AboutController* about;
@@ -154,6 +154,7 @@
 	
 	GrowlNotifier* growl;
 	Pomodoro* pomodoro;
+    PomodoroNotifier* pomodoroNotifier;
 	Scripter* scripter;
 	
 	MGTwitterEngine* twitterEngine;

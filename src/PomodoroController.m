@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -38,7 +38,7 @@
 #import "CalendarStore/CalendarStore.h"
 #import "CalendarHelper.h"
 #import "TwitterSecrets.h"
-#import "DataToStringTransformer.h"
+#import "PomoNotifications.h"
 
 @implementation PomodoroController
 
@@ -578,7 +578,7 @@
 
 #pragma mark ---- Pomodoro notifications methods ----
 
--(void) pomodoroStarted:(id)pomo {
+-(void) pomodoroStarted:(NSNotification*) notification {
 	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
@@ -619,7 +619,7 @@
 	
 }
 
--(void) pomodoroInterrupted:(id)pomo {
+-(void) pomodoroInterrupted:(NSNotification*) notification {
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalExternalInterruptions)+1] forKey:@"globalExternalInterruptions"];
 
@@ -647,7 +647,7 @@
 	
 }
 
--(void) pomodoroInterruptionMaxTimeIsOver:(id)pomo {
+-(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (interrupted)",@"Tooltip for interrupt-reseted pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
@@ -681,7 +681,7 @@
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
 
--(void) pomodoroReset:(id)pomo {
+-(void) pomodoroReset:(NSNotification*) notification {
 
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (reset)",@"Tooltip for reseted pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];
@@ -718,7 +718,7 @@
 	
 }
 
--(void) pomodoroResumed:(id)pomo {
+-(void) pomodoroResumed:(NSNotification*) notification {
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[statusItem setImage:pomodoroImage];
@@ -737,13 +737,13 @@
 	}
 }
 
--(void) breakStarted:(id)pomo {
+-(void) breakStarted:(NSNotification*) notification {
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Break after: %@",@"Tooltip for break"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[self updateMenu];
 }
 
--(void) breakFinished:(id)pomo {
+-(void) breakFinished:(NSNotification*) notification {
 	
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
@@ -777,7 +777,9 @@
 	}
 }
 
--(void) pomodoroFinished:(id)pomo {
+-(void) pomodoroFinished:(NSNotification*) notification {
+    
+    Pomodoro* pomo = [notification object];
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	
@@ -844,14 +846,17 @@
 
 }
 
-- (void) oncePerSecondBreak:(NSInteger) time {
+- (void) oncePerSecondBreak:(NSNotification*) notification {
+    NSInteger time = [[notification object] integerValue];
 	[self showTimeOnStatusBar: time];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickAtBreakEnabled"]) {
 		[tick play];
 	}
 }
 
-- (void) oncePerSecond:(NSInteger) time {
+- (void) oncePerSecond:(NSNotification*) notification {
+    
+    NSInteger time = [[notification object] integerValue];
 	[self showTimeOnStatusBar: time];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
 		//NSLog(@"Tick volume: %f", tick.volume); 
@@ -1004,6 +1009,47 @@
 	  
 - (void)awakeFromNib {
 	
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroStarted:) 
+                                                 name:_PMPomoStarted
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroFinished:) 
+                                                 name:_PMPomoFinished
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroInterrupted:) 
+                                                 name:_PMPomoInterrupted
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroInterruptionMaxTimeIsOver:) 
+                                                 name:_PMPomoInterruptionMaxTimeIsOver
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroReset:) 
+                                                 name:_PMPomoReset
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pomodoroResumed:) 
+                                                 name:_PMPomoResumed
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(oncePerSecond:) 
+                                                 name:_PMPomoOncePerSecond
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(oncePerSecondBreak:) 
+                                                 name:_PMPomoOncePerSecondBreak
+                                               object:nil];
+    
+    
 	NSBundle *bundle = [NSBundle mainBundle];
 	
 	statusItem = [[[NSStatusBar systemStatusBar] 
@@ -1099,14 +1145,15 @@
     
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
 	pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
+    pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
 	stats = [[StatsController alloc] init];
 	[stats window];
 
 	[self updateShortcuts];
 
-	[pomodoro setDelegate: self];
+	[pomodoro setDelegate: pomodoroNotifier];
 	GetCurrentProcess(&psn);
-	
+    
 	[self observeUserDefault:@"ringVolume"];
 	[self observeUserDefault:@"ringBreakVolume"];
 	[self observeUserDefault:@"tickVolume"];

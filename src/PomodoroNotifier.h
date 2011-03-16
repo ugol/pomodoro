@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -23,43 +23,13 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "DataToStringTransformer.h"
+#import <Foundation/Foundation.h>
+#import "Pomodoro.h"
 
-
-@implementation DataToStringTransformer
-
-- (id)init
-{
-    if ((self = [super init])) {
-    }
+@interface PomodoroNotifier : NSObject <PomodoroDelegate> {
     
-    return self;
-}
-
-+ (Class)transformedValueClass
-{
-    return [NSString class];
-}
-
-+ (BOOL)allowsReverseTransformation
-{
-    return YES;
-}
-
-- (id)transformedValue:(id)value
-{    
-    return [[NSString alloc] initWithData:value encoding:NSUTF8StringEncoding];
-}
-
-- (id)reverseTransformedValue:(id)value {
+@private
     
-    return [value dataUsingEncoding: NSUTF8StringEncoding]; 
-}
-
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 @end
