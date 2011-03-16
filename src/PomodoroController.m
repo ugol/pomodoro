@@ -179,18 +179,18 @@
 	return [Binder substituteDefault:name withVariables:variables andValues:values];
 }	
 
-#pragma mark ---- Open panel delegate methods ----
+#pragma mark ---- Scripting panel delegate methods ----
 
 - (void)openPanelDidEnd:(NSOpenPanel *)openPanel 
              returnCode:(int)returnCode 
             contextInfo:(void *)x 
 { 
     if (returnCode == NSOKButton) { 
-		NSButton* sender = (NSButton*)x;
+		//NSButton* sender = (NSButton*)x;
 		NSString *path = [openPanel filename]; 
 		NSString *script = [[NSString alloc] initWithContentsOfFile:path];
-		NSTextView* textView = [textViews objectAtIndex:[sender tag]];
-		[textView setString:script];
+		//NSTextView* textView = [textViews objectAtIndex:[sender tag]];
+		[scriptView setSource:script];
 		[script release];
 				
     } 
@@ -198,7 +198,7 @@
 
 
 - (BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename {
-    if ([[filename pathExtension] isEqualTo:@"pomo"])
+    if ([[filename pathExtension] isEqualTo:@"pomo"] || [[filename pathExtension] isEqualTo:@"applescript"])
         return YES;
     return NO;
 }
@@ -209,8 +209,8 @@
 	[panel setDelegate:self];
     [panel beginSheetForDirectory:nil 
                              file:nil 
-							types: [NSArray arrayWithObject:@"pomo"]
-                   modalForWindow:prefs 
+							types: [NSArray arrayWithObjects:@"pomo", @"applescript",nil]
+                   modalForWindow:scriptPanel 
                     modalDelegate:self 
                    didEndSelector: 
 	 @selector(openPanelDidEnd:returnCode:contextInfo:) 
@@ -226,10 +226,10 @@
     [bindingOptions setObject: transformer
                        forKey:NSValueTransformerBindingOption];
     */ 
-    NSArray* scriptsArray = [NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil];
+
     
     [scriptView unbind:@"data"];
-    NSString* scriptToShow = [NSString stringWithFormat:@"values.script%@", [scriptsArray objectAtIndex:[sender tag]]];
+    NSString* scriptToShow = [NSString stringWithFormat:@"values.script%@", [scriptNames objectAtIndex:[sender tag]]];
     [scriptView bind:@"data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:scriptToShow options:nil];
 
     [scriptPanel makeKeyAndOrderFront:self];
@@ -243,7 +243,6 @@
 - (void)windowDidResignKey:(NSNotification *)notification {
     
     // Commit Editing still in place when closing a panel or losing focus
-    NSLog(@"%@", [scriptView source]);
     [notification.object makeFirstResponder:nil];
 
 }
@@ -1075,6 +1074,7 @@
 	
 	growl = [[[GrowlNotifier alloc] init] retain];
 	scripter = [[[Scripter alloc] init] retain];
+    scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
     
     /*
     [scriptStart bind:@"Data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.scriptStart" options:nil];
@@ -1130,16 +1130,20 @@
 	[about release];
     [splash release];
 	[stats release];
+    [toolBar release];
 	
 	[muteKey release];
 	[startKey release];
 	[resetKey release];
 	[interruptKey release];
+    [internalInterruptKey release];
 	[resumeKey release];
 	[quickStatsKey release];
 	
     [statusItem release];
 	[prefs release];
+    [scriptPanel release];
+    [scriptView release];
 	[pomodoroMenu release];
 	[voicesCombo release];
 	[initialTimeCombo release];
@@ -1162,6 +1166,7 @@
 	
 	[growl release];
 	[scripter release];
+    [scriptNames release];
 	[pomodoro release];
 	[twitterEngine release];
 	[twitterProgress release];

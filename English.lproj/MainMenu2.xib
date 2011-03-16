@@ -304,7 +304,7 @@
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="630844736">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -449,7 +449,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{316, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="630844736"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="220159487">
 								<int key="NSCellFlags">67239424</int>
@@ -489,7 +488,6 @@
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {426, 125}}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="987599317"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -607,7 +605,7 @@
 								<nil key="NSToolbarItemView"/>
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">NSMultipleDocuments</string>
+									<string key="NSResourceName">load</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -752,8 +750,32 @@
 														<object class="OSAScriptView" id="374398835">
 															<reference key="NSNextResponder" ref="562942134"/>
 															<int key="NSvFlags">2322</int>
+															<object class="NSMutableSet" key="NSDragTypes">
+																<bool key="EncodedWithXMLCoder">YES</bool>
+																<object class="NSArray" key="set.sortedObjects">
+																	<bool key="EncodedWithXMLCoder">YES</bool>
+																	<string>Apple HTML pasteboard type</string>
+																	<string>Apple PDF pasteboard type</string>
+																	<string>Apple PICT pasteboard type</string>
+																	<string>Apple PNG pasteboard type</string>
+																	<string>Apple URL pasteboard type</string>
+																	<string>CorePasteboardFlavorType 0x6D6F6F76</string>
+																	<string>NSColor pasteboard type</string>
+																	<string>NSFilenamesPboardType</string>
+																	<string>NSStringPboardType</string>
+																	<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+																	<string>NeXT RTFD pasteboard type</string>
+																	<string>NeXT Rich Text Format v1.0 pasteboard type</string>
+																	<string>NeXT TIFF v4.0 pasteboard type</string>
+																	<string>NeXT font pasteboard type</string>
+																	<string>NeXT ruler pasteboard type</string>
+																	<string>WebURLsWithTitlesPboardType</string>
+																	<string>public.url</string>
+																</object>
+															</object>
 															<string key="NSFrameSize">{550, 60}</string>
 															<reference key="NSSuperview" ref="562942134"/>
+															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="499969884"/>
 															<object class="NSTextContainer" key="NSTextContainer" id="101217147">
 																<object class="NSLayoutManager" key="NSLayoutManager">
@@ -838,6 +860,7 @@
 													</object>
 													<string key="NSFrame">{{1, 1}, {545, 235}}</string>
 													<reference key="NSSuperview" ref="615145814"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="374398835"/>
 													<reference key="NSDocView" ref="374398835"/>
 													<reference key="NSBGColor" ref="859654035"/>
@@ -852,6 +875,7 @@
 													<int key="NSvFlags">256</int>
 													<string key="NSFrame">{{546, 1}, {15, 235}}</string>
 													<reference key="NSSuperview" ref="615145814"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="221386342"/>
 													<reference key="NSTarget" ref="615145814"/>
 													<string key="NSAction">_doScroller:</string>
@@ -862,6 +886,7 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 													<reference key="NSSuperview" ref="615145814"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="562942134"/>
 													<bool key="NSEnabled">YES</bool>
 													<int key="NSsFlags">1</int>
@@ -873,6 +898,7 @@
 											</object>
 											<string key="NSFrame">{{5, 0}, {562, 237}}</string>
 											<reference key="NSSuperview" ref="557053280"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="362131064"/>
 											<int key="NSsFlags">146</int>
 											<reference key="NSVScroller" ref="499969884"/>
@@ -882,6 +908,7 @@
 									</object>
 									<string key="NSFrameSize">{593, 237}</string>
 									<reference key="NSSuperview" ref="686119589"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="615145814"/>
 									<string key="NSClassName">NSView</string>
 								</object>
@@ -903,8 +930,32 @@
 														<object class="OSAScriptView" id="309239599">
 															<reference key="NSNextResponder" ref="305795731"/>
 															<int key="NSvFlags">2322</int>
+															<object class="NSMutableSet" key="NSDragTypes">
+																<bool key="EncodedWithXMLCoder">YES</bool>
+																<object class="NSArray" key="set.sortedObjects">
+																	<bool key="EncodedWithXMLCoder">YES</bool>
+																	<string>Apple HTML pasteboard type</string>
+																	<string>Apple PDF pasteboard type</string>
+																	<string>Apple PICT pasteboard type</string>
+																	<string>Apple PNG pasteboard type</string>
+																	<string>Apple URL pasteboard type</string>
+																	<string>CorePasteboardFlavorType 0x6D6F6F76</string>
+																	<string>NSColor pasteboard type</string>
+																	<string>NSFilenamesPboardType</string>
+																	<string>NSStringPboardType</string>
+																	<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+																	<string>NeXT RTFD pasteboard type</string>
+																	<string>NeXT Rich Text Format v1.0 pasteboard type</string>
+																	<string>NeXT TIFF v4.0 pasteboard type</string>
+																	<string>NeXT font pasteboard type</string>
+																	<string>NeXT ruler pasteboard type</string>
+																	<string>WebURLsWithTitlesPboardType</string>
+																	<string>public.url</string>
+																</object>
+															</object>
 															<string key="NSFrameSize">{550, 66}</string>
 															<reference key="NSSuperview" ref="305795731"/>
+															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="1005361514"/>
 															<object class="NSTextContainer" key="NSTextContainer" id="531249367">
 																<object class="NSLayoutManager" key="NSLayoutManager">
@@ -976,6 +1027,7 @@
 													</object>
 													<string key="NSFrame">{{1, 1}, {545, 272}}</string>
 													<reference key="NSSuperview" ref="518408344"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="309239599"/>
 													<reference key="NSDocView" ref="309239599"/>
 													<reference key="NSBGColor" ref="859654035"/>
@@ -987,6 +1039,7 @@
 													<int key="NSvFlags">256</int>
 													<string key="NSFrame">{{546, 1}, {15, 272}}</string>
 													<reference key="NSSuperview" ref="518408344"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView"/>
 													<reference key="NSTarget" ref="518408344"/>
 													<string key="NSAction">_doScroller:</string>
@@ -997,6 +1050,7 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 													<reference key="NSSuperview" ref="518408344"/>
+													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="305795731"/>
 													<bool key="NSEnabled">YES</bool>
 													<int key="NSsFlags">1</int>
@@ -1008,6 +1062,7 @@
 											</object>
 											<string key="NSFrame">{{5, 7}, {562, 274}}</string>
 											<reference key="NSSuperview" ref="221386342"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="224765306"/>
 											<int key="NSsFlags">146</int>
 											<reference key="NSVScroller" ref="1005361514"/>
@@ -1017,18 +1072,21 @@
 									</object>
 									<string key="NSFrame">{{0, 247}, {593, 281}}</string>
 									<reference key="NSSuperview" ref="686119589"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="518408344"/>
 									<string key="NSClassName">NSView</string>
 								</object>
 							</object>
 							<string key="NSFrame">{{-5, 0}, {593, 528}}</string>
 							<reference key="NSSuperview" ref="267516143"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="557053280"/>
 							<int key="NSDividerStyle">3</int>
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {562, 528}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="686119589"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -2356,7 +2414,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{517, 316}, {99, 17}}</string>
 												<reference key="NSSuperview" ref="823645075"/>
-												<reference key="NSNextKeyView"/>
 												<int key="NSViewLayerContentsRedrawPolicy">2</int>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="50628079">
@@ -2637,7 +2694,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{184, 286}, {440, 22}}</string>
 												<reference key="NSSuperview" ref="896931275"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="179411800">
 													<int key="NSCellFlags">-1804468671</int>
@@ -3445,7 +3501,6 @@
 												</object>
 												<string key="NSFrame">{{588, 188}, {48, 48}}</string>
 												<reference key="NSSuperview" ref="277778551"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSImageCell" key="NSCell" id="181839138">
 													<int key="NSCellFlags">130560</int>
@@ -3954,7 +4009,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{404, 206}, {96, 16}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSLevelIndicatorCell" key="NSCell" id="64008144">
 													<int key="NSCellFlags">404880896</int>
@@ -4219,7 +4273,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{56, 366}, {331, 18}}</string>
 												<reference key="NSSuperview" ref="677795415"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="380690496">
 													<int key="NSCellFlags">-2080244224</int>
@@ -4427,7 +4480,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{101, 491}, {465, 22}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="91952654">
 													<int key="NSCellFlags">-1804468671</int>
@@ -6113,7 +6165,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{337, 299}, {163, 22}}</string>
 												<reference key="NSSuperview" ref="61683773"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSClassName">SRRecorderControl</string>
 											</object>
 											<object class="NSTextField" id="1073372052">
@@ -6324,7 +6375,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 199}, {313, 32}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="925939887">
 													<int key="NSCellFlags">67239424</int>
@@ -9739,6 +9789,14 @@
 						</object>
 					</object>
 					<int key="connectionID">1184</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showOpenPanel:</string>
+						<reference key="source" ref="1032680435"/>
+						<reference key="destination" ref="745497498"/>
+					</object>
+					<int key="connectionID">1185</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -13638,7 +13696,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1184</int>
+			<int key="maxID">1185</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -14117,13 +14175,13 @@
 				<string>NSFolderSmart</string>
 				<string>NSMenuCheckmark</string>
 				<string>NSMenuMixedState</string>
-				<string>NSMultipleDocuments</string>
 				<string>NSPreferencesGeneral</string>
 				<string>NSSwitch</string>
 				<string>calendar</string>
 				<string>compile</string>
 				<string>growl</string>
 				<string>icon</string>
+				<string>load</string>
 				<string>run</string>
 				<string>shortcuts</string>
 				<string>speech</string>
@@ -14137,12 +14195,12 @@
 				<string>{9, 8}</string>
 				<string>{7, 2}</string>
 				<string>{32, 32}</string>
-				<string>{32, 32}</string>
 				<string>{15, 15}</string>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>
 				<string>{512, 512}</string>
+				<string>{48, 48}</string>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>

@@ -83,17 +83,6 @@
     IBOutlet OSAScriptView* scriptView;
 	IBOutlet NSComboBox* namesCombo;
     
-    /*
-    IBOutlet OSAScriptView* scriptStart;
-    IBOutlet OSAScriptView* scriptInterrupt;
-    IBOutlet OSAScriptView* scriptInterruptOver;
-    IBOutlet OSAScriptView* scriptResume;
-    IBOutlet OSAScriptView* scriptReset;
-    IBOutlet OSAScriptView* scriptEnd;
-    IBOutlet OSAScriptView* scriptBreakFinished;
-    IBOutlet OSAScriptView* scriptEvery;
-     */
-    
     IBOutlet NSTabView* tabView;
     IBOutlet NSToolbar* toolBar;
 	IBOutlet NSMenu* pomodoroMenu;
@@ -138,6 +127,7 @@
 
 	NSArray* voices;
 	NSArray* textViews;
+    NSArray* scriptNames;
 	
 	IBOutlet NSMenuItem* startPomodoro;
 	IBOutlet NSMenuItem* finishPomodoro;
