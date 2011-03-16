@@ -510,10 +510,15 @@
 	if (_initialTime > 0) {
 		[about close];
 		[splash close];
+        if (![scriptPanel makeFirstResponder:scriptPanel]) {
+			[scriptPanel endEditingFor:nil];
+		}
+        [scriptPanel close];
 		if (![prefs makeFirstResponder:prefs]) {
 			[prefs endEditingFor:nil];
 		}
 		[prefs close];
+        
 		
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
