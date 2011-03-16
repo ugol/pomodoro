@@ -118,13 +118,6 @@
 			remoteGlobalIDString = FCAAF0750CC95C5E00C52F82;
 			remoteInfo = OAuthConsumerTestSuite;
 		};
-		2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D1AC9740486D14A00FE50C9;
-			remoteInfo = BGHUDAppKitPlugin;
-		};
 		2250A56113034D3A001EFC92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
@@ -139,26 +132,12 @@
 			remoteGlobalIDString = 939837800DA42965007F53F3;
 			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
 		};
-		2295A3711303492600AD0E85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 939838A50DA4300F007F53F3;
-			remoteInfo = "ShortcutRecorder.ibplugin - for embedding in framework";
-		};
 		2295A3731303492600AD0E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
 			remoteInfo = ShortcutRecorderFramework_Tester;
-		};
-		2295A3751303492600AD0E85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA;
-			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
 		};
 		2295A3771303492600AD0E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -412,7 +391,6 @@
 		2250A55713034D3A001EFC92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */,
 				2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */,
 			);
 			name = Products;
@@ -432,9 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				2295A3701303492600AD0E85 /* ShortcutRecorder.framework */,
-				2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */,
 				2295A3741303492600AD0E85 /* ShortcutRecorder.app */,
-				2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */,
 				2295A3781303492600AD0E85 /* ShortcutRecorder.framework */,
 			);
 			name = Products;
@@ -767,13 +743,6 @@
 			remoteRef = 2250A55013034D19001EFC92 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BGHUDAppKitPlugin.ibplugin;
-			remoteRef = 2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -788,25 +757,11 @@
 			remoteRef = 2295A36F1303492600AD0E85 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ShortcutRecorder.ibplugin;
-			remoteRef = 2295A3711303492600AD0E85 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		2295A3741303492600AD0E85 /* ShortcutRecorder.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = ShortcutRecorder.app;
 			remoteRef = 2295A3731303492600AD0E85 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ShortcutRecorder.ibplugin;
-			remoteRef = 2295A3751303492600AD0E85 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2295A3781303492600AD0E85 /* ShortcutRecorder.framework */ = {
