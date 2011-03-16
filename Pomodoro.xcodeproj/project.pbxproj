@@ -21,6 +21,7 @@
 		5001AF861317B1CC00128231 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF831317B1CC00128231 /* splash.html */; };
 		5001AF8E1317B20400128231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF8A1317B20400128231 /* InfoPlist.strings */; };
 		5001AF8F1317B20400128231 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF8C1317B20400128231 /* Localizable.strings */; };
+		506C9CB0133106BC001C15D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF721317B18800128231 /* MainMenu.xib */; };
 		6907B7C012DD016300CEB09C /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B612DD016300CEB09C /* green.png */; };
 		6907B7C112DD016300CEB09C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B712DD016300CEB09C /* icon.icns */; };
 		6907B7C212DD016300CEB09C /* pomodoro.png in Resources */ = {isa = PBXBuildFile; fileRef = 6907B7B812DD016300CEB09C /* pomodoro.png */; };
@@ -203,14 +204,15 @@
 		5001AF7C1317B19C00128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/About.xib; sourceTree = "<group>"; };
 		5001AF7D1317B1A300128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5001AF7E1317B1AA00128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Splash.xib; sourceTree = "<group>"; };
-		5001AF7F1317B1B100128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Stats.xib; sourceTree = "<group>"; };
 		5001AF821317B1CC00128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/about.html; sourceTree = "<group>"; };
 		5001AF841317B1CC00128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/splash.html; sourceTree = "<group>"; };
 		5001AF871317B1D200128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/about.html; sourceTree = "<group>"; };
 		5001AF881317B1D800128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/splash.html; sourceTree = "<group>"; };
 		5001AF8B1317B20400128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5001AF901317B21400128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5001AF911317B22D00128231 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
+		506C9CAE1331064F001C15D4 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		506C9CAF133106BC001C15D4 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Stats.xib; sourceTree = "<group>"; };
+		506C9CB1133106CE001C15D4 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu2.xib; sourceTree = "<group>"; };
 		6907B7B612DD016300CEB09C /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		6907B7B712DD016300CEB09C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		6907B7B812DD016300CEB09C /* pomodoro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoro.png; sourceTree = "<group>"; };
@@ -330,7 +332,7 @@
 		69F52CB2130FD8BB0035E0D4 /* Scripter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scripter.m; path = src/Scripter.m; sourceTree = "<group>"; };
 		69F52D1213103CEC0035E0D4 /* addTodoToThings.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToThings.applescript; sourceTree = "<group>"; };
 		69F52D53131066FF0035E0D4 /* addTodoToOmniFocus.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToOmniFocus.applescript; sourceTree = "<group>"; };
-		69FEE3BF1318153700DA1332 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69FEE3BF1318153700DA1332 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -728,6 +730,7 @@
 				German,
 				Dutch,
 				sv,
+				de,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Pomodoro */;
 			projectDirPath = "";
@@ -868,6 +871,7 @@
 				695B9017132D7334003FAEC6 /* run.png in Resources */,
 				695B9018132D7334003FAEC6 /* stop.png in Resources */,
 				699B9C6E1330A62B004BC9E9 /* load.png in Resources */,
+				506C9CB0133106BC001C15D4 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,7 +971,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5001AF771317B18800128231 /* English */,
-				5001AF7F1317B1B100128231 /* German */,
+				506C9CAF133106BC001C15D4 /* German */,
 			);
 			name = Stats.xib;
 			sourceTree = "<group>";
@@ -1001,8 +1005,8 @@
 		5001AF8C1317B20400128231 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5001AF901317B21400128231 /* German */,
 				69FEE3BF1318153700DA1332 /* English */,
+				506C9CAE1331064F001C15D4 /* German */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1011,6 +1015,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				69A6DE04132A38560073B238 /* English */,
+				506C9CB1133106CE001C15D4 /* German */,
 			);
 			name = MainMenu2.xib;
 			sourceTree = "<group>";
@@ -1022,7 +1027,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1066,7 +1071,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
