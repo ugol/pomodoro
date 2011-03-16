@@ -36,7 +36,7 @@ If you want to use twitter integration, you must have a consumerKey and a secret
 #define _consumerkey @"your key" 
 #define _secretkey @"your other key"
 
-If you want to compile the code and are not intersted to Twitter, just define two fake variables somewhere and don't activate the twitter integration.
+If you are not interested in Twitter, just don't activate the twitter integration.
 
 ------------------------------
 Thanks, in no particular order
