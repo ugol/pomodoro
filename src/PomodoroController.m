@@ -225,11 +225,12 @@
     NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
     [bindingOptions setObject: transformer
                        forKey:NSValueTransformerBindingOption];
-     */
+    */ 
     NSArray* scriptsArray = [NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil];
-    [scriptView unbind:@"source"];
-    NSString* scriptToShow = [NSString stringWithFormat:@"script%@", [scriptsArray objectAtIndex:[sender tag]]];
-    [scriptView bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:scriptToShow options:nil];
+    
+    [scriptView unbind:@"data"];
+    NSString* scriptToShow = [NSString stringWithFormat:@"values.script%@", [scriptsArray objectAtIndex:[sender tag]]];
+    [scriptView bind:@"data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:scriptToShow options:nil];
 
     [scriptPanel makeKeyAndOrderFront:self];
     
@@ -242,7 +243,7 @@
 - (void)windowDidResignKey:(NSNotification *)notification {
     
     // Commit Editing still in place when closing a panel or losing focus
-    NSLog(@"%@", [scriptStart source]);
+    NSLog(@"%@", [scriptView source]);
     [notification.object makeFirstResponder:nil];
 
 }
@@ -1070,15 +1071,16 @@
 	growl = [[[GrowlNotifier alloc] init] retain];
 	scripter = [[[Scripter alloc] init] retain];
     
-    [scriptStart bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptStart" options:nil];
-    [scriptInterrupt bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
-    [scriptInterruptOver bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterruptOver" options:nil];
-    [scriptResume bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptResume" options:nil];
-    [scriptReset bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptReset" options:nil];
-    [scriptEnd bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEnd" options:nil];
-    [scriptBreakFinished bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptBreakFinished" options:nil];
-    [scriptEvery bind:@"source" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEvery" options:nil];
-
+    /*
+    [scriptStart bind:@"Data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.scriptStart" options:nil];
+    [scriptInterrupt bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
+    [scriptInterruptOver bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterruptOver" options:nil];
+    [scriptResume bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptResume" options:nil];
+    [scriptReset bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptReset" options:nil];
+    [scriptEnd bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEnd" options:nil];
+    [scriptBreakFinished bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptBreakFinished" options:nil];
+    [scriptEvery bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEvery" options:nil];
+    */
 	
 	NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
 	[speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];
@@ -1157,7 +1159,6 @@
 	[scripter release];
 	[pomodoro release];
 	[twitterEngine release];
-	[twitterLogin release];
 	[twitterProgress release];
 	
 	[super dealloc];

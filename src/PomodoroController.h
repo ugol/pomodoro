@@ -26,6 +26,7 @@
 #import <Cocoa/Cocoa.h>
 #import <ShortcutRecorder/SRRecorderControl.h>
 #import <OSAKit/OSAScriptView.h>
+#import <OSAKit/OSAScriptController.h>
 #import "MGTwitterEngine.h"
 #import "Pomodoro.h"
 
@@ -82,6 +83,7 @@
     IBOutlet OSAScriptView* scriptView;
 	IBOutlet NSComboBox* namesCombo;
     
+    /*
     IBOutlet OSAScriptView* scriptStart;
     IBOutlet OSAScriptView* scriptInterrupt;
     IBOutlet OSAScriptView* scriptInterruptOver;
@@ -90,8 +92,8 @@
     IBOutlet OSAScriptView* scriptEnd;
     IBOutlet OSAScriptView* scriptBreakFinished;
     IBOutlet OSAScriptView* scriptEvery;
-
-
+     */
+    
     IBOutlet NSTabView* tabView;
     IBOutlet NSToolbar* toolBar;
 	IBOutlet NSMenu* pomodoroMenu;
@@ -106,7 +108,6 @@
 	IBOutlet NSComboBox* scriptEveryCombo;
 	IBOutlet NSComboBox* calendarsCombo;
 	
-	IBOutlet NSButton* twitterLogin;
 	IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
 	IBOutlet NSImageView* growlStatus;
