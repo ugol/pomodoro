@@ -160,11 +160,8 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/build/Debug/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
 		2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
-		2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit/build/Debug/BGHUDAppKit.framework; sourceTree = "<group>"; };
-		2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthConsumer.framework; path = externalFw/OAuthConsumer/build/Debug/OAuthConsumer.framework; sourceTree = "<group>"; };
 		2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -353,10 +350,10 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				693584DF1332514F0057059C /* BGHUDAppKit.framework */,
+				693584E01332514F0057059C /* OAuthConsumer.framework */,
+				693584E11332514F0057059C /* ShortcutRecorder.framework */,
 				695B900F132D1604003FAEC6 /* Automator.framework */,
-				2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */,
-				2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */,
-				2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */,
 				6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -415,9 +412,6 @@
 		29B97314FDCFA39411CA2CEA /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				693584DF1332514F0057059C /* BGHUDAppKit.framework */,
-				693584E01332514F0057059C /* OAuthConsumer.framework */,
-				693584E11332514F0057059C /* ShortcutRecorder.framework */,
 				2295A3631303490F00AD0E85 /* Dependencies */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
