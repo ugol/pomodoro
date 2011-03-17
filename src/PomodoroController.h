@@ -29,6 +29,7 @@
 #import <OSAKit/OSAScriptController.h>
 #import "MGTwitterEngine.h"
 #import "PomodoroNotifier.h"
+#import "CommonController.h"
 
 #define _pomodoroName [[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"]
 #define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
@@ -46,7 +47,6 @@
 #define _tickVolume [[[NSUserDefaults standardUserDefaults] objectForKey:@"tickVolume"] intValue]
 
 #define _speechVoice [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultVoice"]
-#define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
 
 #define _dailyInternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyInternalInterruptions"] intValue]
 #define _dailyExternalInterruptions [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyExternalInterruptions"] intValue]
@@ -68,14 +68,16 @@
 @class GrowlNotifier;
 @class PTHotKey;
 @class Scripter;
+@class CalendarController;
 
-@interface PomodoroController : NSObject <MGTwitterEngineDelegate, NSOpenSavePanelDelegate> {
+@interface PomodoroController : CommonController <MGTwitterEngineDelegate, NSOpenSavePanelDelegate> {
 
 	ProcessSerialNumber psn;
 	AboutController* about;
 	SplashController* splash;
 	StatsController* stats;
-	
+	IBOutlet CalendarController* calendar;
+    
 	NSStatusItem* statusItem;	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel;
@@ -95,7 +97,6 @@
 	IBOutlet NSComboBox* growlEveryCombo;
 	IBOutlet NSComboBox* speechEveryCombo;
 	IBOutlet NSComboBox* scriptEveryCombo;
-	IBOutlet NSComboBox* calendarsCombo;
 	
 	IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
@@ -153,7 +154,7 @@
 	NSSpeechSynthesizer* speech;
 	
 	GrowlNotifier* growl;
-	Pomodoro* pomodoro;
+	IBOutlet Pomodoro* pomodoro;
     PomodoroNotifier* pomodoroNotifier;
 	Scripter* scripter;
 	

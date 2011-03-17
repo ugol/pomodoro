@@ -31,7 +31,7 @@
 }
 
 + (NSString*) substituteDefault: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values;
-//+ (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value;
++ (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value;
 + (NSString*) substitute: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values;
 + (NSString*) substitute: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value;
 

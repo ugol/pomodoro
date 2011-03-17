@@ -86,6 +86,8 @@
 		69A40699132C452A00066ABF /* growl.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A40698132C452A00066ABF /* growl.png */; };
 		69A4069C132C46F500066ABF /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4069A132C46F400066ABF /* audio.png */; };
 		69A4069D132C46F500066ABF /* speech.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4069B132C46F400066ABF /* speech.png */; };
+		69A9723513329A3C008303C8 /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723413329A3C008303C8 /* CalendarController.m */; };
+		69A9723813329F5A008303C8 /* CommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723713329F5A008303C8 /* CommonController.m */; };
 		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
 		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
@@ -285,6 +287,10 @@
 		69A40698132C452A00066ABF /* growl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growl.png; sourceTree = "<group>"; };
 		69A4069A132C46F400066ABF /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		69A4069B132C46F400066ABF /* speech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speech.png; sourceTree = "<group>"; };
+		69A9723313329A3C008303C8 /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarController.h; path = src/CalendarController.h; sourceTree = "<group>"; };
+		69A9723413329A3C008303C8 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarController.m; path = src/CalendarController.m; sourceTree = "<group>"; };
+		69A9723613329F59008303C8 /* CommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonController.h; path = src/CommonController.h; sourceTree = "<group>"; };
+		69A9723713329F5A008303C8 /* CommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonController.m; path = src/CommonController.m; sourceTree = "<group>"; };
 		69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = insertIntoLoginItems.applescript; sourceTree = "<group>"; };
 		69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = removeFromLoginItems.applescript; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
@@ -586,10 +592,14 @@
 				6907B8B412DD120000CEB09C /* AboutController.m */,
 				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
 				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
-				6907B8BF12DD120000CEB09C /* PomodoroController.h */,
-				6907B8C012DD120000CEB09C /* PomodoroController.m */,
 				6907B8C512DD120000CEB09C /* StatsController.h */,
 				6907B8C612DD120000CEB09C /* StatsController.m */,
+				69A9723613329F59008303C8 /* CommonController.h */,
+				69A9723713329F5A008303C8 /* CommonController.m */,
+				6907B8BF12DD120000CEB09C /* PomodoroController.h */,
+				6907B8C012DD120000CEB09C /* PomodoroController.m */,
+				69A9723313329A3C008303C8 /* CalendarController.h */,
+				69A9723413329A3C008303C8 /* CalendarController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -877,6 +887,8 @@
 				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 				69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */,
 				699B9D1F1330FC1A004BC9E9 /* PomodoroNotifier.m in Sources */,
+				69A9723513329A3C008303C8 /* CalendarController.m in Sources */,
+				69A9723813329F5A008303C8 /* CommonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

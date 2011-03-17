@@ -35,8 +35,7 @@
 #import "Carbon/Carbon.h"
 #import "PTHotKeyCenter.h"
 #import "PTHotKey.h"
-#import "CalendarStore/CalendarStore.h"
-#import "CalendarHelper.h"
+#import "CalendarController.h"
 #import "TwitterSecrets.h"
 #import "PomoNotifications.h"
 
@@ -161,24 +160,6 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }		
 
-- (NSString*) bindCommonVariables:(NSString*)name {
-	NSArray* variables = [NSArray arrayWithObjects:@"$pomodoroName", @"$duration", @"$dailyPomodoroDone", @"$globalPomodoroDone",nil];
-	NSString* durationString = [NSString stringWithFormat:@"%d", pomodoro.durationMinutes];
-	NSString* dailyPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroDone"] stringValue];
-	NSString* globalPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroDone"] stringValue];
-	
-	if (nil == dailyPomodoroDone) {
-		dailyPomodoroDone = @"0";
-	}
-	
-	if (nil == globalPomodoroDone) {
-		globalPomodoroDone = @"0";
-	}
-
-	NSArray* values = [NSArray arrayWithObjects:_pomodoroName, durationString, dailyPomodoroDone, globalPomodoroDone, nil];
-	return [Binder substituteDefault:name withVariables:variables andValues:values];
-}	
-
 #pragma mark ---- Scripting panel delegate methods ----
 
 - (void)openPanelDidEnd:(NSOpenPanel *)openPanel 
@@ -272,10 +253,10 @@
 	} else if  ([notification object] == initialTimeCombo) {
 		NSInteger selected = [[[initialTimeCombo objectValues] objectAtIndex:[initialTimeCombo indexOfSelectedItem]] intValue];
 		[pomodoro setDurationMinutes:selected];
+        [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:selected] forKey:@"pomodoroDurationMinutes"];
 		[self showTimeOnStatusBar: selected * 60];
-	} else if ([notification object] == calendarsCombo){
-		[[NSUserDefaults standardUserDefaults] setObject:[calendarsCombo objectValueOfSelectedItem] forKey:@"selectedCalendar"];
-	}
+	} 
+    
 }
 
 #pragma mark ---- KVO Utility ----
@@ -788,10 +769,6 @@
 	
 	[stats.pomos newPomodoro:lround([pomo lastPomodoroDurationSeconds]/60.0) withExternalInterruptions:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
 	
-	if ([self checkDefault:@"calendarEnabled"]) {
-		[CalendarHelper publishEvent:_selectedCalendar withTitle:[self bindCommonVariables:@"calendarEnd"] duration:_initialTime];
-	}
-	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtEndEnabled"]) {
 		[ringing play];
 	}
@@ -1135,23 +1112,20 @@
 	
 	NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
 	[speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];
-	
-	for (CalCalendar *cal in [[CalCalendarStore defaultCalendarStore] calendars]){
-		[calendarsCombo addItemWithObjectValue:[cal title]];
-		if ([[cal title] isEqual:_selectedCalendar]){
-			[calendarsCombo selectItemWithObjectValue:[cal title]];
-		}
-	}
     
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
-	pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
+	//pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
+    [pomodoro setDurationMinutes:_initialTime];
     pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
+	[pomodoro setDelegate: pomodoroNotifier];
+
+    [calendar initCalendars];
+    
 	stats = [[StatsController alloc] init];
 	[stats window];
 
 	[self updateShortcuts];
 
-	[pomodoro setDelegate: pomodoroNotifier];
 	GetCurrentProcess(&psn);
     
 	[self observeUserDefault:@"ringVolume"];

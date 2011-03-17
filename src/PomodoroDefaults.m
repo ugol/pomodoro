@@ -32,6 +32,7 @@
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary]; 
 		
 	[defaultValues setObject: [NSNumber numberWithInt:25] forKey:@"initialTime"];
+	[defaultValues setObject: [NSNumber numberWithInt:25] forKey:@"pomodoroDurationMinutes"];
 	[defaultValues setObject: [NSNumber numberWithInt:15] forKey:@"interruptTime"];
 	[defaultValues setObject: [NSNumber numberWithInt:2] forKey:@"growlEveryTimeMinutes"];
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"speechEveryTimeMinutes"];

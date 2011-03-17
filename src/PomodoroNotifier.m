@@ -28,14 +28,6 @@
 
 @implementation PomodoroNotifier
 
-- (id)init
-{
-    if ((self = [super init])) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
 
 - (void) pomodoroStarted:(id) pomo {
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoStarted object:pomo];
