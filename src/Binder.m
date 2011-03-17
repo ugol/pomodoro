@@ -37,6 +37,7 @@
 	return [self substitute:original withVariables:variables andValues:values];
 }
 
+/*
 + (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value {
 	
 	id original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
@@ -46,7 +47,7 @@
 	return [original stringByReplacingOccurrencesOfString:variable withString:value];
 
 }
-
+*/
 
 + (NSString*) substitute: (NSString*)original withVariables:(NSArray*)variables andValues:(NSArray*)values {
 	
