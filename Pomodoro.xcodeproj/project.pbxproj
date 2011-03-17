@@ -971,14 +971,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Release\"",
 					"\"$(SRCROOT)/externalFw\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -988,21 +981,7 @@
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Debug;
@@ -1015,35 +994,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Release\"",
 					"\"$(SRCROOT)/externalFw\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Release;
