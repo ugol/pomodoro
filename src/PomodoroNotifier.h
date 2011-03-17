@@ -27,9 +27,7 @@
 #import "Pomodoro.h"
 
 @interface PomodoroNotifier : NSObject <PomodoroDelegate> {
-    
-@private
-    
+        
 }
 
 @end

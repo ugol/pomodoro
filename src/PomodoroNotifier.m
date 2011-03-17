@@ -69,9 +69,4 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoOncePerSecondBreak object: [NSNumber numberWithInt:time]];
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 @end
