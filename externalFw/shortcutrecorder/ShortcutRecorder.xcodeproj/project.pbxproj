@@ -11,7 +11,6 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 342E021B109CCED6009AD8CA /* Build configuration list for PBXAggregateTarget "Build ShortcutRecorder.framework" */;
 			buildPhases = (
-				342E0212109CCE84009AD8CA /* ShellScript */,
 			);
 			dependencies = (
 				342E020C109CCE74009AD8CA /* PBXTargetDependency */,
@@ -503,22 +502,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		342E0212109CCE84009AD8CA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -R \"$BUILT_PRODUCTS_DIR/ShortcutRecorder.ibplugin\" \"$BUILT_PRODUCTS_DIR/ShortcutRecorder.framework/Versions/A/Resources/\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		342E00ED109CCC36009AD8CA /* Sources */ = {
