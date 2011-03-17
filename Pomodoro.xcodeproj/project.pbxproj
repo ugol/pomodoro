@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2231287B1303569200415381 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */; };
-		2231287C1303569200415381 /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */; };
-		2231287D1303569200415381 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */; };
-		2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */; };
-		2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */; };
-		2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */; };
 		5001AF781317B18800128231 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF701317B18800128231 /* About.xib */; };
 		5001AF791317B18800128231 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF721317B18800128231 /* MainMenu.xib */; };
 		5001AF7A1317B18800128231 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF741317B18800128231 /* Splash.xib */; };
@@ -68,6 +62,9 @@
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
 		693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */; };
 		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
+		693584E21332514F0057059C /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584DF1332514F0057059C /* BGHUDAppKit.framework */; };
+		693584E31332514F0057059C /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584E01332514F0057059C /* OAuthConsumer.framework */; };
+		693584E41332514F0057059C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584E11332514F0057059C /* ShortcutRecorder.framework */; };
 		695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B900F132D1604003FAEC6 /* Automator.framework */; };
 		695B9012132D4192003FAEC6 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9011132D4192003FAEC6 /* yellow.png */; };
 		695B9016132D7334003FAEC6 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9013132D7332003FAEC6 /* compile.png */; };
@@ -154,9 +151,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2231287B1303569200415381 /* BGHUDAppKit.framework in CopyFiles */,
-				2231287C1303569200415381 /* OAuthConsumer.framework in CopyFiles */,
-				2231287D1303569200415381 /* ShortcutRecorder.framework in CopyFiles */,
 				6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +259,9 @@
 		6907BA2712DD1E0900CEB09C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		6928F40F1331191D00183D4A /* PomoNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomoNotifications.h; path = src/PomoNotifications.h; sourceTree = "<group>"; };
+		693584DF1332514F0057059C /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693584E01332514F0057059C /* OAuthConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693584E11332514F0057059C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
 		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		695B9011132D4192003FAEC6 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
@@ -317,15 +314,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693584E21332514F0057059C /* BGHUDAppKit.framework in Frameworks */,
+				693584E31332514F0057059C /* OAuthConsumer.framework in Frameworks */,
+				693584E41332514F0057059C /* ShortcutRecorder.framework in Frameworks */,
 				695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */,
 				6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */,
 				6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */,
 				6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */,
-				2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */,
-				2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */,
-				2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +415,9 @@
 		29B97314FDCFA39411CA2CEA /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				693584DF1332514F0057059C /* BGHUDAppKit.framework */,
+				693584E01332514F0057059C /* OAuthConsumer.framework */,
+				693584E11332514F0057059C /* ShortcutRecorder.framework */,
 				2295A3631303490F00AD0E85 /* Dependencies */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
