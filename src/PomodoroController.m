@@ -206,6 +206,7 @@
 
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
 	[pomodoro setDurationMinutes:_initialTime];
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:_initialTime] forKey:@"pomodoroDurationMinutes"];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
 
@@ -814,7 +815,7 @@
     pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
 	[pomodoro setDelegate: pomodoroNotifier];
 
-    [calendar initCalendars];
+    [calendar initCalendars:self];
     
 	stats = [[StatsController alloc] init];
 	[stats window];

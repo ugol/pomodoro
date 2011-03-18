@@ -39,7 +39,7 @@
     
 }
 
-- (void)initCalendars {
+- (IBAction)initCalendars:(id)sender {
     
     [calendarsCombo removeAllItems];
     for (CalCalendar *cal in [[CalCalendarStore defaultCalendarStore] calendars]){

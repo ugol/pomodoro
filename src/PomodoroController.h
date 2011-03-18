@@ -129,8 +129,8 @@
 -(void) keyInternalInterrupt;
 -(void) keyResume;
 
--(IBAction)showOpenPanel:(id)sender;
--(IBAction)showScriptingPanel:(id)sender;
+-(IBAction) showOpenPanel:(id)sender;
+-(IBAction) showScriptingPanel:(id)sender;
 
 -(IBAction) about:(id)sender;
 -(IBAction) help:(id)sender;

@@ -35,6 +35,6 @@
     
 }
 
-- (void)initCalendars;
+- (IBAction)initCalendars:(id)sender;
 
 @end
