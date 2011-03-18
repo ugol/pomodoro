@@ -35,4 +35,7 @@
     
 }
 
+@property (assign) IBOutlet NSComboBox* namesCombo;
+@property (assign) IBOutlet Scripter* scripter;
+
 @end

@@ -58,6 +58,16 @@
 	KeyCombo quickStatsKeyCombo;
 }
 
+@property (assign) IBOutlet id delegate;
+
+@property (assign) IBOutlet SRRecorderControl* muteRecorder;
+@property (assign) IBOutlet SRRecorderControl* startRecorder;
+@property (assign) IBOutlet SRRecorderControl* resetRecorder;
+@property (assign) IBOutlet SRRecorderControl* interruptRecorder;
+@property (assign) IBOutlet SRRecorderControl* internalInterruptRecorder;
+@property (assign) IBOutlet SRRecorderControl* resumeRecorder;
+@property (assign) IBOutlet SRRecorderControl* quickStatsRecorder;
+
 - (void) updateShortcuts;
 
 @end

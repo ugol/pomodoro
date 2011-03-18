@@ -28,6 +28,8 @@
 
 @implementation SplashController
 
+@synthesize aboutText;
+
 - (id) init {
 	
 	if (![super initWithWindowNibName:@"Splash"]) return nil;
@@ -45,6 +47,13 @@
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
+}
+
+- (void)dealloc {
+    
+    [aboutText release];
+    [super dealloc];
+    
 }
 
 @end

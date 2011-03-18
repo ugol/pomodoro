@@ -37,20 +37,14 @@
 @class Scripter;
 @class CalendarController;
 
-@interface PomodoroController : CommonController <NSOpenSavePanelDelegate> {
-
-	ProcessSerialNumber psn;
-	AboutController* about;
-	SplashController* splash;
-	StatsController* stats;
+@interface PomodoroController : CommonController {
+    
 	IBOutlet CalendarController* calendar;
     IBOutlet ShortcutController* shortcut;
-    
-	NSStatusItem* statusItem;	
+    	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel; 
     IBOutlet NSPanel* scriptPanel;
-
 	IBOutlet NSComboBox* namesCombo;
     
     IBOutlet NSTabView* tabView;
@@ -69,6 +63,15 @@
 	IBOutlet NSMenuItem* invalidatePomodoro;
 	IBOutlet NSMenuItem* resumePomodoro;
 	IBOutlet NSMenuItem* setupPomodoro;
+	IBOutlet GrowlNotifier* growl;
+	IBOutlet Pomodoro* pomodoro;
+    PomodoroNotifier* pomodoroNotifier;
+    
+    ProcessSerialNumber psn;
+	AboutController* about;
+	SplashController* splash;
+	StatsController* stats;
+	NSStatusItem* statusItem;
 	
 	NSImage* pomodoroImage;
 	NSImage* pomodoroBreakImage;
@@ -80,19 +83,36 @@
 	NSSound* ringing;
 	NSSound* ringingBreak;
 	NSSound* tick;
-	
-	IBOutlet GrowlNotifier* growl;
-	IBOutlet Pomodoro* pomodoro;
-    PomodoroNotifier* pomodoroNotifier;
-	//IBOutlet Scripter* scripter;
 			
 }
 
-@property (nonatomic, readonly) NSMenuItem* startPomodoro;
-@property (nonatomic, readonly) NSMenuItem* interruptPomodoro;
-@property (nonatomic, readonly) NSMenuItem* internalInterruptPomodoro;
-@property (nonatomic, readonly) NSMenuItem* invalidatePomodoro;
-@property (nonatomic, readonly) NSMenuItem* resumePomodoro;
+@property (assign) IBOutlet CalendarController* calendar;
+@property (assign) IBOutlet ShortcutController* shortcut;
+
+@property (assign) IBOutlet NSPanel* prefs;
+@property (assign) IBOutlet NSPanel* namePanel; 
+@property (assign) IBOutlet NSPanel* scriptPanel;
+@property (assign) IBOutlet NSComboBox* namesCombo;
+
+@property (assign) IBOutlet NSTabView* tabView;
+@property (assign) IBOutlet NSToolbar* toolBar;
+@property (assign) IBOutlet NSMenu* pomodoroMenu;
+@property (assign) IBOutlet NSComboBox* initialTimeCombo;
+@property (assign) IBOutlet NSComboBox* interruptCombo;
+@property (assign) IBOutlet NSComboBox* breakCombo;
+@property (assign) IBOutlet NSComboBox* longBreakCombo;
+@property (assign) IBOutlet NSComboBox* pomodorosForLong;
+
+@property (assign) IBOutlet GrowlNotifier* growl;
+@property (assign) IBOutlet Pomodoro* pomodoro;
+
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* startPomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* finishPomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* interruptPomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* internalInterruptPomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* invalidatePomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* resumePomodoro;
+@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* setupPomodoro;
 
 -(void) keyMute;
 -(void) keyStart;

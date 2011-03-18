@@ -30,6 +30,8 @@
 
 @implementation ShortcutController
 
+@synthesize delegate, startRecorder, interruptRecorder, internalInterruptRecorder, muteRecorder, quickStatsRecorder, resetRecorder, resumeRecorder;
+
 #pragma mark - Shortcut recorder callbacks & support
 
 - (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
@@ -66,7 +68,7 @@
 		[self switchKey:@"internalInterrupt" forKey:&internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
 	} else if (aRecorder == resumeRecorder) {
 		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
-	} else if (aRecorder ==quickStatsRecorder) {
+	} else if (aRecorder == quickStatsRecorder) {
 		[self switchKey:@"quickStats" forKey:&quickStatsKey withMethod:@selector(keyQuickStats) withRecorder:aRecorder];
 	} 
 }

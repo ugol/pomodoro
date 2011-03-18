@@ -28,6 +28,8 @@
 
 @implementation LoginController
 
+@synthesize scripter;
+
 - (id)init
 {
     self = [super init];

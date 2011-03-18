@@ -28,6 +28,8 @@
 
 @implementation AboutController
 
+@synthesize aboutText;
+
 - (id) init {
 		
 	if (![super initWithWindowNibName:@"About"]) return nil;
@@ -45,6 +47,13 @@
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
+}
+
+- (void)dealloc {
+    
+    [aboutText release];
+    [super dealloc];
+    
 }
 
 

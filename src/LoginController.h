@@ -32,4 +32,6 @@
   	IBOutlet Scripter* scripter;  
 }
 
+@property (assign) IBOutlet Scripter* scripter;
+
 @end

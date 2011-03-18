@@ -38,6 +38,10 @@
 
 }
 
+@property (assign) IBOutlet NSPanel* scriptPanel;
+@property (assign) IBOutlet OSAScriptView* scriptView;
+@property (assign) IBOutlet NSComboBox* scriptEveryCombo;
+
 -(IBAction) showOpenPanel:(id)sender;
 -(IBAction) showScriptingPanel:(id)sender;
 

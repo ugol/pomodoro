@@ -28,6 +28,7 @@
 
 @implementation SpeechController
 
+@synthesize speech, voicesCombo, speechEveryCombo;
 
 #pragma mark ---- Voice Combo box delegate/datasource methods ----
 
@@ -173,7 +174,10 @@
 }
 
 - (void)dealloc {
+    
+    [voices release];
     [super dealloc];
+    
 }
 
 @end

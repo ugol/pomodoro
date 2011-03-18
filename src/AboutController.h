@@ -27,9 +27,11 @@
 
 @interface AboutController : NSWindowController {
 	
-	NSURL* url;
 	IBOutlet NSTextView* aboutText;
 
 }
+
+@property (assign) IBOutlet NSTextView* aboutText;
+
 
 @end

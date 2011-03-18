@@ -41,6 +41,10 @@
 	NSImage* yellowButtonImage;
 }
 
+@property (assign) IBOutlet NSProgressIndicator* twitterProgress;
+@property (assign) IBOutlet NSImageView* twitterStatus;
+@property (assign) IBOutlet NSPanel* prefs;
+
 - (void) tryConnectionToTwitter;
 
 

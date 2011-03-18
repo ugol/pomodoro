@@ -29,6 +29,8 @@
 
 @implementation GrowlController
 
+@synthesize growl, growlStatus, growlEveryCombo;
+
 #pragma mark ---- Growl methods ----
 
 -(IBAction) checkGrowl:(id)sender {
@@ -145,9 +147,9 @@
     if ((self = [super init])) {
         [self registerForAllPomodoroEvents];
         
-        redButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]];
-        greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]];
-        yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]];
+        redButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]] retain];
+        greenButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]] retain];
+        yellowButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]] retain];
     
         [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
         [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
@@ -158,7 +160,12 @@
 }
 
 - (void)dealloc {
+    
+    [redButtonImage release];
+    [greenButtonImage release];
+    [yellowButtonImage release];
     [super dealloc];
+    
 }
 
 @end

@@ -30,6 +30,7 @@
 
 @implementation CalendarController
 
+@synthesize calendarsCombo;
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
     

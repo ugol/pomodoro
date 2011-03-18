@@ -36,4 +36,8 @@
     
 }
 
+@property (assign) IBOutlet NSSpeechSynthesizer* speech;
+@property (assign) IBOutlet NSComboBox* voicesCombo;
+@property (assign) IBOutlet NSComboBox* speechEveryCombo;
+
 @end

@@ -35,6 +35,8 @@
     
 }
 
+@property (assign) IBOutlet NSComboBox* calendarsCombo;
+
 - (IBAction)initCalendars:(id)sender;
 
 @end

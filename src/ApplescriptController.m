@@ -29,6 +29,8 @@
 
 @implementation ApplescriptController
 
+@synthesize scriptView, scriptPanel, scriptEveryCombo;
+
 #pragma mark ---- Scripting panel delegate methods ----
 
 - (void)openPanelDidEnd:(NSOpenPanel *)openPanel 

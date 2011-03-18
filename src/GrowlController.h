@@ -39,4 +39,8 @@
 	NSImage* yellowButtonImage;
 }
 
+@property (assign) IBOutlet GrowlNotifier* growl;
+@property (assign) IBOutlet NSComboBox* growlEveryCombo;
+@property (assign) IBOutlet NSImageView* growlStatus;
+
 @end

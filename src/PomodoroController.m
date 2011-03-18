@@ -38,8 +38,10 @@
 
 @implementation PomodoroController
 
-@synthesize startPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
-
+@synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
+@synthesize growl, pomodoro;
+@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, namesCombo, pomodorosForLong;
+@synthesize calendar, shortcut, pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
 
@@ -50,20 +52,6 @@
 		[statusItem setTitle:@""];
 	}
 }
-
-- (void) saveState {
-	NSError *error;
-	if (stats != nil) {
-		if (stats.managedObjectContext != nil) {
-			if ([stats.managedObjectContext commitEditing]) {
-				if ([stats.managedObjectContext hasChanges] && ![stats.managedObjectContext save:&error]) {
-					NSLog(@"Save failed.");
-				}
-			}
-		}
-	}
-	[[NSUserDefaults standardUserDefaults] synchronize];
-}		
 
 #pragma mark ---- Window delegate methods ----
 
@@ -246,7 +234,6 @@
 
 -(IBAction)setup:(id)sender {
 	
-	[self saveState];
 	[prefs makeKeyAndOrderFront:self];
 }
 
@@ -291,7 +278,6 @@
 
 - (IBAction) start: (id) sender {
 	
-	[self saveState];
 	if (_initialTime > 0) {
         
 		[about close];
@@ -355,55 +341,53 @@
 	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
-
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];		
-
 		
 }
 
 -(void) pomodoroInterrupted:(NSNotification*) notification {
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
+	
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalExternalInterruptions)+1] forKey:@"globalExternalInterruptions"];
-
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
 	[statusItem setToolTip:name];
 			
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
-	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (interrupted)",@"Tooltip for interrupt-reseted pomodoros"), _pomodoroName];
-	[statusItem setToolTip:name];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
+
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
-		
-			
+    NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (interrupted)",@"Tooltip for interrupt-reset pomodoros"), _pomodoroName];
+	[statusItem setToolTip:name];
+
 	[self updateMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
 
 -(void) pomodoroReset:(NSNotification*) notification {
 
-	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (reset)",@"Tooltip for reseted pomodoro"), _pomodoroName];
-	[statusItem setToolTip:name];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
-	
-	
-	
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Last: %@ (reset)",@"Tooltip for reset pomodoro"), _pomodoroName];
+	[statusItem setToolTip:name];
+
 }
 
 -(void) pomodoroResumed:(NSNotification*) notification {
-	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
-	[statusItem setToolTip:name];
-	[statusItem setImage:pomodoroImage];
+    
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroResumed)+1] forKey:@"dailyPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroResumed)+1] forKey:@"globalPomodoroResumed"];
+    NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
+	[statusItem setToolTip:name];
+	[statusItem setImage:pomodoroImage];
 
 }
 
 -(void) breakStarted:(NSNotification*) notification {
-	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Break after: %@",@"Tooltip for break"), _pomodoroName];
+	
+    NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Break after: %@",@"Tooltip for break"), _pomodoroName];
 	[statusItem setToolTip:name];
 	[self updateMenu];
 }
@@ -427,13 +411,15 @@
 
 -(void) pomodoroFinished:(NSNotification*) notification {
     
-    Pomodoro* pomo = [notification object];
+    
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
+	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
+    
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
-	
+
+    Pomodoro* pomo = [notification object];
 	[stats.pomos newPomodoro:lround([pomo lastPomodoroDurationSeconds]/60.0) withExternalInterruptions:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtEndEnabled"]) {
@@ -487,14 +473,9 @@
 	
 } 
 
-
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
 	
     int reply = NSTerminateNow;
-	[self saveState];
-	if (![prefs makeFirstResponder:prefs]) {
-		[prefs endEditingFor:nil];
-	}
 	[prefs close];
     return reply;
 	
@@ -579,27 +560,19 @@
 
 -(void)dealloc {
 
+    [statusItem release];
 	[about release];
     [splash release];
 	[stats release];
-    [toolBar release];
-	
-    [statusItem release];
-	[prefs release];
-
-	[pomodoroMenu release];
-	[initialTimeCombo release];
-
-	[startPomodoro release];
-	[interruptPomodoro release];
-	[invalidatePomodoro release];
-	[resumePomodoro release];
-	[setupPomodoro release];
-	
+    [pomodoroNotifier release];
+    
 	[pomodoroImage release];
 	[pomodoroBreakImage release];
 	[pomodoroFreezeImage release];
-	
+	[pomodoroNegativeImage release];
+	[pomodoroNegativeBreakImage release];
+	[pomodoroNegativeFreezeImage release];
+    
 	[ringing release];
 	[ringingBreak release];
 	[tick release];

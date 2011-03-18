@@ -205,6 +205,7 @@
 		[interruptionTimer invalidate];
 		interruptionTimer = nil;
 	}
+    [delegate release];
 	[super dealloc];
 }
 

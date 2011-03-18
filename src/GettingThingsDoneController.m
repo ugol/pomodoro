@@ -30,6 +30,8 @@
 
 @implementation GettingThingsDoneController
 
+@synthesize namesCombo, scripter;
+
 - (void) addListToCombo:(NSString*)action {
 	
 	NSAppleEventDescriptor* result = [scripter executeScript:action];			
