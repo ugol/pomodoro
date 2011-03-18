@@ -23,18 +23,51 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
-#import "CommonController.h"
+#import "LoginController.h"
+#import "Scripter.h"
 
-#define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
-#define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
+@implementation LoginController
 
-@interface CalendarController : CommonController {
-
-    IBOutlet NSComboBox* calendarsCombo;
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self observeUserDefault:@"startOnLoginEnabled"];
+    }
     
+    return self;
 }
 
-- (void)initCalendars;
+-(void) insertIntoLoginItems {
+	[scripter executeScript:@"insertIntoLoginItems"];		
+}
+
+
+-(void) removeFromLoginItems {
+	[scripter executeScript:@"removeFromLoginItems"];	
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    	
+	if ([keyPath isEqualToString:@"startOnLoginEnabled"]) { 
+		BOOL loginEnabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
+		if (loginEnabled) {
+			[self insertIntoLoginItems];
+		} else {
+			[self removeFromLoginItems];
+		}
+	} 
+}
+
+#pragma mark ---- Lifecycle methods ----
+
+- (void)dealloc
+{
+    [super dealloc];
+}
 
 @end

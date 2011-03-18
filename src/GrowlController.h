@@ -26,15 +26,17 @@
 #import <Foundation/Foundation.h>
 #import "CommonController.h"
 
-#define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
-#define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
+@class GrowlNotifier;
 
-@interface CalendarController : CommonController {
+@interface GrowlController : CommonController {
+ 
+    IBOutlet GrowlNotifier* growl;
+	IBOutlet NSComboBox* growlEveryCombo;
+	IBOutlet NSImageView* growlStatus;
 
-    IBOutlet NSComboBox* calendarsCombo;
-    
+    NSImage* redButtonImage;
+	NSImage* greenButtonImage;
+	NSImage* yellowButtonImage;
 }
-
-- (void)initCalendars;
 
 @end

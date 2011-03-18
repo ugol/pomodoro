@@ -135,13 +135,34 @@
 			<object class="NSCustomObject" id="1032680435">
 				<string key="NSClassName">PomodoroController</string>
 			</object>
-			<object class="NSCustomObject" id="103438491">
+			<object class="NSCustomObject" id="689747448">
 				<string key="NSClassName">Pomodoro</string>
 			</object>
-			<object class="NSCustomObject" id="873189348">
+			<object class="NSCustomObject" id="537492995">
+				<string key="NSClassName">Scripter</string>
+			</object>
+			<object class="NSCustomObject" id="545134597">
 				<string key="NSClassName">CalendarController</string>
 			</object>
+			<object class="NSCustomObject" id="739491560">
+				<string key="NSClassName">LoginController</string>
+			</object>
 			<object class="OSAScriptController" id="549076060"/>
+			<object class="NSCustomObject" id="931123931">
+				<string key="NSClassName">TwitterController</string>
+			</object>
+			<object class="NSCustomObject" id="778312173">
+				<string key="NSClassName">GrowlController</string>
+			</object>
+			<object class="NSCustomObject" id="884693852">
+				<string key="NSClassName">GrowlNotifier</string>
+			</object>
+			<object class="NSCustomObject" id="161349574">
+				<string key="NSClassName">SpeechController</string>
+			</object>
+			<object class="NSCustomObject" id="226892841">
+				<string key="NSClassName">NSSpeechSynthesizer</string>
+			</object>
 			<object class="NSMenu" id="160204859">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
@@ -1234,7 +1255,7 @@
 							<string key="NSFrame">{{-14, -171}, {810, 668}}</string>
 							<reference key="NSSuperview" ref="946611983"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="1016396617"/>
+							<reference key="NSNextKeyView" ref="1035004129"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="566215801">
@@ -2434,6 +2455,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{184, 286}, {440, 22}}</string>
 												<reference key="NSSuperview" ref="896931275"/>
+												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="179411800">
 													<int key="NSCellFlags">-1804468671</int>
@@ -3208,6 +3230,7 @@
 												</set>
 												<string key="NSFrame">{{588, 188}, {48, 48}}</string>
 												<reference key="NSSuperview" ref="277778551"/>
+												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSImageCell" key="NSCell" id="181839138">
 													<int key="NSCellFlags">130560</int>
@@ -3230,7 +3253,7 @@
 								<object class="NSTabViewItem" id="36064803">
 									<string key="NSIdentifier">3</string>
 									<object class="NSView" key="NSView" id="1035004129">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="282875536"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSButton" id="448295474">
@@ -3238,6 +3261,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 606}, {63, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="73250263"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="229782801">
@@ -3261,6 +3285,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 556}, {78, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="10275873"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="79365">
@@ -3284,6 +3309,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 506}, {112, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="837288829"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="672940932">
@@ -3307,6 +3333,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 456}, {63, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="212101875"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="771415603">
@@ -3330,6 +3357,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 356}, {63, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="644848440"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="169041266">
@@ -3353,6 +3381,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 406}, {72, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="202106410"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="899504943">
@@ -3376,6 +3405,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 306}, {85, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1018506501"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="90118072">
@@ -3399,6 +3429,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 253}, {63, 18}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="942709776"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="822464825">
@@ -3422,6 +3453,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{108, 248}, {58, 26}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="705854955"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSComboBoxCell" key="NSCell" id="801825631">
@@ -3536,6 +3568,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{168, 254}, {38, 17}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1073029356"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="692362221">
@@ -3553,6 +3586,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 600}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="520593552"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="735546355">
@@ -3571,6 +3605,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 550}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="118559670"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="16237145">
@@ -3589,6 +3624,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 500}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="45288296"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="304739985">
@@ -3607,6 +3643,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 450}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="31206675"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="218855812">
@@ -3625,6 +3662,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 400}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="275563699"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="631381960">
@@ -3643,6 +3681,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 350}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="369537613"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="867681119">
@@ -3661,6 +3700,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 300}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="172366451"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="718824697">
@@ -3679,6 +3719,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 250}, {428, 22}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1047510947"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="732598107">
@@ -3697,6 +3738,8 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{404, 206}, {96, 16}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSLevelIndicatorCell" key="NSCell" id="64008144">
 													<int key="NSCellFlags">404880896</int>
@@ -3714,6 +3757,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{215, 200}, {167, 26}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="317097695"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSComboBoxCell" key="NSCell" id="372654598">
@@ -3790,6 +3834,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{43, 205}, {118, 17}}</string>
 												<reference key="NSSuperview" ref="1035004129"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="789630095"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="1025769216">
@@ -3804,6 +3849,8 @@
 											</object>
 										</array>
 										<string key="NSFrameSize">{810, 668}</string>
+										<reference key="NSSuperview" ref="282875536"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="448295474"/>
 									</object>
 									<string key="NSLabel">Voice</string>
@@ -4058,7 +4105,7 @@
 								<object class="NSTabViewItem" id="607072142">
 									<string key="NSIdentifier">5</string>
 									<object class="NSView" key="NSView" id="1016396617">
-										<reference key="NSNextResponder" ref="282875536"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSButton" id="141930588">
@@ -4066,7 +4113,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{99, 606}, {197, 18}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="841504656"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="816293493">
@@ -4090,7 +4136,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{101, 542}, {468, 26}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="234423500"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSComboBoxCell" key="NSCell" id="141473174">
@@ -4165,7 +4210,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{101, 491}, {465, 22}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="91952654">
@@ -4184,7 +4228,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{104, 574}, {186, 17}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="614795138"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="886299016">
@@ -4202,7 +4245,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{104, 521}, {186, 17}}</string>
 												<reference key="NSSuperview" ref="1016396617"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="246453622"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="832739466">
@@ -4217,8 +4259,6 @@
 											</object>
 										</array>
 										<string key="NSFrameSize">{810, 668}</string>
-										<reference key="NSSuperview" ref="282875536"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="141930588"/>
 									</object>
 									<string key="NSLabel">Calendar</string>
@@ -4559,7 +4599,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="774843585"/>
-																<reference key="NSNextKeyView" ref="942575336"/>
+																<reference key="NSNextKeyView" ref="424468693"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="332555807">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -4642,7 +4682,7 @@
 												</array>
 												<string key="NSFrame">{{214, 580}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="774843585"/>
+												<reference key="NSNextKeyView" ref="942575336"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="942575336"/>
 												<reference key="NSHScroller" ref="382319530"/>
@@ -4661,7 +4701,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="638391544"/>
-																<reference key="NSNextKeyView" ref="924556313"/>
+																<reference key="NSNextKeyView" ref="285216924"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="496154934">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -4744,7 +4784,7 @@
 												</array>
 												<string key="NSFrame">{{214, 530}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="638391544"/>
+												<reference key="NSNextKeyView" ref="924556313"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="924556313"/>
 												<reference key="NSHScroller" ref="102700139"/>
@@ -4763,7 +4803,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="992776304"/>
-																<reference key="NSNextKeyView" ref="439990356"/>
+																<reference key="NSNextKeyView" ref="17351044"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="634642916">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -4846,7 +4886,7 @@
 												</array>
 												<string key="NSFrame">{{214, 480}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="992776304"/>
+												<reference key="NSNextKeyView" ref="439990356"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="439990356"/>
 												<reference key="NSHScroller" ref="1070664993"/>
@@ -4865,7 +4905,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="484460659"/>
-																<reference key="NSNextKeyView" ref="893262311"/>
+																<reference key="NSNextKeyView" ref="741984151"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="640037090">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -4948,7 +4988,7 @@
 												</array>
 												<string key="NSFrame">{{214, 430}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="484460659"/>
+												<reference key="NSNextKeyView" ref="893262311"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="893262311"/>
 												<reference key="NSHScroller" ref="687835408"/>
@@ -4967,7 +5007,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="985365822"/>
-																<reference key="NSNextKeyView" ref="559815155"/>
+																<reference key="NSNextKeyView" ref="625106889"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="347632669">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -5050,7 +5090,7 @@
 												</array>
 												<string key="NSFrame">{{214, 380}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="985365822"/>
+												<reference key="NSNextKeyView" ref="559815155"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="559815155"/>
 												<reference key="NSHScroller" ref="1016660427"/>
@@ -5069,7 +5109,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="885198525"/>
-																<reference key="NSNextKeyView" ref="84412387"/>
+																<reference key="NSNextKeyView" ref="676672217"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="795160280">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -5152,7 +5192,7 @@
 												</array>
 												<string key="NSFrame">{{214, 330}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="885198525"/>
+												<reference key="NSNextKeyView" ref="84412387"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="84412387"/>
 												<reference key="NSHScroller" ref="144010509"/>
@@ -5171,7 +5211,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="643231450"/>
-																<reference key="NSNextKeyView" ref="767257763"/>
+																<reference key="NSNextKeyView" ref="795089635"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="12844021">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -5254,7 +5294,7 @@
 												</array>
 												<string key="NSFrame">{{214, 280}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="643231450"/>
+												<reference key="NSNextKeyView" ref="767257763"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="767257763"/>
 												<reference key="NSHScroller" ref="204130543"/>
@@ -5273,7 +5313,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{388, 22}</string>
 																<reference key="NSSuperview" ref="754363133"/>
-																<reference key="NSNextKeyView" ref="45479867"/>
+																<reference key="NSNextKeyView" ref="667000687"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="48558697">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="OSAScriptTextStorage" key="NSTextStorage">
@@ -5356,7 +5396,7 @@
 												</array>
 												<string key="NSFrame">{{213, 230}, {385, 42}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
-												<reference key="NSNextKeyView" ref="754363133"/>
+												<reference key="NSNextKeyView" ref="45479867"/>
 												<int key="NSsFlags">130</int>
 												<reference key="NSVScroller" ref="45479867"/>
 												<reference key="NSHScroller" ref="559218150"/>
@@ -5524,6 +5564,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{622, 231}, {39, 38}}</string>
 												<reference key="NSSuperview" ref="638865693"/>
+												<reference key="NSNextKeyView" ref="282875536"/>
 												<int key="NSTag">7</int>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="160981153">
@@ -5816,6 +5857,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{44, 199}, {313, 32}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
+												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="925939887">
 													<int key="NSCellFlags">67239424</int>
@@ -5840,13 +5882,13 @@
 									<reference key="NSTabView" ref="282875536"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="607072142"/>
+							<reference key="NSSelectedTabViewItem" ref="36064803"/>
 							<reference key="NSFont" ref="190615124"/>
 							<int key="NSTvFlags">6</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="1016396617"/>
+								<reference ref="1035004129"/>
 							</array>
 						</object>
 					</array>
@@ -6238,30 +6280,6 @@
 						<reference key="destination" ref="585129376"/>
 					</object>
 					<int key="connectionID">292</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">twitterStatus</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="1025477914"/>
-					</object>
-					<int key="connectionID">318</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">twitterProgress</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="578856876"/>
-					</object>
-					<int key="connectionID">319</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">connectToTwitter:</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="156824772"/>
-					</object>
-					<int key="connectionID">320</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -8056,30 +8074,6 @@
 					<int key="connectionID">776</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">voicesCombo</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="789630095"/>
-					</object>
-					<int key="connectionID">783</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">dataSource</string>
-						<reference key="source" ref="789630095"/>
-						<reference key="destination" ref="1032680435"/>
-					</object>
-					<int key="connectionID">784</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="789630095"/>
-						<reference key="destination" ref="1032680435"/>
-					</object>
-					<int key="connectionID">785</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.voiceVolume</string>
 						<reference key="source" ref="317097695"/>
@@ -8712,14 +8706,6 @@
 					<int key="connectionID">969</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">speechEveryCombo</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="942709776"/>
-					</object>
-					<int key="connectionID">976</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.speechAtEveryEnabled</string>
 						<reference key="source" ref="172366451"/>
@@ -8737,35 +8723,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">growlEveryCombo</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="656172690"/>
-					</object>
-					<int key="connectionID">979</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">scriptEveryCombo</string>
 						<reference key="source" ref="1032680435"/>
 						<reference key="destination" ref="127680574"/>
 					</object>
 					<int key="connectionID">980</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">checkGrowl:</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="477774794"/>
-					</object>
-					<int key="connectionID">984</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">growlStatus</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="22220890"/>
-					</object>
-					<int key="connectionID">985</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -9115,7 +9077,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="614795138"/>
-						<reference key="destination" ref="873189348"/>
+						<reference key="destination" ref="545134597"/>
 					</object>
 					<int key="connectionID">1187</int>
 				</object>
@@ -9123,7 +9085,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">pomodoro</string>
 						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="103438491"/>
+						<reference key="destination" ref="689747448"/>
 					</object>
 					<int key="connectionID">1189</int>
 				</object>
@@ -9131,17 +9093,145 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">calendar</string>
 						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="873189348"/>
+						<reference key="destination" ref="545134597"/>
 					</object>
 					<int key="connectionID">1191</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">calendarsCombo</string>
-						<reference key="source" ref="873189348"/>
+						<reference key="source" ref="545134597"/>
 						<reference key="destination" ref="614795138"/>
 					</object>
 					<int key="connectionID">1192</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">scripter</string>
+						<reference key="source" ref="1032680435"/>
+						<reference key="destination" ref="537492995"/>
+					</object>
+					<int key="connectionID">1194</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">scripter</string>
+						<reference key="source" ref="739491560"/>
+						<reference key="destination" ref="537492995"/>
+					</object>
+					<int key="connectionID">1196</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">connectToTwitter:</string>
+						<reference key="source" ref="931123931"/>
+						<reference key="destination" ref="156824772"/>
+					</object>
+					<int key="connectionID">1198</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">twitterProgress</string>
+						<reference key="source" ref="931123931"/>
+						<reference key="destination" ref="578856876"/>
+					</object>
+					<int key="connectionID">1199</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">twitterStatus</string>
+						<reference key="source" ref="931123931"/>
+						<reference key="destination" ref="1025477914"/>
+					</object>
+					<int key="connectionID">1200</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">prefs</string>
+						<reference key="source" ref="931123931"/>
+						<reference key="destination" ref="233463485"/>
+					</object>
+					<int key="connectionID">1201</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">checkGrowl:</string>
+						<reference key="source" ref="778312173"/>
+						<reference key="destination" ref="477774794"/>
+					</object>
+					<int key="connectionID">1205</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">growlStatus</string>
+						<reference key="source" ref="778312173"/>
+						<reference key="destination" ref="22220890"/>
+					</object>
+					<int key="connectionID">1206</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">growlEveryCombo</string>
+						<reference key="source" ref="778312173"/>
+						<reference key="destination" ref="656172690"/>
+					</object>
+					<int key="connectionID">1207</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">growl</string>
+						<reference key="source" ref="778312173"/>
+						<reference key="destination" ref="884693852"/>
+					</object>
+					<int key="connectionID">1209</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">growl</string>
+						<reference key="source" ref="1032680435"/>
+						<reference key="destination" ref="884693852"/>
+					</object>
+					<int key="connectionID">1210</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">speech</string>
+						<reference key="source" ref="161349574"/>
+						<reference key="destination" ref="226892841"/>
+					</object>
+					<int key="connectionID">1212</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="789630095"/>
+						<reference key="destination" ref="161349574"/>
+					</object>
+					<int key="connectionID">1213</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="789630095"/>
+						<reference key="destination" ref="161349574"/>
+					</object>
+					<int key="connectionID">1214</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">speechEveryCombo</string>
+						<reference key="source" ref="161349574"/>
+						<reference key="destination" ref="942709776"/>
+					</object>
+					<int key="connectionID">1215</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">voicesCombo</string>
+						<reference key="source" ref="161349574"/>
+						<reference key="destination" ref="789630095"/>
+					</object>
+					<int key="connectionID">1216</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -11898,13 +11988,48 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1186</int>
-						<reference key="object" ref="873189348"/>
+						<reference key="object" ref="545134597"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Calendar Controller</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1188</int>
-						<reference key="object" ref="103438491"/>
+						<reference key="object" ref="689747448"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1193</int>
+						<reference key="object" ref="537492995"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1195</int>
+						<reference key="object" ref="739491560"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1197</int>
+						<reference key="object" ref="931123931"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1203</int>
+						<reference key="object" ref="778312173"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1204</int>
+						<reference key="object" ref="161349574"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1208</int>
+						<reference key="object" ref="884693852"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1211</int>
+						<reference key="object" ref="226892841"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
@@ -12020,7 +12145,14 @@
 				<boolean value="YES" key="117.toolbarItem.selectable"/>
 				<string key="1186.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1188.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1193.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1197.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1203.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1204.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1208.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1211.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="127.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="128.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -12386,7 +12518,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1192</int>
+			<int key="maxID">1216</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -12426,6 +12558,60 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">GrowlController</string>
+					<string key="superclassName">CommonController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="growl">GrowlNotifier</string>
+						<string key="growlEveryCombo">NSComboBox</string>
+						<string key="growlStatus">NSImageView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="growl">
+							<string key="name">growl</string>
+							<string key="candidateClassName">GrowlNotifier</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="growlEveryCombo">
+							<string key="name">growlEveryCombo</string>
+							<string key="candidateClassName">NSComboBox</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="growlStatus">
+							<string key="name">growlStatus</string>
+							<string key="candidateClassName">NSImageView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GrowlController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">GrowlNotifier</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GrowlNotifier.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">LoginController</string>
+					<string key="superclassName">CommonController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">scripter</string>
+						<string key="NS.object.0">Scripter</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">scripter</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">scripter</string>
+							<string key="candidateClassName">Scripter</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/LoginController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">Pomodoro</string>
 					<string key="superclassName">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -12439,8 +12625,6 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="about:">id</string>
 						<string key="changedCanRestartInBreaks:">id</string>
-						<string key="checkGrowl:">id</string>
-						<string key="connectToTwitter:">id</string>
 						<string key="finish:">id</string>
 						<string key="help:">id</string>
 						<string key="internalInterrupt:">id</string>
@@ -12465,14 +12649,6 @@
 						</object>
 						<object class="IBActionInfo" key="changedCanRestartInBreaks:">
 							<string key="name">changedCanRestartInBreaks:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="checkGrowl:">
-							<string key="name">checkGrowl:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="connectToTwitter:">
-							<string key="name">connectToTwitter:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="finish:">
@@ -12544,8 +12720,7 @@
 						<string key="breakCombo">NSComboBox</string>
 						<string key="calendar">CalendarController</string>
 						<string key="finishPomodoro">NSMenuItem</string>
-						<string key="growlEveryCombo">NSComboBox</string>
-						<string key="growlStatus">NSImageView</string>
+						<string key="growl">GrowlNotifier</string>
 						<string key="initialTimeCombo">NSComboBox</string>
 						<string key="internalInterruptPomodoro">NSMenuItem</string>
 						<string key="internalInterruptRecorder">SRRecorderControl</string>
@@ -12568,15 +12743,12 @@
 						<string key="scriptEveryCombo">NSComboBox</string>
 						<string key="scriptPanel">NSPanel</string>
 						<string key="scriptView">OSAScriptView</string>
+						<string key="scripter">Scripter</string>
 						<string key="setupPomodoro">NSMenuItem</string>
-						<string key="speechEveryCombo">NSComboBox</string>
 						<string key="startPomodoro">NSMenuItem</string>
 						<string key="startRecorder">SRRecorderControl</string>
 						<string key="tabView">NSTabView</string>
 						<string key="toolBar">NSToolbar</string>
-						<string key="twitterProgress">NSProgressIndicator</string>
-						<string key="twitterStatus">NSImageView</string>
-						<string key="voicesCombo">NSComboBox</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="breakCombo">
@@ -12591,13 +12763,9 @@
 							<string key="name">finishPomodoro</string>
 							<string key="candidateClassName">NSMenuItem</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="growlEveryCombo">
-							<string key="name">growlEveryCombo</string>
-							<string key="candidateClassName">NSComboBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="growlStatus">
-							<string key="name">growlStatus</string>
-							<string key="candidateClassName">NSImageView</string>
+						<object class="IBToOneOutletInfo" key="growl">
+							<string key="name">growl</string>
+							<string key="candidateClassName">GrowlNotifier</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="initialTimeCombo">
 							<string key="name">initialTimeCombo</string>
@@ -12687,13 +12855,13 @@
 							<string key="name">scriptView</string>
 							<string key="candidateClassName">OSAScriptView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="scripter">
+							<string key="name">scripter</string>
+							<string key="candidateClassName">Scripter</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="setupPomodoro">
 							<string key="name">setupPomodoro</string>
 							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="speechEveryCombo">
-							<string key="name">speechEveryCombo</string>
-							<string key="candidateClassName">NSComboBox</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="startPomodoro">
 							<string key="name">startPomodoro</string>
@@ -12710,18 +12878,6 @@
 						<object class="IBToOneOutletInfo" key="toolBar">
 							<string key="name">toolBar</string>
 							<string key="candidateClassName">NSToolbar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="twitterProgress">
-							<string key="name">twitterProgress</string>
-							<string key="candidateClassName">NSProgressIndicator</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="twitterStatus">
-							<string key="name">twitterStatus</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="voicesCombo">
-							<string key="name">voicesCombo</string>
-							<string key="candidateClassName">NSComboBox</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -12746,6 +12902,68 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/SRRecorderControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">Scripter</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/Scripter.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SpeechController</string>
+					<string key="superclassName">CommonController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="speech">NSSpeechSynthesizer</string>
+						<string key="speechEveryCombo">NSComboBox</string>
+						<string key="voicesCombo">NSComboBox</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="speech">
+							<string key="name">speech</string>
+							<string key="candidateClassName">NSSpeechSynthesizer</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="speechEveryCombo">
+							<string key="name">speechEveryCombo</string>
+							<string key="candidateClassName">NSComboBox</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="voicesCombo">
+							<string key="name">voicesCombo</string>
+							<string key="candidateClassName">NSComboBox</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SpeechController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TwitterController</string>
+					<string key="superclassName">CommonController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="prefs">NSPanel</string>
+						<string key="twitterProgress">NSProgressIndicator</string>
+						<string key="twitterStatus">NSImageView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="prefs">
+							<string key="name">prefs</string>
+							<string key="candidateClassName">NSPanel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="twitterProgress">
+							<string key="name">twitterProgress</string>
+							<string key="candidateClassName">NSProgressIndicator</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="twitterStatus">
+							<string key="name">twitterStatus</string>
+							<string key="candidateClassName">NSImageView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TwitterController.h</string>
 					</object>
 				</object>
 			</array>

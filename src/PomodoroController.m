@@ -36,7 +36,6 @@
 #import "PTHotKeyCenter.h"
 #import "PTHotKey.h"
 #import "CalendarController.h"
-#import "TwitterSecrets.h"
 #import "PomoNotifications.h"
 
 @implementation PomodoroController
@@ -44,7 +43,6 @@
 @synthesize startPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
 
 #pragma mark - Shortcut recorder callbacks & support
-
 
 - (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
 		
@@ -111,17 +109,6 @@
 	[quickStatsRecorder setKeyCombo:quickStatsKeyCombo];
 }
 
-#pragma mark ---- Login helper methods ----
-
--(void) insertIntoLoginItems {
-	[scripter executeScript:@"insertIntoLoginItems"];		
-}
-
-
--(void) removeFromLoginItems {
-	[scripter executeScript:@"removeFromLoginItems"];	
-}
-
 - (void) addListToCombo:(NSString*)action {
 	
 	NSAppleEventDescriptor* result = [scripter executeScript:action];			
@@ -133,10 +120,6 @@
 }
 
 #pragma mark ---- Helper methods ----
-
-- (BOOL) checkDefault:(NSString*) property {
-	return [[[NSUserDefaults standardUserDefaults] objectForKey:property] boolValue];
-}
 
 - (void) showTimeOnStatusBar:(NSInteger) time {	
 	if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
@@ -199,15 +182,6 @@
 } 
 
 - (IBAction)showScriptingPanel:(id)sender {
-
-    /*
-    id transformer = [[[DataToStringTransformer alloc] init] autorelease];
-    
-    NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
-    [bindingOptions setObject: transformer
-                       forKey:NSValueTransformerBindingOption];
-    */ 
-
     
     [scriptView unbind:@"data"];
     NSString* scriptToShow = [NSString stringWithFormat:@"values.script%@", [scriptNames objectAtIndex:[sender tag]]];
@@ -228,18 +202,8 @@
 
 }
 
-#pragma mark ---- Voice Combo box delegate/datasource methods ----
+#pragma mark ---- Combo box delegate/datasource methods ----
 
-- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox {
-	return [voices count]; 
-}
-
-- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index {
-	NSString *v = [voices objectAtIndex:index]; 
-    NSDictionary *dict = [NSSpeechSynthesizer attributesForVoice:v]; 
-    return [dict objectForKey:NSVoiceName]; 
-}
-	
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
 	[pomodoro setDurationMinutes:_initialTime];
 	[self showTimeOnStatusBar: _initialTime * 60];
@@ -247,28 +211,14 @@
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
 
-	if ([notification object] == voicesCombo) {
-		NSInteger selected = [voicesCombo indexOfSelectedItem];
-		[speech setVoice:[voices objectAtIndex:selected]];
-	} else if  ([notification object] == initialTimeCombo) {
-		NSInteger selected = [[[initialTimeCombo objectValues] objectAtIndex:[initialTimeCombo indexOfSelectedItem]] intValue];
-		[pomodoro setDurationMinutes:selected];
-        [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:selected] forKey:@"pomodoroDurationMinutes"];
-		[self showTimeOnStatusBar: selected * 60];
-	} 
+    NSInteger selected = [[[initialTimeCombo objectValues] objectAtIndex:[initialTimeCombo indexOfSelectedItem]] intValue];
+    [pomodoro setDurationMinutes:selected];
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:selected] forKey:@"pomodoroDurationMinutes"];
+    [self showTimeOnStatusBar: selected * 60];
     
 }
 
 #pragma mark ---- KVO Utility ----
-
--(void)observeUserDefault:(NSString*) property{
-	
-	[[NSUserDefaults standardUserDefaults] addObserver:self
-											forKeyPath:property
-											   options:(NSKeyValueObservingOptionNew |
-														NSKeyValueObservingOptionOld)
-											   context:NULL];
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
@@ -279,13 +229,6 @@
 	
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
 		[self showTimeOnStatusBar: _initialTime * 60];		
-	} else if ([keyPath isEqualToString:@"startOnLoginEnabled"]) { 
-		BOOL loginEnabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-		if (loginEnabled) {
-			[self insertIntoLoginItems];
-		} else {
-			[self removeFromLoginItems];
-		}
 	} else if ([keyPath hasSuffix:@"Volume"]) {
 		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
 		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
@@ -299,10 +242,6 @@
 			if ([keyPath isEqual:@"ringBreakVolume"]) {
 				[ringingBreak setVolume:newVolume];
 				[ringingBreak play];
-			}
-			if ([keyPath isEqual:@"voiceVolume"]) {
-				[speech setVolume:newVolume];
-				[speech startSpeakingString:@"Yes"];
 			}
 			if ([keyPath isEqual:@"tickVolume"]) {
 				[tick setVolume:newVolume];
@@ -498,8 +437,7 @@
 			[prefs endEditingFor:nil];
 		}
 		[prefs close];
-        
-		
+        		
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
 			if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"])) {
@@ -538,7 +476,7 @@
 	
 }
 
--(IBAction) internalInterrupt: (id) sender {
+- (IBAction) internalInterrupt: (id) sender {
 	
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyInternalInterruptions)+1] forKey:@"dailyInternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalInternalInterruptions)+1] forKey:@"globalInternalInterruptions"];
@@ -565,27 +503,13 @@
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
 
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
-	[statusItem setToolTip:name];
+	[statusItem setToolTip:name];		
 
-	if ([self checkDefault:@"growlAtStartEnabled"]) {
-		BOOL sticky = [self checkDefault:@"stickyStartEnabled"];
-		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:NSLocalizedString(@"Pomodoro started",@"Growl header for pomodoro start") sticky:sticky];
-	}
-	
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtStartEnabled"]) {
-		[speech startSpeakingString:[self bindCommonVariables:@"speechStart"]];
-	}
-	
 	if ([self checkDefault:@"scriptAtStartEnabled"]) {	
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
-	
-	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtStartEnabled"]) {
-		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterStart"]];
-	}
-	
+		
 	if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToPomodoroInAdium"];
 	}
@@ -606,19 +530,8 @@
 
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
 	[statusItem setToolTip:name];
-	
-	NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
-	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
-
-		NSString* growlString = [self bindCommonVariables:@"growlInterrupt"];		
-		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:NSLocalizedString(@"Pomodoro interrupted",@"Growl title for interruptions")];
-	}
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptEnabled"]) {
-		NSString* speechString = [self bindCommonVariables:@"speechInterrupt"];
-		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
-	}
-	
+		
+    NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	
 	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
 		NSString* scriptString = [[self bindCommonVariables:@"scriptInterrupt"] stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString];
@@ -634,12 +547,6 @@
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
 
-	if ([self checkDefault:@"growlAtInterruptOverEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptOverEnabled"])
-		[speech startSpeakingString:[self bindCommonVariables:@"speechInterruptOver"]];
-	
 	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptInterruptOver"]] autorelease];
 		[playScript executeAndReturnError:nil];
@@ -668,20 +575,10 @@
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
-
-	if ([self checkDefault:@"growlAtResetEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResetEnabled"])
-		[speech startSpeakingString:[self bindCommonVariables:@"speechReset"]];
-	
+    
 	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]] autorelease];
 		[playScript executeAndReturnError:nil];
-	}
-	
-	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtResetEnabled"]) {
-		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterReset"]];
 	}
 	
 	if ([self checkDefault:@"adiumEnabled"]) {
@@ -705,12 +602,6 @@
 	[statusItem setImage:pomodoroImage];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroResumed)+1] forKey:@"dailyPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroResumed)+1] forKey:@"globalPomodoroResumed"];
-
-	if ([self checkDefault:@"growlAtResumeEnabled"])
-		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:NSLocalizedString(@"Pomodoro resumed",@"Growl header for resumed pomodoro")];
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtResumeEnabled"])
-		[speech startSpeakingString:[self bindCommonVariables:@"speechResume"]];
 	
 	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptResume"]] autorelease];
@@ -731,14 +622,6 @@
 	
 	[self updateMenu];
 	
-	if ([self checkDefault:@"growlAtBreakFinishedEnabled"]) {
-		BOOL sticky = [self checkDefault:@"stickyBreakFinishedEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:NSLocalizedString(@"Pomodoro break finished",@"Growl header for finished break") sticky:sticky];
-	}
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtBreakFinishedEnabled"])
-		[speech startSpeakingString:[self bindCommonVariables:@"speechBreakFinished"]];
-	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtBreakEnabled"]) {
 		[ringingBreak play];
 	}
@@ -746,10 +629,6 @@
 	if ([self checkDefault:@"scriptAtBreakFinishedEnabled"]) {		
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptBreakFinished"]] autorelease];
 		[playScript executeAndReturnError:nil];
-	}
-	
-	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtBreakFinishedEnabled"]) {
-		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterBreaekFinished"]];
 	}
 	
 	[self showTimeOnStatusBar: _initialTime * 60];
@@ -772,28 +651,15 @@
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtEndEnabled"]) {
 		[ringing play];
 	}
-	
-	if ([self checkDefault:@"growlAtEndEnabled"]) {
-		BOOL sticky = [self checkDefault:@"stickyEndEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:NSLocalizedString(@"Pomodoro finished",@"Growl header for finished pomodoro") sticky:sticky];
-	}
-	
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEndEnabled"])
-		[speech startSpeakingString:[self bindCommonVariables:@"speechEnd"]];
-	
+		
 	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
 	
-	if ([self checkDefault:@"enableTwitter"] && [self checkDefault:@"twitterAtEndEnabled"]) {
-		[twitterEngine sendUpdate:[self bindCommonVariables:@"twitterEnd"]];
-	}
-	
 	if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}
-	
+	}	
 	
 	if ([self checkDefault:@"ichatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
@@ -802,8 +668,6 @@
 	if ([self checkDefault:@"skypeEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInSkype"];
 	}
-	
-	
 	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
@@ -836,34 +700,15 @@
     NSInteger time = [[notification object] integerValue];
 	[self showTimeOnStatusBar: time];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
-		//NSLog(@"Tick volume: %f", tick.volume); 
 		[tick play];
 	}
 	NSInteger timePassed = (_initialTime*60) - time;
 	NSString* timePassedString = [NSString stringWithFormat:@"%d", timePassed/60];
 	NSString* timeString = [NSString stringWithFormat:@"%d", time/60];
 	
-	if (timePassed%(60 * _growlEveryTimeMinutes) == 0 && time!=0) {	
-		if ([self checkDefault:@"growlAtEveryEnabled"]) {
-			NSString* msg = [[self bindCommonVariables:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] stringValue]];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
-			[growl growlAlert:msg title:@"Pomodoro ticking"];
-		}
-	}
-	
-	if (timePassed%(60 * _speechEveryTimeMinutes) == 0 && time!=0) {		
-		if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEveryEnabled"]) {
-			NSString* msg = [[self bindCommonVariables:@"speechEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
-			[speech startSpeakingString:msg];
-		}
-	}
-	
 	if (timePassed%(60 * _scriptEveryTimeMinutes) == 0 && time!=0) {		
 		if ([self checkDefault:@"scriptAtEveryEnabled"]) {		
-			NSString* msg = [[self bindCommonVariables:@"scriptEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speechEveryTimeMinutes"] stringValue]];
+			NSString* msg = [[self bindCommonVariables:@"scriptEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
 			NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:msg] autorelease];
@@ -872,88 +717,11 @@
 	}
 }
 
-#pragma mark ---- MGTwitterEngineDelegate methods ----
-
-- (void) accessTokenReceived:(OAToken *)token forRequest:(NSString *)connectionIdentifier {
-	NSLog(@"Token received %@ at (%@)", token, connectionIdentifier);	
-	[twitterEngine setAccessToken:token];
-	[twitterStatus setImage:greenButtonImage];
-	[twitterProgress stopAnimation:self];
-}
-
-- (void)requestSucceeded:(NSString *)requestIdentifier {
-    NSLog(@"Request succeeded (%@)", requestIdentifier);	
-}
-
-- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
-    NSLog(@"Twitter request failed! (%@) Error: %@ (%@)", 
-          requestIdentifier, 
-          [error localizedDescription], 
-          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-
-	[twitterStatus setImage:redButtonImage];
-	[twitterProgress stopAnimation:self];
-}
-
-- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)identifier {}
-
-- (void)directMessagesReceived:(NSArray *)messages forRequest:(NSString *)identifier {}
-
-- (void)userInfoReceived:(NSArray *)userInfo forRequest:(NSString *)identifier {}
-
-- (void)miscInfoReceived:(NSArray *)miscInfo forRequest:(NSString *)identifier {}
-
-- (void)imageReceived:(NSImage *)image forRequest:(NSString *)identifier {}
-
-- (void) tryConnectionToTwitter {
-	if ([self checkDefault:@"enableTwitter"]) {
-		NSLog(@"Setting twitter account");
-		[twitterEngine getXAuthAccessTokenForUsername:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterUser"] 
-											 password:[[NSUserDefaults standardUserDefaults] objectForKey:@"twitterPwd"]];
-	}
-}
-
--(IBAction) connectToTwitter: (id) sender {
-	
-	if (![prefs makeFirstResponder:prefs]) {
-		[prefs endEditingFor:nil];
-	}
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	
-	[self tryConnectionToTwitter];	
-	[twitterEngine testService];
-	[twitterStatus setImage:nil];
-	[twitterProgress startAnimation:self];
-}
-
-#pragma mark ---- Growl methods ----
-
--(IBAction) checkGrowl:(id)sender {
-        
-    if ([growl isGrowlInstalled] && [growl isGrowlRunning]) {
-        [growlStatus setImage:greenButtonImage];
-        [sender setToolTip:@"Growl installed and running!"];
-        [growlStatus setToolTip:@"Growl installed and running!"];
-    } else if ([growl isGrowlInstalled]) {
-        [growlStatus setImage:yellowButtonImage];
-        [sender setToolTip:@"Growl installed but not running!"];
-        [growlStatus setToolTip:@"Growl installed but not running!"];
-    } else {
-       	[growlStatus setImage:redButtonImage];
-        [sender setToolTip:@"Growl not installed and not running!"];
-        [growlStatus setToolTip:@"Growl not installed and not running!"];
-    }
-    
-}
 
 #pragma mark ---- Lifecycle methods ----
 
 + (void)initialize { 
     
-//	PercentageTransformer *volumeTransformer = [[[PercentageTransformer alloc] init] autorelease];	
-//	[NSValueTransformer setValueTransformer:volumeTransformer
-//									forName:@"PercentageTransformer"];
-
 	[PomodoroDefaults setDefaults];
 	
 } 
@@ -985,76 +753,27 @@
 }
 	  
 - (void)awakeFromNib {
-	
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroStarted:) 
-                                                 name:_PMPomoStarted
-                                               object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroFinished:) 
-                                                 name:_PMPomoFinished
-                                               object:nil];
+    [self registerForAllPomodoroEvents];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroInterrupted:) 
-                                                 name:_PMPomoInterrupted
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroInterruptionMaxTimeIsOver:) 
-                                                 name:_PMPomoInterruptionMaxTimeIsOver
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroReset:) 
-                                                 name:_PMPomoReset
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pomodoroResumed:) 
-                                                 name:_PMPomoResumed
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(oncePerSecond:) 
-                                                 name:_PMPomoOncePerSecond
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(oncePerSecondBreak:) 
-                                                 name:_PMPomoOncePerSecondBreak
-                                               object:nil];
-    
-    
-	NSBundle *bundle = [NSBundle mainBundle];
-	
-	statusItem = [[[NSStatusBar systemStatusBar] 
-				   statusItemWithLength:NSVariableStatusItemLength]
-				  retain];
+	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 
-	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro" ofType:@"png"]];
-	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak" ofType:@"png"]];
-	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze" ofType:@"png"]];
-	pomodoroNegativeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoro_n" ofType:@"png"]];
-	pomodoroNegativeBreakImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroBreak_n" ofType:@"png"]];
-	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
-	redButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"red" ofType:@"png"]];
-	greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"green" ofType:@"png"]];
-	yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"yellow" ofType:@"png"]];
+	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoro" ofType:@"png"]];
+	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak" ofType:@"png"]];
+	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze" ofType:@"png"]];
+	pomodoroNegativeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoro_n" ofType:@"png"]];
+	pomodoroNegativeBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak_n" ofType:@"png"]];
+	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
+
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	ringingBreak = [NSSound soundNamed:@"ring.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
-	
-	speech = [[NSSpeechSynthesizer alloc] init]; 
-	voices = [[NSSpeechSynthesizer availableVoices] retain];
-	
+		
 	[ringing setVolume:_ringVolume/10.0];
 	[ringingBreak setVolume:_ringBreakVolume/10.0];
 	[tick setVolume:_tickVolume/10.0];
-	[speech setVolume:_voiceVolume/10.0];
 
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];
@@ -1077,14 +796,6 @@
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:4]];
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:6]];
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:8]];
-
-	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-	[growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-
-	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-	[speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
 	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
@@ -1094,27 +805,11 @@
 	[statusItem setHighlightMode:YES];
 	[statusItem setMenu:pomodoroMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
-	
-	growl = [[[GrowlNotifier alloc] init] retain];
-	scripter = [[[Scripter alloc] init] retain];
+
     scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
-    
-    /*
-    [scriptStart bind:@"Data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.scriptStart" options:nil];
-    [scriptInterrupt bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterrupt" options:nil];
-    [scriptInterruptOver bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptInterruptOver" options:nil];
-    [scriptResume bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptResume" options:nil];
-    [scriptReset bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptReset" options:nil];
-    [scriptEnd bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEnd" options:nil];
-    [scriptBreakFinished bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptBreakFinished" options:nil];
-    [scriptEvery bind:@"Data" toObject:[NSUserDefaults standardUserDefaults] withKeyPath:@"scriptEvery" options:nil];
-    */
 	
-	NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
-	[speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];
-    
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
-	//pomodoro = [[[Pomodoro alloc] initWithDuration: _initialTime] retain];
+
     [pomodoro setDurationMinutes:_initialTime];
     pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
 	[pomodoro setDelegate: pomodoroNotifier];
@@ -1131,18 +826,12 @@
 	[self observeUserDefault:@"ringVolume"];
 	[self observeUserDefault:@"ringBreakVolume"];
 	[self observeUserDefault:@"tickVolume"];
-	[self observeUserDefault:@"voiceVolume"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
-	[self observeUserDefault:@"startOnLoginEnabled"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];
-	}
-
-	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
-	[twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
-	[self tryConnectionToTwitter];	
+	}	
 		
 }
 
@@ -1166,9 +855,7 @@
     [scriptPanel release];
     [scriptView release];
 	[pomodoroMenu release];
-	[voicesCombo release];
 	[initialTimeCombo release];
-	[voices release];
 
 	[startPomodoro release];
 	[interruptPomodoro release];
@@ -1183,14 +870,8 @@
 	[ringing release];
 	[ringingBreak release];
 	[tick release];
-	[speech release];
 	
-	[growl release];
-	[scripter release];
     [scriptNames release];
-	[pomodoro release];
-	[twitterEngine release];
-	[twitterProgress release];
 	
 	[super dealloc];
 }

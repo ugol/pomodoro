@@ -25,16 +25,23 @@
 
 #import <Foundation/Foundation.h>
 #import "CommonController.h"
+#import "MGTwitterEngine.h"
 
-#define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
-#define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
+@class MGTwitterEngine;
 
-@interface CalendarController : CommonController {
+@interface TwitterController : CommonController<MGTwitterEngineDelegate> {
 
-    IBOutlet NSComboBox* calendarsCombo;
-    
+    IBOutlet NSProgressIndicator* twitterProgress;
+	IBOutlet NSImageView* twitterStatus;
+    IBOutlet NSPanel* prefs;
+
+    MGTwitterEngine* twitterEngine;
+	NSImage* redButtonImage;
+	NSImage* greenButtonImage;
+	NSImage* yellowButtonImage;
 }
 
-- (void)initCalendars;
+- (void) tryConnectionToTwitter;
+
 
 @end

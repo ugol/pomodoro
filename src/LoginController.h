@@ -26,15 +26,10 @@
 #import <Foundation/Foundation.h>
 #import "CommonController.h"
 
-#define _selectedCalendar [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCalendar"]
-#define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
+@class Scripter;
 
-@interface CalendarController : CommonController {
-
-    IBOutlet NSComboBox* calendarsCombo;
-    
+@interface LoginController : CommonController {
+  	IBOutlet Scripter* scripter;  
 }
-
-- (void)initCalendars;
 
 @end
