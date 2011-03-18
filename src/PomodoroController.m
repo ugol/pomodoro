@@ -25,16 +25,14 @@
 
 #import "PomodoroController.h"
 #import "GrowlNotifier.h"
-#import "Scripter.h"
 #import "Pomodoro.h"
 #import "Binder.h"
 #import "PomodoroDefaults.h"
 #import "AboutController.h"
 #import "StatsController.h"
 #import "SplashController.h"
-#import "Carbon/Carbon.h"
-#import "PTHotKeyCenter.h"
-#import "PTHotKey.h"
+#import "ShortcutController.h"
+
 #import "CalendarController.h"
 #import "PomoNotifications.h"
 
@@ -42,82 +40,6 @@
 
 @synthesize startPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
 
-#pragma mark - Shortcut recorder callbacks & support
-
-- (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
-		
-	if (*key != nil) {
-		[[PTHotKeyCenter sharedCenter] unregisterHotKey: *key];
-		[*key release];
-		*key = nil;
-	}
-	
-	//NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
-		
-	*key = [[[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]] retain];
-	[*key setTarget: self];
-	[*key setAction: method];
-	[[PTHotKeyCenter sharedCenter] registerHotKey: *key];
-	[*key release];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithShort:[recorder keyCombo].code] forKey:[NSString stringWithFormat:@"%@%@", name, @"Code"]];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithUnsignedInteger:[recorder keyCombo].flags] forKey:[NSString stringWithFormat:@"%@%@", name, @"Flags"]];
-	
-}
-
-- (void)shortcutRecorder:(id)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
-
-	if (aRecorder == muteRecorder) {
-		[self switchKey:@"mute" forKey:&muteKey withMethod:@selector(keyMute) withRecorder:aRecorder];
-	} else if (aRecorder == startRecorder) {
-		[self switchKey:@"start" forKey:&startKey withMethod:@selector(keyStart) withRecorder:aRecorder];
-	} else if (aRecorder == resetRecorder) {
-		[self switchKey:@"reset" forKey:&resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
-	} else if (aRecorder == interruptRecorder) {
-		[self switchKey:@"interrupt" forKey:&interruptKey withMethod:@selector(keyInterrupt) withRecorder:aRecorder];
-	} else if (aRecorder == internalInterruptRecorder) {
-		[self switchKey:@"internalInterrupt" forKey:&internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
-	} else if (aRecorder == resumeRecorder) {
-		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
-	} else if (aRecorder ==quickStatsRecorder) {
-		[self switchKey:@"quickStats" forKey:&quickStatsKey withMethod:@selector(keyQuickStats) withRecorder:aRecorder];
-	} 
-}
-
-- (void) updateShortcuts {
-		
-	muteKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"muteCode"] intValue];
-	muteKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"] intValue];
-	startKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"] intValue];
-	startKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"] intValue];
-	resetKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"] intValue];
-	resetKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"] intValue];
-	interruptKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"] intValue];
-	interruptKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptFlags"] intValue];
-	internalInterruptKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptCode"] intValue];
-	internalInterruptKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"internalInterruptFlags"] intValue];
-	resumeKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resumeCode"] intValue];
-	resumeKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resumeFlags"] intValue];
-	quickStatsKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsCode"] intValue];
-	quickStatsKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"quickStatsFlags"] intValue];
-		
-	[muteRecorder setKeyCombo:muteKeyCombo];
-	[startRecorder setKeyCombo:startKeyCombo];
-	[resetRecorder setKeyCombo:resetKeyCombo];
-	[interruptRecorder setKeyCombo:interruptKeyCombo];
-	[internalInterruptRecorder setKeyCombo:internalInterruptKeyCombo];
-	[resumeRecorder setKeyCombo:resumeKeyCombo];
-	[quickStatsRecorder setKeyCombo:quickStatsKeyCombo];
-}
-
-- (void) addListToCombo:(NSString*)action {
-	
-	NSAppleEventDescriptor* result = [scripter executeScript:action];			
-	int howMany = [result numberOfItems];
-	for (int i=1; i<= howMany; i++) {
-		[namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];		
-	}
-	
-}
 
 #pragma mark ---- Helper methods ----
 
@@ -143,55 +65,6 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }		
 
-#pragma mark ---- Scripting panel delegate methods ----
-
-- (void)openPanelDidEnd:(NSOpenPanel *)openPanel 
-             returnCode:(int)returnCode 
-            contextInfo:(void *)x 
-{ 
-    if (returnCode == NSOKButton) { 
-		//NSButton* sender = (NSButton*)x;
-		NSString *path = [openPanel filename]; 
-		NSString *script = [[NSString alloc] initWithContentsOfFile:path];
-		//NSTextView* textView = [textViews objectAtIndex:[sender tag]];
-		[scriptView setSource:script];
-		[script release];
-				
-    } 
-} 
-
-
-- (BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename {
-    if ([[filename pathExtension] isEqualTo:@"pomo"] || [[filename pathExtension] isEqualTo:@"applescript"])
-        return YES;
-    return NO;
-}
-
-- (IBAction)showOpenPanel:(id)sender 
-{ 
-    NSOpenPanel *panel = [NSOpenPanel openPanel]; 
-	[panel setDelegate:self];
-    [panel beginSheetForDirectory:nil 
-                             file:nil 
-							types: [NSArray arrayWithObjects:@"pomo", @"applescript",nil]
-                   modalForWindow:scriptPanel 
-                    modalDelegate:self 
-                   didEndSelector: 
-	 @selector(openPanelDidEnd:returnCode:contextInfo:) 
-                      contextInfo:sender]; 
-} 
-
-- (IBAction)showScriptingPanel:(id)sender {
-    
-    [scriptView unbind:@"data"];
-    NSString* scriptToShow = [NSString stringWithFormat:@"values.script%@", [scriptNames objectAtIndex:[sender tag]]];
-    [scriptView bind:@"data" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:scriptToShow options:nil];
-
-    [scriptPanel makeKeyAndOrderFront:self];
-    
-}
-
-
 #pragma mark ---- Window delegate methods ----
 
 
@@ -202,7 +75,7 @@
 
 }
 
-#pragma mark ---- Combo box delegate/datasource methods ----
+#pragma mark ---- Pomodoro duration delegate/datasource methods ----
 
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
 	[pomodoro setDurationMinutes:_initialTime];
@@ -253,21 +126,12 @@
 	
 }
 
-#pragma mark ---- Toolbar methods ----
 
--(IBAction) toolBarIconClicked: (id) sender {
-    //NSLog(@"Clicked from %d", [sender tag]);
-    [tabView selectTabViewItem:[tabView tabViewItemAtIndex:[sender tag]]];
-    
-}
-
-#pragma mark ---- Menu management methods ----
+#pragma mark ---- Key management methods ----
 
 -(void) keyMute {
 	BOOL muteState = ![self checkDefault:@"mute"];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:muteState] forKey:@"mute"];
-	//NSMenuItem* muteMenu = [pomodoroMenu itemWithTitle:@"Mute all Sounds"];
-	//[muteMenu setState:muteState];
 }
 
 -(void) keyStart {
@@ -305,6 +169,65 @@
 	[growl growlAlert:quickStats title:NSLocalizedString(@"Quick Statistics",@"Growl header for quick statistics")];
 }
 
+#pragma mark ---- Toolbar methods ----
+
+-(IBAction) toolBarIconClicked: (id) sender {
+    [tabView selectTabViewItem:[tabView tabViewItemAtIndex:[sender tag]]];
+    
+}
+
+#pragma mark ---- Menu management methods ----
+
+- (void) updateMenu {
+	enum PomoState state = pomodoro.state;
+	
+	NSImage * image;
+	NSImage * alternateImage;
+	switch (state) {
+		case PomoTicking:
+			image = pomodoroImage;
+			alternateImage = pomodoroNegativeImage;
+			break;
+		case PomoInterrupted:
+			image = pomodoroFreezeImage;
+			alternateImage = pomodoroNegativeFreezeImage;
+			break;
+		case PomoInBreak:
+			image = pomodoroBreakImage;
+			alternateImage = pomodoroNegativeBreakImage;
+			break;
+		default: // PomoReadyToStart
+			image = pomodoroImage;
+			alternateImage = pomodoroNegativeImage;
+			break;
+	}
+    
+	[statusItem setImage:image];
+	[statusItem setAlternateImage:alternateImage];
+	
+	[startPomodoro             setEnabled:(state == PomoReadyToStart) || ((state == PomoInBreak) && [self checkDefault:@"canRestartAtBreak"])];
+	[finishPomodoro            setEnabled:(state == PomoTicking)];
+	[invalidatePomodoro        setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
+	[interruptPomodoro         setEnabled:(state == PomoTicking)];
+	[internalInterruptPomodoro setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
+	[resumePomodoro            setEnabled:(state == PomoInterrupted)];
+	[setupPomodoro             setEnabled:YES];
+    
+}
+
+-(IBAction) resetDefaultValues: (id) sender {
+	
+	[PomodoroDefaults removeDefaults];
+	[shortcut updateShortcuts];
+	[self showTimeOnStatusBar: _initialTime * 60];
+	[self updateMenu];
+    
+}
+
+-(IBAction) changedCanRestartInBreaks: (id) sender {
+	[self updateMenu];	
+}
+
 -(IBAction)about:(id)sender {
 	if (!about) {
 		about = [[AboutController alloc] init];
@@ -336,41 +259,6 @@
 	[NSApp terminate:self];
 }
 
-- (void) updateMenu {
-	enum PomoState state = pomodoro.state;
-	
-	NSImage * image;
-	NSImage * alternateImage;
-	switch (state) {
-		case PomoTicking:
-			image = pomodoroImage;
-			alternateImage = pomodoroNegativeImage;
-			break;
-		case PomoInterrupted:
-			image = pomodoroFreezeImage;
-			alternateImage = pomodoroNegativeFreezeImage;
-			break;
-		case PomoInBreak:
-			image = pomodoroBreakImage;
-			alternateImage = pomodoroNegativeBreakImage;
-			break;
-		default: // PomoReadyToStart
-			image = pomodoroImage;
-			alternateImage = pomodoroNegativeImage;
-			break;
-	}
-		
-	[statusItem setImage:image];
-	[statusItem setAlternateImage:alternateImage];
-	
-	[startPomodoro             setEnabled:(state == PomoReadyToStart) || ((state == PomoInBreak) && [self checkDefault:@"canRestartAtBreak"])];
-	[finishPomodoro            setEnabled:(state == PomoTicking)];
-	[invalidatePomodoro        setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
-	[interruptPomodoro         setEnabled:(state == PomoTicking)];
-	[internalInterruptPomodoro setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
-	[resumePomodoro            setEnabled:(state == PomoInterrupted)];
-	[setupPomodoro             setEnabled:YES];
-}
 
 - (void) realStart {
 	[pomodoro start];	
@@ -390,32 +278,9 @@
     if (![namePanel makeFirstResponder:namePanel]) {
         [namePanel endEditingFor:nil];
     }
-	
-	NSInteger howMany = [namesCombo numberOfItems];
-	NSString* name = _pomodoroName;
-	BOOL isNewName = YES;
-	NSInteger i = 0;
-	while ((isNewName) && (i<howMany)) {
-		isNewName = ![name isEqualToString:[namesCombo itemObjectValueAtIndex:i]];
-		i++;
-	}
-	if (isNewName) {
-		
-		if (!([self checkDefault:@"thingsEnabled"]) && (![self checkDefault:@"omniFocusEnabled"])) {
-			if (howMany>15) {
-				[namesCombo removeItemAtIndex:0];
-			}
-			[namesCombo addItemWithObjectValue:name];
-		}
-		
-		if ([self checkDefault:@"thingsEnabled"] && [self checkDefault:@"thingsAddingEnabled"]) {
-			[scripter executeScript:@"addTodoToThings" withParameter:name];
-		}
-		if ([self checkDefault:@"omniFocusEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
-			[scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
-		}
-	}
-	
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameGiven object:namePanel];
+
 	[namePanel close];
 	[self realStart];
 }
@@ -428,29 +293,17 @@
 	
 	[self saveState];
 	if (_initialTime > 0) {
+        
 		[about close];
 		[splash close];
-        if (![scriptPanel makeFirstResponder:scriptPanel]) {
-			[scriptPanel endEditingFor:nil];
-		}
         [scriptPanel close];
-		if (![prefs makeFirstResponder:prefs]) {
-			[prefs endEditingFor:nil];
-		}
-		[prefs close];
+ 		[prefs close];
         		
+        [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoWillStart object:nil];
+
 		if ([self checkDefault:@"askBeforeStart"]) {
 			[self setFocusOnPomodoro];
-			if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"])) {
-				[namesCombo removeAllItems];
-			}
 
-			if ([self checkDefault:@"thingsEnabled"]) {
-				[self addListToCombo:@"getToDoListFromThings"];
-			}			
-			if ([self checkDefault:@"omniFocusEnabled"]) {
-				[self addListToCombo:@"getToDoListFromOmniFocus"];
-			}
 			[namePanel makeKeyAndOrderFront:self];
 		} else {
 			[self realStart];
@@ -506,23 +359,7 @@
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _pomodoroName];
 	[statusItem setToolTip:name];		
 
-	if ([self checkDefault:@"scriptAtStartEnabled"]) {	
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptStart"]] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
 		
-	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInAdium"];
-	}
-	
-	if ([self checkDefault:@"ichatEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInSkype"];
-	}
-	
 }
 
 -(void) pomodoroInterrupted:(NSNotification*) notification {
@@ -531,15 +368,7 @@
 
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
 	[statusItem setToolTip:name];
-		
-    NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
-	
-	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
-		NSString* scriptString = [[self bindCommonVariables:@"scriptInterrupt"] stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString];
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:scriptString] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
-	
+			
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
@@ -547,25 +376,8 @@
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
-
-	if ([self checkDefault:@"scriptAtInterruptOverEnabled"]) {		
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptInterruptOver"]] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
-	
-	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}
-	
-	if ([self checkDefault:@"ichatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
-	
-	
+		
+			
 	[self updateMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
 }
@@ -576,23 +388,7 @@
 	[statusItem setToolTip:name];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroReset)+1] forKey:@"dailyPomodoroReset"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroReset)+1] forKey:@"globalPomodoroReset"];
-    
-	if ([self checkDefault:@"scriptAtResetEnabled"]) {		
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptReset"]] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
 	
-	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}
-		
-	if ([self checkDefault:@"ichatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
 	
 	
 }
@@ -603,11 +399,7 @@
 	[statusItem setImage:pomodoroImage];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroResumed)+1] forKey:@"dailyPomodoroResumed"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroResumed)+1] forKey:@"globalPomodoroResumed"];
-	
-	if ([self checkDefault:@"scriptAtResumeEnabled"]) {		
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptResume"]] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
+
 }
 
 -(void) breakStarted:(NSNotification*) notification {
@@ -625,11 +417,6 @@
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtBreakEnabled"]) {
 		[ringingBreak play];
-	}
-	
-	if ([self checkDefault:@"scriptAtBreakFinishedEnabled"]) {		
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptBreakFinished"]] autorelease];
-		[playScript executeAndReturnError:nil];
 	}
 	
 	[self showTimeOnStatusBar: _initialTime * 60];
@@ -653,23 +440,6 @@
 		[ringing play];
 	}
 		
-	if ([self checkDefault:@"scriptAtEndEnabled"]) {		
-		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptEnd"]] autorelease];
-		[playScript executeAndReturnError:nil];
-	}
-	
-	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}	
-	
-	if ([self checkDefault:@"ichatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
-	
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
 		if (([self checkDefault:@"longbreakEnabled"]) && ((_dailyPomodoroDone % _pomodorosForLong) == 0)) {
@@ -689,11 +459,13 @@
 }
 
 - (void) oncePerSecondBreak:(NSNotification*) notification {
+    
     NSInteger time = [[notification object] integerValue];
 	[self showTimeOnStatusBar: time];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickAtBreakEnabled"]) {
 		[tick play];
 	}
+    
 }
 
 - (void) oncePerSecond:(NSNotification*) notification {
@@ -703,19 +475,7 @@
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
 		[tick play];
 	}
-	NSInteger timePassed = (_initialTime*60) - time;
-	NSString* timePassedString = [NSString stringWithFormat:@"%d", timePassed/60];
-	NSString* timeString = [NSString stringWithFormat:@"%d", time/60];
 	
-	if (timePassed%(60 * _scriptEveryTimeMinutes) == 0 && time!=0) {		
-		if ([self checkDefault:@"scriptAtEveryEnabled"]) {		
-			NSString* msg = [[self bindCommonVariables:@"scriptEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"scriptEveryTimeMinutes"] stringValue]];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
-			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
-			NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:msg] autorelease];
-			[playScript executeAndReturnError:nil];
-		}
-	}
 }
 
 
@@ -727,19 +487,6 @@
 	
 } 
 
-
--(IBAction) resetDefaultValues: (id) sender {
-	
-	[PomodoroDefaults removeDefaults];
-	[self updateShortcuts];
-	[self showTimeOnStatusBar: _initialTime * 60];
-	[self updateMenu];
-		
-}
-
--(IBAction) changedCanRestartInBreaks: (id) sender {
-	[self updateMenu];	
-}
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
 	
@@ -797,17 +544,11 @@
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:4]];
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:6]];
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:8]];
-	
-	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-	[scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-		
+			
 	[statusItem setToolTip:NSLocalizedString(@"Pomodoro Time Management",@"Status Tooltip")];
 	[statusItem setHighlightMode:YES];
 	[statusItem setMenu:pomodoroMenu];
 	[self showTimeOnStatusBar: _initialTime * 60];
-
-    scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
 	
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
 
@@ -820,7 +561,7 @@
 	stats = [[StatsController alloc] init];
 	[stats window];
 
-	[self updateShortcuts];
+	[shortcut updateShortcuts];
 
 	GetCurrentProcess(&psn);
     
@@ -843,18 +584,9 @@
 	[stats release];
     [toolBar release];
 	
-	[muteKey release];
-	[startKey release];
-	[resetKey release];
-	[interruptKey release];
-    [internalInterruptKey release];
-	[resumeKey release];
-	[quickStatsKey release];
-	
     [statusItem release];
 	[prefs release];
-    [scriptPanel release];
-    [scriptView release];
+
 	[pomodoroMenu release];
 	[initialTimeCombo release];
 
@@ -871,8 +603,6 @@
 	[ringing release];
 	[ringingBreak release];
 	[tick release];
-	
-    [scriptNames release];
 	
 	[super dealloc];
 }

@@ -114,8 +114,7 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init
-{
+- (id)init {
     
     if ((self = [super init])) {
         

@@ -23,16 +23,41 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#define _PMPomoStarted @"PMPomoStarted"
-#define _PMPomoFinished @"PMPomoFinished"
-#define _PMPomoInterrupted @"PMPomoInterrupted"
-#define _PMPomoInterruptionMaxTimeIsOver @"PMPomoInterruptionMaxTimeIsOver"
-#define _PMPomoReset @"PMPomoReset"
-#define _PMPomoResumed @"PMPomoResumed"
-#define _PMPomoBreakStarted @"PMPomoBreakStarted"
-#define _PMPomoBreakFinished @"PMPomoBreakFinished"
-#define _PMPomoOncePerSecond @"PMPomoOncePerSecond"
-#define _PMPomoOncePerSecondBreak @"PMPomoOncePerSecondBreak"
-#define _PMPomoNameGiven @"PMPomoNameGiven"
-#define _PMPomoNameCanceled @"PMPomoNameCanceled"
-#define _PMPomoWillStart @"PMPomoWillStart"
+#import <Foundation/Foundation.h>
+#import "CommonController.h"
+#import <ShortcutRecorder/SRRecorderControl.h>
+
+@class PTHotKey;
+
+@interface ShortcutController : CommonController {
+
+    IBOutlet id delegate;
+    
+    IBOutlet SRRecorderControl* muteRecorder;
+    IBOutlet SRRecorderControl* startRecorder;
+    IBOutlet SRRecorderControl* resetRecorder;
+    IBOutlet SRRecorderControl* interruptRecorder;
+    IBOutlet SRRecorderControl* internalInterruptRecorder;
+    IBOutlet SRRecorderControl* resumeRecorder;
+    IBOutlet SRRecorderControl* quickStatsRecorder;
+	
+	PTHotKey *muteKey;
+	PTHotKey *startKey;
+	PTHotKey *resetKey;
+	PTHotKey *interruptKey;
+	PTHotKey *internalInterruptKey;
+	PTHotKey *resumeKey;
+	PTHotKey *quickStatsKey;
+	
+	KeyCombo muteKeyCombo;
+	KeyCombo startKeyCombo;
+	KeyCombo resetKeyCombo;
+	KeyCombo interruptKeyCombo;
+	KeyCombo internalInterruptKeyCombo;
+	KeyCombo resumeKeyCombo;
+	KeyCombo quickStatsKeyCombo;
+}
+
+- (void) updateShortcuts;
+
+@end

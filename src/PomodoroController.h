@@ -24,15 +24,14 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <ShortcutRecorder/SRRecorderControl.h>
-#import <OSAKit/OSAScriptView.h>
-#import <OSAKit/OSAScriptController.h>
+
 #import "PomodoroNotifier.h"
 #import "CommonController.h"
 
 @class AboutController;
 @class StatsController;
 @class SplashController;
+@class ShortcutController;
 @class GrowlNotifier;
 @class PTHotKey;
 @class Scripter;
@@ -45,12 +44,13 @@
 	SplashController* splash;
 	StatsController* stats;
 	IBOutlet CalendarController* calendar;
+    IBOutlet ShortcutController* shortcut;
     
 	NSStatusItem* statusItem;	
 	IBOutlet NSPanel* prefs;
-	IBOutlet NSPanel* namePanel;
+	IBOutlet NSPanel* namePanel; 
     IBOutlet NSPanel* scriptPanel;
-    IBOutlet OSAScriptView* scriptView;
+
 	IBOutlet NSComboBox* namesCombo;
     
     IBOutlet NSTabView* tabView;
@@ -61,35 +61,7 @@
 	IBOutlet NSComboBox* breakCombo;
 	IBOutlet NSComboBox* longBreakCombo;
 	IBOutlet NSComboBox* pomodorosForLong;
-	IBOutlet NSComboBox* scriptEveryCombo;
-		
-    IBOutlet SRRecorderControl* muteRecorder;
-    IBOutlet SRRecorderControl* startRecorder;
-    IBOutlet SRRecorderControl* resetRecorder;
-    IBOutlet SRRecorderControl* interruptRecorder;
-    IBOutlet SRRecorderControl* internalInterruptRecorder;
-    IBOutlet SRRecorderControl* resumeRecorder;
-    IBOutlet SRRecorderControl* quickStatsRecorder;
-	
-	PTHotKey *muteKey;
-	PTHotKey *startKey;
-	PTHotKey *resetKey;
-	PTHotKey *interruptKey;
-	PTHotKey *internalInterruptKey;
-	PTHotKey *resumeKey;
-	PTHotKey *quickStatsKey;
-	
-	KeyCombo muteKeyCombo;
-	KeyCombo startKeyCombo;
-	KeyCombo resetKeyCombo;
-	KeyCombo interruptKeyCombo;
-	KeyCombo internalInterruptKeyCombo;
-	KeyCombo resumeKeyCombo;
-	KeyCombo quickStatsKeyCombo;
-
-	NSArray* textViews;
-    NSArray* scriptNames;
-	
+			
 	IBOutlet NSMenuItem* startPomodoro;
 	IBOutlet NSMenuItem* finishPomodoro;
 	IBOutlet NSMenuItem* interruptPomodoro;
@@ -112,7 +84,7 @@
 	IBOutlet GrowlNotifier* growl;
 	IBOutlet Pomodoro* pomodoro;
     PomodoroNotifier* pomodoroNotifier;
-	IBOutlet Scripter* scripter;
+	//IBOutlet Scripter* scripter;
 			
 }
 
@@ -129,8 +101,6 @@
 -(void) keyInternalInterrupt;
 -(void) keyResume;
 
--(IBAction) showOpenPanel:(id)sender;
--(IBAction) showScriptingPanel:(id)sender;
 
 -(IBAction) about:(id)sender;
 -(IBAction) help:(id)sender;
