@@ -24,8 +24,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-
-#import "PomodoroNotifier.h"
 #import "CommonController.h"
 
 @class AboutController;
@@ -36,6 +34,8 @@
 @class PTHotKey;
 @class Scripter;
 @class CalendarController;
+@class PomodoroNotifier;
+@class Pomodoro;
 
 @interface PomodoroController : CommonController {
     

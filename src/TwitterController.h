@@ -27,8 +27,6 @@
 #import "CommonController.h"
 #import "MGTwitterEngine.h"
 
-@class MGTwitterEngine;
-
 @interface TwitterController : CommonController<MGTwitterEngineDelegate> {
 
     IBOutlet NSProgressIndicator* twitterProgress;

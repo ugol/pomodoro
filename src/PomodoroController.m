@@ -32,7 +32,7 @@
 #import "StatsController.h"
 #import "SplashController.h"
 #import "ShortcutController.h"
-
+#import "PomodoroNotifier.h"
 #import "CalendarController.h"
 #import "PomoNotifications.h"
 
