@@ -107,13 +107,8 @@
 	}
 }
 
--(void) internalInterrupt {
-	internallyInterrupted++;
-}
-
--(void) interruptFor:(NSInteger) seconds {
-	externallyInterrupted++;
-	if (oneSecTimer != nil) {
+- (void) interrupt: (NSInteger) seconds  {
+  if (oneSecTimer != nil) {
 		[oneSecTimer invalidate];
 		oneSecTimer = nil;
 	}
@@ -124,9 +119,26 @@
 										userInfo:nil
 										 repeats:NO];	
 	[[NSRunLoop currentRunLoop] addTimer:interruptionTimer forMode:NSRunLoopCommonModes];
-	if ([delegate respondsToSelector: @selector(pomodoroInterrupted:)]) {
-        [delegate pomodoroInterrupted:self];
+	
+}
+
+-(void) externalInterruptFor:(NSInteger) seconds {
+	externallyInterrupted++;
+	[self interrupt: seconds];
+    if ([delegate respondsToSelector: @selector(pomodoroExternallyInterrupted:)]) {
+        [delegate pomodoroExternallyInterrupted:self];
 	}
+
+
+}
+
+-(void) internalInterruptFor:(NSInteger) seconds {
+	internallyInterrupted++;
+    [self interrupt: seconds];
+    if ([delegate respondsToSelector: @selector(pomodoroInternallyInterrupted:)]) {
+        [delegate pomodoroInternallyInterrupted:self];
+	}
+
 }
 
 -(void) resume {

@@ -62,14 +62,26 @@
 
 }
 
--(void) pomodoroInterrupted:(NSNotification*) notification {
+- (void) interrupted {
     
-	NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
+    NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
         
 		NSString* growlString = [self bindCommonVariables:@"growlInterrupt"];		
 		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:NSLocalizedString(@"Pomodoro interrupted",@"Growl title for interruptions")];
 	}
+    
+}
+
+-(void) pomodoroExternallyInterrupted:(NSNotification*) notification {
+    
+	[self interrupted];
+
+}
+
+-(void) pomodoroInternallyInterrupted:(NSNotification*) notification {
+    
+	[self interrupted];
     
 }
 

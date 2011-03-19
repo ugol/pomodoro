@@ -116,7 +116,7 @@
 }
 
 -(void) keyInterrupt {
-	if ([self.interruptPomodoro isEnabled]) [self interrupt:nil];
+	if ([self.interruptPomodoro isEnabled]) [self externalInterrupt:nil];
 }
 
 -(void) keyInternalInterrupt {
@@ -182,7 +182,7 @@
 	[finishPomodoro            setEnabled:(state == PomoTicking)];
 	[invalidatePomodoro        setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
 	[interruptPomodoro         setEnabled:(state == PomoTicking)];
-	[internalInterruptPomodoro setEnabled:(state == PomoTicking) || (state == PomoInterrupted)];
+	[internalInterruptPomodoro setEnabled:(state == PomoTicking)];
 	[resumePomodoro            setEnabled:(state == PomoInterrupted)];
 	[setupPomodoro             setEnabled:YES];
     
@@ -290,23 +290,18 @@
 	
 }
 
-- (IBAction) interrupt: (id) sender {
+- (IBAction) externalInterrupt: (id) sender {
 
-	[pomodoro interruptFor: _interruptTime];
+	[pomodoro externalInterruptFor: _interruptTime];
 	[self updateMenu];
 	
 }
 
 - (IBAction) internalInterrupt: (id) sender {
-	
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyInternalInterruptions)+1] forKey:@"dailyInternalInterruptions"];
-	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalInternalInterruptions)+1] forKey:@"globalInternalInterruptions"];
-	[pomodoro internalInterrupt];
-	
-	if ([self checkDefault:@"growlAtInternalInterruptEnabled"]) {
-		BOOL sticky = [self checkDefault:@"stickyInternalInterruptEnabled"];
-		[growl growlAlert: NSLocalizedString(@"Internal Interruption",@"Growl header for internal interruptions") title:@"Pomodoro" sticky:sticky];
-	}
+
+    [pomodoro internalInterruptFor:_interruptTime];
+    [self updateMenu];
+    
 }
 
 -(IBAction) resume: (id) sender {
@@ -327,14 +322,26 @@
 		
 }
 
--(void) pomodoroInterrupted:(NSNotification*) notification {
+-(void) pomodoroExternallyInterrupted:(NSNotification*) notification {
 	
     [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyExternalInterruptions)+1] forKey:@"dailyExternalInterruptions"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalExternalInterruptions)+1] forKey:@"globalExternalInterruptions"];
-	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
+	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Externally Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
 	[statusItem setToolTip:name];
 			
 }
+
+-(void) pomodoroInternallyInterrupted:(NSNotification*) notification {
+	
+    
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyInternalInterruptions)+1] forKey:@"dailyInternalInterruptions"];
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalInternalInterruptions)+1] forKey:@"globalInternalInterruptions"];
+    
+ 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Internally Interrupted: %@",@"Tooltip for Interruption"), _pomodoroName];
+	[statusItem setToolTip:name];
+    
+}
+
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
 

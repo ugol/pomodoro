@@ -78,13 +78,25 @@
 	
 }
 
--(void) pomodoroInterrupted:(NSNotification*) notification {
-	
+- (void) interrupted {
+    
     NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtInterruptEnabled"]) {
 		NSString* speechString = [self bindCommonVariables:@"speechInterrupt"];
 		[speech startSpeakingString: [speechString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString]];
 	}
+    
+}
+
+-(void) pomodoroExternallyInterrupted:(NSNotification*) notification {
+	
+    [self interrupted];
+	
+}
+
+-(void) pomodoroInternallyInterrupted:(NSNotification*) notification {
+	
+    [self interrupted];
 	
 }
 

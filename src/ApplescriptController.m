@@ -97,8 +97,8 @@
 	}
 }
 
--(void) pomodoroInterrupted:(NSNotification*) notification {
-
+- (void) interrupted {
+    
     NSString* interruptTimeString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] stringValue];
 	
 	if ([self checkDefault:@"scriptAtInterruptEnabled"]) {		
@@ -106,6 +106,18 @@
 		NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:scriptString] autorelease];
 		[playScript executeAndReturnError:nil];
 	}
+
+}
+
+-(void) pomodoroExternallyInterrupted:(NSNotification*) notification {
+
+    [self interrupted];
+    
+}
+
+-(void) pomodoroInternallyInterrupted:(NSNotification*) notification {
+    
+    [self interrupted];
     
 }
 

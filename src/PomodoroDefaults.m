@@ -122,9 +122,6 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtInterruptEnabled"];
 	
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInternalInterruptEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"stickyInternalInterruptEnabled"];
-	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"growlAtInterruptOverEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"speechAtInterruptOverEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"scriptAtInterruptOverEnabled"];
@@ -277,8 +274,6 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"scriptAtInterruptEnabled"];	
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInternalInterruptEnabled"];
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"stickyInternalInterruptEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"growlAtInterruptOverEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"speechAtInterruptOverEnabled"];

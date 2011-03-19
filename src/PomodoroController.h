@@ -125,7 +125,7 @@
 -(IBAction) nameCanceled:(id)sender;
 -(IBAction) reset: (id) sender;
 
--(IBAction) interrupt: (id) sender;
+-(IBAction) externalInterrupt: (id) sender;
 -(IBAction) internalInterrupt: (id) sender;
 -(IBAction) resume: (id) sender;
 -(IBAction) resetDefaultValues: (id) sender;

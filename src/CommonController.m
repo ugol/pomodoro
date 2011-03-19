@@ -55,7 +55,8 @@
 - (void) registerForAllPomodoroEvents {
     [self registerForPomodoro:_PMPomoStarted method:@selector(pomodoroStarted:)];
     [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
-    [self registerForPomodoro:_PMPomoInterrupted method:@selector(pomodoroInterrupted:)];
+    [self registerForPomodoro:_PMPomoExternallyInterrupted method:@selector(pomodoroExternallyInterrupted:)];
+    [self registerForPomodoro:_PMPomoInternallyInterrupted method:@selector(pomodoroInternallyInterrupted:)];
     [self registerForPomodoro:_PMPomoInterruptionMaxTimeIsOver method:@selector(pomodoroInterruptionMaxTimeIsOver:)];
     [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
     [self registerForPomodoro:_PMPomoResumed method:@selector(pomodoroResumed:)];
@@ -70,7 +71,10 @@
 -(void) pomodoroStarted:(NSNotification*) notification {
 }
 
--(void) pomodoroInterrupted:(NSNotification*) notification {
+-(void) pomodoroExternallyInterrupted:(NSNotification*) notification {
+}
+
+-(void) pomodoroInternallyInterrupted:(NSNotification*) notification {
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {

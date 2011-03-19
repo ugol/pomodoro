@@ -37,8 +37,12 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoFinished object:pomo];
 }
 
-- (void) pomodoroInterrupted:(id)pomo {
-    [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoInterrupted object:pomo];
+- (void) pomodoroExternallyInterrupted:(id)pomo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoExternallyInterrupted object:pomo];
+}
+
+- (void) pomodoroInternallyInterrupted:(id)pomo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoInternallyInterrupted object:pomo];
 }
 
 - (void) pomodoroInterruptionMaxTimeIsOver:(id)pomo {

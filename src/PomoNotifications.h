@@ -25,7 +25,8 @@
 
 #define _PMPomoStarted @"PMPomoStarted"
 #define _PMPomoFinished @"PMPomoFinished"
-#define _PMPomoInterrupted @"PMPomoInterrupted"
+#define _PMPomoExternallyInterrupted @"PMPomoExternallyInterrupted"
+#define _PMPomoInternallyInterrupted @"PMPomoInternallyInterrupted"
 #define _PMPomoInterruptionMaxTimeIsOver @"PMPomoInterruptionMaxTimeIsOver"
 #define _PMPomoReset @"PMPomoReset"
 #define _PMPomoResumed @"PMPomoResumed"
