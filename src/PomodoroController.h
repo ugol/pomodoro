@@ -40,7 +40,6 @@
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel; 
     IBOutlet NSPanel* scriptPanel;
-	IBOutlet NSComboBox* namesCombo;
     
     IBOutlet NSTabView* tabView;
     IBOutlet NSToolbar* toolBar;
@@ -84,7 +83,6 @@
 @property (assign) IBOutlet NSPanel* prefs;
 @property (assign) IBOutlet NSPanel* namePanel; 
 @property (assign) IBOutlet NSPanel* scriptPanel;
-@property (assign) IBOutlet NSComboBox* namesCombo;
 
 @property (assign) IBOutlet NSTabView* tabView;
 @property (assign) IBOutlet NSToolbar* toolBar;

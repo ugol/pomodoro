@@ -39,7 +39,7 @@
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
 @synthesize growl, pomodoro;
-@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, namesCombo, pomodorosForLong;
+@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
@@ -238,10 +238,7 @@
 
 -(IBAction) nameCanceled:(id)sender {
 	[namePanel close];
-	NSInteger howMany = [namesCombo numberOfItems];
-	if (howMany > 0) {
-		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"pomodoroName"];
-	}
+    [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameCanceled object:namePanel];
 }
 
 -(IBAction) nameGiven:(id)sender {

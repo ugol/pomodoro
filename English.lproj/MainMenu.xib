@@ -8876,14 +8876,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">calendar</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="49518493"/>
-					</object>
-					<int key="connectionID">1191</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">calendarsCombo</string>
 						<reference key="source" ref="49518493"/>
 						<reference key="destination" ref="614795138"/>
@@ -9121,14 +9113,6 @@
 						<reference key="destination" ref="585129376"/>
 					</object>
 					<int key="connectionID">1235</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">shortcut</string>
-						<reference key="source" ref="1032680435"/>
-						<reference key="destination" ref="277685956"/>
-					</object>
-					<int key="connectionID">1236</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -12876,7 +12860,6 @@
 						<string key="resumePomodoro">NSMenuItem</string>
 						<string key="scriptPanel">NSPanel</string>
 						<string key="setupPomodoro">NSMenuItem</string>
-						<string key="shortcut">ShortcutController</string>
 						<string key="startPomodoro">NSMenuItem</string>
 						<string key="tabView">NSTabView</string>
 						<string key="toolBar">NSToolbar</string>
@@ -12953,10 +12936,6 @@
 						<object class="IBToOneOutletInfo" key="setupPomodoro">
 							<string key="name">setupPomodoro</string>
 							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="shortcut">
-							<string key="name">shortcut</string>
-							<string key="candidateClassName">ShortcutController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="startPomodoro">
 							<string key="name">startPomodoro</string>

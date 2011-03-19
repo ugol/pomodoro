@@ -44,6 +44,15 @@
 
 #pragma mark ---- Pomodoro notifications methods ----
 
+-(void) pomodoroNameCanceled:(id)sender {
+	   
+	NSInteger howMany = [namesCombo numberOfItems];
+	if (howMany > 0) {
+		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"pomodoroName"];
+	}
+    
+}
+
 -(void) pomodoroNameGiven:(NSNotification*) notification {
     
     NSInteger howMany = [namesCombo numberOfItems];
@@ -160,6 +169,7 @@
         [self registerForPomodoro:_PMPomoInterruptionMaxTimeIsOver method:@selector(pomodoroInterruptionMaxTimeIsOver:)];
         [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
         [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
+        [self registerForPomodoro:_PMPomoNameCanceled method:@selector(pomodoroNameCanceled:)];
         [self registerForPomodoro:_PMPomoNameGiven method:@selector(pomodoroNameGiven:)];
         [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];
                 
