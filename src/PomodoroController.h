@@ -29,7 +29,6 @@
 @class AboutController;
 @class StatsController;
 @class SplashController;
-@class ShortcutController;
 @class GrowlNotifier;
 @class PTHotKey;
 @class Scripter;
@@ -37,9 +36,7 @@
 @class Pomodoro;
 
 @interface PomodoroController : CommonController {
-    
-    IBOutlet ShortcutController* shortcut;
-    	
+        	
 	IBOutlet NSPanel* prefs;
 	IBOutlet NSPanel* namePanel; 
     IBOutlet NSPanel* scriptPanel;
@@ -83,8 +80,6 @@
 	NSSound* tick;
 			
 }
-
-@property (assign) IBOutlet ShortcutController* shortcut;
 
 @property (assign) IBOutlet NSPanel* prefs;
 @property (assign) IBOutlet NSPanel* namePanel; 

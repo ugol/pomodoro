@@ -20,7 +20,7 @@
 
 -(void)observeUserDefault:(NSString*) property{
 	
-	[[NSUserDefaults standardUserDefaults] addObserver:self
+	[[NSUserDefaults standardUserDefaults]  addObserver:self
 											forKeyPath:property
 											   options:(NSKeyValueObservingOptionNew |
 														NSKeyValueObservingOptionOld)

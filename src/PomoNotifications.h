@@ -36,3 +36,4 @@
 #define _PMPomoNameGiven @"PMPomoNameGiven"
 #define _PMPomoNameCanceled @"PMPomoNameCanceled"
 #define _PMPomoWillStart @"PMPomoWillStart"
+#define _PMResetDefault @"PMResetDefault"

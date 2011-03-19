@@ -40,7 +40,7 @@
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
 @synthesize growl, pomodoro;
 @synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, namesCombo, pomodorosForLong;
-@synthesize shortcut, pomodoroMenu, tabView, toolBar;
+@synthesize pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
 
@@ -191,8 +191,7 @@
 -(IBAction) resetDefaultValues: (id) sender {
 	
 	[PomodoroDefaults removeDefaults];
-	[shortcut updateShortcuts];
-	[self showTimeOnStatusBar: _initialTime * 60];
+    [[NSNotificationCenter defaultCenter] postNotificationName:_PMResetDefault object:namePanel];
 	[self updateMenu];
     
 }
@@ -524,8 +523,6 @@
     
 	stats = [[StatsController alloc] init];
 	[stats window];
-
-	[shortcut updateShortcuts];
 
 	GetCurrentProcess(&psn);
     

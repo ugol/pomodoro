@@ -27,6 +27,7 @@
 #import "PTHotKeyCenter.h"
 #import "PTHotKey.h"
 #import "Carbon/Carbon.h"
+#import "PomoNotifications.h"
 
 @implementation ShortcutController
 
@@ -131,6 +132,14 @@
 
 
 #pragma mark ---- Lifecycle methods ----
+
+- (void)awakeFromNib {
+    
+    [self updateShortcuts];
+    [self registerForPomodoro:_PMResetDefault method:@selector(updateShortcuts)];
+
+
+}
 
 - (void)dealloc {
     
