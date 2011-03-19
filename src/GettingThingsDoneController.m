@@ -44,7 +44,7 @@
 
 #pragma mark ---- Pomodoro notifications methods ----
 
--(void) pomodoroNameCanceled:(id)sender {
+-(void) setPomodoroNametoLastBeforeCancel:(NSNotification*)notification {
 	   
 	NSInteger howMany = [namesCombo numberOfItems];
 	if (howMany > 0) {
@@ -169,7 +169,7 @@
         [self registerForPomodoro:_PMPomoInterruptionMaxTimeIsOver method:@selector(pomodoroInterruptionMaxTimeIsOver:)];
         [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
         [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
-        [self registerForPomodoro:_PMPomoNameCanceled method:@selector(pomodoroNameCanceled:)];
+        [self registerForPomodoro:_PMPomoNameCanceled method:@selector(setPomodoroNametoLastBeforeCancel:)];
         [self registerForPomodoro:_PMPomoNameGiven method:@selector(pomodoroNameGiven:)];
         [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];
                 
