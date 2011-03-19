@@ -45,7 +45,7 @@
 
 - (BOOL) checkDefault:(NSString*) property;
 - (NSString*) bindCommonVariables:(NSString*)name;
-- (void)observeUserDefault:(NSString*) property;
+- (void) observeUserDefault:(NSString*) property;
 - (void) registerForPomodoro:(NSString*)name method:(SEL)selector;
 - (void) registerForAllPomodoroEvents;
 

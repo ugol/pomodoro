@@ -30,15 +30,6 @@
 
 @synthesize scripter;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self observeUserDefault:@"startOnLoginEnabled"];
-    }
-    
-    return self;
-}
 
 -(void) insertIntoLoginItems {
 	[scripter executeScript:@"insertIntoLoginItems"];		
@@ -67,8 +58,13 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (void)dealloc
-{
+- (void)awakeFromNib {
+    
+    [self observeUserDefault:@"startOnLoginEnabled"];
+    
+}
+
+- (void)dealloc {
     [super dealloc];
 }
 

@@ -33,7 +33,6 @@
 #import "SplashController.h"
 #import "ShortcutController.h"
 #import "PomodoroNotifier.h"
-#import "CalendarController.h"
 #import "PomoNotifications.h"
 
 @implementation PomodoroController
@@ -41,7 +40,7 @@
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
 @synthesize growl, pomodoro;
 @synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, namesCombo, pomodorosForLong;
-@synthesize calendar, shortcut, pomodoroMenu, tabView, toolBar;
+@synthesize shortcut, pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
 
@@ -63,35 +62,21 @@
 
 }
 
-#pragma mark ---- Pomodoro duration delegate/datasource methods ----
-
-- (void)controlTextDidEndEditing:(NSNotification *)notification {
-	[pomodoro setDurationMinutes:_initialTime];
-    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:_initialTime] forKey:@"pomodoroDurationMinutes"];
-	[self showTimeOnStatusBar: _initialTime * 60];
-}
-
-- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
-
-    NSInteger selected = [[[initialTimeCombo objectValues] objectAtIndex:[initialTimeCombo indexOfSelectedItem]] intValue];
-    [pomodoro setDurationMinutes:selected];
-    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:selected] forKey:@"pomodoroDurationMinutes"];
-    [self showTimeOnStatusBar: selected * 60];
-    
-}
-
 #pragma mark ---- KVO Utility ----
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    
-	//NSLog(@"Volume changed at %d for %@", volume, keyPath); 
-	
+    	
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
 		[self showTimeOnStatusBar: _initialTime * 60];		
-	} else if ([keyPath hasSuffix:@"Volume"]) {
+	} else if ([keyPath isEqualToString:@"initialTime"]) {
+        NSInteger duration = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
+        [pomodoro setDurationMinutes:duration];
+        [self showTimeOnStatusBar: duration * 60];
+        
+    } else if ([keyPath hasSuffix:@"Volume"]) {
 		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
 		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
 		
@@ -110,7 +95,7 @@
 				[tick play];
 			}
 		}
-	}
+	} 
 	
 }
 
@@ -536,8 +521,6 @@
     [pomodoro setDurationMinutes:_initialTime];
     pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
 	[pomodoro setDelegate: pomodoroNotifier];
-
-    [calendar initCalendars:self];
     
 	stats = [[StatsController alloc] init];
 	[stats window];
@@ -549,6 +532,7 @@
 	[self observeUserDefault:@"ringVolume"];
 	[self observeUserDefault:@"ringBreakVolume"];
 	[self observeUserDefault:@"tickVolume"];
+	[self observeUserDefault:@"initialTime"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
 	

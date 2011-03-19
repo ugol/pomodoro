@@ -115,26 +115,21 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
+- (void)awakeFromNib {
     
-    if ((self = [super init])) {
-        
-        redButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]];
-        greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]];
-        yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]];
-        
-        [self registerForPomodoro:_PMPomoStarted method:@selector(pomodoroStarted:)];
-        [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
-        [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
-        [self registerForPomodoro:_PMPomoBreakFinished method:@selector(breakFinished:)];
-        
-        twitterEngine = [[[MGTwitterEngine alloc] initWithDelegate:self] retain];
-        [twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
-        [self tryConnectionToTwitter];
-        
-    }
+    redButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]];
+    greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]];
+    yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]];
     
-    return self;
+    [self registerForPomodoro:_PMPomoStarted method:@selector(pomodoroStarted:)];
+    [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
+    [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
+    [self registerForPomodoro:_PMPomoBreakFinished method:@selector(breakFinished:)];
+    
+    twitterEngine = [[[MGTwitterEngine alloc] initWithDelegate:self] retain];
+    [twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
+    [self tryConnectionToTwitter];
+    
 }
 
 

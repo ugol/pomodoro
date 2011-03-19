@@ -32,13 +32,6 @@
 
 @synthesize calendarsCombo;
 
-- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
-    
-	if ([notification object] == calendarsCombo){
-		[[NSUserDefaults standardUserDefaults] setObject:[calendarsCombo objectValueOfSelectedItem] forKey:@"selectedCalendar"];
-	}
-    
-}
 
 - (IBAction)initCalendars:(id)sender {
     
@@ -64,12 +57,10 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
-    if ((self = [super init])) {
-        [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
-    }
+- (void)awakeFromNib {
     
-    return self;
+    [self initCalendars:self];
+    [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
 }
 
 

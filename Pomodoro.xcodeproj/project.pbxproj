@@ -272,7 +272,7 @@
 		69366F6313336906002DFB90 /* ApplescriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplescriptController.m; path = src/ApplescriptController.m; sourceTree = "<group>"; };
 		69366F65133369D6002DFB90 /* ShortcutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutController.h; path = src/ShortcutController.h; sourceTree = "<group>"; };
 		69366F66133369D6002DFB90 /* ShortcutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutController.m; path = src/ShortcutController.m; sourceTree = "<group>"; };
-		69366F6813338425002DFB90 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
+		69366F6813338425002DFB90 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
 		69366F6913338428002DFB90 /* GettingThingsDoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GettingThingsDoneController.m; path = src/GettingThingsDoneController.m; sourceTree = "<group>"; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
 		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
@@ -606,23 +606,23 @@
 		6907B8AE12DD10F100CEB09C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				69728D22130F5584008F1975 /* SplashController.h */,
-				69728D23130F5584008F1975 /* SplashController.m */,
-				69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */,
-				6907B8B312DD120000CEB09C /* AboutController.h */,
-				6907B8B412DD120000CEB09C /* AboutController.m */,
-				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
-				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
-				6907B8C512DD120000CEB09C /* StatsController.h */,
-				6907B8C612DD120000CEB09C /* StatsController.m */,
 				69A9723613329F59008303C8 /* CommonController.h */,
 				69A9723713329F5A008303C8 /* CommonController.m */,
 				6907B8BF12DD120000CEB09C /* PomodoroController.h */,
 				6907B8C012DD120000CEB09C /* PomodoroController.m */,
+				69728D22130F5584008F1975 /* SplashController.h */,
+				69728D23130F5584008F1975 /* SplashController.m */,
+				6907B8C612DD120000CEB09C /* StatsController.m */,
+				6907B8B312DD120000CEB09C /* AboutController.h */,
+				6907B8B412DD120000CEB09C /* AboutController.m */,
+				6907B8C512DD120000CEB09C /* StatsController.h */,
+				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
+				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
 				69A9723313329A3C008303C8 /* CalendarController.h */,
 				69A9723413329A3C008303C8 /* CalendarController.m */,
 				69A972391332B095008303C8 /* LoginController.h */,
 				69A9723A1332B096008303C8 /* LoginController.m */,
+				69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */,
 				69A9723C1332B9BE008303C8 /* TwitterController.h */,
 				69A9723D1332B9BF008303C8 /* TwitterController.m */,
 				69A9723F1332D13D008303C8 /* GrowlController.h */,

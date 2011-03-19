@@ -38,15 +38,7 @@
 
 - (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index {
 	NSString *v = [voices objectAtIndex:index]; 
-    NSDictionary *dict = [NSSpeechSynthesizer attributesForVoice:v]; 
-    return [dict objectForKey:NSVoiceName]; 
-}
-
-- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
-    
-    NSInteger selected = [voicesCombo indexOfSelectedItem];
-    [speech setVoice:[voices objectAtIndex:selected]];
-    
+    return [[NSSpeechSynthesizer attributesForVoice:v] objectForKey:NSVoiceName]; 
 }
 
 #pragma mark ---- KVO Utility ----
@@ -67,6 +59,10 @@
             [speech startSpeakingString:@"Yes"];
             
         }
+    } else if ([keyPath hasSuffix:@"Voice"]) {
+        NSString* voice = [[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice] stringByReplacingOccurrencesOfString:@" "withString:@""];
+        [speech setVoice: voice];
+        [speech startSpeakingString:@"Yes"];
     }
     	
 }
@@ -152,25 +148,22 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
+- (void)awakeFromNib {
     
-    if ((self = [super init])) {
-        
-        [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-        [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-        [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-        voices = [[NSSpeechSynthesizer availableVoices] retain];
-
-        [speech setVolume:_voiceVolume/10.0];
-        NSString* voice = [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice];
-        [speech setVoice: [voice stringByReplacingOccurrencesOfString:@" " withString:@""]];
-        
-        [self registerForAllPomodoroEvents];
-        [self observeUserDefault:@"voiceVolume"];
-
-    }
+    [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+    [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+    [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+    voices = [[NSSpeechSynthesizer availableVoices] retain];
     
-    return self;
+    [speech setVolume:_voiceVolume/10.0];
+
+    NSString* voice = [[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice] stringByReplacingOccurrencesOfString:@" "withString:@""];
+    [speech setVoice: voice];
+    
+    [self registerForAllPomodoroEvents];
+    [self observeUserDefault:@"voiceVolume"];
+    [self observeUserDefault:@"defaultVoice"];
+
 }
 
 - (void)dealloc {

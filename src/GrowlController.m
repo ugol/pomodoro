@@ -142,21 +142,18 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
+- (void)awakeFromNib {
     
-    if ((self = [super init])) {
-        [self registerForAllPomodoroEvents];
-        
-        redButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]] retain];
-        greenButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]] retain];
-        yellowButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]] retain];
+    [self registerForAllPomodoroEvents];
     
-        [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-        [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-        [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-    }
+    redButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]] retain];
+    greenButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]] retain];
+    yellowButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]] retain];
     
-    return self;
+    [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+    [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+    [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+    
 }
 
 - (void)dealloc {

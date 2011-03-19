@@ -132,15 +132,6 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
-    
-    if ((self = [super init])) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (void)dealloc {
     
     [muteKey release];

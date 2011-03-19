@@ -33,13 +33,11 @@
 @class GrowlNotifier;
 @class PTHotKey;
 @class Scripter;
-@class CalendarController;
 @class PomodoroNotifier;
 @class Pomodoro;
 
 @interface PomodoroController : CommonController {
     
-	IBOutlet CalendarController* calendar;
     IBOutlet ShortcutController* shortcut;
     	
 	IBOutlet NSPanel* prefs;
@@ -86,7 +84,6 @@
 			
 }
 
-@property (assign) IBOutlet CalendarController* calendar;
 @property (assign) IBOutlet ShortcutController* shortcut;
 
 @property (assign) IBOutlet NSPanel* prefs;

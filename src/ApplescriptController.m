@@ -180,21 +180,16 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
+- (void)awakeFromNib {
     
-    if ((self = [super init])) {
-        
-        [self registerForAllPomodoroEvents];
-            
-        scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
-        
-        [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
-        [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
-        [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-        
-    }
+    [self registerForAllPomodoroEvents];
     
-    return self;
+    scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
+    
+    [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
+    [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
+    [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
+    
 }
 
 - (void)dealloc {
