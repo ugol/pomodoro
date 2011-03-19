@@ -32,10 +32,13 @@
 
     IBOutlet NSComboBox* namesCombo;
     IBOutlet Scripter* scripter;
+    IBOutlet NSDateFormatter* dateFormatter;
     
 }
 
 @property (assign) IBOutlet NSComboBox* namesCombo;
 @property (assign) IBOutlet Scripter* scripter;
+@property (assign) IBOutlet NSDateFormatter* dateFormatter;
+
 
 @end

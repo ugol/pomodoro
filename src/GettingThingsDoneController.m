@@ -25,12 +25,13 @@
 
 #import "GettingThingsDoneController.h"
 #import "PomoNotifications.h"
+#import "Pomodoro.h"
 #import "Scripter.h"
 
 
 @implementation GettingThingsDoneController
 
-@synthesize namesCombo, scripter;
+@synthesize namesCombo, scripter, dateFormatter;
 
 - (void) addListToCombo:(NSString*)action {
 	
@@ -97,13 +98,25 @@
 }
 
 -(void) pomodoroStarted:(NSNotification*) notification {
+        
+    Pomodoro* pomo = [notification object];
+
+    NSDate* date = [NSDate date];  
+    NSDate* dueDate = [date dateByAddingTimeInterval:(pomo.durationMinutes * 60)];
+
+    NSString* startedAt = [dateFormatter stringFromDate:date];
+    NSString* dueTime = [dateFormatter stringFromDate:dueDate];
+    
+    NSString* moodMessage = [self bindCommonVariables:@"moodMessage"];
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$startedAt" withString:startedAt];    
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$dueTime" withString:dueTime];
     
 	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInAdium"];
+		[scripter executeScript:@"setStatusToPomodoroInAdium" withParameter:moodMessage];
 	}
 	
-	if ([self checkDefault:@"ichatEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInIChat"];
+	if ([self checkDefault:@"iChatEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInIChat" withParameter:moodMessage];
 	}
 	
 	if ([self checkDefault:@"skypeEnabled"]) {
@@ -117,7 +130,7 @@
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
 	
-	if ([self checkDefault:@"ichatEnabled"]) {
+	if ([self checkDefault:@"iChatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
 	
@@ -132,7 +145,7 @@
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}
     
-	if ([self checkDefault:@"ichatEnabled"]) {
+	if ([self checkDefault:@"iChatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
 	
@@ -148,7 +161,7 @@
 		[scripter executeScript:@"setStatusToAvailableInAdium"];
 	}	
 	
-	if ([self checkDefault:@"ichatEnabled"]) {
+	if ([self checkDefault:@"iChatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat"];
 	}
 	
@@ -161,21 +174,16 @@
 
 #pragma mark ---- Lifecycle methods ----
 
-- (id)init {
+- (void)awakeFromNib {
     
-    if ((self = [super init])) {
-        
-        [self registerForPomodoro:_PMPomoStarted method:@selector(pomodoroStarted:)];
-        [self registerForPomodoro:_PMPomoInterruptionMaxTimeIsOver method:@selector(pomodoroInterruptionMaxTimeIsOver:)];
-        [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
-        [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
-        [self registerForPomodoro:_PMPomoNameCanceled method:@selector(setPomodoroNametoLastBeforeCancel:)];
-        [self registerForPomodoro:_PMPomoNameGiven method:@selector(pomodoroNameGiven:)];
-        [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];
-                
-    }
-    
-    return self;
+    [self registerForPomodoro:_PMPomoStarted method:@selector(pomodoroStarted:)];
+    [self registerForPomodoro:_PMPomoInterruptionMaxTimeIsOver method:@selector(pomodoroInterruptionMaxTimeIsOver:)];
+    [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
+    [self registerForPomodoro:_PMPomoFinished method:@selector(pomodoroFinished:)];
+    [self registerForPomodoro:_PMPomoNameCanceled method:@selector(setPomodoroNametoLastBeforeCancel:)];
+    [self registerForPomodoro:_PMPomoNameGiven method:@selector(pomodoroNameGiven:)];
+    [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];    
+   
 }
 
 - (void)dealloc {
