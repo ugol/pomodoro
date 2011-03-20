@@ -33,6 +33,8 @@
 
 @synthesize namesCombo, scripter, dateFormatter;
 
+#pragma mark ---- Pomodoro helper methods ----
+
 - (void) addListToCombo:(NSString*)action {
 	
 	NSAppleEventDescriptor* result = [scripter executeScript:action];			
@@ -41,6 +43,21 @@
 		[namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];		
 	}
 	
+}
+
+- (NSString *) updateMoodMessage:(Pomodoro*) pomo forVariable:(NSString*)variable {
+    
+    NSDate* date = [NSDate date];  
+    NSDate* dueDate = [date dateByAddingTimeInterval:(pomo.durationMinutes * 60)];
+    
+    NSString* startedAt = [dateFormatter stringFromDate:date];
+    NSString* dueTime = [dateFormatter stringFromDate:dueDate];
+    
+    NSString* moodMessage = [self bindCommonVariables:variable];
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$startedAt" withString:startedAt];    
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$dueTime" withString:dueTime];
+    return moodMessage;
+    
 }
 
 #pragma mark ---- Pomodoro notifications methods ----
@@ -101,15 +118,7 @@
         
     Pomodoro* pomo = [notification object];
 
-    NSDate* date = [NSDate date];  
-    NSDate* dueDate = [date dateByAddingTimeInterval:(pomo.durationMinutes * 60)];
-
-    NSString* startedAt = [dateFormatter stringFromDate:date];
-    NSString* dueTime = [dateFormatter stringFromDate:dueDate];
-    
-    NSString* moodMessage = [self bindCommonVariables:@"moodMessage"];
-    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$startedAt" withString:startedAt];    
-    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$dueTime" withString:dueTime];
+    NSString* moodMessage = [self updateMoodMessage: pomo forVariable:@"moodMessageInPomodoro"];
     
 	if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToPomodoroInAdium" withParameter:moodMessage];
@@ -120,54 +129,44 @@
 	}
 	
 	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToPomodoroInSkype"];
+		[scripter executeScript:@"setStatusToPomodoroInSkype" withParameter:moodMessage];
+	}
+
+}
+
+- (void) setStatusToAvailable:(Pomodoro*) pomo {
+    
+    NSString* moodMessage = [self updateMoodMessage: pomo forVariable:@"moodMessageInPomodoroBreak"];
+    NSLog(@"%@", moodMessage);
+    if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInAdium" withParameter:moodMessage];
+	}
+	
+	if ([self checkDefault:@"iChatEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInIChat" withParameter:moodMessage];
+	}
+	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInSkype" withParameter:moodMessage];
 	}
 
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
-    if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}
-	
-	if ([self checkDefault:@"iChatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
+    
+    [self setStatusToAvailable:[notification object]];
 
 }
 
 -(void) pomodoroReset:(NSNotification*) notification {
-    if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}
     
-	if ([self checkDefault:@"iChatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
+    [self setStatusToAvailable:[notification object]];
 	
 }
 
 -(void) pomodoroFinished:(NSNotification*) notification {    
     
-	if ([self checkDefault:@"adiumEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInAdium"];
-	}	
-	
-	if ([self checkDefault:@"iChatEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInIChat"];
-	}
-	
-	if ([self checkDefault:@"skypeEnabled"]) {
-		[scripter executeScript:@"setStatusToAvailableInSkype"];
-	}
+    [self setStatusToAvailable:[notification object]];
 
 }
 

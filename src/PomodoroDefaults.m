@@ -177,7 +177,8 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
-    [defaultValues setObject:NSLocalizedString(@"Pomodoro '$pomodoroName'. Back at $dueTime", @"Mood Message") forKey:@"moodMessage"];
+    [defaultValues setObject:NSLocalizedString(@"Pomodoro '$pomodoroName'. Back at $dueTime", @"Mood Message") forKey:@"moodMessageInPomodoro"];
+    [defaultValues setObject:NSLocalizedString(@"Resting after Pomodoro '$pomodoroName'", @"Mood Message Break") forKey:@"moodMessageInPomodoroBreak"];
 
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];		
@@ -325,7 +326,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ichatEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"skypeEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"adiumEnabled"];	
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"moodMessage"];	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"moodMessageInPomodoro"];	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"moodMessageInPomodoroBreak"];	
 
 }
 
