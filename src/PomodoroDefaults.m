@@ -39,6 +39,7 @@
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"breakTime"];
 	[defaultValues setObject: [NSNumber numberWithInt:10] forKey:@"longbreakTime"]; 
 	[defaultValues setObject: [NSNumber numberWithInt:4] forKey:@"pomodorosForLong"];
+	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"longbreakResetTime"];
 
 	[defaultValues setObject: [NSNumber numberWithShort:29] forKey:@"muteCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"muteFlags"];
@@ -99,6 +100,7 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"canRestartAtBreak"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakResetEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"enableTwitter"];
 	[defaultValues setObject:@"twitterUser" forKey:@"twitterUser"];
@@ -196,6 +198,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pomodorosForLong"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakReset"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakResetTime"]; 
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
 	

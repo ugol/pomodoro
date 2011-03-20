@@ -48,6 +48,7 @@
 	IBOutlet NSComboBox* interruptCombo;
 	IBOutlet NSComboBox* breakCombo;
 	IBOutlet NSComboBox* longBreakCombo;
+	IBOutlet NSComboBox* longBreakResetComboTime;
 	IBOutlet NSComboBox* pomodorosForLong;
 			
 	IBOutlet NSMenuItem* startPomodoro;
@@ -91,6 +92,7 @@
 @property (assign) IBOutlet NSComboBox* interruptCombo;
 @property (assign) IBOutlet NSComboBox* breakCombo;
 @property (assign) IBOutlet NSComboBox* longBreakCombo;
+@property (assign) IBOutlet NSComboBox* longBreakResetComboTime;
 @property (assign) IBOutlet NSComboBox* pomodorosForLong;
 
 @property (assign) IBOutlet GrowlNotifier* growl;

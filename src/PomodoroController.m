@@ -39,7 +39,7 @@
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
 @synthesize growl, pomodoro;
-@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, pomodorosForLong;
+@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
@@ -509,6 +509,10 @@
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
 	[longBreakCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
+    
+    [longBreakResetComboTime addItemWithObjectValue: [NSNumber numberWithInt:3]];
+	[longBreakResetComboTime addItemWithObjectValue: [NSNumber numberWithInt:5]];
+	[longBreakResetComboTime addItemWithObjectValue: [NSNumber numberWithInt:7]];
 	
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:4]];
 	[pomodorosForLong addItemWithObjectValue: [NSNumber numberWithInt:6]];
