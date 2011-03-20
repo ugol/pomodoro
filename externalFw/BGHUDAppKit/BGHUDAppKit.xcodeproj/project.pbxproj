@@ -13,7 +13,6 @@
 			buildPhases = (
 			);
 			dependencies = (
-				53DF6903067E5B930090B5B0 /* PBXTargetDependency */,
 				53DF6905067E5B930090B5B0 /* PBXTargetDependency */,
 			);
 			name = All;
@@ -23,28 +22,13 @@
 
 /* Begin PBXBuildFile section */
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
-		546DEAF3067F632A0098DCC4 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */; };
-		54D33B2906778E3300C9C163 /* BGHUDButtonCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = 54D33B2806778E3300C9C163 /* BGHUDButtonCell.classdescription */; };
-		8D1AC96C0486D14A00FE50C9 /* BGHUDAppKitInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0259C577FE90428111CA0C5A /* BGHUDAppKitInspector.m */; settings = {ATTRIBUTES = (); }; };
-		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
-		8D1AC9800486D23B00FE50C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D1AC97F0486D23B00FE50C9 /* InfoPlist.strings */; };
-		C044829F0C3328F4006E818F /* BGHUDButtonCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = C044829E0C3328F4006E818F /* BGHUDButtonCellIntegration.m */; };
-		C08787290A49DE9A00E9B151 /* BGHUDAppKitPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0259C576FE90428111CA0C5A /* BGHUDAppKitPlugin.m */; };
-		C0A47C500A523B730004BDC3 /* BGHUDAppKitInspector.nib in Resources */ = {isa = PBXBuildFile; fileRef = C05B20D80A48CB530099B9E5 /* BGHUDAppKitInspector.nib */; };
-		C0D069560A49DF9100C95564 /* InterfaceBuilderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */; };
-		D1AEDE470A6C289C0010C343 /* BGHUDAppKitLibrary.nib in Resources */ = {isa = PBXBuildFile; fileRef = D1AEDE460A6C289C0010C343 /* BGHUDAppKitLibrary.nib */; };
-		E7014C0C0FB78F5A00321C9C /* tabview.png in Resources */ = {isa = PBXBuildFile; fileRef = E7014C0B0FB78F5A00321C9C /* tabview.png */; };
 		E7050815104AD68D00F2212D /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = E7050814104AD68D00F2212D /* README.textile */; };
-		E706FE6A0E12DD690017E470 /* tableview.png in Resources */ = {isa = PBXBuildFile; fileRef = E706FE690E12DD690017E470 /* tableview.png */; };
 		E706FE7B0E12DE180017E470 /* BGHUDOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E706FE790E12DE180017E470 /* BGHUDOutlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E706FE7C0E12DE180017E470 /* BGHUDOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E706FE7A0E12DE180017E470 /* BGHUDOutlineView.m */; };
-		E706FE830E12DEFA0017E470 /* BGHUDOutlineView.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E706FE820E12DEFA0017E470 /* BGHUDOutlineView.classdescription */; };
 		E70CA2BD0FB6F89D0073E3DF /* BGHUDTabViewItem.h in Headers */ = {isa = PBXBuildFile; fileRef = E70CA2BB0FB6F89D0073E3DF /* BGHUDTabViewItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70CA2BE0FB6F89D0073E3DF /* BGHUDTabViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CA2BC0FB6F89D0073E3DF /* BGHUDTabViewItem.m */; };
 		E70CA2C20FB6FFBB0073E3DF /* BGHUDTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = E70CA2C00FB6FFBB0073E3DF /* BGHUDTabView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70CA2C30FB6FFBB0073E3DF /* BGHUDTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CA2C10FB6FFBB0073E3DF /* BGHUDTabView.m */; };
-		E70CA2C50FB704950073E3DF /* BGHUDTabView.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E70CA2C40FB704950073E3DF /* BGHUDTabView.classdescription */; };
-		E70CA2C70FB705040073E3DF /* BGHUDTabViewIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CA2C60FB705040073E3DF /* BGHUDTabViewIntegration.m */; };
 		E70CE5010E188A61000139C1 /* BGHUDTableCornerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E70CE4FF0E188A61000139C1 /* BGHUDTableCornerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E70CE5020E188A61000139C1 /* BGHUDTableCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CE5000E188A61000139C1 /* BGHUDTableCornerView.m */; };
 		E71317DD0E10667D00885A23 /* BGGradientTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = E71317D40E10667D00885A23 /* BGGradientTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,105 +42,49 @@
 		E71317E50E10667D00885A23 /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E71317DC0E10667D00885A23 /* BGThemeManager.m */; };
 		E7631D760E4DE6940092074F /* BGHUDColorWell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7631D740E4DE6940092074F /* BGHUDColorWell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7631D770E4DE6940092074F /* BGHUDColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7631D750E4DE6940092074F /* BGHUDColorWell.m */; };
-		E7631D7C0E4DE7980092074F /* BGHUDColorWell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7631D7B0E4DE7980092074F /* BGHUDColorWell.classdescription */; };
-		E7631DA40E4DEA370092074F /* BGHUDColorWellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7631DA30E4DEA370092074F /* BGHUDColorWellIntegration.m */; };
-		E7631DD50E4DEFDB0092074F /* BGHUDColorWellInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7631DD40E4DEFDB0092074F /* BGHUDColorWellInspector.xib */; };
-		E7631DE60E4DF1930092074F /* BGHUDColorWellInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = E7631DE50E4DF1930092074F /* BGHUDColorWellInspector.m */; };
 		E7649D0E0E1AC55B001F7E20 /* BGHUDSegmentedCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7649D0C0E1AC55B001F7E20 /* BGHUDSegmentedCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7649D0F0E1AC55B001F7E20 /* BGHUDSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7649D0D0E1AC55B001F7E20 /* BGHUDSegmentedCell.m */; };
-		E7649D140E1AC719001F7E20 /* BGHUDSegmentedCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7649D130E1AC719001F7E20 /* BGHUDSegmentedCell.classdescription */; };
-		E7649D170E1AC74F001F7E20 /* BGHUDSegementedCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7649D160E1AC74F001F7E20 /* BGHUDSegementedCellIntegration.m */; };
 		E782C7600F8A25F8002657B1 /* BGHUDStepperCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E782C75E0F8A25F8002657B1 /* BGHUDStepperCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E782C7610F8A25F8002657B1 /* BGHUDStepperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782C75F0F8A25F8002657B1 /* BGHUDStepperCell.m */; };
-		E782C78F0F8A26AC002657B1 /* BGHUDStepper.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E782C78E0F8A26AC002657B1 /* BGHUDStepper.classdescription */; };
-		E782C7950F8A26E4002657B1 /* BGHUDStepperCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E782C7940F8A26E4002657B1 /* BGHUDStepperCellIntegration.m */; };
 		E7894D850E12978C00D28139 /* BGHUDPopUpButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7894D830E12978C00D28139 /* BGHUDPopUpButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7894D860E12978C00D28139 /* BGHUDPopUpButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894D840E12978C00D28139 /* BGHUDPopUpButtonCell.m */; };
-		E7894D900E12993F00D28139 /* BGHUDPopUpButtonCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7894D8F0E12993F00D28139 /* BGHUDPopUpButtonCell.classdescription */; };
-		E7894D920E12996C00D28139 /* BGHUDPopUpButtonCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894D910E12996C00D28139 /* BGHUDPopUpButtonCellIntegration.m */; };
 		E7894DC20E12A03300D28139 /* BGHUDSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7894DC00E12A03300D28139 /* BGHUDSliderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7894DC30E12A03300D28139 /* BGHUDSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894DC10E12A03300D28139 /* BGHUDSliderCell.m */; };
-		E7894DCA0E12A14200D28139 /* BGHUDSliderCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7894DC90E12A14200D28139 /* BGHUDSliderCell.classdescription */; };
-		E7894DCC0E12A15C00D28139 /* BGHUDSliderCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894DCB0E12A15C00D28139 /* BGHUDSliderCellIntegration.m */; };
 		E7894E300E12A7F100D28139 /* BGHUDScroller.h in Headers */ = {isa = PBXBuildFile; fileRef = E7894E2E0E12A7F100D28139 /* BGHUDScroller.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7894E310E12A7F100D28139 /* BGHUDScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894E2F0E12A7F100D28139 /* BGHUDScroller.m */; };
-		E7894E350E12A92D00D28139 /* BGHUDScroller.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7894E340E12A92D00D28139 /* BGHUDScroller.classdescription */; };
-		E7894E370E12A94400D28139 /* BGHUDScrollerIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894E360E12A94400D28139 /* BGHUDScrollerIntegration.m */; };
 		E7894E3D0E12A9E700D28139 /* BGHUDScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7894E3B0E12A9E700D28139 /* BGHUDScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7894E3E0E12A9E700D28139 /* BGHUDScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894E3C0E12A9E700D28139 /* BGHUDScrollView.m */; };
-		E7894E4D0E12AC2600D28139 /* BGHUDScrollView.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7894E4C0E12AC2600D28139 /* BGHUDScrollView.classdescription */; };
-		E7894E4F0E12AC3F00D28139 /* BGHUDScrollViewIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7894E4E0E12AC3F00D28139 /* BGHUDScrollViewIntegration.m */; };
-		E7894F140E12B92E00D28139 /* textview.png in Resources */ = {isa = PBXBuildFile; fileRef = E7894F130E12B92E00D28139 /* textview.png */; };
 		E78DB0330E34E3C100AF4E06 /* BGHUDSearchFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E78DB0310E34E3C100AF4E06 /* BGHUDSearchFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E78DB0340E34E3C100AF4E06 /* BGHUDSearchFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E78DB0320E34E3C100AF4E06 /* BGHUDSearchFieldCell.m */; };
-		E78DB0440E34E48200AF4E06 /* BGHUDSearchFieldCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E78DB0430E34E48200AF4E06 /* BGHUDSearchFieldCell.classdescription */; };
-		E78DB0460E34E4A300AF4E06 /* BGHUDSearchFieldCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E78DB0450E34E4A300AF4E06 /* BGHUDSearchFieldCellIntegration.m */; };
 		E7981E660E128FF90081E937 /* BGHUDProgressIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981E640E128FF90081E937 /* BGHUDProgressIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981E670E128FF90081E937 /* BGHUDProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981E650E128FF90081E937 /* BGHUDProgressIndicator.m */; };
-		E7981E6C0E12C9290081E937 /* BGHUDProgressIndicator.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7981E6B0E12C9290081E937 /* BGHUDProgressIndicator.classdescription */; };
-		E7981E6E0E12C9400081E937 /* BGHUDProgressIndicatorIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981E6D0E12C9400081E937 /* BGHUDProgressIndicatorIntegration.m */; };
 		E7981EB10E12CF100081E937 /* BGHUDSecureTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981EAF0E12CF100081E937 /* BGHUDSecureTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981EB20E12CF100081E937 /* BGHUDSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981EB00E12CF100081E937 /* BGHUDSecureTextFieldCell.m */; };
-		E7981EB80E12D0A20081E937 /* BGHUDSecureTextFieldCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7981EB70E12D0A20081E937 /* BGHUDSecureTextFieldCell.classdescription */; };
-		E7981EBA0E12D0B90081E937 /* BGHUDSecureTextFieldIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981EB90E12D0B90081E937 /* BGHUDSecureTextFieldIntegration.m */; };
 		E7981ECF0E12D3390081E937 /* BGHUDTokenAttachmentCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981ECB0E12D3390081E937 /* BGHUDTokenAttachmentCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981ED00E12D3390081E937 /* BGHUDTokenAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981ECC0E12D3390081E937 /* BGHUDTokenAttachmentCell.m */; };
 		E7981ED10E12D3390081E937 /* BGHUDTokenFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981ECD0E12D3390081E937 /* BGHUDTokenFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981ED20E12D3390081E937 /* BGHUDTokenFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981ECE0E12D3390081E937 /* BGHUDTokenFieldCell.m */; };
 		E7981ED50E12D3460081E937 /* NSTokenAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981ED30E12D3460081E937 /* NSTokenAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981ED60E12D3460081E937 /* NSTokenAttachmentCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981ED40E12D3460081E937 /* NSTokenAttachmentCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7981EDE0E12D48D0081E937 /* BGHUDTokenFieldCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7981EDD0E12D48D0081E937 /* BGHUDTokenFieldCell.classdescription */; };
-		E7981EE10E12D4B00081E937 /* BGHUDTokenFieldCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981EE00E12D4B00081E937 /* BGHUDTokenFieldCellIntegration.m */; };
 		E7981EF50E12D6AA0081E937 /* BGHUDTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981EF10E12D6AA0081E937 /* BGHUDTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981EF60E12D6AA0081E937 /* BGHUDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981EF20E12D6AA0081E937 /* BGHUDTableView.m */; };
 		E7981EF70E12D6AA0081E937 /* BGHUDTableViewHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7981EF30E12D6AA0081E937 /* BGHUDTableViewHeaderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7981EF80E12D6AA0081E937 /* BGHUDTableViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981EF40E12D6AA0081E937 /* BGHUDTableViewHeaderCell.m */; };
-		E7981F020E12D8740081E937 /* BGHUDTableView.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7981F010E12D8740081E937 /* BGHUDTableView.classdescription */; };
-		E7981F040E12D8890081E937 /* BGHUDTableViewIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7981F030E12D8890081E937 /* BGHUDTableViewIntegration.m */; };
 		E79C25D00E109BB500742AF4 /* BGHUDTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E79C25CE0E109BB500742AF4 /* BGHUDTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E79C25D10E109BB500742AF4 /* BGHUDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E79C25CF0E109BB500742AF4 /* BGHUDTextFieldCell.m */; };
-		E79C25D30E109BD000742AF4 /* BGHUDTextFieldCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E79C25D20E109BD000742AF4 /* BGHUDTextFieldCell.classdescription */; };
-		E79C25D90E109C1800742AF4 /* BGHUDTextFieldCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E79C25D80E109C1800742AF4 /* BGHUDTextFieldCellIntegration.m */; };
-		E7B7F64C0E9EAFB70032873A /* scrollview.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B7F64B0E9EAFB70032873A /* scrollview.png */; };
 		E7C104960E8C476D00A96E1A /* BGHUDGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C104940E8C476D00A96E1A /* BGHUDGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7CEE1CC0F49D8FB00F5DABB /* BGHUDBox.h in Headers */ = {isa = PBXBuildFile; fileRef = E7CEE1CA0F49D8FB00F5DABB /* BGHUDBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7CEE1CD0F49D8FB00F5DABB /* BGHUDBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE1CB0F49D8FB00F5DABB /* BGHUDBox.m */; };
-		E7CEE1D20F49D99900F5DABB /* BGHUDBox.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7CEE1D10F49D99900F5DABB /* BGHUDBox.classdescription */; };
-		E7CEE1E50F49D9E800F5DABB /* BGHUDBoxIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE1E40F49D9E800F5DABB /* BGHUDBoxIntegration.m */; };
-		E7DAC6580E60726700549353 /* BGHUDLabel.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7DAC6570E60726700549353 /* BGHUDLabel.classdescription */; };
 		E7DAC65D0E60729B00549353 /* BGHUDLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = E7DAC65B0E60729B00549353 /* BGHUDLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7DAC65E0E60729B00549353 /* BGHUDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAC65C0E60729B00549353 /* BGHUDLabel.m */; };
-		E7DAC6630E60740400549353 /* BGHUDLabelIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAC6620E60740400549353 /* BGHUDLabelIntegration.m */; };
 		E7E069650F48A68B0000BDAB /* BGHUDView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E069630F48A68B0000BDAB /* BGHUDView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7E069660F48A68B0000BDAB /* BGHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E069640F48A68B0000BDAB /* BGHUDView.m */; };
-		E7E069900F48AB9E0000BDAB /* BGHUDView.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = E7E0698F0F48AB9E0000BDAB /* BGHUDView.classdescription */; };
-		E7E069A10F48ABE20000BDAB /* BGHUDViewInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E069A00F48ABE20000BDAB /* BGHUDViewInspector.m */; };
-		E7E069A30F48AC220000BDAB /* BGHUDViewIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E069A20F48AC220000BDAB /* BGHUDViewIntegration.m */; };
-		E7E069A70F48AD250000BDAB /* BGHUDViewInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E069A60F48AD250000BDAB /* BGHUDViewInspector.xib */; };
-		E7E638080E12DF220034DC7E /* BGHUDOutlineViewIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E638070E12DF220034DC7E /* BGHUDOutlineViewIntegration.m */; };
-		E7E6380B0E12E0350034DC7E /* outlineview.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6380A0E12E0350034DC7E /* outlineview.png */; };
 		F62F7C290EC7DC1400343989 /* BGHUDComboBoxCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F62F7C270EC7DC1400343989 /* BGHUDComboBoxCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F62F7C2A0EC7DC1400343989 /* BGHUDComboBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F62F7C280EC7DC1400343989 /* BGHUDComboBoxCell.m */; };
-		F62F7C640EC7DFF200343989 /* BGHUDComboBoxCell.classdescription in Resources */ = {isa = PBXBuildFile; fileRef = F62F7C630EC7DFF200343989 /* BGHUDComboBoxCell.classdescription */; };
-		F62F7C6D0EC7E05800343989 /* BGHUDComboBoxCellIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = F62F7C6C0EC7E05800343989 /* BGHUDComboBoxCellIntegration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		53DF6902067E5B930090B5B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0259C573FE90428111CA0C5A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D1AC9600486D14A00FE50C9;
-			remoteInfo = BGHUDAppKitPlugin;
-		};
 		53DF6904067E5B930090B5B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0259C573FE90428111CA0C5A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
-		};
-		546DEAEF067F62F70098DCC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0259C573FE90428111CA0C5A /* Project object */;
 			proxyType = 1;
@@ -190,7 +118,6 @@
 		53DF68FE067E5B5A0090B5B0 /* BGHUDAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGHUDAppKitFramework-Info.plist"; sourceTree = "<group>"; };
 		54D33B2806778E3300C9C163 /* BGHUDButtonCell.classdescription */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BGHUDButtonCell.classdescription; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
-		8D1AC9740486D14A00FE50C9 /* BGHUDAppKitPlugin.ibplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BGHUDAppKitPlugin.ibplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1AC97B0486D23100FE50C9 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C044829E0C3328F4006E818F /* BGHUDButtonCellIntegration.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = BGHUDButtonCellIntegration.m; sourceTree = "<group>"; };
 		C05B20D80A48CB530099B9E5 /* BGHUDAppKitInspector.nib */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = wrapper.nib; name = BGHUDAppKitInspector.nib; path = English.lproj/BGHUDAppKitInspector.nib; sourceTree = "<group>"; };
@@ -316,16 +243,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D1AC96E0486D14A00FE50C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
-				546DEAF3067F632A0098DCC4 /* BGHUDAppKit.framework in Frameworks */,
-				C0D069560A49DF9100C95564 /* InterfaceBuilderKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -389,7 +306,6 @@
 		1ED78706FE9D4A0611CA0C5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1AC9740486D14A00FE50C9 /* BGHUDAppKitPlugin.ibplugin */,
 				53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */,
 			);
 			name = Products;
@@ -798,26 +714,6 @@
 			productReference = 53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D1AC9600486D14A00FE50C9 /* BGHUDAppKitPlugin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C056398308A954F8003078D8 /* Build configuration list for PBXNativeTarget "BGHUDAppKitPlugin" */;
-			buildPhases = (
-				8D1AC9660486D14A00FE50C9 /* Resources */,
-				8D1AC96A0486D14A00FE50C9 /* Sources */,
-				8D1AC96E0486D14A00FE50C9 /* Frameworks */,
-				E79C25620E1090FD00742AF4 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				546DEAF0067F62F70098DCC4 /* PBXTargetDependency */,
-			);
-			name = BGHUDAppKitPlugin;
-			productInstallPath = "$(HOME)/Developer/Palettes";
-			productName = BGHUDAppKitPlugin;
-			productReference = 8D1AC9740486D14A00FE50C9 /* BGHUDAppKitPlugin.ibplugin */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -838,7 +734,6 @@
 			projectRoot = "";
 			targets = (
 				53DF6901067E5B8E0090B5B0 /* All */,
-				8D1AC9600486D14A00FE50C9 /* BGHUDAppKitPlugin */,
 				53DF68FC067E5B5A0090B5B0 /* BGHUDAppKit */,
 			);
 		};
@@ -853,60 +748,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D1AC9660486D14A00FE50C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D1AC9800486D23B00FE50C9 /* InfoPlist.strings in Resources */,
-				54D33B2906778E3300C9C163 /* BGHUDButtonCell.classdescription in Resources */,
-				C0A47C500A523B730004BDC3 /* BGHUDAppKitInspector.nib in Resources */,
-				D1AEDE470A6C289C0010C343 /* BGHUDAppKitLibrary.nib in Resources */,
-				E79C25D30E109BD000742AF4 /* BGHUDTextFieldCell.classdescription in Resources */,
-				E7894D900E12993F00D28139 /* BGHUDPopUpButtonCell.classdescription in Resources */,
-				E7894DCA0E12A14200D28139 /* BGHUDSliderCell.classdescription in Resources */,
-				E7894E350E12A92D00D28139 /* BGHUDScroller.classdescription in Resources */,
-				E7894E4D0E12AC2600D28139 /* BGHUDScrollView.classdescription in Resources */,
-				E7894F140E12B92E00D28139 /* textview.png in Resources */,
-				E7981E6C0E12C9290081E937 /* BGHUDProgressIndicator.classdescription in Resources */,
-				E7981EB80E12D0A20081E937 /* BGHUDSecureTextFieldCell.classdescription in Resources */,
-				E7981EDE0E12D48D0081E937 /* BGHUDTokenFieldCell.classdescription in Resources */,
-				E7981F020E12D8740081E937 /* BGHUDTableView.classdescription in Resources */,
-				E706FE6A0E12DD690017E470 /* tableview.png in Resources */,
-				E706FE830E12DEFA0017E470 /* BGHUDOutlineView.classdescription in Resources */,
-				E7E6380B0E12E0350034DC7E /* outlineview.png in Resources */,
-				E7649D140E1AC719001F7E20 /* BGHUDSegmentedCell.classdescription in Resources */,
-				E78DB0440E34E48200AF4E06 /* BGHUDSearchFieldCell.classdescription in Resources */,
-				E7631D7C0E4DE7980092074F /* BGHUDColorWell.classdescription in Resources */,
-				E7631DD50E4DEFDB0092074F /* BGHUDColorWellInspector.xib in Resources */,
-				E7DAC6580E60726700549353 /* BGHUDLabel.classdescription in Resources */,
-				E7B7F64C0E9EAFB70032873A /* scrollview.png in Resources */,
-				F62F7C640EC7DFF200343989 /* BGHUDComboBoxCell.classdescription in Resources */,
-				E7E069900F48AB9E0000BDAB /* BGHUDView.classdescription in Resources */,
-				E7E069A70F48AD250000BDAB /* BGHUDViewInspector.xib in Resources */,
-				E7CEE1D20F49D99900F5DABB /* BGHUDBox.classdescription in Resources */,
-				E782C78F0F8A26AC002657B1 /* BGHUDStepper.classdescription in Resources */,
-				E70CA2C50FB704950073E3DF /* BGHUDTabView.classdescription in Resources */,
-				E7014C0C0FB78F5A00321C9C /* tabview.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E79C25620E1090FD00742AF4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ -f \"/usr/bin/install_name_tool\" ]; then\n\n    /usr/bin/install_name_tool -change @executable_path/../Frameworks/BGHUDAppKit.framework/Versions/A/BGHUDAppKit @loader_path/../../../../../../../BGHUDAppKit.framework/Versions/A/BGHUDAppKit \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.ibplugin/Contents/MacOS/${PRODUCT_NAME}\"\n\nelse\n\n    /Developer/usr/bin/install_name_tool -change @executable_path/../Frameworks/BGHUDAppKit.framework/Versions/A/BGHUDAppKit @loader_path/../../../../../../../BGHUDAppKit.framework/Versions/A/BGHUDAppKit \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.ibplugin/Contents/MacOS/${PRODUCT_NAME}\"\n\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53DF68FA067E5B5A0090B5B0 /* Sources */ = {
@@ -943,54 +785,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D1AC96A0486D14A00FE50C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08787290A49DE9A00E9B151 /* BGHUDAppKitPlugin.m in Sources */,
-				8D1AC96C0486D14A00FE50C9 /* BGHUDAppKitInspector.m in Sources */,
-				C044829F0C3328F4006E818F /* BGHUDButtonCellIntegration.m in Sources */,
-				E79C25D90E109C1800742AF4 /* BGHUDTextFieldCellIntegration.m in Sources */,
-				E7894D920E12996C00D28139 /* BGHUDPopUpButtonCellIntegration.m in Sources */,
-				E7894DCC0E12A15C00D28139 /* BGHUDSliderCellIntegration.m in Sources */,
-				E7894E370E12A94400D28139 /* BGHUDScrollerIntegration.m in Sources */,
-				E7894E4F0E12AC3F00D28139 /* BGHUDScrollViewIntegration.m in Sources */,
-				E7981E6E0E12C9400081E937 /* BGHUDProgressIndicatorIntegration.m in Sources */,
-				E7981EBA0E12D0B90081E937 /* BGHUDSecureTextFieldIntegration.m in Sources */,
-				E7981EE10E12D4B00081E937 /* BGHUDTokenFieldCellIntegration.m in Sources */,
-				E7981F040E12D8890081E937 /* BGHUDTableViewIntegration.m in Sources */,
-				E7E638080E12DF220034DC7E /* BGHUDOutlineViewIntegration.m in Sources */,
-				E7649D170E1AC74F001F7E20 /* BGHUDSegementedCellIntegration.m in Sources */,
-				E78DB0460E34E4A300AF4E06 /* BGHUDSearchFieldCellIntegration.m in Sources */,
-				E7631DA40E4DEA370092074F /* BGHUDColorWellIntegration.m in Sources */,
-				E7631DE60E4DF1930092074F /* BGHUDColorWellInspector.m in Sources */,
-				E7DAC6630E60740400549353 /* BGHUDLabelIntegration.m in Sources */,
-				F62F7C6D0EC7E05800343989 /* BGHUDComboBoxCellIntegration.m in Sources */,
-				E7E069A10F48ABE20000BDAB /* BGHUDViewInspector.m in Sources */,
-				E7E069A30F48AC220000BDAB /* BGHUDViewIntegration.m in Sources */,
-				E7CEE1E50F49D9E800F5DABB /* BGHUDBoxIntegration.m in Sources */,
-				E782C7950F8A26E4002657B1 /* BGHUDStepperCellIntegration.m in Sources */,
-				E70CA2C70FB705040073E3DF /* BGHUDTabViewIntegration.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		53DF6903067E5B930090B5B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D1AC9600486D14A00FE50C9 /* BGHUDAppKitPlugin */;
-			targetProxy = 53DF6902067E5B930090B5B0 /* PBXContainerItemProxy */;
-		};
 		53DF6905067E5B930090B5B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53DF68FC067E5B5A0090B5B0 /* BGHUDAppKit */;
 			targetProxy = 53DF6904067E5B930090B5B0 /* PBXContainerItemProxy */;
-		};
-		546DEAF0067F62F70098DCC4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 53DF68FC067E5B5A0090B5B0 /* BGHUDAppKit */;
-			targetProxy = 546DEAEF067F62F70098DCC4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1016,9 +817,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 			};
 			name = Release_10.6_10.5_32_64_GC_embed;
 		};
@@ -1028,37 +829,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				PRODUCT_NAME = All;
+				"SDKROOT[arch=x86_64]" = macosx10.6;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 				);
-			};
-			name = Release_10.6_10.5_32_64_GC_embed;
-		};
-		3D9BABC11166D18F008CEA8B /* Release_10.6_10.5_32_64_GC_embed */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)/BGHUDAppKit.framework/Resources/";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					$inherited,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_2,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_1,
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(HOME)/Library/Frameworks/\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(DEVELOPER_DIR)/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BGHUDAppKitPlugin_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@loader_path/../Frameworks";
-				PRODUCT_NAME = BGHUDAppKitPlugin;
-				WRAPPER_EXTENSION = ibplugin;
 			};
 			name = Release_10.6_10.5_32_64_GC_embed;
 		};
@@ -1130,6 +906,7 @@
 					0xb0440100,
 				);
 				PRODUCT_NAME = BGHUDAppKit;
+				SDKROOT = macosx10.6;
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -1155,66 +932,10 @@
 					0xb0000000,
 				);
 				PRODUCT_NAME = BGHUDAppKit;
+				SDKROOT = macosx10.6;
 				SEPARATE_STRIP = YES;
 				SKIP_INSTALL = NO;
 				STRIP_INSTALLED_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C056398408A954F8003078D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)/BGHUDAppKit.framework/Resources/";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					$inherited,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_2,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_1,
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(HOME)/Library/Frameworks/\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(DEVELOPER_DIR)/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BGHUDAppKitPlugin_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = BGHUDAppKitPlugin;
-				WRAPPER_EXTENSION = ibplugin;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		C056398508A954F8003078D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)/BGHUDAppKit.framework/Resources/";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					$inherited,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_2,
-					$FRAMEWORK_SEARCH_PATHS_QUOTED_1,
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(HOME)/Library/Frameworks/\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(DEVELOPER_DIR)/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BGHUDAppKitPlugin_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@loader_path/../Frameworks";
-				PRODUCT_NAME = BGHUDAppKitPlugin;
-				WRAPPER_EXTENSION = ibplugin;
 			};
 			name = Release;
 		};
@@ -1227,6 +948,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = All;
+				SDKROOT = macosx10.6;
+				"SDKROOT[arch=x86_64]" = macosx10.6;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1242,6 +965,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				PRODUCT_NAME = All;
+				SDKROOT = macosx10.6;
+				"SDKROOT[arch=x86_64]" = macosx10.6;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1253,13 +978,14 @@
 		C056398C08A954F8003078D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1274,8 +1000,9 @@
 				GCC_MODEL_TUNING = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -1288,16 +1015,6 @@
 				C056398008A954F8003078D8 /* Debug */,
 				C056398108A954F8003078D8 /* Release */,
 				3D9BABC21166D18F008CEA8B /* Release_10.6_10.5_32_64_GC_embed */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C056398308A954F8003078D8 /* Build configuration list for PBXNativeTarget "BGHUDAppKitPlugin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C056398408A954F8003078D8 /* Debug */,
-				C056398508A954F8003078D8 /* Release */,
-				3D9BABC11166D18F008CEA8B /* Release_10.6_10.5_32_64_GC_embed */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

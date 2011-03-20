@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -28,6 +28,33 @@
 @implementation StatsController
 
 @synthesize pomos;
+
+#pragma mark ---- Helper methods ----
+
+- (void) saveState {
+	NSError *error;
+    
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext commitEditing]) {
+            if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+                NSLog(@"Save failed.");
+            }
+        }
+    }
+
+}	
+
+#pragma mark ---- Window delegate methods ----
+
+
+- (void)windowDidResignKey:(NSNotification *)notification {
+    
+    // Commit Editing still in place when closing a panel or losing focus
+    
+    [self saveState];
+    [notification.object makeFirstResponder:nil];
+    
+}
 
 #pragma mark ---- Core Data support methods ----
 
@@ -276,6 +303,13 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		
 }
 
-
+- (void)dealloc {
+    
+    [pomos release];
+    [managedObjectModel release];
+    [managedObjectContext release];
+    [super dealloc];
+    
+}
 
 @end

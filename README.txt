@@ -8,6 +8,14 @@ Can be used for programming, studying, writing, cooking or simply concentrating 
  
 You can find more informations on the Pomodoro Technique on http://www.pomodorotechnique.com/
 Updates, source code, new releases, manual and fixes on http://pomodoro.ugolandini.com
+
+----------
+Developers
+----------
+
+Project lead: Ugo Landini
+Active Developers: Ugo Landini, Pascal Bihler
+Retired Developers: 
  
 -------
 License
@@ -28,15 +36,24 @@ Sound samples come from http://www.freesound.org and are licensed under Creative
 Building notes
 --------------
 
+XCode 4:
+Remove Code signing identity
+Just click build
+
+XCode 3: (not actively maintained)
+Remove Code signing identity
 You will need to install IB plugins for ShortcutRecorder (included in the src) and for BGHudAppkit (src included in externalFw/, must be compiled separately).
 Beware that the Shortcutrecorder ibplugin doesn't work if clicked (it shows a missing resource panel). You just need to build with the right target and then include the framework: the ibplugin will automagically appear in IB.
 
+-------
+Twitter
+-------
 If you want to use twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then add them in src/TwitterSecrets.h 
 
 #define _consumerkey @"your key" 
 #define _secretkey @"your other key"
 
-If you want to compile the code and are not intersted to Twitter, just define two fake variables somewhere and don't activate the twitter integration.
+If you are not interested in Twitter, just don't activate the twitter integration.
 
 ------------------------------
 Thanks, in no particular order
@@ -65,3 +82,4 @@ Valiev Omar
 Alexander Willner 
 C.Kuehne 
 R.Altimari
+P.Bihler

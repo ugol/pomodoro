@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,8 @@
 
 - (void) pomodoroStarted:(id) pomo;
 - (void) pomodoroFinished:(id)pomo;
-- (void) pomodoroInterrupted:(id)pomo;
+- (void) pomodoroExternallyInterrupted:(id)pomo;
+- (void) pomodoroInternallyInterrupted:(id)pomo;
 - (void) pomodoroInterruptionMaxTimeIsOver:(id)pomo;
 - (void) pomodoroReset:(id)pomo;
 - (void) pomodoroResumed:(id)pomo;
@@ -89,8 +90,8 @@ enum PomoState {
 -(void) breakFor:(NSInteger)breakMinutes;
 -(void) reset;
 -(void) finish;
--(void) internalInterrupt;
--(void) interruptFor:(NSInteger) seconds;
+-(void) internalInterruptFor:(NSInteger) seconds;
+-(void) externalInterruptFor:(NSInteger) seconds;
 -(void) resume;
 
 @end

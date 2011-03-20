@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -30,17 +30,22 @@
 
 + (NSString*) substituteDefault: (NSString*)name withVariables:(NSArray*)variables andValues:(NSArray*)values {
 	
-	NSString* original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+	id original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+    if (![original respondsToSelector:@selector(stringByReplacingOccurrencesOfString:withString:)]) {
+        original = [[[NSAttributedString alloc] initWithRTF: original documentAttributes:nil] string];
+    }
 	return [self substitute:original withVariables:variables andValues:values];
 }
 
 + (NSString*) substituteDefault: (NSString*)name withVariable:(NSString*)variable andValue:(NSString*)value {
 	
-	NSString* original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+	id original = [[NSUserDefaults standardUserDefaults] objectForKey:name];
+    if (![original respondsToSelector:@selector(stringByReplacingOccurrencesOfString:withString:)]) {
+        original = [[[NSAttributedString alloc] initWithRTF: original documentAttributes:nil] string];
+    }
 	return [original stringByReplacingOccurrencesOfString:variable withString:value];
 
 }
-
 
 + (NSString*) substitute: (NSString*)original withVariables:(NSArray*)variables andValues:(NSArray*)values {
 	

@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -24,13 +24,14 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
 
 @interface AboutController : NSWindowController {
 	
-	NSURL* url;
 	IBOutlet NSTextView* aboutText;
 
 }
+
+@property (assign) IBOutlet NSTextView* aboutText;
+
 
 @end

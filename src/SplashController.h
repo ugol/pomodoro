@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -25,10 +25,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface SplashController : NSWindowController {
-	NSURL* url;
+    
 	IBOutlet NSTextView* aboutText;
+    
 }
+
+@property (assign) IBOutlet NSTextView* aboutText;
+
 
 @end

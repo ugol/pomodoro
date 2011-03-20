@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2231287B1303569200415381 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */; };
-		2231287C1303569200415381 /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */; };
-		2231287D1303569200415381 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */; };
-		2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */; };
-		2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */; };
-		2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */; };
 		5001AF781317B18800128231 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF701317B18800128231 /* About.xib */; };
 		5001AF791317B18800128231 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF721317B18800128231 /* MainMenu.xib */; };
 		5001AF7A1317B18800128231 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5001AF741317B18800128231 /* Splash.xib */; };
@@ -68,6 +62,17 @@
 		6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */; };
 		693582191318421000BB2C0F /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */; };
 		6935821A1318421000BB2C0F /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */; };
+		693584E21332514F0057059C /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584DF1332514F0057059C /* BGHUDAppKit.framework */; };
+		693584E31332514F0057059C /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584E01332514F0057059C /* OAuthConsumer.framework */; };
+		693584E41332514F0057059C /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693584E11332514F0057059C /* ShortcutRecorder.framework */; };
+		69366F6413336906002DFB90 /* ApplescriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69366F6313336906002DFB90 /* ApplescriptController.m */; };
+		69366F67133369D6002DFB90 /* ShortcutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69366F66133369D6002DFB90 /* ShortcutController.m */; };
+		69366F6A1333842A002DFB90 /* GettingThingsDoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69366F6913338428002DFB90 /* GettingThingsDoneController.m */; };
+		695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B900F132D1604003FAEC6 /* Automator.framework */; };
+		695B9012132D4192003FAEC6 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9011132D4192003FAEC6 /* yellow.png */; };
+		695B9016132D7334003FAEC6 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9013132D7332003FAEC6 /* compile.png */; };
+		695B9017132D7334003FAEC6 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9014132D7332003FAEC6 /* run.png */; };
+		695B9018132D7334003FAEC6 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 695B9015132D7333003FAEC6 /* stop.png */; };
 		696FE8C513109EA4005E17FA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */; };
 		696FE8C613109EA9005E17FA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */; };
 		696FE9E51311A4D4005E17FA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */; };
@@ -77,9 +82,23 @@
 		697295C5130F5586008F1975 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69728D23130F5584008F1975 /* SplashController.m */; };
 		69793F3312F4EED200B6CF17 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F3212F4EED200B6CF17 /* CalendarHelper.m */; };
 		69793F9412F4F02300B6CF17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69793F9312F4F02300B6CF17 /* main.m */; };
+		699B9C6E1330A62B004BC9E9 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B9C6D1330A62B004BC9E9 /* load.png */; };
+		699B9D1F1330FC1A004BC9E9 /* PomodoroNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */; };
+		69A4068D132C39FC00066ABF /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068C132C39FC00066ABF /* calendar.png */; };
+		69A4068F132C438F00066ABF /* shortcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4068E132C438F00066ABF /* shortcuts.png */; };
+		69A40699132C452A00066ABF /* growl.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A40698132C452A00066ABF /* growl.png */; };
+		69A4069C132C46F500066ABF /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4069A132C46F400066ABF /* audio.png */; };
+		69A4069D132C46F500066ABF /* speech.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A4069B132C46F400066ABF /* speech.png */; };
+		69A9723513329A3C008303C8 /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723413329A3C008303C8 /* CalendarController.m */; };
+		69A9723813329F5A008303C8 /* CommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723713329F5A008303C8 /* CommonController.m */; };
+		69A9723B1332B097008303C8 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723A1332B096008303C8 /* LoginController.m */; };
+		69A9723E1332B9C0008303C8 /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9723D1332B9BF008303C8 /* TwitterController.m */; };
+		69A972411332D140008303C8 /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A972401332D13E008303C8 /* GrowlController.m */; };
+		69A972441332E09D008303C8 /* SpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A972431332E09A008303C8 /* SpeechController.m */; };
 		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
 		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
+		69C26ADF1336628300618C27 /* pomodoro-gtd.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C26ADE1336628300618C27 /* pomodoro-gtd.png */; };
 		69DEFB0312FCC0C00083941C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFC12FCC0C00083941C /* PTHotKey.m */; };
 		69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */; };
 		69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */; };
@@ -105,13 +124,6 @@
 			remoteGlobalIDString = FCAAF0750CC95C5E00C52F82;
 			remoteInfo = OAuthConsumerTestSuite;
 		};
-		2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D1AC9740486D14A00FE50C9;
-			remoteInfo = BGHUDAppKitPlugin;
-		};
 		2250A56113034D3A001EFC92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */;
@@ -126,26 +138,12 @@
 			remoteGlobalIDString = 939837800DA42965007F53F3;
 			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
 		};
-		2295A3711303492600AD0E85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 939838A50DA4300F007F53F3;
-			remoteInfo = "ShortcutRecorder.ibplugin - for embedding in framework";
-		};
 		2295A3731303492600AD0E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
 			remoteInfo = ShortcutRecorderFramework_Tester;
-		};
-		2295A3751303492600AD0E85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA;
-			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
 		};
 		2295A3771303492600AD0E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -163,9 +161,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2231287B1303569200415381 /* BGHUDAppKit.framework in CopyFiles */,
-				2231287C1303569200415381 /* OAuthConsumer.framework in CopyFiles */,
-				2231287D1303569200415381 /* ShortcutRecorder.framework in CopyFiles */,
 				6907B87612DD068300CEB09C /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,11 +170,8 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = externalFw/shortcutrecorder/build/Debug/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		2250A54513034D19001EFC92 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
 		2250A55613034D3A001EFC92 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
-		2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit/build/Debug/BGHUDAppKit.framework; sourceTree = "<group>"; };
-		2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthConsumer.framework; path = externalFw/OAuthConsumer/build/Debug/OAuthConsumer.framework; sourceTree = "<group>"; };
 		2295A3661303492600AD0E85 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -196,7 +188,7 @@
 		5001AF871317B1D200128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/about.html; sourceTree = "<group>"; };
 		5001AF881317B1D800128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/splash.html; sourceTree = "<group>"; };
 		5001AF8B1317B20400128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5001AF901317B21400128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5001AF901317B21400128231 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5001AF911317B22D00128231 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		6907B7B612DD016300CEB09C /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		6907B7B712DD016300CEB09C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -273,7 +265,22 @@
 		6907B90E12DD15A200CEB09C /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UUID.m"; path = "externalFw/MGTwitterEngine/NSString+UUID.m"; sourceTree = "<group>"; };
 		6907BA2712DD1E0900CEB09C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
+		6928F40F1331191D00183D4A /* PomoNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomoNotifications.h; path = src/PomoNotifications.h; sourceTree = "<group>"; };
+		693584DF1332514F0057059C /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693584E01332514F0057059C /* OAuthConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693584E11332514F0057059C /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69366F6213336906002DFB90 /* ApplescriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplescriptController.h; path = src/ApplescriptController.h; sourceTree = "<group>"; };
+		69366F6313336906002DFB90 /* ApplescriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplescriptController.m; path = src/ApplescriptController.m; sourceTree = "<group>"; };
+		69366F65133369D6002DFB90 /* ShortcutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutController.h; path = src/ShortcutController.h; sourceTree = "<group>"; };
+		69366F66133369D6002DFB90 /* ShortcutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutController.m; path = src/ShortcutController.m; sourceTree = "<group>"; };
+		69366F6813338425002DFB90 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
+		69366F6913338428002DFB90 /* GettingThingsDoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GettingThingsDoneController.m; path = src/GettingThingsDoneController.m; sourceTree = "<group>"; };
 		694EC35912F626AC00EC011D /* Pomodoro_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomodoro_Prefix.pch; sourceTree = "<group>"; };
+		695B900F132D1604003FAEC6 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
+		695B9011132D4192003FAEC6 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		695B9013132D7332003FAEC6 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
+		695B9014132D7332003FAEC6 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
+		695B9015132D7333003FAEC6 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		696FE87A13107108005E17FA /* setStatusToAvailableInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInAdium.applescript; sourceTree = "<group>"; };
 		696FE87B13107108005E17FA /* setStatusToPomodoroInAdium.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInAdium.applescript; sourceTree = "<group>"; };
 		696FE9E11311A4CC005E17FA /* setStatusToAvailableInIChat.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInIChat.applescript; sourceTree = "<group>"; };
@@ -286,11 +293,32 @@
 		69793F3212F4EED200B6CF17 /* CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarHelper.m; path = src/CalendarHelper.m; sourceTree = "<group>"; };
 		69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSecrets.h; path = src/TwitterSecrets.h; sourceTree = "<group>"; };
 		69793F9312F4F02300B6CF17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		699B9C6D1330A62B004BC9E9 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
+		699B9D1D1330FC19004BC9E9 /* PomodoroNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PomodoroNotifier.h; path = src/PomodoroNotifier.h; sourceTree = "<group>"; };
+		699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PomodoroNotifier.m; path = src/PomodoroNotifier.m; sourceTree = "<group>"; };
+		69A4068C132C39FC00066ABF /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		69A4068E132C438F00066ABF /* shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shortcuts.png; sourceTree = "<group>"; };
+		69A40698132C452A00066ABF /* growl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growl.png; sourceTree = "<group>"; };
+		69A4069A132C46F400066ABF /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
+		69A4069B132C46F400066ABF /* speech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speech.png; sourceTree = "<group>"; };
+		69A9723313329A3C008303C8 /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarController.h; path = src/CalendarController.h; sourceTree = "<group>"; };
+		69A9723413329A3C008303C8 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarController.m; path = src/CalendarController.m; sourceTree = "<group>"; };
+		69A9723613329F59008303C8 /* CommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonController.h; path = src/CommonController.h; sourceTree = "<group>"; };
+		69A9723713329F5A008303C8 /* CommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonController.m; path = src/CommonController.m; sourceTree = "<group>"; };
+		69A972391332B095008303C8 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = src/LoginController.h; sourceTree = "<group>"; };
+		69A9723A1332B096008303C8 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = src/LoginController.m; sourceTree = "<group>"; };
+		69A9723C1332B9BE008303C8 /* TwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterController.h; path = src/TwitterController.h; sourceTree = "<group>"; };
+		69A9723D1332B9BF008303C8 /* TwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterController.m; path = src/TwitterController.m; sourceTree = "<group>"; };
+		69A9723F1332D13D008303C8 /* GrowlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlController.h; path = src/GrowlController.h; sourceTree = "<group>"; };
+		69A972401332D13E008303C8 /* GrowlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlController.m; path = src/GrowlController.m; sourceTree = "<group>"; };
+		69A972421332E098008303C8 /* SpeechController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechController.h; path = src/SpeechController.h; sourceTree = "<group>"; };
+		69A972431332E09A008303C8 /* SpeechController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechController.m; path = src/SpeechController.m; sourceTree = "<group>"; };
 		69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = insertIntoLoginItems.applescript; sourceTree = "<group>"; };
 		69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = removeFromLoginItems.applescript; sourceTree = "<group>"; };
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInSkype.applescript; sourceTree = "<group>"; };
 		69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInSkype.applescript; sourceTree = "<group>"; };
+		69C26ADE1336628300618C27 /* pomodoro-gtd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pomodoro-gtd.png"; sourceTree = "<group>"; };
 		69DEFAFB12FCC0C00083941C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = "<group>"; };
 		69DEFAFC12FCC0C00083941C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = "<group>"; };
 		69DEFAFD12FCC0C00083941C /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKeyCenter.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKeyCenter.h; sourceTree = "<group>"; };
@@ -312,14 +340,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693584E21332514F0057059C /* BGHUDAppKit.framework in Frameworks */,
+				693584E31332514F0057059C /* OAuthConsumer.framework in Frameworks */,
+				693584E41332514F0057059C /* ShortcutRecorder.framework in Frameworks */,
+				695B9010132D1604003FAEC6 /* Automator.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				6907B86E12DD063E00CEB09C /* Growl.framework in Frameworks */,
 				6907B88712DD099100CEB09C /* Carbon.framework in Frameworks */,
 				6907BA2812DD1E0900CEB09C /* libxml2.dylib in Frameworks */,
 				6907BD6A12DE4BAF00CEB09C /* CalendarStore.framework in Frameworks */,
-				2250A36113034B6F001EFC92 /* ShortcutRecorder.framework in Frameworks */,
-				2250A56A13034DEC001EFC92 /* BGHUDAppKit.framework in Frameworks */,
-				2250A56E13034DFB001EFC92 /* OAuthConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,9 +379,10 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2250A56913034DEC001EFC92 /* BGHUDAppKit.framework */,
-				2250A56D13034DFB001EFC92 /* OAuthConsumer.framework */,
-				2250A36013034B6F001EFC92 /* ShortcutRecorder.framework */,
+				693584DF1332514F0057059C /* BGHUDAppKit.framework */,
+				693584E01332514F0057059C /* OAuthConsumer.framework */,
+				693584E11332514F0057059C /* ShortcutRecorder.framework */,
+				695B900F132D1604003FAEC6 /* Automator.framework */,
 				6907BD6912DE4BAF00CEB09C /* CalendarStore.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -383,7 +413,6 @@
 		2250A55713034D3A001EFC92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */,
 				2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */,
 			);
 			name = Products;
@@ -403,9 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				2295A3701303492600AD0E85 /* ShortcutRecorder.framework */,
-				2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */,
 				2295A3741303492600AD0E85 /* ShortcutRecorder.app */,
-				2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */,
 				2295A3781303492600AD0E85 /* ShortcutRecorder.framework */,
 			);
 			name = Products;
@@ -461,9 +488,9 @@
 			isa = PBXGroup;
 			children = (
 				5001AF701317B18800128231 /* About.xib */,
-				5001AF721317B18800128231 /* MainMenu.xib */,
 				5001AF741317B18800128231 /* Splash.xib */,
 				5001AF761317B18800128231 /* Stats.xib */,
+				5001AF721317B18800128231 /* MainMenu.xib */,
 			);
 			name = interfaces;
 			sourceTree = "<group>";
@@ -489,6 +516,17 @@
 		6907B7B512DD016300CEB09C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				69C26ADE1336628300618C27 /* pomodoro-gtd.png */,
+				699B9C6D1330A62B004BC9E9 /* load.png */,
+				695B9013132D7332003FAEC6 /* compile.png */,
+				695B9014132D7332003FAEC6 /* run.png */,
+				695B9015132D7333003FAEC6 /* stop.png */,
+				695B9011132D4192003FAEC6 /* yellow.png */,
+				69A4069A132C46F400066ABF /* audio.png */,
+				69A4069B132C46F400066ABF /* speech.png */,
+				69A40698132C452A00066ABF /* growl.png */,
+				69A4068E132C438F00066ABF /* shortcuts.png */,
+				69A4068C132C39FC00066ABF /* calendar.png */,
 				6907B7B612DD016300CEB09C /* green.png */,
 				6907B7B712DD016300CEB09C /* icon.icns */,
 				6907B7B812DD016300CEB09C /* pomodoro.png */,
@@ -540,8 +578,11 @@
 			isa = PBXGroup;
 			children = (
 				69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */,
+				6928F40F1331191D00183D4A /* PomoNotifications.h */,
 				6907B8BB12DD120000CEB09C /* Pomodoro.h */,
 				6907B8BC12DD120000CEB09C /* Pomodoro.m */,
+				699B9D1D1330FC19004BC9E9 /* PomodoroNotifier.h */,
+				699B9D1E1330FC19004BC9E9 /* PomodoroNotifier.m */,
 			);
 			name = Pomodoro;
 			sourceTree = "<group>";
@@ -568,17 +609,35 @@
 		6907B8AE12DD10F100CEB09C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				69728D22130F5584008F1975 /* SplashController.h */,
-				69728D23130F5584008F1975 /* SplashController.m */,
-				69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */,
-				6907B8B312DD120000CEB09C /* AboutController.h */,
-				6907B8B412DD120000CEB09C /* AboutController.m */,
-				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
-				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
+				69A9723613329F59008303C8 /* CommonController.h */,
+				69A9723713329F5A008303C8 /* CommonController.m */,
 				6907B8BF12DD120000CEB09C /* PomodoroController.h */,
 				6907B8C012DD120000CEB09C /* PomodoroController.m */,
-				6907B8C512DD120000CEB09C /* StatsController.h */,
+				69728D22130F5584008F1975 /* SplashController.h */,
+				69728D23130F5584008F1975 /* SplashController.m */,
 				6907B8C612DD120000CEB09C /* StatsController.m */,
+				6907B8B312DD120000CEB09C /* AboutController.h */,
+				6907B8B412DD120000CEB09C /* AboutController.m */,
+				6907B8C512DD120000CEB09C /* StatsController.h */,
+				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
+				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
+				69A9723313329A3C008303C8 /* CalendarController.h */,
+				69A9723413329A3C008303C8 /* CalendarController.m */,
+				69A972391332B095008303C8 /* LoginController.h */,
+				69A9723A1332B096008303C8 /* LoginController.m */,
+				69793F3412F4EEF000B6CF17 /* TwitterSecrets.h */,
+				69A9723C1332B9BE008303C8 /* TwitterController.h */,
+				69A9723D1332B9BF008303C8 /* TwitterController.m */,
+				69A9723F1332D13D008303C8 /* GrowlController.h */,
+				69A972401332D13E008303C8 /* GrowlController.m */,
+				69A972421332E098008303C8 /* SpeechController.h */,
+				69A972431332E09A008303C8 /* SpeechController.m */,
+				69366F6213336906002DFB90 /* ApplescriptController.h */,
+				69366F6313336906002DFB90 /* ApplescriptController.m */,
+				69366F65133369D6002DFB90 /* ShortcutController.h */,
+				69366F66133369D6002DFB90 /* ShortcutController.m */,
+				69366F6813338425002DFB90 /* GettingThingsDoneController.h */,
+				69366F6913338428002DFB90 /* GettingThingsDoneController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -725,13 +784,6 @@
 			remoteRef = 2250A55013034D19001EFC92 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2250A56013034D3A001EFC92 /* BGHUDAppKitPlugin.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BGHUDAppKitPlugin.ibplugin;
-			remoteRef = 2250A55F13034D3A001EFC92 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		2250A56213034D3A001EFC92 /* BGHUDAppKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -746,25 +798,11 @@
 			remoteRef = 2295A36F1303492600AD0E85 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2295A3721303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ShortcutRecorder.ibplugin;
-			remoteRef = 2295A3711303492600AD0E85 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		2295A3741303492600AD0E85 /* ShortcutRecorder.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = ShortcutRecorder.app;
 			remoteRef = 2295A3731303492600AD0E85 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2295A3761303492600AD0E85 /* ShortcutRecorder.ibplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ShortcutRecorder.ibplugin;
-			remoteRef = 2295A3751303492600AD0E85 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2295A3781303492600AD0E85 /* ShortcutRecorder.framework */ = {
@@ -815,6 +853,17 @@
 				5001AF861317B1CC00128231 /* splash.html in Resources */,
 				5001AF8E1317B20400128231 /* InfoPlist.strings in Resources */,
 				5001AF8F1317B20400128231 /* Localizable.strings in Resources */,
+				69A4068D132C39FC00066ABF /* calendar.png in Resources */,
+				69A4068F132C438F00066ABF /* shortcuts.png in Resources */,
+				69A40699132C452A00066ABF /* growl.png in Resources */,
+				69A4069C132C46F500066ABF /* audio.png in Resources */,
+				69A4069D132C46F500066ABF /* speech.png in Resources */,
+				695B9012132D4192003FAEC6 /* yellow.png in Resources */,
+				695B9016132D7334003FAEC6 /* compile.png in Resources */,
+				695B9017132D7334003FAEC6 /* run.png in Resources */,
+				695B9018132D7334003FAEC6 /* stop.png in Resources */,
+				699B9C6E1330A62B004BC9E9 /* load.png in Resources */,
+				69C26ADF1336628300618C27 /* pomodoro-gtd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +925,16 @@
 				69DEFB0612FCC0C00083941C /* PTKeyCombo.m in Sources */,
 				697295C5130F5586008F1975 /* SplashController.m in Sources */,
 				69F52CB3130FD8BB0035E0D4 /* Scripter.m in Sources */,
+				699B9D1F1330FC1A004BC9E9 /* PomodoroNotifier.m in Sources */,
+				69A9723513329A3C008303C8 /* CalendarController.m in Sources */,
+				69A9723813329F5A008303C8 /* CommonController.m in Sources */,
+				69A9723B1332B097008303C8 /* LoginController.m in Sources */,
+				69A9723E1332B9C0008303C8 /* TwitterController.m in Sources */,
+				69A972411332D140008303C8 /* GrowlController.m in Sources */,
+				69A972441332E09D008303C8 /* SpeechController.m in Sources */,
+				69366F6413336906002DFB90 /* ApplescriptController.m in Sources */,
+				69366F67133369D6002DFB90 /* ShortcutController.m in Sources */,
+				69366F6A1333842A002DFB90 /* GettingThingsDoneController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,14 +1023,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Release\"",
 					"\"$(SRCROOT)/externalFw\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -981,21 +1033,7 @@
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Debug;
@@ -1008,35 +1046,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Release\"",
 					"\"$(SRCROOT)/externalFw\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Release\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/Debug\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pomodoro_Prefix.pch;
 				INFOPLIST_FILE = "Pomodoro-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Debug/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/BGHUDAppKit/build/BGHUDAppKit.build/Release/BGHUDAppKit.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Debug/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/i386\"",
-					"\"$(SRCROOT)/externalFw/shortcutrecorder/build/ShortcutRecorder.build/Release/ShortcutRecorder.framework - with embedded ibplugin.build/Objects-normal/x86_64\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Pomodoro;
 			};
 			name = Release;

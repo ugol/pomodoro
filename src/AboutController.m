@@ -1,4 +1,4 @@
-// Pomodoro Desktop - Copyright (c) 2009, Ugo Landini (ugol@computer.org)
+// Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -28,6 +28,8 @@
 
 @implementation AboutController
 
+@synthesize aboutText;
+
 - (id) init {
 		
 	if (![super initWithWindowNibName:@"About"]) return nil;
@@ -35,7 +37,6 @@
 }
 
 - (void)awakeFromNib {
-
     
 	NSBundle *bundle = [NSBundle mainBundle];
 	
@@ -46,6 +47,13 @@
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
+}
+
+- (void)dealloc {
+    
+    [aboutText release];
+    [super dealloc];
+    
 }
 
 
