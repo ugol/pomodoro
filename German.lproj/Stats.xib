@@ -151,7 +151,7 @@
 												<string key="NSFrame">{{429, 9}, {237, 32}}</string>
 												<reference key="NSSuperview" ref="919833481"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="931501606"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="554822892">
 													<int key="NSCellFlags">67239424</int>
@@ -363,7 +363,6 @@
 															<bool key="EncodedWithXMLCoder">YES</bool>
 															<object class="NSArray" key="dict.sortedKeys">
 																<bool key="EncodedWithXMLCoder">YES</bool>
-																<string>dateFormat</string>
 																<string>dateStyle</string>
 																<string>doesRelativeDateFormatting</string>
 																<string>formatterBehavior</string>
@@ -371,14 +370,13 @@
 															</object>
 															<object class="NSMutableArray" key="dict.values">
 																<bool key="EncodedWithXMLCoder">YES</bool>
-																<string>MM/dd/yyyy HH.mm</string>
-																<integer value="1"/>
+																<integer value="2"/>
 																<boolean value="NO"/>
 																<integer value="1040"/>
 																<integer value="1"/>
 															</object>
 														</object>
-														<string key="NS.format">MM/dd/yyyy HH.mm</string>
+														<string key="NS.format">dd.MM.yyyy HH:mm</string>
 														<bool key="NS.natural">NO</bool>
 													</object>
 													<reference key="NSControlView" ref="78790088"/>
@@ -406,7 +404,6 @@
 															<bool key="EncodedWithXMLCoder">YES</bool>
 															<object class="NSArray" key="dict.sortedKeys">
 																<bool key="EncodedWithXMLCoder">YES</bool>
-																<string>dateFormat</string>
 																<string>dateStyle</string>
 																<string>doesRelativeDateFormatting</string>
 																<string>formatterBehavior</string>
@@ -414,14 +411,13 @@
 															</object>
 															<object class="NSMutableArray" key="dict.values">
 																<bool key="EncodedWithXMLCoder">YES</bool>
-																<string>MM/dd/yyyy HH.mm</string>
 																<integer value="2"/>
 																<boolean value="NO"/>
 																<integer value="1040"/>
 																<integer value="1"/>
 															</object>
 														</object>
-														<string key="NS.format">MM/dd/yyyy HH.mm</string>
+														<string key="NS.format">dd.MM.yyyy HH:mm</string>
 														<bool key="NS.natural">NO</bool>
 													</object>
 													<reference key="NSControlView" ref="198198227"/>
@@ -781,7 +777,7 @@
 																<int key="NSvFlags">256</int>
 																<string key="NSFrameSize">{732, 323}</string>
 																<reference key="NSSuperview" ref="851087465"/>
-																<reference key="NSNextKeyView" ref="1041868942"/>
+																<reference key="NSNextKeyView" ref="171378093"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTableHeaderView" key="NSHeaderView" id="635578777">
 																	<reference key="NSNextResponder" ref="1041868942"/>
@@ -1122,7 +1118,7 @@
 																						<integer value="1"/>
 																					</object>
 																				</object>
-																				<string key="NS.format">M/d/yy h:mm a</string>
+																				<string key="NS.format">dd.MM.yy HH:mm</string>
 																				<bool key="NS.natural">NO</bool>
 																			</object>
 																			<reference key="NSControlView" ref="856950212"/>
@@ -1204,7 +1200,7 @@
 												</object>
 												<string key="NSFrame">{{17, 51}, {734, 341}}</string>
 												<reference key="NSSuperview" ref="796246191"/>
-												<reference key="NSNextKeyView" ref="851087465"/>
+												<reference key="NSNextKeyView" ref="1041868942"/>
 												<int key="NSsFlags">562</int>
 												<reference key="NSVScroller" ref="171378093"/>
 												<reference key="NSHScroller" ref="59183365"/>
@@ -1260,6 +1256,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{644, 9}, {113, 32}}</string>
 												<reference key="NSSuperview" ref="796246191"/>
+												<reference key="NSNextKeyView" ref="931501606"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="203941992">
 													<int key="NSCellFlags">67239424</int>
@@ -2572,7 +2569,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="2"/>
+					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>PomodoroArrayController</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2591,7 +2588,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="2"/>
+					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

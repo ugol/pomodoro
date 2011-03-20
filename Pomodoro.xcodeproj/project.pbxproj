@@ -180,7 +180,6 @@
 		5001AF751317B18800128231 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Splash.xib; sourceTree = "<group>"; };
 		5001AF771317B18800128231 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Stats.xib; sourceTree = "<group>"; };
 		5001AF7C1317B19C00128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/About.xib; sourceTree = "<group>"; };
-		5001AF7D1317B1A300128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5001AF7E1317B1AA00128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Splash.xib; sourceTree = "<group>"; };
 		5001AF7F1317B1B100128231 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Stats.xib; sourceTree = "<group>"; };
 		5001AF821317B1CC00128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/about.html; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		5001AF8B1317B20400128231 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5001AF901317B21400128231 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5001AF911317B22D00128231 /* Pomodoro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
+		508B41BE13369FE000EDEC8D /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6907B7B612DD016300CEB09C /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		6907B7B712DD016300CEB09C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		6907B7B812DD016300CEB09C /* pomodoro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoro.png; sourceTree = "<group>"; };
@@ -954,7 +954,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5001AF731317B18800128231 /* English */,
-				5001AF7D1317B1A300128231 /* German */,
+				508B41BE13369FE000EDEC8D /* German */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1019,7 +1019,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1042,7 +1042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
