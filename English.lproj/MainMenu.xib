@@ -1100,7 +1100,7 @@
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSFolderSmart</string>
+								<string key="NSResourceName">pomodoro-gtd</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -1122,7 +1122,7 @@
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSComputer</string>
+								<string key="NSResourceName">NSAdvanced</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -4107,7 +4107,7 @@
 												<object class="NSTextFieldCell" key="NSTitleCell">
 													<int key="NSCellFlags">67239424</int>
 													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">To Do</string>
+													<string key="NSContents">Integrate with external GTD software</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSBackgroundColor" ref="1000969839"/>
 													<object class="NSColor" key="NSTextColor">
@@ -13142,8 +13142,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NSComputer">{32, 32}</string>
-			<string key="NSFolderSmart">{32, 32}</string>
+			<string key="NSAdvanced">{32, 32}</string>
 			<string key="NSMenuCheckmark">{9, 8}</string>
 			<string key="NSMenuMixedState">{7, 2}</string>
 			<string key="NSPreferencesGeneral">{32, 32}</string>
@@ -13153,6 +13152,7 @@
 			<string key="growl">{32, 32}</string>
 			<string key="icon">{512, 512}</string>
 			<string key="load">{48, 48}</string>
+			<string key="pomodoro-gtd">{32, 32}</string>
 			<string key="run">{32, 32}</string>
 			<string key="shortcuts">{32, 32}</string>
 			<string key="speech">{32, 32}</string>

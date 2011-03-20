@@ -98,6 +98,7 @@
 		69AA321B1302D9A5000BBBCF /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32171302D98E000BBBCF /* insertIntoLoginItems.applescript */; };
 		69AA321C1302D9AB000BBBCF /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 69AA32181302D98E000BBBCF /* removeFromLoginItems.applescript */; };
 		69B3A84112FB3B58000AAA1F /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A84012FB3B58000AAA1F /* Pomodoros.xcdatamodeld */; };
+		69C26ADD13363CC600618C27 /* pomodoro-gtd.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C26ADC13363CC600618C27 /* pomodoro-gtd.png */; };
 		69DEFB0312FCC0C00083941C /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFC12FCC0C00083941C /* PTHotKey.m */; };
 		69DEFB0412FCC0C00083941C /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFAFE12FCC0C00083941C /* PTHotKeyCenter.m */; };
 		69DEFB0512FCC0C00083941C /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DEFB0012FCC0C00083941C /* PTKeyCodeTranslator.m */; };
@@ -317,6 +318,7 @@
 		69B3A84212FB3B58000AAA1F /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
 		69BA899213183D9E00145B83 /* setStatusToAvailableInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInSkype.applescript; sourceTree = "<group>"; };
 		69BA899313183D9E00145B83 /* setStatusToPomodoroInSkype.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInSkype.applescript; sourceTree = "<group>"; };
+		69C26ADC13363CC600618C27 /* pomodoro-gtd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pomodoro-gtd.png"; sourceTree = "<group>"; };
 		69DEFAFB12FCC0C00083941C /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = "<group>"; };
 		69DEFAFC12FCC0C00083941C /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = "<group>"; };
 		69DEFAFD12FCC0C00083941C /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKeyCenter.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKeyCenter.h; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 		6907B7B512DD016300CEB09C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				69C26ADC13363CC600618C27 /* pomodoro-gtd.png */,
 				699B9C6D1330A62B004BC9E9 /* load.png */,
 				695B9013132D7332003FAEC6 /* compile.png */,
 				695B9014132D7332003FAEC6 /* run.png */,
@@ -860,6 +863,7 @@
 				695B9017132D7334003FAEC6 /* run.png in Resources */,
 				695B9018132D7334003FAEC6 /* stop.png in Resources */,
 				699B9C6E1330A62B004BC9E9 /* load.png in Resources */,
+				69C26ADD13363CC600618C27 /* pomodoro-gtd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
