@@ -28,7 +28,7 @@
 
 @implementation Pomodoro
 
-@synthesize time, resumed, durationMinutes, lastPomodoroDurationSeconds, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
+@synthesize time, resumed, durationMinutes, realDuration, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
 
 - (void) clearTimer: (NSTimer**) timer {
     
@@ -72,9 +72,8 @@
 
     externallyInterrupted = 0;
     internallyInterrupted = 0;
-    resumed = 0;
-    
-    lastPomodoroDurationSeconds = 0;
+    resumed = 0;    
+    realDuration = 0;
 
 	if (durationMinutes > 0) {
 		[self startFor: durationMinutes*60];
@@ -182,7 +181,7 @@
 - (void)oncePersecond:(NSTimer *)aTimer
 {
 	time--;
-	lastPomodoroDurationSeconds++;
+	realDuration++;
 	[delegate oncePerSecond:time];		
 	[self checkIfFinished];		
 }

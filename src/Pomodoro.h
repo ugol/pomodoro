@@ -58,7 +58,7 @@ enum PomoState {
 	id delegate;
 	
 	NSInteger durationMinutes;
-	NSInteger lastPomodoroDurationSeconds;
+	NSInteger realDuration;
 	NSInteger externallyInterrupted;
 	NSInteger internallyInterrupted;
 	NSInteger resumed;
@@ -75,7 +75,7 @@ enum PomoState {
 @property (nonatomic, assign, readonly) NSInteger time;
 @property (nonatomic, assign, readonly) NSInteger resumed;
 @property (nonatomic, assign) NSInteger durationMinutes;
-@property (nonatomic, assign, readonly) NSInteger lastPomodoroDurationSeconds;
+@property (nonatomic, assign, readonly) NSInteger realDuration;
 @property (nonatomic, assign) NSInteger externallyInterrupted;
 @property (nonatomic, assign) NSInteger internallyInterrupted;
 @property (nonatomic, assign, readonly) enum PomoState state;
