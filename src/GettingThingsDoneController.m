@@ -137,7 +137,6 @@
 - (void) setStatusToAvailable:(Pomodoro*) pomo {
     
     NSString* moodMessage = [self updateMoodMessage: pomo forVariable:@"moodMessageInPomodoroBreak"];
-    NSLog(@"%@", moodMessage);
     if ([self checkDefault:@"adiumEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInAdium" withParameter:moodMessage];
 	}
