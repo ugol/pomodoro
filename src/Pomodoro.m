@@ -32,8 +32,10 @@
 
 - (void) clearTimer: (NSTimer**) timer {
     
-    [*timer invalidate];
-    *timer = nil;
+    if ([*timer isValid]) {
+        [*timer invalidate];
+        *timer = nil;
+    }
     
 }
 
@@ -189,6 +191,7 @@
 - (void)oncePersecondBreak:(NSTimer *)aTimer
 {
 	time--;
+    //time -= 10;
 	[delegate oncePerSecondBreak:time];		
 	[self checkIfBreakFinished];		
 }
@@ -204,10 +207,6 @@
 }
 
 -(void)dealloc {
-    
-    [self clearTimer: &oneSecTimer];
-    [self clearTimer: &breakTimer];
-    [self clearTimer: &interruptionTimer];
     
     [delegate release];
 	[super dealloc];
