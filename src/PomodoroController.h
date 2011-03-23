@@ -60,6 +60,8 @@
 	IBOutlet NSMenuItem* setupPomodoro;
 	IBOutlet GrowlNotifier* growl;
 	IBOutlet Pomodoro* pomodoro;
+    NSInteger longBreakCounter;
+    NSTimer* longBreakCheckerTimer;
     PomodoroNotifier* pomodoroNotifier;
     
     ProcessSerialNumber psn;
@@ -97,6 +99,9 @@
 
 @property (assign) IBOutlet GrowlNotifier* growl;
 @property (assign) IBOutlet Pomodoro* pomodoro;
+@property (nonatomic, assign) NSInteger longBreakCounter;
+@property (nonatomic, assign) NSTimer* longBreakCheckerTimer;
+
 
 @property (nonatomic, assign, readonly) IBOutlet NSMenuItem* startPomodoro;
 @property (nonatomic, assign, readonly) IBOutlet NSMenuItem* finishPomodoro;

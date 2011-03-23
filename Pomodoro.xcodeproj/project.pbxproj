@@ -615,10 +615,10 @@
 				6907B8C012DD120000CEB09C /* PomodoroController.m */,
 				69728D22130F5584008F1975 /* SplashController.h */,
 				69728D23130F5584008F1975 /* SplashController.m */,
+				6907B8C512DD120000CEB09C /* StatsController.h */,
 				6907B8C612DD120000CEB09C /* StatsController.m */,
 				6907B8B312DD120000CEB09C /* AboutController.h */,
 				6907B8B412DD120000CEB09C /* AboutController.m */,
-				6907B8C512DD120000CEB09C /* StatsController.h */,
 				6907B8BD12DD120000CEB09C /* PomodoroArrayController.h */,
 				6907B8BE12DD120000CEB09C /* PomodoroArrayController.m */,
 				69A9723313329A3C008303C8 /* CalendarController.h */,
@@ -1019,7 +1019,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1042,7 +1042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pascal Bihler";
+				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1062,6 +1062,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1079,6 +1080,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

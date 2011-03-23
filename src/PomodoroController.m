@@ -38,7 +38,7 @@
 @implementation PomodoroController
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro, setupPomodoro;
-@synthesize growl, pomodoro;
+@synthesize growl, pomodoro, longBreakCounter, longBreakCheckerTimer;
 @synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
@@ -50,6 +50,14 @@
 	} else {
 		[statusItem setTitle:@""];
 	}
+}
+
+- (void) longBreakCheckerFinished {
+    
+    //NSLog(@"LongBreak Timer reset!");
+    longBreakCounter = 0;
+    longBreakCheckerTimer = nil;
+    
 }
 
 #pragma mark ---- Window delegate methods ----
@@ -130,13 +138,14 @@
 -(void) keyQuickStats {
 	
 	NSInteger time = pomodoro.time;	
-	NSString* quickStats = [NSString stringWithFormat:NSLocalizedString(@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d",@"Quick statistic format string"), 
+	NSString* quickStats = [NSString stringWithFormat:NSLocalizedString(@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d\n\nRemaining for long break: %d",@"Quick statistic format string"), 
 							_pomodoroName, time/60, time%60, 
 							pomodoro.externallyInterrupted, pomodoro.internallyInterrupted, pomodoro.resumed,
 							_globalPomodoroStarted, _globalPomodoroDone, _globalPomodoroReset,
 							_dailyPomodoroStarted, _dailyPomodoroDone, _dailyPomodoroReset,
 							_globalExternalInterruptions, _globalInternalInterruptions, _globalPomodoroResumed,
-							_dailyExternalInterruptions, _dailyInternalInterruptions, _dailyPomodoroResumed
+							_dailyExternalInterruptions, _dailyInternalInterruptions, _dailyPomodoroResumed,
+                            _pomodorosForLong - (longBreakCounter % _pomodorosForLong)
 							];
 	
 	[growl growlAlert:quickStats title:NSLocalizedString(@"Quick Statistics",@"Growl header for quick statistics")];
@@ -265,6 +274,11 @@
 		[splash close];
         [scriptPanel close];
  		[prefs close];
+        
+        if ([longBreakCheckerTimer isValid]) {
+            [longBreakCheckerTimer invalidate];
+            longBreakCheckerTimer = nil;
+        }
         		
         [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoWillStart object:nil];
 
@@ -394,7 +408,17 @@
 	[self showTimeOnStatusBar: _initialTime * 60];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"autoPomodoroRestart"]) {
 		[self start:nil];
-	}
+	} else if ([self checkDefault:@"longbreakResetEnabled"]) {
+        
+        //NSLog(@"LongBreak Timer started for %d", _longbreakResetTime*60);
+        longBreakCheckerTimer = [NSTimer timerWithTimeInterval:_longbreakResetTime*60
+                                                    target:self
+                                                  selector:@selector(longBreakCheckerFinished)													 
+                                                  userInfo:nil
+                                                   repeats:NO];	
+        [[NSRunLoop currentRunLoop] addTimer:longBreakCheckerTimer forMode:NSRunLoopCommonModes];
+
+    }
 }
 
 -(void) pomodoroFinished:(NSNotification*) notification {
@@ -402,13 +426,14 @@
     
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroDone)+1] forKey:@"dailyPomodoroDone"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroDone)+1] forKey:@"globalPomodoroDone"];
+    longBreakCounter++;
     
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Just finished: %@",@"Tooltip for finished pomodoros"), _pomodoroName];
 	[statusItem setToolTip:name];
 	
 
     Pomodoro* pomo = [notification object];
-	[stats.pomos newPomodoro:lround([pomo lastPomodoroDurationSeconds]/60.0) withExternalInterruptions:[pomo externallyInterrupted] withInternalInterruptions: [pomo internallyInterrupted]];
+	[stats.pomos newPomodoro:lround(pomo.realDuration/60.0) withExternalInterruptions:pomo.externallyInterrupted withInternalInterruptions: pomo.internallyInterrupted];
 	
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"ringAtEndEnabled"]) {
 		[ringing play];
@@ -416,7 +441,7 @@
 		
 	if ([self checkDefault:@"breakEnabled"]) {
 		NSInteger time = _breakTime;
-		if (([self checkDefault:@"longbreakEnabled"]) && ((_dailyPomodoroDone % _pomodorosForLong) == 0)) {
+		if (([self checkDefault:@"longbreakEnabled"]) && ((longBreakCounter % _pomodorosForLong) == 0)) {
 			time = _longbreakTime;
 		}
 

@@ -58,7 +58,7 @@ enum PomoState {
 	id delegate;
 	
 	NSInteger durationMinutes;
-	NSInteger lastPomodoroDurationSeconds;
+	NSInteger realDuration;
 	NSInteger externallyInterrupted;
 	NSInteger internallyInterrupted;
 	NSInteger resumed;
@@ -75,23 +75,23 @@ enum PomoState {
 @property (nonatomic, assign, readonly) NSInteger time;
 @property (nonatomic, assign, readonly) NSInteger resumed;
 @property (nonatomic, assign) NSInteger durationMinutes;
-@property (nonatomic, assign, readonly) NSInteger lastPomodoroDurationSeconds;
+@property (nonatomic, assign, readonly) NSInteger realDuration;
 @property (nonatomic, assign) NSInteger externallyInterrupted;
 @property (nonatomic, assign) NSInteger internallyInterrupted;
 @property (nonatomic, assign, readonly) enum PomoState state;
 
-@property (nonatomic, retain) NSTimer *oneSecTimer;
-@property (nonatomic, retain) NSTimer *breakTimer;
-@property (nonatomic, retain) NSTimer *interruptionTimer;
+@property (nonatomic, assign) NSTimer* oneSecTimer;
+@property (nonatomic, assign) NSTimer* breakTimer;
+@property (nonatomic, assign) NSTimer* interruptionTimer;
 @property (nonatomic, retain) id delegate;
 
 - (id) initWithDuration:(NSInteger) durationTime;
--(void) start;
--(void) breakFor:(NSInteger)breakMinutes;
--(void) reset;
--(void) finish;
--(void) internalInterruptFor:(NSInteger) seconds;
--(void) externalInterruptFor:(NSInteger) seconds;
--(void) resume;
+- (void) start;
+- (void) breakFor:(NSInteger)breakMinutes;
+- (void) reset;
+- (void) finish;
+- (void) internalInterruptFor:(NSInteger) seconds;
+- (void) externalInterruptFor:(NSInteger) seconds;
+- (void) resume;
 
 @end

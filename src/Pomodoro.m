@@ -28,7 +28,16 @@
 
 @implementation Pomodoro
 
-@synthesize time, resumed, durationMinutes, lastPomodoroDurationSeconds, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
+@synthesize time, resumed, durationMinutes, realDuration, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
+
+- (void) clearTimer: (NSTimer**) timer {
+    
+    if ([*timer isValid]) {
+        [*timer invalidate];
+        *timer = nil;
+    }
+    
+}
 
 - (id) init { 
     if ( (self = [super init]) ) {
@@ -46,9 +55,10 @@
 }
 
 -(void) startFor: (NSInteger) seconds {
-	time = seconds; 
-	lastPomodoroDurationSeconds = 0;
+	
+    time = seconds; 
 	state = PomoTicking;
+
 	oneSecTimer = [NSTimer timerWithTimeInterval:1
 											   target:self
 											 selector:@selector(oncePersecond:)													 
@@ -59,10 +69,14 @@
 }
 
 -(void) start {
-	if (breakTimer != nil) {
-		[breakTimer invalidate];
-		breakTimer = nil;
-	}
+
+    [self clearTimer: &breakTimer];
+
+    externallyInterrupted = 0;
+    internallyInterrupted = 0;
+    resumed = 0;    
+    realDuration = 0;
+
 	if (durationMinutes > 0) {
 		[self startFor: durationMinutes*60];
 		if ([delegate respondsToSelector: @selector(pomodoroStarted:)]) {
@@ -93,14 +107,9 @@
 }
 
 -(void) reset {
-	if (oneSecTimer != nil) {
-		[oneSecTimer invalidate];
-		oneSecTimer = nil;
-	}
-	if (interruptionTimer != nil) {
-		[interruptionTimer invalidate];
-		interruptionTimer = nil;
-	}
+
+    [self clearTimer: &oneSecTimer];
+    [self clearTimer: &interruptionTimer];
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroReset:)]) {
         [delegate pomodoroReset:self];
@@ -108,10 +117,8 @@
 }
 
 - (void) interrupt: (NSInteger) seconds  {
-  if (oneSecTimer != nil) {
-		[oneSecTimer invalidate];
-		oneSecTimer = nil;
-	}
+
+    [self clearTimer:&oneSecTimer];
 	state = PomoInterrupted;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
 										  target:self
@@ -144,8 +151,8 @@
 -(void) resume {
 
 	resumed++;
-	[interruptionTimer invalidate];
-	interruptionTimer = nil;
+    [self clearTimer: &interruptionTimer];
+
 	[self startFor: time];
 	if ([delegate respondsToSelector: @selector(pomodoroResumed:)]) {
         [delegate pomodoroResumed:self];		
@@ -154,10 +161,8 @@
 
 - (void) checkIfFinished {
 	if (time == 0) {
-		if (oneSecTimer != nil) {
-			[oneSecTimer invalidate];
-			oneSecTimer = nil;
-		}
+
+        [self clearTimer: &oneSecTimer];
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
 			[delegate pomodoroFinished:self];		
@@ -167,8 +172,7 @@
 
 - (void) checkIfBreakFinished {
 	if (time == 0) {
-		[breakTimer invalidate];
-		breakTimer = nil;
+        [self clearTimer: &breakTimer];
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(breakFinished:)]) {
 			[delegate breakFinished:self];		
@@ -179,8 +183,7 @@
 - (void)oncePersecond:(NSTimer *)aTimer
 {
 	time--;
-	lastPomodoroDurationSeconds++;
-	//time=time-10;
+	realDuration++;
 	[delegate oncePerSecond:time];		
 	[self checkIfFinished];		
 }
@@ -188,16 +191,15 @@
 - (void)oncePersecondBreak:(NSTimer *)aTimer
 {
 	time--;
-	//time=time-10;
+    //time -= 10;
 	[delegate oncePerSecondBreak:time];		
 	[self checkIfBreakFinished];		
 }
 
 -(void) interruptFinished:(NSTimer *)aTimer {
-	if (oneSecTimer != nil) {
-		[oneSecTimer invalidate];
-		oneSecTimer = nil;
-	}
+
+    [self clearTimer: &oneSecTimer];
+    [self clearTimer: &interruptionTimer];
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver:)]) {
         [delegate pomodoroInterruptionMaxTimeIsOver:self];		
@@ -205,18 +207,7 @@
 }
 
 -(void)dealloc {
-	if (oneSecTimer != nil) {
-		[oneSecTimer invalidate];
-		oneSecTimer = nil;
-	}
-	if (breakTimer != nil) {
-		[breakTimer invalidate];
-		breakTimer = nil;
-	}
-	if (interruptionTimer != nil) {
-		[interruptionTimer invalidate];
-		interruptionTimer = nil;
-	}
+    
     [delegate release];
 	[super dealloc];
 }
