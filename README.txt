@@ -37,7 +37,7 @@ Building notes
 --------------
 
 
-1) Remove Code signing identity if present.
+1) Remove Code signing identity if present (should not, but sometimes I push it back)
 
 XCode 4:
 2) Just click build

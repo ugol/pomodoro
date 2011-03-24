@@ -207,7 +207,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	NSSavePanel *sp = [NSSavePanel savePanel];	
 	[sp setRequiredFileType:@"txt"];
 	
-	int runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
+	NSInteger runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
 	
 	if (runResult == NSOKButton) {
 		NSLog(@"Created %@", [sp filename]);

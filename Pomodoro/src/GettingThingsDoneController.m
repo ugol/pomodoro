@@ -38,7 +38,7 @@
 - (void) addListToCombo:(NSString*)action {
 	
 	NSAppleEventDescriptor* result = [scripter executeScript:action];			
-	int howMany = [result numberOfItems];
+	NSInteger howMany = [result numberOfItems];
 	for (int i=1; i<= howMany; i++) {
 		[namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];		
 	}

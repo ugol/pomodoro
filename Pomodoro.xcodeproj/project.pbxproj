@@ -7,21 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		698F4611133B5AF900311E34 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 698F4598133B5AF900311E34 /* about.html */; };
-		698F4612133B5AF900311E34 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F459A133B5AF900311E34 /* About.xib */; };
-		698F4613133B5AF900311E34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698F459C133B5AF900311E34 /* InfoPlist.strings */; };
-		698F4614133B5AF900311E34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698F459E133B5AF900311E34 /* Localizable.strings */; };
-		698F4615133B5AF900311E34 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45A0133B5AF900311E34 /* MainMenu.xib */; };
-		698F4616133B5AF900311E34 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 698F45A2133B5AF900311E34 /* splash.html */; };
-		698F4617133B5AF900311E34 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45A4133B5AF900311E34 /* Splash.xib */; };
-		698F4618133B5AF900311E34 /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45A6133B5AF900311E34 /* Stats.xib */; };
-		698F4619133B5AF900311E34 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 698F45A9133B5AF900311E34 /* about.html */; };
-		698F461A133B5AF900311E34 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45AB133B5AF900311E34 /* About.xib */; };
-		698F461B133B5AF900311E34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698F45AD133B5AF900311E34 /* Localizable.strings */; };
-		698F461C133B5AF900311E34 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45AF133B5AF900311E34 /* MainMenu.xib */; };
-		698F461D133B5AF900311E34 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B1133B5AF900311E34 /* splash.html */; };
-		698F461E133B5AF900311E34 /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B3133B5AF900311E34 /* Splash.xib */; };
-		698F461F133B5AF900311E34 /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B5133B5AF900311E34 /* Stats.xib */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
 		698F4622133B5AF900311E34 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45BA133B5AF900311E34 /* compile.png */; };
@@ -106,6 +91,26 @@
 		69AE9610133B4706004DC14D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69AE960E133B4706004DC14D /* InfoPlist.strings */; };
 		69AE9613133B4706004DC14D /* PomodoroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 69AE9612133B4706004DC14D /* PomodoroTests.h */; };
 		69AE9615133B4706004DC14D /* PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE9614133B4706004DC14D /* PomodoroTests.m */; };
+		69ED6384133B9D03003F59BA /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED637B133B9D03003F59BA /* Stats.xib */; };
+		69ED638D133B9D12003F59BA /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED636F133B9D03003F59BA /* About.xib */; };
+		69ED638E133B9D12003F59BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6371133B9D03003F59BA /* InfoPlist.strings */; };
+		69ED638F133B9D12003F59BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6373133B9D03003F59BA /* Localizable.strings */; };
+		69ED6390133B9D12003F59BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6375133B9D03003F59BA /* MainMenu.xib */; };
+		69ED6391133B9D12003F59BA /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6377133B9D03003F59BA /* splash.html */; };
+		69ED6392133B9D12003F59BA /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6379133B9D03003F59BA /* Splash.xib */; };
+		69ED6394133B9D3F003F59BA /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 69ED636D133B9D03003F59BA /* about.html */; };
+		69ED63FB133B9F5F003F59BA /* addTodoToOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D1133B5AF900311E34 /* addTodoToOmniFocus.applescript */; };
+		69ED63FC133B9F5F003F59BA /* addTodoToThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D2133B5AF900311E34 /* addTodoToThings.applescript */; };
+		69ED63FD133B9F5F003F59BA /* getToDoListFromOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D3133B5AF900311E34 /* getToDoListFromOmniFocus.applescript */; };
+		69ED63FE133B9F5F003F59BA /* getToDoListFromThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D4133B5AF900311E34 /* getToDoListFromThings.applescript */; };
+		69ED63FF133B9F5F003F59BA /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D5133B5AF900311E34 /* insertIntoLoginItems.applescript */; };
+		69ED6400133B9F5F003F59BA /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D6133B5AF900311E34 /* removeFromLoginItems.applescript */; };
+		69ED6401133B9F5F003F59BA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D7133B5AF900311E34 /* setStatusToAvailableInAdium.applescript */; };
+		69ED6402133B9F5F003F59BA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D8133B5AF900311E34 /* setStatusToAvailableInIChat.applescript */; };
+		69ED6403133B9F5F003F59BA /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D9133B5AF900311E34 /* setStatusToAvailableInSkype.applescript */; };
+		69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DA133B5AF900311E34 /* setStatusToPomodoroInAdium.applescript */; };
+		69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DB133B5AF900311E34 /* setStatusToPomodoroInIChat.applescript */; };
+		69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DC133B5AF900311E34 /* setStatusToPomodoroInSkype.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,21 +207,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		698F4599133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = about.html; sourceTree = "<group>"; };
-		698F459B133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = About.xib; sourceTree = "<group>"; };
-		698F459D133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		698F459F133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Localizable.strings; sourceTree = "<group>"; };
-		698F45A1133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
-		698F45A3133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = splash.html; sourceTree = "<group>"; };
-		698F45A5133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Splash.xib; sourceTree = "<group>"; };
-		698F45A7133B5AF900311E34 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Stats.xib; sourceTree = "<group>"; };
-		698F45AA133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = about.html; sourceTree = "<group>"; };
-		698F45AC133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = About.xib; sourceTree = "<group>"; };
-		698F45AE133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = Localizable.strings; sourceTree = "<group>"; };
-		698F45B0133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = MainMenu.xib; sourceTree = "<group>"; };
-		698F45B2133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = splash.html; sourceTree = "<group>"; };
-		698F45B4133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = Splash.xib; sourceTree = "<group>"; };
-		698F45B6133B5AF900311E34 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = Stats.xib; sourceTree = "<group>"; };
 		698F45B8133B5AF900311E34 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		698F45B9133B5AF900311E34 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		698F45BA133B5AF900311E34 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
@@ -349,14 +339,6 @@
 		698F46E7133B601500311E34 /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCombo.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.h; sourceTree = SOURCE_ROOT; };
 		698F46E8133B601500311E34 /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCombo.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.m; sourceTree = SOURCE_ROOT; };
 		698F46ED133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/ugol/Desktop/Pomodoro/PomodoroTests/de.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
-		698F46EE133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
-		698F46EF133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/about.html; sourceTree = "<absolute>"; };
-		698F46F0133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/About.xib; sourceTree = "<absolute>"; };
-		698F46F1133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/Localizable.strings; sourceTree = "<absolute>"; };
-		698F46F2133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/Splash.xib; sourceTree = "<absolute>"; };
-		698F46F3133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/MainMenu.xib; sourceTree = "<absolute>"; };
-		698F46F4133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/splash.html; sourceTree = "<absolute>"; };
-		698F46F5133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/ugol/Desktop/Pomodoro/Pomodoro/English.lproj/de.lproj/Stats.xib; sourceTree = "<absolute>"; };
 		698F46F8133B708700311E34 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		698F46FA133B709600311E34 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		698F46FC133B70B000311E34 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -383,6 +365,22 @@
 		69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PomodoroTests-Prefix.pch"; sourceTree = "<group>"; };
 		69AE9612133B4706004DC14D /* PomodoroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroTests.h; sourceTree = "<group>"; };
 		69AE9614133B4706004DC14D /* PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomodoroTests.m; sourceTree = "<group>"; };
+		69ED636E133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = English.lproj/about.html; sourceTree = "<group>"; };
+		69ED6370133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/About.xib; sourceTree = "<group>"; };
+		69ED6372133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69ED6374133B9D03003F59BA /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69ED6376133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		69ED6378133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = English.lproj/splash.html; sourceTree = "<group>"; };
+		69ED637A133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Splash.xib; sourceTree = "<group>"; };
+		69ED637C133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Stats.xib; sourceTree = "<group>"; };
+		69ED6385133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/about.html; sourceTree = "<group>"; };
+		69ED6386133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/About.xib; sourceTree = "<group>"; };
+		69ED6387133B9D12003F59BA /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69ED6388133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		69ED6389133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/splash.html; sourceTree = "<group>"; };
+		69ED638A133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Splash.xib; sourceTree = "<group>"; };
+		69ED638B133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Stats.xib; sourceTree = "<group>"; };
+		69ED6393133B9D3F003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,35 +411,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		698F4597133B5AF900311E34 /* English.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				698F4598133B5AF900311E34 /* about.html */,
-				698F459A133B5AF900311E34 /* About.xib */,
-				698F459C133B5AF900311E34 /* InfoPlist.strings */,
-				698F459E133B5AF900311E34 /* Localizable.strings */,
-				698F45A0133B5AF900311E34 /* MainMenu.xib */,
-				698F45A2133B5AF900311E34 /* splash.html */,
-				698F45A4133B5AF900311E34 /* Splash.xib */,
-				698F45A6133B5AF900311E34 /* Stats.xib */,
-			);
-			path = English.lproj;
-			sourceTree = "<group>";
-		};
-		698F45A8133B5AF900311E34 /* German.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				698F45A9133B5AF900311E34 /* about.html */,
-				698F45AB133B5AF900311E34 /* About.xib */,
-				698F45AD133B5AF900311E34 /* Localizable.strings */,
-				698F45AF133B5AF900311E34 /* MainMenu.xib */,
-				698F45B1133B5AF900311E34 /* splash.html */,
-				698F45B3133B5AF900311E34 /* Splash.xib */,
-				698F45B5133B5AF900311E34 /* Stats.xib */,
-			);
-			path = German.lproj;
-			sourceTree = "<group>";
-		};
 		698F45B7133B5AF900311E34 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,9 +583,9 @@
 		698F4693133B5D7000311E34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69ED63C8133B9DC1003F59BA /* Text */,
+				69ED6395133B9D4A003F59BA /* XIBS */,
 				69AE95EE133B4705004DC14D /* Supporting Files */,
-				698F4597133B5AF900311E34 /* English.lproj */,
-				698F45A8133B5AF900311E34 /* German.lproj */,
 				698F45B7133B5AF900311E34 /* images */,
 				698F45D0133B5AF900311E34 /* scripts */,
 				698F45DD133B5AF900311E34 /* sounds */,
@@ -750,6 +719,7 @@
 		69AE95EE133B4705004DC14D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69ED6371133B9D03003F59BA /* InfoPlist.strings */,
 				69AE95EF133B4705004DC14D /* Pomodoro-Info.plist */,
 				69AE95F3133B4705004DC14D /* Pomodoro-Prefix.pch */,
 				69AE95F4133B4705004DC14D /* main.m */,
@@ -775,6 +745,27 @@
 				69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69ED6395133B9D4A003F59BA /* XIBS */ = {
+			isa = PBXGroup;
+			children = (
+				69ED636F133B9D03003F59BA /* About.xib */,
+				69ED6375133B9D03003F59BA /* MainMenu.xib */,
+				69ED6379133B9D03003F59BA /* Splash.xib */,
+				69ED637B133B9D03003F59BA /* Stats.xib */,
+			);
+			name = XIBS;
+			sourceTree = "<group>";
+		};
+		69ED63C8133B9DC1003F59BA /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				69ED636D133B9D03003F59BA /* about.html */,
+				69ED6377133B9D03003F59BA /* splash.html */,
+				69ED6373133B9D03003F59BA /* Localizable.strings */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -914,21 +905,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698F4611133B5AF900311E34 /* about.html in Resources */,
-				698F4612133B5AF900311E34 /* About.xib in Resources */,
-				698F4613133B5AF900311E34 /* InfoPlist.strings in Resources */,
-				698F4614133B5AF900311E34 /* Localizable.strings in Resources */,
-				698F4615133B5AF900311E34 /* MainMenu.xib in Resources */,
-				698F4616133B5AF900311E34 /* splash.html in Resources */,
-				698F4617133B5AF900311E34 /* Splash.xib in Resources */,
-				698F4618133B5AF900311E34 /* Stats.xib in Resources */,
-				698F4619133B5AF900311E34 /* about.html in Resources */,
-				698F461A133B5AF900311E34 /* About.xib in Resources */,
-				698F461B133B5AF900311E34 /* Localizable.strings in Resources */,
-				698F461C133B5AF900311E34 /* MainMenu.xib in Resources */,
-				698F461D133B5AF900311E34 /* splash.html in Resources */,
-				698F461E133B5AF900311E34 /* Splash.xib in Resources */,
-				698F461F133B5AF900311E34 /* Stats.xib in Resources */,
+				69ED63FB133B9F5F003F59BA /* addTodoToOmniFocus.applescript in Resources */,
+				69ED63FC133B9F5F003F59BA /* addTodoToThings.applescript in Resources */,
+				69ED63FD133B9F5F003F59BA /* getToDoListFromOmniFocus.applescript in Resources */,
+				69ED63FE133B9F5F003F59BA /* getToDoListFromThings.applescript in Resources */,
+				69ED63FF133B9F5F003F59BA /* insertIntoLoginItems.applescript in Resources */,
+				69ED6400133B9F5F003F59BA /* removeFromLoginItems.applescript in Resources */,
+				69ED6401133B9F5F003F59BA /* setStatusToAvailableInAdium.applescript in Resources */,
+				69ED6402133B9F5F003F59BA /* setStatusToAvailableInIChat.applescript in Resources */,
+				69ED6403133B9F5F003F59BA /* setStatusToAvailableInSkype.applescript in Resources */,
+				69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */,
+				69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */,
+				69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */,
 				698F4620133B5AF900311E34 /* audio.png in Resources */,
 				698F4621133B5AF900311E34 /* calendar.png in Resources */,
 				698F4622133B5AF900311E34 /* compile.png in Resources */,
@@ -954,6 +942,14 @@
 				698F4643133B5AF900311E34 /* tick.wav in Resources */,
 				698F465A133B5AF900311E34 /* README.txt in Resources */,
 				698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */,
+				69ED6384133B9D03003F59BA /* Stats.xib in Resources */,
+				69ED638D133B9D12003F59BA /* About.xib in Resources */,
+				69ED638E133B9D12003F59BA /* InfoPlist.strings in Resources */,
+				69ED638F133B9D12003F59BA /* Localizable.strings in Resources */,
+				69ED6390133B9D12003F59BA /* MainMenu.xib in Resources */,
+				69ED6391133B9D12003F59BA /* splash.html in Resources */,
+				69ED6392133B9D12003F59BA /* Splash.xib in Resources */,
+				69ED6394133B9D3F003F59BA /* about.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,134 +1085,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		698F4598133B5AF900311E34 /* about.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F4599133B5AF900311E34 /* English */,
-				698F46EF133B603D00311E34 /* de */,
-			);
-			name = about.html;
-			sourceTree = "<group>";
-		};
-		698F459A133B5AF900311E34 /* About.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F459B133B5AF900311E34 /* English */,
-				698F46F0133B603D00311E34 /* de */,
-			);
-			name = About.xib;
-			sourceTree = "<group>";
-		};
-		698F459C133B5AF900311E34 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F459D133B5AF900311E34 /* English */,
-				698F46EE133B603D00311E34 /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		698F459E133B5AF900311E34 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F459F133B5AF900311E34 /* English */,
-				698F46F1133B603D00311E34 /* de */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		698F45A0133B5AF900311E34 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45A1133B5AF900311E34 /* English */,
-				698F46F3133B603D00311E34 /* de */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		698F45A2133B5AF900311E34 /* splash.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45A3133B5AF900311E34 /* English */,
-				698F46F4133B603D00311E34 /* de */,
-			);
-			name = splash.html;
-			sourceTree = "<group>";
-		};
-		698F45A4133B5AF900311E34 /* Splash.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45A5133B5AF900311E34 /* English */,
-				698F46F2133B603D00311E34 /* de */,
-			);
-			name = Splash.xib;
-			sourceTree = "<group>";
-		};
-		698F45A6133B5AF900311E34 /* Stats.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45A7133B5AF900311E34 /* English */,
-				698F46F5133B603D00311E34 /* de */,
-			);
-			name = Stats.xib;
-			sourceTree = "<group>";
-		};
-		698F45A9133B5AF900311E34 /* about.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45AA133B5AF900311E34 /* German */,
-			);
-			name = about.html;
-			sourceTree = "<group>";
-		};
-		698F45AB133B5AF900311E34 /* About.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45AC133B5AF900311E34 /* German */,
-			);
-			name = About.xib;
-			sourceTree = "<group>";
-		};
-		698F45AD133B5AF900311E34 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45AE133B5AF900311E34 /* German */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		698F45AF133B5AF900311E34 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45B0133B5AF900311E34 /* German */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		698F45B1133B5AF900311E34 /* splash.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45B2133B5AF900311E34 /* German */,
-			);
-			name = splash.html;
-			sourceTree = "<group>";
-		};
-		698F45B3133B5AF900311E34 /* Splash.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45B4133B5AF900311E34 /* German */,
-			);
-			name = Splash.xib;
-			sourceTree = "<group>";
-		};
-		698F45B5133B5AF900311E34 /* Stats.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				698F45B6133B5AF900311E34 /* German */,
-			);
-			name = Stats.xib;
-			sourceTree = "<group>";
-		};
 		69AE960E133B4706004DC14D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1224,6 +1092,78 @@
 				698F46ED133B603D00311E34 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		69ED636D133B9D03003F59BA /* about.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED636E133B9D03003F59BA /* English */,
+				69ED6385133B9D12003F59BA /* German */,
+			);
+			name = about.html;
+			sourceTree = "<group>";
+		};
+		69ED636F133B9D03003F59BA /* About.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED6370133B9D03003F59BA /* English */,
+				69ED6386133B9D12003F59BA /* German */,
+			);
+			name = About.xib;
+			sourceTree = "<group>";
+		};
+		69ED6371133B9D03003F59BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED6372133B9D03003F59BA /* English */,
+				69ED6393133B9D3F003F59BA /* German */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		69ED6373133B9D03003F59BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED6374133B9D03003F59BA /* English */,
+				69ED6387133B9D12003F59BA /* German */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		69ED6375133B9D03003F59BA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED6376133B9D03003F59BA /* English */,
+				69ED6388133B9D12003F59BA /* German */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		69ED6377133B9D03003F59BA /* splash.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED6378133B9D03003F59BA /* English */,
+				69ED6389133B9D12003F59BA /* German */,
+			);
+			name = splash.html;
+			sourceTree = "<group>";
+		};
+		69ED6379133B9D03003F59BA /* Splash.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED637A133B9D03003F59BA /* English */,
+				69ED638A133B9D12003F59BA /* German */,
+			);
+			name = Splash.xib;
+			sourceTree = "<group>";
+		};
+		69ED637B133B9D03003F59BA /* Stats.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69ED637C133B9D03003F59BA /* English */,
+				69ED638B133B9D12003F59BA /* German */,
+			);
+			name = Stats.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
