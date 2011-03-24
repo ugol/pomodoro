@@ -111,6 +111,8 @@
 		69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DA133B5AF900311E34 /* setStatusToPomodoroInAdium.applescript */; };
 		69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DB133B5AF900311E34 /* setStatusToPomodoroInIChat.applescript */; };
 		69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DC133B5AF900311E34 /* setStatusToPomodoroInSkype.applescript */; };
+		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
+		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,7 +340,6 @@
 		698F46E6133B601500311E34 /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCodeTranslator.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCodeTranslator.m; sourceTree = SOURCE_ROOT; };
 		698F46E7133B601500311E34 /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKeyCombo.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.h; sourceTree = SOURCE_ROOT; };
 		698F46E8133B601500311E34 /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKeyCombo.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTKeyCombo.m; sourceTree = SOURCE_ROOT; };
-		698F46ED133B603D00311E34 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/ugol/Desktop/Pomodoro/PomodoroTests/de.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
 		698F46F8133B708700311E34 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		698F46FA133B709600311E34 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		698F46FC133B70B000311E34 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -381,6 +382,10 @@
 		69ED638A133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Splash.xib; sourceTree = "<group>"; };
 		69ED638B133B9D12003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Stats.xib; sourceTree = "<group>"; };
 		69ED6393133B9D3F003F59BA /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69ED640F133BB31F003F59BA /* SmartTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmartTimer.h; path = src/SmartTimer.h; sourceTree = "<group>"; };
+		69ED6410133BB31F003F59BA /* SmartTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmartTimer.m; path = src/SmartTimer.m; sourceTree = "<group>"; };
+		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
+		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +536,8 @@
 				698F45FE133B5AF900311E34 /* PomodoroDefaults.m */,
 				698F4602133B5AF900311E34 /* Scripter.h */,
 				698F4603133B5AF900311E34 /* Scripter.m */,
+				69ED640F133BB31F003F59BA /* SmartTimer.h */,
+				69ED6410133BB31F003F59BA /* SmartTimer.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -730,9 +737,11 @@
 		69AE960B133B4706004DC14D /* PomodoroTests */ = {
 			isa = PBXGroup;
 			children = (
+				69AE960C133B4706004DC14D /* Supporting Files */,
 				69AE9612133B4706004DC14D /* PomodoroTests.h */,
 				69AE9614133B4706004DC14D /* PomodoroTests.m */,
-				69AE960C133B4706004DC14D /* Supporting Files */,
+				69ED6412133BB502003F59BA /* SmartTimerTests.h */,
+				69ED6413133BB502003F59BA /* SmartTimerTests.m */,
 			);
 			path = PomodoroTests;
 			sourceTree = "<group>";
@@ -1043,6 +1052,7 @@
 				698F46EA133B601500311E34 /* PTHotKeyCenter.m in Sources */,
 				698F46EB133B601500311E34 /* PTKeyCodeTranslator.m in Sources */,
 				698F46EC133B601500311E34 /* PTKeyCombo.m in Sources */,
+				69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1061,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69AE9615133B4706004DC14D /* PomodoroTests.m in Sources */,
+				69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,7 +1100,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				69AE960F133B4706004DC14D /* en */,
-				698F46ED133B603D00311E34 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

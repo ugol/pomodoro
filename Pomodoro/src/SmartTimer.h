@@ -23,28 +23,29 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "PomodoroTests.h"
-#import "Pomodoro.h"
+#import <Foundation/Foundation.h>
 
-@implementation PomodoroTests
+@protocol SmartTimerDelegate
 
-- (void)setUp {
-    [super setUp];
+@required
+- (void)repeating:(NSTimer *)aTimer;
+- (void)oneShot:(NSTimer *)aTimer;
+
+@end
+
+@interface SmartTimer : NSObject {
     
-    // Set-up code here.
-}
-
-- (void)tearDown {
-    // Tear-down code here.
+    NSTimer* internalTimer;    
+    id delegate;
     
-    [super tearDown];
 }
 
-- (void)testExample {
-    Pomodoro* pomodoro = [[Pomodoro alloc] initWithDuration:1];
-    STAssertNotNil(pomodoro, @"Correctly instantiated Pomodoro");
-    //STFail(@"Unit tests are not implemented yet in PomodoroTests");
-}
+@property (nonatomic, retain) id delegate;
+@property (nonatomic, retain) NSTimer* internalTimer;
 
+- (void) registerForSleepAndWake;
+- (void) startRepeatingTimerFor:(NSInteger)seconds;
+- (void) startOneShotTimerFor:(NSInteger)seconds;
+- (void) reset;
 
 @end
