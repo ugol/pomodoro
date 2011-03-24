@@ -25,11 +25,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class SmartTimer;
+
 @protocol SmartTimerDelegate
 
-@required
-- (void)repeating:(NSTimer *)aTimer;
-- (void)oneShot:(NSTimer *)aTimer;
+@optional
+- (void) repeating:(SmartTimer*) aTimer;
+- (void) oneShot:(SmartTimer*) aTimer;
 
 @end
 
@@ -43,9 +45,12 @@
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, retain) NSTimer* internalTimer;
 
-- (void) registerForSleepAndWake;
-- (void) startRepeatingTimerFor:(NSInteger)seconds;
-- (void) startOneShotTimerFor:(NSInteger)seconds;
++ (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate;
++ (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate;
++ (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real;
++ (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real;
+
+- (void) setRealTime;
 - (void) reset;
 
 @end

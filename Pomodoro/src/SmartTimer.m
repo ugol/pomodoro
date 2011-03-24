@@ -25,24 +25,66 @@
 
 #import "SmartTimer.h"
 
-
-
 @implementation SmartTimer
 
 @synthesize delegate, internalTimer;
 
++ (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate {
+    return [SmartTimer createAndStartRepeatingTimerFor:seconds withDelegate:delegate inRealTime:NO];
+}
+
++ (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate {
+    return [SmartTimer createAndStartOneShotTimerAfter:seconds withDelegate:delegate inRealTime:NO];
+}
+
++ (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real {
+    
+    SmartTimer* timer = [[[SmartTimer alloc] init] autorelease];
+    timer.delegate = delegate;
+    
+    timer.internalTimer = [NSTimer timerWithTimeInterval:seconds
+                                                  target:timer
+                                                selector:@selector(repeating:)													 
+                                                userInfo:nil
+                                                 repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer.internalTimer forMode:NSRunLoopCommonModes];
+    
+    if (real) {
+        [timer setRealTime];
+    }
+
+    return timer;
+
+}
+
++ (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real {
+    SmartTimer* timer = [[[SmartTimer alloc] init] autorelease];
+    timer.delegate = delegate;
+
+    timer.internalTimer = [NSTimer timerWithTimeInterval:seconds
+                                                  target:timer
+                                                selector:@selector(oneShot:)													 
+                                                userInfo:nil
+                                                 repeats:NO];   
+    [[NSRunLoop currentRunLoop] addTimer:timer.internalTimer forMode:NSRunLoopCommonModes];
+    
+    if (real) {
+        [timer setRealTime];
+    }
+    
+    return timer;   
+}
+
 - (void)repeating:(NSTimer *)aTimer {
-    NSLog(@"Repeating");
-    if ([delegate respondsToSelector:@selector(repeating)]) {
-        [delegate repeating];
+    if ([delegate respondsToSelector:@selector(repeating:)]) {
+        [delegate repeating:self];
     }
 }
 
 - (void)oneShot:(NSTimer *)aTimer {
-    NSLog(@"One Shot");
     internalTimer = nil;
-    if ([delegate respondsToSelector:@selector(oneShot)]) {
-        [delegate oneShot];
+    if ([delegate respondsToSelector:@selector(oneShot:)]) {
+        [delegate oneShot:self];
     }
 }
 
@@ -62,10 +104,8 @@
     NSLog(@"receiveSleepNote: %@", [note name]);
 }
 
-- (void) registerForSleepAndWake {
-    //These notifications are filed on NSWorkspace's notification center, not the default 
-    // notification center. You will not receive sleep/wake notifications if you file 
-    //with the default notification center.
+- (void) setRealTime {
+
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
                                                            selector: @selector(receiveSleepNote:) 
                                                                name: NSWorkspaceWillSleepNotification object: NULL];
@@ -75,31 +115,11 @@
                                                                name: NSWorkspaceDidWakeNotification object: NULL];
 }
 
-- (void) startRepeatingTimerFor:(NSInteger)seconds {
-    internalTimer = [NSTimer timerWithTimeInterval:seconds
-                                            target:self
-                                          selector:@selector(repeating:)													 
-                                          userInfo:nil
-                                           repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:internalTimer forMode:NSRunLoopCommonModes];
-    
-}
-
-- (void) startOneShotTimerFor:(NSInteger)seconds {
-   	internalTimer = [NSTimer timerWithTimeInterval:seconds
-                                            target:self
-                                          selector:@selector(oneShot:)													 
-                                          userInfo:nil
-                                           repeats:NO];   
-    [[NSRunLoop currentRunLoop] addTimer:internalTimer forMode:NSRunLoopCommonModes];
-    
-}
 
 - (id)init {
     
     if ((self = [super init])) {
         // Initialization code here.
-        [self registerForSleepAndWake];
         
     }
     
