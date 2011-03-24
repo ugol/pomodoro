@@ -23,7 +23,5 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
-// You must add your own twitter secrets here if you want to use Pomodoro
 #define _consumerkey @"" 
 #define _secretkey @""
