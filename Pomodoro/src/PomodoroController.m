@@ -138,7 +138,7 @@
 -(void) keyQuickStats {
 	
 	NSInteger time = pomodoro.time;	
-	NSString* quickStats = [NSString stringWithFormat:NSLocalizedString(@"%@ (%.2d:%.2d)\nInterruptions: %d/%d/%d\n\nGlobal Pomodoros: %d/%d/%d\nDaily Pomodoros: %d/%d/%d\nGlobal Interruptions: %d/%d/%d\nDaily Interruptions: %d/%d/%d\n\nRemaining for long break: %d",@"Quick statistic format string"), 
+	NSString* quickStats = [NSString stringWithFormat:NSLocalizedString(@"QuickStatistics",@"Quick statistic format string"), 
 							_pomodoroName, time/60, time%60, 
 							pomodoro.externallyInterrupted, pomodoro.internallyInterrupted, pomodoro.resumed,
 							_globalPomodoroStarted, _globalPomodoroDone, _globalPomodoroReset,
