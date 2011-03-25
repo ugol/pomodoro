@@ -27,14 +27,14 @@
 
 @implementation SmartTimer
 
-@synthesize delegate, internalTimer;
+@synthesize lastTimeWhenWentToSleep, delegate, internalTimer;
 
 + (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate {
-    return [SmartTimer createAndStartRepeatingTimerFor:seconds withDelegate:delegate inRealTime:NO];
+    return [SmartTimer createAndStartRepeatingTimerFor:seconds withDelegate:delegate inRealTime:YES];
 }
 
 + (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate {
-    return [SmartTimer createAndStartOneShotTimerAfter:seconds withDelegate:delegate inRealTime:NO];
+    return [SmartTimer createAndStartOneShotTimerAfter:seconds withDelegate:delegate inRealTime:YES ];
 }
 
 + (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real {
@@ -98,10 +98,19 @@
 
 - (void) receiveSleepNote: (NSNotification*) note {
     NSLog(@"receiveSleepNote: %@", [note name]);
+    lastTimeWhenWentToSleep = [NSDate date];
+    if ([delegate respondsToSelector:@selector(willSleep)]) {
+        [delegate willSleep];
+    }
 }
 
 - (void) receiveWakeNote: (NSNotification*) note {
-    NSLog(@"receiveSleepNote: %@", [note name]);
+    NSDate* now = [NSDate date];
+    NSTimeInterval secondsPassed = [now timeIntervalSinceDate:lastTimeWhenWentToSleep];
+    NSLog(@"receiveWakeNote: %@", [note name]);
+    if ([delegate respondsToSelector:@selector(didWakeUp:)]) {
+        [delegate didWakeUp:secondsPassed];
+    }
 }
 
 - (void) setRealTime {

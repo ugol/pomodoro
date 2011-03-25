@@ -32,16 +32,20 @@
 @optional
 - (void) repeating:(SmartTimer*) aTimer;
 - (void) oneShot:(SmartTimer*) aTimer;
+- (void) willSleep;
+- (void) didWakeUp:(NSTimeInterval) interval;
 
 @end
 
 @interface SmartTimer : NSObject {
     
+    NSDate* lastTimeWhenWentToSleep;
     NSTimer* internalTimer;    
     id delegate;
     
 }
 
+@property (nonatomic, retain) NSDate* lastTimeWhenWentToSleep;
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, retain) NSTimer* internalTimer;
 

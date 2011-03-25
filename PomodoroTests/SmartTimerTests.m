@@ -49,6 +49,15 @@
     oneShot = YES;
 }
 
+- (void) willSleep {
+    NSLog(@"Will sleep");
+}
+
+- (void) didWakeUp:(NSTimeInterval) interval {
+    NSLog(@"Did wake up %f", interval);
+
+}
+
 - (void)testOneShotSmartTimer {
     
     SmartTimer* smart = [SmartTimer createAndStartOneShotTimerAfter:1 withDelegate:self];
@@ -72,6 +81,14 @@
 
 }
 
+- (void)testSleepSmartTimer {
+    
+    SmartTimer* smart = [SmartTimer createAndStartRepeatingTimerFor:1 withDelegate:self];
+    
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    [smart reset];
+    
+}
 
 
 @end
