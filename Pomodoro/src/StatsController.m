@@ -185,6 +185,23 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	
 }
 
+- (void) writeFullExport: (NSFileHandle *) output results: (NSArray *) results  {
+    
+    NSString* header = [NSString stringWithFormat:NSLocalizedString(@"Export data created by Pomodoro on %@\n",@"Export Header"), [NSDate date]];
+    [output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
+    [output writeData:[NSLocalizedString(@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n",@"Export Table Header") dataUsingEncoding:NSUTF8StringEncoding]];
+    for (NSManagedObject* pomo in results) {
+        NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
+        [output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
+    }
+
+}
+
+- (void) writeLightExport: (NSFileHandle *) output results: (NSArray *) results  {
+    
+}
+
+
 - (IBAction) exportToText:(id)sender {
 	
 	/*
@@ -221,13 +238,9 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		if (error) {
 			NSLog(@"Error %@", error);
 		} else {
-			NSString* header = [NSString stringWithFormat:NSLocalizedString(@"Export data created by Pomodoro on %@\n",@"Export Header"), [NSDate date]];
-			[output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
-			[output writeData:[NSLocalizedString(@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n",@"Export Table Header") dataUsingEncoding:NSUTF8StringEncoding]];
-			for (NSManagedObject* pomo in results) {
-				NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
-				[output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
-			}
+            
+			[self writeFullExport: output results: results];
+
 		}
 		
 		[output synchronizeFile];
