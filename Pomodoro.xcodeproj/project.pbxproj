@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6978DAC81344028B004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
-		6978DAC913440297004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
-		6978DACA1344032B004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
+		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
+		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
+		6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
 		698F4622133B5AF900311E34 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45BA133B5AF900311E34 /* compile.png */; };
@@ -116,6 +116,7 @@
 		69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DC133B5AF900311E34 /* setStatusToPomodoroInSkype.applescript */; };
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
+		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,16 +207,15 @@
 			dstSubfolderSpec = 10;
 			files = (
 				698F4747133B7A5B00311E34 /* Growl.framework in CopyFiles */,
-				6978DAC81344028B004B9ABB /* BGHUDAppKit.framework in CopyFiles */,
-				6978DACA1344032B004B9ABB /* OAuthConsumer.framework in CopyFiles */,
-				6978DAC913440297004B9ABB /* ShortcutRecorder.framework in CopyFiles */,
+				6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */,
+				6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */,
+				6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6978DAC61344026C004B9ABB /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F45B8133B5AF900311E34 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		698F45B9133B5AF900311E34 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		698F45BA133B5AF900311E34 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
@@ -393,6 +393,7 @@
 		69ED6410133BB31F003F59BA /* SmartTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmartTimer.m; path = src/SmartTimer.m; sourceTree = "<group>"; };
 		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
 		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
+		69FCF746135729DD003862DC /* ringBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringBreak.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +474,7 @@
 		698F45DD133B5AF900311E34 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				69FCF746135729DD003862DC /* ringBreak.wav */,
 				698F45DE133B5AF900311E34 /* ring.wav */,
 				698F45DF133B5AF900311E34 /* tick.wav */,
 			);
@@ -679,7 +681,6 @@
 			isa = PBXGroup;
 			children = (
 				698F460F133B5AF900311E34 /* README.txt */,
-				6978DAC61344026C004B9ABB /* BGHUDAppKit.framework */,
 				698F4610133B5AF900311E34 /* ReleaseNotes.txt */,
 				698F4713133B719900311E34 /* Dependencies */,
 				69AE95ED133B4705004DC14D /* Pomodoro */,
@@ -967,6 +968,7 @@
 				69ED6391133B9D12003F59BA /* splash.html in Resources */,
 				69ED6392133B9D12003F59BA /* Splash.xib in Resources */,
 				69ED6394133B9D3F003F59BA /* about.html in Resources */,
+				69FCF747135729DD003862DC /* ringBreak.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,7 +1227,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1246,7 +1248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (

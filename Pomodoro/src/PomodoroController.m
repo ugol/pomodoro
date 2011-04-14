@@ -508,7 +508,7 @@
 	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
 
 	ringing = [NSSound soundNamed:@"ring.wav"];
-	ringingBreak = [NSSound soundNamed:@"ring.wav"];
+	ringingBreak = [NSSound soundNamed:@"ringBreak.wav"];
 	tick = [NSSound soundNamed:@"tick.wav"];
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];

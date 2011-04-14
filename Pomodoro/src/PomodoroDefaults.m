@@ -173,9 +173,9 @@
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"thingsAddingEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"omniFocusAddingEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
