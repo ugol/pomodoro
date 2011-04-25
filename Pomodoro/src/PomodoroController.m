@@ -486,12 +486,10 @@
 	
 } 
 
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-	
-    int reply = NSTerminateNow;
-	[prefs close];
-    return reply;
-	
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    NSLog(@"Pomodoro terminating...");
+    [stats saveState];
+    [prefs close];
 }
 	  
 - (void)awakeFromNib {

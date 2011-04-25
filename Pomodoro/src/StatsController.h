@@ -42,6 +42,7 @@
 @property (readonly, nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (readonly, nonatomic, retain) PomodoroArrayController* pomos;
 
+- (void) saveState;
 - (IBAction) exportToText:(id)sender;
 - (IBAction) resetDailyStatistics:(id)sender;
 - (IBAction) resetGlobalStatistics:(id)sender;
