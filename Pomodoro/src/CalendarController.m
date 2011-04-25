@@ -27,6 +27,7 @@
 #import "CalendarStore/CalendarStore.h"
 #import "CalendarHelper.h"
 #import "PomoNotifications.h"
+#import "Pomodoro.h"
 
 @implementation CalendarController
 
@@ -49,8 +50,10 @@
 
 - (void) pomodoroFinished:(NSNotification*) notification {
     
+    Pomodoro* pomo = [notification object];
+    int duration = (int)lround(pomo.realDuration/60.0);
 	if ([self checkDefault:@"calendarEnabled"]) {
-		[CalendarHelper publishEvent:_selectedCalendar withTitle:[self bindCommonVariables:@"calendarEnd"] duration:_initialTime];
+		[CalendarHelper publishEvent:_selectedCalendar withTitle:[self bindCommonVariables:@"calendarEnd"] duration:duration];
 	}
 
 }
