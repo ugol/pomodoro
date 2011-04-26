@@ -49,10 +49,10 @@
 #pragma mark ---- Pomodoro notifications methods ----
 
 - (void) pomodoroFinished:(NSNotification*) notification {
-    
-    Pomodoro* pomo = [notification object];
-    int duration = (int)lround(pomo.realDuration/60.0);
+
 	if ([self checkDefault:@"calendarEnabled"]) {
+        Pomodoro* pomo = [notification object];
+        int duration = (int)lround(pomo.realDuration/60.0);
 		[CalendarHelper publishEvent:_selectedCalendar withTitle:[self bindCommonVariables:@"calendarEnd"] duration:duration];
 	}
 
