@@ -144,6 +144,7 @@
 #pragma mark ---- Toolbar methods ----
 
 -(IBAction) toolBarIconClicked: (id) sender {
+    
     [tabView selectTabViewItem:[tabView tabViewItemAtIndex:[sender tag]]];
     
 }
