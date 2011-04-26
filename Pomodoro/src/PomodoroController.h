@@ -45,6 +45,7 @@
     IBOutlet NSToolbar* toolBar;
 	IBOutlet NSMenu* pomodoroMenu;
 	IBOutlet NSComboBox* initialTimeCombo;
+	IBOutlet NSComboBox* initialTimeComboInStart;
 	IBOutlet NSComboBox* interruptCombo;
 	IBOutlet NSComboBox* breakCombo;
 	IBOutlet NSComboBox* longBreakCombo;

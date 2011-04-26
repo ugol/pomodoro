@@ -519,6 +519,10 @@
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:35]];
 	
+    [initialTimeComboInStart addItemWithObjectValue: [NSNumber numberWithInt:25]];
+	[initialTimeComboInStart addItemWithObjectValue: [NSNumber numberWithInt:30]];
+	[initialTimeComboInStart addItemWithObjectValue: [NSNumber numberWithInt:35]];
+    
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
