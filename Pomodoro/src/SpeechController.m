@@ -167,7 +167,7 @@
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
     voices = [[NSSpeechSynthesizer availableVoices] retain];
     
-    [speech setVolume:_voiceVolume/10.0];
+    [speech setVolume:_voiceVolume/100.0];
 
     NSString* voice = [[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice] stringByReplacingOccurrencesOfString:@" "withString:@""];
     [speech setVoice: voice];

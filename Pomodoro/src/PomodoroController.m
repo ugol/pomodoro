@@ -89,7 +89,7 @@
 		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
 		
 		if (volume != oldVolume) {
-			float newVolume = volume/10.0;
+			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
 				[ringing setVolume:newVolume];
 				[ringing play];
@@ -516,9 +516,9 @@
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
 		
-	[ringing setVolume:_ringVolume/10.0];
-	[ringingBreak setVolume:_ringBreakVolume/10.0];
-	[tick setVolume:_tickVolume/10.0];
+	[ringing setVolume:_ringVolume/100.0];
+	[ringingBreak setVolume:_ringBreakVolume/100.0];
+	[tick setVolume:_tickVolume/100.0];
 
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
 	[initialTimeCombo addItemWithObjectValue: [NSNumber numberWithInt:30]];
