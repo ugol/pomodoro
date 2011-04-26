@@ -88,6 +88,8 @@
 		698F473C133B731600311E34 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F473B133B731600311E34 /* Carbon.framework */; };
 		698F4747133B7A5B00311E34 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; };
 		698F4748133B7A9100311E34 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; };
+		699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31B1366D0E500BBC486 /* soundHigh.png */; };
+		699CE31E1366D0E500BBC486 /* soundLow.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31C1366D0E500BBC486 /* soundLow.png */; };
 		69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95E7133B4705004DC14D /* Cocoa.framework */; };
 		69AE95F5133B4705004DC14D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE95F4133B4705004DC14D /* main.m */; };
 		69AE9608133B4706004DC14D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95E7133B4705004DC14D /* Cocoa.framework */; };
@@ -359,6 +361,8 @@
 		698F4739133B72E800311E34 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		698F473B133B731600311E34 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		698F4746133B7A5B00311E34 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
+		699CE31B1366D0E500BBC486 /* soundHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundHigh.png; sourceTree = "<group>"; };
+		699CE31C1366D0E500BBC486 /* soundLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundLow.png; sourceTree = "<group>"; };
 		69AE95E3133B4705004DC14D /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AE95E7133B4705004DC14D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		69AE95EA133B4705004DC14D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -427,6 +431,8 @@
 		698F45B7133B5AF900311E34 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				699CE31B1366D0E500BBC486 /* soundHigh.png */,
+				699CE31C1366D0E500BBC486 /* soundLow.png */,
 				698F45B8133B5AF900311E34 /* audio.png */,
 				698F45B9133B5AF900311E34 /* calendar.png */,
 				698F45BA133B5AF900311E34 /* compile.png */,
@@ -969,6 +975,8 @@
 				69ED6392133B9D12003F59BA /* Splash.xib in Resources */,
 				69ED6394133B9D3F003F59BA /* about.html in Resources */,
 				69FCF747135729DD003862DC /* ringBreak.wav in Resources */,
+				699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */,
+				699CE31E1366D0E500BBC486 /* soundLow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
