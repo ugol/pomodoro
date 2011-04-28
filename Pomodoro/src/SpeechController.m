@@ -53,7 +53,7 @@
         NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
         
         if (volume != oldVolume) {
-            float newVolume = volume/10.0;
+            float newVolume = volume/100.0;
             
             [speech setVolume:newVolume];
             [speech startSpeakingString:@"Yes"];
