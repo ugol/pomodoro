@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<!--
+
+ // Pomodoro Desktop - Copyright (c) 2009-2011, Ugo Landini (ugol@computer.org)
+ // All rights reserved.
+ //
+ // Redistribution and use in source and binary forms, with or without
+ // modification, are permitted provided that the following conditions are met:
+ // * Redistributions of source code must retain the above copyright
+ // notice, this list of conditions and the following disclaimer.
+ // * Redistributions in binary form must reproduce the above copyright
+ // notice, this list of conditions and the following disclaimer in the
+ // documentation and/or other materials provided with the distribution.
+ // * Neither the name of the <organization> nor the
+ // names of its contributors may be used to endorse or promote products
+ // derived from this software without specific prior written permission.
+ //
+ // THIS SOFTWARE IS PROVIDED BY COPYRIGHT HOLDERS ''AS IS'' AND ANY
+ // EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ // WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ // DISCLAIMED. IN NO EVENT SHALL <copyright holder> BE LIABLE FOR ANY
+ // DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ // (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ // LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ // ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-->
+
+
+<dictionary xmlns:xi="http://www.w3.org/2003/XInclude">
+    
+    
+    <!-- use XInclude to include the standard suite -->
+	<xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
+    
+    
+	<suite name="Pomodoro" code="POMO" description="Pomodoro Verbs.">
+                
+		<command name="start" code="POMOStrt" description="start Pomodoro">
+			<cocoa class="StartCommand"/>
+            <direct-parameter code="PMnm" type="text" 
+				description="Pomodoro name">
+			</direct-parameter>
+            
+            <parameter name="duration" code="PMdr" type="integer" optional="yes" 
+				description="Pomodoro duration.">
+                <cocoa key="duration"/>
+			</parameter>
+            
+            <parameter name="break" code="PMbk" type="integer" optional="yes" 
+				description="Pomodoro break duration.">
+				<cocoa key="break"/>
+			</parameter>
+            
+            <result type="text" description="Description of started Pomodoro"/>
+            
+		</command>
+        
+        <command name="reset" code="POMORset" description="reset Pomodoro">
+			<cocoa class="ResetCommand"/>            
+            <result type="text" description="Action result"/>            
+		</command>
+        
+        <command name="force completion" code="POMOFrce" description="force completion of Pomodoro">
+			<cocoa class="ForceCommand"/>            
+            <result type="text" description="Action result"/>            
+		</command>
+        
+        <command name="external interrupt" code="POMOXint" description="external interrupt Pomodoro">
+			<cocoa class="ExternalInterruptCommand"/>            
+            <result type="text" description="Action result"/>            
+		</command>
+
+        <command name="internal interrupt" code="POMOIint" description="internal interrupt Pomodoro">
+			<cocoa class="InternalInterruptCommand"/>            
+            <result type="text" description="Action result"/>            
+		</command>
+        
+        <command name="resume" code="POMORsum" description="resume Pomodoro">
+			<cocoa class="ResumeCommand"/>            
+            <result type="text" description="Action result"/>            
+		</command>
+    
+	</suite>
+    
+</dictionary>

@@ -96,6 +96,13 @@
 		69AE9610133B4706004DC14D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69AE960E133B4706004DC14D /* InfoPlist.strings */; };
 		69AE9613133B4706004DC14D /* PomodoroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 69AE9612133B4706004DC14D /* PomodoroTests.h */; };
 		69AE9615133B4706004DC14D /* PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE9614133B4706004DC14D /* PomodoroTests.m */; };
+		69D17DD6136AAC9F00F5D922 /* StartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17DD5136AAC9F00F5D922 /* StartCommand.m */; };
+		69D17DD8136AAE5100F5D922 /* Pomodoro.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */; };
+		69D17E15136C0C9C00F5D922 /* ResetCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E14136C0C9C00F5D922 /* ResetCommand.m */; };
+		69D17E18136C0ECB00F5D922 /* ForceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E17136C0ECB00F5D922 /* ForceCommand.m */; };
+		69D17E1B136C0F6300F5D922 /* ExternalInterruptCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E1A136C0F6200F5D922 /* ExternalInterruptCommand.m */; };
+		69D17E21136C101900F5D922 /* ResumeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E20136C101800F5D922 /* ResumeCommand.m */; };
+		69D17E24136C103800F5D922 /* InternalInterruptCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E23136C103800F5D922 /* InternalInterruptCommand.m */; };
 		69ED6384133B9D03003F59BA /* Stats.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED637B133B9D03003F59BA /* Stats.xib */; };
 		69ED638D133B9D12003F59BA /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED636F133B9D03003F59BA /* About.xib */; };
 		69ED638E133B9D12003F59BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6371133B9D03003F59BA /* InfoPlist.strings */; };
@@ -377,6 +384,19 @@
 		69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PomodoroTests-Prefix.pch"; sourceTree = "<group>"; };
 		69AE9612133B4706004DC14D /* PomodoroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroTests.h; sourceTree = "<group>"; };
 		69AE9614133B4706004DC14D /* PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomodoroTests.m; sourceTree = "<group>"; };
+		69D17DD4136AAC9F00F5D922 /* StartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartCommand.h; path = src/StartCommand.h; sourceTree = "<group>"; };
+		69D17DD5136AAC9F00F5D922 /* StartCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartCommand.m; path = src/StartCommand.m; sourceTree = "<group>"; };
+		69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Pomodoro.sdef; path = src/Pomodoro.sdef; sourceTree = "<group>"; };
+		69D17E13136C0C9C00F5D922 /* ResetCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetCommand.h; path = src/ResetCommand.h; sourceTree = "<group>"; };
+		69D17E14136C0C9C00F5D922 /* ResetCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetCommand.m; path = src/ResetCommand.m; sourceTree = "<group>"; };
+		69D17E16136C0ECB00F5D922 /* ForceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForceCommand.h; path = src/ForceCommand.h; sourceTree = "<group>"; };
+		69D17E17136C0ECB00F5D922 /* ForceCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForceCommand.m; path = src/ForceCommand.m; sourceTree = "<group>"; };
+		69D17E19136C0F6200F5D922 /* ExternalInterruptCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExternalInterruptCommand.h; path = src/ExternalInterruptCommand.h; sourceTree = "<group>"; };
+		69D17E1A136C0F6200F5D922 /* ExternalInterruptCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExternalInterruptCommand.m; path = src/ExternalInterruptCommand.m; sourceTree = "<group>"; };
+		69D17E1F136C101800F5D922 /* ResumeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResumeCommand.h; path = src/ResumeCommand.h; sourceTree = "<group>"; };
+		69D17E20136C101800F5D922 /* ResumeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResumeCommand.m; path = src/ResumeCommand.m; sourceTree = "<group>"; };
+		69D17E22136C103800F5D922 /* InternalInterruptCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalInterruptCommand.h; path = src/InternalInterruptCommand.h; sourceTree = "<group>"; };
+		69D17E23136C103800F5D922 /* InternalInterruptCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalInterruptCommand.m; path = src/InternalInterruptCommand.m; sourceTree = "<group>"; };
 		69ED636E133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = English.lproj/about.html; sourceTree = "<group>"; };
 		69ED6370133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/About.xib; sourceTree = "<group>"; };
 		69ED6372133B9D03003F59BA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -505,32 +525,32 @@
 			children = (
 				698F45EB133B5AF900311E34 /* CommonController.h */,
 				698F45EC133B5AF900311E34 /* CommonController.m */,
-				698F45EF133B5AF900311E34 /* GettingThingsDoneController.h */,
-				698F45F0133B5AF900311E34 /* GettingThingsDoneController.m */,
-				698F45E1133B5AF900311E34 /* AboutController.h */,
-				698F45E2133B5AF900311E34 /* AboutController.m */,
-				698F45E3133B5AF900311E34 /* ApplescriptController.h */,
-				698F45E4133B5AF900311E34 /* ApplescriptController.m */,
-				698F45E7133B5AF900311E34 /* CalendarController.h */,
-				698F45E8133B5AF900311E34 /* CalendarController.m */,
-				698F45F1133B5AF900311E34 /* GrowlController.h */,
-				698F45F2133B5AF900311E34 /* GrowlController.m */,
-				698F45F5133B5AF900311E34 /* LoginController.h */,
-				698F45F6133B5AF900311E34 /* LoginController.m */,
-				698F45F9133B5AF900311E34 /* PomodoroArrayController.h */,
-				698F45FA133B5AF900311E34 /* PomodoroArrayController.m */,
 				698F45FB133B5AF900311E34 /* PomodoroController.h */,
 				698F45FC133B5AF900311E34 /* PomodoroController.m */,
-				698F4604133B5AF900311E34 /* ShortcutController.h */,
-				698F4605133B5AF900311E34 /* ShortcutController.m */,
-				698F4606133B5AF900311E34 /* SpeechController.h */,
-				698F4607133B5AF900311E34 /* SpeechController.m */,
-				698F4608133B5AF900311E34 /* SplashController.h */,
-				698F4609133B5AF900311E34 /* SplashController.m */,
-				698F460A133B5AF900311E34 /* StatsController.h */,
-				698F460B133B5AF900311E34 /* StatsController.m */,
 				698F460C133B5AF900311E34 /* TwitterController.h */,
 				698F460D133B5AF900311E34 /* TwitterController.m */,
+				698F45F1133B5AF900311E34 /* GrowlController.h */,
+				698F45F2133B5AF900311E34 /* GrowlController.m */,
+				698F4606133B5AF900311E34 /* SpeechController.h */,
+				698F4607133B5AF900311E34 /* SpeechController.m */,
+				698F45EF133B5AF900311E34 /* GettingThingsDoneController.h */,
+				698F45F0133B5AF900311E34 /* GettingThingsDoneController.m */,
+				698F45E7133B5AF900311E34 /* CalendarController.h */,
+				698F45E8133B5AF900311E34 /* CalendarController.m */,
+				698F45E3133B5AF900311E34 /* ApplescriptController.h */,
+				698F45E4133B5AF900311E34 /* ApplescriptController.m */,
+				698F4604133B5AF900311E34 /* ShortcutController.h */,
+				698F4605133B5AF900311E34 /* ShortcutController.m */,
+				698F45F5133B5AF900311E34 /* LoginController.h */,
+				698F45F6133B5AF900311E34 /* LoginController.m */,
+				698F45E1133B5AF900311E34 /* AboutController.h */,
+				698F45E2133B5AF900311E34 /* AboutController.m */,
+				698F460A133B5AF900311E34 /* StatsController.h */,
+				698F460B133B5AF900311E34 /* StatsController.m */,
+				698F4608133B5AF900311E34 /* SplashController.h */,
+				698F4609133B5AF900311E34 /* SplashController.m */,
+				698F45F9133B5AF900311E34 /* PomodoroArrayController.h */,
+				698F45FA133B5AF900311E34 /* PomodoroArrayController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -728,6 +748,7 @@
 		69AE95ED133B4705004DC14D /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				69D17DD3136AAC5100F5D922 /* Scriptable */,
 				698F4692133B5D5E00311E34 /* MGTwitterEngine */,
 				698F4690133B5D4A00311E34 /* Controller */,
 				698F4691133B5D5300311E34 /* Helper */,
@@ -741,6 +762,7 @@
 		69AE95EE133B4705004DC14D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */,
 				69ED6371133B9D03003F59BA /* InfoPlist.strings */,
 				69AE95EF133B4705004DC14D /* Pomodoro-Info.plist */,
 				69AE95F3133B4705004DC14D /* Pomodoro-Prefix.pch */,
@@ -769,6 +791,25 @@
 				69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69D17DD3136AAC5100F5D922 /* Scriptable */ = {
+			isa = PBXGroup;
+			children = (
+				69D17DD4136AAC9F00F5D922 /* StartCommand.h */,
+				69D17DD5136AAC9F00F5D922 /* StartCommand.m */,
+				69D17E13136C0C9C00F5D922 /* ResetCommand.h */,
+				69D17E14136C0C9C00F5D922 /* ResetCommand.m */,
+				69D17E16136C0ECB00F5D922 /* ForceCommand.h */,
+				69D17E17136C0ECB00F5D922 /* ForceCommand.m */,
+				69D17E19136C0F6200F5D922 /* ExternalInterruptCommand.h */,
+				69D17E1A136C0F6200F5D922 /* ExternalInterruptCommand.m */,
+				69D17E22136C103800F5D922 /* InternalInterruptCommand.h */,
+				69D17E23136C103800F5D922 /* InternalInterruptCommand.m */,
+				69D17E1F136C101800F5D922 /* ResumeCommand.h */,
+				69D17E20136C101800F5D922 /* ResumeCommand.m */,
+			);
+			name = Scriptable;
 			sourceTree = "<group>";
 		};
 		69ED6395133B9D4A003F59BA /* XIBS */ = {
@@ -977,6 +1018,7 @@
 				69FCF747135729DD003862DC /* ringBreak.wav in Resources */,
 				699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */,
 				699CE31E1366D0E500BBC486 /* soundLow.png in Resources */,
+				69D17DD8136AAE5100F5D922 /* Pomodoro.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,6 +1113,12 @@
 				698F46EB133B601500311E34 /* PTKeyCodeTranslator.m in Sources */,
 				698F46EC133B601500311E34 /* PTKeyCombo.m in Sources */,
 				69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */,
+				69D17DD6136AAC9F00F5D922 /* StartCommand.m in Sources */,
+				69D17E15136C0C9C00F5D922 /* ResetCommand.m in Sources */,
+				69D17E18136C0ECB00F5D922 /* ForceCommand.m in Sources */,
+				69D17E1B136C0F6300F5D922 /* ExternalInterruptCommand.m in Sources */,
+				69D17E21136C101900F5D922 /* ResumeCommand.m in Sources */,
+				69D17E24136C103800F5D922 /* InternalInterruptCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,7 +1283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1256,7 +1304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ugo Landini";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
