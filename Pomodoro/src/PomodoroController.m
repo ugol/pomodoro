@@ -288,7 +288,7 @@
         		
         [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoWillStart object:nil];
 
-		if ([self checkDefault:@"askBeforeStart"]) {
+		if ([self checkDefault:@"askBeforeStart"] && (@"direct" != sender)) {
 			[self setFocusOnPomodoro];
 
 			[namePanel makeKeyAndOrderFront:self];

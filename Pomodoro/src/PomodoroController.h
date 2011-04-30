@@ -117,6 +117,7 @@
 -(void) keyInternalInterrupt;
 -(void) keyResume;
 
+-(void) showTimeOnStatusBar:(NSInteger) time;
 
 -(IBAction) about:(id)sender;
 -(IBAction) help:(id)sender;
