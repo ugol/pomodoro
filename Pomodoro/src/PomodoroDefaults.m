@@ -171,6 +171,8 @@
 	[defaultValues setObject:NSLocalizedString(@"Insert here the pomodoro name",@"Pomodoro name prompt") forKey:@"pomodoroName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
+ 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"preventSleepDuringPomodoro"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"preventSleepDuringPomodoroBreak"];   
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsAddingEnabled"];
@@ -321,7 +323,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"autoPomodoroRestart"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"startOnLoginEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showSplashScreenAtStartup"];
-	
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"preventSleepDuringPomodoro"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"preventSleepDuringPomodoroBreak"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsAddingEnabled"];
