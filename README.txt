@@ -37,13 +37,13 @@ Building notes
 --------------
 
 
-1) Remove Code signing identity if present.
+1) Remove Code signing identity if present (should not, but sometimes I push it back)
 
 XCode 4:
 2) Just click build
 
 XCode 3: (not actively maintained)
-2) You will need to install IB plugins for ShortcutRecorder (included in the src) and for BGHudAppkit (src included in externalFw/, must be compiled separately). Beware that the Shortcutrecorder ibplugin doesn't work if clicked (it shows a missing resource panel). You just need to build with the right target and then include the framework: the ibplugin will automagically appear in IB.
+2) Should work, but I don't maintain it anymore.
 
 -------
 Twitter
