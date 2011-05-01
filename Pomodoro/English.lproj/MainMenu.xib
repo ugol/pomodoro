@@ -2,12 +2,12 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10J869</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
+		<string key="IBDocument.SystemVersion">10J567</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<dictionary class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<string key="com.apple.InterfaceBuilder.CocoaPlugin">1306</string>
+			<string key="com.apple.InterfaceBuilder.CocoaPlugin">1305</string>
 			<string key="com.apple.OSAKit.IBPlugin">30</string>
 		</dictionary>
 		<array key="IBDocument.IntegratedClassDependencies">
@@ -182,7 +182,7 @@
 					<integer value="1040" key="formatterBehavior"/>
 					<integer value="1" key="timeStyle"/>
 				</dictionary>
-				<string key="NS.format">h:mm a</string>
+				<string key="NS.format">HH:mm</string>
 				<bool key="NS.natural">NO</bool>
 			</object>
 			<object class="NSMenu" id="160204859">
@@ -263,7 +263,7 @@
 					</object>
 					<object class="NSMenuItem" id="122674329">
 						<reference key="NSMenu" ref="160204859"/>
-						<string key="NSTitle">Preferences...</string>
+						<string key="NSTitle">Preferences…</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="973346169"/>
@@ -271,7 +271,7 @@
 					</object>
 					<object class="NSMenuItem" id="753518065">
 						<reference key="NSMenu" ref="160204859"/>
-						<string key="NSTitle">Pomodoro Stats</string>
+						<string key="NSTitle">Pomodoro Stats…</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="973346169"/>
@@ -2974,7 +2974,6 @@
 																</set>
 																<string key="NSFrame">{{583, 59}, {26, 22}}</string>
 																<reference key="NSSuperview" ref="641868737"/>
-																<reference key="NSNextKeyView"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSImageCell" key="NSCell" id="625268019">
 																	<int key="NSCellFlags">130560</int>
@@ -6689,7 +6688,7 @@
 												<object class="NSButtonCell" key="NSCell" id="502286716">
 													<int key="NSCellFlags">-2080244224</int>
 													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">Automatically start</string>
+													<string key="NSContents">Automatically</string>
 													<reference key="NSSupport" ref="190615124"/>
 													<reference key="NSControlView" ref="1050574717"/>
 													<int key="NSButtonFlags">1211912703</int>
@@ -6759,7 +6758,7 @@
 												<object class="NSButtonCell" key="NSCell" id="650779750">
 													<int key="NSCellFlags">-2080244224</int>
 													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">during a Pomodoro</string>
+													<string key="NSContents">During a Pomodoro</string>
 													<reference key="NSSupport" ref="190615124"/>
 													<reference key="NSControlView" ref="281982587"/>
 													<int key="NSButtonFlags">1211912703</int>
@@ -6775,7 +6774,7 @@
 											<object class="NSButton" id="1040087932">
 												<reference key="NSNextResponder" ref="637998756"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{302, 375}, {272, 18}}</string>
+												<string key="NSFrame">{{302, 390}, {272, 18}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1067298259"/>
@@ -6783,7 +6782,7 @@
 												<object class="NSButtonCell" key="NSCell" id="467786117">
 													<int key="NSCellFlags">-2080244224</int>
 													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">during a Pomodoro break</string>
+													<string key="NSContents">During a Pomodoro break</string>
 													<reference key="NSSupport" ref="190615124"/>
 													<reference key="NSControlView" ref="1040087932"/>
 													<int key="NSButtonFlags">1211912703</int>
@@ -6817,7 +6816,7 @@
 											<object class="NSTextField" id="556332081">
 												<reference key="NSNextResponder" ref="637998756"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{183, 496}, {116, 17}}</string>
+												<string key="NSFrame">{{136, 496}, {163, 17}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1050574717"/>
@@ -6825,7 +6824,7 @@
 												<object class="NSTextFieldCell" key="NSCell" id="559330050">
 													<int key="NSCellFlags">68288064</int>
 													<int key="NSCellFlags2">71304192</int>
-													<string key="NSContents">Pomodoro login:</string>
+													<string key="NSContents">Open Pomodoro at login:</string>
 													<reference key="NSSupport" ref="190615124"/>
 													<reference key="NSControlView" ref="556332081"/>
 													<reference key="NSBackgroundColor" ref="230566979"/>
