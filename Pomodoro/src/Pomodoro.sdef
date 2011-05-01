@@ -39,8 +39,10 @@
     
     
 	<suite name="Pomodoro" code="POMO" description="Pomodoro Actions.">
-                
+        
+        <!--
         <class name="application" code="capp" description="Pomodoro class." inherits="application">
+            
             
 			<cocoa class="Pomodoro"/>
 			
@@ -53,7 +55,7 @@
 			</property>
             
         </class> 
-        
+        -->
 		<command name="start" code="POMOStrt" description="start Pomodoro">
 			<cocoa class="StartCommand"/>
             <direct-parameter code="PMnm" type="text" 
