@@ -56,6 +56,7 @@
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
     [copyright setStringValue:[self infoValueForKey:@"NSHumanReadableCopyright"]];
+    
 	[self switchBetweenReleaseAndBuild:nil];
 }
 
