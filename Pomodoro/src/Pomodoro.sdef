@@ -38,8 +38,22 @@
 	<xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
     
     
-	<suite name="Pomodoro" code="POMO" description="Pomodoro Verbs.">
+	<suite name="Pomodoro" code="POMO" description="Pomodoro Actions.">
                 
+        <class name="application" code="capp" description="Pomodoro class." inherits="application">
+            
+			<cocoa class="Pomodoro"/>
+			
+			<property name="time" code="PMtm" description="time left in current Pomodoro" type="integer" access="r">
+				<cocoa key="time"/>
+			</property>
+            
+            <property name="resumed" code="PMrs" description="number of resumes in current Pomodoro" type="integer" access="r">
+				<cocoa key="resumed"/>
+			</property>
+            
+        </class> 
+        
 		<command name="start" code="POMOStrt" description="start Pomodoro">
 			<cocoa class="StartCommand"/>
             <direct-parameter code="PMnm" type="text" 

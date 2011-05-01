@@ -845,6 +845,7 @@
 				69AE95E1133B4705004DC14D /* Resources */,
 				698F4741133B75AB00311E34 /* CopyFiles */,
 				698F4740133B74E700311E34 /* ShellScript */,
+				6951BA19136D77DD00252C5A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1034,6 +1035,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6951BA19136D77DD00252C5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n# Auto Increment Version Script\nbuildPlist=\"Pomodoro/Pomodoro-Info.plist\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBuildNumber\" $buildPlist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBuildNumber $buildNumber\" $buildPlist";
+		};
 		698F4740133B74E700311E34 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

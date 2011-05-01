@@ -28,7 +28,7 @@
 
 @implementation AboutController
 
-@synthesize aboutText;
+@synthesize aboutText, release, copyright;
 
 - (id) init {
 		
@@ -55,14 +55,28 @@
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
-    [release setStringValue:[self infoValueForKey:@"CFBundleVersion"]];
     [copyright setStringValue:[self infoValueForKey:@"NSHumanReadableCopyright"]];
-	
+	[self switchBetweenReleaseAndBuild:nil];
+}
+
+-(IBAction) switchBetweenReleaseAndBuild: (id) sender {
+    
+    showRelease = !showRelease;
+    NSString* text;
+    if (showRelease) {
+        text = [NSString stringWithFormat:NSLocalizedString(@"Release", @"Release Number"), [self infoValueForKey:@"CFBundleVersion"]];
+    } else {
+        text = [NSString stringWithFormat:NSLocalizedString(@"Build", @"Build Number"), [[self infoValueForKey:@"CFBuildNumber"] intValue]];
+    }
+    [release setStringValue:text];
+
 }
 
 - (void)dealloc {
     
     [aboutText release];
+    [release release];
+    [copyright release];
     [super dealloc];
     
 }
