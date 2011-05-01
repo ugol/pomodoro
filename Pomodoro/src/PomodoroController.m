@@ -34,6 +34,7 @@
 #import "ShortcutController.h"
 #import "PomodoroNotifier.h"
 #import "PomoNotifications.h"
+#include <CoreServices/CoreServices.h>
 
 @implementation PomodoroController
 
@@ -471,6 +472,10 @@
 		[tick play];
 	}
     
+    if ([self checkDefault:@"preventSleepDuringPomodoroBreak"]) {
+        UpdateSystemActivity(OverallAct);
+    }
+    
 }
 
 - (void) oncePerSecond:(NSNotification*) notification {
@@ -480,6 +485,11 @@
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
 		[tick play];
 	}
+    
+    if ([self checkDefault:@"preventSleepDuringPomodoro"]) {
+        UpdateSystemActivity(OverallAct);
+    }
+
 	
 }
 

@@ -36,6 +36,15 @@
 	return self;
 }
 
+-(id)infoValueForKey:(NSString*)key
+{ 
+    if ([[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:key])
+        return [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:key];
+    
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:key];
+}
+
+
 - (void)awakeFromNib {
     
 	NSBundle *bundle = [NSBundle mainBundle];
@@ -46,6 +55,8 @@
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
+    [release setStringValue:[self infoValueForKey:@"CFBundleVersion"]];
+    [copyright setStringValue:[self infoValueForKey:@"NSHumanReadableCopyright"]];
 	
 }
 
