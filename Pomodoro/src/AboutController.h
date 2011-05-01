@@ -28,6 +28,8 @@
 @interface AboutController : NSWindowController {
 	
 	IBOutlet NSTextView* aboutText;
+    IBOutlet NSTextField* release;
+    IBOutlet NSTextField* copyright;
 
 }
 
