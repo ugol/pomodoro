@@ -225,6 +225,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		691E986513769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/PomodoroTests/it-IT.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		691E986D13769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		691E986E13769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
+		691E986F13769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/Localizable.strings"; sourceTree = "<absolute>"; };
+		691E987013769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/About.xib"; sourceTree = "<absolute>"; };
+		691E987113769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/Stats.xib"; sourceTree = "<absolute>"; };
+		691E987213769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/about.html"; sourceTree = "<absolute>"; };
+		691E987313769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/Splash.xib"; sourceTree = "<absolute>"; };
+		691E987413769A3F00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/Pomodoro/it-IT.lproj/splash.html"; sourceTree = "<absolute>"; };
 		698F45B8133B5AF900311E34 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		698F45B9133B5AF900311E34 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		698F45BA133B5AF900311E34 /* compile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compile.png; sourceTree = "<group>"; };
@@ -1180,6 +1189,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				69AE960F133B4706004DC14D /* en */,
+				691E986513769A3E00D2A31E /* it-IT */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1189,6 +1199,7 @@
 			children = (
 				69ED636E133B9D03003F59BA /* English */,
 				69ED6385133B9D12003F59BA /* German */,
+				691E987213769A3F00D2A31E /* it-IT */,
 			);
 			name = about.html;
 			sourceTree = "<group>";
@@ -1198,6 +1209,7 @@
 			children = (
 				69ED6370133B9D03003F59BA /* English */,
 				69ED6386133B9D12003F59BA /* German */,
+				691E987013769A3F00D2A31E /* it-IT */,
 			);
 			name = About.xib;
 			sourceTree = "<group>";
@@ -1207,6 +1219,7 @@
 			children = (
 				69ED6372133B9D03003F59BA /* English */,
 				69ED6393133B9D3F003F59BA /* German */,
+				691E986D13769A3E00D2A31E /* it-IT */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1216,6 +1229,7 @@
 			children = (
 				69ED6374133B9D03003F59BA /* English */,
 				69ED6387133B9D12003F59BA /* German */,
+				691E986F13769A3F00D2A31E /* it-IT */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1225,6 +1239,7 @@
 			children = (
 				69ED6376133B9D03003F59BA /* English */,
 				69ED6388133B9D12003F59BA /* German */,
+				691E986E13769A3E00D2A31E /* it-IT */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1234,6 +1249,7 @@
 			children = (
 				69ED6378133B9D03003F59BA /* English */,
 				69ED6389133B9D12003F59BA /* German */,
+				691E987413769A3F00D2A31E /* it-IT */,
 			);
 			name = splash.html;
 			sourceTree = "<group>";
@@ -1243,6 +1259,7 @@
 			children = (
 				69ED637A133B9D03003F59BA /* English */,
 				69ED638A133B9D12003F59BA /* German */,
+				691E987313769A3F00D2A31E /* it-IT */,
 			);
 			name = Splash.xib;
 			sourceTree = "<group>";
@@ -1252,6 +1269,7 @@
 			children = (
 				69ED637C133B9D03003F59BA /* English */,
 				69ED638B133B9D12003F59BA /* German */,
+				691E987113769A3F00D2A31E /* it-IT */,
 			);
 			name = Stats.xib;
 			sourceTree = "<group>";
