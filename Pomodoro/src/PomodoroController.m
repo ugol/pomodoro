@@ -462,6 +462,8 @@
 	}
 	[self updateMenu];
 
+    // Save stats here in case application is forcefully terminated
+    [stats saveState];
 }
 
 - (void) oncePerSecondBreak:(NSNotification*) notification {
