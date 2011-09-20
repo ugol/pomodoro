@@ -200,8 +200,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pomodorosForLong"]; 
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakReset"]; 
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakResetTime"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakReset"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakResetTime"]; 
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
 	
