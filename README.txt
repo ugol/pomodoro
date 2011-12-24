@@ -39,16 +39,19 @@ Building notes
 
 1) Remove Code signing identity if present (should not, but sometimes I push it back)
 
-XCode 4:
-2) Just click build
+Xcode 4:
+1) Build a copy for archiving: Product menu -> Build for -> Build for Archiving
+2) Open the organizer: Window menu -> Organizer
+3) Create a copy of the application: Hit the Share button in the Organizer
+4) Choose "Application" from the drop-down menu, and then save it to your Applications folder. 
 
-XCode 3: (not actively maintained)
-2) Should work, but I don't maintain it anymore.
+Xcode 3: (not actively maintained)
+1) Should work, but I don't maintain it anymore.
 
 -------
 Twitter
 -------
-If you want to use twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then add them in src/TwitterSecrets.h 
+If you want to use Twitter integration, you must have a consumerKey and a secretKey for oAuth/xAuth authentication. You must obtain the secrets from twitter site and then add them in src/TwitterSecrets.h 
 
 #define _consumerkey @"your key" 
 #define _secretkey @"your other key"
