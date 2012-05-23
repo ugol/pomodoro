@@ -40,10 +40,9 @@ Building notes
 1) Remove Code signing identity if present (should not, but sometimes I push it back)
 
 Xcode 4:
-1) Build a copy for archiving: Product menu -> Build for -> Build for Archiving
-2) Open the organizer: Window menu -> Organizer
-3) Create a copy of the application: Hit the Share button in the Organizer
-4) Choose "Application" from the drop-down menu, and then save it to your Applications folder. 
+1) Build a copy for archiving: Product menu -> Archive.  When the build has finished, the organizer will open.
+2) Create a copy of the application: Hit the Share button in the Organizer
+3) Choose "Application" from the drop-down menu, and then save it to your Applications folder. 
 
 Xcode 3: (not actively maintained)
 1) Should work, but I don't maintain it anymore.
