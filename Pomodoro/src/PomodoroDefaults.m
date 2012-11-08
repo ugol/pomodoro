@@ -161,6 +161,7 @@
 	[defaultValues setObject:[NSNumber numberWithInt:80] forKey:@"voiceVolume"];
 	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"tickVolume"];
 	
+    [defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showNameOnStatusEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showTimeOnStatusEnabled"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"calendarEnabled"];
@@ -316,6 +317,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ringBreakVolume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"voiceVolume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickVolume"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showNameOnStatusEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showTimeOnStatusEnabled"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"calendarEnabled"];

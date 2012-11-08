@@ -45,12 +45,27 @@
 
 #pragma mark ---- Helper methods ----
 
-- (void) showTimeOnStatusBar:(NSInteger) time {	
-	if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
-		[statusItem setTitle:[NSString stringWithFormat:@" %.2d:%.2d",time/60, time%60]];
-	} else {
-		[statusItem setTitle:@""];
-	}
+- (void) showTimeOnStatusBar:(NSInteger) time {
+    enum PomoState state = pomodoro.state;
+    if(state == PomoTicking){
+        if ([self checkDefault:@"showNameOnStatusEnabled"] && [self checkDefault:@"showTimeOnStatusEnabled"]) {
+            [statusItem setTitle:[NSString stringWithFormat:@" %@ - %.2d:%.2d",_pomodoroName, time/60, time%60]];
+        }
+        else if ([self checkDefault:@"showNameOnStatusEnabled"]) {
+            [statusItem setTitle:[NSString stringWithFormat:@" %@",_pomodoroName]];
+        }
+        else if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
+            [statusItem setTitle:[NSString stringWithFormat:@"%.2d:%.2d", time/60, time%60]];
+        } else {
+            [statusItem setTitle:@""];
+        }
+    } else {
+        if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
+            [statusItem setTitle:[NSString stringWithFormat:@"%.2d:%.2d", time/60, time%60]];
+        } else {
+            [statusItem setTitle:@""];
+        }
+    }
 }
 
 - (void) longBreakCheckerFinished {
@@ -584,6 +599,7 @@
 	[self observeUserDefault:@"tickVolume"];
 	[self observeUserDefault:@"initialTime"];
 	
+    [self observeUserDefault:@"showNameOnStatusEnabled"];
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
