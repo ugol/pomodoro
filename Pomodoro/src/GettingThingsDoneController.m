@@ -83,7 +83,7 @@
     }
     if (isNewName) {
         
-        if (!([self checkDefault:@"thingsEnabled"]) && (![self checkDefault:@"omniFocusEnabled"])) {
+        if (!([self checkDefault:@"thingsEnabled"]) && (![self checkDefault:@"omniFocusEnabled"]) && (![self checkDefault:@"remindersEnabled"])) {
             if (howMany>15) {
                 [namesCombo removeItemAtIndex:0];
             }
@@ -96,13 +96,16 @@
         if ([self checkDefault:@"omniFocusEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
             [scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
         }
+        if ([self checkDefault:@"remindersEnabled"] && [self checkDefault:@"remindersAddingEnabled"]) {
+            [scripter executeScript:@"addTodoToReminders" withParameter:name];
+        }
     }
     
 }
 
 -(void) pomodoroWillStart:(NSNotification*) notification {
 
-    if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"])) {
+    if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"]) || ([self checkDefault:@"remindersEnabled"])) {
         [namesCombo removeAllItems];
     }
     
@@ -111,6 +114,9 @@
     }			
     if ([self checkDefault:@"omniFocusEnabled"]) {
         [self addListToCombo:@"getToDoListFromOmniFocus"];
+    }
+    if ([self checkDefault:@"remindersEnabled"]) {
+        [self addListToCombo:@"getToDoListFromReminders"];
     }
 }
 
