@@ -43,6 +43,16 @@
 
 #pragma mark ---- KVO Utility ----
 
+- (void)setVoiceByName:(NSString *)theName {
+    for (NSString *voiceId in voices) {
+        NSString *voiceName = [[NSSpeechSynthesizer attributesForVoice:voiceId] objectForKey:NSVoiceName];
+        if ([voiceName compare:theName] == NSOrderedSame) {
+            [speech setVoice:voiceId];
+            break;
+        }
+    }  
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
                         change:(NSDictionary *)change
@@ -60,8 +70,7 @@
             
         }
     } else if ([keyPath hasSuffix:@"Voice"]) {
-        NSString* voice = [[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice] stringByReplacingOccurrencesOfString:@" "withString:@""];
-        [speech setVoice: voice];
+        [self setVoiceByName:_speechVoice];
         [speech startSpeakingString:@"Yes"];
     }
     	
@@ -168,10 +177,8 @@
     voices = [[NSSpeechSynthesizer availableVoices] retain];
     
     [speech setVolume:_voiceVolume/100.0];
-
-    NSString* voice = [[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@", _speechVoice] stringByReplacingOccurrencesOfString:@" "withString:@""];
-    [speech setVoice: voice];
-    
+    [self setVoiceByName:_speechVoice];
+   
     [self registerForAllPomodoroEvents];
     [self observeUserDefault:@"voiceVolume"];
     [self observeUserDefault:@"defaultVoice"];
