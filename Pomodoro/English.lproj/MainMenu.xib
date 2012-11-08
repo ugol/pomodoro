@@ -3,11 +3,11 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12B19</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
 		<dictionary class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<string key="com.apple.InterfaceBuilder.CocoaPlugin">2843</string>
+			<string key="com.apple.InterfaceBuilder.CocoaPlugin">2844</string>
 			<string key="com.apple.OSAKit.IBPlugin">1810</string>
 		</dictionary>
 		<array key="IBDocument.IntegratedClassDependencies">
@@ -7178,7 +7178,6 @@ wGw</bytes>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{188, 208}, {313, 32}}</string>
 												<reference key="NSSuperview" ref="637998756"/>
-												<reference key="NSNextKeyView"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="925939887">
 													<int key="NSCellFlags">67108864</int>
@@ -10818,22 +10817,6 @@ wGw</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: values.omniFocusEnabled</string>
-						<reference key="source" ref="384452988"/>
-						<reference key="destination" ref="39262419"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="384452988"/>
-							<reference key="NSDestination" ref="39262419"/>
-							<string key="NSLabel">enabled: values.omniFocusEnabled</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">values.omniFocusEnabled</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1432</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.remindersAddingEnabled</string>
 						<reference key="source" ref="384452988"/>
 						<reference key="destination" ref="39262419"/>
@@ -10847,6 +10830,22 @@ wGw</bytes>
 						</object>
 					</object>
 					<int key="connectionID">1436</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: values.remindersEnabled</string>
+						<reference key="source" ref="384452988"/>
+						<reference key="destination" ref="39262419"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="384452988"/>
+							<reference key="NSDestination" ref="39262419"/>
+							<string key="NSLabel">enabled: values.remindersEnabled</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">values.remindersEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1437</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -14736,7 +14735,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1436</int>
+			<int key="maxID">1437</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
