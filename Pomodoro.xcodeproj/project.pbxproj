@@ -126,6 +126,7 @@
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
+		DB8AF4F4165EEB0F0039DA49 /* OpenUrlCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF4F3165EEB0F0039DA49 /* OpenUrlCommand.m */; };
 		DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
 		DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
 		DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
@@ -430,6 +431,8 @@
 		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
 		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
 		69FCF746135729DD003862DC /* ringBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringBreak.wav; sourceTree = "<group>"; };
+		DB8AF4F2165EEB0F0039DA49 /* OpenUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUrlCommand.h; path = src/OpenUrlCommand.h; sourceTree = "<group>"; };
+		DB8AF4F3165EEB0F0039DA49 /* OpenUrlCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUrlCommand.m; path = src/OpenUrlCommand.m; sourceTree = "<group>"; };
 		DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromReminders.applescript; sourceTree = "<group>"; };
 		DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToReminders.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -824,6 +827,8 @@
 				69D17E23136C103800F5D922 /* InternalInterruptCommand.m */,
 				69D17E1F136C101800F5D922 /* ResumeCommand.h */,
 				69D17E20136C101800F5D922 /* ResumeCommand.m */,
+				DB8AF4F2165EEB0F0039DA49 /* OpenUrlCommand.h */,
+				DB8AF4F3165EEB0F0039DA49 /* OpenUrlCommand.m */,
 			);
 			name = Scriptable;
 			sourceTree = "<group>";
@@ -1154,6 +1159,7 @@
 				69D17E24136C103800F5D922 /* InternalInterruptCommand.m in Sources */,
 				DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */,
 				DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */,
+				DB8AF4F4165EEB0F0039DA49 /* OpenUrlCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

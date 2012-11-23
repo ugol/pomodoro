@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildNumber</key>
-	<integer>42</integer>
+	<integer>60</integer>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -22,6 +22,17 @@
 	<string>1.3.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Pomodoro App</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>pomodoro</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.3.5</string>
 	<key>LSApplicationCategoryType</key>
