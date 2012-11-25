@@ -1,4 +1,5 @@
 #import "BrowsingNannyController.h"
+#import "PomoNotifications.h"
 #import "PomodoroController.h"
 #import "Scripter.h"
 
@@ -21,9 +22,8 @@ static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
 @synthesize arrayController, scripter, pomodoroController, blacklistedPredicate;
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
     self.blacklistedPredicate = [NSPredicate predicateWithValue:NO];
-    [self registerForAllPomodoroEvents];
+    [self registerForPomodoro:_PMPomoOncePerSecond method:@selector(oncePerSecond:)];
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:DefaultsKeyUrls
                                                options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew
@@ -81,7 +81,7 @@ static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
         NSArray *patternsArray = [change objectForKey:NSKeyValueChangeNewKey];
         //NSLog(@"change to urls: %@", patternsArray);
         NSPredicate *predicate = nil;
-        if ([patternsArray count] > 0) {
+        if (![patternsArray isEqualTo:[NSNull null]] && [patternsArray count] > 0) {
             NSMutableArray *conditions = [NSMutableArray arrayWithCapacity:[patternsArray count]];
             for (NSDictionary *patternObj in patternsArray) {
                 NSString *condition = [NSString stringWithFormat:@"(SELF LIKE \"%@\")",
