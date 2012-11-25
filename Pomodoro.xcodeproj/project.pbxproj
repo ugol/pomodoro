@@ -126,12 +126,10 @@
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
-		DB3D7FCB166177A8001BB0BA /* getActiveUrlsFromChrome.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB3D7FCA166177A8001BB0BA /* getActiveUrlsFromChrome.applescript */; };
-		DB3D7FCC166199C6001BB0BA /* getActiveUrlsFromChrome.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB3D7FCA166177A8001BB0BA /* getActiveUrlsFromChrome.applescript */; };
-		DBD776D916604A63003F58B4 /* getActiveUrlsFromSafari.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromSafari.applescript */; };
+		DBD776D916604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */; };
 		DBD776DB16604D16003F58B4 /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD776DA16604D15003F58B4 /* safari.png */; };
 		DBD776E216605537003F58B4 /* BrowsingNannyController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD776E116605536003F58B4 /* BrowsingNannyController.m */; };
-		DBD776E316605886003F58B4 /* getActiveUrlsFromSafari.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromSafari.applescript */; };
+		DBD776E316605886003F58B4 /* getActiveUrlsFromBrowsers.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */; };
 		DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
 		DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
 		DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
@@ -436,8 +434,7 @@
 		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
 		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
 		69FCF746135729DD003862DC /* ringBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringBreak.wav; sourceTree = "<group>"; };
-		DB3D7FCA166177A8001BB0BA /* getActiveUrlsFromChrome.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getActiveUrlsFromChrome.applescript; sourceTree = "<group>"; };
-		DBD776D816604A63003F58B4 /* getActiveUrlsFromSafari.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getActiveUrlsFromSafari.applescript; sourceTree = "<group>"; };
+		DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getActiveUrlsFromBrowsers.applescript; sourceTree = "<group>"; };
 		DBD776DA16604D15003F58B4 /* safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safari.png; sourceTree = "<group>"; };
 		DBD776E016605536003F58B4 /* BrowsingNannyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowsingNannyController.h; path = src/BrowsingNannyController.h; sourceTree = "<group>"; };
 		DBD776E116605536003F58B4 /* BrowsingNannyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowsingNannyController.m; path = src/BrowsingNannyController.m; sourceTree = "<group>"; };
@@ -511,8 +508,7 @@
 				698F45D2133B5AF900311E34 /* addTodoToThings.applescript */,
 				698F45D3133B5AF900311E34 /* getToDoListFromOmniFocus.applescript */,
 				698F45D4133B5AF900311E34 /* getToDoListFromThings.applescript */,
-				DBD776D816604A63003F58B4 /* getActiveUrlsFromSafari.applescript */,
-				DB3D7FCA166177A8001BB0BA /* getActiveUrlsFromChrome.applescript */,
+				DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */,
 				698F45D5133B5AF900311E34 /* insertIntoLoginItems.applescript */,
 				698F45D6133B5AF900311E34 /* removeFromLoginItems.applescript */,
 				698F45D7133B5AF900311E34 /* setStatusToAvailableInAdium.applescript */,
@@ -1004,8 +1000,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3D7FCC166199C6001BB0BA /* getActiveUrlsFromChrome.applescript in Resources */,
-				DBD776E316605886003F58B4 /* getActiveUrlsFromSafari.applescript in Resources */,
+				DBD776E316605886003F58B4 /* getActiveUrlsFromBrowsers.applescript in Resources */,
 				DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */,
 				DCAF37CE164B074D003764C9 /* addTodoToReminders.applescript in Resources */,
 				69ED63FB133B9F5F003F59BA /* addTodoToOmniFocus.applescript in Resources */,
@@ -1173,9 +1168,8 @@
 				69D17E24136C103800F5D922 /* InternalInterruptCommand.m in Sources */,
 				DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */,
 				DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */,
-				DBD776D916604A63003F58B4 /* getActiveUrlsFromSafari.applescript in Sources */,
+				DBD776D916604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript in Sources */,
 				DBD776E216605537003F58B4 /* BrowsingNannyController.m in Sources */,
-				DB3D7FCB166177A8001BB0BA /* getActiveUrlsFromChrome.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

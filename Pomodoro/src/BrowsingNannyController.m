@@ -5,10 +5,20 @@
 
 static NSString * const DefaultsKeyEnabled = @"browsingNannyEnabled";
 static NSString * const DefaultsKeyUrls = @"browsingNannyUrls";
-static NSString * const DefaultsKeySafari = @"browsingNannySafari";
-static NSString * const ScriptGetUrlsSafari = @"getActiveUrlsFromSafari";
-static NSString * const DefaultsKeyChrome = @"browsingNannyChrome";
-static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
+static NSString * const GetUrlsScriptName = @"getActiveUrlsFromBrowsers";
+
+
+/**
+ More explanation on this pattern:
+ Since the whole URL is matched, "http?" matches "http" or "https" (but also nonsensical things like "http4")
+ "*.blocked.com" will match "www.blocked.com" and "blocked.com" but also "mail.blocked.com"
+ " / * " at the end is necessary to match all pages on this domain. [Adding spaces since we're inside a block comment]
+ Using "/ foo / *" instead of " / * " will only match paths that start with "/foo" - both "/foom" and "foo/bar"
+ Using "/ foo / *" instead of " / * " will only match paths that start with "/foo/", but won't match "/foo" with no trailing slash.
+ You could easily use regular expressions instead but I opted for simplicity (and speed).
+ See <https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Predicates/Articles/pUsing.html#//apple_ref/doc/uid/TP40001794-SW9>
+*/
+static NSString * const DefaultUrlPattern = @"http?://*.blocked.com/*";
 
 @interface BrowsingNannyController()
 - (IBAction)removeUrlClicked:(id)sender;
@@ -32,46 +42,32 @@ static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
 
 - (void)dealloc {
     self.blacklistedPredicate = nil;
+    self.pomodoroController = nil;
     self.arrayController = nil;
     self.scripter = nil;
     [super dealloc];
 }
 
-#pragma mark - Core logic
-
 - (BOOL)enabled {
     return [self checkDefault:DefaultsKeyEnabled];
-}
-
-- (BOOL)checkBrowserUrlsWithScript:(NSString *)scriptName {
-    NSAppleEventDescriptor *result = [scripter executeScript:scriptName];
-    for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
-        NSString *urlString = [[result descriptorAtIndex:i] stringValue];
-        NSLog(@"You're browsing %@", urlString);
-        if ([blacklistedPredicate evaluateWithObject:urlString]) {
-            NSLog(@"The url %@ is blacklisted. Marking it an interruption!", urlString);
-            [pomodoroController internalInterrupt:self];
-            //One interruption is enough, don't need to keep going
-            return YES;
-        }
-    }
-    return NO;
 }
 
 #pragma mark - Pomodoro notifications
 
 - (void)oncePerSecond:(NSNotification*)notification {
     if (!self.enabled) return;
-    NSLog(@"Tick.");
-    BOOL done = NO;
-    if (!done && [self checkDefault:DefaultsKeySafari]) {
-        NSLog(@"Checking your browsing in Safari");
-        done = [self checkBrowserUrlsWithScript:ScriptGetUrlsSafari];
-    }
-    if (!done && [self checkDefault:DefaultsKeyChrome]) {
-        NSLog(@"Checking your browsing in Chrome");
-        done = [self checkBrowserUrlsWithScript:ScriptGetUrlsChrome];
-    }
+    //NSLog(@"Tick.");
+    NSAppleEventDescriptor *result = [scripter executeScript:GetUrlsScriptName];
+    for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
+        NSString *urlString = [[result descriptorAtIndex:i] stringValue];
+        NSLog(@"You're browsing %@", urlString);
+        if ([blacklistedPredicate evaluateWithObject:urlString]) {
+            //NSLog(@"The url %@ is blacklisted. Marking it an interruption!", urlString);
+            [pomodoroController internalInterrupt:self];
+            //One interruption is enough, don't need to keep going
+            return;
+        }
+    }    
 }
 
 #pragma mark - Compile multiple rules into master predicate
@@ -96,7 +92,7 @@ static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
                 NSLog(@"Invalid predicate format! %@", completePredicateString);
             }
         }
-        NSLog(@"Predicate: %@", predicate);
+        //NSLog(@"Predicate: %@", predicate);
         self.blacklistedPredicate = (predicate)? predicate : [NSPredicate predicateWithValue:NO];
     }
 }
@@ -115,7 +111,7 @@ static NSString * const ScriptGetUrlsChrome = @"getActiveUrlsFromChrome";
 }
 
 - (NSDictionary *)urlPatternObjectWithPattern:(NSString *)pattern {
-    if (!pattern) pattern = @"http?://*.blockeddomain.com/*";
+    if (!pattern) pattern = DefaultUrlPattern;
     return [NSDictionary dictionaryWithObject:pattern forKey:@"url"];
 }
 
