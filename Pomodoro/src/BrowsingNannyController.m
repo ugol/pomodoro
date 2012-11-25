@@ -60,7 +60,7 @@ static NSString * const DefaultUrlPattern = @"http?://*.blocked.com/*";
     NSAppleEventDescriptor *result = [scripter executeScript:GetUrlsScriptName];
     for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
         NSString *urlString = [[result descriptorAtIndex:i] stringValue];
-        NSLog(@"You're browsing %@", urlString);
+        //NSLog(@"You're browsing %@", urlString);
         if ([blacklistedPredicate evaluateWithObject:urlString]) {
             //NSLog(@"The url %@ is blacklisted. Marking it an interruption!", urlString);
             [pomodoroController internalInterrupt:self];
