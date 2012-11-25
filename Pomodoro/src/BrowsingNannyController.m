@@ -9,16 +9,21 @@ static NSString * const GetUrlsScriptName = @"getActiveUrlsFromBrowsers";
 
 
 /**
- More explanation on this pattern:
- Since the whole URL is matched, "http?" matches "http" or "https" (but also nonsensical things like "http4")
- "*.blocked.com" will match "www.blocked.com" and "blocked.com" but also "mail.blocked.com"
- " / * " at the end is necessary to match all pages on this domain. [Adding spaces since we're inside a block comment]
+ More explanation on this pattern:  [Extra spaces added since slash star is a comment delimiter.]
+
+ "http*://" matches "http://" as well as "https://" 
+ "?" matches a single character, NOT 0 or 1 characters - so it cannot be used here.
+ " / * " at the end is necessary to match all pages on this domain.
  Using "/ foo / *" instead of " / * " will only match paths that start with "/foo" - both "/foom" and "foo/bar"
  Using "/ foo / *" instead of " / * " will only match paths that start with "/foo/", but won't match "/foo" with no trailing slash.
- You could easily use regular expressions instead but I opted for simplicity (and speed).
+
+ "*.blocked.com" will match "http://www.blocked.com" and "www.blocked.com" and "blocked.com" but also "mail.blocked.com" and "ftp://blocked.com"
+ "*.blocked.com / *" is probably a more efficient pattern than "http * :// * .facebook.com / *", even if it is overly general. Up to you.
+
+ NOTE: You could easily upgrade to regular expressions but I opted for simplicity here.
  See <https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Predicates/Articles/pUsing.html#//apple_ref/doc/uid/TP40001794-SW9>
 */
-static NSString * const DefaultUrlPattern = @"http?://*.blocked.com/*";
+static NSString * const DefaultUrlPattern = @"http*://*.blocked.com/*";
 
 @interface BrowsingNannyController()
 - (IBAction)removeUrlClicked:(id)sender;
