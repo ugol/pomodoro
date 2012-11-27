@@ -7,6 +7,7 @@
     IBOutlet Scripter *scripter;
     IBOutlet PomodoroController *pomodoroController;
     NSPredicate *blacklistedPredicate;
+    NSUInteger tickCount;
 }
 
 @property (readonly) BOOL enabled;

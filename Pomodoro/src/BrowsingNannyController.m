@@ -3,6 +3,7 @@
 #import "PomodoroController.h"
 #import "Scripter.h"
 
+static const NSUInteger CheckEveryNTicks = 3;
 static NSString * const DefaultsKeyEnabled = @"browsingNannyEnabled";
 static NSString * const DefaultsKeyUrls = @"browsingNannyUrls";
 static NSString * const GetUrlsScriptName = @"getActiveUrlsFromBrowsers";
@@ -37,6 +38,7 @@ static NSString * const DefaultUrlPattern = @"http*://*.blocked.com/*";
 @synthesize arrayController, scripter, pomodoroController, blacklistedPredicate;
 
 - (void)awakeFromNib {
+    tickCount = 0;
     self.blacklistedPredicate = [NSPredicate predicateWithValue:NO];
     [self registerForPomodoro:_PMPomoOncePerSecond method:@selector(oncePerSecond:)];
     [[NSUserDefaults standardUserDefaults] addObserver:self
@@ -62,6 +64,8 @@ static NSString * const DefaultUrlPattern = @"http*://*.blocked.com/*";
 - (void)oncePerSecond:(NSNotification*)notification {
     if (!self.enabled) return;
     //NSLog(@"Tick.");
+    //Only check browsing once every N seconds
+    if (++tickCount % CheckEveryNTicks != 0) return;
     NSAppleEventDescriptor *result = [scripter executeScript:GetUrlsScriptName];
     for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
         NSString *urlString = [[result descriptorAtIndex:i] stringValue];
