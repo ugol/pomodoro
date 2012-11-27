@@ -3,7 +3,7 @@
 #import "PomodoroController.h"
 #import "Scripter.h"
 
-static const NSUInteger CheckEveryNTicks = 3;
+static const NSUInteger CheckEveryNTicks = 2;
 static NSString * const DefaultsKeyEnabled = @"browsingNannyEnabled";
 static NSString * const DefaultsKeyUrls = @"browsingNannyUrls";
 static NSString * const GetUrlsScriptName = @"getActiveUrlsFromBrowsers";
@@ -61,26 +61,35 @@ static NSString * const DefaultUrlPattern = @"http*://*.blocked.com/*";
 
 #pragma mark - Pomodoro notifications
 
+/** Run once per tick of the Pomodoro (once per second). Runs a script that collects URLs of pages you're actively browsing,
+    Then checks those URLs, if any, against the "blacklisted site" NSPredicate. If any match, interrupt the Pomodoro. */
 - (void)oncePerSecond:(NSNotification*)notification {
     if (!self.enabled) return;
-    //NSLog(@"Tick.");
     //Only check browsing once every N seconds
     if (++tickCount % CheckEveryNTicks != 0) return;
-    NSAppleEventDescriptor *result = [scripter executeScript:GetUrlsScriptName];
-    for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
-        NSString *urlString = [[result descriptorAtIndex:i] stringValue];
-        //NSLog(@"You're browsing %@", urlString);
-        if ([blacklistedPredicate evaluateWithObject:urlString]) {
-            //NSLog(@"The url %@ is blacklisted. Marking it an interruption!", urlString);
-            [pomodoroController internalInterrupt:self];
-            //One interruption is enough, don't need to keep going
-            return;
+    
+    //perform AppleScript in a background thread to keep it from holding up the next tick
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSAppleEventDescriptor *result = [scripter executeScript:GetUrlsScriptName];
+        for (NSInteger i = 1; i <= [result numberOfItems]; i++) {
+            NSString *urlString = [[result descriptorAtIndex:i] stringValue];
+            //NSLog(@"You're browsing %@", urlString);
+            if ([blacklistedPredicate evaluateWithObject:urlString]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //NSLog(@"The url %@ is blacklisted. Marking it an interruption!", urlString);
+                    [pomodoroController internalInterrupt:self];
+                });
+                //One interruption is enough, don't need to keep going
+                return;
+            }
         }
-    }    
+    });
 }
 
 #pragma mark - Compile multiple rules into master predicate
 
+/** Observe the User Defaults for changes to the URL pattern list. Every change, we compile the list of blacklisted patterns
+    into one master NSPredicate for faster matching. If there's no URL patterns to match we return a predicate that always says NO. */
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:DefaultsKeyUrls]) {
         NSArray *patternsArray = [change objectForKey:NSKeyValueChangeNewKey];
