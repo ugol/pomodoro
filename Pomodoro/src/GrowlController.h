@@ -37,6 +37,8 @@
     NSImage* redButtonImage;
 	NSImage* greenButtonImage;
 	NSImage* yellowButtonImage;
+    
+    id userNotificationCenter;
 }
 
 @property (assign) IBOutlet GrowlNotifier* growl;
