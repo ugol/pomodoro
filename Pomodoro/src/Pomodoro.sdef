@@ -100,7 +100,15 @@
 			<cocoa class="ResumeCommand"/>            
             <result type="text" description="Action result"/>            
 		</command>
-    
+        
 	</suite>
+    
+    <suite name="Internet Suite" code="gurl" description="control Pomodoro from URL scheme">
+        <command name="open location" code="GURLGURL" description="Run a Pomodoro command from a URI">
+            <cocoa class="OpenUrlCommand"/>
+            <direct-parameter description="the URL to open" type="text" optional="yes"/>
+            <result type="text" description="Action result"/>
+        </command>
+    </suite>
     
 </dictionary>
