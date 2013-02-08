@@ -133,6 +133,10 @@
 	if ([self checkDefault:@"iChatEnabled"]) {
 		[scripter executeScript:@"setStatusToPomodoroInIChat" withParameter:moodMessage];
 	}
+    
+    if ([self checkDefault:@"messagesEnabled"]) {
+        [scripter executeScript:@"setStatusToPomodoroInMessages" withParameter:moodMessage];
+    }
 	
 	if ([self checkDefault:@"skypeEnabled"]) {
 		[scripter executeScript:@"setStatusToPomodoroInSkype" withParameter:moodMessage];
@@ -150,6 +154,10 @@
 	if ([self checkDefault:@"iChatEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInIChat" withParameter:moodMessage];
 	}
+    
+    if ([self checkDefault:@"messagesEnabled"]) {
+        [scripter executeScript:@"setStatusToAvailableInMessages" withParameter:moodMessage];
+    }
 	
 	if ([self checkDefault:@"skypeEnabled"]) {
 		[scripter executeScript:@"setStatusToAvailableInSkype" withParameter:moodMessage];

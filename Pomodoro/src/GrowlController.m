@@ -31,7 +31,22 @@
 
 @synthesize growl, growlStatus, growlEveryCombo;
 
-#pragma mark ---- Growl methods ----
+#pragma mark ---- Method-independent notifications ----
+
+-(void) notify:(NSString *)message title:(NSString *)title sticky:(BOOL)sticky {
+    if (growl && [growl isGrowlRunning]) {
+        [growl growlAlert:message title:title sticky:sticky];
+    } else if (userNotificationCenter) {
+        //Dynamic for compilation on <10.8
+        Class klass = NSClassFromString(@"NSUserNotification");
+        id notification = [[klass alloc] init];
+        [notification setTitle:title];
+        [notification setInformativeText:message];
+        [userNotificationCenter deliverNotification:notification];
+    }
+}
+
+#pragma mark ---- Growl ----
 
 -(IBAction) checkGrowl:(id)sender {
     
@@ -39,6 +54,10 @@
         [growlStatus setImage:greenButtonImage];
         [sender setToolTip:@"Growl installed and running!"];
         [growlStatus setToolTip:@"Growl installed and running!"];
+    } else if (userNotificationCenter != nil) {
+        [growlStatus setImage:greenButtonImage];
+        [sender setToolTip:@"Growl is not running but Notification Center is available!"];
+        [growlStatus setToolTip:@"Growl is not running but Notification Center is available!"];
     } else if ([growl isGrowlInstalled]) {
         [growlStatus setImage:yellowButtonImage];
         [sender setToolTip:@"Growl installed but not running!"];
@@ -51,15 +70,15 @@
     
 }
 
+
 #pragma mark ---- Pomodoro notifications methods ----
 
 -(void) pomodoroStarted:(NSNotification*) notification {
 
 	if ([self checkDefault:@"growlAtStartEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyStartEnabled"];
-		[growl growlAlert: [self bindCommonVariables:@"growlStart"]  title:NSLocalizedString(@"Pomodoro started",@"Growl header for pomodoro start") sticky:sticky];
+		[self notify: [self bindCommonVariables:@"growlStart"]  title:NSLocalizedString(@"Pomodoro started",@"Growl header for pomodoro start") sticky:sticky];
 	}
-
 }
 
 - (void) interrupted {
@@ -68,7 +87,7 @@
 	if ([self checkDefault:@"growlAtInterruptEnabled"]) {
         
 		NSString* growlString = [self bindCommonVariables:@"growlInterrupt"];		
-		[growl growlAlert: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:NSLocalizedString(@"Pomodoro interrupted",@"Growl title for interruptions")];
+		[self notify: [growlString stringByReplacingOccurrencesOfString:@"$secs" withString:interruptTimeString] title:NSLocalizedString(@"Pomodoro interrupted",@"Growl title for interruptions") sticky:NO];
 	}
     
 }
@@ -88,7 +107,7 @@
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
     
     if ([self checkDefault:@"growlAtInterruptOverEnabled"]) {
-		[growl growlAlert:[self bindCommonVariables:@"growlInterruptOver"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
+		[self notify:[self bindCommonVariables:@"growlInterruptOver"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset") sticky:NO];
     }
 
 }
@@ -96,7 +115,7 @@
 -(void) pomodoroReset:(NSNotification*) notification {
     
 	if ([self checkDefault:@"growlAtResetEnabled"]) {
-		[growl growlAlert:[self bindCommonVariables:@"growlReset"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset")];
+		[self notify:[self bindCommonVariables:@"growlReset"] title:NSLocalizedString(@"Pomodoro reset",@"Growl header for reset") sticky:NO];
 	}
     
 }
@@ -104,7 +123,7 @@
 -(void) pomodoroResumed:(NSNotification*) notification {
     
 	if ([self checkDefault:@"growlAtResumeEnabled"]) {
-		[growl growlAlert:[self bindCommonVariables:@"growlResume"] title:NSLocalizedString(@"Pomodoro resumed",@"Growl header for resumed pomodoro")];
+		[self notify:[self bindCommonVariables:@"growlResume"] title:NSLocalizedString(@"Pomodoro resumed",@"Growl header for resumed pomodoro") sticky:NO];
 	}
     
 }
@@ -117,7 +136,7 @@
     
 	if ([self checkDefault:@"growlAtBreakFinishedEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyBreakFinishedEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlBreakFinished"] title:NSLocalizedString(@"Pomodoro break finished",@"Growl header for finished break") sticky:sticky];
+		[self notify:[self bindCommonVariables:@"growlBreakFinished"] title:NSLocalizedString(@"Pomodoro break finished",@"Growl header for finished break") sticky:sticky];
 	}
     
 }
@@ -126,7 +145,7 @@
     
 	if ([self checkDefault:@"growlAtEndEnabled"]) {
 		BOOL sticky = [self checkDefault:@"stickyEndEnabled"];
-		[growl growlAlert:[self bindCommonVariables:@"growlEnd"] title:NSLocalizedString(@"Pomodoro finished",@"Growl header for finished pomodoro") sticky:sticky];
+		[self notify:[self bindCommonVariables:@"growlEnd"] title:NSLocalizedString(@"Pomodoro finished",@"Growl header for finished pomodoro") sticky:sticky];
 	}
     
 }
@@ -139,15 +158,15 @@
     
     NSInteger time = [[notification object] integerValue];
     NSInteger timePassed = (_initialTime*60) - time;
-	NSString* timePassedString = [NSString stringWithFormat:@"%d", timePassed/60];
-	NSString* timeString = [NSString stringWithFormat:@"%d", time/60];
+	NSString* timePassedString = [NSString stringWithFormat:@"%ld", timePassed/60];
+	NSString* timeString = [NSString stringWithFormat:@"%ld", time/60];
 	
 	if (timePassed%(60 * _growlEveryTimeMinutes) == 0 && time!=0) {	
 		if ([self checkDefault:@"growlAtEveryEnabled"]) {
 			NSString* msg = [[self bindCommonVariables:@"growlEvery"] stringByReplacingOccurrencesOfString:@"$mins" withString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"growlEveryTimeMinutes"] stringValue]];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$passed" withString:timePassedString];
 			msg = [msg stringByReplacingOccurrencesOfString:@"$time" withString:timeString];
-			[growl growlAlert:msg title:@"Pomodoro ticking"];
+			[self notify:msg title:@"Pomodoro ticking" sticky:NO];
 		}
 	}
 }
@@ -157,6 +176,15 @@
 - (void)awakeFromNib {
     
     [self registerForAllPomodoroEvents];
+    
+    //Backwards-compatible (dynamic) way to use notification center if available.
+    userNotificationCenter = nil;
+    Class klass = NSClassFromString(@"NSUserNotificationCenter");
+    if (klass)
+    {
+        //this is a singleton so it shouldn't need to be retained.
+        userNotificationCenter = [klass defaultUserNotificationCenter];
+    }
     
     redButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]] retain];
     greenButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]] retain];
