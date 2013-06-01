@@ -162,6 +162,7 @@
 	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"tickVolume"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showTimeOnStatusEnabled"];
+    [defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showTimeWithSeconds"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"calendarEnabled"];
 	[defaultValues setObject:@"Pomodoros" forKey:@"selectedCalendar"];
@@ -317,6 +318,7 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"voiceVolume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tickVolume"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showTimeOnStatusEnabled"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showTimeWithSeconds"];
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"calendarEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"selectedCalendar"];
