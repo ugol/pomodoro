@@ -47,7 +47,7 @@
 
 - (void) showTimeOnStatusBar:(NSInteger) time {	
 	if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
-		[statusItem setTitle:[NSString stringWithFormat:@" %.2d:%.2d",time/60, time%60]];
+		[statusItem setTitle:[NSString stringWithFormat:@" %.2ld:%.2ld",time/60, time%60]];
 	} else {
 		[statusItem setTitle:@""];
 	}
@@ -289,7 +289,7 @@
         		
         [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoWillStart object:nil];
 
-		if ([self checkDefault:@"askBeforeStart"] && (@"direct" != sender)) {
+		if ([self checkDefault:@"askBeforeStart"] && (![@"direct"  isEqual: sender])) {
 			[self setFocusOnPomodoro];
 
 			[namePanel makeKeyAndOrderFront:self];

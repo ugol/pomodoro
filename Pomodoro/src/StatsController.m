@@ -221,8 +221,8 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	 [output seekToEndOfFile];
 	 */
 	
-	NSSavePanel *sp = [NSSavePanel savePanel];	
-	[sp setRequiredFileType:@"txt"];
+	NSSavePanel *sp = [NSSavePanel savePanel];
+	[sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
 	
 	NSInteger runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
 	

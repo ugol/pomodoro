@@ -45,7 +45,7 @@
 	CalEvent *event = [CalEvent event];
 	event.calendar = calendar;
 	event.title = title;
-	event.startDate = [[NSDate date] addTimeInterval:(-60 * duration)];	
+	event.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];	
 	event.endDate = [NSDate date];
 	
 	NSError *calError;

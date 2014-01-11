@@ -154,8 +154,8 @@
     NSInteger time = [[notification object] integerValue];
 	
 	NSInteger timePassed = (_initialTime*60) - time;
-	NSString* timePassedString = [NSString stringWithFormat:@"%d", timePassed/60];
-	NSString* timeString = [NSString stringWithFormat:@"%d", time/60];
+	NSString* timePassedString = [NSString stringWithFormat:@"%ld", timePassed/60];
+	NSString* timeString = [NSString stringWithFormat:@"%ld", time/60];
 	
 	if (timePassed%(60 * _speechEveryTimeMinutes) == 0 && time!=0) {		
 		if (![self checkDefault:@"mute"] && [self checkDefault:@"speechAtEveryEnabled"]) {

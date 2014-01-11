@@ -39,8 +39,9 @@
 - (void)awakeFromNib {
 	
 	NSBundle *bundle = [NSBundle mainBundle];
-	
-	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"]] autorelease];
+	NSError *error = nil;
+    NSStringEncoding encoding;
+	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"] usedEncoding:&encoding error:&error] autorelease];
 	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
 	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
