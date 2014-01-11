@@ -62,7 +62,7 @@
         
     } else {
 		// TODO find out why this always works in i386 and always fails on ppc
-		NSLog(@"Error from SecKeychainItemCopyContent: %d", status);
+		NSLog(@"Error from SecKeychainItemCopyContent: %d", (int)status);
         return nil;
     }
     
