@@ -126,6 +126,9 @@
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
+		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
+		C18D16671886FB3000AB59B4 /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = C18D16661886FB2F00AB59B4 /* icon512.png */; };
+		C18D16691886FB8D00AB59B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C18D16681886FB8D00AB59B4 /* icon.png */; };
 		DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
 		DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
 		DB4C2A8A166889F0000B2718 /* setStatusToAvailableInMessages.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
@@ -439,6 +442,10 @@
 		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
 		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
 		69FCF746135729DD003862DC /* ringBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringBreak.wav; sourceTree = "<group>"; };
+		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C18D16661886FB2F00AB59B4 /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon512.png; sourceTree = "<group>"; };
+		C18D16681886FB8D00AB59B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInMessages.applescript; sourceTree = "<group>"; };
 		DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInMessages.applescript; sourceTree = "<group>"; };
 		DB8AF4F2165EEB0F0039DA49 /* OpenUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUrlCommand.h; path = src/OpenUrlCommand.h; sourceTree = "<group>"; };
@@ -745,6 +752,8 @@
 		69AE95D8133B4705004DC14D = {
 			isa = PBXGroup;
 			children = (
+				C18D16681886FB8D00AB59B4 /* icon.png */,
+				C18D16661886FB2F00AB59B4 /* icon512.png */,
 				698F460F133B5AF900311E34 /* README.txt */,
 				698F4610133B5AF900311E34 /* ReleaseNotes.txt */,
 				698F4713133B719900311E34 /* Dependencies */,
@@ -787,6 +796,7 @@
 		69AE95ED133B4705004DC14D /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				C18D166A188703B500AB59B4 /* Pomodoro.entitlements */,
 				69D17DD3136AAC5100F5D922 /* Scriptable */,
 				698F4692133B5D5E00311E34 /* MGTwitterEngine */,
 				698F4690133B5D4A00311E34 /* Controller */,
@@ -794,6 +804,7 @@
 				698F468F133B5D3D00311E34 /* Pomodoro */,
 				698F4694133B5F4000311E34 /* PTHotKey */,
 				698F4693133B5D7000311E34 /* Resources */,
+				C18D165F1886FB0600AB59B4 /* Images.xcassets */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -927,6 +938,15 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = iUgol;
+				TargetAttributes = {
+					69AE95E2133B4705004DC14D = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 69AE95DD133B4705004DC14D /* Build configuration list for PBXProject "Pomodoro" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1022,6 +1042,7 @@
 				69ED63FC133B9F5F003F59BA /* addTodoToThings.applescript in Resources */,
 				69ED63FD133B9F5F003F59BA /* getToDoListFromOmniFocus.applescript in Resources */,
 				69ED63FE133B9F5F003F59BA /* getToDoListFromThings.applescript in Resources */,
+				C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */,
 				69ED63FF133B9F5F003F59BA /* insertIntoLoginItems.applescript in Resources */,
 				69ED6400133B9F5F003F59BA /* removeFromLoginItems.applescript in Resources */,
 				69ED6401133B9F5F003F59BA /* setStatusToAvailableInAdium.applescript in Resources */,
@@ -1038,7 +1059,9 @@
 				698F4625133B5AF900311E34 /* icon.icns in Resources */,
 				698F4626133B5AF900311E34 /* load.png in Resources */,
 				698F4627133B5AF900311E34 /* pomodoro-gtd.png in Resources */,
+				C18D16671886FB3000AB59B4 /* icon512.png in Resources */,
 				698F4628133B5AF900311E34 /* pomodoro.png in Resources */,
+				C18D16691886FB8D00AB59B4 /* icon.png in Resources */,
 				698F4629133B5AF900311E34 /* pomodoro_n.png in Resources */,
 				698F462A133B5AF900311E34 /* pomodoroBreak.png in Resources */,
 				698F462B133B5AF900311E34 /* pomodoroBreak_n.png in Resources */,
