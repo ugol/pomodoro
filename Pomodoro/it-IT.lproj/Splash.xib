@@ -63,7 +63,6 @@
 							</set>
 							<string key="NSFrame">{{20, 128}, {108, 148}}</string>
 							<reference key="NSSuperview" ref="415443963"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="428919186"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="988365159">
@@ -91,28 +90,8 @@
 										<object class="NSTextView" id="709894866">
 											<reference key="NSNextResponder" ref="119133690"/>
 											<int key="NSvFlags">2322</int>
-											<set class="NSMutableSet" key="NSDragTypes">
-												<string>Apple HTML pasteboard type</string>
-												<string>Apple PDF pasteboard type</string>
-												<string>Apple PICT pasteboard type</string>
-												<string>Apple PNG pasteboard type</string>
-												<string>Apple URL pasteboard type</string>
-												<string>CorePasteboardFlavorType 0x6D6F6F76</string>
-												<string>NSColor pasteboard type</string>
-												<string>NSFilenamesPboardType</string>
-												<string>NSStringPboardType</string>
-												<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-												<string>NeXT RTFD pasteboard type</string>
-												<string>NeXT Rich Text Format v1.0 pasteboard type</string>
-												<string>NeXT TIFF v4.0 pasteboard type</string>
-												<string>NeXT font pasteboard type</string>
-												<string>NeXT ruler pasteboard type</string>
-												<string>WebURLsWithTitlesPboardType</string>
-												<string>public.url</string>
-											</set>
 											<string key="NSFrame">{{0, 13}, {394, 14}}</string>
 											<reference key="NSSuperview" ref="119133690"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="380130836"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="218316342">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -184,7 +163,6 @@
 									</array>
 									<string key="NSFrameSize">{394, 203}</string>
 									<reference key="NSSuperview" ref="428919186"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="709894866"/>
 									<reference key="NSDocView" ref="709894866"/>
 									<reference key="NSBGColor" ref="785895369"/>
@@ -219,7 +197,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {15, 364}}</string>
 									<reference key="NSSuperview" ref="428919186"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="490388612"/>
 									<reference key="NSTarget" ref="428919186"/>
 									<string key="NSAction">_doScroller:</string>
@@ -231,7 +208,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 									<reference key="NSSuperview" ref="428919186"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="119133690"/>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="428919186"/>
@@ -242,7 +218,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							</array>
 							<string key="NSFrame">{{136, 61}, {394, 203}}</string>
 							<reference key="NSSuperview" ref="415443963"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="119133690"/>
 							<int key="NSsFlags">133120</int>
 							<reference key="NSVScroller" ref="380130836"/>
@@ -254,7 +229,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 4}, {245, 32}}</string>
 							<reference key="NSSuperview" ref="415443963"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1045829326">
 								<int key="NSCellFlags">-2080244224</int>
@@ -284,7 +258,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					</array>
 					<string key="NSFrameSize">{550, 276}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="462724019"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -481,54 +454,12 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">31</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">BGHUDButtonCell</string>
-					<string key="superclassName">NSButtonCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BGHUDButtonCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">BGHUDScrollView</string>
-					<string key="superclassName">NSScrollView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BGHUDScrollView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SplashController</string>
-					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">aboutText</string>
-						<string key="NS.object.0">NSTextView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">aboutText</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">aboutText</string>
-							<string key="candidateClassName">NSTextView</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SplashController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1060" key="NS.object.0"/>
-		</object>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
-			<real value="3200" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>

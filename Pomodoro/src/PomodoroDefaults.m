@@ -178,6 +178,8 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"thingsAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"omniFocusAddingEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"remindersEnabled"];
+	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"remindersAddingEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
@@ -200,8 +202,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"breakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakTime"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pomodorosForLong"]; 
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakReset"]; 
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longBreakResetTime"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakReset"]; 
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"longbreakResetTime"]; 
 
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"enableTwitter"];
 	
@@ -330,6 +332,9 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"thingsAddingEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"omniFocusEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"omniFocusAddingEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"remindersEnabled"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"remindersAddingEnabled"];
+    
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ichatEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"skypeEnabled"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"adiumEnabled"];	
