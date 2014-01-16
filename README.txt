@@ -7,7 +7,7 @@ It is a simple but effective way to manage your time and to boost your productiv
 Can be used for programming, studying, writing, cooking or simply concentrating on something important.
  
 You can find more informations on the Pomodoro Technique on http://www.pomodorotechnique.com/
-Updates, source code, new releases, manual and fixes on http://pomodoro.ugolandini.com
+Updates, source code, new releases, manual and fixes on http://pomodoro.wizartworx.com
 
 ----------
 Developers
@@ -15,7 +15,7 @@ Developers
 
 Project lead: Ugo Landini
 Active Developers: Ugo Landini, Pascal Bihler
-Retired Developers: 
+Maintaining Developers: Marta Kostova
  
 -------
 License
