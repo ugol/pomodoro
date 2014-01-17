@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
 		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
 		6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
@@ -81,7 +80,6 @@
 		698F46EC133B601500311E34 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E8133B601500311E34 /* PTKeyCombo.m */; };
 		698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46F8133B708700311E34 /* libxml2.dylib */; };
 		698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46FA133B709600311E34 /* CalendarStore.framework */; };
-		698F4736133B72BD00311E34 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
 		698F4737133B72BD00311E34 /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
 		698F4738133B72BD00311E34 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
 		698F473A133B72E800311E34 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4739133B72E800311E34 /* Automator.framework */; };
@@ -178,13 +176,6 @@
 			remoteGlobalIDString = 342E00EB109CCC36009AD8CA;
 			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
-		698F4720133B71C300311E34 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
-		};
 		698F472B133B71D700311E34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */;
@@ -206,13 +197,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OAuthConsumer;
 		};
-		698F4731133B71EF00311E34 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
-		};
 		69AE9609133B4706004DC14D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69AE95DA133B4705004DC14D /* Project object */;
@@ -231,7 +215,6 @@
 			files = (
 				698F4747133B7A5B00311E34 /* Growl.framework in CopyFiles */,
 				6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */,
-				6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */,
 				6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,9 +365,7 @@
 		698F46FA133B709600311E34 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		698F46FC133B70B000311E34 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		698F46FE133B714100311E34 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
-		698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
-		698F4733133B72BC00311E34 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4734133B72BC00311E34 /* OAuthConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4735133B72BC00311E34 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4739133B72E800311E34 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
@@ -459,7 +440,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698F4736133B72BD00311E34 /* BGHUDAppKit.framework in Frameworks */,
 				698F4737133B72BD00311E34 /* OAuthConsumer.framework in Frameworks */,
 				698F4738133B72BD00311E34 /* ShortcutRecorder.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
@@ -706,18 +686,9 @@
 			isa = PBXGroup;
 			children = (
 				698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */,
-				698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */,
 				698F46FE133B714100311E34 /* ShortcutRecorder.xcodeproj */,
 			);
 			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		698F4719133B71C300311E34 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				698F4721133B71C300311E34 /* BGHUDAppKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		698F4723133B71D700311E34 /* Products */ = {
@@ -780,7 +751,6 @@
 			isa = PBXGroup;
 			children = (
 				698F4746133B7A5B00311E34 /* Growl.framework */,
-				698F4733133B72BC00311E34 /* BGHUDAppKit.framework */,
 				698F4734133B72BC00311E34 /* OAuthConsumer.framework */,
 				698F4735133B72BC00311E34 /* ShortcutRecorder.framework */,
 			);
@@ -896,7 +866,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				698F4732133B71EF00311E34 /* PBXTargetDependency */,
 				698F4730133B71EA00311E34 /* PBXTargetDependency */,
 				698F4710133B716800311E34 /* PBXTargetDependency */,
 				698F4712133B716800311E34 /* PBXTargetDependency */,
@@ -931,9 +900,11 @@
 		69AE95DA133B4705004DC14D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = iUgol;
 				TargetAttributes = {
 					69AE95E2133B4705004DC14D = {
+						DevelopmentTeam = 59823NJ7N9;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -956,10 +927,6 @@
 			productRefGroup = 69AE95E4133B4705004DC14D /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 698F4719133B71C300311E34 /* Products */;
-					ProjectRef = 698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */;
-				},
 				{
 					ProductGroup = 698F4723133B71D700311E34 /* Products */;
 					ProjectRef = 698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */;
@@ -997,13 +964,6 @@
 			fileType = wrapper.framework;
 			path = ShortcutRecorder.framework;
 			remoteRef = 698F470D133B714200311E34 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		698F4721133B71C300311E34 /* BGHUDAppKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BGHUDAppKit.framework;
-			remoteRef = 698F4720133B71C300311E34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		698F472C133B71D700311E34 /* OAuthConsumer.framework */ = {
@@ -1233,11 +1193,6 @@
 			name = OAuthConsumer;
 			targetProxy = 698F472F133B71EA00311E34 /* PBXContainerItemProxy */;
 		};
-		698F4732133B71EF00311E34 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BGHUDAppKit;
-			targetProxy = 698F4731133B71EF00311E34 /* PBXContainerItemProxy */;
-		};
 		69AE960A133B4706004DC14D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 69AE95E2133B4705004DC14D /* Pomodoro */;
@@ -1340,7 +1295,12 @@
 		69AE9616133B4706004DC14D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1349,6 +1309,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1359,12 +1322,20 @@
 		69AE9617133B4706004DC14D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
@@ -1375,7 +1346,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1387,7 +1360,9 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1396,7 +1371,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1408,7 +1385,9 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "668957F7-02EE-4446-B43B-C02EDBDB6855";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
