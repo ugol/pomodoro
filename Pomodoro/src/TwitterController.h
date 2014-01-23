@@ -25,15 +25,15 @@
 
 #import <Foundation/Foundation.h>
 #import "CommonController.h"
-#import "MGTwitterEngine.h"
+//#import "MGTwitterEngine.h"
 
-@interface TwitterController : CommonController<MGTwitterEngineDelegate> {
+@interface TwitterController : CommonController{//<MGTwitterEngineDelegate> {
 
     IBOutlet NSProgressIndicator* twitterProgress;
 	IBOutlet NSImageView* twitterStatus;
     IBOutlet NSPanel* prefs;
 
-    MGTwitterEngine* twitterEngine;
+   // MGTwitterEngine* twitterEngine;
 	NSImage* redButtonImage;
 	NSImage* greenButtonImage;
 	NSImage* yellowButtonImage;

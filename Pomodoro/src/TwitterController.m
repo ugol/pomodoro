@@ -25,7 +25,7 @@
 
 #import "TwitterController.h"
 #import "TwitterSecrets.h"
-#import "MGTwitterEngine.h"
+//#import "MGTwitterEngine.h"
 #import "PomoNotifications.h"
 
 @implementation TwitterController
@@ -34,12 +34,12 @@
 
 #pragma mark ---- MGTwitterEngineDelegate methods ----
 
-- (void) accessTokenReceived:(OAToken *)token forRequest:(NSString *)connectionIdentifier {
+/*- (void) accessTokenReceived:(OAToken *)token forRequest:(NSString *)connectionIdentifier {
 	NSLog(@"Token received %@ at (%@)", token, connectionIdentifier);	
 	[twitterEngine setAccessToken:token];
 	[twitterStatus setImage:greenButtonImage];
 	[twitterProgress stopAnimation:self];
-}
+}*/
 
 - (void)requestSucceeded:(NSString *)requestIdentifier {
     NSLog(@"Request succeeded (%@)", requestIdentifier);	
