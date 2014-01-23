@@ -80,7 +80,6 @@
 		698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46FA133B709600311E34 /* CalendarStore.framework */; };
 		698F473A133B72E800311E34 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4739133B72E800311E34 /* Automator.framework */; };
 		698F473C133B731600311E34 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F473B133B731600311E34 /* Carbon.framework */; };
-		698F4748133B7A9100311E34 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; };
 		699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31B1366D0E500BBC486 /* soundHigh.png */; };
 		699CE31E1366D0E500BBC486 /* soundLow.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31C1366D0E500BBC486 /* soundLow.png */; };
 		69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95E7133B4705004DC14D /* Cocoa.framework */; };
@@ -119,7 +118,12 @@
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
-		C137DEC9188ACA7300D9C13F /* Growl.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C137DDE5188ACA4600D9C13F /* Growl.framework */; };
+		C11A5E2C1891701200168A20 /* com.company.application.GNTPClientService.xpc in Resources */ = {isa = PBXBuildFile; fileRef = C11A5E2A1891701200168A20 /* com.company.application.GNTPClientService.xpc */; };
+		C11A5E2D1891701200168A20 /* xpc-rename-move.rb in Resources */ = {isa = PBXBuildFile; fileRef = C11A5E2B1891701200168A20 /* xpc-rename-move.rb */; };
+		C11A5E3118917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc in Resources */ = {isa = PBXBuildFile; fileRef = C11A5E3018917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc */; };
+		C11A5E331891B0F900168A20 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11A5E321891B0F900168A20 /* Security.framework */; };
+		C11A5E351891B1AD00168A20 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11A5E341891B1AD00168A20 /* Growl.framework */; };
+		C151C7461891D1D00028CA26 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151C7451891D1D00028CA26 /* Growl.framework */; };
 		C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4721133B71C300311E34 /* BGHUDAppKit.framework */; };
 		C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
@@ -309,7 +313,6 @@
 				C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */,
 				C15C9CA9188ECAC100ACFF0B /* OAuthConsumer.framework in Copy Files */,
 				C15C9CA8188ECAAF00ACFF0B /* BGHUDAppKit.framework in Copy Files */,
-				C137DEC9188ACA7300D9C13F /* Growl.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +470,6 @@
 		698F4735133B72BC00311E34 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4739133B72E800311E34 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		698F473B133B731600311E34 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		698F4746133B7A5B00311E34 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
 		699CE31B1366D0E500BBC486 /* soundHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundHigh.png; sourceTree = "<group>"; };
 		699CE31C1366D0E500BBC486 /* soundLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundLow.png; sourceTree = "<group>"; };
 		69AE95E3133B4705004DC14D /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,6 +520,11 @@
 		69ED6412133BB502003F59BA /* SmartTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTimerTests.h; sourceTree = "<group>"; };
 		69ED6413133BB502003F59BA /* SmartTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTimerTests.m; sourceTree = "<group>"; };
 		69FCF746135729DD003862DC /* ringBreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringBreak.wav; sourceTree = "<group>"; };
+		C11A5E2A1891701200168A20 /* com.company.application.GNTPClientService.xpc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = com.company.application.GNTPClientService.xpc; sourceTree = "<group>"; };
+		C11A5E2B1891701200168A20 /* xpc-rename-move.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "xpc-rename-move.rb"; sourceTree = "<group>"; };
+		C11A5E3018917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = io.github.martakostova.Pomodoro.GNTPClientService.xpc; sourceTree = "<group>"; };
+		C11A5E321891B0F900168A20 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C11A5E341891B1AD00168A20 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C137DD63188ACA4500D9C13F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C137DD64188ACA4500D9C13F /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		C137DD67188ACA4500D9C13F /* BGHUDAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGHUDAppKitFramework-Info.plist"; sourceTree = "<group>"; };
@@ -641,7 +648,6 @@
 		C137DDE2188ACA4600D9C13F /* textview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview.png; sourceTree = "<group>"; };
 		C137DDE3188ACA4600D9C13F /* README.textile */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		C137DDE4188ACA4600D9C13F /* version.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
-		C137DDE5188ACA4600D9C13F /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C137DDE7188ACA4600D9C13F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C137DDE8188ACA4600D9C13F /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		C137DDE9188ACA4600D9C13F /* AppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -818,6 +824,9 @@
 		C137DEAE188ACA4700D9C13F /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C137DEAF188ACA4700D9C13F /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C137DEB0188ACA4700D9C13F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		C1395AF71890300100A47CA1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		C151C7451891D1D00028CA26 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
+		C15C9CDE188FF3DD00ACFF0B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		C19214251889FCC0005185D3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -943,7 +952,6 @@
 		C19214A41889FCC1005185D3 /* textview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview.png; sourceTree = "<group>"; };
 		C19214A51889FCC1005185D3 /* README.textile */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		C19214A61889FCC1005185D3 /* version.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
-		C19214A71889FCC1005185D3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C19214A91889FCC1005185D3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C19214AA1889FCC1005185D3 /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		C19214AB1889FCC1005185D3 /* AppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -1137,12 +1145,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11A5E331891B0F900168A20 /* Security.framework in Frameworks */,
 				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */,
 				C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */,
+				C11A5E351891B1AD00168A20 /* Growl.framework in Frameworks */,
+				C151C7461891D1D00028CA26 /* Growl.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
 				69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */,
-				698F4748133B7A9100311E34 /* Growl.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
 				698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */,
 				698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */,
@@ -1449,6 +1459,8 @@
 		69AE95E6133B4705004DC14D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C11A5E321891B0F900168A20 /* Security.framework */,
+				C1395AF71890300100A47CA1 /* ApplicationServices.framework */,
 				C19214231889FCC0005185D3 /* externalFw */,
 				698F473D133B735400311E34 /* Apple */,
 				69AE95E9133B4705004DC14D /* Other Frameworks */,
@@ -1459,7 +1471,7 @@
 		69AE95E9133B4705004DC14D /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				698F4746133B7A5B00311E34 /* Growl.framework */,
+				C151C7451891D1D00028CA26 /* Growl.framework */,
 				698F4733133B72BC00311E34 /* BGHUDAppKit.framework */,
 				698F4734133B72BC00311E34 /* OAuthConsumer.framework */,
 				698F4735133B72BC00311E34 /* ShortcutRecorder.framework */,
@@ -1559,11 +1571,22 @@
 			name = Text;
 			sourceTree = "<group>";
 		};
+		C11A5E291891701100168A20 /* XPC Client */ = {
+			isa = PBXGroup;
+			children = (
+				C11A5E3018917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc */,
+				C11A5E2A1891701200168A20 /* com.company.application.GNTPClientService.xpc */,
+				C11A5E2B1891701200168A20 /* xpc-rename-move.rb */,
+			);
+			path = "XPC Client";
+			sourceTree = "<group>";
+		};
 		C137DD61188ACA4500D9C13F /* externalFw */ = {
 			isa = PBXGroup;
 			children = (
+				C11A5E341891B1AD00168A20 /* Growl.framework */,
+				C11A5E291891701100168A20 /* XPC Client */,
 				C137DD62188ACA4500D9C13F /* BGHUDAppKit */,
-				C137DDE5188ACA4600D9C13F /* Growl.framework */,
 				C137DDE6188ACA4600D9C13F /* MGTwitterEngine */,
 				C137DE2B188ACA4700D9C13F /* OAuthConsumer */,
 				C137DE68188ACA4700D9C13F /* shortcutrecorder */,
@@ -2013,8 +2036,8 @@
 		C19214231889FCC0005185D3 /* externalFw */ = {
 			isa = PBXGroup;
 			children = (
+				C15C9CDE188FF3DD00ACFF0B /* Growl.framework */,
 				C19214241889FCC0005185D3 /* BGHUDAppKit */,
-				C19214A71889FCC1005185D3 /* Growl.framework */,
 				C19214A81889FCC1005185D3 /* MGTwitterEngine */,
 				C19214ED1889FCC2005185D3 /* OAuthConsumer */,
 				C192152A1889FCC2005185D3 /* shortcutrecorder */,
@@ -2758,7 +2781,9 @@
 				69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */,
 				69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */,
 				69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */,
+				C11A5E3118917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc in Resources */,
 				698F4620133B5AF900311E34 /* audio.png in Resources */,
+				C11A5E2C1891701200168A20 /* com.company.application.GNTPClientService.xpc in Resources */,
 				698F4621133B5AF900311E34 /* calendar.png in Resources */,
 				698F4622133B5AF900311E34 /* compile.png in Resources */,
 				698F4623133B5AF900311E34 /* green.png in Resources */,
@@ -2781,6 +2806,7 @@
 				698F4634133B5AF900311E34 /* yellow.png in Resources */,
 				698F4642133B5AF900311E34 /* ring.wav in Resources */,
 				698F4643133B5AF900311E34 /* tick.wav in Resources */,
+				C11A5E2D1891701200168A20 /* xpc-rename-move.rb in Resources */,
 				698F465A133B5AF900311E34 /* README.txt in Resources */,
 				698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */,
 				69ED6384133B9D03003F59BA /* Stats.xib in Resources */,
@@ -2836,7 +2862,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "XPC_START=\"$SRCROOT/externalFw/XPC Client/\"\nXPC_SCRIPT=\"$SRCROOT/externalFw/XPC Client/xpc-rename-move.rb\"\nruby \"$XPC_SCRIPT\" \"$XPC_START\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME\" \"$CODE_SIGN_IDENTITY\"";
 		};
 		69AE9605133B4706004DC14D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3260,20 +3286,26 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
+				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
+				SDKROOT = macosx10.8;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -3287,16 +3319,22 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
+				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
+				SDKROOT = macosx10.8;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -3305,13 +3343,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw\"",
+					"./**",
+					/Users/marta/Projects/ObjectiveC/pomodoro/externalFw,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -3319,9 +3357,11 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3331,23 +3371,25 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/externalFw\"",
+					"./**",
+					/Users/marta/Projects/ObjectiveC/pomodoro/externalFw,
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

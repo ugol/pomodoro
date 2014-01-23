@@ -7,17 +7,19 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Growl</string>
+	<string>io.github.martakostova.Pomodoro.GNTPClientService</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.growl.growlframework</string>
+	<string>io.github.martakostova.Pomodoro.GNTPClientService</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>io.github.martakostova.Pomodoro.GNTPClientService</string>
 	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
+	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.0</string>
 	<key>CFBundleSignature</key>
-	<string>GRRR</string>
+	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>2.0</string>
 	<key>DTCompiler</key>
@@ -34,7 +36,12 @@
 	<string>0440</string>
 	<key>DTXcodeBuild</key>
 	<string>4F250</string>
-	<key>NSPrincipalClass</key>
-	<string>GrowlApplicationBridge</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2011 The Growl Team. All rights reserved.</string>
+	<key>XPCService</key>
+	<dict>
+		<key>ServiceType</key>
+		<string>Application</string>
+	</dict>
 </dict>
 </plist>

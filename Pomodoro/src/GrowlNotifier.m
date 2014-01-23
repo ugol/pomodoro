@@ -74,5 +74,8 @@
 -(BOOL) isGrowlRunning {
     return [GrowlApplicationBridge isGrowlRunning];
 }
+- (BOOL) hasNetworkClientEntitlement{
+    return YES;
+}
 
 @end
