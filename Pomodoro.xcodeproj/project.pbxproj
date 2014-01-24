@@ -104,7 +104,6 @@
 		C11A5E2D1891701200168A20 /* xpc-rename-move.rb in Resources */ = {isa = PBXBuildFile; fileRef = C11A5E2B1891701200168A20 /* xpc-rename-move.rb */; };
 		C11A5E3118917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc in Resources */ = {isa = PBXBuildFile; fileRef = C11A5E3018917D6200168A20 /* io.github.martakostova.Pomodoro.GNTPClientService.xpc */; };
 		C11A5E351891B1AD00168A20 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11A5E341891B1AD00168A20 /* Growl.framework */; };
-		C151C7461891D1D00028CA26 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C151C7451891D1D00028CA26 /* Growl.framework */; };
 		C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4721133B71C300311E34 /* BGHUDAppKit.framework */; };
 		C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
@@ -112,6 +111,8 @@
 		C15C9CA9188ECAC100ACFF0B /* OAuthConsumer.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
 		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
+		C1953C291891E29C00363CEB /* Growl.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C11A5E341891B1AD00168A20 /* Growl.framework */; };
+		C1953C2B1891E4D800363CEB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1953C2A1891E4D800363CEB /* Growl.framework */; };
 		DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
 		DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
 		DB4C2A8A166889F0000B2718 /* setStatusToAvailableInMessages.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
@@ -279,6 +280,7 @@
 			files = (
 				C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */,
 				C15C9CA9188ECAC100ACFF0B /* OAuthConsumer.framework in Copy Files */,
+				C1953C291891E29C00363CEB /* Growl.framework in Copy Files */,
 				C15C9CA8188ECAAF00ACFF0B /* BGHUDAppKit.framework in Copy Files */,
 			);
 			name = "Copy Files";
@@ -685,7 +687,6 @@
 		C137DEAE188ACA4700D9C13F /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C137DEAF188ACA4700D9C13F /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C137DEB0188ACA4700D9C13F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		C151C7451891D1D00028CA26 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
 		C15C9CDE188FF3DD00ACFF0B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
@@ -924,6 +925,7 @@
 		C19215701889FCC2005185D3 /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C19215711889FCC2005185D3 /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C19215721889FCC2005185D3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		C1953C2A1891E4D800363CEB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
 		DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInMessages.applescript; sourceTree = "<group>"; };
 		DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInMessages.applescript; sourceTree = "<group>"; };
 		DB8AF4F2165EEB0F0039DA49 /* OpenUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUrlCommand.h; path = src/OpenUrlCommand.h; sourceTree = "<group>"; };
@@ -944,12 +946,12 @@
 				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */,
 				C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */,
-				C11A5E351891B1AD00168A20 /* Growl.framework in Frameworks */,
-				C151C7461891D1D00028CA26 /* Growl.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
+				C1953C2B1891E4D800363CEB /* Growl.framework in Frameworks */,
 				69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
 				698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */,
+				C11A5E351891B1AD00168A20 /* Growl.framework in Frameworks */,
 				698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1216,7 +1218,7 @@
 		69AE95E9133B4705004DC14D /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C151C7451891D1D00028CA26 /* Growl.framework */,
+				C1953C2A1891E4D800363CEB /* Growl.framework */,
 				698F4733133B72BC00311E34 /* BGHUDAppKit.framework */,
 				698F4734133B72BC00311E34 /* OAuthConsumer.framework */,
 				698F4735133B72BC00311E34 /* ShortcutRecorder.framework */,
@@ -2401,7 +2403,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6951BA19136D77DD00252C5A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2424,7 +2426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "XPC_START=\"$SRCROOT/externalFw/XPC Client/\"\nXPC_SCRIPT=\"$SRCROOT/externalFw/XPC Client/xpc-rename-move.rb\"\nruby \"$XPC_SCRIPT\" \"$XPC_START\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME\" \"$CODE_SIGN_IDENTITY\"";
+			shellScript = "XPC_START=\"$SRCROOT/externalFw/XPC Client\"\nXPC_SCRIPT=\"$SRCROOT/externalFw/XPC Client/xpc-rename-move.rb\"\nruby \"$XPC_SCRIPT\" \"$XPC_START\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME\" \"$CODE_SIGN_IDENTITY\"";
 		};
 		69AE9605133B4706004DC14D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2855,7 +2857,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -2883,7 +2885,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
