@@ -24,7 +24,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "PomodoroController.h"
-#import "GrowlNotifier.h"
 #import "Pomodoro.h"
 #import "Binder.h"
 #import "PomodoroDefaults.h"
@@ -39,7 +38,7 @@
 @implementation PomodoroController
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
-@synthesize growl, pomodoro, longBreakCounter, longBreakCheckerTimer;
+@synthesize pomodoro, longBreakCounter, longBreakCheckerTimer;
 @synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
@@ -238,8 +237,11 @@
                             _pomodorosForLong - (longBreakCounter % _pomodorosForLong)
 							];
 	
-	[growl growlAlert:quickStats title:NSLocalizedString(@"Quick Statistics",@"Growl header for quick statistics")];
+	NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = NSLocalizedString(@"Quick Statistics",@"Growl header for quick statistics");
+    notification.informativeText = quickStats;
     
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 -(IBAction)quit:(id)sender {	

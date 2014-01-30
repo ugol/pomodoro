@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -100,7 +100,6 @@
         </customObject>
         <customObject id="1203" customClass="GrowlController">
             <connections>
-                <outlet property="growl" destination="1208" id="1209"/>
                 <outlet property="growlEveryCombo" destination="698" id="1207"/>
                 <outlet property="growlStatus" destination="981" id="1206"/>
             </connections>
@@ -359,18 +358,18 @@ DQ
                                         <rect key="frame" x="5" y="0.0" width="562" height="237"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="bNn-Cb-gSK">
-                                            <rect key="frame" x="1" y="1" width="545" height="235"/>
+                                            <rect key="frame" x="1" y="1" width="560" height="235"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1045" userLabel="Script View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="235"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="565" height="235"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="545" height="235"/>
+                                                    <size key="minSize" width="560" height="235"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="545" height="235"/>
+                                                    <size key="minSize" width="560" height="235"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
@@ -395,18 +394,18 @@ DQ
                                         <rect key="frame" x="5" y="7" width="562" height="274"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="BuK-b8-kkH">
-                                            <rect key="frame" x="1" y="1" width="545" height="272"/>
+                                            <rect key="frame" x="1" y="1" width="560" height="272"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1049">
-                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="272"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="565" height="272"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="545" height="272"/>
+                                                    <size key="minSize" width="560" height="272"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="545" height="272"/>
+                                                    <size key="minSize" width="560" height="272"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
@@ -486,7 +485,7 @@ DQ
                             <tabViewItem label="Pomodoro" identifier="0" id="104">
                                 <view key="view" id="105">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box autoresizesSubviews="NO" title="Start and Breaks" borderType="line" id="1324">
                                             <rect key="frame" x="17" y="378" width="648" height="284"/>
@@ -1209,7 +1208,7 @@ DQ
                             <tabViewItem label="Growl" identifier="2" id="131">
                                 <view key="view" id="132">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="685">
                                             <rect key="frame" x="44" y="606" width="63" height="18"/>
@@ -1472,17 +1471,6 @@ DQ
                                                 <binding destination="36" name="value" keyPath="values.growlEvery" id="743"/>
                                             </connections>
                                         </textField>
-                                        <button verticalHuggingPriority="750" id="974">
-                                            <rect key="frame" x="400" y="194" width="193" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Check Growl Installation" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="975">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="checkGrowl:" target="1203" id="1205"/>
-                                            </connections>
-                                        </button>
                                         <imageView id="981">
                                             <rect key="frame" x="588" y="188" width="48" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1491,7 +1479,7 @@ DQ
                                         <textField verticalHuggingPriority="750" id="1594">
                                             <rect key="frame" x="43" y="201" width="366" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notification Center will be used on 10.8+ if Growl is not installed." id="1595">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notification Center can be used on 10.8+" id="1595">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2884,7 +2872,7 @@ DQ
                             <action selector="toolBarIconClicked:" target="9" id="119"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="1827B4E4-417C-42AF-BCC1-0EE48F9C8A13" explicitItemIdentifier="Growl" label="Growl" paletteLabel="Growl" tag="2" image="growl" selectable="YES" id="97">
+                    <toolbarItem implicitItemIdentifier="1827B4E4-417C-42AF-BCC1-0EE48F9C8A13" explicitItemIdentifier="Growl" label="Notify" paletteLabel="Notify" tag="2" image="growl" selectable="YES" id="97">
                         <connections>
                             <action selector="toolBarIconClicked:" target="9" id="122"/>
                         </connections>

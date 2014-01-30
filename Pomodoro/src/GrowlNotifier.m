@@ -29,7 +29,6 @@
 
 - (id) init { 
     if ( (self = [super init]) ) {
-        [GrowlApplicationBridge setGrowlDelegate:self];
     }
     return self;
 }
@@ -38,44 +37,5 @@
     [super dealloc]; 
 }
 
-
-- (NSDictionary *) registrationDictionaryForGrowl {
-    NSArray *array = [NSArray arrayWithObjects:@"pomodoro", nil]; 
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [NSNumber numberWithInt:1],
-                          @"TicketVersion",
-                          array, 
-                          @"AllNotifications",
-                          array,
-                          @"DefaultNotifications",
-                          nil];
-    return dict;
-}
-
-
--(void) growlAlert:(NSString *)message title:(NSString *)title{
-    [self growlAlert:message title:title sticky:NO]; 
-}
-
--(void) growlAlert:(NSString *)message title:(NSString *)title sticky:(BOOL)st{
-    [GrowlApplicationBridge notifyWithTitle:title 
-								description:message 
-						   notificationName:@"pomodoro"
-								   iconData:nil
-								   priority:0 
-								   isSticky:st 
-							   clickContext:nil]; 
-}
-
--(BOOL) isGrowlInstalled {
-    return [GrowlApplicationBridge isGrowlInstalled];
-}
-
--(BOOL) isGrowlRunning {
-    return [GrowlApplicationBridge isGrowlRunning];
-}
-- (BOOL) hasNetworkClientEntitlement{
-    return YES;
-}
 
 @end

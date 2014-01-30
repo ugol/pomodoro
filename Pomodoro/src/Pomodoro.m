@@ -43,7 +43,12 @@
     if ( (self = [super init]) ) {
         [self initWithDuration:25];
     }
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     return self;
+}
+
+- (BOOL) userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{
+    return YES;
 }
 
 - (id) initWithDuration:(NSInteger) durationTime { 

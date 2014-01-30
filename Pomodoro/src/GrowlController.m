@@ -24,50 +24,21 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "GrowlController.h"
-#import "GrowlNotifier.h"
 #import "PomoNotifications.h"
 
 @implementation GrowlController
 
-@synthesize growl, growlStatus, growlEveryCombo;
+@synthesize growlStatus, growlEveryCombo;
 
 #pragma mark ---- Method-independent notifications ----
 
 -(void) notify:(NSString *)message title:(NSString *)title sticky:(BOOL)sticky {
-    if (growl && [growl isGrowlRunning]) {
-        [growl growlAlert:message title:title sticky:sticky];
-    } else if (userNotificationCenter) {
-        //Dynamic for compilation on <10.8
-        Class klass = NSClassFromString(@"NSUserNotification");
-        id notification = [[klass alloc] init];
-        [notification setTitle:title];
-        [notification setInformativeText:message];
-        [userNotificationCenter deliverNotification:notification];
-    }
-}
 
-#pragma mark ---- Growl ----
-
--(IBAction) checkGrowl:(id)sender {
-    
-    if ([growl isGrowlInstalled] && [growl isGrowlRunning]) {
-        [growlStatus setImage:greenButtonImage];
-        [sender setToolTip:@"Growl installed and running!"];
-        [growlStatus setToolTip:@"Growl installed and running!"];
-    } else if (userNotificationCenter != nil) {
-        [growlStatus setImage:greenButtonImage];
-        [sender setToolTip:@"Growl is not running but Notification Center is available!"];
-        [growlStatus setToolTip:@"Growl is not running but Notification Center is available!"];
-    } else if ([growl isGrowlInstalled]) {
-        [growlStatus setImage:yellowButtonImage];
-        [sender setToolTip:@"Growl installed but not running!"];
-        [growlStatus setToolTip:@"Growl installed but not running!"];
-    } else {
-       	[growlStatus setImage:redButtonImage];
-        [sender setToolTip:@"Growl not installed and not running!"];
-        [growlStatus setToolTip:@"Growl not installed and not running!"];
-    }
-    
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    [notification setTitle:@"Pomodoro"];
+    [notification setSubtitle:title];
+    [notification setInformativeText:message];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 

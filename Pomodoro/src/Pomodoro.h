@@ -53,7 +53,7 @@ enum PomoState {
 	PomoInBreak
 };
 
-@interface Pomodoro : NSObject {
+@interface Pomodoro : NSObject<NSUserNotificationCenterDelegate> {
 
 	id delegate;
 	
