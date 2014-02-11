@@ -51,7 +51,6 @@
             <connections>
                 <outlet property="breakCombo" destination="172" id="517"/>
                 <outlet property="finishPomodoro" destination="13" id="62"/>
-                <outlet property="growl" destination="1208" id="1210"/>
                 <outlet property="initialTimeCombo" destination="164" id="1380"/>
                 <outlet property="initialTimeComboInStart" destination="1372" id="1379"/>
                 <outlet property="internalInterruptPomodoro" destination="12" id="58"/>
@@ -91,20 +90,7 @@
                 <outlet property="scriptView" destination="1045" id="1050"/>
             </connections>
         </osaDictionaryScriptController>
-        <customObject id="1197" customClass="TwitterController">
-            <connections>
-                <outlet property="prefs" destination="75" id="1201"/>
-                <outlet property="twitterProgress" destination="315" id="1199"/>
-                <outlet property="twitterStatus" destination="316" id="1200"/>
-            </connections>
-        </customObject>
-        <customObject id="1203" customClass="GrowlController">
-            <connections>
-                <outlet property="growlEveryCombo" destination="698" id="1207"/>
-                <outlet property="growlStatus" destination="981" id="1206"/>
-            </connections>
-        </customObject>
-        <customObject id="1208" customClass="GrowlNotifier"/>
+        <customObject id="1203" customClass="GrowlController"/>
         <customObject id="1204" customClass="SpeechController">
             <connections>
                 <outlet property="speech" destination="1211" id="1212"/>
@@ -359,7 +345,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="bNn-Cb-gSK">
                                             <rect key="frame" x="1" y="1" width="560" height="235"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1045" userLabel="Script View">
                                                     <rect key="frame" x="0.0" y="0.0" width="565" height="235"/>
@@ -395,7 +381,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="BuK-b8-kkH">
                                             <rect key="frame" x="1" y="1" width="560" height="272"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1049">
                                                     <rect key="frame" x="0.0" y="0.0" width="565" height="272"/>
@@ -1020,7 +1006,6 @@ DQ
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="connectToTwitter:" target="1197" id="1198"/>
                                                 <binding destination="36" name="enabled" keyPath="values.enableTwitter" id="333"/>
                                             </connections>
                                         </button>
