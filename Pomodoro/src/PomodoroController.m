@@ -415,7 +415,8 @@
 	}
 	
 	[self showTimeOnStatusBar: _initialTime * 60];
-	if (![self checkDefault:@"mute"] && [self checkDefault:@"autoPomodoroRestart"]) {
+    
+	if ([self checkDefault:@"autoPomodoroRestart"]) {
 		[self start:nil];
 	} else if ([self checkDefault:@"longbreakResetEnabled"]) {
         
