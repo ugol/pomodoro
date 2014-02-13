@@ -33,11 +33,11 @@
     PomodoroController* pomoController = (PomodoroController*)[[NSApplication sharedApplication] delegate];
     
     if (![pomoController.interruptPomodoro isEnabled]) {
-        return @"Can't interrupt Pomodoro";
+        return @"Can't interrupt Timer";
     }
     
     [pomoController externalInterrupt:nil];
-    return @"Pomodoro externally interrupted";
+    return @"Timer externally interrupted";
     
 }
 

@@ -33,11 +33,11 @@
     PomodoroController* pomoController = (PomodoroController*)[[NSApplication sharedApplication] delegate];
     
     if (![pomoController.finishPomodoro isEnabled]) {
-        return @"Can't force completion of Pomodoro";
+        return @"Can't force completion of Timer";
     }
     
     [pomoController finish:nil];
-    return @"Pomodoro forced to complete";
+    return @"Timer forced to complete";
     
 }
 

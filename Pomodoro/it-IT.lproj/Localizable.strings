@@ -1,11 +1,11 @@
 /* Calendar end text */
-"$duration minutes Pomodoro '$pomodoroName'" = "$duration minutes Pomodoro '$pomodoroName'";
+"$duration minutes Pomodoro '$pomodoroName'" = "$duration minutes Timer '$timerName'";
 
 /* Speech every minutes */
 "$time minutes to go" = "$time minuti alla fine";
 
 /* Quick statistic format string */
-"QuickStatistics" = "%1$@ (%2$.2d:%3$.2d)\nInterruzioni: %4$d/%5$d/%6$d\n\nPomodori totali: %7$d/%8$d/%9$d\nPomodori di oggi: %10$d/%11$d/%12$d\nInterruzioni totali: %13$d/%14$d/%15$d\nInterruzioni di oggi: %16$d/%17$d/%18$d\n\nPomodori rimanenti al break lungo: %19$d";
+"QuickStatistics" = "%1$@ (%2$.2d:%3$.2d)\nInterruzioni: %4$d/%5$d/%6$d\n\nTimers totali: %7$d/%8$d/%9$d\nTimers di oggi: %10$d/%11$d/%12$d\nInterruzioni totali: %13$d/%14$d/%15$d\nInterruzioni di oggi: %16$d/%17$d/%18$d\n\nTimers rimanenti al break lungo: %19$d";
 
 /* Applescript placeholder */
 "-- insert here your Applescript" = "-- inserisci qui il tuo Applescript";
@@ -26,19 +26,19 @@
 "Break after: %@" = "Break dopo: %@";
 
 /* Export Header */
-"Export data created by Pomodoro on %@\n" = "Export creato da Pomodoro il %@\n";
+"Export data created by Pomodoro on %@\n" = "Export creato da Timer il %@\n";
 
 /* Growl pomodoro end */
-"Great! A full pomodoro!" = "Fantastico! Concluso un Pomodoro!";
+"Great! A full pomodoro!" = "Fantastico! Concluso un Timer!";
 
 /* Growl pomodoro start */
-"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'." = "Buon Pomodoro! Hai $duration minuti per completare '$pomodoroName'.";
+"Have a great pomodoro! You have $duration minutes to do '$pomodoroName'." = "Buon Timer! Hai $duration minuti per completare '$timerName'.";
 
 /* Twitter pomodoro reset */
-"I have just reset pomodoro '$pomodoroName'" = "Ho appena annullato '$pomodoroName'";
+"I have just reset pomodoro '$pomodoroName'" = "Ho appena annullato '$timerName'";
 
 /* Pomodoro name prompt */
-"Insert here the pomodoro name" = "Inserisci il nome del Pomodoro";
+"Insert here the pomodoro name" = "Inserisci il nome del Timer";
 
 /* Growl header for internal interruptions */
 "Internal Interruption" = "Interruzioni interne";
@@ -50,16 +50,16 @@
 "interruption over, sorry" = "spiacente, Interruzione conclusa";
 
 /* Twitter break finished */
-"Just finished break after pomodoro '$pomodoroName'" = "Ho appena finito di riposare dopo '$pomodoroName'";
+"Just finished break after pomodoro '$pomodoroName'" = "Ho appena finito di riposare dopo '$timerName'";
 
 /* Twitter pomodoro end */
-"Just finished pomodoro '$pomodoroName'" = "Ho appena finito '$pomodoroName'";
+"Just finished pomodoro '$pomodoroName'" = "Ho appena finito '$timerName'";
 
 /* Tooltip for finished pomodoros */
 "Just finished: %@" = "Appena finito: %@";
 
 /* Twitter pomodoro start */
-"Just started pomodoro '$pomodoroName'" = "Ho appena iniziato '$pomodoroName'";
+"Just started pomodoro '$pomodoroName'" = "Ho appena iniziato '$timerName'";
 
 /* Tooltip for interrupt-reset pomodoros */
 "Last: %@ (interrupted)" = "Ultimo: %@ (interrupted)";
@@ -74,25 +74,25 @@
 "Other $mins minutes passed by. $passed total minutes spent." = "Altri $mins minuti passati. Hai consumato $passed minuti.";
 
 /* Growl header for finished break */
-"Pomodoro break finished" = "Pomodoro break finished";
+"Pomodoro break finished" = "Timer break finished";
 
 /* Growl header for finished pomodoro */
-"Pomodoro finished" = "Pomodoro finished";
+"Pomodoro finished" = "Timer finished";
 
 /* Growl title for interruptions */
-"Pomodoro interrupted" = "Pomodoro interrupted";
+"Pomodoro interrupted" = "Timer interrupted";
 
 /* Growl header for reset */
-"Pomodoro reset" = "Pomodoro reset";
+"Pomodoro reset" = "Timer reset";
 
 /* Growl header for resumed pomodoro */
-"Pomodoro resumed" = "Pomodoro resumed";
+"Pomodoro resumed" = "Timer resumed";
 
 /* Growl header for pomodoro start */
-"Pomodoro started" = "Pomodoro started";
+"Pomodoro started" = "Timer started";
 
 /* Status Tooltip */
-"Pomodoro Time Management" = "Pomodoro Time Management";
+"Pomodoro Time Management" = "Timer Time Management";
 
 /* Growl header for quick statistics */
 "Quick Statistics" = "Statistiche veloci";
@@ -122,10 +122,10 @@
 "You have $secs seconds to resume." = "Hai $secs secondi per riprendere.";
 
 /* Mood Message */
-"Pomodoro '$pomodoroName'. Back at $dueTime" = "Pomodoro '$pomodoroName'. Torno alle $dueTime";
+"Pomodoro '$pomodoroName'. Back at $dueTime" = "Timer '$timerName'. Torno alle $dueTime";
 
 /* Mood Message Break*/
-"Resting after Pomodoro '$pomodoroName'" = "Sto riposando dopo '$pomodoroName'";
+"Resting after Pomodoro '$pomodoroName'" = "Sto riposando dopo '$timerName'";
 
 /* Release Number */
 "Release" = "Release: %@";

@@ -35,7 +35,7 @@
 -(void) notify:(NSString *)message title:(NSString *)title sticky:(BOOL)sticky {
 
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-    [notification setTitle:@"Pomodoro"];
+    [notification setTitle:@"Timer"];
     [notification setSubtitle:title];
     [notification setInformativeText:message];
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];

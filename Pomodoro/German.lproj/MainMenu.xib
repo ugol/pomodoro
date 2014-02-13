@@ -233,7 +233,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Bezeichnung der Pomodoro" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroNameWindow" animationBehavior="default" id="26" customClass="NSPanel">
+        <window title="Bezeichnung der Timer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroNameWindow" animationBehavior="default" id="26" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="277" y="214" width="426" height="125"/>
@@ -324,7 +324,7 @@ DQ
             </view>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="36"/>
-        <window title="Pomodoro Skript-Unterstützung" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroScripting" animationBehavior="default" id="996" userLabel="Panel - Pomodoro Skript-Unterstützung" customClass="NSPanel">
+        <window title="Timer Skript-Unterstützung" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroScripting" animationBehavior="default" id="996" userLabel="Panel - Pomodoro Skript-Unterstützung" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="277" y="214" width="562" height="528"/>
@@ -354,10 +354,10 @@ DQ
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="235"/>
-                                                    <size key="maxSize" width="565" height="10000000"/>
+                                                    <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="235"/>
-                                                    <size key="maxSize" width="565" height="10000000"/>
+                                                    <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -390,10 +390,10 @@ DQ
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="272"/>
-                                                    <size key="maxSize" width="565" height="10000000"/>
+                                                    <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="272"/>
-                                                    <size key="maxSize" width="565" height="10000000"/>
+                                                    <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -455,7 +455,7 @@ DQ
                 <outlet property="delegate" destination="1238" id="1250"/>
             </connections>
         </window>
-        <window title="Pomodoro Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroPrefsWindow" animationBehavior="default" id="75" customClass="NSPanel">
+        <window title="Timer Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="PomodoroPrefsWindow" animationBehavior="default" id="75" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="277" y="214" width="664" height="497"/>
@@ -472,7 +472,7 @@ DQ
                             <tabViewItem label="Pomodoro" identifier="0" id="104">
                                 <view key="view" id="105">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box autoresizesSubviews="NO" title="Töne und Lautstärke" borderType="line" id="1586">
                                             <rect key="frame" x="17" y="180" width="648" height="194"/>
@@ -537,7 +537,7 @@ DQ
                                                     <textField verticalHuggingPriority="750" id="1661">
                                                         <rect key="frame" x="88" y="130" width="149" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pomodoro-Ende:" id="1666">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Timer-Ende:" id="1666">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -675,7 +675,7 @@ DQ
                                                     <textField verticalHuggingPriority="750" id="1612">
                                                         <rect key="frame" x="15" y="240" width="222" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Länge einer Pomodoro:" id="1619">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Länge einer Timer:" id="1619">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -727,9 +727,9 @@ DQ
                                                         </textFieldCell>
                                                     </textField>
                                                     <button id="1608">
-                                                        <rect key="frame" x="240" y="181" width="255" height="18"/>
+                                                        <rect key="frame" x="240" y="181" width="227" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Nach Pomodoro-Bezeichnung fragen" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1623">
+                                                        <buttonCell key="cell" type="check" title="Nach Timer-Bezeichnung fragen" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1623">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -740,7 +740,7 @@ DQ
                                                     <button id="1607">
                                                         <rect key="frame" x="240" y="161" width="251" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="check" title="Pomodoro automatisch neu starten" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1624">
+                                                        <buttonCell key="cell" type="check" title="Timer automatisch neu starten" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1624">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -904,7 +904,7 @@ DQ
                                                     <textField verticalHuggingPriority="750" id="1590">
                                                         <rect key="frame" x="520" y="44" width="90" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pomodoros" id="1642">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timers" id="1642">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -961,7 +961,7 @@ DQ
                             <tabViewItem label="Twitter" identifier="1" id="127">
                                 <view key="view" id="128">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" id="129">
                                             <rect key="frame" x="53" y="510" width="124" height="32"/>
@@ -1428,12 +1428,12 @@ DQ
                             <tabViewItem label="Voice" identifier="3" id="135">
                                 <view key="view" id="136">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="598">
-                                            <rect key="frame" x="44" y="606" width="145" height="18"/>
+                                            <rect key="frame" x="44" y="606" width="117" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Start der Pomodoro" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="645">
+                                            <buttonCell key="cell" type="check" title="Start der Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="645">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -1475,9 +1475,9 @@ DQ
                                             </connections>
                                         </button>
                                         <button id="603">
-                                            <rect key="frame" x="44" y="356" width="147" height="18"/>
+                                            <rect key="frame" x="44" y="356" width="118" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Ende der Pomodoro" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="640">
+                                            <buttonCell key="cell" type="check" title="Ende der Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="640">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -1827,8 +1827,8 @@ DQ
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <binding destination="36" name="enabled" keyPath="values.thingsEnabled" id="381"/>
                                                             <binding destination="36" name="value" keyPath="values.thingsAddingEnabled" id="383"/>
+                                                            <binding destination="36" name="enabled" keyPath="values.thingsEnabled" id="381"/>
                                                         </connections>
                                                     </button>
                                                     <button id="254">
@@ -1850,8 +1850,8 @@ DQ
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <binding destination="36" name="enabled" keyPath="values.omniFocusEnabled" id="387"/>
                                                             <binding destination="36" name="value" keyPath="values.omniFocusAddingEnabled" id="389"/>
+                                                            <binding destination="36" name="enabled" keyPath="values.omniFocusEnabled" id="387"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1934,7 +1934,7 @@ DQ
                                                             <rect key="frame" x="-100" y="-100" width="223" height="15"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
-                                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="1779">
+                                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1779">
                                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
@@ -1974,7 +1974,7 @@ DQ
                             <tabViewItem label="Calendar" identifier="5" id="147">
                                 <view key="view" id="148">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="240">
                                             <rect key="frame" x="99" y="606" width="220" height="18"/>
@@ -2017,7 +2017,7 @@ DQ
                                         <textField verticalHuggingPriority="750" id="535">
                                             <rect key="frame" x="104" y="574" width="265" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pomodoros diesem Kalender hinzufügen:" id="536">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timers diesem Kalender hinzufügen:" id="536">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2049,12 +2049,12 @@ DQ
                             <tabViewItem label="Scripts" identifier="6" id="143">
                                 <view key="view" id="144">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="816">
-                                            <rect key="frame" x="44" y="606" width="145" height="18"/>
+                                            <rect key="frame" x="44" y="606" width="117" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Start der Pomodoro" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="836">
+                                            <buttonCell key="cell" type="check" title="Start der Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="836">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -2096,9 +2096,9 @@ DQ
                                             </connections>
                                         </button>
                                         <button id="820">
-                                            <rect key="frame" x="44" y="356" width="147" height="18"/>
+                                            <rect key="frame" x="44" y="356" width="118" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Ende der Pomodoro" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="832">
+                                            <buttonCell key="cell" type="check" title="Ende der Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="832">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -2177,7 +2177,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="Xyf-Km-3vg">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="952">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2210,7 +2210,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="Kzu-ui-AY1">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1058">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2243,7 +2243,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="S3j-Ua-mta">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1053">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2276,7 +2276,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="TTD-nq-HSF">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1063">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2309,7 +2309,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="FVU-0S-ggB">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1068">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2342,7 +2342,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="cib-6B-E5s">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1073">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2375,7 +2375,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="xlb-f8-Zli">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1078">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2408,7 +2408,7 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="adU-7g-DFv">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1083">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -2530,7 +2530,7 @@ DQ
                             <tabViewItem label="Shortcuts" identifier="7" id="151">
                                 <view key="view" id="152">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <customView id="279" customClass="SRRecorderControl">
                                             <rect key="frame" x="337" y="599" width="163" height="22"/>
@@ -2593,7 +2593,7 @@ DQ
                                         <textField verticalHuggingPriority="750" id="295">
                                             <rect key="frame" x="166" y="549" width="118" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pomodoro starten" id="296">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timer starten" id="296">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2602,7 +2602,7 @@ DQ
                                         <textField verticalHuggingPriority="750" id="297">
                                             <rect key="frame" x="166" y="499" width="140" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pomodoro abbrechen" id="298">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timer abbrechen" id="298">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2629,7 +2629,7 @@ DQ
                                         <textField verticalHuggingPriority="750" id="305">
                                             <rect key="frame" x="166" y="349" width="138" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pomodoro fortsetzen" id="306">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timer fortsetzen" id="306">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2650,7 +2650,7 @@ DQ
                             <tabViewItem label="General" identifier="1" id="103">
                                 <view key="view" id="106">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="1743">
                                             <rect key="frame" x="302" y="535" width="212" height="18"/>
@@ -2687,7 +2687,7 @@ DQ
                                         <button id="1747">
                                             <rect key="frame" x="302" y="415" width="232" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Während einer Pomodoro" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1758">
+                                            <buttonCell key="cell" type="check" title="Während einer Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1758">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -2745,7 +2745,7 @@ DQ
             </view>
             <toolbar key="toolbar" implicitIdentifier="FDA8891F-F9A5-4A64-B8AD-AFC0E6F39247" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="87">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="0C3B14D5-5140-4B04-89D4-9BAAC22B9DD3" explicitItemIdentifier="Pomodoro" label="Pomodoro" paletteLabel="Pomodoro" image="icon" selectable="YES" id="96">
+                    <toolbarItem implicitItemIdentifier="0C3B14D5-5140-4B04-89D4-9BAAC22B9DD3" explicitItemIdentifier="Pomodoro" label="Timer" paletteLabel="Timer" image="icon" selectable="YES" id="96">
                         <connections>
                             <action selector="toolBarIconClicked:" target="9" id="119"/>
                         </connections>
