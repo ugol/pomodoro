@@ -3,38 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildNumber</key>
-	<integer>371</integer>
+	<integer>417</integer>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>Timer</string>
 	<key>CFBundleIconFile</key>
 	<string>icon</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.github.martakostova.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>io.github.martakostova.Pomodoro</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Timer</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3.7</string>
+	<string>2.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>Pomodoro App</string>
+			<string>Timer App</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pomodoro</string>
+				<string>timer</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.3.7</string>
+	<string>2.0.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -50,6 +52,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>OSAScriptingDefinition</key>
-	<string>Timer.sdef</string>
+	<string>Pomodoro.sdef</string>
 </dict>
 </plist>

@@ -70,7 +70,7 @@
 		69AE9613133B4706004DC14D /* PomodoroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 69AE9612133B4706004DC14D /* PomodoroTests.h */; };
 		69AE9615133B4706004DC14D /* PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE9614133B4706004DC14D /* PomodoroTests.m */; };
 		69D17DD6136AAC9F00F5D922 /* StartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17DD5136AAC9F00F5D922 /* StartCommand.m */; };
-		69D17DD8136AAE5100F5D922 /* Timer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 69D17DD7136AAE5000F5D922 /* Timer.sdef */; };
+		69D17DD8136AAE5100F5D922 /* Pomodoro.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */; };
 		69D17E15136C0C9C00F5D922 /* ResetCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E14136C0C9C00F5D922 /* ResetCommand.m */; };
 		69D17E18136C0ECB00F5D922 /* ForceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E17136C0ECB00F5D922 /* ForceCommand.m */; };
 		69D17E1B136C0F6300F5D922 /* ExternalInterruptCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17E1A136C0F6200F5D922 /* ExternalInterruptCommand.m */; };
@@ -396,18 +396,18 @@
 		69AE95EA133B4705004DC14D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		69AE95EB133B4705004DC14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		69AE95EC133B4705004DC14D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		69AE95EF133B4705004DC14D /* Timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Timer-Info.plist"; sourceTree = "<group>"; };
+		69AE95EF133B4705004DC14D /* Pomodoro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pomodoro-Info.plist"; sourceTree = "<group>"; };
 		69AE95F3133B4705004DC14D /* Pomodoro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pomodoro-Prefix.pch"; sourceTree = "<group>"; };
 		69AE95F4133B4705004DC14D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		69AE9607133B4706004DC14D /* TimerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69AE960D133B4706004DC14D /* TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerTests-Info.plist"; sourceTree = "<group>"; };
+		69AE9607133B4706004DC14D /* PomodoroTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69AE960D133B4706004DC14D /* PomodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PomodoroTests-Info.plist"; sourceTree = "<group>"; };
 		69AE960F133B4706004DC14D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		69AE9611133B4706004DC14D /* TimerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimerTests-Prefix.pch"; sourceTree = "<group>"; };
+		69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PomodoroTests-Prefix.pch"; sourceTree = "<group>"; };
 		69AE9612133B4706004DC14D /* PomodoroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroTests.h; sourceTree = "<group>"; };
 		69AE9614133B4706004DC14D /* PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PomodoroTests.m; sourceTree = "<group>"; };
 		69D17DD4136AAC9F00F5D922 /* StartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartCommand.h; path = src/StartCommand.h; sourceTree = "<group>"; };
 		69D17DD5136AAC9F00F5D922 /* StartCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartCommand.m; path = src/StartCommand.m; sourceTree = "<group>"; };
-		69D17DD7136AAE5000F5D922 /* Timer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Timer.sdef; path = src/Timer.sdef; sourceTree = "<group>"; };
+		69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Pomodoro.sdef; path = src/Pomodoro.sdef; sourceTree = "<group>"; };
 		69D17E13136C0C9C00F5D922 /* ResetCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetCommand.h; path = src/ResetCommand.h; sourceTree = "<group>"; };
 		69D17E14136C0C9C00F5D922 /* ResetCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetCommand.m; path = src/ResetCommand.m; sourceTree = "<group>"; };
 		69D17E16136C0ECB00F5D922 /* ForceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForceCommand.h; path = src/ForceCommand.h; sourceTree = "<group>"; };
@@ -1185,7 +1185,7 @@
 			isa = PBXGroup;
 			children = (
 				69AE95E3133B4705004DC14D /* Timer.app */,
-				69AE9607133B4706004DC14D /* TimerTests.octest */,
+				69AE9607133B4706004DC14D /* PomodoroTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1230,9 +1230,9 @@
 		69AE95EE133B4705004DC14D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				69D17DD7136AAE5000F5D922 /* Timer.sdef */,
+				69D17DD7136AAE5000F5D922 /* Pomodoro.sdef */,
 				69ED6371133B9D03003F59BA /* InfoPlist.strings */,
-				69AE95EF133B4705004DC14D /* Timer-Info.plist */,
+				69AE95EF133B4705004DC14D /* Pomodoro-Info.plist */,
 				69AE95F3133B4705004DC14D /* Pomodoro-Prefix.pch */,
 				69AE95F4133B4705004DC14D /* main.m */,
 			);
@@ -1254,9 +1254,9 @@
 		69AE960C133B4706004DC14D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				69AE960D133B4706004DC14D /* TimerTests-Info.plist */,
+				69AE960D133B4706004DC14D /* PomodoroTests-Info.plist */,
 				69AE960E133B4706004DC14D /* InfoPlist.strings */,
-				69AE9611133B4706004DC14D /* TimerTests-Prefix.pch */,
+				69AE9611133B4706004DC14D /* PomodoroTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2068,9 +2068,9 @@
 			productReference = 69AE95E3133B4705004DC14D /* Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69AE9606133B4706004DC14D /* TimerTests */ = {
+		69AE9606133B4706004DC14D /* PomodoroTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69AE961B133B4706004DC14D /* Build configuration list for PBXNativeTarget "TimerTests" */;
+			buildConfigurationList = 69AE961B133B4706004DC14D /* Build configuration list for PBXNativeTarget "PomodoroTests" */;
 			buildPhases = (
 				69AE9602133B4706004DC14D /* Sources */,
 				69AE9603133B4706004DC14D /* Frameworks */,
@@ -2082,9 +2082,9 @@
 			dependencies = (
 				69AE960A133B4706004DC14D /* PBXTargetDependency */,
 			);
-			name = TimerTests;
+			name = PomodoroTests;
 			productName = PomodoroTests;
-			productReference = 69AE9607133B4706004DC14D /* TimerTests.octest */;
+			productReference = 69AE9607133B4706004DC14D /* PomodoroTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -2162,7 +2162,7 @@
 			projectRoot = "";
 			targets = (
 				69AE95E2133B4705004DC14D /* Timer */,
-				69AE9606133B4706004DC14D /* TimerTests */,
+				69AE9606133B4706004DC14D /* PomodoroTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2355,7 +2355,7 @@
 				69FCF747135729DD003862DC /* ringBreak.wav in Resources */,
 				699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */,
 				699CE31E1366D0E500BBC486 /* soundLow.png in Resources */,
-				69D17DD8136AAE5100F5D922 /* Timer.sdef in Resources */,
+				69D17DD8136AAE5100F5D922 /* Pomodoro.sdef in Resources */,
 				DBD776DB16604D16003F58B4 /* safari.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2383,7 +2383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n# Auto Increment Version Script\nbuildPlist=\"Pomodoro/Timer-Info.plist\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBuildNumber\" $buildPlist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBuildNumber $buildNumber\" $buildPlist";
+			shellScript = "#!/bin/bash\n# Auto Increment Version Script\nbuildPlist=\"Pomodoro/Pomodoro-Info.plist\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBuildNumber\" $buildPlist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBuildNumber $buildNumber\" $buildPlist";
 		};
 		698F4740133B74E700311E34 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2769,7 +2769,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer: Konstantin Kostov (4G7BRATG6P)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Konstantin Kostov (59823NJ7N9)";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2786,7 +2786,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
-				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
+				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
 				SDKROOT = macosx10.8;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -2838,9 +2838,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pomodoro/Timer-Prefix.pch";
+				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				INFOPLIST_FILE = "Pomodoro/Timer-Info.plist";
+				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
@@ -2866,9 +2866,9 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pomodoro/Timer-Prefix.pch";
+				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				INFOPLIST_FILE = "Pomodoro/Timer-Info.plist";
+				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
@@ -2889,13 +2889,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PomodoroTests/TimerTests-Prefix.pch";
-				INFOPLIST_FILE = "PomodoroTests/TimerTests-Info.plist";
+				GCC_PREFIX_HEADER = "PomodoroTests/PomodoroTests-Prefix.pch";
+				INFOPLIST_FILE = "PomodoroTests/PomodoroTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = TimerTests;
+				PRODUCT_NAME = PomodoroTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2912,13 +2912,13 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PomodoroTests/TimerTests-Prefix.pch";
-				INFOPLIST_FILE = "PomodoroTests/TimerTests-Info.plist";
+				GCC_PREFIX_HEADER = "PomodoroTests/PomodoroTests-Prefix.pch";
+				INFOPLIST_FILE = "PomodoroTests/PomodoroTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = TimerTests;
+				PRODUCT_NAME = PomodoroTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2945,7 +2945,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69AE961B133B4706004DC14D /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
+		69AE961B133B4706004DC14D /* Build configuration list for PBXNativeTarget "PomodoroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69AE961C133B4706004DC14D /* Debug */,

@@ -63,7 +63,7 @@
         [pomoController start:@"direct"];
     }
         
-    return [NSString stringWithFormat:@"Pomodoro %@(%d,%d) started", _pomodoroName, _initialTime, _breakTime];
+    return [NSString stringWithFormat:@"Timer %@(%d,%d) started", _pomodoroName, _initialTime, _breakTime];
 
 }
 

@@ -7,7 +7,7 @@ It is a simple but effective way to manage your time and to boost your productiv
 Can be used for programming, studying, writing, cooking or simply concentrating on something important.
  
 You can find more informations on the Pomodoro Technique on http://www.pomodorotechnique.com/
-Updates, source code, new releases, manual and fixes on http://martakostova.github.io/pomodoro
+Updates, source code, new releases, manual and fixes on http://martakostova.github.io/timer
 
 ----------
 Developers
