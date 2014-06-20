@@ -107,6 +107,8 @@
 		C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
 		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
 		C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95EC133B4705004DC14D /* Foundation.framework */; };
+		C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */; };
+		C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */; };
 		DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
 		DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
 		DB4C2A8A166889F0000B2718 /* setStatusToAvailableInMessages.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
@@ -384,7 +386,6 @@
 		698F46FE133B714100311E34 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
-		698F4733133B72BC00311E34 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4734133B72BC00311E34 /* OAuthConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4735133B72BC00311E34 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4739133B72E800311E34 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
@@ -674,7 +675,6 @@
 		C137DEAE188ACA4700D9C13F /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C137DEAF188ACA4700D9C13F /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C137DEB0188ACA4700D9C13F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		C15C9CDE188FF3DD00ACFF0B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		C19214251889FCC0005185D3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -912,7 +912,8 @@
 		C19215701889FCC2005185D3 /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C19215711889FCC2005185D3 /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C19215721889FCC2005185D3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		C1953C2A1891E4D800363CEB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = externalFw/Growl.framework; sourceTree = "<group>"; };
+		C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
+		C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		C1EB6F7418997B3700D8D502 /* ServerNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServerNotification.framework; path = System/Library/Frameworks/ServerNotification.framework; sourceTree = SDKROOT; };
 		DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInMessages.applescript; sourceTree = "<group>"; };
 		DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInMessages.applescript; sourceTree = "<group>"; };
@@ -932,9 +933,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */,
+				C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */,
 				C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */,
+				C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
 				69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
@@ -1204,8 +1207,7 @@
 		69AE95E9133B4705004DC14D /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1953C2A1891E4D800363CEB /* Growl.framework */,
-				698F4733133B72BC00311E34 /* BGHUDAppKit.framework */,
+				C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */,
 				698F4734133B72BC00311E34 /* OAuthConsumer.framework */,
 				698F4735133B72BC00311E34 /* ShortcutRecorder.framework */,
 			);
@@ -1676,7 +1678,7 @@
 		C19214231889FCC0005185D3 /* externalFw */ = {
 			isa = PBXGroup;
 			children = (
-				C15C9CDE188FF3DD00ACFF0B /* Growl.framework */,
+				C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */,
 				C19214241889FCC0005185D3 /* BGHUDAppKit */,
 				C19214ED1889FCC2005185D3 /* OAuthConsumer */,
 				C192152A1889FCC2005185D3 /* shortcutrecorder */,
@@ -2103,6 +2105,9 @@
 								enabled = 1;
 							};
 						};
+					};
+					69AE9606133B4706004DC14D = {
+						DevelopmentTeam = 59823NJ7N9;
 					};
 				};
 			};
@@ -2834,6 +2839,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"./**",
 					/Users/marta/Projects/ObjectiveC/pomodoro/externalFw,
+					"$(PROJECT_DIR)/externalFw",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -2863,6 +2869,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"./**",
 					/Users/marta/Projects/ObjectiveC/pomodoro/externalFw,
+					"$(PROJECT_DIR)/externalFw",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2883,6 +2890,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -2896,6 +2905,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = PomodoroTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2906,6 +2916,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2919,6 +2931,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = PomodoroTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};

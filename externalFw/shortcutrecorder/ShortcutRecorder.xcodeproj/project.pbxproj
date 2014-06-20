@@ -21,12 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		342E00EE109CCC36009AD8CA /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; };
-		342E00EF109CCC36009AD8CA /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C309CDB9360085E9ED /* SRRecorderCell.m */; };
-		342E00F0109CCC36009AD8CA /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; };
-		342E00F1109CCC36009AD8CA /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670F0A246B4900B69171 /* SRValidator.m */; };
-		342E00F2109CCC36009AD8CA /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C367110A246B4900B69171 /* SRCommon.m */; };
-		342E00F3109CCC36009AD8CA /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939837B20DA42DC5007F53F3 /* SR_LeopardView.m */; };
+		342E00EE109CCC36009AD8CA /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		342E00EF109CCC36009AD8CA /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C309CDB9360085E9ED /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		342E00F0109CCC36009AD8CA /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		342E00F1109CCC36009AD8CA /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670F0A246B4900B69171 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		342E00F2109CCC36009AD8CA /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C367110A246B4900B69171 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		342E00F3109CCC36009AD8CA /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939837B20DA42DC5007F53F3 /* SR_LeopardView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		342E00F5109CCC36009AD8CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		342E00F6109CCC36009AD8CA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1109C482D20000E739 /* Carbon.framework */; };
 		342E00F9109CCC36009AD8CA /* ShortcutRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 939837B50DA42DFB007F53F3 /* ShortcutRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,12 +37,12 @@
 		342E00FE109CCC36009AD8CA /* SRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C3670E0A246B4900B69171 /* SRValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		342E00FF109CCC36009AD8CA /* SRCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C367100A246B4900B69171 /* SRCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		342E0100109CCC36009AD8CA /* PTKeyCodeTranslator.h in Headers */ = {isa = PBXBuildFile; fileRef = A1125B75104C8AF3005C6F7B /* PTKeyCodeTranslator.h */; };
-		939837950DA429EC007F53F3 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; };
-		939837960DA429EC007F53F3 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C309CDB9360085E9ED /* SRRecorderCell.m */; };
-		939837980DA429EC007F53F3 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; };
-		939837990DA429EC007F53F3 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670F0A246B4900B69171 /* SRValidator.m */; };
-		9398379A0DA429EC007F53F3 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C367110A246B4900B69171 /* SRCommon.m */; };
-		939837B40DA42DC5007F53F3 /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939837B20DA42DC5007F53F3 /* SR_LeopardView.m */; };
+		939837950DA429EC007F53F3 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939837960DA429EC007F53F3 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C309CDB9360085E9ED /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939837980DA429EC007F53F3 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939837990DA429EC007F53F3 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670F0A246B4900B69171 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9398379A0DA429EC007F53F3 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C367110A246B4900B69171 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939837B40DA42DC5007F53F3 /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939837B20DA42DC5007F53F3 /* SR_LeopardView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		939838770DA42E23007F53F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		939838780DA42E23007F53F3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1109C482D20000E739 /* Carbon.framework */; };
 		939839390DA4350B007F53F3 /* ShortcutRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 939837B50DA42DFB007F53F3 /* ShortcutRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,11 +58,11 @@
 		93983B0C0DA43C4E007F53F3 /* SRRemoveShortcutRollover.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E281C09C1D6C500444687 /* SRRemoveShortcutRollover.tif */; };
 		93983B0D0DA43C4E007F53F3 /* SRSnapback.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 0B6DAA3C09C329AB0022655F /* SRSnapback.tiff */; };
 		93983B0E0DA43C4E007F53F3 /* ShortcutRecorder.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B68DD0709CC0BEB00596FC0 /* ShortcutRecorder.strings */; };
-		93983B100DA43C4E007F53F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		93983B140DA43C4E007F53F3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0109CDBADE0085E9ED /* AppController.m */; };
-		93983B150DA43C4E007F53F3 /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0409CDBADE0085E9ED /* PTHotKey.m */; };
-		93983B160DA43C4E007F53F3 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0609CDBADE0085E9ED /* PTHotKeyCenter.m */; };
-		93983B170DA43C4E007F53F3 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0809CDBADE0085E9ED /* PTKeyCombo.m */; };
+		93983B100DA43C4E007F53F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		93983B140DA43C4E007F53F3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0109CDBADE0085E9ED /* AppController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93983B150DA43C4E007F53F3 /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0409CDBADE0085E9ED /* PTHotKey.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93983B160DA43C4E007F53F3 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0609CDBADE0085E9ED /* PTHotKeyCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93983B170DA43C4E007F53F3 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0809CDBADE0085E9ED /* PTKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93983B1C0DA43C4E007F53F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		93983B1D0DA43C4E007F53F3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1109C482D20000E739 /* Carbon.framework */; };
 		93983B1E0DA43C4E007F53F3 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1309C482DC0000E739 /* CoreServices.framework */; };
@@ -70,7 +70,7 @@
 		93983B390DA43C82007F53F3 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */; };
 		93983B8B0DA441BB007F53F3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93983B890DA441BB007F53F3 /* MainMenu.xib */; };
 		A1125B77104C8AF3005C6F7B /* PTKeyCodeTranslator.h in Headers */ = {isa = PBXBuildFile; fileRef = A1125B75104C8AF3005C6F7B /* PTKeyCodeTranslator.h */; };
-		A1125B79104C8B06005C6F7B /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1125B76104C8AF3005C6F7B /* PTKeyCodeTranslator.m */; };
+		A1125B79104C8B06005C6F7B /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1125B76104C8AF3005C6F7B /* PTKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -718,7 +718,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -750,7 +750,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -817,7 +817,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -835,7 +835,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
