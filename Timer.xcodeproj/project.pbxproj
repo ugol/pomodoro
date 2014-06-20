@@ -107,7 +107,6 @@
 		C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
 		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
 		C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95EC133B4705004DC14D /* Foundation.framework */; };
-		C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */; };
 		C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */; };
 		DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
 		DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
@@ -912,7 +911,6 @@
 		C19215701889FCC2005185D3 /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C19215711889FCC2005185D3 /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C19215721889FCC2005185D3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		C1EB6F7418997B3700D8D502 /* ServerNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServerNotification.framework; path = System/Library/Frameworks/ServerNotification.framework; sourceTree = SDKROOT; };
 		DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInMessages.applescript; sourceTree = "<group>"; };
@@ -937,7 +935,6 @@
 				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */,
 				C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */,
-				C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
 				69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
@@ -1678,7 +1675,6 @@
 		C19214231889FCC0005185D3 /* externalFw */ = {
 			isa = PBXGroup;
 			children = (
-				C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */,
 				C19214241889FCC0005185D3 /* BGHUDAppKit */,
 				C19214ED1889FCC2005185D3 /* OAuthConsumer */,
 				C192152A1889FCC2005185D3 /* shortcutrecorder */,
@@ -2108,6 +2104,7 @@
 					};
 					69AE9606133B4706004DC14D = {
 						DevelopmentTeam = 59823NJ7N9;
+						TestTargetID = 69AE95E2133B4705004DC14D;
 					};
 				};
 			};
@@ -2889,7 +2886,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timer.app/Contents/MacOS/Timer";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -2915,7 +2912,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timer.app/Contents/MacOS/Timer";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;

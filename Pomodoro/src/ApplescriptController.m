@@ -37,11 +37,12 @@
              returnCode:(int)returnCode 
             contextInfo:(void *)x 
 { 
-    if (returnCode == NSOKButton) { 
-		NSString *path = [openPanel filename];
+    if (returnCode == NSOKButton) {
+        NSURL *url = [openPanel URL];
+        NSString *filename = [[url path] lastPathComponent];
         NSError *error;
-        NSStringEncoding encoding;
-		NSString *script = [[NSString alloc] initWithContentsOfFile:path encoding:&encoding error:&error];
+        NSStringEncoding encoding = 0;
+		NSString *script = [[NSString alloc] initWithContentsOfFile:filename encoding:encoding error:&error];
 		[scriptView setSource:script];
 		[script release];				
     } 
@@ -58,7 +59,9 @@
 { 
     NSOpenPanel *panel = [NSOpenPanel openPanel]; 
 	[panel setDelegate:self];
-    [panel beginSheetForDirectory:nil 
+    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"pomo", @"applescript", nil]];
+    [panel beginSheetModalForWindow:scriptPanel completionHandler:0];
+    /*[panel beginSheetForDirectory:nil
                              file:nil 
 							types: [NSArray arrayWithObjects:@"pomo", @"applescript",nil]
                    modalForWindow:scriptPanel 
@@ -66,6 +69,7 @@
                    didEndSelector: 
 	 @selector(openPanelDidEnd:returnCode:contextInfo:) 
                       contextInfo:sender]; 
+     */
 } 
 
 - (IBAction)showScriptingPanel:(id)sender {

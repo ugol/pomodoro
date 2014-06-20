@@ -96,9 +96,6 @@ static BGThemeManager *sharedThemeManager = nil;
     return NSUIntegerMax;  //denotes an object that cannot be released
 }
 
-- (void)release; {
-    //do nothing
-}
 
 - (id)autorelease; {
     return self;

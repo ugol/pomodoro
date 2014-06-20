@@ -222,21 +222,27 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	 */
 	
 	NSSavePanel *sp = [NSSavePanel savePanel];
-	[sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
+	NSURL *url = [sp URL];
+    NSString *filename = [[url path] lastPathComponent];
+    
+    [sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
 	
-	NSInteger runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
+    NSInteger runResult = [sp runModal];
+	//NSInteger runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
 	
+    
+    
 	if (runResult == NSOKButton) {
-		NSLog(@"Created %@", [sp filename]);
-		[[NSFileManager defaultManager] createFileAtPath:[sp filename] contents: nil attributes:nil];
-		NSFileHandle* output = [NSFileHandle fileHandleForWritingAtPath:[sp filename]];
+		NSLog(@"Created %@", filename);
+		[[NSFileManager defaultManager] createFileAtPath:filename contents: nil attributes:nil];
+		NSFileHandle* output = [NSFileHandle fileHandleForWritingAtPath:filename];
 		[output seekToEndOfFile];
 		NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
 		[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
-		NSError** error = nil;
-		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+		NSError* error = nil;
+		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 		if (error) {
-			NSLog(@"Error %@", error);
+			NSLog(@"Error %@", [error localizedDescription]);
 		} else {
             
 			[self writeFullExport: output results: results];
