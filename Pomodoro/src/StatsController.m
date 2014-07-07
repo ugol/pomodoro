@@ -204,56 +204,32 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 - (IBAction) exportToText:(id)sender {
 	
-	/*
-	for (NSEntityDescription *entity in managedObjectModel) {
-		// entity is each instance of NSEntityDescription in aModel in turn
-		NSLog(@"... %@", entity);
-		NSLog(@"... %@", [entity properties]);
-		//[managedObjectContext o
-		//NSMutableArray* ar = [entity mutableCopy];
-		//NSLog(@"--- %@", ar);
-	}*/
-	
-	/*
-	 NSString* applicationSupportFolder = [self applicationSupportFolder];
-	 
-	 NSFileHandle *output = [NSFileHandle fileHandleForWritingAtPath:[applicationSupportFolder stringByAppendingPathComponent:@"Pomodoros.txt"]];
-	 [output seekToEndOfFile];
-	 */
-	
-	NSSavePanel *sp = [NSSavePanel savePanel];
-	NSURL *url = [sp URL];
-    NSString *filename = [[url path] lastPathComponent];
+	NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setNameFieldStringValue:@"Timers.txt"];
     
-    [sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
-	
-    NSInteger runResult = [sp runModal];
-	//NSInteger runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
-	
+	//[sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
     
+    NSInteger result = [panel runModal];
     
-	if (runResult == NSOKButton) {
-		NSLog(@"Created %@", filename);
-		[[NSFileManager defaultManager] createFileAtPath:filename contents: nil attributes:nil];
-		NSFileHandle* output = [NSFileHandle fileHandleForWritingAtPath:filename];
-		[output seekToEndOfFile];
-		NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
-		[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
-		NSError* error = nil;
-		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-		if (error) {
-			NSLog(@"Error %@", [error localizedDescription]);
-		} else {
+    if(result == NSFileHandlingPanelOKButton){
+        NSURL*  theFile = [panel URL];
+        [[NSFileManager defaultManager] createFileAtPath:[theFile path] contents:nil attributes:nil];
+        NSFileHandle* output = [NSFileHandle fileHandleForWritingAtPath:[theFile path]];
+        [output seekToEndOfFile];
             
-			[self writeFullExport: output results: results];
-
-		}
-		
-		[output synchronizeFile];
-		[output closeFile];
-	}
-	
-	
+        NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+        [fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
+        NSError* error = nil;
+        NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if (error) {
+            NSLog(@"Error %@", [error localizedDescription]);
+        } else {
+            [self writeFullExport: output results: results];
+        }
+        [output synchronizeFile];
+        [output closeFile];
+            
+    }
 }
 
 #pragma mark ---- Daily check methods ----
