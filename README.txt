@@ -32,6 +32,9 @@ Sound samples come from http://www.freesound.org and are licensed under Creative
 Building notes
 --------------
 
+Open Timer.xcodeproj once with XCode, then run "make clean no-sig timer" from the command line.
+
+OR
 
 1) Remove Code signing identity if present (should not, but sometimes I push it back)
 
