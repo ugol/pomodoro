@@ -33,7 +33,7 @@
 	id newPomodoro = [super newObject]; 
     NSDate *now = [NSDate date];
 	[newPomodoro setValue:now forKey:@"when"]; 
-    [newPomodoro setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"] forKey:@"name"]; 
+    [newPomodoro setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"timerName"] forKey:@"name"]; 
 
 	[newPomodoro setValue:[NSNumber numberWithLong:duration] forKey:@"durationMinutes"]; 
 	[newPomodoro setValue:[NSNumber numberWithLong:externalInterruptions] forKey:@"externalInterruptions"]; 

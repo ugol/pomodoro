@@ -25,7 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define _pomodoroName [[NSUserDefaults standardUserDefaults] objectForKey:@"pomodoroName"]
+#define _timerName [[NSUserDefaults standardUserDefaults] objectForKey:@"timerName"]
 #define _initialTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] intValue]
 #define _interruptTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptTime"] intValue]
 #define _breakTime [[[NSUserDefaults standardUserDefaults] objectForKey:@"breakTime"] intValue]

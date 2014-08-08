@@ -54,7 +54,7 @@
     }
     
     if (nil != name) {
-        [[NSUserDefaults standardUserDefaults] setObject: name forKey:@"pomodoroName"];
+        [[NSUserDefaults standardUserDefaults] setObject: name forKey:@"timerName"];
     }
     
     if ((nil == name) || (0 == duration)) {
@@ -63,7 +63,7 @@
         [pomoController start:@"direct"];
     }
         
-    return [NSString stringWithFormat:@"Timer %@(%d,%d) started", _pomodoroName, _initialTime, _breakTime];
+    return [NSString stringWithFormat:@"Timer %@(%d,%d) started", _timerName, _initialTime, _breakTime];
 
 }
 
