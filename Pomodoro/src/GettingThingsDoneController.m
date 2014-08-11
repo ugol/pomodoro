@@ -66,7 +66,7 @@
 	   
 	NSInteger howMany = [namesCombo numberOfItems];
 	if (howMany > 0) {
-		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"pomodoroName"];
+		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"timerName"];
 	}
     
 }
@@ -74,7 +74,7 @@
 -(void) pomodoroNameGiven:(NSNotification*) notification {
     
     NSInteger howMany = [namesCombo numberOfItems];
-    NSString* name = _pomodoroName;
+    NSString* name = _timerName;
     BOOL isNewName = YES;
     NSInteger i = 0;
     while ((isNewName) && (i<howMany)) {
