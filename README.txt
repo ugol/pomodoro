@@ -1,12 +1,13 @@
 --------
-Pomodoro
+Timer
 --------
 
-Pomodoro is an antiprocrastination application that helps in Getting Things Done. 
+Timer is an antiprocrastination application that helps in Getting Things Done. 
 It is a simple but effective way to manage your time and to boost your productivity to higher levels. 
 Can be used for programming, studying, writing, cooking or simply concentrating on something important.
  
-You can find more informations on the Pomodoro Technique on http://www.pomodorotechnique.com/
+It's inspired by the Pomodoro Technique (http://www.pomodorotechnique.com/)
+
 Updates, source code, new releases, manual and fixes on http://martakostova.github.io/timer
 
 ----------
