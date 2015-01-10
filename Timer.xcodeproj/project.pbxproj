@@ -38,7 +38,6 @@
 		698F4648133B5AF900311E34 /* CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45EA133B5AF900311E34 /* CalendarHelper.m */; };
 		698F4649133B5AF900311E34 /* CommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45EC133B5AF900311E34 /* CommonController.m */; };
 		698F464A133B5AF900311E34 /* DurationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45EE133B5AF900311E34 /* DurationFormatter.m */; };
-		698F464B133B5AF900311E34 /* GettingThingsDoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45F0133B5AF900311E34 /* GettingThingsDoneController.m */; };
 		698F464C133B5AF900311E34 /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45F2133B5AF900311E34 /* GrowlController.m */; };
 		698F464E133B5AF900311E34 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45F6133B5AF900311E34 /* LoginController.m */; };
 		698F464F133B5AF900311E34 /* Pomodoro.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45F8133B5AF900311E34 /* Pomodoro.m */; };
@@ -84,18 +83,6 @@
 		69ED6391133B9D12003F59BA /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6377133B9D03003F59BA /* splash.html */; };
 		69ED6392133B9D12003F59BA /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6379133B9D03003F59BA /* Splash.xib */; };
 		69ED6394133B9D3F003F59BA /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 69ED636D133B9D03003F59BA /* about.html */; };
-		69ED63FB133B9F5F003F59BA /* addTodoToOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D1133B5AF900311E34 /* addTodoToOmniFocus.applescript */; };
-		69ED63FC133B9F5F003F59BA /* addTodoToThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D2133B5AF900311E34 /* addTodoToThings.applescript */; };
-		69ED63FD133B9F5F003F59BA /* getToDoListFromOmniFocus.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D3133B5AF900311E34 /* getToDoListFromOmniFocus.applescript */; };
-		69ED63FE133B9F5F003F59BA /* getToDoListFromThings.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D4133B5AF900311E34 /* getToDoListFromThings.applescript */; };
-		69ED63FF133B9F5F003F59BA /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D5133B5AF900311E34 /* insertIntoLoginItems.applescript */; };
-		69ED6400133B9F5F003F59BA /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D6133B5AF900311E34 /* removeFromLoginItems.applescript */; };
-		69ED6401133B9F5F003F59BA /* setStatusToAvailableInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D7133B5AF900311E34 /* setStatusToAvailableInAdium.applescript */; };
-		69ED6402133B9F5F003F59BA /* setStatusToAvailableInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D8133B5AF900311E34 /* setStatusToAvailableInIChat.applescript */; };
-		69ED6403133B9F5F003F59BA /* setStatusToAvailableInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D9133B5AF900311E34 /* setStatusToAvailableInSkype.applescript */; };
-		69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DA133B5AF900311E34 /* setStatusToPomodoroInAdium.applescript */; };
-		69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DB133B5AF900311E34 /* setStatusToPomodoroInIChat.applescript */; };
-		69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DC133B5AF900311E34 /* setStatusToPomodoroInSkype.applescript */; };
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
@@ -109,19 +96,6 @@
 		C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95EC133B4705004DC14D /* Foundation.framework */; };
 		C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */; };
 		C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */; };
-		DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
-		DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
-		DB4C2A8A166889F0000B2718 /* setStatusToAvailableInMessages.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */; };
-		DB4C2A8B166889F0000B2718 /* setStatusToPomodoroInMessages.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */; };
-		DB8AF4F4165EEB0F0039DA49 /* OpenUrlCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF4F3165EEB0F0039DA49 /* OpenUrlCommand.m */; };
-		DBD776D916604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */; };
-		DBD776DB16604D16003F58B4 /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD776DA16604D15003F58B4 /* safari.png */; };
-		DBD776E216605537003F58B4 /* BrowsingNannyController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD776E116605536003F58B4 /* BrowsingNannyController.m */; };
-		DBD776E316605886003F58B4 /* getActiveUrlsFromBrowsers.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */; };
-		DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
-		DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
-		DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
-		DCAF37CE164B074D003764C9 /* addTodoToReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,8 +317,6 @@
 		698F45EC133B5AF900311E34 /* CommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonController.m; path = src/CommonController.m; sourceTree = "<group>"; };
 		698F45ED133B5AF900311E34 /* DurationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationFormatter.h; path = src/DurationFormatter.h; sourceTree = "<group>"; };
 		698F45EE133B5AF900311E34 /* DurationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DurationFormatter.m; path = src/DurationFormatter.m; sourceTree = "<group>"; };
-		698F45EF133B5AF900311E34 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
-		698F45F0133B5AF900311E34 /* GettingThingsDoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GettingThingsDoneController.m; path = src/GettingThingsDoneController.m; sourceTree = "<group>"; };
 		698F45F1133B5AF900311E34 /* GrowlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlController.h; path = src/GrowlController.h; sourceTree = "<group>"; };
 		698F45F2133B5AF900311E34 /* GrowlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlController.m; path = src/GrowlController.m; sourceTree = "<group>"; };
 		698F45F5133B5AF900311E34 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = src/LoginController.h; sourceTree = "<group>"; };
@@ -921,8 +893,6 @@
 		DB8AF4F3165EEB0F0039DA49 /* OpenUrlCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUrlCommand.m; path = src/OpenUrlCommand.m; sourceTree = "<group>"; };
 		DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getActiveUrlsFromBrowsers.applescript; sourceTree = "<group>"; };
 		DBD776DA16604D15003F58B4 /* safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safari.png; sourceTree = "<group>"; };
-		DBD776E016605536003F58B4 /* BrowsingNannyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowsingNannyController.h; path = src/BrowsingNannyController.h; sourceTree = "<group>"; };
-		DBD776E116605536003F58B4 /* BrowsingNannyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowsingNannyController.m; path = src/BrowsingNannyController.m; sourceTree = "<group>"; };
 		DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromReminders.applescript; sourceTree = "<group>"; };
 		DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToReminders.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1046,12 +1016,8 @@
 				698F45F2133B5AF900311E34 /* GrowlController.m */,
 				698F4606133B5AF900311E34 /* SpeechController.h */,
 				698F4607133B5AF900311E34 /* SpeechController.m */,
-				698F45EF133B5AF900311E34 /* GettingThingsDoneController.h */,
-				698F45F0133B5AF900311E34 /* GettingThingsDoneController.m */,
 				698F45E7133B5AF900311E34 /* CalendarController.h */,
 				698F45E8133B5AF900311E34 /* CalendarController.m */,
-				DBD776E016605536003F58B4 /* BrowsingNannyController.h */,
-				DBD776E116605536003F58B4 /* BrowsingNannyController.m */,
 				698F45E3133B5AF900311E34 /* ApplescriptController.h */,
 				698F45E4133B5AF900311E34 /* ApplescriptController.m */,
 				698F4604133B5AF900311E34 /* ShortcutController.h */,
@@ -2433,7 +2399,6 @@
 				698F4648133B5AF900311E34 /* CalendarHelper.m in Sources */,
 				698F4649133B5AF900311E34 /* CommonController.m in Sources */,
 				698F464A133B5AF900311E34 /* DurationFormatter.m in Sources */,
-				698F464B133B5AF900311E34 /* GettingThingsDoneController.m in Sources */,
 				698F464C133B5AF900311E34 /* GrowlController.m in Sources */,
 				698F464E133B5AF900311E34 /* LoginController.m in Sources */,
 				698F464F133B5AF900311E34 /* Pomodoro.m in Sources */,
@@ -2460,7 +2425,6 @@
 				DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */,
 				DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */,
 				DBD776D916604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript in Sources */,
-				DBD776E216605537003F58B4 /* BrowsingNannyController.m in Sources */,
 				DB8AF4F4165EEB0F0039DA49 /* OpenUrlCommand.m in Sources */,
 				DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */,
 				DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */,

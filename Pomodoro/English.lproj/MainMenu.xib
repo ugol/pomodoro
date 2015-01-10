@@ -118,20 +118,6 @@
                 <outlet property="scriptView" destination="1045" id="1254"/>
             </connections>
         </customObject>
-        <customObject id="1258" userLabel="Getting Things Done Controller" customClass="GettingThingsDoneController">
-            <connections>
-                <outlet property="dateFormatter" destination="1286" id="1287"/>
-                <outlet property="namesCombo" destination="28" id="1259"/>
-                <outlet property="scripter" destination="1193" id="1260"/>
-            </connections>
-        </customObject>
-        <customObject id="1481" customClass="BrowsingNannyController">
-            <connections>
-                <outlet property="arrayController" destination="1483" id="1495"/>
-                <outlet property="pomodoroController" destination="9" id="1551"/>
-                <outlet property="scripter" destination="1193" id="1482"/>
-            </connections>
-        </customObject>
         <arrayController avoidsEmptySelection="NO" id="1483" userLabel="Browsing Nanny URLs Array Controller">
             <declaredKeys>
                 <string>url</string>
@@ -1502,7 +1488,7 @@ DQ
                                             </connections>
                                         </button>
                                         <button id="604">
-                                            <rect key="frame" x="44" y="406" width="72" height="18"/>
+                                            <rect key="frame" x="44" y="406" width="85" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Resume" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="639">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
