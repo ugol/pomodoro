@@ -2053,7 +2053,7 @@
 			name = PomodoroTests;
 			productName = PomodoroTests;
 			productReference = 69AE9607133B4706004DC14D /* PomodoroTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -2272,24 +2272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD776E316605886003F58B4 /* getActiveUrlsFromBrowsers.applescript in Resources */,
-				DB4C2A8A166889F0000B2718 /* setStatusToAvailableInMessages.applescript in Resources */,
-				DB4C2A8B166889F0000B2718 /* setStatusToPomodoroInMessages.applescript in Resources */,
-				DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */,
-				DCAF37CE164B074D003764C9 /* addTodoToReminders.applescript in Resources */,
-				69ED63FB133B9F5F003F59BA /* addTodoToOmniFocus.applescript in Resources */,
-				69ED63FC133B9F5F003F59BA /* addTodoToThings.applescript in Resources */,
-				69ED63FD133B9F5F003F59BA /* getToDoListFromOmniFocus.applescript in Resources */,
-				69ED63FE133B9F5F003F59BA /* getToDoListFromThings.applescript in Resources */,
 				C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */,
-				69ED63FF133B9F5F003F59BA /* insertIntoLoginItems.applescript in Resources */,
-				69ED6400133B9F5F003F59BA /* removeFromLoginItems.applescript in Resources */,
-				69ED6401133B9F5F003F59BA /* setStatusToAvailableInAdium.applescript in Resources */,
-				69ED6402133B9F5F003F59BA /* setStatusToAvailableInIChat.applescript in Resources */,
-				69ED6403133B9F5F003F59BA /* setStatusToAvailableInSkype.applescript in Resources */,
-				69ED6404133B9F5F003F59BA /* setStatusToPomodoroInAdium.applescript in Resources */,
-				69ED6405133B9F5F003F59BA /* setStatusToPomodoroInIChat.applescript in Resources */,
-				69ED6406133B9F5F003F59BA /* setStatusToPomodoroInSkype.applescript in Resources */,
 				698F4620133B5AF900311E34 /* audio.png in Resources */,
 				698F4621133B5AF900311E34 /* calendar.png in Resources */,
 				698F4622133B5AF900311E34 /* compile.png in Resources */,
@@ -2327,7 +2310,6 @@
 				699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */,
 				699CE31E1366D0E500BBC486 /* soundLow.png in Resources */,
 				69D17DD8136AAE5100F5D922 /* Pomodoro.sdef in Resources */,
-				DBD776DB16604D16003F58B4 /* safari.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2422,12 +2404,6 @@
 				69D17E1B136C0F6300F5D922 /* ExternalInterruptCommand.m in Sources */,
 				69D17E21136C101900F5D922 /* ResumeCommand.m in Sources */,
 				69D17E24136C103800F5D922 /* InternalInterruptCommand.m in Sources */,
-				DCAF37C8164AE360003764C9 /* getToDoListFromReminders.applescript in Sources */,
-				DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */,
-				DBD776D916604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript in Sources */,
-				DB8AF4F4165EEB0F0039DA49 /* OpenUrlCommand.m in Sources */,
-				DB4C2A87166888A6000B2718 /* setStatusToAvailableInMessages.applescript in Sources */,
-				DB4C2A89166888D4000B2718 /* setStatusToPomodoroInMessages.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2751,11 +2727,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2780,10 +2756,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
