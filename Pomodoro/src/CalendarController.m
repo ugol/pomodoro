@@ -42,9 +42,7 @@ static EKEventStore *eventStore = nil;
         // 10.9 style
         eventStore = [[EKEventStore alloc] init];
         
-        NSLog(@"---- 10.9 style ----");
         NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent];
-        NSLog(@"1st time calendars %@", cals);
 
         for (EKCalendar* calendar in cals){
             [calendarsCombo addItemWithObjectValue:[calendar title]];
@@ -55,11 +53,9 @@ static EKEventStore *eventStore = nil;
         
     } else {
         // 10.8 style
-        NSLog(@"---- 10.8 style ----");
         eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent ];
         
         NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent            ];
-        NSLog(@"1st time calendars %@", cals);
         
         for (EKCalendar* calendar in cals){
             [calendarsCombo addItemWithObjectValue:[calendar title]];
@@ -69,15 +65,6 @@ static EKEventStore *eventStore = nil;
         }
     }
 
-    
-    /*[calendarsCombo removeAllItems];
-    for (CalCalendar *cal in [[CalCalendarStore defaultCalendarStore] calendars]){
-        [calendarsCombo addItemWithObjectValue:[cal title]];
-        if ([[cal title] isEqual:_selectedCalendar]){
-            [calendarsCombo selectItemWithObjectValue:[cal title]];
-        }
-    }*/
-    
 }
 
 #pragma mark ---- Pomodoro notifications methods ----

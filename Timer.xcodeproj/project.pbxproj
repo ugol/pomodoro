@@ -57,7 +57,6 @@
 		698F46EB133B601500311E34 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E6133B601500311E34 /* PTKeyCodeTranslator.m */; };
 		698F46EC133B601500311E34 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E8133B601500311E34 /* PTKeyCombo.m */; };
 		698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46F8133B708700311E34 /* libxml2.dylib */; };
-		698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46FA133B709600311E34 /* CalendarStore.framework */; };
 		698F473A133B72E800311E34 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4739133B72E800311E34 /* Automator.framework */; };
 		698F473C133B731600311E34 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F473B133B731600311E34 /* Carbon.framework */; };
 		699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31B1366D0E500BBC486 /* soundHigh.png */; };
@@ -87,7 +86,6 @@
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
 		C13A65471A61C97A003572B1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13A65461A61C97A003572B1 /* EventKit.framework */; };
-		C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4721133B71C300311E34 /* BGHUDAppKit.framework */; };
 		C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
 		C15C9CA8188ECAAF00ACFF0B /* BGHUDAppKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 698F4721133B71C300311E34 /* BGHUDAppKit.framework */; };
@@ -96,7 +94,6 @@
 		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
 		C1917B8E1A63012E00807D41 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1917B8D1A63012E00807D41 /* container-migration.plist */; };
 		C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95EC133B4705004DC14D /* Foundation.framework */; };
-		C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */; };
 		C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -909,14 +906,11 @@
 				C13A65471A61C97A003572B1 /* EventKit.framework in Frameworks */,
 				C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */,
 				C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */,
-				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */,
 				C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */,
-				C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */,
 				698F473A133B72E800311E34 /* Automator.framework in Frameworks */,
 				69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
-				698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */,
 				698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2793,7 +2787,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
 				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
@@ -2822,7 +2816,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
 				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
