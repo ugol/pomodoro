@@ -24,48 +24,114 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "CalendarHelper.h"
-#import "CalendarStore/CalendarStore.h"
+static EKEventStore *eventStore = nil;
 
 @implementation CalendarHelper
 
-
 + (void) publishEvent: (NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration {
-	
-	CalCalendar *calendar;
-	for (calendar in [[CalCalendarStore defaultCalendarStore] calendars]){
+    EKEventStore *eventStore = nil;
+    if ([EKEventStore respondsToSelector:@selector(authorizationStatusForEntityType:)]) {
+        // 10.9 style
+        eventStore = [[EKEventStore alloc] init];
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+         {
+             // your completion
+             NSLog(@"----");
+         }];
+    } else {
+        // 10.8 style
+        eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent ];
+    }
+    
+    //if (eventStore == nil) {
+    //    eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityTypeEvent];
+    //}
+    
+    
+    NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent            ];
+    NSLog(@"1st time calendars %@", cals);
+        
+    EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+        
+    switch (status){
+        // Update our UI if the user has granted access to their Calendar
+        case EKAuthorizationStatusAuthorized:{
+            NSLog(@"permission was already granted before");
+            cals = [eventStore calendarsForEntityType:EKEntityTypeEvent];
+            break;
+        }
+        case EKAuthorizationStatusNotDetermined:{
+            [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+             {
+                if (granted){
+                    NSLog(@"granted after user confirmation");
+                         dispatch_sync(dispatch_get_main_queue(), ^{
+                             [eventStore reset];
+                             // refetch calendars
+                             NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent];
+                             NSLog(@"calendars %@", cals);
+                         });
+                } else {
+                    //show alert
+                    /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Privacy Warning" message:@"Permission was not granted for Calendar"
+                                                                        delegate:nil
+                                                               cancelButtonTitle:@"OK"
+                                                               otherButtonTitles:nil];
+                    [alert show];*/
+                }
+            }];
+        }
+            break;
+        case EKAuthorizationStatusDenied:
+            case EKAuthorizationStatusRestricted:{
+                //show alert
+                /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Privacy Warning" message:@"Permission was not granted for Calendar"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];*/
+            }
+                break;
+        default:
+            break;
+        }
+        
+        
+    //find choosen calendar
+	EKCalendar *calendar;
+	for (calendar in cals){
 		if ([[calendar title] isEqual:selectedCalendar])
-			break;
+            break;
 		calendar = NULL;
 	}
+    //if the calendar is not found
+    //create a new calendar with selected name
 	if (calendar == NULL){
-		calendar = [CalCalendar calendar];
+		calendar = [EKCalendar calendarForEntityType:EKEntityMaskEvent eventStore:eventStore];
 		[calendar setTitle:selectedCalendar];
 	}
+        
+        NSLog(@"new created calendar %@", calendar);
+    //create event with title and duration
+	EKEvent *evt = [EKEvent eventWithEventStore:eventStore];
+    [evt setCalendar:calendar];
+	evt.title = title;
+	evt.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];
+	evt.endDate = [NSDate date];
 	
-	CalEvent *event = [CalEvent event];
-	event.calendar = calendar;
-	event.title = title;
-	event.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];	
-	event.endDate = [NSDate date];
-	
-	NSError *calError;
-	
-	if ([[CalCalendarStore defaultCalendarStore] saveCalendar:calendar error:&calError] == NO) {
+    NSError *calError;
+	//add the calendar to the calendars store and catch error if occur
+	if ([eventStore saveCalendar:calendar commit:YES error:&calError] == NO) {
 		//[[NSAlert alertWithError:calError] runModal];
 		NSLog(@"Calendar error: %@", calError);
 	}
-	
-	if ([[CalCalendarStore defaultCalendarStore] saveEvent:event 
-													  span:CalSpanThisEvent 
-													 error:&calError] == NO) {
+    //add the event to the calendar and catch and show error if occur
+	if ([eventStore saveEvent:evt span:EKSpanThisEvent commit:YES error:&calError] == NO) {
 		//[[NSAlert alertWithError:calError] runModal];
 		NSLog(@"Calendar event error: %@", calError);
 
-	}
-	
-	
-	
+    }
+    
 }
-
 @end
 

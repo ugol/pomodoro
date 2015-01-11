@@ -86,6 +86,7 @@
 		69ED6411133BB31F003F59BA /* SmartTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6410133BB31F003F59BA /* SmartTimer.m */; };
 		69ED6414133BB502003F59BA /* SmartTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED6413133BB502003F59BA /* SmartTimerTests.m */; };
 		69FCF747135729DD003862DC /* ringBreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69FCF746135729DD003862DC /* ringBreak.wav */; };
+		C13A65471A61C97A003572B1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13A65461A61C97A003572B1 /* EventKit.framework */; };
 		C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4721133B71C300311E34 /* BGHUDAppKit.framework */; };
 		C15C9CA6188EC8B000ACFF0B /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CA7188EC8D500ACFF0B /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
@@ -647,6 +648,7 @@
 		C137DEAE188ACA4700D9C13F /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		C137DEAF188ACA4700D9C13F /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		C137DEB0188ACA4700D9C13F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		C13A65461A61C97A003572B1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		C19214251889FCC0005185D3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -902,6 +904,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13A65471A61C97A003572B1 /* EventKit.framework in Frameworks */,
 				C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */,
 				C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */,
 				C15C9CA5188EC86600ACFF0B /* BGHUDAppKit.framework in Frameworks */,
@@ -1162,6 +1165,7 @@
 		69AE95E6133B4705004DC14D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C13A65461A61C97A003572B1 /* EventKit.framework */,
 				C1EB6F7418997B3700D8D502 /* ServerNotification.framework */,
 				C19214231889FCC0005185D3 /* externalFw */,
 				698F473D133B735400311E34 /* Apple */,
@@ -2785,7 +2789,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
 				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
@@ -2814,7 +2818,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
 				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";

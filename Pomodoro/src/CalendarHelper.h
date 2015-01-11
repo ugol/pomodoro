@@ -24,11 +24,10 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#import <EventKit/EventKit.h>
 
 
-@interface CalendarHelper : NSObject {
-
-}
+@interface CalendarHelper : NSObject
 
 + (void) publishEvent: (NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration;
 
