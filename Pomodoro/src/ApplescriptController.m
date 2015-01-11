@@ -37,7 +37,7 @@
              returnCode:(int)returnCode 
             contextInfo:(void *)x 
 { 
-    if (returnCode == NSOKButton) {
+    if (returnCode == NSModalResponseOK) {
         NSURL *url = [openPanel URL];
         NSString *filename = [[url path] lastPathComponent];
         NSError *error;

@@ -246,14 +246,14 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 - (void) updateDateIfChanged {
 	
 	
-	NSCalendar* cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar* cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDate* today = [NSDate date];
 	if (_dailyStartDate == nil) {
 		[[NSUserDefaults standardUserDefaults] setObject: today forKey:@"dailyStartDate"];
 	} else {
 		
-		NSDateComponents* nowDay = [cal components:NSDayCalendarUnit fromDate:today];
-		NSDateComponents* savedDay = [cal components:NSDayCalendarUnit fromDate:_dailyStartDate];
+		NSDateComponents* nowDay = [cal components:NSCalendarUnitDay fromDate:today];
+		NSDateComponents* savedDay = [cal components:NSCalendarUnitDay fromDate:_dailyStartDate];
 		
 		if ( ([nowDay day] != [savedDay day]) || ([nowDay month] != [savedDay month]) || ([nowDay year] != [savedDay year]) ) {
 			[self resetDailyStatistics:nil];
