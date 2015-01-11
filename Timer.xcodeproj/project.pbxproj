@@ -94,6 +94,7 @@
 		C15C9CA9188ECAC100ACFF0B /* OAuthConsumer.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C192157E1889FCC2005185D3 /* OAuthConsumer.framework */; };
 		C15C9CAA188ECAE000ACFF0B /* ShortcutRecorder.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C19215861889FCC2005185D3 /* ShortcutRecorder.framework */; };
 		C18D16601886FB0600AB59B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18D165F1886FB0600AB59B4 /* Images.xcassets */; };
+		C1917B8E1A63012E00807D41 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1917B8D1A63012E00807D41 /* container-migration.plist */; };
 		C1CE9448189A678100265BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95EC133B4705004DC14D /* Foundation.framework */; };
 		C1D938721954B4AF000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */; };
 		C1D938741954B4CC000DFC81 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */; };
@@ -651,6 +652,7 @@
 		C13A65461A61C97A003572B1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		C18D165F1886FB0600AB59B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C18D166A188703B500AB59B4 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Pomodoro.entitlements; sourceTree = "<group>"; };
+		C1917B8D1A63012E00807D41 /* container-migration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "container-migration.plist"; sourceTree = "<group>"; };
 		C19214251889FCC0005185D3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C19214261889FCC0005185D3 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		C19214291889FCC0005185D3 /* BGHUDAppKitFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGHUDAppKitFramework-Info.plist"; sourceTree = "<group>"; };
@@ -1067,6 +1069,7 @@
 				698F45B7133B5AF900311E34 /* images */,
 				698F45D0133B5AF900311E34 /* scripts */,
 				698F45DD133B5AF900311E34 /* sounds */,
+				C1917B8D1A63012E00807D41 /* container-migration.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2304,6 +2307,7 @@
 				698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */,
 				69ED6384133B9D03003F59BA /* Stats.xib in Resources */,
 				69ED638D133B9D12003F59BA /* About.xib in Resources */,
+				C1917B8E1A63012E00807D41 /* container-migration.plist in Resources */,
 				69ED638E133B9D12003F59BA /* InfoPlist.strings in Resources */,
 				69ED638F133B9D12003F59BA /* Localizable.strings in Resources */,
 				69ED6390133B9D12003F59BA /* MainMenu.xib in Resources */,

@@ -29,7 +29,7 @@ static EKEventStore *eventStore = nil;
 @implementation CalendarHelper
 
 + (void) publishEvent: (NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration {
-    EKEventStore *eventStore = nil;
+    
     if ([EKEventStore respondsToSelector:@selector(authorizationStatusForEntityType:)]) {
         // 10.9 style
         eventStore = [[EKEventStore alloc] init];
@@ -109,6 +109,7 @@ static EKEventStore *eventStore = nil;
 	if (calendar == NULL){
 		calendar = [EKCalendar calendarForEntityType:EKEntityMaskEvent eventStore:eventStore];
 		[calendar setTitle:selectedCalendar];
+    
 	}
         
         NSLog(@"new created calendar %@", calendar);
@@ -119,7 +120,7 @@ static EKEventStore *eventStore = nil;
 	evt.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];
 	evt.endDate = [NSDate date];
 	
-    NSError *calError;
+  NSError *calError;
 	//add the calendar to the calendars store and catch error if occur
 	if ([eventStore saveCalendar:calendar commit:YES error:&calError] == NO) {
 		//[[NSAlert alertWithError:calError] runModal];

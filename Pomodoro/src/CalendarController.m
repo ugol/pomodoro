@@ -24,25 +24,59 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "CalendarController.h"
-#import "CalendarStore/CalendarStore.h"
+//#import "CalendarStore/CalendarStore.h"
 #import "CalendarHelper.h"
 #import "PomoNotifications.h"
 #import "Pomodoro.h"
+
+static EKEventStore *eventStore = nil;
 
 @implementation CalendarController
 
 @synthesize calendarsCombo;
 
-
 - (IBAction)initCalendars:(id)sender {
-    
     [calendarsCombo removeAllItems];
+    
+    if ([EKEventStore respondsToSelector:@selector(authorizationStatusForEntityType:)]) {
+        // 10.9 style
+        eventStore = [[EKEventStore alloc] init];
+        
+        NSLog(@"---- 10.9 style ----");
+        NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent];
+        NSLog(@"1st time calendars %@", cals);
+
+        for (EKCalendar* calendar in cals){
+            [calendarsCombo addItemWithObjectValue:[calendar title]];
+            if ([[calendar title] isEqual:_selectedCalendar]){
+                [calendarsCombo selectItemWithObjectValue:[calendar title]];
+            }
+        }
+        
+    } else {
+        // 10.8 style
+        NSLog(@"---- 10.8 style ----");
+        eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent ];
+        
+        NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent            ];
+        NSLog(@"1st time calendars %@", cals);
+        
+        for (EKCalendar* calendar in cals){
+            [calendarsCombo addItemWithObjectValue:[calendar title]];
+            if ([[calendar title] isEqual:_selectedCalendar]){
+                [calendarsCombo selectItemWithObjectValue:[calendar title]];
+            }
+        }
+    }
+
+    
+    /*[calendarsCombo removeAllItems];
     for (CalCalendar *cal in [[CalCalendarStore defaultCalendarStore] calendars]){
         [calendarsCombo addItemWithObjectValue:[cal title]];
         if ([[cal title] isEqual:_selectedCalendar]){
             [calendarsCombo selectItemWithObjectValue:[cal title]];
         }
-    }
+    }*/
     
 }
 
