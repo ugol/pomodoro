@@ -231,13 +231,6 @@
 			remoteGlobalIDString = 342E0104109CCC36009AD8CA;
 			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
-		C192158B1889FCEE005185D3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C19215631889FCC2005185D3 /* ShortcutRecorder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9398377F0DA42965007F53F3;
-			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -357,7 +350,6 @@
 		698F46FE133B714100311E34 /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = externalFw/shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = "<group>"; };
 		698F4718133B71C300311E34 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = externalFw/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		698F4722133B71D700311E34 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = externalFw/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
-		698F4734133B72BC00311E34 /* OAuthConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4735133B72BC00311E34 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		698F4739133B72E800311E34 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		698F473B133B731600311E34 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -887,7 +879,6 @@
 		C19215721889FCC2005185D3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		C1D938711954B4AF000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = externalFw/BGHUDAppKit.framework; sourceTree = "<group>"; };
-		C1EB6F7418997B3700D8D502 /* ServerNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServerNotification.framework; path = System/Library/Frameworks/ServerNotification.framework; sourceTree = SDKROOT; };
 		DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToAvailableInMessages.applescript; sourceTree = "<group>"; };
 		DB4C2A88166888D4000B2718 /* setStatusToPomodoroInMessages.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = setStatusToPomodoroInMessages.applescript; sourceTree = "<group>"; };
 		DB8AF4F2165EEB0F0039DA49 /* OpenUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUrlCommand.h; path = src/OpenUrlCommand.h; sourceTree = "<group>"; };
@@ -1163,7 +1154,6 @@
 			isa = PBXGroup;
 			children = (
 				C13A65461A61C97A003572B1 /* EventKit.framework */,
-				C1EB6F7418997B3700D8D502 /* ServerNotification.framework */,
 				C19214231889FCC0005185D3 /* externalFw */,
 				698F473D133B735400311E34 /* Apple */,
 				69AE95E9133B4705004DC14D /* Other Frameworks */,
@@ -1175,7 +1165,6 @@
 			isa = PBXGroup;
 			children = (
 				C1D938731954B4CC000DFC81 /* BGHUDAppKit.framework */,
-				698F4734133B72BC00311E34 /* OAuthConsumer.framework */,
 				698F4735133B72BC00311E34 /* ShortcutRecorder.framework */,
 			);
 			name = "Other Frameworks";
@@ -2030,7 +2019,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C192158C1889FCEE005185D3 /* PBXTargetDependency */,
 			);
 			name = Timer;
 			productName = Pomodoro;
@@ -2068,6 +2056,9 @@
 					69AE95E2133B4705004DC14D = {
 						DevelopmentTeam = 59823NJ7N9;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -2089,6 +2080,29 @@
 				"it-IT",
 				Dutch,
 				sv,
+				de,
+				el,
+				"es-MX",
+				es,
+				fr,
+				it,
+				ja,
+				ko,
+				nb,
+				nl,
+				pl,
+				"pt-BR",
+				ro,
+				sk,
+				th,
+				"zh-Hans",
+				ca,
+				cs,
+				da,
+				"pt-PT",
+				pt,
+				ru,
+				"zh-Hant",
 			);
 			mainGroup = 69AE95D8133B4705004DC14D;
 			productRefGroup = 69AE95E4133B4705004DC14D /* Products */;
@@ -2425,11 +2439,6 @@
 			isa = PBXTargetDependency;
 			target = 69AE95E2133B4705004DC14D /* Timer */;
 			targetProxy = 69AE9609133B4706004DC14D /* PBXContainerItemProxy */;
-		};
-		C192158C1889FCEE005185D3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ShortcutRecorder.framework - with embedded ibplugin";
-			targetProxy = C192158B1889FCEE005185D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2773,7 +2782,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2790,7 +2800,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
-				PROVISIONING_PROFILE = "DF421088-CF0A-41C4-BD0D-D6A0775701C4";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2802,7 +2812,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2819,7 +2830,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = Timer;
-				PROVISIONING_PROFILE = "6CE2F639-AAD2-4AB4-BB8D-FFA84529D6B8";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
