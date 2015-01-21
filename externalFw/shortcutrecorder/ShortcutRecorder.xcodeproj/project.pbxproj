@@ -66,7 +66,7 @@
 		93983B1C0DA43C4E007F53F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		93983B1D0DA43C4E007F53F3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1109C482D20000E739 /* Carbon.framework */; };
 		93983B1E0DA43C4E007F53F3 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CB1309C482DC0000E739 /* CoreServices.framework */; };
-		93983B2D0DA43C79007F53F3 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */; };
+		93983B2D0DA43C79007F53F3 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		93983B390DA43C82007F53F3 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */; };
 		93983B8B0DA441BB007F53F3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93983B890DA441BB007F53F3 /* MainMenu.xib */; };
 		A1125B77104C8AF3005C6F7B /* PTKeyCodeTranslator.h in Headers */ = {isa = PBXBuildFile; fileRef = A1125B75104C8AF3005C6F7B /* PTKeyCodeTranslator.h */; };
@@ -463,7 +463,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ShortcutRecorder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -806,6 +806,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = 4.0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -824,6 +825,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = 4.0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

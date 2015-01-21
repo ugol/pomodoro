@@ -3,13 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildNumber</key>
-	<integer>557</integer>
+	<integer>771</integer>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>Timer</string>
-	<key>CFBundleIconFile</key>
-	<string>icon</string>
 	<key>CFBundleIdentifier</key>
 	<string>io.github.martakostova.Pomodoro</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -19,12 +17,14 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.2</string>
+	<string>2.0.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string></string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
@@ -36,7 +36,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.0.2</string>
+	<string>2.0.4</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -46,7 +46,7 @@
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright (c) 2014 Marta Kostova</string>
+	<string>Copyright (c)</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

@@ -591,7 +591,9 @@
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];
-	}	
+	}
+    
+    [self updateMenu];
 		
 }
 

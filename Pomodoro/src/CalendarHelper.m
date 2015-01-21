@@ -24,48 +24,68 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "CalendarHelper.h"
-#import "CalendarStore/CalendarStore.h"
+static EKEventStore *eventStore = nil;
 
 @implementation CalendarHelper
 
++ (void) createEvent:(EKEventStore*)eventStore forSelectedCalendar:(NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration {
+    
+    NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent            ];
+      
+    //find choosen calendar
+    EKCalendar *calendar;
+    for (calendar in cals){
+        if ([[calendar title] isEqual:selectedCalendar])
+            break;
+        calendar = NULL;
+    }
+    //if the calendar is not found
+    //create a new calendar with selected name
+    if (calendar == NULL){
+        calendar = [EKCalendar calendarForEntityType:EKEntityMaskEvent eventStore:eventStore];
+        [calendar setTitle:selectedCalendar];
 
-+ (void) publishEvent: (NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration {
-	
-	CalCalendar *calendar;
-	for (calendar in [[CalCalendarStore defaultCalendarStore] calendars]){
-		if ([[calendar title] isEqual:selectedCalendar])
-			break;
-		calendar = NULL;
-	}
-	if (calendar == NULL){
-		calendar = [CalCalendar calendar];
-		[calendar setTitle:selectedCalendar];
-	}
-	
-	CalEvent *event = [CalEvent event];
-	event.calendar = calendar;
-	event.title = title;
-	event.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];	
-	event.endDate = [NSDate date];
-	
-	NSError *calError;
-	
-	if ([[CalCalendarStore defaultCalendarStore] saveCalendar:calendar error:&calError] == NO) {
-		//[[NSAlert alertWithError:calError] runModal];
-		NSLog(@"Calendar error: %@", calError);
-	}
-	
-	if ([[CalCalendarStore defaultCalendarStore] saveEvent:event 
-													  span:CalSpanThisEvent 
-													 error:&calError] == NO) {
-		//[[NSAlert alertWithError:calError] runModal];
-		NSLog(@"Calendar event error: %@", calError);
+    }
+        
+    //create event with title and duration
+    EKEvent *evt = [EKEvent eventWithEventStore:eventStore];
+    [evt setCalendar:calendar];
+    evt.title = title;
+    evt.startDate = [[NSDate date] dateByAddingTimeInterval:(-60 * duration)];
+    evt.endDate = [NSDate date];
+    
+    NSError *calError;
+    //add the calendar to the calendars store and catch error if occur
+    if ([eventStore saveCalendar:calendar commit:YES error:&calError] == NO) {
+        //[[NSAlert alertWithError:calError] runModal];
+        NSLog(@"Calendar error: %@", calError);
+    }
+    //add the event to the calendar and catch and show error if occur
+    if ([eventStore saveEvent:evt span:EKSpanThisEvent commit:YES error:&calError] == NO) {
+        //[[NSAlert alertWithError:calError] runModal];
+        NSLog(@"Calendar event error: %@", calError);
 
-	}
-	
-	
-	
+    }
 }
-
++ (void) publishEvent: (NSString*)selectedCalendar withTitle:(NSString*)title duration:(int)duration {
+    
+    if ([EKEventStore respondsToSelector:@selector(authorizationStatusForEntityType:)]) {
+        // 10.9 style
+        if (eventStore == nil){ 
+            eventStore = [[EKEventStore alloc] init];
+        }
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error){
+            // completion
+            [self createEvent:eventStore forSelectedCalendar:selectedCalendar withTitle:title duration:duration];
+        }];
+    } else {
+        // 10.8 style
+        if (eventStore == nil) {
+            eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent ];
+            [self createEvent:eventStore forSelectedCalendar:selectedCalendar withTitle:title duration:duration];
+        }
+    }
+    
+}
 @end
 

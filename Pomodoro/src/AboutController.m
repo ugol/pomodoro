@@ -28,7 +28,7 @@
 
 @implementation AboutController
 
-@synthesize aboutText, release, copyright;
+@synthesize aboutText, release;
 
 - (id) init {
 		
@@ -57,7 +57,6 @@
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
-    [copyright setStringValue:[self infoValueForKey:@"NSHumanReadableCopyright"]];
     
 	[self switchBetweenReleaseAndBuild:nil];
 }
@@ -79,7 +78,6 @@
     
     [aboutText release];
     [release release];
-    [copyright release];
     [super dealloc];
     
 }
