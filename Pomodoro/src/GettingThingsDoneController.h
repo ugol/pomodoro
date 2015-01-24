@@ -30,15 +30,15 @@
 
 @interface GettingThingsDoneController : CommonController {
 
-    IBOutlet NSComboBox* namesCombo;
-    IBOutlet Scripter* scripter;
-    IBOutlet NSDateFormatter* dateFormatter;
+    IBOutlet NSComboBox* __unsafe_unretained namesCombo;
+    IBOutlet Scripter* __unsafe_unretained scripter;
+    IBOutlet NSDateFormatter* __unsafe_unretained dateFormatter;
     
 }
 
-@property (assign) IBOutlet NSComboBox* namesCombo;
-@property (assign) IBOutlet Scripter* scripter;
-@property (assign) IBOutlet NSDateFormatter* dateFormatter;
+@property (unsafe_unretained) IBOutlet NSComboBox* namesCombo;
+@property (unsafe_unretained) IBOutlet Scripter* scripter;
+@property (unsafe_unretained) IBOutlet NSDateFormatter* dateFormatter;
 
 
 @end

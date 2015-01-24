@@ -140,7 +140,6 @@
 		
 		NSPoint position = NSMakePoint(frame.origin.x, frame.origin.y);
 		
-		if(progressPath) {[progressPath release];}
 		progressPath = [[NSBezierPath alloc] init];
 		
 		while(position.x <= (frame.origin.x + frame.size.width)) {
@@ -198,7 +197,8 @@
 		
         //Get the animation index (private)
         int animationIndex = 0;
-        object_getInstanceVariable( self, "_animationIndex", (void **)&animationIndex );
+        NSValue *animationIndexNsObject = [self valueForKey:@"_animationIndex"];
+        [animationIndexNsObject getValue:&animationIndex];
         
 		//Create XFormation
 		NSAffineTransform *trans = [NSAffineTransform transform];
@@ -218,12 +218,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[progressPath release];
-	[super dealloc];
-}
 
 #pragma mark -
 

@@ -42,10 +42,5 @@
 	return [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor];
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end

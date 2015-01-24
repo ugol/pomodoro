@@ -41,7 +41,7 @@
 
 - (id) init { 
     if ( (self = [super init]) ) {
-        [self initWithDuration:25];
+        if (!(self = [self initWithDuration:25])) return nil;
     }
     return self;
 }
@@ -70,7 +70,7 @@
 
 -(void) start {
 
-    [self clearTimer: &breakTimer];
+    breakTimer = nil;
 
     externallyInterrupted = 0;
     internallyInterrupted = 0;
@@ -107,9 +107,8 @@
 }
 
 -(void) reset {
-
-    [self clearTimer: &oneSecTimer];
-    [self clearTimer: &interruptionTimer];
+    oneSecTimer = nil;
+    interruptionTimer = nil;
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroReset:)]) {
         [delegate pomodoroReset:self];
@@ -117,8 +116,8 @@
 }
 
 - (void) interrupt: (NSInteger) seconds  {
+    oneSecTimer = nil;
 
-    [self clearTimer:&oneSecTimer];
 	state = PomoInterrupted;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
 										  target:self
@@ -151,8 +150,8 @@
 -(void) resume {
 
 	resumed++;
-    [self clearTimer: &interruptionTimer];
-
+    interruptionTimer = nil;
+    
 	[self startFor: time];
 	if ([delegate respondsToSelector: @selector(pomodoroResumed:)]) {
         [delegate pomodoroResumed:self];		
@@ -161,9 +160,9 @@
 
 - (void) checkIfFinished {
 	if (time == 0) {
+        oneSecTimer = nil;
 
-        [self clearTimer: &oneSecTimer];
-		state = PomoReadyToStart;
+        state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
 			[delegate pomodoroFinished:self];		
 		}		
@@ -172,8 +171,9 @@
 
 - (void) checkIfBreakFinished {
 	if (time == 0) {
-        [self clearTimer: &breakTimer];
-		state = PomoReadyToStart;
+        breakTimer = nil;
+
+        state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(breakFinished:)]) {
 			[delegate breakFinished:self];		
 		}		
@@ -197,20 +197,15 @@
 }
 
 -(void) interruptFinished:(NSTimer *)aTimer {
+    oneSecTimer = nil;
+    interruptionTimer = nil;
 
-    [self clearTimer: &oneSecTimer];
-    [self clearTimer: &interruptionTimer];
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver:)]) {
         [delegate pomodoroInterruptionMaxTimeIsOver:self];		
 	}
 }
 
--(void)dealloc {
-    
-    [delegate release];
-	[super dealloc];
-}
 
 @end
 

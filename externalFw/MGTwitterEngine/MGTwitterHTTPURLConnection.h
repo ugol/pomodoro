@@ -37,6 +37,6 @@
 - (MGTwitterResponseType)responseType;
 - (NSString *)description;
 
-@property (nonatomic, retain) NSHTTPURLResponse *response;
+@property (nonatomic, strong) NSHTTPURLResponse *response;
 
 @end

@@ -3,17 +3,17 @@
 @class Scripter;
 
 @interface BrowsingNannyController : CommonController {
-    IBOutlet NSArrayController *arrayController;
-    IBOutlet Scripter *scripter;
-    IBOutlet PomodoroController *pomodoroController;
+    IBOutlet NSArrayController *__unsafe_unretained arrayController;
+    IBOutlet Scripter *__unsafe_unretained scripter;
+    IBOutlet PomodoroController *__unsafe_unretained pomodoroController;
     NSPredicate *blacklistedPredicate;
     NSUInteger tickCount;
 }
 
 @property (readonly) BOOL enabled;
-@property (retain) NSPredicate *blacklistedPredicate;
-@property (assign) IBOutlet PomodoroController *pomodoroController;
-@property (assign) IBOutlet NSArrayController *arrayController;
-@property (assign) IBOutlet Scripter *scripter;
+@property (strong) NSPredicate *blacklistedPredicate;
+@property (unsafe_unretained) IBOutlet PomodoroController *pomodoroController;
+@property (unsafe_unretained) IBOutlet NSArrayController *arrayController;
+@property (unsafe_unretained) IBOutlet Scripter *scripter;
 
 @end

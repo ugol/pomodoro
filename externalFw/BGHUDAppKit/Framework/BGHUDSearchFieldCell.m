@@ -239,13 +239,12 @@ NSImage *cancelButtonImageUp() {
 		[NSGraphicsContext restoreGraphicsState];
 	}
 	
-	[path release];
 	
 	//Get TextView for this editor
 	NSTextView* view = (NSTextView*)[[controlView window] fieldEditor: NO forObject: controlView];
 	
 	//Get Attributes of the selected text
-	NSMutableDictionary *dict = [[[view selectedTextAttributes] mutableCopy] autorelease];	
+	NSMutableDictionary *dict = [[view selectedTextAttributes] mutableCopy];	
 	
 	//If window/app is active draw the highlight/text in active colors
 	if([self showsFirstResponder] && [[[self controlView] window] isKeyWindow])
@@ -284,7 +283,7 @@ NSImage *cancelButtonImageUp() {
 								 [[[BGThemeManager keyedManager] themeForKey: self.themeKey] placeholderTextColor] , NSForegroundColorAttributeName, nil];
 		
 		//Set it
-		[self setPlaceholderAttributedString: [[[NSAttributedString alloc] initWithString: [self placeholderString] attributes: [attribs autorelease]] autorelease]];
+		[self setPlaceholderAttributedString: [[NSAttributedString alloc] initWithString: [self placeholderString] attributes: attribs]];
 	}
 	
 	//Adjust Frame so Text Draws correctly
@@ -492,11 +491,6 @@ NSImage *cancelButtonImageUp() {
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

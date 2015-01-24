@@ -45,9 +45,9 @@
     
 }
 
-@property (nonatomic, retain) NSDate* lastTimeWhenWentToSleep;
-@property (nonatomic, retain) id delegate;
-@property (nonatomic, retain) NSTimer* internalTimer;
+@property (nonatomic, strong) NSDate* lastTimeWhenWentToSleep;
+@property (nonatomic, strong) id delegate;
+@property (nonatomic, strong) NSTimer* internalTimer;
 
 + (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate;
 + (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate;

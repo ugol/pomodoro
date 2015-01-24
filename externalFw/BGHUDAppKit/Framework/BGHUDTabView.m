@@ -186,7 +186,6 @@
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		[path stroke];
 		
-		[path release];
 	} else if(index > 0 && index < ([self numberOfTabViewItems] -1)) {
 		
 		if([self tabViewType] == NSRightTabsBezelBorder ||
@@ -288,14 +287,8 @@
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] strokeColor] set];
 		[path stroke];
 		
-		[path release];
 	}
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end

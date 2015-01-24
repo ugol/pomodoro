@@ -27,11 +27,11 @@
 
 @interface SplashController : NSWindowController {
     
-	IBOutlet NSTextView* aboutText;
+	IBOutlet NSTextView* __unsafe_unretained aboutText;
     
 }
 
-@property (assign) IBOutlet NSTextView* aboutText;
+@property (unsafe_unretained) IBOutlet NSTextView* aboutText;
 
 
 @end

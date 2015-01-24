@@ -126,21 +126,12 @@
     [self registerForPomodoro:_PMPomoReset method:@selector(pomodoroReset:)];
     [self registerForPomodoro:_PMPomoBreakFinished method:@selector(breakFinished:)];
     
-    twitterEngine = [[[MGTwitterEngine alloc] initWithDelegate:self] retain];
+    twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
     [twitterEngine setConsumerKey:_consumerkey secret:_secretkey];	
     [self tryConnectionToTwitter];
     
 }
 
 
-- (void)dealloc {
-    
-    [redButtonImage release];
-    [greenButtonImage release];
-    [yellowButtonImage release];
-    [twitterEngine release];
-    [super dealloc];
-    
-}
 
 @end

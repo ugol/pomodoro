@@ -47,8 +47,8 @@
 		
 		[self setThemeKey: @"gradientTheme"];
 		
-		[super setVerticalScroller: [[[BGHUDScroller alloc] init] autorelease]];
-		[super setHorizontalScroller: [[[BGHUDScroller alloc] init] autorelease]];
+		[super setVerticalScroller: [[BGHUDScroller alloc] init]];
+		[super setHorizontalScroller: [[BGHUDScroller alloc] init]];
 	}
 	
 	return self;
@@ -62,8 +62,8 @@
 		
 		[self setThemeKey: @"gradientTheme"];
 		
-		[super setVerticalScroller: [[[BGHUDScroller alloc] init] autorelease]];
-		[super setHorizontalScroller: [[[BGHUDScroller alloc] init] autorelease]];
+		[super setVerticalScroller: [[BGHUDScroller alloc] init]];
+		[super setHorizontalScroller: [[BGHUDScroller alloc] init]];
 	}
 	
 	return self;
@@ -84,12 +84,12 @@
 		
 		if(![[super verticalScroller] isKindOfClass: [BGHUDScroller class]]) {
 			
-			[super setVerticalScroller: [[[BGHUDScroller alloc] init] autorelease]];
+			[super setVerticalScroller: [[BGHUDScroller alloc] init]];
 		}
 		
 		if(![[super horizontalScroller] isKindOfClass: [BGHUDScroller class]]) {
 			
-			[super setHorizontalScroller: [[[BGHUDScroller alloc] init] autorelease]];
+			[super setHorizontalScroller: [[BGHUDScroller alloc] init]];
 		}
 	}
 	
@@ -103,10 +103,5 @@
 	[coder encodeObject: self.themeKey forKey: @"themeKey"];
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end
