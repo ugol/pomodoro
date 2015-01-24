@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
-		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
-		6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
+		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
 		698F4622133B5AF900311E34 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45BA133B5AF900311E34 /* compile.png */; };
@@ -86,14 +86,13 @@
 		698F4738133B72BD00311E34 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; };
 		698F473A133B72E800311E34 /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4739133B72E800311E34 /* Automator.framework */; };
 		698F473C133B731600311E34 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F473B133B731600311E34 /* Carbon.framework */; };
-		698F4747133B7A5B00311E34 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; };
+		698F4747133B7A5B00311E34 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		698F4748133B7A9100311E34 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4746133B7A5B00311E34 /* Growl.framework */; };
 		699CE31D1366D0E500BBC486 /* soundHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31B1366D0E500BBC486 /* soundHigh.png */; };
 		699CE31E1366D0E500BBC486 /* soundLow.png in Resources */ = {isa = PBXBuildFile; fileRef = 699CE31C1366D0E500BBC486 /* soundLow.png */; };
 		69AE95E8133B4705004DC14D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95E7133B4705004DC14D /* Cocoa.framework */; };
 		69AE95F5133B4705004DC14D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE95F4133B4705004DC14D /* main.m */; };
 		69AE9608133B4706004DC14D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AE95E7133B4705004DC14D /* Cocoa.framework */; };
-		69AE9610133B4706004DC14D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69AE960E133B4706004DC14D /* InfoPlist.strings */; };
 		69AE9613133B4706004DC14D /* PomodoroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 69AE9612133B4706004DC14D /* PomodoroTests.h */; };
 		69AE9615133B4706004DC14D /* PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AE9614133B4706004DC14D /* PomodoroTests.m */; };
 		69D17DD6136AAC9F00F5D922 /* StartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D17DD5136AAC9F00F5D922 /* StartCommand.m */; };
@@ -918,7 +917,7 @@
 			name = PomodoroTests;
 			productName = PomodoroTests;
 			productReference = 69AE9607133B4706004DC14D /* PomodoroTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -926,6 +925,7 @@
 		69AE95DA133B4705004DC14D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = iUgol;
 			};
 			buildConfigurationList = 69AE95DD133B4705004DC14D /* Build configuration list for PBXProject "Pomodoro" */;
@@ -1075,7 +1075,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69AE9610133B4706004DC14D /* InfoPlist.strings in Resources */,
 				69AE9613133B4706004DC14D /* PomodoroTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,8 +1324,15 @@
 		69AE9616133B4706004DC14D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -1334,6 +1340,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1344,12 +1353,22 @@
 		69AE9617133B4706004DC14D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
@@ -1360,7 +1379,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1381,7 +1402,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1403,13 +1426,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PomodoroTests/PomodoroTests-Prefix.pch";
-				INFOPLIST_FILE = "PomodoroTests/PomodoroTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
@@ -1425,13 +1449,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PomodoroTests/PomodoroTests-Prefix.pch";
-				INFOPLIST_FILE = "PomodoroTests/PomodoroTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
