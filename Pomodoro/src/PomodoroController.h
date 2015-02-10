@@ -61,7 +61,7 @@
 	IBOutlet GrowlNotifier* __unsafe_unretained growl;
 	IBOutlet Pomodoro* __unsafe_unretained pomodoro;
     NSInteger longBreakCounter;
-    NSTimer* __unsafe_unretained longBreakCheckerTimer;
+    NSTimer* longBreakCheckerTimer;
     PomodoroNotifier* pomodoroNotifier;
     
     ProcessSerialNumber psn;
@@ -100,7 +100,7 @@
 @property (unsafe_unretained) IBOutlet GrowlNotifier* growl;
 @property (unsafe_unretained) IBOutlet Pomodoro* pomodoro;
 @property (nonatomic, assign) NSInteger longBreakCounter;
-@property (nonatomic, unsafe_unretained) NSTimer* longBreakCheckerTimer;
+@property (nonatomic) NSTimer* longBreakCheckerTimer;
 
 
 @property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* startPomodoro;
