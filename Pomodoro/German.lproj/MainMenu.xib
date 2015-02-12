@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
@@ -2372,17 +2372,9 @@ DQ
                                             </buttonCell>
                                         </button>
                                         <button id="1747">
-                                            <rect key="frame" x="302" y="415" width="232" height="18"/>
+                                            <rect key="frame" x="302" y="375" width="232" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Während einer Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1758">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                        </button>
-                                        <button id="1748">
-                                            <rect key="frame" x="302" y="375" width="272" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Während einer Pause" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1757">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -2415,7 +2407,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="1752">
-                                            <rect key="frame" x="127" y="416" width="172" height="17"/>
+                                            <rect key="frame" x="122" y="376" width="172" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Ruhezustand deaktivieren:" id="1753">
                                                 <font key="font" metaFont="system"/>
@@ -2424,7 +2416,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <button id="8BD-b3-og1">
-                                            <rect key="frame" x="302" y="340" width="243" height="18"/>
+                                            <rect key="frame" x="302" y="415" width="243" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Anzeigen" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="TDr-li-BbJ">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2435,7 +2427,7 @@ DQ
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="IT9-Xc-sdZ">
-                                            <rect key="frame" x="110" y="339" width="189" height="17"/>
+                                            <rect key="frame" x="110" y="416" width="189" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sekunden in der Menü-Leiste:" id="32U-MN-mvG">
                                                 <font key="font" metaFont="system"/>
@@ -2443,6 +2435,14 @@ DQ
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <button id="1748">
+                                            <rect key="frame" x="302" y="335" width="272" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Während einer Pause" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1757">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>

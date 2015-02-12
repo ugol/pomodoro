@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
@@ -2727,7 +2727,7 @@ DQ
                                             </connections>
                                         </button>
                                         <button id="1412">
-                                            <rect key="frame" x="302" y="415" width="232" height="18"/>
+                                            <rect key="frame" x="302" y="375" width="232" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="during a Timer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1413">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2738,7 +2738,7 @@ DQ
                                             </connections>
                                         </button>
                                         <button id="1414">
-                                            <rect key="frame" x="302" y="375" width="272" height="18"/>
+                                            <rect key="frame" x="302" y="335" width="272" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="during a Timer break" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1415">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2776,7 +2776,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="1426">
-                                            <rect key="frame" x="200" y="416" width="99" height="17"/>
+                                            <rect key="frame" x="200" y="376" width="99" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Prevent sleep:" id="1427">
                                                 <font key="font" metaFont="system"/>
@@ -2785,7 +2785,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OQr-oD-XN8">
-                                            <rect key="frame" x="151" y="340" width="147" height="17"/>
+                                            <rect key="frame" x="152" y="416" width="147" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Seconds on status bar:" id="sa6-3S-c0d">
                                                 <font key="font" metaFont="system"/>
@@ -2794,7 +2794,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <button id="5EK-nc-CM2">
-                                            <rect key="frame" x="302" y="339" width="243" height="18"/>
+                                            <rect key="frame" x="302" y="415" width="243" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Show" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="xEf-xn-xB8">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
