@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
-        <plugIn identifier="com.apple.OSAKit.IBPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.OSAKit.IBPlugin" version="6751"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
@@ -60,6 +60,7 @@
                 <outlet property="longBreakCombo" destination="168" id="515"/>
                 <outlet property="longBreakResetComboTime" destination="1303" id="1318"/>
                 <outlet property="namePanel" destination="26" id="40"/>
+                <outlet property="namesCombo" destination="28" id="CbD-ib-7Kb"/>
                 <outlet property="pomodoro" destination="1188" id="1189"/>
                 <outlet property="pomodoroMenu" destination="10" id="44"/>
                 <outlet property="pomodorosForLong" destination="170" id="514"/>

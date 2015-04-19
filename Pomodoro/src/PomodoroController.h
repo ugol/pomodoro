@@ -37,7 +37,8 @@
 @interface PomodoroController : CommonController {
         	
 	IBOutlet NSPanel* prefs;
-	IBOutlet NSPanel* namePanel; 
+	IBOutlet NSPanel* namePanel;
+    IBOutlet NSComboBox* namesCombo;
     IBOutlet NSPanel* scriptPanel;
     
     IBOutlet NSTabView* tabView;
@@ -83,7 +84,8 @@
 }
 
 @property (assign) IBOutlet NSPanel* prefs;
-@property (assign) IBOutlet NSPanel* namePanel; 
+@property (assign) IBOutlet NSPanel* namePanel;
+@property (assign) IBOutlet NSComboBox* namesCombo;
 @property (assign) IBOutlet NSPanel* scriptPanel;
 
 @property (assign) IBOutlet NSTabView* tabView;
@@ -116,6 +118,7 @@
 -(void) keyResume;
 
 -(void) showTimeOnStatusBar:(NSInteger) time;
+-(void) updateNamesComboData;
 
 -(IBAction) about:(id)sender;
 -(IBAction) help:(id)sender;

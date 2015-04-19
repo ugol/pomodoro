@@ -39,7 +39,7 @@
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
 @synthesize pomodoro, longBreakCounter, longBreakCheckerTimer;
-@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
+@synthesize prefs, scriptPanel, namePanel, namesCombo, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
@@ -62,6 +62,26 @@
     longBreakCounter = 0;
     longBreakCheckerTimer = nil;
     
+}
+
+- (void)updateNamesComboData {
+    
+    NSInteger howMany = [namesCombo numberOfItems];
+    NSString* name = _timerName;
+    BOOL isNewName = YES;
+    NSInteger i = 0;
+    while ((isNewName) && (i<howMany)) {
+        isNewName = ![name isEqualToString:[namesCombo itemObjectValueAtIndex:i]];
+        i++;
+    }
+    if (isNewName) {
+        
+        if (howMany>15) {
+            [namesCombo removeItemAtIndex:0];
+        }
+        [namesCombo addItemWithObjectValue:name];
+        
+    }
 }
 
 #pragma mark ---- Window delegate methods ----
@@ -271,6 +291,7 @@
         [namePanel endEditingFor:nil];
     }
     
+    [self updateNamesComboData];
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameGiven object:namePanel];
 
 	[namePanel close];
