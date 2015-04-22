@@ -45,11 +45,15 @@
 #pragma mark ---- Helper methods ----
 
 - (void) showTimeOnStatusBar:(NSInteger) time {	
-	if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
-		[statusItem setTitle:[NSString stringWithFormat:@" %.2ld:%.2ld",time/60, time%60]];
-	} else {
-		[statusItem setTitle:@""];
-	}
+    if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
+        if ([self checkDefault:@"showTimeWithSeconds"]) {
+            [statusItem setTitle:[NSString stringWithFormat:@" %.2ld:%.2ld",time/60, time%60]];
+         } else {
+            [statusItem setTitle:[NSString stringWithFormat:@" %.2ld",time/60]];
+        }
+    } else {
+        [statusItem setTitle:@""];
+    }
 }
 
 - (void) longBreakCheckerFinished {
@@ -78,7 +82,9 @@
                        context:(void *)context {
     	
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
-		[self showTimeOnStatusBar: _initialTime * 60];		
+		[self showTimeOnStatusBar: _initialTime * 60];
+	} else if ([keyPath isEqualToString:@"showTimeWithSeconds"]) {
+		[self showTimeOnStatusBar: _initialTime * 60];
 	} else if ([keyPath isEqualToString:@"initialTime"]) {
         NSInteger duration = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
         [pomodoro setDurationMinutes:duration];
@@ -588,10 +594,16 @@
 	[self observeUserDefault:@"initialTime"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
+	[self observeUserDefault:@"showTimeWithSeconds"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];
-	}	
+	}
+    
+	// show again time to handle showTimeWithSeconds
+	[self showTimeOnStatusBar: _initialTime * 60];
+
+    [self updateMenu];
 		
 }
 

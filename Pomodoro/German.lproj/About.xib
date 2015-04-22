@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AboutController">
             <connections>
                 <outlet property="aboutText" destination="22" id="28"/>
-                <outlet property="copyright" destination="29" id="33"/>
                 <outlet property="release" destination="30" id="34"/>
                 <outlet property="window" destination="1" id="27"/>
             </connections>
@@ -18,27 +17,27 @@
         <window title="Über Timer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" frameAutosaveName="PomodoroSplashWindow" animationBehavior="default" id="1" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="235" y="283" width="547" height="428"/>
+            <rect key="contentRect" x="235" y="283" width="548" height="422"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="547" height="428"/>
+                <rect key="frame" x="0.0" y="0.0" width="548" height="422"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="21" customClass="BGHUDScrollView">
-                        <rect key="frame" x="136" y="47" width="391" height="369"/>
+                        <rect key="frame" x="137" y="0.0" width="391" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XvF-CN-7Fo">
-                            <rect key="frame" x="0.0" y="0.0" width="391" height="369"/>
+                            <rect key="frame" x="0.0" y="0.0" width="391" height="390"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="22">
-                                    <rect key="frame" x="0.0" y="0.0" width="391" height="369"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="391" height="390"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="391" height="369"/>
+                                    <size key="minSize" width="391" height="390"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="391" height="369"/>
+                                    <size key="minSize" width="391" height="390"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -53,17 +52,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField verticalHuggingPriority="750" id="29" customClass="BGHUDLabel">
-                        <rect key="frame" x="133" y="20" width="397" height="11"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="copyright" id="32">
-                            <font key="font" metaFont="miniSystemBold"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField verticalHuggingPriority="750" id="30" customClass="BGHUDLabel">
-                        <rect key="frame" x="17" y="285" width="114" height="11"/>
+                        <rect key="frame" x="17" y="279" width="114" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="release" id="31">
                             <font key="font" metaFont="miniSystemBold"/>
@@ -72,7 +62,7 @@
                         </textFieldCell>
                     </textField>
                     <button id="35">
-                        <rect key="frame" x="18" y="290" width="112" height="120"/>
+                        <rect key="frame" x="18" y="284" width="112" height="120"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="icon" imagePosition="overlaps" alignment="center" alternateImage="icon" imageScaling="proportionallyDown" inset="2" id="36">
                             <behavior key="behavior" lightByContents="YES"/>
