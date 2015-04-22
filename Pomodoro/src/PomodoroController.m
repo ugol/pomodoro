@@ -44,7 +44,7 @@
 
 #pragma mark ---- Helper methods ----
 
-- (void) showTimeOnStatusBar:(NSInteger) time {	
+- (void) showTimeOnStatusBar:(NSInteger) time {
     if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
         if ([self checkDefault:@"showTimeWithSeconds"]) {
             [statusItem setTitle:[NSString stringWithFormat:@" %.2ld:%.2ld",time/60, time%60]];
@@ -52,13 +52,13 @@
             [statusItem setTitle:[NSString stringWithFormat:@" %.2ld",time/60]];
         }
     } else {
-        [statusItem setTitle:@""];
+        //give enough space
+        [statusItem setTitle:@"       "];
     }
 }
 
 - (void) longBreakCheckerFinished {
     
-    //NSLog(@"LongBreak Timer reset!");
     longBreakCounter = 0;
     longBreakCheckerTimer = nil;
     
