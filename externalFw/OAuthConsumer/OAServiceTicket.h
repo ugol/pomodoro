@@ -34,8 +34,8 @@
     NSURLResponse *response;
     BOOL didSucceed;
 }
-@property(retain) OAMutableURLRequest *request;
-@property(retain) NSURLResponse *response;
+@property(strong) OAMutableURLRequest *request;
+@property(strong) NSURLResponse *response;
 @property(assign) BOOL didSucceed;
 
 - (id)initWithRequest:(OAMutableURLRequest *)aRequest response:(NSURLResponse *)aResponse didSucceed:(BOOL)success;

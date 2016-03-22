@@ -50,7 +50,7 @@ static BGThemeManager *sharedThemeManager = nil;
 
 + (id)allocWithZone:(NSZone *)zone;
 {
-    return [[self keyedManager] retain];
+    return [self keyedManager];
 }
 
 -(void)initDefaultThemes {
@@ -59,8 +59,8 @@ static BGThemeManager *sharedThemeManager = nil;
 	themes = [[NSMutableDictionary alloc] initWithCapacity: 2];
 	
 	//Add the default Flat and Gradient themes
-	[themes setObject: [[[BGTheme alloc] init] autorelease] forKey: @"flatTheme"];
-	[themes setObject: [[[BGGradientTheme alloc] init] autorelease] forKey: @"gradientTheme"];
+	[themes setObject: [[BGTheme alloc] init] forKey: @"flatTheme"];
+	[themes setObject: [[BGGradientTheme alloc] init] forKey: @"gradientTheme"];
 }
 
 - (BGTheme *)themeForKey:(NSString *)key {
@@ -85,22 +85,6 @@ static BGThemeManager *sharedThemeManager = nil;
 }
 
 - (id)copyWithZone:(NSZone *)zone; {
-    return self;
-}
-
-- (id)retain; {
-    return self;
-}
-
-- (NSUInteger)retainCount; {
-    return NSUIntegerMax;  //denotes an object that cannot be released
-}
-
-- (void)release; {
-    //do nothing
-}
-
-- (id)autorelease; {
     return self;
 }
 

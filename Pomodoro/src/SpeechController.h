@@ -28,16 +28,16 @@
 
 @interface SpeechController : CommonController {
  
-    IBOutlet NSSpeechSynthesizer* speech;
-	IBOutlet NSComboBox* voicesCombo;
-    IBOutlet NSComboBox* speechEveryCombo;
+    IBOutlet NSSpeechSynthesizer* __unsafe_unretained speech;
+	IBOutlet NSComboBox* __unsafe_unretained voicesCombo;
+    IBOutlet NSComboBox* __unsafe_unretained speechEveryCombo;
 
 	NSArray* voices;
     
 }
 
-@property (assign) IBOutlet NSSpeechSynthesizer* speech;
-@property (assign) IBOutlet NSComboBox* voicesCombo;
-@property (assign) IBOutlet NSComboBox* speechEveryCombo;
+@property (unsafe_unretained) IBOutlet NSSpeechSynthesizer* speech;
+@property (unsafe_unretained) IBOutlet NSComboBox* voicesCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* speechEveryCombo;
 
 @end

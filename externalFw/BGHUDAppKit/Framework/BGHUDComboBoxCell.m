@@ -147,7 +147,6 @@
 		[NSGraphicsContext restoreGraphicsState];
 	}
 	
-	[path release];
 	
 	NSRect frame = cellFrame;
 	
@@ -186,7 +185,7 @@
 	
 	NSTextView* view = (NSTextView*)[[controlView window] fieldEditor:NO forObject:controlView];
 	
-	NSMutableDictionary *dict = [[[view selectedTextAttributes] mutableCopy] autorelease];
+	NSMutableDictionary *dict = [[view selectedTextAttributes] mutableCopy];
 	
 	
 	if([self showsFirstResponder] && [[[self controlView] window] isKeyWindow])
@@ -245,7 +244,6 @@
 
 	[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] normalGradient] drawInBezierPath: path angle: 90];
 	
-	[path release];
 }
 
 -(void)drawArrowsInRect:(NSRect) frame {
@@ -305,18 +303,12 @@
 	
 	[arrow fill];
 	
-	[arrow release];
 		
 }
 
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

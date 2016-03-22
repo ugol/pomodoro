@@ -31,15 +31,15 @@
 
 @interface ShortcutController : CommonController {
 
-    IBOutlet id delegate;
+    IBOutlet id __unsafe_unretained delegate;
     
-    IBOutlet SRRecorderControl* muteRecorder;
-    IBOutlet SRRecorderControl* startRecorder;
-    IBOutlet SRRecorderControl* resetRecorder;
-    IBOutlet SRRecorderControl* interruptRecorder;
-    IBOutlet SRRecorderControl* internalInterruptRecorder;
-    IBOutlet SRRecorderControl* resumeRecorder;
-    IBOutlet SRRecorderControl* quickStatsRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained muteRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained startRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained resetRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained interruptRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained internalInterruptRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained resumeRecorder;
+    IBOutlet SRRecorderControl* __unsafe_unretained quickStatsRecorder;
 	
 	PTHotKey *muteKey;
 	PTHotKey *startKey;
@@ -58,15 +58,15 @@
 	KeyCombo quickStatsKeyCombo;
 }
 
-@property (assign) IBOutlet id delegate;
+@property (unsafe_unretained) IBOutlet id delegate;
 
-@property (assign) IBOutlet SRRecorderControl* muteRecorder;
-@property (assign) IBOutlet SRRecorderControl* startRecorder;
-@property (assign) IBOutlet SRRecorderControl* resetRecorder;
-@property (assign) IBOutlet SRRecorderControl* interruptRecorder;
-@property (assign) IBOutlet SRRecorderControl* internalInterruptRecorder;
-@property (assign) IBOutlet SRRecorderControl* resumeRecorder;
-@property (assign) IBOutlet SRRecorderControl* quickStatsRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* muteRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* startRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* resetRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* interruptRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* internalInterruptRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* resumeRecorder;
+@property (unsafe_unretained) IBOutlet SRRecorderControl* quickStatsRecorder;
 
 - (void) updateShortcuts;
 

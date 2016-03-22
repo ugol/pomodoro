@@ -206,7 +206,6 @@
 			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] pushedSolidFill] set];
 			[path fill];
 			
-			[path release];
 		}
 		else if(isBottomDown)
 		{
@@ -230,7 +229,6 @@
 			[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] pushedSolidFill] set];
 			[path fill];
 			
-			[path release];
 		}
 	}
 	
@@ -257,7 +255,6 @@
 	[path setLineWidth: 1.0f];
 	[path stroke];
 	
-	[path release];
 	
 	
 }
@@ -295,7 +292,6 @@
 	
 	[arrow fill];
 	
-	[arrow release];
 	
 	
 	arrow = [[NSBezierPath alloc] init];
@@ -317,7 +313,6 @@
 	
 	[arrow fill];
 	
-	[arrow release];
 }
 
 @end

@@ -40,8 +40,8 @@
 	
 	NSBundle *bundle = [NSBundle mainBundle];
 	
-	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"]] autorelease];
-	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
+	NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"]];
+	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
 	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
@@ -49,11 +49,5 @@
 	
 }
 
-- (void)dealloc {
-    
-    [aboutText release];
-    [super dealloc];
-    
-}
 
 @end

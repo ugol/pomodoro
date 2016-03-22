@@ -34,9 +34,6 @@
     return self;
 }
 
-- (void) dealloc { 
-    [super dealloc]; 
-}
 
 
 - (NSDictionary *) registrationDictionaryForGrowl {

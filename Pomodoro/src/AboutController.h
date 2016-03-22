@@ -34,9 +34,8 @@
 
 }
 
-@property (assign) IBOutlet NSTextView* aboutText;
-@property (assign, readonly) IBOutlet NSTextField* release;
-@property (assign, readonly) NSTextField* copyright;
+@property (strong) IBOutlet NSTextView* aboutText;
+@property (strong) NSTextField* copyright;
 
 -(IBAction) switchBetweenReleaseAndBuild: (id) sender;
 

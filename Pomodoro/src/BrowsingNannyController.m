@@ -48,11 +48,9 @@ static NSString * const DefaultUrlPattern = @"http*://*.blocked.com/*";
 }
 
 - (void)dealloc {
-    self.blacklistedPredicate = nil;
     self.pomodoroController = nil;
     self.arrayController = nil;
     self.scripter = nil;
-    [super dealloc];
 }
 
 - (BOOL)enabled {

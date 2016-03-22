@@ -53,26 +53,26 @@
 
 -(NSGradient *)scrollerKnobGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.631f green: 0.639f blue: 0.655f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.439f green: 0.447f blue: 0.471f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.631f green: 0.639f blue: 0.655f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.439f green: 0.447f blue: 0.471f alpha: 1.0f]];
 }
 
 -(NSGradient *)scrollerTrackGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.137f green: 0.137f blue: 0.137f alpha: .75f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.278f green: 0.278f blue: 0.278f alpha: .75f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.137f green: 0.137f blue: 0.137f alpha: .75f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.278f green: 0.278f blue: 0.278f alpha: .75f]];
 }
 
 -(NSGradient *)scrollerArrowNormalGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self scrollerAlphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self scrollerAlphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self scrollerAlphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self scrollerAlphaValue]]];
 }
 
 -(NSGradient *)scrollerArrowPushedGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self scrollerAlphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self scrollerAlphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self scrollerAlphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self scrollerAlphaValue]]];
 }
 
 -(CGFloat)scrollerAlphaValue {
@@ -95,20 +95,20 @@
 
 -(NSGradient *)knobColor {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 
 -(NSGradient *)highlightKnobColor {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: 1.0f]];
 }
 
 -(NSGradient *)disabledKnobColor {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 
 #pragma mark -
@@ -149,8 +149,8 @@
 
 -(NSGradient *)progressTrackGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedRed: 0.125f green: 0.125f blue: 0.125f alpha: 1.0f]
-										  endingColor: [NSColor colorWithCalibratedRed: 0.208f green: 0.208f blue: 0.208f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedRed: 0.125f green: 0.125f blue: 0.125f alpha: 1.0f]
+										  endingColor: [NSColor colorWithCalibratedRed: 0.208f green: 0.208f blue: 0.208f alpha: 1.0f]];
 }
 
 #pragma mark -
@@ -214,20 +214,20 @@
 
 -(NSGradient *)tableHeaderCellNormalFill {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: 1.0f]];
 }
 
 -(NSGradient *)tableHeaderCellPushedFill {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: 1.0f]];
 }
 
 -(NSGradient *)tableHeaderCellSelectedFill {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.651f green: 0.651f blue: 0.655f alpha: 1.0f]
-										  endingColor: [NSColor colorWithDeviceRed: 0.518f green: 0.518f blue: 0.518f alpha: 1.0f]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.651f green: 0.651f blue: 0.655f alpha: 1.0f]
+										  endingColor: [NSColor colorWithDeviceRed: 0.518f green: 0.518f blue: 0.518f alpha: 1.0f]];
 }
 
 #pragma mark -
@@ -235,58 +235,58 @@
 
 -(NSGradient *)normalGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self alphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self alphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self alphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self alphaValue]]];
 }
 
 -(NSGradient *)disabledNormalGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self disabledAlphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self disabledAlphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.251f green: 0.251f blue: 0.255f alpha: [self disabledAlphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.118f green: 0.118f blue: 0.118f alpha: [self disabledAlphaValue]]];
 }
 
 -(NSGradient *)pushedGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self alphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self alphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]]];
 }
 
 -(NSGradient *)highlightGradient {
 	
-	return [[[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self alphaValue]]
-										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]]] autorelease];
+	return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithDeviceRed: 0.451f green: 0.451f blue: 0.455f alpha: [self alphaValue]]
+										  endingColor: [NSColor colorWithDeviceRed: 0.318f green: 0.318f blue: 0.318f alpha: [self alphaValue]]];
 }
 
 -(NSGradient *)normalComplexGradient {
 	
-	return [[[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.324f green: 0.331f blue: 0.347f alpha: [self alphaValue]],
+	return [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.324f green: 0.331f blue: 0.347f alpha: [self alphaValue]],
 			 (CGFloat)0, [NSColor colorWithDeviceRed: 0.245f green: 0.253f blue: 0.269f alpha: [self alphaValue]], (CGFloat).5,
 			 [NSColor colorWithDeviceRed: 0.206f green: 0.214f blue: 0.233f alpha: [self alphaValue]], (CGFloat).5,
-			 [NSColor colorWithDeviceRed: 0.139f green: 0.147f blue: 0.167f alpha: [self alphaValue]], (CGFloat)1.0f, nil] autorelease];
+			 [NSColor colorWithDeviceRed: 0.139f green: 0.147f blue: 0.167f alpha: [self alphaValue]], (CGFloat)1.0f, nil];
 }
 
 -(NSGradient *)disabledNormalComplexGradient {
 	
-	return [[[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.324f green: 0.331f blue: 0.347f alpha: [self disabledAlphaValue]],
+	return [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.324f green: 0.331f blue: 0.347f alpha: [self disabledAlphaValue]],
 			 (CGFloat)0, [NSColor colorWithDeviceRed: 0.245f green: 0.253f blue: 0.269f alpha: [self disabledAlphaValue]], (CGFloat).5,
 			 [NSColor colorWithDeviceRed: 0.206f green: 0.214f blue: 0.233f alpha: [self disabledAlphaValue]], (CGFloat).5,
-			 [NSColor colorWithDeviceRed: 0.139f green: 0.147f blue: 0.167f alpha: [self disabledAlphaValue]], (CGFloat)1.0f, nil] autorelease];
+			 [NSColor colorWithDeviceRed: 0.139f green: 0.147f blue: 0.167f alpha: [self disabledAlphaValue]], (CGFloat)1.0f, nil];
 }
 
 -(NSGradient *)pushedComplexGradient {
 	
-	return [[[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.524f green: 0.531f blue: 0.547f alpha: [self alphaValue]],
+	return [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.524f green: 0.531f blue: 0.547f alpha: [self alphaValue]],
 			 (CGFloat)0, [NSColor colorWithDeviceRed: 0.445f green: 0.453f blue: 0.469f alpha: [self alphaValue]], (CGFloat).5,
 			 [NSColor colorWithDeviceRed: 0.406f green: 0.414f blue: 0.433f alpha: [self alphaValue]], (CGFloat).5,
-			 [NSColor colorWithDeviceRed: 0.339f green: 0.347f blue: 0.367f alpha: [self alphaValue]], (CGFloat)1.0f, nil] autorelease];
+			 [NSColor colorWithDeviceRed: 0.339f green: 0.347f blue: 0.367f alpha: [self alphaValue]], (CGFloat)1.0f, nil];
 }
 
 -(NSGradient *)highlightComplexGradient {
 	
-	return [[[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.524f green: 0.531f blue: 0.547f alpha: [self alphaValue]],
+	return [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithDeviceRed: 0.524f green: 0.531f blue: 0.547f alpha: [self alphaValue]],
 			 (CGFloat)0, [NSColor colorWithDeviceRed: 0.445f green: 0.453f blue: 0.469f alpha: [self alphaValue]], (CGFloat).5,
 			 [NSColor colorWithDeviceRed: 0.406f green: 0.414f blue: 0.433f alpha: [self alphaValue]], (CGFloat).5,
-			 [NSColor colorWithDeviceRed: 0.339f green: 0.347f blue: 0.367f alpha: [self alphaValue]], (CGFloat)1.0f, nil] autorelease];
+			 [NSColor colorWithDeviceRed: 0.339f green: 0.347f blue: 0.367f alpha: [self alphaValue]], (CGFloat)1.0f, nil];
 }
 
 -(NSColor *)normalSolidFill {
@@ -341,7 +341,7 @@
 	[shadow setShadowBlurRadius: 2];
 	[shadow setShadowOffset: NSMakeSize( 0, -1)];
 	
-	return [shadow autorelease];
+	return shadow;
 }
 
 -(CGFloat)alphaValue {
@@ -361,14 +361,10 @@
 	[shadow setShadowBlurRadius: 3];
 	[shadow setShadowOffset: NSMakeSize( 0, 0)];
 	
-	return [shadow autorelease];
+	return shadow;
 }
 
 #pragma mark -
 
--(void)dealloc {
-	
-	[super dealloc];
-}
 
 @end

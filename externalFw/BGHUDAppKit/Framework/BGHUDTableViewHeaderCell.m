@@ -144,7 +144,6 @@
 		}
 		
 		[arrow fill];
-		[arrow release];
 	}
 	
 	frame.origin.y += 1;
@@ -154,11 +153,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 
