@@ -28,7 +28,7 @@ connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)re
 			responseType:respType
 			URL:URL];
 
-	return [parser autorelease];
+	return parser;
 }
 
 
@@ -38,11 +38,11 @@ connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType
 {
 	if ((self = [super init]))
 	{
-		xml = [theXML retain];
-		identifier = [theIdentifier retain];
+		xml = theXML;
+		identifier = theIdentifier;
 		requestType = reqType;
 		responseType = respType;
-		URL = [theURL retain];
+		URL = theURL;
 		delegate = theDelegate;
 		parsedObjects = [[NSMutableArray alloc] initWithCapacity:0];
 
@@ -69,13 +69,8 @@ connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType
 
 - (void)dealloc
 {
-	[parsedObjects release];
-	[xml release];
-	[identifier release];
-	[URL release];
 	
 	delegate = nil;
-	[super dealloc];
 }
 
 - (void)parse

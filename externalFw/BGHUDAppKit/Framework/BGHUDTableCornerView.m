@@ -34,10 +34,5 @@
 	[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] tableHeaderCellNormalFill] drawInRect: NSInsetRect([self bounds], 1, 1) angle: 270];
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 @end

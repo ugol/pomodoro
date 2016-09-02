@@ -41,11 +41,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-	[request release];
-	[response release];
-	[super dealloc];
-}
 
 @end

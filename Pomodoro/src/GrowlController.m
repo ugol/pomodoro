@@ -186,9 +186,9 @@
         userNotificationCenter = [klass defaultUserNotificationCenter];
     }
     
-    redButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]] retain];
-    greenButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]] retain];
-    yellowButtonImage = [[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]] retain];
+    redButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png"]];
+    greenButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"green" ofType:@"png"]];
+    yellowButtonImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png"]];
     
     [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
     [growlEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
@@ -196,13 +196,5 @@
     
 }
 
-- (void)dealloc {
-    
-    [redButtonImage release];
-    [greenButtonImage release];
-    [yellowButtonImage release];
-    [super dealloc];
-    
-}
 
 @end

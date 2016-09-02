@@ -40,26 +40,33 @@
     didFailSelector = failSelector;
     
     [request prepare];
+    NSURLResponse *localResponse;
+    NSError *localError;
     
     responseData = [NSURLConnection sendSynchronousRequest:request
-                                         returningResponse:&response
-                                                     error:&error];
+                                         returningResponse:&localResponse
+                                                     error:&localError];
+    
+    
 	
-    if (response == nil || responseData == nil || error != nil) {
+    if (localResponse == nil || responseData == nil || localError != nil) {
         OAServiceTicket *ticket= [[OAServiceTicket alloc] initWithRequest:request
-                                                                 response:response
+                                                                 response:localResponse
                                                                didSucceed:NO];
         [delegate performSelector:didFailSelector
                        withObject:ticket
-                       withObject:error];
+                       withObject:localError];
     } else {
         OAServiceTicket *ticket = [[OAServiceTicket alloc] initWithRequest:request
-                                                                  response:response
-                                                                didSucceed:[(NSHTTPURLResponse *)response statusCode] < 400];
+                                                                  response:localResponse
+                                                                didSucceed:[(NSHTTPURLResponse *)localResponse statusCode] < 400];
         [delegate performSelector:didFinishSelector
                        withObject:ticket
                        withObject:responseData];
-    }   
+    }
+    
+    response = localResponse;
+    error = localError;
 }
 
 @end

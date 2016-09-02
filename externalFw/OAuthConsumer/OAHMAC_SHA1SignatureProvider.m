@@ -52,7 +52,7 @@
     
     NSString *base64EncodedResult = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
     
-    return [base64EncodedResult autorelease];
+    return base64EncodedResult;
 }
 
 @end

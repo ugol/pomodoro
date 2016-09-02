@@ -41,7 +41,7 @@
 	NSString *themeKey;
 }
 
-@property (retain) NSString *themeKey;
+@property (strong) NSString *themeKey;
 
 -(void)drawHorizontalBarInFrame:(NSRect)frame;
 -(void)drawVerticalBarInFrame:(NSRect)frame;

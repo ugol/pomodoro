@@ -41,7 +41,7 @@
 	NSString *themeKey;
 }
 
-@property (retain) NSString *themeKey;
+@property (strong) NSString *themeKey;
 
 - (void)drawArrowsInRect:(NSRect) frame;
 -(void)drawButtonInRect:(NSRect) cellFrame;

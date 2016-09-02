@@ -64,7 +64,6 @@
 				[newHeader setThemeKey: [self themeKey]];
 				[newHeader setFont: [[aColumn headerCell] font]];
 				[aColumn setHeaderCell: newHeader];
-				[newHeader release];
 			} else {
 				
 				[[aColumn headerCell] setThemeKey: [self themeKey]];
@@ -100,7 +99,6 @@
 				[newHeader setThemeKey: [self themeKey]];
 				[newHeader setFont: [[aColumn headerCell] font]];
 				[aColumn setHeaderCell: newHeader];
-				[newHeader release];
 			} else {
 				
 				[[aColumn headerCell] setThemeKey: [self themeKey]];
@@ -183,11 +181,6 @@
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

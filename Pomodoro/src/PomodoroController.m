@@ -514,7 +514,7 @@
     
     [self registerForAllPomodoroEvents];
     
-	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak" ofType:@"png"]];
@@ -571,7 +571,7 @@
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
 
     [pomodoro setDurationMinutes:_initialTime];
-    pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
+    pomodoroNotifier = [[PomodoroNotifier alloc] init];
 	[pomodoro setDelegate: pomodoroNotifier];
     
 	stats = [[StatsController alloc] init];
@@ -592,26 +592,5 @@
 		
 }
 
--(void)dealloc {
-
-    [statusItem release];
-	[about release];
-    [splash release];
-	[stats release];
-    [pomodoroNotifier release];
-    
-	[pomodoroImage release];
-	[pomodoroBreakImage release];
-	[pomodoroFreezeImage release];
-	[pomodoroNegativeImage release];
-	[pomodoroNegativeBreakImage release];
-	[pomodoroNegativeFreezeImage release];
-    
-	[ringing release];
-	[ringingBreak release];
-	[tick release];
-	
-	[super dealloc];
-}
 
 @end

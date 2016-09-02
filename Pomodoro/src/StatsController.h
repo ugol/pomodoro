@@ -39,8 +39,8 @@
 
 }
 
-@property (readonly, nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (readonly, nonatomic, retain) PomodoroArrayController* pomos;
+@property (readonly, nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (readonly, nonatomic, strong) PomodoroArrayController* pomos;
 
 - (void) saveState;
 - (IBAction) exportToText:(id)sender;
