@@ -30,17 +30,17 @@
 
 @interface ApplescriptController : CommonController <NSOpenSavePanelDelegate> {
     
-    IBOutlet NSPanel* scriptPanel;
-    IBOutlet OSAScriptView* scriptView;
-    IBOutlet NSComboBox* scriptEveryCombo;
+    IBOutlet NSPanel* __unsafe_unretained scriptPanel;
+    IBOutlet OSAScriptView* __unsafe_unretained scriptView;
+    IBOutlet NSComboBox* __unsafe_unretained scriptEveryCombo;
 
     NSArray* scriptNames;
 
 }
 
-@property (assign) IBOutlet NSPanel* scriptPanel;
-@property (assign) IBOutlet OSAScriptView* scriptView;
-@property (assign) IBOutlet NSComboBox* scriptEveryCombo;
+@property (unsafe_unretained) IBOutlet NSPanel* scriptPanel;
+@property (unsafe_unretained) IBOutlet OSAScriptView* scriptView;
+@property (unsafe_unretained) IBOutlet NSComboBox* scriptEveryCombo;
 
 -(IBAction) showOpenPanel:(id)sender;
 -(IBAction) showScriptingPanel:(id)sender;

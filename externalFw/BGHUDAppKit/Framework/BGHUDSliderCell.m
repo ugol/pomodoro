@@ -87,11 +87,6 @@
 	return copy;
 }
 
--(void)dealloc {
-	
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark Drawing Methods
@@ -118,7 +113,7 @@
 	// Prevent drawing outside the rectangle to prevent ghost lines
 	// when moving the slider
 	// The ghost lines appear because of the shadow in highlight
-	NSBezierPath *clipPath = [[NSBezierPath new] autorelease];
+	NSBezierPath *clipPath = [NSBezierPath new];
 	[clipPath appendBezierPathWithRect:aRect];
 	[clipPath addClip];
 	
@@ -486,8 +481,6 @@
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledKnobColor] drawInBezierPath: pathInner angle: 90];
 	}
 	
-	[pathOuter release];
-	[pathInner release];
 }
 
 - (void)drawVerticalKnobInFrame:(NSRect)frame {
@@ -660,8 +653,6 @@
 		[[[[BGThemeManager keyedManager] themeForKey: self.themeKey] disabledKnobColor] drawInBezierPath: pathInner angle: 90];
 	}
 	
-	[pathOuter release];
-	[pathInner release];
 }
 
 #pragma mark -

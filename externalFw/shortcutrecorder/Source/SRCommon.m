@@ -171,7 +171,6 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoa
 	UInt32              deadKeyState;
     OSStatus err = noErr;
     CFLocaleRef locale = CFLocaleCopyCurrent();
-	[(id)CFMakeCollectable(locale) autorelease]; // Autorelease here so that it gets released no matter what
 	
 	CFMutableStringRef resultString;
 	
@@ -204,7 +203,7 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(NSInteger keyCode, NSUInteger cocoa
 	
 	PUDNSLog(@"character: -%@-", (NSString *)resultString);
 	
-	return (NSString *)resultString;
+	return (NSString *)CFBridgingRelease(resultString);
 }
 
 #pragma mark Animation Easing
@@ -266,7 +265,7 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 + (NSImage *)supportingImageWithName:(NSString *)name {
 //	NSLog(@"supportingImageWithName: %@", name);
 	if (nil == SRSharedImageCache) {
-		SRSharedImageCache = [[NSMutableDictionary dictionary] retain];
+		SRSharedImageCache = [NSMutableDictionary dictionary];
 //		NSLog(@"inited cache");
 	}
 	NSImage *cachedImage = nil;
@@ -286,7 +285,6 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 //	NSLog(@"created customImageRep: %@", customImageRep);
 	NSImage *returnImage = [[NSImage alloc] initWithSize:size];
 	[returnImage addRepresentation:customImageRep];
-	[customImageRep release];
 	[returnImage setScalesWhenResized:YES];
 	[SRSharedImageCache setObject:returnImage forKey:name];
 	
@@ -312,7 +310,7 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 #endif
 	
 //	NSLog(@"returned image: %@", returnImage);
-	return [returnImage autorelease];
+	return returnImage;
 }
 @end
 
@@ -360,9 +358,6 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	
 	[bp fill];
 	
-	[bp release];
-	[flip release];
-	[sh release];
 }
 
 + (NSValue *)_sizeSRRemoveShortcut {
@@ -393,7 +388,6 @@ static NSMutableDictionary *SRSharedImageCache = nil;
 	[cross lineToPoint:MakeRelativePoint(4.0f,10.0f)];
 		
 	[cross stroke];
-	[cross release];
 }
 + (void)_drawSRRemoveShortcut:(id)anNSCustomImageRep {
 	

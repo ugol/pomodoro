@@ -39,7 +39,7 @@
 
 + (SmartTimer*) createAndStartRepeatingTimerFor:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real {
     
-    SmartTimer* timer = [[[SmartTimer alloc] init] autorelease];
+    SmartTimer* timer = [[SmartTimer alloc] init];
     timer.delegate = delegate;
     
     timer.internalTimer = [NSTimer timerWithTimeInterval:seconds
@@ -58,7 +58,7 @@
 }
 
 + (SmartTimer*) createAndStartOneShotTimerAfter:(NSInteger)seconds withDelegate:(id)delegate inRealTime:(BOOL)real {
-    SmartTimer* timer = [[[SmartTimer alloc] init] autorelease];
+    SmartTimer* timer = [[SmartTimer alloc] init];
     timer.delegate = delegate;
 
     timer.internalTimer = [NSTimer timerWithTimeInterval:seconds
@@ -135,9 +135,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 @end
 

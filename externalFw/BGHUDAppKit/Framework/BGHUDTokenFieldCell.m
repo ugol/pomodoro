@@ -164,14 +164,13 @@
 		[NSGraphicsContext restoreGraphicsState];
 	}
 
-	[path release];
 
 	//Get TextView for this editor
 	NSTextView* view = (NSTextView*)[[controlView window] fieldEditor: NO forObject: controlView];
 	[view setTextColor: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor]];
 
 	//Get Attributes of the selected text
-	NSMutableDictionary *dict = [[[view selectedTextAttributes] mutableCopy] autorelease];
+	NSMutableDictionary *dict = [[view selectedTextAttributes] mutableCopy];
 
 	//If window/app is active draw the highlight/text in active colors
 	if([self showsFirstResponder] && [[[self controlView] window] isKeyWindow])
@@ -221,24 +220,19 @@
 	[cell setTokenFillHighlight: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] tokenFillHighlight]];
 	[cell setControlSize: [self controlSize]];
 
-	return [cell autorelease];
+	return cell;
 }
 
 - (NSText *)setUpFieldEditorAttributes:(NSText *)textObj {
 
-	NSText *newText = [[super setUpFieldEditorAttributes: textObj] retain];
+	NSText *newText = [super setUpFieldEditorAttributes: textObj];
 	[(NSTextView *)newText setInsertionPointColor: [[[BGThemeManager keyedManager] themeForKey: self.themeKey] textColor]];
-	return [newText autorelease];
+	return newText;
 }
 
 #pragma mark -
 #pragma mark Helper Methods
 
--(void)dealloc {
-
-	[themeKey release];
-	[super dealloc];
-}
 
 #pragma mark -
 

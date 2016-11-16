@@ -37,29 +37,29 @@
 
 @interface PomodoroController : CommonController {
         	
-	IBOutlet NSPanel* prefs;
-	IBOutlet NSPanel* namePanel; 
-    IBOutlet NSPanel* scriptPanel;
+	IBOutlet NSPanel* __unsafe_unretained prefs;
+	IBOutlet NSPanel* __unsafe_unretained namePanel; 
+    IBOutlet NSPanel* __unsafe_unretained scriptPanel;
     
-    IBOutlet NSTabView* tabView;
-    IBOutlet NSToolbar* toolBar;
-	IBOutlet NSMenu* pomodoroMenu;
-	IBOutlet NSComboBox* initialTimeCombo;
+    IBOutlet NSTabView* __unsafe_unretained tabView;
+    IBOutlet NSToolbar* __unsafe_unretained toolBar;
+	IBOutlet NSMenu* __unsafe_unretained pomodoroMenu;
+	IBOutlet NSComboBox* __unsafe_unretained initialTimeCombo;
 	IBOutlet NSComboBox* initialTimeComboInStart;
-	IBOutlet NSComboBox* interruptCombo;
-	IBOutlet NSComboBox* breakCombo;
-	IBOutlet NSComboBox* longBreakCombo;
-	IBOutlet NSComboBox* longBreakResetComboTime;
-	IBOutlet NSComboBox* pomodorosForLong;
+	IBOutlet NSComboBox* __unsafe_unretained interruptCombo;
+	IBOutlet NSComboBox* __unsafe_unretained breakCombo;
+	IBOutlet NSComboBox* __unsafe_unretained longBreakCombo;
+	IBOutlet NSComboBox* __unsafe_unretained longBreakResetComboTime;
+	IBOutlet NSComboBox* __unsafe_unretained pomodorosForLong;
 			
-	IBOutlet NSMenuItem* startPomodoro;
-	IBOutlet NSMenuItem* finishPomodoro;
-	IBOutlet NSMenuItem* interruptPomodoro;
-	IBOutlet NSMenuItem* internalInterruptPomodoro;
-	IBOutlet NSMenuItem* invalidatePomodoro;
-	IBOutlet NSMenuItem* resumePomodoro;
-	IBOutlet GrowlNotifier* growl;
-	IBOutlet Pomodoro* pomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained startPomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained finishPomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained interruptPomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained internalInterruptPomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained invalidatePomodoro;
+	IBOutlet NSMenuItem* __unsafe_unretained resumePomodoro;
+	IBOutlet GrowlNotifier* __unsafe_unretained growl;
+	IBOutlet Pomodoro* __unsafe_unretained pomodoro;
     NSInteger longBreakCounter;
     NSTimer* longBreakCheckerTimer;
     PomodoroNotifier* pomodoroNotifier;
@@ -83,32 +83,32 @@
 			
 }
 
-@property (assign) IBOutlet NSPanel* prefs;
-@property (assign) IBOutlet NSPanel* namePanel; 
-@property (assign) IBOutlet NSPanel* scriptPanel;
+@property (unsafe_unretained) IBOutlet NSPanel* prefs;
+@property (unsafe_unretained) IBOutlet NSPanel* namePanel; 
+@property (unsafe_unretained) IBOutlet NSPanel* scriptPanel;
 
-@property (assign) IBOutlet NSTabView* tabView;
-@property (assign) IBOutlet NSToolbar* toolBar;
-@property (assign) IBOutlet NSMenu* pomodoroMenu;
-@property (assign) IBOutlet NSComboBox* initialTimeCombo;
-@property (assign) IBOutlet NSComboBox* interruptCombo;
-@property (assign) IBOutlet NSComboBox* breakCombo;
-@property (assign) IBOutlet NSComboBox* longBreakCombo;
-@property (assign) IBOutlet NSComboBox* longBreakResetComboTime;
-@property (assign) IBOutlet NSComboBox* pomodorosForLong;
+@property (unsafe_unretained) IBOutlet NSTabView* tabView;
+@property (unsafe_unretained) IBOutlet NSToolbar* toolBar;
+@property (unsafe_unretained) IBOutlet NSMenu* pomodoroMenu;
+@property (unsafe_unretained) IBOutlet NSComboBox* initialTimeCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* interruptCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* breakCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* longBreakCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* longBreakResetComboTime;
+@property (unsafe_unretained) IBOutlet NSComboBox* pomodorosForLong;
 
-@property (assign) IBOutlet GrowlNotifier* growl;
-@property (assign) IBOutlet Pomodoro* pomodoro;
+@property (unsafe_unretained) IBOutlet GrowlNotifier* growl;
+@property (unsafe_unretained) IBOutlet Pomodoro* pomodoro;
 @property (nonatomic, assign) NSInteger longBreakCounter;
-@property (nonatomic, assign) NSTimer* longBreakCheckerTimer;
+@property (nonatomic) NSTimer* longBreakCheckerTimer;
 
 
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* startPomodoro;
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* finishPomodoro;
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* interruptPomodoro;
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* internalInterruptPomodoro;
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* invalidatePomodoro;
-@property (nonatomic, assign, readonly) IBOutlet NSMenuItem* resumePomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* startPomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* finishPomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* interruptPomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* internalInterruptPomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* invalidatePomodoro;
+@property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* resumePomodoro;
 
 -(void) keyMute;
 -(void) keyStart;

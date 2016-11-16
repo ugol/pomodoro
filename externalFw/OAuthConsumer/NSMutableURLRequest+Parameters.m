@@ -57,10 +57,8 @@
     }
     
 	// Cleanup
-	if (shouldfree)
-		[encodedParameters release];
 	
-    return [requestParameters autorelease];
+    return requestParameters;
 }
 
 - (void)setParameters:(NSArray *)parameters 

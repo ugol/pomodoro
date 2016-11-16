@@ -72,7 +72,7 @@
         return managedObjectModel;
     }
 	
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];    
     return managedObjectModel;
 }
 
@@ -233,8 +233,8 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		[output seekToEndOfFile];
 		NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
 		[fetchRequest setEntity:[NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:managedObjectContext]];
-		NSError** error = nil;
-		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+		NSError* error;
+		NSArray* results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 		if (error) {
 			NSLog(@"Error %@", error);
 		} else {
@@ -278,7 +278,6 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		}
 		
 	}
-	[cal release];
 	
 }
 
@@ -311,18 +310,9 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 							  initWithKey:@"when" ascending:NO];
 	[pomos setSortDescriptors:
 	 [NSArray arrayWithObject: sort]];
-	[sort release];	
 
 		
 }
 
-- (void)dealloc {
-    
-    [pomos release];
-    [managedObjectModel release];
-    [managedObjectContext release];
-    [super dealloc];
-    
-}
 
 @end

@@ -174,7 +174,7 @@
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-    voices = [[NSSpeechSynthesizer availableVoices] retain];
+    voices = [NSSpeechSynthesizer availableVoices];
     
     [speech setVolume:_voiceVolume/100.0];
     [self setVoiceByName:_speechVoice];
@@ -185,11 +185,5 @@
 
 }
 
-- (void)dealloc {
-    
-    [voices release];
-    [super dealloc];
-    
-}
 
 @end
