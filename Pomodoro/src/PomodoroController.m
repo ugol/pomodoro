@@ -100,7 +100,6 @@
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    	
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
 		[self showTimeOnStatusBar: _initialTime * 60];
 	} else if ([keyPath isEqualToString:@"showTimeWithSeconds"]) {
@@ -111,12 +110,14 @@
         [self showTimeOnStatusBar: duration * 60];
         
     } else if ([keyPath hasSuffix:@"Volume"]) {
+        
 		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
 		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
-		
+        NSLog(@"HERE%ld -- %ld",(long)volume, (long)oldVolume);
 		if (volume != oldVolume) {
 			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
+                NSLog(@"%@ ringing ---",ringing);
 				[ringing setVolume:newVolume];
 				[ringing play];
 			}
