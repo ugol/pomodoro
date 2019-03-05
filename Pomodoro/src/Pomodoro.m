@@ -30,18 +30,17 @@
 
 @synthesize time, resumed, durationMinutes, realDuration, externallyInterrupted, internallyInterrupted, oneSecTimer, breakTimer, interruptionTimer, delegate, state;
 
-- (void) clearTimer: (NSTimer**) timer {
+- (void) clearTimer: (NSTimer*) timer {
     
-    if ([*timer isValid]) {
-        [*timer invalidate];
-        *timer = nil;
+    if ([timer isValid]) {
+        [timer invalidate];
     }
     
 }
 
 - (id) init { 
     if ( (self = [super init]) ) {
-        [self initWithDuration:25];
+        if (!(self = [self initWithDuration:25])) return nil;
     }
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     return self;
@@ -75,7 +74,8 @@
 
 -(void) start {
 
-    [self clearTimer: &breakTimer];
+    [self clearTimer: breakTimer];
+    breakTimer = nil;
 
     externallyInterrupted = 0;
     internallyInterrupted = 0;
@@ -113,8 +113,11 @@
 
 -(void) reset {
 
-    [self clearTimer: &oneSecTimer];
-    [self clearTimer: &interruptionTimer];
+    [self clearTimer: oneSecTimer];
+    [self clearTimer: interruptionTimer];
+    oneSecTimer = nil;
+    interruptionTimer = nil;
+    
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroReset:)]) {
         [delegate pomodoroReset:self];
@@ -123,7 +126,8 @@
 
 - (void) interrupt: (NSInteger) seconds  {
 
-    [self clearTimer:&oneSecTimer];
+    [self clearTimer:oneSecTimer];
+    oneSecTimer = nil;
 	state = PomoInterrupted;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
 										  target:self
@@ -156,7 +160,8 @@
 -(void) resume {
 
 	resumed++;
-    [self clearTimer: &interruptionTimer];
+    [self clearTimer: interruptionTimer];
+    interruptionTimer = nil;
 
 	[self startFor: time];
 	if ([delegate respondsToSelector: @selector(pomodoroResumed:)]) {
@@ -167,7 +172,8 @@
 - (void) checkIfFinished {
 	if (time == 0) {
 
-        [self clearTimer: &oneSecTimer];
+        [self clearTimer: oneSecTimer];
+        oneSecTimer = nil;
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
 			[delegate pomodoroFinished:self];		
@@ -177,7 +183,8 @@
 
 - (void) checkIfBreakFinished {
 	if (time == 0) {
-        [self clearTimer: &breakTimer];
+        [self clearTimer: breakTimer];
+        breakTimer = nil;
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(breakFinished:)]) {
 			[delegate breakFinished:self];		
@@ -203,18 +210,14 @@
 
 -(void) interruptFinished:(NSTimer *)aTimer {
 
-    [self clearTimer: &oneSecTimer];
-    [self clearTimer: &interruptionTimer];
+    [self clearTimer: oneSecTimer];
+    [self clearTimer: interruptionTimer];
+    oneSecTimer = nil;
+    interruptionTimer = nil;
 	state = PomoReadyToStart;
 	if ([delegate respondsToSelector: @selector(pomodoroInterruptionMaxTimeIsOver:)]) {
         [delegate pomodoroInterruptionMaxTimeIsOver:self];		
 	}
-}
-
--(void)dealloc {
-    
-    [delegate release];
-	[super dealloc];
 }
 
 @end
