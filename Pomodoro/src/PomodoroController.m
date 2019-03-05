@@ -117,7 +117,6 @@
 		if (volume != oldVolume) {
 			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
-                NSLog(@"%@ ringing ---",ringing);
 				[ringing setVolume:newVolume];
 				[ringing play];
 			}
@@ -554,9 +553,12 @@
 	pomodoroNegativeBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak_n" ofType:@"png"]];
 	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
 
-	ringing = [NSSound soundNamed:@"ring.wav"];
-	ringingBreak = [NSSound soundNamed:@"ringBreak.wav"];
-	tick = [NSSound soundNamed:@"tick.wav"];
+    
+    
+    tick = [[NSSound soundNamed:@"tick.wav"] retain];
+	ringing = [[NSSound soundNamed:@"ring.wav"] retain];
+	ringingBreak = [[NSSound soundNamed:@"ringBreak.wav"] retain];
+
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
 		
