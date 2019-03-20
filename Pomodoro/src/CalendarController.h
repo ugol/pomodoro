@@ -31,11 +31,11 @@
 
 @interface CalendarController : CommonController {
 
-    IBOutlet NSComboBox* calendarsCombo;
+    IBOutlet NSComboBox* __unsafe_unretained calendarsCombo;
     
 }
 
-@property (assign) IBOutlet NSComboBox* calendarsCombo;
+@property (unsafe_unretained) IBOutlet NSComboBox* calendarsCombo;
 
 - (IBAction)initCalendars:(id)sender;
 

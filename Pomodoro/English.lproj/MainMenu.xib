@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
-        <plugIn identifier="com.apple.OSAKit.IBPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.OSAKit.IBPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
@@ -330,19 +332,16 @@ DQ
                                             <rect key="frame" x="1" y="1" width="560" height="235"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1045" userLabel="Script View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="565" height="235"/>
+                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1045" userLabel="Script View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="235"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="235"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="560" height="235"/>
-                                                    <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1044">
                                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
@@ -366,19 +365,16 @@ DQ
                                             <rect key="frame" x="1" y="1" width="560" height="272"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1049">
-                                                    <rect key="frame" x="0.0" y="0.0" width="565" height="272"/>
+                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" usesFontPanel="YES" continuousSpellChecking="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1049">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="272"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="minSize" width="560" height="272"/>
                                                     <size key="maxSize" width="567" height="10000000"/>
                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="560" height="272"/>
-                                                    <size key="maxSize" width="567" height="10000000"/>
                                                 </osaDictionaryScriptView>
                                             </subviews>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1048">
                                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
@@ -456,10 +452,10 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box autoresizesSubviews="NO" title="Start and Breaks" borderType="line" id="1324">
+                                        <box autoresizesSubviews="NO" borderType="line" title="Start and Breaks" id="1324">
                                             <rect key="frame" x="17" y="378" width="648" height="284"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="ppR-Vm-ehz">
                                                 <rect key="frame" x="1" y="1" width="646" height="268"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -584,19 +580,13 @@ DQ
                                                             <binding destination="36" name="value" keyPath="values.canRestartAtBreak" id="475"/>
                                                         </connections>
                                                     </button>
-                                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="1326">
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1326">
                                                         <rect key="frame" x="14" y="152" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <font key="titleFont" metaFont="system"/>
                                                     </box>
-                                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="1333" userLabel="Horizontal Line">
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1333" userLabel="Horizontal Line">
                                                         <rect key="frame" x="14" y="96" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <font key="titleFont" metaFont="system"/>
                                                     </box>
                                                     <button id="194">
                                                         <rect key="frame" x="240" y="127" width="216" height="18"/>
@@ -782,13 +772,11 @@ DQ
                                                     </button>
                                                 </subviews>
                                             </view>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
-                                        <box autoresizesSubviews="NO" title="Sounds and Volume" borderType="line" id="1325">
+                                        <box autoresizesSubviews="NO" borderType="line" title="Sounds and Volume" id="1325">
                                             <rect key="frame" x="17" y="180" width="648" height="194"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="F7e-Fs-A9P">
                                                 <rect key="frame" x="1" y="1" width="646" height="178"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -865,19 +853,13 @@ DQ
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="1350">
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1350">
                                                         <rect key="frame" x="14" y="120" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <font key="titleFont" metaFont="system"/>
                                                     </box>
-                                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="1351">
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1351">
                                                         <rect key="frame" x="14" y="86" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <font key="titleFont" metaFont="system"/>
                                                     </box>
                                                     <slider verticalHuggingPriority="750" id="1352">
                                                         <rect key="frame" x="449" y="59" width="128" height="21"/>
@@ -946,8 +928,6 @@ DQ
                                                     </imageView>
                                                 </subviews>
                                             </view>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                     </subviews>
                                 </view>
@@ -1702,10 +1682,10 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box autoresizesSubviews="NO" title="When working on Pomodoro" borderType="line" id="270">
+                                        <box autoresizesSubviews="NO" borderType="line" title="When working on Pomodoro" id="270">
                                             <rect key="frame" x="40" y="256" width="612" height="153"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="XeS-mv-dkk">
                                                 <rect key="frame" x="1" y="1" width="610" height="137"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -1797,13 +1777,11 @@ DQ
                                                     </button>
                                                 </subviews>
                                             </view>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
-                                        <box autoresizesSubviews="NO" title="Integrate with external GTD software" borderType="line" id="271">
+                                        <box autoresizesSubviews="NO" borderType="line" title="Integrate with external GTD software" id="271">
                                             <rect key="frame" x="40" y="431" width="612" height="185"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="tzI-h7-RIZ">
                                                 <rect key="frame" x="1" y="1" width="610" height="169"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -1878,8 +1856,6 @@ DQ
                                                     </button>
                                                 </subviews>
                                             </view>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                     </subviews>
                                 </view>
@@ -1889,10 +1865,10 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box autoresizesSubviews="NO" title="Browsing Nanny" borderType="line" id="1467">
+                                        <box autoresizesSubviews="NO" borderType="line" title="Browsing Nanny" id="1467">
                                             <rect key="frame" x="17" y="176" width="650" height="492"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView">
+                                            <view key="contentView" id="jf1-s7-haS">
                                                 <rect key="frame" x="1" y="1" width="648" height="476"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -1936,13 +1912,13 @@ DQ
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <clipView key="contentView" id="v18-hb-j6x">
                                                             <rect key="frame" x="1" y="0.0" width="610" height="369"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" headerView="1539" id="1537">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="610" height="26"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="610" height="352"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                     <tableColumns>
                                                                         <tableColumn width="607" minWidth="40" maxWidth="1000" id="1541">
@@ -1964,7 +1940,6 @@ DQ
                                                                     </tableColumns>
                                                                 </tableView>
                                                             </subviews>
-                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </clipView>
                                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1538">
                                                             <rect key="frame" x="-100" y="-100" width="223" height="15"/>
@@ -1999,8 +1974,6 @@ DQ
                                                     </textField>
                                                 </subviews>
                                             </view>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                     </subviews>
                                 </view>
@@ -2207,24 +2180,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="9fH-VH-H3h">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="952">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="952">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptStart" id="1175"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="951">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2240,24 +2210,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="iJu-9b-LLR">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1058">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1058">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptInterrupt" id="1177"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1059">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2273,24 +2240,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="9W0-3S-BBJ">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1053">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1053">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptInterruptOver" id="1178"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1054">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2306,24 +2270,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="QyV-ct-9xO">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1063">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1063">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptReset" id="1179"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1064">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2339,24 +2300,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="lrU-Vc-Skj">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1068">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1068">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptResume" id="1180"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1069">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2372,24 +2330,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="7PD-7D-Rh7">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1073">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1073">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptEnd" id="1181"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1074">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2405,24 +2360,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="1ao-kQ-V3e">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1078">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1078">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptBreakFinished" id="1182"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1079">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>
@@ -2438,24 +2390,21 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="hFt-Ue-KkI">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" verticallyResizable="YES" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1083">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1083">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="383" height="40"/>
                                                         <size key="maxSize" width="403" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="383" height="40"/>
-                                                        <size key="maxSize" width="403" height="10000000"/>
                                                         <connections>
                                                             <binding destination="36" name="data" keyPath="values.scriptEvery" id="1184"/>
                                                         </connections>
                                                     </osaDictionaryScriptView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1084">
                                                 <rect key="frame" x="-100" y="-100" width="398" height="15"/>

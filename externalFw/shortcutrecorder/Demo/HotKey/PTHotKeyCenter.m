@@ -47,12 +47,6 @@ static PTHotKeyCenter *_sharedHotKeyCenter = nil;
 	return self;
 }
 
-- (void)dealloc
-{
-	[mHotKeys release];
-	[super dealloc];
-}
-
 #pragma mark -
 
 - (BOOL)registerHotKey: (PTHotKey*)hotKey

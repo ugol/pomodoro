@@ -29,9 +29,9 @@
 @class Scripter;
 
 @interface LoginController : CommonController {
-  	IBOutlet Scripter* scripter;  
+  	IBOutlet Scripter* __unsafe_unretained scripter;
 }
 
-@property (assign) IBOutlet Scripter* scripter;
+@property (unsafe_unretained) IBOutlet Scripter* scripter;
 
 @end

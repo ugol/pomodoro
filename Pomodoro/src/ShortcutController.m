@@ -35,21 +35,18 @@
 
 #pragma mark - Shortcut recorder callbacks & support
 
-- (void)switchKey: (NSString*)name forKey:(PTHotKey**)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
+- (void)switchKey: (NSString*)name forKey:(PTHotKey*)key withMethod:(SEL)method withRecorder:(SRRecorderControl*)recorder {
     
-	if (*key != nil) {
-		[[PTHotKeyCenter sharedCenter] unregisterHotKey: *key];
-		[*key release];
-		*key = nil;
+	if (key != nil) {
+		[[PTHotKeyCenter sharedCenter] unregisterHotKey: key];
 	}
 	
 	//NSLog(@"Code %d flags: %u, PT flags: %u", [recorder keyCombo].code, [recorder keyCombo].flags, [recorder cocoaToCarbonFlags: [recorder keyCombo].flags]);
     
-	*key = [[[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]] retain];
-	[*key setTarget: self];
-	[*key setAction: method];
-	[[PTHotKeyCenter sharedCenter] registerHotKey: *key];
-	[*key release];
+	key = [[PTHotKey alloc] initWithIdentifier:name keyCombo:[PTKeyCombo keyComboWithKeyCode:[recorder keyCombo].code modifiers:[recorder cocoaToCarbonFlags: [recorder keyCombo].flags]]];
+	[key setTarget: self];
+	[key setAction: method];
+	[[PTHotKeyCenter sharedCenter] registerHotKey: key];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithShort:[recorder keyCombo].code] forKey:[NSString stringWithFormat:@"%@%@", name, @"Code"]];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithUnsignedInteger:[recorder keyCombo].flags] forKey:[NSString stringWithFormat:@"%@%@", name, @"Flags"]];
 	
@@ -58,19 +55,19 @@
 - (void)shortcutRecorder:(id)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
     
 	if (aRecorder == muteRecorder) {
-		[self switchKey:@"mute" forKey:&muteKey withMethod:@selector(keyMute) withRecorder:aRecorder];
+		[self switchKey:@"mute" forKey:muteKey withMethod:@selector(keyMute) withRecorder:aRecorder];
 	} else if (aRecorder == startRecorder) {
-		[self switchKey:@"start" forKey:&startKey withMethod:@selector(keyStart) withRecorder:aRecorder];
+		[self switchKey:@"start" forKey:startKey withMethod:@selector(keyStart) withRecorder:aRecorder];
 	} else if (aRecorder == resetRecorder) {
-		[self switchKey:@"reset" forKey:&resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
+		[self switchKey:@"reset" forKey:resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
 	} else if (aRecorder == interruptRecorder) {
-		[self switchKey:@"interrupt" forKey:&interruptKey withMethod:@selector(keyInterrupt) withRecorder:aRecorder];
+		[self switchKey:@"interrupt" forKey:interruptKey withMethod:@selector(keyInterrupt) withRecorder:aRecorder];
 	} else if (aRecorder == internalInterruptRecorder) {
-		[self switchKey:@"internalInterrupt" forKey:&internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
+		[self switchKey:@"internalInterrupt" forKey:internalInterruptKey withMethod:@selector(keyInternalInterrupt) withRecorder:aRecorder];
 	} else if (aRecorder == resumeRecorder) {
-		[self switchKey:@"resume" forKey:&resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
+		[self switchKey:@"resume" forKey:resumeKey withMethod:@selector(keyResume) withRecorder:aRecorder];
 	} else if (aRecorder == quickStatsRecorder) {
-		[self switchKey:@"quickStats" forKey:&quickStatsKey withMethod:@selector(keyQuickStats) withRecorder:aRecorder];
+		[self switchKey:@"quickStats" forKey:quickStatsKey withMethod:@selector(keyQuickStats) withRecorder:aRecorder];
 	} 
 }
 
@@ -140,18 +137,4 @@
 
 
 }
-
-- (void)dealloc {
-    
-    [muteKey release];
-	[startKey release];
-	[resetKey release];
-	[interruptKey release];
-    [internalInterruptKey release];
-	[resumeKey release];
-	[quickStatsKey release];
-    
-    [super dealloc];
-}
-
 @end

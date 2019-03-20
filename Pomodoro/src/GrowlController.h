@@ -29,8 +29,8 @@
 
 @interface GrowlController : CommonController {
  
-	IBOutlet NSComboBox* growlEveryCombo;
-	IBOutlet NSImageView* growlStatus;
+	IBOutlet NSComboBox* __unsafe_unretained growlEveryCombo;
+	IBOutlet NSImageView* __unsafe_unretained growlStatus;
 
     NSImage* redButtonImage;
 	NSImage* greenButtonImage;
@@ -39,7 +39,7 @@
     id userNotificationCenter;
 }
 
-@property (assign) IBOutlet NSComboBox* growlEveryCombo;
-@property (assign) IBOutlet NSImageView* growlStatus;
+@property (unsafe_unretained) IBOutlet NSComboBox* growlEveryCombo;
+@property (unsafe_unretained) IBOutlet NSImageView* growlStatus;
 
 @end
