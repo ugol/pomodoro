@@ -45,7 +45,7 @@
     IBOutlet NSToolbar* __unsafe_unretained toolBar;
 	IBOutlet NSMenu* __unsafe_unretained pomodoroMenu;
 	IBOutlet NSComboBox* __unsafe_unretained initialTimeCombo;
-	IBOutlet NSComboBox* initialTimeComboInStart;
+	IBOutlet NSComboBox* __unsafe_unretained initialTimeComboInStart;
 	IBOutlet NSComboBox* __unsafe_unretained interruptCombo;
 	IBOutlet NSComboBox* __unsafe_unretained breakCombo;
 	IBOutlet NSComboBox* __unsafe_unretained longBreakCombo;

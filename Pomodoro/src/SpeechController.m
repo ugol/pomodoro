@@ -60,8 +60,12 @@
     
     if ([keyPath hasSuffix:@"Volume"]) {
         NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
-        NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
         
+        NSInteger oldVolume = 0;
+        if([NSNull null] != [change objectForKey:NSKeyValueChangeOldKey])
+        {
+            oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
+        }
         if (volume != oldVolume) {
             float newVolume = volume/100.0;
             

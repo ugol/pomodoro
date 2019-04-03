@@ -101,7 +101,8 @@
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    NSLog(@"object %@", object);
+    //NSLog(@"---- %@", change);
+
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {
 		[self showTimeOnStatusBar: _initialTime * 60];
 	} else if ([keyPath isEqualToString:@"showTimeWithSeconds"]) {
@@ -112,10 +113,13 @@
         [self showTimeOnStatusBar: duration * 60];
         
     } else if ([keyPath hasSuffix:@"Volume"]) {
-        
-		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
-		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
-        NSLog(@"HERE%ld -- %ld",(long)volume, (long)oldVolume);
+        NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
+        NSInteger oldVolume = 0;
+        if([NSNull null] != [change objectForKey:NSKeyValueChangeOldKey])
+        {
+            oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
+        }
+        NSLog(@"vol %ld -- %ld",(long)volume, (long)oldVolume);
 		if (volume != oldVolume) {
 			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
@@ -623,17 +627,12 @@
 	[self observeUserDefault:@"initialTime"];
 	
 	[self observeUserDefault:@"showTimeOnStatusEnabled"];
-	[self observeUserDefault:@"showTimeWithSeconds"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];
-	}
-    
-	// show again time to handle showTimeWithSeconds
-	[self showTimeOnStatusBar: _initialTime * 60];
-
-    [self updateMenu];
+	}	
 		
 }
+
 
 @end

@@ -74,7 +74,7 @@
 
 -(void) start {
 
-    [self clearTimer: breakTimer];
+    //[self clearTimer: breakTimer];
     breakTimer = nil;
 
     externallyInterrupted = 0;
@@ -113,8 +113,6 @@
 
 -(void) reset {
 
-    [self clearTimer: oneSecTimer];
-    [self clearTimer: interruptionTimer];
     oneSecTimer = nil;
     interruptionTimer = nil;
     
@@ -126,7 +124,6 @@
 
 - (void) interrupt: (NSInteger) seconds  {
 
-    [self clearTimer:oneSecTimer];
     oneSecTimer = nil;
 	state = PomoInterrupted;
 	interruptionTimer = [NSTimer timerWithTimeInterval:seconds
@@ -160,7 +157,6 @@
 -(void) resume {
 
 	resumed++;
-    [self clearTimer: interruptionTimer];
     interruptionTimer = nil;
 
 	[self startFor: time];
@@ -171,8 +167,6 @@
 
 - (void) checkIfFinished {
 	if (time == 0) {
-
-        [self clearTimer: oneSecTimer];
         oneSecTimer = nil;
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(pomodoroFinished:)]) {
@@ -183,7 +177,6 @@
 
 - (void) checkIfBreakFinished {
 	if (time == 0) {
-        [self clearTimer: breakTimer];
         breakTimer = nil;
 		state = PomoReadyToStart;
 		if ([delegate respondsToSelector: @selector(breakFinished:)]) {
@@ -210,8 +203,6 @@
 
 -(void) interruptFinished:(NSTimer *)aTimer {
 
-    [self clearTimer: oneSecTimer];
-    [self clearTimer: interruptionTimer];
     oneSecTimer = nil;
     interruptionTimer = nil;
 	state = PomoReadyToStart;
