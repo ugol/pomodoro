@@ -54,7 +54,7 @@
         }
     } else {
         //give enough space
-        [statusItem setTitle:@"       "];
+        [statusItem setTitle:@"      "];
     }
 }
 
@@ -101,7 +101,6 @@
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    //NSLog(@"---- %@", change);
 
 	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {
 		[self showTimeOnStatusBar: _initialTime * 60];
@@ -119,7 +118,7 @@
         {
             oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
         }
-        NSLog(@"vol %ld -- %ld",(long)volume, (long)oldVolume);
+
 		if (volume != oldVolume) {
 			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
@@ -148,8 +147,7 @@
 }
 
 -(void) keyStart {
-    NSLog(@"----------- keyStart ------------");
-	if ([self.startPomodoro isEnabled]) [self start:nil];
+    if ([self.startPomodoro isEnabled]) [self start:nil];
 }
 
 -(void) keyReset {
@@ -284,7 +282,7 @@
 
 
 - (void) realStart {
-	[pomodoro start];	
+    [pomodoro start];	
 	[self updateMenu];
 }
 
@@ -372,7 +370,7 @@
 #pragma mark ---- Pomodoro notifications methods ----
 
 -(void) pomodoroStarted:(NSNotification*) notification {
-	
+
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _timerName];
@@ -513,14 +511,13 @@
 	}
     
     if ([self checkDefault:@"preventSleepDuringPomodoroBreak"]) {
-        NSLog(@"Update system activity");
         UpdateSystemActivity(OverallAct);
     }
     
 }
 
 - (void) oncePerSecond:(NSNotification*) notification {
-    NSLog(@"--------------------- oncePerSecond ---------------");
+    
     NSInteger time = [[notification object] integerValue];
 	[self showTimeOnStatusBar: time];
 	if (![self checkDefault:@"mute"] && [self checkDefault:@"tickEnabled"]) {
@@ -531,7 +528,6 @@
         UpdateSystemActivity(OverallAct);
     }
 
-	
 }
 
 
