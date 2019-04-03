@@ -45,7 +45,7 @@
     IBOutlet NSToolbar* __unsafe_unretained toolBar;
 	IBOutlet NSMenu* __unsafe_unretained pomodoroMenu;
 	IBOutlet NSComboBox* __unsafe_unretained initialTimeCombo;
-	IBOutlet NSComboBox* __unsafe_unretained initialTimeComboInStart;
+	IBOutlet NSComboBox* initialTimeComboInStart;
 	IBOutlet NSComboBox* __unsafe_unretained interruptCombo;
 	IBOutlet NSComboBox* __unsafe_unretained breakCombo;
 	IBOutlet NSComboBox* __unsafe_unretained longBreakCombo;
@@ -100,7 +100,7 @@
 
 @property (unsafe_unretained) IBOutlet Pomodoro* pomodoro;
 @property (nonatomic, assign) NSInteger longBreakCounter;
-@property (nonatomic, unsafe_unretained) NSTimer* longBreakCheckerTimer;
+@property (nonatomic) NSTimer* longBreakCheckerTimer;
 
 
 @property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* startPomodoro;
