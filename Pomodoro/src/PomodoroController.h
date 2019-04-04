@@ -61,7 +61,7 @@
 
 	IBOutlet Pomodoro* __unsafe_unretained pomodoro;
     NSInteger longBreakCounter;
-    NSTimer* __unsafe_unretained longBreakCheckerTimer;
+    NSTimer* longBreakCheckerTimer;
     PomodoroNotifier* pomodoroNotifier;
     
     ProcessSerialNumber psn;
