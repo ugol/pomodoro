@@ -8,7 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="AboutController">
             <connections>
                 <outlet property="aboutText" destination="22" id="28"/>
-                <outlet property="release" destination="35" id="38"/>
+                <outlet property="appversion" destination="35" id="38"/>
                 <outlet property="window" destination="1" id="27"/>
             </connections>
         </customObject>
@@ -55,7 +55,7 @@
                     <textField verticalHuggingPriority="750" id="35" customClass="BGHUDLabel">
                         <rect key="frame" x="17" y="270" width="114" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" alignment="center" title="release" id="36">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" alignment="center" title="appversion" id="36">
                             <font key="font" metaFont="miniSystemBold"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
