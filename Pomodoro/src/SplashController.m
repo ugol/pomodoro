@@ -43,8 +43,8 @@
     NSStringEncoding encoding;
 	NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"] usedEncoding:&encoding error:&error];
 	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
-	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
+	//[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+	//								  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
