@@ -63,6 +63,7 @@
                 <outlet property="longBreakCombo" destination="1593" id="1684"/>
                 <outlet property="longBreakResetComboTime" destination="1599" id="1681"/>
                 <outlet property="namePanel" destination="26" id="40"/>
+                <outlet property="namesCombo" destination="28" id="JoP-aD-Bag"/>
                 <outlet property="pomodoro" destination="1188" id="1189"/>
                 <outlet property="pomodoroMenu" destination="10" id="44"/>
                 <outlet property="pomodorosForLong" destination="1589" id="1685"/>
@@ -343,7 +344,10 @@ DQ
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Kg8-EK-wmB">
                                             <rect key="frame" x="1" y="1" width="560" height="235"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" continuousSpellChecking="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1045" userLabel="Script View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="235"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -373,7 +377,10 @@ DQ
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="GNm-Qv-hvf">
                                             <rect key="frame" x="1" y="1" width="560" height="272"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <osaDictionaryScriptView importsGraphics="NO" baseWritingDirection="leftToRight" usesFontPanel="YES" continuousSpellChecking="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" tabWidth="4" indentWidth="4" id="1049">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="272"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -459,8 +466,10 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
+                                        <box autoresizesSubviews="NO" borderType="line" title="Töne und Lautstärke" id="1586">
                                             <rect key="frame" x="17" y="180" width="648" height="194"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="HcC-AJ-7cW">
                                                 <rect key="frame" x="1" y="1" width="646" height="178"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -535,9 +544,11 @@ DQ
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1658">
                                                         <rect key="frame" x="14" y="120" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </box>
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1655">
                                                         <rect key="frame" x="14" y="86" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </box>
@@ -598,8 +609,10 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
+                                        <box autoresizesSubviews="NO" borderType="line" title="Start und Pausen" id="1587">
                                             <rect key="frame" x="17" y="378" width="648" height="284"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="nwW-DA-DXp">
                                                 <rect key="frame" x="1" y="1" width="646" height="268"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -723,9 +736,11 @@ DQ
                                                             <binding destination="36" name="value" keyPath="values.canRestartAtBreak" id="1702"/>
                                                         </connections>
                                                     </button>
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1605">
                                                         <rect key="frame" x="14" y="152" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </box>
+                                                    <box verticalHuggingPriority="750" boxType="separator" id="1600" userLabel="Horizontal Line">
                                                         <rect key="frame" x="14" y="96" width="618" height="5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </box>
@@ -1829,7 +1844,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="Xyf-Km-3vg">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="952">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1856,7 +1874,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="Kzu-ui-AY1">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1058">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1883,7 +1904,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="S3j-Ua-mta">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1053">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1910,7 +1934,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="TTD-nq-HSF">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1063">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1937,7 +1964,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="FVU-0S-ggB">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1068">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1964,7 +1994,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="cib-6B-E5s">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1073">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1991,7 +2024,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="xlb-f8-Zli">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1078">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2018,7 +2054,10 @@ DQ
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="adU-7g-DFv">
                                                 <rect key="frame" x="1" y="1" width="383" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
+                                                    <osaDictionaryScriptView editable="NO" importsGraphics="NO" baseWritingDirection="leftToRight" spellingCorrection="YES" tabWidth="4" indentWidth="4" id="1083">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" red="0.50000762939453125" green="0.0" blue="0.50000762939453125" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
