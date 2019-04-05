@@ -617,12 +617,14 @@
 
 	GetCurrentProcess(&psn);
     
-	[self observeUserDefault:@"ringVolume"];
-	[self observeUserDefault:@"ringBreakVolume"];
-	[self observeUserDefault:@"tickVolume"];
-	[self observeUserDefault:@"initialTime"];
+    if(![self checkDefault:@"mute"]){
+        [self observeUserDefault:@"ringVolume"];
+        [self observeUserDefault:@"ringBreakVolume"];
+        [self observeUserDefault:@"tickVolume"];
+        [self observeUserDefault:@"initialTime"];
+        [self observeUserDefault:@"showTimeOnStatusEnabled"];
+    }
 	
-	[self observeUserDefault:@"showTimeOnStatusEnabled"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];

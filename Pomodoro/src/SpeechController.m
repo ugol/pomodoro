@@ -70,7 +70,7 @@
             float newVolume = volume/100.0;
             
             [speech setVolume:newVolume];
-            [speech startSpeakingString:@"Yes"];
+            [speech startSpeakingString:@"Volume Set"];
             
         }
     } else if ([keyPath hasSuffix:@"Voice"]) {
