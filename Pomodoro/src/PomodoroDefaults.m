@@ -157,7 +157,7 @@
 	[defaultValues setObject:NSLocalizedString(@"$duration minutes Timer '$timerName'", @"Calendar end text") forKey:@"calendarEnd"];
 
 		
-	[defaultValues setObject:NSLocalizedString(@"Insert here a name",@"Timer name prompt") forKey:@"timerName"];
+	[defaultValues setObject:NSLocalizedString(@"Insert a name",@"Timer name prompt") forKey:@"timerName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
  	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"preventSleepDuringPomodoro"];
