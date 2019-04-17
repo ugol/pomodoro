@@ -94,7 +94,7 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"mute"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"canRestartAtBreak"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"canRestartAtBreak"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakResetEnabled"];
