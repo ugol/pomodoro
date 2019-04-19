@@ -550,6 +550,7 @@
     [self registerForAllPomodoroEvents];
     
 	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+	statusItem.button.font = [NSFont monospacedDigitSystemFontOfSize:pomodoroMenu.font.pointSize weight:NSFontWeightRegular];
     
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak" ofType:@"png"]];
