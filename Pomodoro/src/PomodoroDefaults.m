@@ -144,9 +144,9 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"autoPomodoroRestart"];
 	
-	[defaultValues setObject:[NSNumber numberWithInt:90] forKey:@"ringVolume"];
-	[defaultValues setObject:[NSNumber numberWithInt:90] forKey:@"ringBreakVolume"];
-	[defaultValues setObject:[NSNumber numberWithInt:80] forKey:@"voiceVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"ringVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"ringBreakVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"voiceVolume"];
 	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"tickVolume"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showTimeOnStatusEnabled"];
