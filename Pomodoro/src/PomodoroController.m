@@ -292,7 +292,8 @@
 }
 
 -(IBAction) nameGiven:(id)sender {
-	
+    [self observeUserDefault:@"initialTime"];
+
     if (![namePanel makeFirstResponder:namePanel]) {
         [namePanel endEditingFor:nil];
     }
@@ -309,7 +310,7 @@
 }
 
 - (IBAction) start: (id) sender {
-	
+    
 	if (_initialTime > 0) {
         
 		[about close];
@@ -329,6 +330,7 @@
 
 			[namePanel makeKeyAndOrderFront:self];
 		} else {
+            [self observeUserDefault:@"initialTime"];
 			[self realStart];
 		}
 	}

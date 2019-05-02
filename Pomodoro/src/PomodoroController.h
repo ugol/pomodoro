@@ -44,7 +44,7 @@
     IBOutlet NSTabView* __unsafe_unretained tabView;
     IBOutlet NSToolbar* __unsafe_unretained toolBar;
 	IBOutlet NSMenu* __unsafe_unretained pomodoroMenu;
-	IBOutlet NSComboBox* __unsafe_unretained initialTimeCombo;
+	IBOutlet NSComboBox* initialTimeCombo;
 	IBOutlet NSComboBox* initialTimeComboInStart;
 	IBOutlet NSComboBox* __unsafe_unretained interruptCombo;
 	IBOutlet NSComboBox* __unsafe_unretained breakCombo;
@@ -91,7 +91,7 @@
 @property (unsafe_unretained) IBOutlet NSTabView* tabView;
 @property (unsafe_unretained) IBOutlet NSToolbar* toolBar;
 @property (unsafe_unretained) IBOutlet NSMenu* pomodoroMenu;
-@property (unsafe_unretained) IBOutlet NSComboBox* initialTimeCombo;
+@property IBOutlet NSComboBox* initialTimeCombo;
 @property (unsafe_unretained) IBOutlet NSComboBox* interruptCombo;
 @property (unsafe_unretained) IBOutlet NSComboBox* breakCombo;
 @property (unsafe_unretained) IBOutlet NSComboBox* longBreakCombo;
