@@ -29,11 +29,11 @@
 	
     BOOL showRelease;
 	IBOutlet NSTextView* aboutText;
-    IBOutlet NSTextField* release;
+    IBOutlet NSTextField* appversion;
 }
 
-@property (assign) IBOutlet NSTextView* aboutText;
-@property (assign, readonly) IBOutlet NSTextField* release;
+@property IBOutlet NSTextView* aboutText;
+@property IBOutlet NSTextField* appversion;
 
 -(IBAction) switchBetweenReleaseAndBuild: (id) sender;
 

@@ -34,7 +34,7 @@
 
 - (id) initWithCapacity:(int)capacity { 
     if ( (self = [super init]) ) {
-        scripts = [[NSMutableDictionary dictionaryWithCapacity:capacity] retain];
+        scripts = [NSMutableDictionary dictionaryWithCapacity:capacity];
     }
     return self;
 }
@@ -42,14 +42,14 @@
 - (NSAppleEventDescriptor*)executeScript:(NSString*) scriptId {
 
 	NSAppleScript* applescript = [scripts objectForKey:scriptId];
-	if (nil == applescript) {
+	/*if (nil == applescript) {
 		NSString* scriptFileName = [[NSBundle mainBundle] pathForResource: scriptId ofType: @"applescript"];
-		applescript = [[[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptFileName] error: nil] autorelease];
+		applescript = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptFileName] error: nil];
 		[applescript compileAndReturnError:nil];
 		[scripts setObject:applescript forKey:scriptId];
 	} 
-	return [applescript executeAndReturnError:nil];
-	
+	return [applescript executeAndReturnError:nil];*/
+    return nil;
 }
 
 - (NSAppleEventDescriptor*)executeScript:(NSString *)scriptId withParameter:(NSString*)parameter {
@@ -65,13 +65,8 @@
                                                                 error:&error];
 		[scripts setObject:scriptText forKey:scriptId];
 	}
-	NSAppleScript* applescript = [[[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:scriptText, parameter]] autorelease];
+	NSAppleScript* applescript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:scriptText, parameter]];
 	return [applescript executeAndReturnError:nil];
-}
-
-- (void) dealloc { 
-	[scripts release];
-    [super dealloc]; 
 }
 
 @end

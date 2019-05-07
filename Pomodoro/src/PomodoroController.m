@@ -39,29 +39,50 @@
 
 @synthesize startPomodoro, finishPomodoro, invalidatePomodoro, interruptPomodoro, internalInterruptPomodoro, resumePomodoro;
 @synthesize pomodoro, longBreakCounter, longBreakCheckerTimer;
-@synthesize prefs, scriptPanel, namePanel, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
+@synthesize prefs, scriptPanel, namePanel, namesCombo, breakCombo, initialTimeCombo, interruptCombo, longBreakCombo, longBreakResetComboTime, pomodorosForLong;
 @synthesize pomodoroMenu, tabView, toolBar;
 
 #pragma mark ---- Helper methods ----
 
-- (void) showTimeOnStatusBar:(NSInteger) time {	
+- (void) showTimeOnStatusBar:(NSInteger) time {
     if ([self checkDefault:@"showTimeOnStatusEnabled"]) {
         if ([self checkDefault:@"showTimeWithSeconds"]) {
+            //NSLog(@"---------- time %2ld",time);
             [statusItem setTitle:[NSString stringWithFormat:@" %.2ld:%.2ld",time/60, time%60]];
          } else {
             [statusItem setTitle:[NSString stringWithFormat:@" %.2ld",time/60]];
         }
     } else {
-        [statusItem setTitle:@""];
+        //give enough space
+        [statusItem setTitle:@"      "];
     }
 }
 
 - (void) longBreakCheckerFinished {
     
-    //NSLog(@"LongBreak Timer reset!");
     longBreakCounter = 0;
     longBreakCheckerTimer = nil;
     
+}
+
+- (void)updateNamesComboData {
+    
+    NSInteger howMany = [namesCombo numberOfItems];
+    NSString* name = _timerName;
+    BOOL isNewName = YES;
+    NSInteger i = 0;
+    while ((isNewName) && (i<howMany)) {
+        isNewName = ![name isEqualToString:[namesCombo itemObjectValueAtIndex:i]];
+        i++;
+    }
+    if (isNewName) {
+        
+        if (howMany>15) {
+            [namesCombo removeItemAtIndex:0];
+        }
+        [namesCombo addItemWithObjectValue:name];
+        
+    }
 }
 
 #pragma mark ---- Window delegate methods ----
@@ -80,8 +101,8 @@
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    	
-	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {		
+
+	if ([keyPath isEqualToString:@"showTimeOnStatusEnabled"]) {
 		[self showTimeOnStatusBar: _initialTime * 60];
 	} else if ([keyPath isEqualToString:@"showTimeWithSeconds"]) {
 		[self showTimeOnStatusBar: _initialTime * 60];
@@ -91,9 +112,13 @@
         [self showTimeOnStatusBar: duration * 60];
         
     } else if ([keyPath hasSuffix:@"Volume"]) {
-		NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
-		NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
-		
+        NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
+        NSInteger oldVolume = 0;
+        if([NSNull null] != [change objectForKey:NSKeyValueChangeOldKey])
+        {
+            oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
+        }
+
 		if (volume != oldVolume) {
 			float newVolume = volume/100.0;
 			if ([keyPath isEqual:@"ringVolume"]) {
@@ -122,7 +147,7 @@
 }
 
 -(void) keyStart {
-	if ([self.startPomodoro isEnabled]) [self start:nil];
+    if ([self.startPomodoro isEnabled]) [self start:nil];
 }
 
 -(void) keyReset {
@@ -158,6 +183,7 @@
 #pragma mark ---- Menu management methods ----
 
 - (void) updateMenu {
+    
 	enum PomoState state = pomodoro.state;
 	
 	NSImage * image;
@@ -256,7 +282,7 @@
 
 
 - (void) realStart {
-	[pomodoro start];	
+    [pomodoro start];	
 	[self updateMenu];
 }
 
@@ -266,11 +292,13 @@
 }
 
 -(IBAction) nameGiven:(id)sender {
-	
+    [self observeUserDefault:@"initialTime"];
+
     if (![namePanel makeFirstResponder:namePanel]) {
         [namePanel endEditingFor:nil];
     }
     
+    [self updateNamesComboData];
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameGiven object:namePanel];
 
 	[namePanel close];
@@ -282,7 +310,7 @@
 }
 
 - (IBAction) start: (id) sender {
-	
+    
 	if (_initialTime > 0) {
         
 		[about close];
@@ -302,6 +330,7 @@
 
 			[namePanel makeKeyAndOrderFront:self];
 		} else {
+            [self observeUserDefault:@"initialTime"];
 			[self realStart];
 		}
 	}
@@ -343,7 +372,7 @@
 #pragma mark ---- Pomodoro notifications methods ----
 
 -(void) pomodoroStarted:(NSNotification*) notification {
-	
+
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_dailyPomodoroStarted)+1] forKey:@"dailyPomodoroStarted"];
 	[[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInt:(_globalPomodoroStarted)+1] forKey:@"globalPomodoroStarted"];
 	NSString* name = [NSString stringWithFormat:NSLocalizedString(@"Working on: %@",@"Tooltip for running Pomodoro"), _timerName];
@@ -501,7 +530,6 @@
         UpdateSystemActivity(OverallAct);
     }
 
-	
 }
 
 
@@ -523,8 +551,9 @@
     
     [self registerForAllPomodoroEvents];
     
-	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-
+	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+	statusItem.button.font = [NSFont monospacedDigitSystemFontOfSize:pomodoroMenu.font.pointSize weight:NSFontWeightRegular];
+    
 	pomodoroImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoro" ofType:@"png"]];
 	pomodoroBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak" ofType:@"png"]];
 	pomodoroFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze" ofType:@"png"]];
@@ -532,9 +561,12 @@
 	pomodoroNegativeBreakImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroBreak_n" ofType:@"png"]];
 	pomodoroNegativeFreezeImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pomodoroFreeze_n" ofType:@"png"]];
 
+    
+    
+    tick = [NSSound soundNamed:@"tick.wav"];
 	ringing = [NSSound soundNamed:@"ring.wav"];
 	ringingBreak = [NSSound soundNamed:@"ringBreak.wav"];
-	tick = [NSSound soundNamed:@"tick.wav"];
+
 	[statusItem setImage:pomodoroImage];
 	[statusItem setAlternateImage:pomodoroNegativeImage];
 		
@@ -580,7 +612,7 @@
     [toolBar setSelectedItemIdentifier:@"Pomodoro"];
 
     [pomodoro setDurationMinutes:_initialTime];
-    pomodoroNotifier = [[[PomodoroNotifier alloc] init] retain];
+    pomodoroNotifier = [[PomodoroNotifier alloc] init];
 	[pomodoro setDelegate: pomodoroNotifier];
     
 	stats = [[StatsController alloc] init];
@@ -588,45 +620,20 @@
 
 	GetCurrentProcess(&psn);
     
-	[self observeUserDefault:@"ringVolume"];
-	[self observeUserDefault:@"ringBreakVolume"];
-	[self observeUserDefault:@"tickVolume"];
-	[self observeUserDefault:@"initialTime"];
+    if(![self checkDefault:@"mute"]){
+        [self observeUserDefault:@"ringVolume"];
+        [self observeUserDefault:@"ringBreakVolume"];
+        [self observeUserDefault:@"tickVolume"];
+        [self observeUserDefault:@"initialTime"];
+        [self observeUserDefault:@"showTimeOnStatusEnabled"];
+    }
 	
-	[self observeUserDefault:@"showTimeOnStatusEnabled"];
-	[self observeUserDefault:@"showTimeWithSeconds"];
 	
 	if ([self checkDefault:@"showSplashScreenAtStartup"]) {
 		[self help:nil];
-	}
-    
-	// show again time to handle showTimeWithSeconds
-	[self showTimeOnStatusBar: _initialTime * 60];
-
-    [self updateMenu];
+	}	
 		
 }
 
--(void)dealloc {
-
-    [statusItem release];
-	[about release];
-    [splash release];
-	[stats release];
-    [pomodoroNotifier release];
-    
-	[pomodoroImage release];
-	[pomodoroBreakImage release];
-	[pomodoroFreezeImage release];
-	[pomodoroNegativeImage release];
-	[pomodoroNegativeBreakImage release];
-	[pomodoroNegativeFreezeImage release];
-    
-	[ringing release];
-	[ringingBreak release];
-	[tick release];
-	
-	[super dealloc];
-}
 
 @end

@@ -18,7 +18,7 @@
 
 + (id)keyComboWithKeyCode: (NSInteger)keyCode modifiers: (NSUInteger)modifiers
 {
-	return [[[self alloc] initWithKeyCode: keyCode modifiers: modifiers] autorelease];
+	return [[self alloc] initWithKeyCode: keyCode modifiers: modifiers];
 }
 
 - (id)initWithKeyCode: (NSInteger)keyCode modifiers: (NSUInteger)modifiers
@@ -65,7 +65,7 @@
 
 - (id)copyWithZone:(NSZone*)zone;
 {
-	return [self retain];
+	return self;
 }
 
 - (BOOL)isEqual: (PTKeyCombo*)combo
@@ -132,7 +132,7 @@
 	{
 		NSURL *url = [NSURL fileURLWithPath:[[NSBundle bundleForClass: self] pathForResource: @"PTKeyCodes" ofType: @"plist"]];
 		NSString *contents = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-		keyCodes = [[contents propertyList] retain];
+		keyCodes = [contents propertyList];
 	}
 
 	return keyCodes;

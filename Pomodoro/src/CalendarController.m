@@ -88,8 +88,4 @@ static EKEventStore *eventStore = nil;
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
-
 @end

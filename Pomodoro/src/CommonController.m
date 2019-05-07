@@ -118,10 +118,4 @@
 - (void) oncePerSecond:(NSNotification*) notification {
 }
 
-#pragma mark ---- Lifecycle methods ----
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 @end

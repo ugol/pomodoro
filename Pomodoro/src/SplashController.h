@@ -31,7 +31,7 @@
     
 }
 
-@property (assign) IBOutlet NSTextView* aboutText;
+@property IBOutlet NSTextView* aboutText;
 
 
 @end

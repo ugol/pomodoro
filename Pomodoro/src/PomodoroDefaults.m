@@ -94,7 +94,7 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"mute"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"breakEnabled"];
-	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"canRestartAtBreak"];
+	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"canRestartAtBreak"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"askBeforeStart"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"longbreakResetEnabled"];
@@ -144,9 +144,9 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"autoPomodoroRestart"];
 	
-	[defaultValues setObject:[NSNumber numberWithInt:90] forKey:@"ringVolume"];
-	[defaultValues setObject:[NSNumber numberWithInt:90] forKey:@"ringBreakVolume"];
-	[defaultValues setObject:[NSNumber numberWithInt:80] forKey:@"voiceVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"ringVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"ringBreakVolume"];
+	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"voiceVolume"];
 	[defaultValues setObject:[NSNumber numberWithInt:20] forKey:@"tickVolume"];
 	
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showTimeOnStatusEnabled"];
@@ -157,7 +157,7 @@
 	[defaultValues setObject:NSLocalizedString(@"$duration minutes Timer '$timerName'", @"Calendar end text") forKey:@"calendarEnd"];
 
 		
-	[defaultValues setObject:NSLocalizedString(@"Insert here a name",@"Timer name prompt") forKey:@"timerName"];
+	[defaultValues setObject:NSLocalizedString(@"Insert a name",@"Timer name prompt") forKey:@"timerName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"showSplashScreenAtStartup"];
  	[defaultValues setObject:[NSNumber numberWithBool:YES] forKey:@"preventSleepDuringPomodoro"];

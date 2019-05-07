@@ -41,20 +41,13 @@
 	NSBundle *bundle = [NSBundle mainBundle];
 	NSError *error = nil;
     NSStringEncoding encoding;
-	NSString *aboutString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"] usedEncoding:&encoding error:&error] autorelease];
-	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
-	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
+	NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"splash" ofType:@"html"] usedEncoding:&encoding error:&error];
+	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+	//[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+	//								  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
 	[aboutText setEditable:NO];
 	
-}
-
-- (void)dealloc {
-    
-    [aboutText release];
-    [super dealloc];
-    
 }
 
 @end

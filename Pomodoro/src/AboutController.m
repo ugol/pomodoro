@@ -28,7 +28,7 @@
 
 @implementation AboutController
 
-@synthesize aboutText, release;
+@synthesize aboutText, appversion;
 
 - (id) init {
 		
@@ -52,7 +52,7 @@
     NSError *error = nil;
     NSString *aboutString = [[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"about" ofType:@"html"] encoding:NSUTF8StringEncoding error:&error];
     
-	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
+	NSAttributedString* aboutHtml = [[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
 	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
 	[aboutText insertText:aboutHtml];
@@ -70,17 +70,10 @@
     } else {
         text = [NSString stringWithFormat:NSLocalizedString(@"Build", @"Build Number"), [[self infoValueForKey:@"CFBuildNumber"] intValue]];
     }
-    [release setStringValue:text];
+    [appversion setStringValue:text];
 
 }
 
-- (void)dealloc {
-    
-    [aboutText release];
-    [release release];
-    [super dealloc];
-    
-}
 
 
 @end

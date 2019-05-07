@@ -45,7 +45,7 @@
 					  ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    	
+    
 	if ([keyPath isEqualToString:@"startOnLoginEnabled"]) { 
 		BOOL loginEnabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
 		if (loginEnabled) {
@@ -62,10 +62,6 @@
     
     [self observeUserDefault:@"startOnLoginEnabled"];
     
-}
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 @end

@@ -60,13 +60,17 @@
     
     if ([keyPath hasSuffix:@"Volume"]) {
         NSInteger volume = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
-        NSInteger oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
         
+        NSInteger oldVolume = 0;
+        if([NSNull null] != [change objectForKey:NSKeyValueChangeOldKey])
+        {
+            oldVolume = [[change objectForKey:NSKeyValueChangeOldKey] intValue];
+        }
         if (volume != oldVolume) {
             float newVolume = volume/100.0;
             
             [speech setVolume:newVolume];
-            [speech startSpeakingString:@"Yes"];
+            [speech startSpeakingString:@"Volume Set"];
             
         }
     } else if ([keyPath hasSuffix:@"Voice"]) {
@@ -174,7 +178,7 @@
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
     [speechEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:10]];
-    voices = [[NSSpeechSynthesizer availableVoices] retain];
+    voices = [NSSpeechSynthesizer availableVoices];
     
     [speech setVolume:_voiceVolume/100.0];
     [self setVoiceByName:_speechVoice];
@@ -185,11 +189,5 @@
 
 }
 
-- (void)dealloc {
-    
-    [voices release];
-    [super dealloc];
-    
-}
 
 @end
